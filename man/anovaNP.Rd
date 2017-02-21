@@ -18,7 +18,7 @@ anovaNP(data, deps, group, pairs = FALSE)
 comparisons}
 }
 \description{
-One Way ANOVA (Non-parametric)
+Kruskal-Wallis
 }
 \examples{
 \dontrun{

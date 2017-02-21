@@ -50,4 +50,9 @@ positively, correlated negatively respectively.}
 \description{
 Correlation Matrix
 }
+\examples{
+\dontrun{
+corrMatrix(data, vars=c('x', 'y', 'z'))
+}
+}
 

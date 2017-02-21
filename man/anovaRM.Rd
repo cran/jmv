@@ -8,9 +8,9 @@ anovaRM(data, rm = list(list(label = "RM Factor 1", levels = list("Level 1",
   "Level 2"))), rmCells = NULL, bs = NULL, cov = NULL, rmTerms = NULL,
   bsTerms = NULL, ss = "3", effectSize, spherTests = FALSE,
   spherCorr = list("none"), leveneTest = FALSE, contrasts = NULL,
-  postHoc = NULL, postHocCorr = list("tukey"), descPlotsHAxis = NULL,
-  descPlotsSepLines = NULL, descPlotsSepPlots = NULL,
-  descPlotsErrBar = "ci", descPlotsCIWidth = 95, dispDescStats = FALSE)
+  postHoc = NULL, postHocCorr = list("tukey"), plotHAxis = NULL,
+  plotSepLines = NULL, plotSepPlots = NULL, plotError = "ci",
+  ciWidth = 95, descStats = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -36,11 +36,10 @@ terms to go into the model}
 \item{bsTerms}{a list of character vectors describing the between subjects 
 terms to go into the model}
 
-\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default); the sum of 
-squares to use}
+\item{ss}{\code{'2'} or \code{'3'} (default), the sum of squares to use}
 
 \item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or 
-\code{}omega\code{}; use eta², partial eta², and omega² effect sizes, 
+\code{'omega'}; use eta², partial eta², and omega² effect sizes, 
 respectively}
 
 \item{spherTests}{\code{TRUE} or \code{FALSE} (default), perform sphericity 
@@ -54,35 +53,51 @@ respectively}
 \item{leveneTest}{\code{TRUE} or \code{FALSE} (default), test for equality 
 of variances (i.e., Levene's test)}
 
-\item{contrasts}{.}
+\item{contrasts}{in development}
 
 \item{postHoc}{a list of character vectors describing the post-hoc tests 
 that need to be computed}
 
-\item{postHocCorr}{one or more of \code{'tukey'} (default), 
-\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use Tukey, Scheffe, 
+\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'} (default), 
+\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe, 
 Bonferroni and Holm posthoc corrections, respectively}
 
-\item{descPlotsHAxis}{a string naming the variable placed on the horizontal 
-axis of the plot}
+\item{plotHAxis}{a string naming the variable placed on the horizontal axis 
+of the plot}
 
-\item{descPlotsSepLines}{a string naming the variable represented as 
-separate lines on the plot}
+\item{plotSepLines}{a string naming the variable represented as separate 
+lines on the plot}
 
-\item{descPlotsSepPlots}{a string naming the variable to separate over to 
-form multiple plots}
+\item{plotSepPlots}{a string naming the variable to separate over to form 
+multiple plots}
 
-\item{descPlotsErrBar}{\code{'none'}, \code{'ci'} (default), or 
-\code{'se'}. Use no error bars, use confidence intervals, or use standard 
-errors on the plots, respectively}
+\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
+no error bars, use confidence intervals, or use standard errors on the 
+plots, respectively}
 
-\item{descPlotsCIWidth}{a number between 50 and 99.9 (default: 95) 
-specifying the confidence interval width}
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+confidence interval width}
 
-\item{dispDescStats}{\code{TRUE} or \code{FALSE} (default), provide 
-descriptive statistics}
+\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+statistics}
 }
 \description{
 Repeated Measures ANOVA
+}
+\examples{
+\dontrun{
+anovaRM(data=data,
+    rm=list(
+        list(
+            label="When",
+            levels=c("Before", "After"))),
+    rmCells=list(
+        list(
+            measure="column 1",
+            cell="Before"),
+        list(
+            measure="column 2",
+            cell="After")))
+}
 }
 

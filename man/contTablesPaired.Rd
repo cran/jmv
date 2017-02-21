@@ -25,6 +25,11 @@ each row represents a single observation}
 percentages}
 }
 \description{
-Paired Samples Contingency Tables
+McNemar test
+}
+\examples{
+\dontrun{
+contTablesPaired(data, rows='x', cols='y')
+}
 }
 

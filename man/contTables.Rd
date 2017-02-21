@@ -4,7 +4,7 @@
 \alias{contTables}
 \title{Contingency Tables}
 \usage{
-contTables(data, rows, cols, counts = NULL, layers = list(), chiSq = TRUE,
+contTables(data, rows, cols, counts = NULL, layers = NULL, chiSq = TRUE,
   chiSqCorr = FALSE, likeRat = FALSE, contCoef = FALSE, phiCra = FALSE,
   logOdds = FALSE, ciWidth = 95, gamma = FALSE, taub = FALSE,
   exp = FALSE, pcRow = FALSE, pcCol = FALSE, pcTot = FALSE)
@@ -60,6 +60,11 @@ percentages}
 percentages}
 }
 \description{
-Contingency Tables
+chi² test of association
+}
+\examples{
+\dontrun{
+contTables(data, rows='x', cols='y')
+}
 }
 

@@ -67,4 +67,9 @@ one of its entries is missing.}
 \description{
 Independent Samples T-Test
 }
+\examples{
+\dontrun{
+ttestIS(data, vars='len', group='supp')
+}
+}
 

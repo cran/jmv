@@ -59,11 +59,11 @@ tables (nominal, ordinal variables only)}
 groups}
 }
 \description{
-Descriptives
+Provides a range of descriptive statistics
 }
 \examples{
 \dontrun{
-descriptives(data, vars=c('x', 'y', 'z'), min=TRUE, max=TRUE)
+descriptives(data, vars=c('x', 'y', 'z'))
 }
 }
 

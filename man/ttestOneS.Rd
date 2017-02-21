@@ -61,4 +61,9 @@ one of its entries is missing.}
 \description{
 One Sample T-Test
 }
+\examples{
+\dontrun{
+ttestOneS(data, vars=c('x', 'y', 'z'))
+}
+}
 

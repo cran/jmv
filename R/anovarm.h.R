@@ -27,12 +27,12 @@ anovaRMOptions <- R6::R6Class(
             postHoc = NULL,
             postHocCorr = list(
                 "tukey"),
-            descPlotsHAxis = NULL,
-            descPlotsSepLines = NULL,
-            descPlotsSepPlots = NULL,
-            descPlotsErrBar = "ci",
-            descPlotsCIWidth = 95,
-            dispDescStats = FALSE, ...) {
+            plotHAxis = NULL,
+            plotSepLines = NULL,
+            plotSepPlots = NULL,
+            plotError = "ci",
+            ciWidth = 95,
+            descStats = FALSE, ...) {
 
             super$initialize(
                 package='jmv',
@@ -106,7 +106,6 @@ anovaRMOptions <- R6::R6Class(
                 "ss",
                 ss,
                 options=list(
-                    "1",
                     "2",
                     "3"),
                 default="3")
@@ -172,41 +171,42 @@ anovaRMOptions <- R6::R6Class(
                 "postHocCorr",
                 postHocCorr,
                 options=list(
+                    list(name="none", title="No correction"),
                     list(name="tukey", title="Tukey"),
                     list(name="scheffe", title="Scheffe"),
                     list(name="bonf", title="Bonferroni"),
                     list(name="holm", title="Holm")),
                 default=list(
                     "tukey"))
-            private$..descPlotsHAxis <- jmvcore::OptionVariable$new(
-                "descPlotsHAxis",
-                descPlotsHAxis,
+            private$..plotHAxis <- jmvcore::OptionVariable$new(
+                "plotHAxis",
+                plotHAxis,
                 default=NULL)
-            private$..descPlotsSepLines <- jmvcore::OptionVariable$new(
-                "descPlotsSepLines",
-                descPlotsSepLines,
+            private$..plotSepLines <- jmvcore::OptionVariable$new(
+                "plotSepLines",
+                plotSepLines,
                 default=NULL)
-            private$..descPlotsSepPlots <- jmvcore::OptionVariable$new(
-                "descPlotsSepPlots",
-                descPlotsSepPlots,
+            private$..plotSepPlots <- jmvcore::OptionVariable$new(
+                "plotSepPlots",
+                plotSepPlots,
                 default=NULL)
-            private$..descPlotsErrBar <- jmvcore::OptionList$new(
-                "descPlotsErrBar",
-                descPlotsErrBar,
+            private$..plotError <- jmvcore::OptionList$new(
+                "plotError",
+                plotError,
                 options=list(
                     "none",
                     "ci",
                     "se"),
                 default="ci")
-            private$..descPlotsCIWidth <- jmvcore::OptionNumber$new(
-                "descPlotsCIWidth",
-                descPlotsCIWidth,
+            private$..ciWidth <- jmvcore::OptionNumber$new(
+                "ciWidth",
+                ciWidth,
                 min=50,
                 max=99.9,
                 default=95)
-            private$..dispDescStats <- jmvcore::OptionBool$new(
-                "dispDescStats",
-                dispDescStats,
+            private$..descStats <- jmvcore::OptionBool$new(
+                "descStats",
+                descStats,
                 default=FALSE)
         
             self$.addOption(private$..rm)
@@ -223,12 +223,12 @@ anovaRMOptions <- R6::R6Class(
             self$.addOption(private$..contrasts)
             self$.addOption(private$..postHoc)
             self$.addOption(private$..postHocCorr)
-            self$.addOption(private$..descPlotsHAxis)
-            self$.addOption(private$..descPlotsSepLines)
-            self$.addOption(private$..descPlotsSepPlots)
-            self$.addOption(private$..descPlotsErrBar)
-            self$.addOption(private$..descPlotsCIWidth)
-            self$.addOption(private$..dispDescStats)
+            self$.addOption(private$..plotHAxis)
+            self$.addOption(private$..plotSepLines)
+            self$.addOption(private$..plotSepPlots)
+            self$.addOption(private$..plotError)
+            self$.addOption(private$..ciWidth)
+            self$.addOption(private$..descStats)
         }),
     active = list(
         rm = function() private$..rm$value,
@@ -245,12 +245,12 @@ anovaRMOptions <- R6::R6Class(
         contrasts = function() private$..contrasts$value,
         postHoc = function() private$..postHoc$value,
         postHocCorr = function() private$..postHocCorr$value,
-        descPlotsHAxis = function() private$..descPlotsHAxis$value,
-        descPlotsSepLines = function() private$..descPlotsSepLines$value,
-        descPlotsSepPlots = function() private$..descPlotsSepPlots$value,
-        descPlotsErrBar = function() private$..descPlotsErrBar$value,
-        descPlotsCIWidth = function() private$..descPlotsCIWidth$value,
-        dispDescStats = function() private$..dispDescStats$value),
+        plotHAxis = function() private$..plotHAxis$value,
+        plotSepLines = function() private$..plotSepLines$value,
+        plotSepPlots = function() private$..plotSepPlots$value,
+        plotError = function() private$..plotError$value,
+        ciWidth = function() private$..ciWidth$value,
+        descStats = function() private$..descStats$value),
     private = list(
         ..rm = NA,
         ..rmCells = NA,
@@ -266,12 +266,12 @@ anovaRMOptions <- R6::R6Class(
         ..contrasts = NA,
         ..postHoc = NA,
         ..postHocCorr = NA,
-        ..descPlotsHAxis = NA,
-        ..descPlotsSepLines = NA,
-        ..descPlotsSepPlots = NA,
-        ..descPlotsErrBar = NA,
-        ..descPlotsCIWidth = NA,
-        ..dispDescStats = NA)
+        ..plotHAxis = NA,
+        ..plotSepLines = NA,
+        ..plotSepPlots = NA,
+        ..plotError = NA,
+        ..ciWidth = NA,
+        ..descStats = NA)
 )
 
 #' @import jmvcore
@@ -458,33 +458,33 @@ anovaRMResults <- R6::R6Class(
                 options=options,
                 name="descPlot",
                 title="Descriptive Plot",
-                visible="(descPlotsHAxis)",
+                visible="(plotHAxis)",
                 width=500,
                 height=300,
                 renderFun=".descPlot",
                 clearWith=list(
-                    "descPlotsHAxis",
-                    "descPlotsSepLines",
-                    "descPlotsSepPlots",
+                    "plotHAxis",
+                    "plotSepLines",
+                    "plotSepPlots",
                     "rm",
-                    "descPlotsErrBar",
-                    "descPlotsCIWidth"))
+                    "plotError",
+                    "ciWidth"))
             private$..descPlots <- jmvcore::Array$new(
                 options=options,
                 name="descPlots",
                 title="Descriptive Plots",
-                visible="(descPlotsSepPlots)",
+                visible="(plotSepPlots)",
                 template=jmvcore::Image$new(
                     options=options,
                     title="$key",
                     renderFun=".descPlot",
                     clearWith=list(
-                        "descPlotsHAxis",
-                        "descPlotsSepLines",
-                        "descPlotsSepPlots",
+                        "plotHAxis",
+                        "plotSepLines",
+                        "plotSepPlots",
                         "rm",
-                        "descPlotsErrBar",
-                        "descPlotsCIWidth")))
+                        "plotError",
+                        "ciWidth")))
             self$add(private$..rmTable)
             self$add(private$..bsTable)
             self$add(private$..assump)
@@ -516,6 +516,22 @@ anovaRMBase <- R6::R6Class(
 #' Repeated Measures ANOVA
 #'
 #' 
+#'
+#' @examples
+#' \dontrun{
+#' anovaRM(data=data,
+#'     rm=list(
+#'         list(
+#'             label="When",
+#'             levels=c("Before", "After"))),
+#'     rmCells=list(
+#'         list(
+#'             measure="column 1",
+#'             cell="Before"),
+#'         list(
+#'             measure="column 2",
+#'             cell="After")))
+#' }
 #' @param data the data as a data frame
 #' @param rm a list of lists, where each list describes the \code{label} (as a 
 #'   string) and the \code{levels} (as vector of strings) of a particular 
@@ -532,10 +548,9 @@ anovaRMBase <- R6::R6Class(
 #'   terms to go into the model 
 #' @param bsTerms a list of character vectors describing the between subjects 
 #'   terms to go into the model 
-#' @param ss \code{'1'}, \code{'2'} or \code{'3'} (default); the sum of 
-#'   squares to use 
+#' @param ss \code{'2'} or \code{'3'} (default), the sum of squares to use 
 #' @param effectSize one or more of \code{'eta'}, \code{'partEta'}, or 
-#'   \code{}omega\code{}; use eta², partial eta², and omega² effect sizes, 
+#'   \code{'omega'}; use eta², partial eta², and omega² effect sizes, 
 #'   respectively 
 #' @param spherTests \code{TRUE} or \code{FALSE} (default), perform sphericity 
 #'   tests 
@@ -545,25 +560,25 @@ anovaRMBase <- R6::R6Class(
 #'   respectively 
 #' @param leveneTest \code{TRUE} or \code{FALSE} (default), test for equality 
 #'   of variances (i.e., Levene's test) 
-#' @param contrasts .
+#' @param contrasts in development
 #' @param postHoc a list of character vectors describing the post-hoc tests 
 #'   that need to be computed 
-#' @param postHocCorr one or more of \code{'tukey'} (default), 
-#'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use Tukey, Scheffe, 
+#' @param postHocCorr one or more of \code{'none'}, \code{'tukey'} (default), 
+#'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe, 
 #'   Bonferroni and Holm posthoc corrections, respectively 
-#' @param descPlotsHAxis a string naming the variable placed on the horizontal 
-#'   axis of the plot 
-#' @param descPlotsSepLines a string naming the variable represented as 
-#'   separate lines on the plot 
-#' @param descPlotsSepPlots a string naming the variable to separate over to 
-#'   form multiple plots 
-#' @param descPlotsErrBar \code{'none'}, \code{'ci'} (default), or 
-#'   \code{'se'}. Use no error bars, use confidence intervals, or use standard 
-#'   errors on the plots, respectively 
-#' @param descPlotsCIWidth a number between 50 and 99.9 (default: 95) 
-#'   specifying the confidence interval width 
-#' @param dispDescStats \code{TRUE} or \code{FALSE} (default), provide 
-#'   descriptive statistics 
+#' @param plotHAxis a string naming the variable placed on the horizontal axis 
+#'   of the plot 
+#' @param plotSepLines a string naming the variable represented as separate 
+#'   lines on the plot 
+#' @param plotSepPlots a string naming the variable to separate over to form 
+#'   multiple plots 
+#' @param plotError \code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
+#'   no error bars, use confidence intervals, or use standard errors on the 
+#'   plots, respectively 
+#' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the 
+#'   confidence interval width 
+#' @param descStats \code{TRUE} or \code{FALSE} (default), provide descriptive 
+#'   statistics 
 #' @export
 anovaRM <- function(
     data,
@@ -586,12 +601,12 @@ anovaRM <- function(
     postHoc = NULL,
     postHocCorr = list(
                 "tukey"),
-    descPlotsHAxis = NULL,
-    descPlotsSepLines = NULL,
-    descPlotsSepPlots = NULL,
-    descPlotsErrBar = "ci",
-    descPlotsCIWidth = 95,
-    dispDescStats = FALSE) {
+    plotHAxis = NULL,
+    plotSepLines = NULL,
+    plotSepPlots = NULL,
+    plotError = "ci",
+    ciWidth = 95,
+    descStats = FALSE) {
 
     options <- anovaRMOptions$new(
         rm = rm,
@@ -608,12 +623,12 @@ anovaRM <- function(
         contrasts = contrasts,
         postHoc = postHoc,
         postHocCorr = postHocCorr,
-        descPlotsHAxis = descPlotsHAxis,
-        descPlotsSepLines = descPlotsSepLines,
-        descPlotsSepPlots = descPlotsSepPlots,
-        descPlotsErrBar = descPlotsErrBar,
-        descPlotsCIWidth = descPlotsCIWidth,
-        dispDescStats = dispDescStats)
+        plotHAxis = plotHAxis,
+        plotSepLines = plotSepLines,
+        plotSepPlots = plotSepPlots,
+        plotError = plotError,
+        ciWidth = ciWidth,
+        descStats = descStats)
 
     results <- anovaRMResults$new(
         options = options)

@@ -46,4 +46,9 @@ correlations}
 \description{
 Reliability Analysis
 }
+\examples{
+\dontrun{
+reliability(data, vars=c('x', 'y', 'z'))
+}
+}
 

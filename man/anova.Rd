@@ -4,53 +4,49 @@
 \alias{anova}
 \title{ANOVA}
 \usage{
-anova(data, dependent, fixedFactors = NULL, modelTerms = NULL,
-  contrasts = NULL, descPlotsHAxis = NULL, descPlotsSepLines = NULL,
-  descPlotsSepPlots = NULL, postHoc = NULL, corrNone = FALSE,
-  corrTukey = TRUE, corrScheffe = FALSE, corrBonf = FALSE,
-  corrHolm = FALSE, descStats = FALSE, homo = FALSE, qq = FALSE,
-  etaSq = FALSE, etaSqP = FALSE, omegaSq = FALSE, plotError = "ci",
-  ciWidth = 95, ss = "3")
+anova(data, dep, factors = NULL, modelTerms = NULL, ss = "3", effectSize,
+  contrasts = NULL, plotHAxis = NULL, plotSepLines = NULL,
+  plotSepPlots = NULL, postHoc = NULL, postHocCorr = list("tukey"),
+  descStats = FALSE, homo = FALSE, qq = FALSE, plotError = "ci",
+  ciWidth = 95)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dependent}{a string naming the dependent variable from \code{data}, 
+\item{dep}{a string naming the dependent variable from \code{data}, 
 variable must be numeric}
 
-\item{fixedFactors}{a vector of strings naming the fixed factors from 
+\item{factors}{a vector of strings naming the fixed factors from 
 \code{data}}
 
 \item{modelTerms}{a list of character vectors describing the terms to go 
 into the model}
 
-\item{contrasts}{contrasts}
+\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of 
+squares to use}
 
-\item{descPlotsHAxis}{a string naming the variable placed on the horizontal 
-axis of the plot}
+\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or 
+\code{'omega'}; use eta², partial eta², and omega² effect sizes, 
+respectively}
 
-\item{descPlotsSepLines}{a string naming the variable represented as 
-separate lines on the plot}
+\item{contrasts}{a list of lists specifying the factor and type of contrast 
+to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'}, 
+\code{'helmert'}, \code{'repeated'} or \code{'polynomial'}}
 
-\item{descPlotsSepPlots}{a string naming the variable to separate over to 
-form multiple plots}
+\item{plotHAxis}{a string naming the variable placed on the horizontal axis 
+of the plot}
+
+\item{plotSepLines}{a string naming the variable represented as separate 
+lines on the plot}
+
+\item{plotSepPlots}{a string naming the variable to separate over to form 
+multiple plots}
 
 \item{postHoc}{a list of terms to perform post-hoc tests on}
 
-\item{corrNone}{\code{TRUE} or \code{FALSE} (default), provide uncorrected 
-p-values in post-hoc tests}
-
-\item{corrTukey}{\code{TRUE} (default) or \code{FALSE}, perform Tukey 
-correction in post-hoc tests}
-
-\item{corrScheffe}{\code{TRUE} or \code{FALSE} (default), perform Scheffe 
-correction in post-hoc tests}
-
-\item{corrBonf}{\code{TRUE} or \code{FALSE} (default), perform Bonferroni 
-correction in post-hoc tests}
-
-\item{corrHolm}{\code{TRUE} or \code{FALSE} (default), perform Holm 
-correction in post-hoc tests}
+\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'}, 
+\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey, 
+Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
 
 \item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
 statistics}
@@ -61,25 +57,21 @@ tests}
 \item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
 residuals}
 
-\item{etaSq}{\code{TRUE} or \code{FALSE} (default), provide eta² (effect 
-size)}
-
-\item{etaSqP}{\code{TRUE} or \code{FALSE} (default), provide partial eta² 
-(effect size)}
-
-\item{omegaSq}{\code{TRUE} or \code{FALSE} (default), provide omega² 
-(effect size)}
-
-\item{plotError}{\code{'ci'} or \code{'se'}, use confidence intervals or 
-standard errors on the plot}
+\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
+no error bars, use confidence intervals, or use standard errors on the 
+plots, respectively}
 
 \item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
 confidence interval width}
-
-\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of 
-squares to use}
 }
 \description{
 Analysis of Variance
+}
+\examples{
+\dontrun{
+anova(ToothGrowth,
+    dep='len',
+    factors=c('dose', 'supp'))
+}
 }
 

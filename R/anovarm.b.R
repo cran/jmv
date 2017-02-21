@@ -128,12 +128,6 @@ anovaRMClass <- R6::R6Class(
             allLevels <- c(bsLevels, rmLevels)
             tables <- self$results$postHoc
 
-            postHocCorr <- self$options$postHocCorr
-            ptukey <- "tukey" %in% postHocCorr
-            pscheffe <-"scheffe" %in% postHocCorr
-            pbonf <- "bonf" %in% postHocCorr
-            pholm <- "holm" %in% postHocCorr
-
             postHocRows <- list()
 
             for (ph in phTerms) {
@@ -155,14 +149,11 @@ anovaRMClass <- R6::R6Class(
                 table$addColumn(name='df', title='df', type='number')
                 table$addColumn(name='t', title='t', type='number')
 
-                if (ptukey)
-                    table$addColumn(name='ptukey', title='p<sub>tukey</sub>', type='number', format='zto,pvalue')
-                if (pscheffe)
-                    table$addColumn(name='pscheffe', title='p<sub>sheffe</sub>', type='number', format='zto,pvalue')
-                if (pbonf)
-                    table$addColumn(name='pbonferroni', title='p<sub>bonferroni</sub>', type='number', format='zto,pvalue')
-                if (pholm)
-                    table$addColumn(name='pholm', title='p<sub>holm</sub>', type='number', format='zto,pvalue')
+                table$addColumn(name='pnone', title='p', type='number', format='zto,pvalue', visible="(postHocCorr:none)")
+                table$addColumn(name='ptukey', title='p<sub>tukey</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:tukey)")
+                table$addColumn(name='pscheffe', title='p<sub>sheffe</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:scheffe)")
+                table$addColumn(name='pbonferroni', title='p<sub>bonferroni</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:bonf)")
+                table$addColumn(name='pholm', title='p<sub>holm</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:holm)")
 
                 combin <- expand.grid(allLevels[rev(ph)])
                 combin <- sapply(combin, as.character, simplify = 'matrix')
@@ -203,15 +194,15 @@ anovaRMClass <- R6::R6Class(
             private$.postHocRows <- postHocRows
         },
         .initDescPlots=function() {
-            isAxis <- ! is.null(self$options$descPlotsHAxis)
-            isMulti <- ! is.null(self$options$descPlotsSepPlots)
+            isAxis <- ! is.null(self$options$plotHAxis)
+            isMulti <- ! is.null(self$options$plotSepPlots)
 
             self$results$get('descPlot')$setVisible( ! isMulti && isAxis)
             self$results$get('descPlots')$setVisible(isMulti)
 
             if (isMulti) {
 
-                sepPlotsName <- self$options$descPlotsSepPlots
+                sepPlotsName <- self$options$plotSepPlots
 
                 if (sepPlotsName %in% self$options$bs) {
                     sepPlotsVar <- self$data[[sepPlotsName]]
@@ -472,12 +463,6 @@ anovaRMClass <- R6::R6Class(
 
             tables <- self$results$postHoc
 
-            postHocCorr <- self$options$postHocCorr
-            ptukey <- "tukey" %in% postHocCorr
-            pscheffe <-"scheffe" %in% postHocCorr
-            pbonf <- "bonf" %in% postHocCorr
-            pholm <- "holm" %in% postHocCorr
-
             postHocRows <- list()
 
             for (ph in terms) {
@@ -494,14 +479,11 @@ anovaRMClass <- R6::R6Class(
                     table$setStatus('running')
 
                     referenceGrid <- lsmeans::lsmeans(result, formula)
+                    none <- summary(pairs(referenceGrid, adjust='none'))
                     tukey <- summary(pairs(referenceGrid, adjust='tukey'))
-
-                    if (pscheffe)
-                        scheffe <- summary(pairs(referenceGrid, adjust='scheffe'))
-                    if (pbonf)
-                        bonferroni <- summary(pairs(referenceGrid, adjust='bonferroni'))
-                    if (pholm)
-                        holm <- summary(pairs(referenceGrid, adjust='holm'))
+                    scheffe <- summary(pairs(referenceGrid, adjust='scheffe'))
+                    bonferroni <- summary(pairs(referenceGrid, adjust='bonferroni'))
+                    holm <- summary(pairs(referenceGrid, adjust='holm'))
 
                 }) # suppressWarnings
 
@@ -533,14 +515,11 @@ anovaRMClass <- R6::R6Class(
                     row[['df']] <- tukey[index,'df']
                     row[['t']] <- if(reverse) -tukey[index,'t.ratio'] else tukey[index,'t.ratio']
 
-                    if (ptukey)
-                        row[['ptukey']] <- tukey[index,'p.value']
-                    if (pscheffe)
-                        row[['pscheffe']] <- scheffe[index,'p.value']
-                    if (pbonf)
-                        row[['pbonferroni']] <- bonferroni[index,'p.value']
-                    if (pholm)
-                        row[['pholm']] <- holm[index,'p.value']
+                    row[['pnone']] <- none[index,'p.value']
+                    row[['ptukey']] <- tukey[index,'p.value']
+                    row[['pscheffe']] <- scheffe[index,'p.value']
+                    row[['pbonferroni']] <- bonferroni[index,'p.value']
+                    row[['pholm']] <- holm[index,'p.value']
 
                     table$setRow(rowNo=i, values=row)
                     private$.checkpoint()
@@ -551,12 +530,12 @@ anovaRMClass <- R6::R6Class(
         .prepareDescPlots=function(data) {
 
             depName <- '.DEPENDENT'
-            groupName <- self$options$descPlotsHAxis
-            linesName <- self$options$descPlotsSepLines
-            plotsName <- self$options$descPlotsSepPlots
+            groupName <- self$options$plotHAxis
+            linesName <- self$options$plotSepLines
+            plotsName <- self$options$plotSepPlots
 
-            ciWidth   <- self$options$descPlotsCIWidth
-            errorBarType <- self$options$descPlotsErrBar
+            ciWidth   <- self$options$ciWidth
+            errorBarType <- self$options$plotError
 
             if (length(depName) == 0 || length(groupName) == 0)
                 return()
@@ -599,7 +578,7 @@ anovaRMClass <- R6::R6Class(
 
             plotData <- cbind(plotData, lower=plotData$mean-plotData$err, upper=plotData$mean+plotData$err)
 
-            if (self$options$descPlotsErrBar != 'none') {
+            if (self$options$plotError != 'none') {
                 yAxisRange <- pretty(c(plotData$lower, plotData$upper))
             } else {
                 yAxisRange <- plotData$mean
@@ -624,9 +603,9 @@ anovaRMClass <- R6::R6Class(
             if (is.null(image$state))
                 return(FALSE)
 
-            groupName <- self$options$descPlotsHAxis
-            linesName <- self$options$descPlotsSepLines
-            plotsName <- self$options$descPlotsSepPlots
+            groupName <- self$options$plotHAxis
+            linesName <- self$options$plotSepLines
+            plotsName <- self$options$plotSepPlots
 
             the <- theme(
                 text=element_text(size=16, colour='#333333'),
@@ -639,16 +618,16 @@ anovaRMClass <- R6::R6Class(
                 axis.title.x=element_text(margin=margin(10,0,0,0)),
                 axis.title.y=element_text(margin=margin(0,10,0,0)))
 
-            if (self$options$descPlotsErrBar != 'none')
+            if (self$options$plotError != 'none')
                 dodge <- position_dodge(0.2)
             else
                 dodge <- position_dodge(0)
 
 
             errorType <- ''
-            if (self$options$descPlotsErrBar != 'none') {
-                if (self$options$descPlotsErrBar == 'ci') {
-                    ciWidth <- self$options$descPlotsCIWidth
+            if (self$options$plotError != 'none') {
+                if (self$options$plotError == 'ci') {
+                    ciWidth <- self$options$ciWidth
                     errorType <- paste0('(', ciWidth, '% CI)')
                 } else {
                     errorType <- '(SE)'
@@ -663,7 +642,7 @@ anovaRMClass <- R6::R6Class(
                     scale_y_continuous(limits=c(min(image$state$range), max(image$state$range))) +
                     the
 
-                if (self$options$descPlotsErrBar != 'none')
+                if (self$options$plotError != 'none')
                     p <- p + geom_errorbar(aes(x=group, ymin=lower, ymax=upper, width=.1, group=lines), size=.8, position=dodge)
 
                 p <- p + geom_point(shape=21, fill='white', size=3, position=dodge)
@@ -678,7 +657,7 @@ anovaRMClass <- R6::R6Class(
                     scale_y_continuous(limits=c(min(image$state$range), max(image$state$range))) +
                     the
 
-                if (self$options$descPlotsErrBar != 'none')
+                if (self$options$plotError != 'none')
                     p <- p + geom_errorbar(aes(x=group, ymin=lower, ymax=upper, colour='colour', width=.1), size=.8)
 
                 p <- p + geom_point(aes(x=group, y=mean, colour='colour'), shape=21, fill='white', size=3)

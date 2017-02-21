@@ -12,7 +12,8 @@ ttestPS(data, pairs, students = TRUE, bf = FALSE, bfPrior = 0.707,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{pairs}{the variables of interest in \code{data}}
+\item{pairs}{a list of lists specifying the pairs of measurement in 
+\code{data}}
 
 \item{students}{\code{TRUE} (default) or \code{FALSE}, perform Student's 
 t-tests}
@@ -57,6 +58,13 @@ dependent variables, \code{'listwise'} excludes a row from all analyses if
 one of its entries is missing.}
 }
 \description{
-Paired Samples T-Test
+Provides a range of descriptive statistics
+}
+\examples{
+\dontrun{
+ttestPS(data,
+    pairs=list(
+        list(i1='x', i2='y')))
+}
 }
 

@@ -4,22 +4,27 @@
 \alias{propTestN}
 \title{Proportion Test (N Outcomes)}
 \usage{
-propTestN(data, var, counts, expected, ratio = NULL)
+propTestN(data, var, counts = NULL, expected = FALSE, ratio = NULL)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
 \item{var}{a string naming the variable of interest in \code{data}}
 
-\item{counts}{.}
+\item{counts}{a string naming a variable in \code{data} containing counts, 
+or NULL if each row represents a single observation}
 
 \item{expected}{\code{TRUE} or \code{FALSE} (default), whether expected 
 counts should be displayed}
 
-\item{ratio}{a string naming the variable representing counts, or NULL if 
-each row represents a single observation}
+\item{ratio}{a vector of numbers: the expected proportions}
 }
 \description{
-Proportion Test (N Outcomes)
+chi² Goodness of fit
+}
+\examples{
+\dontrun{
+propTestN(data, var="outcome", ratio=c(1,1,1))
+}
 }
 

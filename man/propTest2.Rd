@@ -28,6 +28,11 @@ intervals}
 interval width}
 }
 \description{
-Proportion Test (2 Outcomes)
+Binomial test
+}
+\examples{
+\dontrun{
+propTest2(data, vars='x')
+}
 }
 

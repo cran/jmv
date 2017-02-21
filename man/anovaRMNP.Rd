@@ -25,6 +25,11 @@ plot}
 bars to use in the plot}
 }
 \description{
-Repeated Measures ANOVA (Non-parametric)
+Friedman
+}
+\examples{
+\dontrun{
+anovaRMNP(data, measures=c('before', 'during', 'after'))
+}
 }
 
