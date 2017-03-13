@@ -4,11 +4,11 @@
 \alias{anova}
 \title{ANOVA}
 \usage{
-anova(data, dep, factors = NULL, modelTerms = NULL, ss = "3", effectSize,
-  contrasts = NULL, plotHAxis = NULL, plotSepLines = NULL,
-  plotSepPlots = NULL, postHoc = NULL, postHocCorr = list("tukey"),
-  descStats = FALSE, homo = FALSE, qq = FALSE, plotError = "ci",
-  ciWidth = 95)
+anova(data, dep, factors = NULL, modelTerms = NULL, ss = "3",
+  effectSize = NULL, contrasts = NULL, plotHAxis = NULL,
+  plotSepLines = NULL, plotSepPlots = NULL, postHoc = NULL,
+  postHocCorr = list("tukey"), descStats = FALSE, homo = FALSE,
+  qq = FALSE, plotError = "ci", ciWidth = 95)
 }
 \arguments{
 \item{data}{the data as a data frame}

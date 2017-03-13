@@ -1,8 +1,8 @@
 Package: jmv
 Type: Package
 Title: The 'jamovi' Analyses
-Version: 0.7.0.3
-Date: 2017-02-21
+Version: 0.7.0.6
+Date: 2017-03-13
 Author: Jonathon Love, Damian Dropmann, Ravi Selker
 Maintainer: Jonathon Love <jon@thon.cc>
 Description: 'jamovi' is a rich graphical statistics program providing many
@@ -12,12 +12,13 @@ Description: 'jamovi' is a rich graphical statistics program providing many
     available to the R user.
 License: GPL (>= 2)
 Depends: R (>= 3.2)
-Imports: jmvcore (>= 0.3), R6, car, multcomp, ggplot2, PMCMR, lsmeans,
+Imports: jmvcore (>= 0.4), R6, car, multcomp, ggplot2, PMCMR, lsmeans,
         lsr, vcd, vcdExtra, GGally, BayesFactor, psych, GPArotation,
         afex
+Suggests: testthat
 Encoding: UTF-8
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2017-02-21 00:48:14 UTC; jonathon
+Packaged: 2017-03-13 09:24:13 UTC; jonathon
 Repository: CRAN
-Date/Publication: 2017-02-21 08:02:41
+Date/Publication: 2017-03-13 12:29:09
