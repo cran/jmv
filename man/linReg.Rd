@@ -4,16 +4,96 @@
 \alias{linReg}
 \title{Linear Regression}
 \usage{
-linReg(data, dep, cov)
+linReg(data, dep, blocks = list(list()), fitMeasures = list("r", "r2"),
+  modelTest = NULL, modelComp = list("f"), stdEst = FALSE, ci = FALSE,
+  ciWidth = 95, coefPlot = FALSE, qqPlot = FALSE, resPlots = FALSE,
+  durbinWatson = FALSE, collinearity = FALSE, desc = FALSE,
+  cooks = FALSE, modelSelected = -1)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dep}{a string naming the dependent variable}
+\item{dep}{a string naming the dependent variable from \code{data}, 
+variable must be numeric}
 
-\item{cov}{a vector of strings naming the covariates}
+\item{blocks}{a list containing vectors of strings that name the covariates 
+that are added to the model. The elements are added to the model according 
+to their order in the list}
+
+\item{fitMeasures}{one or more of \code{'r'}, \code{'r2'}, \code{'r2Adj'}, 
+\code{'aic'}, \code{'bic'}, or \code{'rmse'}; use R, R², adjusted R², AIC, 
+BIC, and RMSE model fit measures, respectively}
+
+\item{modelTest}{one or more of \code{'f'}, or \code{'bf'}; Use classical 
+F-test, and Bayes factor respectively as overall model tests.}
+
+\item{modelComp}{one or more of \code{'f'}, or \code{'bf'}; Use classical 
+F-test, and Bayes factor respectively as model comparison tests.}
+
+\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized 
+estimate for the model coefficients}
+
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide a confidence 
+interval for the model coefficients}
+
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+confidence interval width}
+
+\item{coefPlot}{\code{TRUE} or \code{FALSE} (default), provide a 
+coefficient plot where for each predictor the estimated coefficient and 
+confidence intervals are plotted.}
+
+\item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
+residuals}
+
+\item{resPlots}{\code{TRUE} or \code{FALSE} (default), provide residual 
+plots where the dependent variable and each covariate is plotted against 
+the standardized residuals.}
+
+\item{durbinWatson}{\code{TRUE} or \code{FALSE} (default), provide results 
+of the Durbin- Watson test for autocorrelation}
+
+\item{collinearity}{\code{TRUE} or \code{FALSE} (default), provide VIF and 
+tolerence collinearity statistics}
+
+\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+statistics}
+
+\item{cooks}{\code{TRUE} or \code{FALSE} (default), provide summary 
+statistics for the Cook's distance}
+
+\item{modelSelected}{an integer defining the model for which the model 
+specific output needs to be calculated (defaults to most complex model)}
 }
 \description{
 Linear Regression
 }
+\examples{
+data('Prestige', package='car')
 
+jmv::linReg(data=Prestige, dep="income",
+            blocks=list(c("education", "prestige", "women")))
+
+#
+#  Model Fit Measures
+#  ---------------------------
+#    Model    R        R²
+#  ---------------------------
+#    1        0.802    0.643
+#  ---------------------------
+#
+#
+#
+#  Model Coefficients
+#  -----------------------------------------------------------------
+#    Model    Predictor    Estimate    SE         t         p
+#  -----------------------------------------------------------------
+#    1        Intercept      -253.8    1086.16    -0.234     0.816
+#             education       177.2     187.63     0.944     0.347
+#             prestige        141.4      29.91     4.729    < .001
+#             women           -50.9       8.56    -5.948    < .001
+#  -----------------------------------------------------------------
+#
+#
+
+}

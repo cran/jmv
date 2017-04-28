@@ -25,4 +25,3 @@ logLinear(data, counts, factors = NULL, modelTerms = NULL, est = FALSE,
 \description{
 Log-Linear Regression
 }
-

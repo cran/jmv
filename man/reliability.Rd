@@ -51,4 +51,3 @@ Reliability Analysis
 reliability(data, vars=c('x', 'y', 'z'))
 }
 }
-

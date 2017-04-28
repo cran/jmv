@@ -6,7 +6,7 @@
 \usage{
 anovaRM(data, rm = list(list(label = "RM Factor 1", levels = list("Level 1",
   "Level 2"))), rmCells = NULL, bs = NULL, cov = NULL, rmTerms = NULL,
-  bsTerms = NULL, ss = "3", effectSize, spherTests = FALSE,
+  bsTerms = NULL, ss = "3", effectSize = NULL, spherTests = FALSE,
   spherCorr = list("none"), leveneTest = FALSE, contrasts = NULL,
   postHoc = NULL, postHocCorr = list("tukey"), plotHAxis = NULL,
   plotSepLines = NULL, plotSepPlots = NULL, plotError = "ci",
@@ -100,4 +100,3 @@ anovaRM(data=data,
             cell="After")))
 }
 }
-

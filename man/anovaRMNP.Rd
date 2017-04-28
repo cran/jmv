@@ -32,4 +32,3 @@ Friedman
 anovaRMNP(data, measures=c('before', 'during', 'after'))
 }
 }
-

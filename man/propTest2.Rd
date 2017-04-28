@@ -35,4 +35,3 @@ Binomial test
 propTest2(data, vars='x')
 }
 }
-

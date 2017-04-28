@@ -66,4 +66,3 @@ Provides a range of descriptive statistics
 descriptives(data, vars=c('x', 'y', 'z'))
 }
 }
-

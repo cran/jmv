@@ -4,68 +4,75 @@
 \alias{ancova}
 \title{ANCOVA}
 \usage{
-ancova(data, dependent, fixedFactors = NULL, covariates = NULL,
-  modelTerms = NULL, contrasts = NULL, descPlotsHAxis = NULL,
-  descPlotsSepLines = NULL, descPlotsSepPlots = NULL, postHoc = NULL,
-  corrTukey = FALSE, corrScheffe = FALSE, corrBonf = FALSE,
-  corrHolm = FALSE, compMain = FALSE, compMainCorr = "none",
-  descStats = FALSE, homo = FALSE, qq = FALSE, etaSq = FALSE,
-  etaSqP = FALSE, omegaSq = FALSE, plotError = "ci", ciWidth = 95,
-  ss = "3")
+ancova(data, dep, factors = NULL, cov = NULL, modelTerms = NULL,
+  ss = "3", effectSize = NULL, contrasts = NULL, plotHAxis = NULL,
+  plotSepLines = NULL, plotSepPlots = NULL, postHoc = NULL,
+  postHocCorr = list("tukey"), descStats = FALSE, homo = FALSE,
+  qq = FALSE, plotError = "ci", ciWidth = 95)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dependent}{a string naming the dependent variable in \code{data}}
+\item{dep}{a string naming the dependent variable from \code{data}, 
+variable must be numeric}
 
-\item{fixedFactors}{The fixed factors}
+\item{factors}{a vector of strings naming the fixed factors from 
+\code{data}}
 
-\item{covariates}{The covariates}
+\item{cov}{a vector of strings naming the covariates from \code{data}}
 
-\item{modelTerms}{The model terms}
+\item{modelTerms}{a list of character vectors describing the terms to go 
+into the model}
 
-\item{contrasts}{.}
+\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of 
+squares to use}
 
-\item{descPlotsHAxis}{The Horizontal axis variable}
+\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or 
+\code{'omega'}; use eta², partial eta², and omega² effect sizes, 
+respectively}
 
-\item{descPlotsSepLines}{The Separate lines variable}
+\item{contrasts}{a list of lists specifying the factor and type of contrast 
+to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'}, 
+\code{'helmert'}, \code{'repeated'} or \code{'polynomial'}}
 
-\item{descPlotsSepPlots}{The Separate plots variable}
+\item{plotHAxis}{a string naming the variable placed on the horizontal axis 
+of the plot}
 
-\item{postHoc}{Post Hoc Tests}
+\item{plotSepLines}{a string naming the variable represented as separate 
+lines on the plot}
 
-\item{corrTukey}{Post Hoc Tests Tukey Correction}
+\item{plotSepPlots}{a string naming the variable to separate over to form 
+multiple plots}
 
-\item{corrScheffe}{Post Hoc Tests Scheffe Correction}
+\item{postHoc}{a list of terms to perform post-hoc tests on}
 
-\item{corrBonf}{Post Hoc Tests Bonferroni Correction}
+\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'}, 
+\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey, 
+Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
 
-\item{corrHolm}{Post Hoc Tests Holm Correction}
+\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+statistics}
 
-\item{compMain}{Compare main effects}
+\item{homo}{\code{TRUE} or \code{FALSE} (default), perform homogeneity 
+tests}
 
-\item{compMainCorr}{Confidence interval adjustment}
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
+residuals}
 
-\item{descStats}{Descriptive statistics}
+\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
+no error bars, use confidence intervals, or use standard errors on the 
+plots, respectively}
 
-\item{homo}{Display Homogeneity tests}
-
-\item{qq}{Display Q-Q plot of residuals}
-
-\item{etaSq}{Effect size n2}
-
-\item{etaSqP}{Effect size partial n2}
-
-\item{omegaSq}{Effect size w2}
-
-\item{plotError}{Specifies the Error Bar definition as either "Confidence 
-interval"(default) or "Standard Error"}
-
-\item{ciWidth}{.}
-
-\item{ss}{Sum of squares}
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+confidence interval width}
 }
 \description{
-ANCOVA
+Analysis of Covariance
 }
+\examples{
+\dontrun{
+data('ToothGrowth')
 
+ancova(ToothGrowth, dep = 'len', factors = 'supp', cov = 'dose')
+}
+}

@@ -25,4 +25,3 @@ Kruskal-Wallis
 anovaNP(data, deps='len', group='dose')
 }
 }
-

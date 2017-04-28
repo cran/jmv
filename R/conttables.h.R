@@ -315,12 +315,38 @@ contTablesBase <- R6::R6Class(
 
 #' Contingency Tables
 #'
-#' chi² test of association
+#' X² test of association
 #'
 #' @examples
-#' \dontrun{
-#' contTables(data, rows='x', cols='y')
-#' }
+#' data('HairEyeColor')
+#' dat <- as.data.frame(HairEyeColor)
+#' 
+#' jmv::contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
+#' 
+#' #
+#' #  Contingency Tables
+#' #
+#' #  Contingency Tables
+#' #  -----------------------------------------------------
+#' #    Hair     Brown    Blue    Hazel    Green    Total
+#' #  -----------------------------------------------------
+#' #    Black       68      20       15        5      108
+#' #    Brown      119      84       54       29      286
+#' #    Red         26      17       14       14       71
+#' #    Blond        7      94       10       16      127
+#' #    Total      220     215       93       64      592
+#' #  -----------------------------------------------------
+#' #
+#' #
+#' #  X² Tests
+#' #  -------------------------------
+#' #          Value    df    p
+#' #  -------------------------------
+#' #    X²      138     9    < .001
+#' #    N       592
+#' #  -------------------------------
+#' #
+#' 
 #' @param data the data as a data frame
 #' @param rows a string naming the variable to use as the rows in the 
 #'   contingency table 
@@ -330,8 +356,8 @@ contTablesBase <- R6::R6Class(
 #'   each row represents a single observation 
 #' @param layers a character vector naming variables to split the contingency 
 #'   table across 
-#' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide chi² 
-#' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide chi² with 
+#' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X² 
+#' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with 
 #'   continuity correction 
 #' @param likeRat \code{TRUE} or \code{FALSE} (default), provide the 
 #'   likelihood ratio 
@@ -400,7 +426,6 @@ contTables <- function(
         data = data)
 
     analysis$run()
-    analysis$render()
 
     analysis$results
 }

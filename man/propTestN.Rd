@@ -20,11 +20,34 @@ counts should be displayed}
 \item{ratio}{a vector of numbers: the expected proportions}
 }
 \description{
-chi² Goodness of fit
+X² Goodness of fit
 }
 \examples{
-\dontrun{
-propTestN(data, var="outcome", ratio=c(1,1,1))
-}
-}
+data('HairEyeColor')
+dat <- as.data.frame(HairEyeColor)
 
+propTestN(dat, var = 'Eye', counts = 'Freq', ratio = c(1,1,1,1))
+
+#
+#  Proportion Test (N Outcomes)
+#
+#  Proportions
+#  --------------------------------
+#    Level    Count    Proportion
+#  --------------------------------
+#    Brown      220         0.372
+#    Blue       215         0.363
+#    Hazel       93         0.157
+#    Green       64         0.108
+#  --------------------------------
+#
+#
+#  X² Goodness of Fit
+#  -----------------------
+#    X²     df    p
+#  -----------------------
+#    133     3    < .001
+#  -----------------------
+#
+
+}

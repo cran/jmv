@@ -68,8 +68,19 @@ one of its entries is missing.}
 Independent Samples T-Test
 }
 \examples{
-\dontrun{
-ttestIS(data, vars='len', group='supp')
-}
-}
+data('ToothGrowth')
 
+ttestIS(data = ToothGrowth, vars = 'len', group = 'supp')
+
+#
+# Independent Samples T-Test
+#
+# Independent Samples T-Test
+# ----------------------------------------------------
+#                         statistic    df      p
+# ----------------------------------------------------
+#   len    Student's t         1.92    58.0    0.060
+# ----------------------------------------------------
+#
+
+}
