@@ -14,6 +14,11 @@ anovaRMClass <- R6::R6Class(
             private$.initPostHocTables()
             private$.initDescPlots()
 
+            measures <- lapply(self$options$rmCells, function(x) x$measure)
+            areNull  <- vapply(measures, is.null, FALSE, USE.NAMES=FALSE)
+
+            if (any(areNull))
+                self$setStatus('complete')
         },
         .run=function() {
 
@@ -1062,5 +1067,17 @@ anovaRMClass <- R6::R6Class(
             termsTotal <- sum(model[indicesTotal,'SS'])
 
             return(termsTotal)
+        },
+        .sourcifyOption = function(option) {
+
+            name <- option$name
+            value <- option$value
+
+            if (name == 'contrasts') {
+                if (all(vapply(value, function(x) x$type == 'none', FALSE)))
+                    return('')
+            }
+
+            super$.sourcifyOption(option)
         })
 )

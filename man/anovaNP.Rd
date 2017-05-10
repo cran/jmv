@@ -22,6 +22,19 @@ Kruskal-Wallis
 }
 \examples{
 \dontrun{
-anovaNP(data, deps='len', group='dose')
+data('ToothGrowth')
+
+anovaNP(ToothGrowth, deps = 'len', group = 'dose')
+
+#
+# One-way ANOVA (Non-parametric)
+#
+# Kruskal-Wallis
+# -------------------------------
+#          X²      df    p
+# -------------------------------
+#   len    40.7     2    < .001
+# -------------------------------
+#
 }
 }

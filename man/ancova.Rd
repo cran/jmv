@@ -4,7 +4,7 @@
 \alias{ancova}
 \title{ANCOVA}
 \usage{
-ancova(data, dep, factors = NULL, cov = NULL, modelTerms = NULL,
+ancova(data, dep, factors = NULL, covs = NULL, modelTerms = NULL,
   ss = "3", effectSize = NULL, contrasts = NULL, plotHAxis = NULL,
   plotSepLines = NULL, plotSepPlots = NULL, postHoc = NULL,
   postHocCorr = list("tukey"), descStats = FALSE, homo = FALSE,
@@ -19,7 +19,7 @@ variable must be numeric}
 \item{factors}{a vector of strings naming the fixed factors from 
 \code{data}}
 
-\item{cov}{a vector of strings naming the covariates from \code{data}}
+\item{covs}{a vector of strings naming the covariates from \code{data}}
 
 \item{modelTerms}{a list of character vectors describing the terms to go 
 into the model}
@@ -73,6 +73,19 @@ Analysis of Covariance
 \dontrun{
 data('ToothGrowth')
 
-ancova(ToothGrowth, dep = 'len', factors = 'supp', cov = 'dose')
+ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
+
+#
+#  ANCOVA
+#
+#  ANCOVA
+#  -----------------------------------------------------------------------
+#                 Sum of Squares    df    Mean Square    F        p
+#  -----------------------------------------------------------------------
+#    supp                    205     1          205.4     11.4     0.001
+#    dose                   2224     1         2224.3    124.0    < .001
+#    Residuals              1023    57           17.9
+#  -----------------------------------------------------------------------
+#
 }
 }

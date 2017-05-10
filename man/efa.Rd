@@ -6,11 +6,11 @@
 \usage{
 efa(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
   rotation = "oblimin", hideLoadings = 0.3, screePlot = FALSE,
-  eigenValues = FALSE, factorCor = FALSE, factorSummary = FALSE,
-  modelFit = FALSE, kmoTest = FALSE, bartlettTest = FALSE)
+  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE,
+  modelFit = FALSE, kmo = FALSE, bartlett = FALSE)
 }
 \arguments{
-\item{data}{.}
+\item{data}{the data as a data frame}
 
 \item{vars}{a vector of strings naming the variables of interest in 
 \code{data}}
@@ -31,8 +31,7 @@ to be included in the model}
 
 \item{screePlot}{\code{TRUE} or \code{FALSE} (default), show scree plot}
 
-\item{eigenValues}{\code{TRUE} or \code{FALSE} (default), show eigenvalue 
-table}
+\item{eigen}{\code{TRUE} or \code{FALSE} (default), show eigenvalue table}
 
 \item{factorCor}{\code{TRUE} or \code{FALSE} (default), show factor 
 correlations}
@@ -43,33 +42,31 @@ summary}
 \item{modelFit}{\code{TRUE} or \code{FALSE} (default), show model fit 
 measures and test}
 
-\item{kmoTest}{\code{TRUE} or \code{FALSE} (default), show 
-Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results}
+\item{kmo}{\code{TRUE} or \code{FALSE} (default), show Kaiser-Meyer-Olkin 
+(KMO) measure of sampling adequacy (MSA) results}
 
-\item{bartlettTest}{\code{TRUE} or \code{FALSE} (default), show Bartlett's 
-test of sphericity results}
+\item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test 
+of sphericity results}
 }
 \description{
-Exporatory Factor Analysis
+Exploratory Factor Analysis
 }
 \examples{
 data('iris')
-dat <- as.data.frame(iris)
 
-jmv::efa(data = dat, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
+efa(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
 
 #
 #  Factor Loadings
-#  -------------------------------------------------
-#                    1        2         Uniqueness
-#  -------------------------------------------------
-#    Sepal.Length    0.948                 0.10181
-#    Sepal.Width              -0.747       0.42199
-#    Petal.Length    0.917     0.394       0.00483
-#    Petal.Width     0.883     0.388       0.07088
-#  -------------------------------------------------
-#    Note. 'varimax' rotation was used
-#
+#  ------------------------------------------------
+#                    1        2        Uniqueness
+#  ------------------------------------------------
+#    Sepal.Length    0.993                0.10181
+#    Sepal.Width              0.725       0.42199
+#    Petal.Length    0.933                0.00483
+#    Petal.Width     0.897                0.07088
+#  ------------------------------------------------
+#    Note. 'oblimin' rotation was used
 #
 
 }

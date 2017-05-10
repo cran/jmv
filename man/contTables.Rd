@@ -66,7 +66,7 @@ X² test of association
 data('HairEyeColor')
 dat <- as.data.frame(HairEyeColor)
 
-jmv::contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
+contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
 
 #
 #  Contingency Tables

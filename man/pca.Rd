@@ -6,11 +6,11 @@
 \usage{
 pca(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
   rotation = "varimax", hideLoadings = 0.3, screePlot = FALSE,
-  eigenValues = FALSE, factorCor = FALSE, factorSummary = FALSE,
-  kmoTest = FALSE, bartlettTest = FALSE)
+  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE, kmo = FALSE,
+  bartlett = FALSE)
 }
 \arguments{
-\item{data}{.}
+\item{data}{the data as a data frame}
 
 \item{vars}{a vector of strings naming the variables of interest in 
 \code{data}}
@@ -32,8 +32,7 @@ component to be included in the model}
 
 \item{screePlot}{\code{TRUE} or \code{FALSE} (default), show scree plot}
 
-\item{eigenValues}{\code{TRUE} or \code{FALSE} (default), show eigenvalue 
-table}
+\item{eigen}{\code{TRUE} or \code{FALSE} (default), show eigenvalue table}
 
 \item{factorCor}{\code{TRUE} or \code{FALSE} (default), show factor 
 correlations}
@@ -41,20 +40,19 @@ correlations}
 \item{factorSummary}{\code{TRUE} or \code{FALSE} (default), show factor 
 summary}
 
-\item{kmoTest}{\code{TRUE} or \code{FALSE} (default), show 
-Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results}
+\item{kmo}{\code{TRUE} or \code{FALSE} (default), show Kaiser-Meyer-Olkin 
+(KMO) measure of sampling adequacy (MSA) results}
 
-\item{bartlettTest}{\code{TRUE} or \code{FALSE} (default), show Bartlett's 
-test of sphericity results}
+\item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test 
+of sphericity results}
 }
 \description{
 Principal Component Analysis
 }
 \examples{
 data('iris')
-dat <- as.data.frame(iris)
 
-jmv::pca(data = dat, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
+pca(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
 
 #
 #  Component Loadings

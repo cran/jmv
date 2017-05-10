@@ -4,9 +4,8 @@
 \alias{mancova}
 \title{MANCOVA}
 \usage{
-mancova(data, deps, fixedFactors = NULL, covariates = NULL,
-  multivarStats = list("pillai", "wilks", "hotel", "roy"), boxM = FALSE,
-  shapiroWilk = FALSE, qqPlot = FALSE)
+mancova(data, deps, factors = NULL, covs = NULL, multivar = list("pillai",
+  "wilks", "hotel", "roy"), boxM = FALSE, shapiro = FALSE, qqPlot = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -14,21 +13,19 @@ mancova(data, deps, fixedFactors = NULL, covariates = NULL,
 \item{deps}{a string naming the dependent variable from \code{data}, 
 variable must be numeric}
 
-\item{fixedFactors}{a vector of strings naming the fixed factors from 
-\code{data}}
+\item{factors}{a vector of strings naming the factors from \code{data}}
 
-\item{covariates}{a vector of strings naming the covariates from 
-\code{data}}
+\item{covs}{a vector of strings naming the covariates from \code{data}}
 
-\item{multivarStats}{one or more of \code{'pillai'}, \code{'wilks'}, 
+\item{multivar}{one or more of \code{'pillai'}, \code{'wilks'}, 
 \code{'hotel'}, or \code{'roy'}; use Pillai's Trace, Wilks' Lambda, 
 Hotelling's Trace, and Roy's Largest Root multivariate statistics, 
 respectively}
 
 \item{boxM}{\code{TRUE} or \code{FALSE} (default), provide Box's M test}
 
-\item{shapiroWilk}{\code{TRUE} or \code{FALSE} (default), provide 
-Shapiro-Wilk test}
+\item{shapiro}{\code{TRUE} or \code{FALSE} (default), provide Shapiro-Wilk 
+test}
 
 \item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
 multivariate normality}
@@ -38,16 +35,10 @@ Multivariate Analysis of Covariance
 }
 \examples{
 data('iris')
-dat <- as.data.frame(iris)
 
-jmv::mancova(
-    data=dat,
-    deps=c(
-        "Sepal.Length",
-        "Sepal.Width",
-        "Petal.Length",
-        "Petal.Width"),
-    fixedFactors="Species")
+mancova(data = iris,
+    deps = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),
+    factors = 'Species')
 
 #
 #  Multivariate Tests

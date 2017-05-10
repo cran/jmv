@@ -10,7 +10,7 @@ ancovaOptions <- R6::R6Class(
         initialize = function(
             dep = NULL,
             factors = NULL,
-            cov = NULL,
+            covs = NULL,
             modelTerms = NULL,
             ss = "3",
             effectSize = NULL,
@@ -49,9 +49,9 @@ ancovaOptions <- R6::R6Class(
                     "nominal",
                     "ordinal"),
                 default=NULL)
-            private$..cov <- jmvcore::OptionVariables$new(
-                "cov",
-                cov,
+            private$..covs <- jmvcore::OptionVariables$new(
+                "covs",
+                covs,
                 suggested=list(
                     "continuous",
                     "ordinal"),
@@ -160,7 +160,7 @@ ancovaOptions <- R6::R6Class(
         
             self$.addOption(private$..dep)
             self$.addOption(private$..factors)
-            self$.addOption(private$..cov)
+            self$.addOption(private$..covs)
             self$.addOption(private$..modelTerms)
             self$.addOption(private$..ss)
             self$.addOption(private$..effectSize)
@@ -179,7 +179,7 @@ ancovaOptions <- R6::R6Class(
     active = list(
         dep = function() private$..dep$value,
         factors = function() private$..factors$value,
-        cov = function() private$..cov$value,
+        covs = function() private$..covs$value,
         modelTerms = function() private$..modelTerms$value,
         ss = function() private$..ss$value,
         effectSize = function() private$..effectSize$value,
@@ -197,7 +197,7 @@ ancovaOptions <- R6::R6Class(
     private = list(
         ..dep = NA,
         ..factors = NA,
-        ..cov = NA,
+        ..covs = NA,
         ..modelTerms = NA,
         ..ss = NA,
         ..effectSize = NA,
@@ -403,14 +403,27 @@ ancovaBase <- R6::R6Class(
 #' \dontrun{
 #' data('ToothGrowth')
 #' 
-#' ancova(ToothGrowth, dep = 'len', factors = 'supp', cov = 'dose')
+#' ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
+#' 
+#' #
+#' #  ANCOVA
+#' #
+#' #  ANCOVA
+#' #  -----------------------------------------------------------------------
+#' #                 Sum of Squares    df    Mean Square    F        p
+#' #  -----------------------------------------------------------------------
+#' #    supp                    205     1          205.4     11.4     0.001
+#' #    dose                   2224     1         2224.3    124.0    < .001
+#' #    Residuals              1023    57           17.9
+#' #  -----------------------------------------------------------------------
+#' #
 #' }
 #' @param data the data as a data frame
 #' @param dep a string naming the dependent variable from \code{data}, 
 #'   variable must be numeric 
 #' @param factors a vector of strings naming the fixed factors from 
 #'   \code{data}
-#' @param cov a vector of strings naming the covariates from \code{data}
+#' @param covs a vector of strings naming the covariates from \code{data}
 #' @param modelTerms a list of character vectors describing the terms to go 
 #'   into the model 
 #' @param ss \code{'1'}, \code{'2'} or \code{'3'} (default), the sum of 
@@ -447,7 +460,7 @@ ancova <- function(
     data,
     dep,
     factors = NULL,
-    cov = NULL,
+    covs = NULL,
     modelTerms = NULL,
     ss = "3",
     effectSize = NULL,
@@ -467,7 +480,7 @@ ancova <- function(
     options <- ancovaOptions$new(
         dep = dep,
         factors = factors,
-        cov = cov,
+        covs = covs,
         modelTerms = modelTerms,
         ss = ss,
         effectSize = effectSize,

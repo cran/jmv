@@ -71,7 +71,7 @@ Analysis of Variance
 \dontrun{
 data('ToothGrowth')
 
-anova(ToothGrowth, dep='len', factors=c('dose', 'supp'))
+anova(ToothGrowth, dep = 'len', factors = c('dose', 'supp'))
 
 #
 #  ANOVA

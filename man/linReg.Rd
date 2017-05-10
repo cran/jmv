@@ -7,8 +7,8 @@
 linReg(data, dep, blocks = list(list()), fitMeasures = list("r", "r2"),
   modelTest = NULL, modelComp = list("f"), stdEst = FALSE, ci = FALSE,
   ciWidth = 95, coefPlot = FALSE, qqPlot = FALSE, resPlots = FALSE,
-  durbinWatson = FALSE, collinearity = FALSE, desc = FALSE,
-  cooks = FALSE, modelSelected = -1)
+  durbin = FALSE, collin = FALSE, desc = FALSE, cooks = FALSE,
+  modelSelected = -1)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -50,10 +50,10 @@ residuals}
 plots where the dependent variable and each covariate is plotted against 
 the standardized residuals.}
 
-\item{durbinWatson}{\code{TRUE} or \code{FALSE} (default), provide results 
-of the Durbin- Watson test for autocorrelation}
+\item{durbin}{\code{TRUE} or \code{FALSE} (default), provide results of the 
+Durbin- Watson test for autocorrelation}
 
-\item{collinearity}{\code{TRUE} or \code{FALSE} (default), provide VIF and 
+\item{collin}{\code{TRUE} or \code{FALSE} (default), provide VIF and 
 tolerence collinearity statistics}
 
 \item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
@@ -71,8 +71,8 @@ Linear Regression
 \examples{
 data('Prestige', package='car')
 
-jmv::linReg(data=Prestige, dep="income",
-            blocks=list(c("education", "prestige", "women")))
+linReg(data = Prestige, dep = 'income',
+       blocks = list(c('education', 'prestige', 'women')))
 
 #
 #  Model Fit Measures
@@ -93,7 +93,6 @@ jmv::linReg(data=Prestige, dep="income",
 #             prestige        141.4      29.91     4.729    < .001
 #             women           -50.9       8.56    -5.948    < .001
 #  -----------------------------------------------------------------
-#
 #
 
 }

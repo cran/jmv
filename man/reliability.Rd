@@ -7,7 +7,7 @@
 reliability(data, vars, alphaScale = TRUE, omegaScale = FALSE,
   meanScale = FALSE, sdScale = FALSE, corPlot = FALSE,
   alphaItems = FALSE, omegaItems = FALSE, meanItems = FALSE,
-  sdItems = FALSE, itemRestCor = FALSE)
+  sdItems = FALSE, itemRestCor = FALSE, revItems = NULL)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -42,12 +42,26 @@ deviations}
 
 \item{itemRestCor}{\code{TRUE} or \code{FALSE} (default), provide item-rest 
 correlations}
+
+\item{revItems}{a vector containing strings naming the varibales that are 
+reverse scaled}
 }
 \description{
 Reliability Analysis
 }
 \examples{
-\dontrun{
-reliability(data, vars=c('x', 'y', 'z'))
-}
+data('iris')
+
+reliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),
+            omegaScale = TRUE)
+
+#
+#  Scale Reliability Statistics
+#  -----------------------------------------
+#             Cronbach's alpha    McDonald's omega
+#  -----------------------------------------
+#    scale           0.708           0.848
+#  -----------------------------------------
+#
+
 }

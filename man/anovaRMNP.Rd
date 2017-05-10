@@ -29,6 +29,17 @@ Friedman
 }
 \examples{
 \dontrun{
-anovaRMNP(data, measures=c('before', 'during', 'after'))
+data('bugs', package = 'jmv')
+
+anovaRMNP(bugs, measures = c('LDLF', 'LDHF', 'HDLF', 'HDHF'))
+
+#
+#  Friedman
+#  ------------------------
+#    X²      df    p
+#  ------------------------
+#    55.8     3    < .001
+#  ------------------------
+#
 }
 }
