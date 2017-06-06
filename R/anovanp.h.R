@@ -124,28 +124,39 @@ anovaNPBase <- R6::R6Class(
 #' Kruskal-Wallis
 #'
 #' @examples
-#' \dontrun{
 #' data('ToothGrowth')
 #' 
 #' anovaNP(ToothGrowth, deps = 'len', group = 'dose')
 #' 
 #' #
-#' # One-way ANOVA (Non-parametric)
+#' #  One-way ANOVA (Non-parametric)
 #' #
-#' # Kruskal-Wallis
-#' # -------------------------------
-#' #          X²      df    p
-#' # -------------------------------
-#' #   len    40.7     2    < .001
-#' # -------------------------------
+#' #  Kruskal-Wallis
+#' #  -------------------------------
+#' #           X²      df    p
+#' #  -------------------------------
+#' #    len    40.7     2    < .001
+#' #  -------------------------------
 #' #
-#' }
+#' 
 #' @param data the data as a data frame
 #' @param deps a string naming the dependent variable in \code{data}
 #' @param group a string naming the grouping or independent variable in 
 #'   \code{data}
 #' @param pairs \code{TRUE} or \code{FALSE} (default), perform pairwise 
 #'   comparisons 
+#' @return A results object containing:
+#' \tabular{llllll}{
+#'   \code{results$table} \tab \tab \tab \tab \tab a table of the test results \cr
+#'   \code{results$comparisons} \tab \tab \tab \tab \tab an array of pairwise comparison tables \cr
+#' }
+#'
+#' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+#'
+#' \code{results$table$asDF}
+#'
+#' \code{as.data.frame(results$table)}
+#'
 #' @export
 anovaNP <- function(
     data,

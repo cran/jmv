@@ -59,6 +59,23 @@ percentages}
 \item{pcTot}{\code{TRUE} or \code{FALSE} (default), provide total 
 percentages}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$freqs} \tab \tab \tab \tab \tab a table of proportions \cr
+  \code{results$chiSq} \tab \tab \tab \tab \tab a table of X² test results \cr
+  \code{results$odds} \tab \tab \tab \tab \tab a table of odds ratio results \cr
+  \code{results$nom} \tab \tab \tab \tab \tab a table of the 'nominal' test results \cr
+  \code{results$gamma} \tab \tab \tab \tab \tab a table of the gamma test results \cr
+  \code{results$taub} \tab \tab \tab \tab \tab a table of the Kendall's tau-b test results \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$freqs$asDF}
+
+\code{as.data.frame(results$freqs)}
+}
 \description{
 X² test of association
 }

@@ -282,8 +282,8 @@ ancovaResults <- R6::R6Class(
                             name="qq",
                             title="Q-Q Plot",
                             visible="(qq)",
-                            width=300,
-                            height=300,
+                            width=450,
+                            height=400,
                             renderFun=".qqPlot",
                             requiresData=TRUE,
                             clearWith=list(
@@ -346,6 +346,7 @@ ancovaResults <- R6::R6Class(
                 height=300,
                 renderFun=".descPlot",
                 clearWith=list(
+                    "dep",
                     "plotHAxis",
                     "plotSepLines",
                     "plotSepPlots",
@@ -361,6 +362,7 @@ ancovaResults <- R6::R6Class(
                     title="$key",
                     renderFun=".descPlot",
                     clearWith=list(
+                        "dep",
                         "plotHAxis",
                         "plotSepLines",
                         "plotSepPlots",
@@ -400,7 +402,6 @@ ancovaBase <- R6::R6Class(
 #' Analysis of Covariance
 #'
 #' @examples
-#' \dontrun{
 #' data('ToothGrowth')
 #' 
 #' ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
@@ -417,7 +418,7 @@ ancovaBase <- R6::R6Class(
 #' #    Residuals              1023    57           17.9
 #' #  -----------------------------------------------------------------------
 #' #
-#' }
+#' 
 #' @param data the data as a data frame
 #' @param dep a string naming the dependent variable from \code{data}, 
 #'   variable must be numeric 
@@ -455,6 +456,24 @@ ancovaBase <- R6::R6Class(
 #'   plots, respectively 
 #' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the 
 #'   confidence interval width 
+#' @return A results object containing:
+#' \tabular{llllll}{
+#'   \code{results$main} \tab \tab \tab \tab \tab a table of ANCOVA results \cr
+#'   \code{results$assump$homo} \tab \tab \tab \tab \tab a table of homogeneity tests \cr
+#'   \code{results$assump$qq} \tab \tab \tab \tab \tab a q-q plot \cr
+#'   \code{results$contrasts} \tab \tab \tab \tab \tab an array of contrasts tables \cr
+#'   \code{results$postHoc} \tab \tab \tab \tab \tab an array of post-hoc tables \cr
+#'   \code{results$desc} \tab \tab \tab \tab \tab a table of descriptives \cr
+#'   \code{results$descPlot} \tab \tab \tab \tab \tab a descriptives plot \cr
+#'   \code{results$descPlots} \tab \tab \tab \tab \tab an array of descriptives plots \cr
+#' }
+#'
+#' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+#'
+#' \code{results$main$asDF}
+#'
+#' \code{as.data.frame(results$main)}
+#'
 #' @export
 ancova <- function(
     data,

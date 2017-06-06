@@ -27,6 +27,18 @@ intervals}
 \item{ciWidth}{a number between 50 and 99.9 (default: 95), the confidence 
 interval width}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$table} \tab \tab \tab \tab \tab a table of the proportions and test results \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$table$asDF}
+
+\code{as.data.frame(results$table)}
+}
 \description{
 Binomial test
 }

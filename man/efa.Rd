@@ -48,6 +48,12 @@ measures and test}
 \item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test 
 of sphericity results}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$text} \tab \tab \tab \tab \tab a preformatted \cr
+}
+}
 \description{
 Exploratory Factor Analysis
 }

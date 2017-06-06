@@ -17,24 +17,36 @@ anovaNP(data, deps, group, pairs = FALSE)
 \item{pairs}{\code{TRUE} or \code{FALSE} (default), perform pairwise 
 comparisons}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$table} \tab \tab \tab \tab \tab a table of the test results \cr
+  \code{results$comparisons} \tab \tab \tab \tab \tab an array of pairwise comparison tables \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$table$asDF}
+
+\code{as.data.frame(results$table)}
+}
 \description{
 Kruskal-Wallis
 }
 \examples{
-\dontrun{
 data('ToothGrowth')
 
 anovaNP(ToothGrowth, deps = 'len', group = 'dose')
 
 #
-# One-way ANOVA (Non-parametric)
+#  One-way ANOVA (Non-parametric)
 #
-# Kruskal-Wallis
-# -------------------------------
-#          X²      df    p
-# -------------------------------
-#   len    40.7     2    < .001
-# -------------------------------
+#  Kruskal-Wallis
+#  -------------------------------
+#           X²      df    p
+#  -------------------------------
+#    len    40.7     2    < .001
+#  -------------------------------
 #
-}
+
 }

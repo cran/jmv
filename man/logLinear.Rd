@@ -22,6 +22,18 @@ logLinear(data, counts, factors = NULL, modelTerms = NULL, est = FALSE,
 
 \item{ciWidth}{.}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$table} \tab \tab \tab \tab \tab a table \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$table$asDF}
+
+\code{as.data.frame(results$table)}
+}
 \description{
 Log-Linear Regression
 }

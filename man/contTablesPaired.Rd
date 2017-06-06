@@ -4,8 +4,8 @@
 \alias{contTablesPaired}
 \title{Paired Samples Contingency Tables}
 \usage{
-contTablesPaired(data, rows, cols, counts = NULL, pcRow = FALSE,
-  pcCol = FALSE)
+contTablesPaired(data, rows, cols, counts = NULL, chiSq = TRUE,
+  chiSqCorr = FALSE, exact = FALSE, pcRow = FALSE, pcCol = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -19,10 +19,31 @@ contingency table}
 \item{counts}{a string naming the variable to use as counts, or NULL if 
 each row represents a single observation}
 
+\item{chiSq}{\code{TRUE} (default) or \code{FALSE}, provide X²}
+
+\item{chiSqCorr}{\code{TRUE} or \code{FALSE} (default), provide X² with 
+continuity correction}
+
+\item{exact}{\code{TRUE} or \code{FALSE} (default), provide an exact log 
+odds ratio}
+
 \item{pcRow}{\code{TRUE} or \code{FALSE} (default), provide row percentages}
 
 \item{pcCol}{\code{TRUE} or \code{FALSE} (default), provide column 
 percentages}
+}
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$freqs} \tab \tab \tab \tab \tab a proportions table \cr
+  \code{results$test} \tab \tab \tab \tab \tab a table of test results \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$freqs$asDF}
+
+\code{as.data.frame(results$freqs)}
 }
 \description{
 McNemar test

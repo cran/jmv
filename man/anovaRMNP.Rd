@@ -24,11 +24,24 @@ plot}
 \item{plotType}{\code{'means'} (default) or \code{'medians'}, the error 
 bars to use in the plot}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$table} \tab \tab \tab \tab \tab a table of the Friedman test results \cr
+  \code{results$comp} \tab \tab \tab \tab \tab a table of the pairwise comparisons \cr
+  \code{results$plot} \tab \tab \tab \tab \tab a descriptives plot \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$table$asDF}
+
+\code{as.data.frame(results$table)}
+}
 \description{
 Friedman
 }
 \examples{
-\dontrun{
 data('bugs', package = 'jmv')
 
 anovaRMNP(bugs, measures = c('LDLF', 'LDHF', 'HDLF', 'HDHF'))
@@ -41,5 +54,5 @@ anovaRMNP(bugs, measures = c('LDLF', 'LDHF', 'HDLF', 'HDHF'))
 #    55.8     3    < .001
 #  ------------------------
 #
-}
+
 }

@@ -396,28 +396,19 @@ linRegClass <- R6::R6Class(
             image$setState(df)
 
         },
-        .qqPlot = function(image, ...) {
+        .qqPlot = function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
 
-            the <- theme(
-                text=element_text(size=16, colour='#333333'),
-                plot.background=element_rect(fill='transparent', color=NA),
-                panel.background=element_rect(fill='#E8E8E8'),
-                plot.margin=margin(15, 15, 15, 15),
-                axis.text.x=element_text(margin=margin(5,0,0,0)),
-                axis.text.y=element_text(margin=margin(0,5,0,0)),
-                axis.title.x=element_text(margin=margin(10,0,0,0)),
-                axis.title.y=element_text(margin=margin(0,10,0,0)),
-                plot.title=element_text(margin=margin(0, 0, 15, 0)))
-
-            print(ggplot(data=image$state, aes(x=x, y=y)) +
-                      geom_point(aes(x=x,y=y), colour='#333333') +
-                      geom_abline(slope=1, intercept=0, colour='#333333') +
+            p <- ggplot(data=image$state, aes(x=x, y=y)) +
+                      geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
+                      geom_point(aes(x=x,y=y), size=2, colour=theme$color[1]) +
                       xlab("Theoretical Quantiles") +
                       ylab("Standardized Residuals") +
-                      the)
+                      ggtheme
+
+            print(p)
 
             TRUE
         },
@@ -434,27 +425,18 @@ linRegClass <- R6::R6Class(
                 image$setState(list(df=df, xlab=term))
             }
         },
-        .resPlot = function(image, ...) {
+        .resPlot = function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
 
-            the <- theme(
-                text=element_text(size=16, colour='#333333'),
-                plot.background=element_rect(fill='transparent', color=NA),
-                panel.background=element_rect(fill='#E8E8E8'),
-                plot.margin=margin(15, 15, 15, 15),
-                axis.text.x=element_text(margin=margin(5,0,0,0)),
-                axis.text.y=element_text(margin=margin(0,5,0,0)),
-                axis.title.x=element_text(margin=margin(10,0,0,0)),
-                axis.title.y=element_text(margin=margin(0,10,0,0)),
-                plot.title=element_text(margin=margin(0, 0, 15, 0)))
-
-            print(ggplot(data=image$state$df, aes(y=y, x=x)) +
-                      geom_point(aes(x=x,y=y), colour='#333333') +
+            p <- ggplot(data=image$state$df, aes(y=y, x=x)) +
+                      geom_point(aes(x=x,y=y), colour=theme$color[1]) +
                       xlab(image$state$xlab) +
                       ylab("Residuals") +
-                      the)
+                      ggtheme
+
+            print(p)
 
             TRUE
         },
@@ -475,21 +457,12 @@ linRegClass <- R6::R6Class(
 
             image$setState(df)
         },
-        .coefPlot = function(image, ...) {
+        .coefPlot = function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
 
-            the <- theme(
-                text=element_text(size=16, colour='#333333'),
-                plot.background=element_rect(fill='transparent', color=NA),
-                panel.background=element_rect(fill='#E8E8E8'),
-                plot.margin=margin(15, 15, 15, 15),
-                axis.text.x=element_text(margin=margin(5,0,0,0)),
-                axis.text.y=element_text(margin=margin(0,5,0,0)),
-                axis.title.x=element_text(margin=margin(10,0,0,0)),
-                axis.title.y=element_text(margin=margin(0,10,0,0)),
-                plot.title=element_text(margin=margin(0, 0, 15, 0)),
+            themeSpec <- theme(
                 legend.position = 'right',
                 legend.background = element_rect("transparent"),
                 legend.title = element_blank(),
@@ -499,13 +472,13 @@ linRegClass <- R6::R6Class(
             errorType <- paste0(self$options$ciWidth, '% CI')
 
             p <- ggplot(data=image$state) +
-                geom_hline(yintercept=0, linetype="dotted", colour='#333333', size=1.2) +
+                geom_hline(yintercept=0, linetype="dotted", colour=theme$color[1], size=1.2) +
                 geom_errorbar(aes(x=term, ymin=conf.low, ymax=conf.high, width=.1, colour='colour'), size=.8) +
-                geom_point(aes(x=term, y=estimate, colour='colour'), shape=21, fill='white', size=3) +
-                scale_colour_manual(name='', values=c(colour='#333333'), labels=paste("", errorType)) +
+                geom_point(aes(x=term, y=estimate, colour='colour'), shape=21, fill=theme$fill[1], size=3) +
+                scale_colour_manual(name='', values=c(colour=theme$color[1]), labels=paste("", errorType)) +
                 labs(x="Predictor", y="Standardized Estimate") +
                 coord_flip() +
-                the
+                ggtheme + themeSpec
 
             print(p)
 

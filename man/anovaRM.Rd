@@ -81,6 +81,25 @@ confidence interval width}
 \item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
 statistics}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$rmTable} \tab \tab \tab \tab \tab a table \cr
+  \code{results$bsTable} \tab \tab \tab \tab \tab a table \cr
+  \code{results$assump$spherTable} \tab \tab \tab \tab \tab a table \cr
+  \code{results$assump$leveneTable} \tab \tab \tab \tab \tab a table \cr
+  \code{results$contrasts} \tab \tab \tab \tab \tab an array of tables \cr
+  \code{results$postHoc} \tab \tab \tab \tab \tab an array of tables \cr
+  \code{results$descPlot} \tab \tab \tab \tab \tab an image \cr
+  \code{results$descPlots} \tab \tab \tab \tab \tab an array of images \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$rmTable$asDF}
+
+\code{as.data.frame(results$rmTable)}
+}
 \description{
 Repeated Measures ANOVA
 }

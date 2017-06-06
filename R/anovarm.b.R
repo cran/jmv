@@ -158,7 +158,7 @@ anovaRMClass <- R6::R6Class(
 
                 table$addColumn(name='pnone', title='p', type='number', format='zto,pvalue', visible="(postHocCorr:none)")
                 table$addColumn(name='ptukey', title='p<sub>tukey</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:tukey)")
-                table$addColumn(name='pscheffe', title='p<sub>sheffe</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:scheffe)")
+                table$addColumn(name='pscheffe', title='p<sub>scheffe</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:scheffe)")
                 table$addColumn(name='pbonferroni', title='p<sub>bonferroni</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:bonf)")
                 table$addColumn(name='pholm', title='p<sub>holm</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:holm)")
 
@@ -269,7 +269,7 @@ anovaRMClass <- R6::R6Class(
                         HF <- 1
                     } else {
                         GG <- if (is.na(epsilon[indexEps,'GG eps'])) 1 else epsilon[indexEps,'GG eps']
-                        HF <- if (is.na(epsilon[indexEps,'HF eps'])) 1 else epsilon[indexEps,'HF eps']
+                        HF <- if (is.na(epsilon[indexEps,'HF eps']) || epsilon[indexEps,'HF eps'] > 1) 1 else epsilon[indexEps,'HF eps']
                     }
 
                     row[['df[GG]']] <- row[['df[none]']] * GG
@@ -607,7 +607,7 @@ anovaRMClass <- R6::R6Class(
                 }
             }
         },
-        .descPlot=function(image, ...) {
+        .descPlot=function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
@@ -615,17 +615,6 @@ anovaRMClass <- R6::R6Class(
             groupName <- self$options$plotHAxis
             linesName <- self$options$plotSepLines
             plotsName <- self$options$plotSepPlots
-
-            the <- theme(
-                text=element_text(size=16, colour='#333333'),
-                plot.background=element_rect(fill='transparent', color=NA),
-                legend.background=element_rect(fill='transparent', colour=NA),
-                panel.background=element_rect(fill='#E8E8E8'),
-                plot.margin=margin(15, 15, 15, 15),
-                axis.text.x=element_text(margin=margin(5,0,0,0)),
-                axis.text.y=element_text(margin=margin(0,5,0,0)),
-                axis.title.x=element_text(margin=margin(10,0,0,0)),
-                axis.title.y=element_text(margin=margin(0,10,0,0)))
 
             if (self$options$plotError != 'none')
                 dodge <- position_dodge(0.2)
@@ -649,7 +638,7 @@ anovaRMClass <- R6::R6Class(
                     geom_line(size=.8, position=dodge) +
                     labs(x=groupName, y="", colour=paste(linesName, errorType)) +
                     scale_y_continuous(limits=c(min(image$state$range), max(image$state$range))) +
-                    the
+                    ggtheme
 
                 if (self$options$plotError != 'none')
                     p <- p + geom_errorbar(aes(x=group, ymin=lower, ymax=upper, width=.1, group=lines), size=.8, position=dodge)
@@ -662,14 +651,14 @@ anovaRMClass <- R6::R6Class(
 
                 p <- ggplot(data=image$state$data) +
                     labs(x=groupName, y="", colour=paste("", errorType)) +
-                    scale_colour_manual(name=paste("", errorType), values=c(colour='#333333'), labels='') +
+                    scale_colour_manual(name=paste("", errorType), values=c(colour=theme$color[1]), labels='') +
                     scale_y_continuous(limits=c(min(image$state$range), max(image$state$range))) +
-                    the
+                    ggtheme
 
                 if (self$options$plotError != 'none')
                     p <- p + geom_errorbar(aes(x=group, ymin=lower, ymax=upper, colour='colour', width=.1), size=.8)
 
-                p <- p + geom_point(aes(x=group, y=mean, colour='colour'), shape=21, fill='white', size=3)
+                p <- p + geom_point(aes(x=group, y=mean, colour='colour'), shape=21, fill=theme$fill[1], size=3)
 
                 print(p)
             }

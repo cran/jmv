@@ -233,8 +233,10 @@ pcaResults <- R6::R6Class(
                                 "nFactors",
                                 "rotation"),
                             columns=list(
-                                list(`name`="tli", `title`="TLI", `type`="number"),
                                 list(`name`="rmsea", `title`="RMSEA", `type`="number"),
+                                list(`name`="rmseaLower", `title`="Lower", `type`="number", `superTitle`="RMSEA 90% CI"),
+                                list(`name`="rmseaUpper", `title`="Upper", `type`="number", `superTitle`="RMSEA 90% CI"),
+                                list(`name`="tli", `title`="TLI", `type`="number"),
                                 list(`name`="bic", `title`="BIC", `type`="number"),
                                 list(`name`="chi", `title`="\u03C7\u00B2", `type`="number", `superTitle`="Model Test"),
                                 list(`name`="df", `title`="df", `type`="integer", `superTitle`="Model Test"),
@@ -386,6 +388,24 @@ pcaBase <- R6::R6Class(
 #'   (KMO) measure of sampling adequacy (MSA) results 
 #' @param bartlett \code{TRUE} or \code{FALSE} (default), show Bartlett's test 
 #'   of sphericity results 
+#' @return A results object containing:
+#' \tabular{llllll}{
+#'   \code{results$loadings} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$factorStats$factorSummary} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$factorStats$factorCor} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$modelFit$fit} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$assump$bartlett} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$assump$kmo} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$eigen$initEigen} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$eigen$screePlot} \tab \tab \tab \tab \tab an image \cr
+#' }
+#'
+#' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+#'
+#' \code{results$loadings$asDF}
+#'
+#' \code{as.data.frame(results$loadings)}
+#'
 #' @export
 pca <- function(
     data,

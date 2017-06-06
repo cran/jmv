@@ -19,6 +19,19 @@ counts should be displayed}
 
 \item{ratio}{a vector of numbers: the expected proportions}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$props} \tab \tab \tab \tab \tab a table of the proportions \cr
+  \code{results$tests} \tab \tab \tab \tab \tab a table of the test results \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$props$asDF}
+
+\code{as.data.frame(results$props)}
+}
 \description{
 X² Goodness of fit
 }

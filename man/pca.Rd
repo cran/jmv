@@ -46,6 +46,25 @@ summary}
 \item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test 
 of sphericity results}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$loadings} \tab \tab \tab \tab \tab a table \cr
+  \code{results$factorStats$factorSummary} \tab \tab \tab \tab \tab a table \cr
+  \code{results$factorStats$factorCor} \tab \tab \tab \tab \tab a table \cr
+  \code{results$modelFit$fit} \tab \tab \tab \tab \tab a table \cr
+  \code{results$assump$bartlett} \tab \tab \tab \tab \tab a table \cr
+  \code{results$assump$kmo} \tab \tab \tab \tab \tab a table \cr
+  \code{results$eigen$initEigen} \tab \tab \tab \tab \tab a table \cr
+  \code{results$eigen$screePlot} \tab \tab \tab \tab \tab an image \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$loadings$asDF}
+
+\code{as.data.frame(results$loadings)}
+}
 \description{
 Principal Component Analysis
 }

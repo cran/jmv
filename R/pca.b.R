@@ -77,7 +77,7 @@ pcaClass <- R6::R6Class(
 
             modelFit <- NULL
             if (private$analysis == 'efa')
-                modelFit <- list('tli'=r$TLI, 'bic'=r$BIC, 'rmsea'=r$RMSEA[1], 'chi'=r$STATISTIC, 'df'=r$dof, 'p'=r$PVAL)
+                modelFit <- list('tli'=r$TLI, 'bic'=r$BIC, 'rmsea'=r$RMSEA, 'chi'=r$STATISTIC, 'df'=r$dof, 'p'=r$PVAL)
 
             return(list(loadings=loadings, uniqueness=uniqueness, factorCor=factorCor, SS=SS, nFactors=nFactors,
                         modelFit=modelFit, kmo=kmo, bartlett=bartlett))
@@ -244,7 +244,9 @@ pcaClass <- R6::R6Class(
                 row <- list()
                 row['tli'] <- r$tli
                 row['bic'] <- r$bic
-                row['rmsea'] <- r$rmsea
+                row['rmsea'] <- r$rmsea[1]
+                row['rmseaLower'] <- r$rmsea[2]
+                row['rmseaUpper'] <- r$rmsea[3]
                 row['chi'] <- r$chi
                 row['df'] <- r$df
                 row['p'] <- r$p
@@ -293,21 +295,12 @@ pcaClass <- R6::R6Class(
             image$setState(df)
 
         },
-        .screePlot = function(image, ...) {
+        .screePlot = function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
 
-            the <- theme(
-                text = element_text(size=16, colour='#333333'),
-                plot.background = element_rect(fill='transparent', color=NA),
-                panel.background = element_rect(fill='#E8E8E8'),
-                plot.margin = margin(15, 15, 15, 15),
-                axis.text.x = element_text(margin=margin(5,0,0,0)),
-                axis.text.y = element_text(margin=margin(0,5,0,0)),
-                axis.title.x = element_text(margin=margin(10,0,0,0)),
-                axis.title.y = element_text(margin=margin(0,10,0,0)),
-                plot.title = element_text(margin=margin(0, 0, 15, 0)),
+            themeSpec <- theme(
                 legend.position = c(1, 1),
                 legend.justification = c(1, 1),
                 legend.background = element_rect("transparent"),
@@ -326,19 +319,20 @@ pcaClass <- R6::R6Class(
             else
                 type <- 'Factor'
 
-            p <- ggplot(data=data, aes(x=comp, y=eigen, group=type, linetype=type)) +
-                        geom_line(size=.8) +
-                        geom_point(aes(fill=type), shape=21, size=3) +
-                        # scale_fill_manual(values=c("white", "gray")) +
+            p <- ggplot(data=data, aes(x=comp, y=eigen, group=type, linetype=factor(type))) +
+                        geom_line(size=.8, colour=theme$color[1]) +
+                        geom_point(aes(fill=factor(type), colour=factor(type)), shape=21, size=3) +
+                        scale_fill_manual(values=c(theme$color[1], theme$fill[1])) +
+                        scale_color_manual(values=c(theme$color[1], theme$color[1])) +
                         xlab(type) +
                         ylab("Eigenvalue") +
-                        the
+                        ggtheme + themeSpec
 
             if (nFactorMethod != "parallel")
                 p <- p + theme(legend.position="none")
 
             if (nFactorMethod == "eigen")
-                p <- p + geom_hline(aes(yintercept=self$options$minEigen), linetype = 2)
+                p <- p + geom_hline(aes(yintercept=self$options$minEigen), linetype = 2, colour=theme$color[1])
 
             print(p)
 

@@ -47,6 +47,19 @@ in the correlation matrix plot}
 \code{'neg'} specifying the alernative hypothesis; correlated, correlated 
 positively, correlated negatively respectively.}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$matrix} \tab \tab \tab \tab \tab a correlation matrix table \cr
+  \code{results$plot} \tab \tab \tab \tab \tab a correlation matrix plot \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$matrix$asDF}
+
+\code{as.data.frame(results$matrix)}
+}
 \description{
 Correlation Matrix
 }

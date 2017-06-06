@@ -58,6 +58,20 @@ tables (nominal, ordinal variables only)}
 \item{pcNEqGr}{an integer (default: 4) specifying the number of equal 
 groups}
 }
+\value{
+A results object containing:
+\tabular{llllll}{
+  \code{results$descriptives} \tab \tab \tab \tab \tab a table of the descriptive statistics \cr
+  \code{results$frequencies} \tab \tab \tab \tab \tab an array of frequency tables \cr
+  \code{results$freqPlots} \tab \tab \tab \tab \tab an array of descriptive plots \cr
+}
+
+Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+
+\code{results$descriptives$asDF}
+
+\code{as.data.frame(results$descriptives)}
+}
 \description{
 Provides a range of descriptive statistics
 }
@@ -91,7 +105,7 @@ descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
 #
 #  Frequencies of gear
 #  -------------------------------------------
-#    Level    Counts    \%       Cumulative \%
+#    Level    Counts    \\\%       Cumulative \\\%
 #  -------------------------------------------
 #    3            15    46.9            46.9
 #    4            12    37.5            84.4
