@@ -4,10 +4,12 @@
 \alias{descriptives}
 \title{Descriptives}
 \usage{
-descriptives(data, vars, mean = TRUE, median = TRUE, mode = FALSE,
+descriptives(data, vars, splitBy = NULL, freq = FALSE, hist = FALSE,
+  dens = FALSE, bar = FALSE, barCounts = FALSE, box = FALSE,
+  violin = FALSE, dot = FALSE, dotType = "jitter", n = TRUE,
+  missing = TRUE, mean = TRUE, median = TRUE, mode = FALSE,
   sum = FALSE, sd = FALSE, variance = FALSE, range = FALSE,
   min = TRUE, max = TRUE, se = FALSE, skew = FALSE, kurt = FALSE,
-  freq = FALSE, plots = FALSE, plotW = 480, plotH = 320,
   quart = FALSE, pcEqGr = FALSE, pcNEqGr = 4)
 }
 \arguments{
@@ -15,6 +17,40 @@ descriptives(data, vars, mean = TRUE, median = TRUE, mode = FALSE,
 
 \item{vars}{a vector of strings naming the variables of interest in 
 \code{data}}
+
+\item{splitBy}{a vector of strings naming the variables used to split 
+\code{vars}}
+
+\item{freq}{\code{TRUE} or \code{FALSE} (default), provide frequency tables 
+(nominal, ordinal variables only)}
+
+\item{hist}{\code{TRUE} or \code{FALSE} (default), provide histograms 
+(continuous variables only)}
+
+\item{dens}{\code{TRUE} or \code{FALSE} (default), provide density plots 
+(continuous variables only)}
+
+\item{bar}{\code{TRUE} or \code{FALSE} (default), provide bar plots 
+(nominal, ordinal variables only)}
+
+\item{barCounts}{\code{TRUE} or \code{FALSE} (default), add counts to the
+bar plots}
+
+\item{box}{\code{TRUE} or \code{FALSE} (default), provide box plots 
+(continuous variables only)}
+
+\item{violin}{\code{TRUE} or \code{FALSE} (default), provide violin plots 
+(continuous variables only)}
+
+\item{dot}{\code{TRUE} or \code{FALSE} (default), provide dot plots 
+(continuous variables only)}
+
+\item{dotType}{.}
+
+\item{n}{\code{TRUE} (default) or \code{FALSE}, provide the sample size}
+
+\item{missing}{\code{TRUE} (default) or \code{FALSE}, provide the number of 
+missing values}
 
 \item{mean}{\code{TRUE} (default) or \code{FALSE}, provide the mean}
 
@@ -41,16 +77,6 @@ deviation}
 
 \item{kurt}{\code{TRUE} or \code{FALSE} (default), provide the kurtosis}
 
-\item{freq}{\code{TRUE} or \code{FALSE} (default), provide frequency tables 
-(nominal, ordinal variables only)}
-
-\item{plots}{\code{TRUE} or \code{FALSE} (default), provide frequency 
-tables (nominal, ordinal variables only)}
-
-\item{plotW}{an integer (default: 480) specifying the width of the plots}
-
-\item{plotH}{an integer (default: 320) specifying the height of the plots}
-
 \item{quart}{\code{TRUE} or \code{FALSE} (default), provide quartiles}
 
 \item{pcEqGr}{\code{TRUE} or \code{FALSE} (default), provide quantiles}
@@ -63,7 +89,7 @@ A results object containing:
 \tabular{llllll}{
   \code{results$descriptives} \tab \tab \tab \tab \tab a table of the descriptive statistics \cr
   \code{results$frequencies} \tab \tab \tab \tab \tab an array of frequency tables \cr
-  \code{results$freqPlots} \tab \tab \tab \tab \tab an array of descriptive plots \cr
+  \code{results$plots} \tab \tab \tab \tab \tab an array of descriptive plots \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
@@ -94,23 +120,24 @@ descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
 #  -------------------------------------------
 #    N            32      32      32      32
 #    Missing       0       0       0       0
-#    Mean       20.1    6.19     231
-#    Median     19.2    6.00     196
-#    Minimum    10.4    4.00    71.1
-#    Maximum    33.9    8.00     472
+#    Mean       20.1    6.19     231    3.69
+#    Median     19.2    6.00     196    4.00
+#    Minimum    10.4    4.00    71.1       3
+#    Maximum    33.9    8.00     472       5
 #  -------------------------------------------
 #
 #
 #  Frequencies
 #
 #  Frequencies of gear
-#  -------------------------------------------
-#    Level    Counts    \\\%       Cumulative \\\%
-#  -------------------------------------------
-#    3            15    46.9            46.9
-#    4            12    37.5            84.4
-#    5             5    15.6           100.0
-#  -------------------------------------------
+#  --------------------
+#    Levels    Counts
+#  --------------------
+#    3             15
+#    4             12
+#    5              5
+#  --------------------
+#
 #
 }
 }

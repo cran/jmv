@@ -41,9 +41,8 @@ cfaClass <- R6::R6Class(
                 private$.populateCorResTable(results)
                 private$.populateResCovModTable(results)
                 private$.populateFactorLoadingsModTable(results)
-                
-                if (self$options$pathDiagram)
-                    private$.preparePathDiagram(results)
+                private$.preparePathDiagram(results)
+
             }
         },
 
@@ -625,7 +624,11 @@ cfaClass <- R6::R6Class(
             fit@ParTable$rhs <- jmvcore::fromB64(fit@ParTable$rhs)
             fit@ParTable$lhs <- jmvcore::fromB64(fit@ParTable$lhs)
 
-            semPlotModel <- try(semPlot::semPlotModel(fit), silent = TRUE)
+            if (self$options$pathDiagram) {
+                semPlotModel <- try(semPlot::semPlotModel(fit), silent = TRUE)
+            } else {
+                semPlotModel <- NULL
+            }
 
             image <- self$results$pathDiagram
             image$setState(list(semPlotModel=semPlotModel))
@@ -644,7 +647,7 @@ cfaClass <- R6::R6Class(
             colors <- c(rep(theme$fill[1], length(vars)), rep(theme$fill[1], length(factors)))
             edgeColor <- theme$color[1]
 
-            if (requireNamespace('semPlot')) {
+            if (requireNamespace('semPlot', quietly = TRUE)) {
 
                 suppressWarnings({
 
