@@ -70,6 +70,7 @@ confidence interval width}
 A results object containing:
 \tabular{llllll}{
   \code{results$main} \tab \tab \tab \tab \tab a table of ANCOVA results \cr
+  \code{results$model} \tab \tab \tab \tab \tab The underlying \code{aov} object \cr
   \code{results$assump$homo} \tab \tab \tab \tab \tab a table of homogeneity tests \cr
   \code{results$assump$qq} \tab \tab \tab \tab \tab a q-q plot \cr
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of contrasts tables \cr

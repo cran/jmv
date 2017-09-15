@@ -19,12 +19,18 @@ descriptivesClass <- R6::R6Class(
         #### Init + run functions ----
         .init = function() {
 
+            private$.addQuantiles()
             private$.initDescriptivesTable()
 
             if (self$options$freq)
                 private$.initFrequencyTables()
 
             private$.initPlots()
+
+        },
+        .clear = function(vChanges, ...) {
+
+            private$.clearDescriptivesTable(vChanges)
 
         },
         .run=function() {
@@ -276,6 +282,56 @@ descriptivesClass <- R6::R6Class(
             }
         },
 
+        #### Clear tables ----
+        .clearDescriptivesTable = function(vChanges) {
+
+            table <- self$results$descriptives
+            vars <- vChanges
+            splitBy <- self$options$splitBy
+
+            expandGrid <- function(...) expand.grid(..., stringsAsFactors = FALSE)
+            grid <- rev(do.call(expandGrid, rev(private$levels)))
+
+            colNames <- private$colArgs$name
+
+            values <- rep(NA, length(vars) * ifelse(length(splitBy) > 0, nrow(grid), 1) * length(colNames))
+            names <- rep('', length(vars) * ifelse(length(splitBy) > 0, nrow(grid), 1) * length(colNames))
+            iter <- 1
+
+            for (i in seq_along(vars)) {
+
+                if (length(splitBy) > 0) {
+
+                    for (j in 1:nrow(grid)) {
+                        for (k in seq_along(colNames)) {
+
+                            name <- colNames[k]
+                            post <- paste0("[", name, paste0(grid[j,], collapse = ""), "]")
+                            subName <- paste0(vars[i], post)
+
+                            names[iter] <- subName
+                            iter <- iter + 1
+                        }
+                    }
+
+                } else {
+
+                    for (k in seq_along(colNames)) {
+
+                        name <- colNames[k]
+                        post <- paste0("[", name, "]")
+                        subName <- paste0(vars[i], post)
+
+                        names[iter] <- subName
+                        iter <- iter + 1
+                    }
+                }
+            }
+
+            names(values) <- names
+            table$setRow(rowNo=1, values=values)
+        },
+
         #### Populate tables ----
         .populateDescriptivesTable = function(results) {
 
@@ -498,15 +554,22 @@ descriptivesClass <- R6::R6Class(
                 alpha <- 1
 
             themeSpec <- NULL
+            nBins <- 18
 
             if (is.null(splitBy)) {
+
+                min <- min(data[names$x])
+                max <- max(data[names$x])
+
+                range <- max - min
+                binWidth <- range / nBins
 
                 plot <- ggplot(data=data, aes_string(x=names$x)) +
                     labs(list(x=labels$x, y='density'))
 
                 if (self$options$hist)
                     plot <- plot + geom_histogram(aes(y=..density..), position="identity",
-                                                  stat="bin", binwidth = 0.5, color=color, fill=fill)
+                                                  stat="bin", binwidth = binWidth, color=color, fill=fill)
 
                 if (self$options$dens)
                     plot <- plot + geom_density(color=color, fill=fill, alpha=alpha)
@@ -516,24 +579,18 @@ descriptivesClass <- R6::R6Class(
 
             } else {
 
+                data$s1 <- factor(data$s1, rev(levels(data$s1)))
+
                 plot <- ggplot(data=data, aes_string(x=names$x, y=names$s1, fill=names$s1)) +
                     labs(list(x=labels$x, y=labels$s1)) +
                     scale_y_discrete(expand = c(0.05, 0)) +
                     scale_x_continuous(expand = c(0.01, 0))
 
-                if (self$options$hist) {
-                    if (requireNamespace('ggjoy', quietly=TRUE))
-                        plot <- plot + ggjoy::geom_joy(stat="binline", bins=20, scale=0.9)
-                    else
-                        stop('Histograms require the ggjoy package to be installed (restart may be required)')
-                }
+                if (self$options$hist)
+                    plot <- plot + ggridges::geom_density_ridges(stat="binline", bins=nBins, scale=0.9)
 
-                if (self$options$dens) {
-                    if (requireNamespace('ggjoy', quietly=TRUE))
-                        plot <- plot + ggjoy::geom_joy(scale=0.9, alpha=alpha)
-                    else
-                        stop('Density requires the ggjoy package to be installed (restart may be required)')
-                }
+                if (self$options$dens)
+                    plot <- plot + ggridges::geom_density_ridges(scale=0.9, alpha=alpha)
 
                 themeSpec <- theme(legend.position = 'none')
             }
@@ -697,6 +754,22 @@ descriptivesClass <- R6::R6Class(
         },
 
         #### Helper functions ----
+        .addQuantiles = function() {
+
+            pcNEqGr <- self$options$pcNEqGr
+
+            if (self$options$quart && pcNEqGr == 4)
+                return()
+
+            colArgs <- private$colArgs
+            pcEq <- (1:pcNEqGr / pcNEqGr)[-pcNEqGr]
+
+            private$colArgs$name <- c(colArgs$name, paste0('quant', 1:(pcNEqGr-1)))
+            private$colArgs$title <- c(colArgs$title, paste0(round(pcEq * 100, 2), 'th percentile'))
+            private$colArgs$type <- c(colArgs$type, rep('number', pcNEqGr - 1))
+            private$colArgs$visible <- c(colArgs$visible, rep("(pcEqGr)", pcNEqGr - 1))
+
+        },
         .computeDesc = function(column) {
 
             stats <- list()
@@ -728,11 +801,28 @@ descriptivesClass <- R6::R6Class(
                 stats[['quart2']] <- as.numeric(quantile(column, c(.5)))
                 stats[['quart3']] <- as.numeric(quantile(column, c(.75)))
 
+                pcNEqGr <- self$options$pcNEqGr
+
+                if (self$options$quart && pcNEqGr == 4)
+                    break()
+
+                pcEq <- (1:pcNEqGr / pcNEqGr)[-pcNEqGr]
+                quants <- as.numeric(quantile(column, pcEq))
+
+                for (i in 1:(pcNEqGr-1))
+                    stats[[paste0('quant', i)]] <- quants[i]
+
             } else if (jmvcore::canBeNumeric(column)) {
 
                 l <- list(mean=NaN, median=NaN, mode=NaN, sum=NaN, sd=NaN, variance=NaN,
                           range=NaN, min=NaN, max=NaN, se=NaN, skew=NaN, kurt=NaN,
                           quart1=NaN, quart2=NaN, quart3=NaN)
+
+                pcNEqGr <- self$options$pcNEqGr
+                if ( ! (self$options$quart && pcNEqGr == 4)) {
+                    for (i in 1:(pcNEqGr-1))
+                        l[[paste0('quant', i)]] <- NaN
+                }
 
                 stats <- append(stats, l)
 
@@ -741,6 +831,12 @@ descriptivesClass <- R6::R6Class(
                 l <- list(mean='', median='', mode='', sum='', sd='', variance='',
                           range='', min='', max='', se='', skew='', kurt='',
                           quart1='', quart2='', quart3='')
+
+                pcNEqGr <- self$options$pcNEqGr
+                if ( ! (self$options$quart && pcNEqGr == 4)) {
+                    for (i in 1:(pcNEqGr-1))
+                        l[[paste0('quant', i)]] <- ''
+                }
 
                 stats <- append(stats, l)
 
