@@ -35,7 +35,7 @@ cfaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='cfa',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..factors <- jmvcore::OptionArray$new(
                 "factors",
                 factors,
@@ -146,7 +146,7 @@ cfaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "hlMI",
                 hlMI,
                 default=3)
-        
+
             self$.addOption(private$..factors)
             self$.addOption(private$..resCov)
             self$.addOption(private$..miss)
@@ -212,20 +212,14 @@ cfaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        factorLoadings = function() private$..factorLoadings,
-        factorEst = function() private$..factorEst,
-        resEst = function() private$..resEst,
-        modelFit = function() private$..modelFit,
-        modelPerformance = function() private$..modelPerformance,
-        pathDiagram = function() private$..pathDiagram,
+        factorLoadings = function() private$.items[["factorLoadings"]],
+        factorEst = function() private$.items[["factorEst"]],
+        resEst = function() private$.items[["resEst"]],
+        modelFit = function() private$.items[["modelFit"]],
+        modelPerformance = function() private$.items[["modelPerformance"]],
+        pathDiagram = function() private$.items[["pathDiagram"]],
         modelSyntax = function() private$..modelSyntax),
     private = list(
-        ..factorLoadings = NA,
-        ..factorEst = NA,
-        ..resEst = NA,
-        ..modelFit = NA,
-        ..modelPerformance = NA,
-        ..pathDiagram = NA,
         ..modelSyntax = NA),
     public=list(
         initialize=function(options) {
@@ -233,7 +227,7 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 options=options,
                 name="",
                 title="Confirmatory Factor Analysis")
-            private$..factorLoadings <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="factorLoadings",
                 title="Factor Loadings",
@@ -285,22 +279,20 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="stdEst", 
                         `title`="Stand. Estimate", 
                         `type`="number", 
-                        `visible`="(stdEst)")))
-            private$..factorEst <- R6::R6Class(
+                        `visible`="(stdEst)"))))
+            self$add(R6::R6Class(
                 inherit = jmvcore::Group,
                 active = list(
-                    factorCov = function() private$..factorCov,
-                    factorIntercept = function() private$..factorIntercept),
-                private = list(
-                    ..factorCov = NA,
-                    ..factorIntercept = NA),
+                    factorCov = function() private$.items[["factorCov"]],
+                    factorIntercept = function() private$.items[["factorIntercept"]]),
+                private = list(),
                 public=list(
                     initialize=function(options) {
                         super$initialize(
                             options=options,
                             name="factorEst",
                             title="Factor Estimates")
-                        private$..factorCov <- jmvcore::Table$new(
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="factorCov",
                             title="Factor Covariances",
@@ -353,8 +345,8 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="stdEst", 
                                     `title`="Stand. Estimate", 
                                     `type`="number", 
-                                    `visible`="(stdEst)")))
-                        private$..factorIntercept <- jmvcore::Table$new(
+                                    `visible`="(stdEst)"))))
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="factorIntercept",
                             title="Factor Intercepts",
@@ -403,24 +395,20 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="stdEst", 
                                     `title`="Stand. Estimate", 
                                     `type`="number", 
-                                    `visible`="(stdEst)")))
-                        self$add(private$..factorCov)
-                        self$add(private$..factorIntercept)}))$new(options=options)
-            private$..resEst <- R6::R6Class(
+                                    `visible`="(stdEst)"))))}))$new(options=options))
+            self$add(R6::R6Class(
                 inherit = jmvcore::Group,
                 active = list(
-                    resCov = function() private$..resCov,
-                    resIntercept = function() private$..resIntercept),
-                private = list(
-                    ..resCov = NA,
-                    ..resIntercept = NA),
+                    resCov = function() private$.items[["resCov"]],
+                    resIntercept = function() private$.items[["resIntercept"]]),
+                private = list(),
                 public=list(
                     initialize=function(options) {
                         super$initialize(
                             options=options,
                             name="resEst",
                             title="Residual Estimates")
-                        private$..resCov <- jmvcore::Table$new(
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="resCov",
                             title="Residual Covariances",
@@ -473,8 +461,8 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="stdEst", 
                                     `title`="Stand. Estimate", 
                                     `type`="number", 
-                                    `visible`="(stdEst)")))
-                        private$..resIntercept <- jmvcore::Table$new(
+                                    `visible`="(stdEst)"))))
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="resIntercept",
                             title="Residual Intercepts",
@@ -523,24 +511,20 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="stdEst", 
                                     `title`="Stand. Estimate", 
                                     `type`="number", 
-                                    `visible`="(stdEst)")))
-                        self$add(private$..resCov)
-                        self$add(private$..resIntercept)}))$new(options=options)
-            private$..modelFit <- R6::R6Class(
+                                    `visible`="(stdEst)"))))}))$new(options=options))
+            self$add(R6::R6Class(
                 inherit = jmvcore::Group,
                 active = list(
-                    test = function() private$..test,
-                    fitMeasures = function() private$..fitMeasures),
-                private = list(
-                    ..test = NA,
-                    ..fitMeasures = NA),
+                    test = function() private$.items[["test"]],
+                    fitMeasures = function() private$.items[["fitMeasures"]]),
+                private = list(),
                 public=list(
                     initialize=function(options) {
                         super$initialize(
                             options=options,
                             name="modelFit",
                             title="Model Fit")
-                        private$..test <- jmvcore::Table$new(
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="test",
                             title="Test for Exact Fit",
@@ -564,8 +548,8 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="p", 
                                     `title`="p", 
                                     `type`="number", 
-                                    `format`="zto,pvalue")))
-                        private$..fitMeasures <- jmvcore::Table$new(
+                                    `format`="zto,pvalue"))))
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="fitMeasures",
                             title="Fit Measures",
@@ -618,24 +602,20 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="bic", 
                                     `title`="BIC", 
                                     `type`="number", 
-                                    `visible`="(fitMeasures:bic)")))
-                        self$add(private$..test)
-                        self$add(private$..fitMeasures)}))$new(options=options)
-            private$..modelPerformance <- R6::R6Class(
+                                    `visible`="(fitMeasures:bic)"))))}))$new(options=options))
+            self$add(R6::R6Class(
                 inherit = jmvcore::Group,
                 active = list(
-                    corRes = function() private$..corRes,
-                    modIndices = function() private$..modIndices),
-                private = list(
-                    ..corRes = NA,
-                    ..modIndices = NA),
+                    corRes = function() private$.items[["corRes"]],
+                    modIndices = function() private$.items[["modIndices"]]),
+                private = list(),
                 public=list(
                     initialize=function(options) {
                         super$initialize(
                             options=options,
                             name="modelPerformance",
                             title="Post-Hoc Model Performance")
-                        private$..corRes <- jmvcore::Table$new(
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="corRes",
                             title="Residuals for Observed Correlation Matrix",
@@ -650,22 +630,20 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="var", 
                                     `title`="", 
                                     `type`="text", 
-                                    `format`="narrow")))
-                        private$..modIndices <- R6::R6Class(
+                                    `format`="narrow"))))
+                        self$add(R6::R6Class(
                             inherit = jmvcore::Group,
                             active = list(
-                                factorLoadingsMod = function() private$..factorLoadingsMod,
-                                resCovMod = function() private$..resCovMod),
-                            private = list(
-                                ..factorLoadingsMod = NA,
-                                ..resCovMod = NA),
+                                factorLoadingsMod = function() private$.items[["factorLoadingsMod"]],
+                                resCovMod = function() private$.items[["resCovMod"]]),
+                            private = list(),
                             public=list(
                                 initialize=function(options) {
                                     super$initialize(
                                         options=options,
                                         name="modIndices",
                                         title="Modification Indices")
-                                    private$..factorLoadingsMod <- jmvcore::Table$new(
+                                    self$add(jmvcore::Table$new(
                                         options=options,
                                         name="factorLoadingsMod",
                                         title="Factor Loadings \u2013 Modification Indices",
@@ -680,8 +658,8 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                                 `name`="var", 
                                                 `title`="", 
                                                 `type`="text", 
-                                                `format`="narrow")))
-                                    private$..resCovMod <- jmvcore::Table$new(
+                                                `format`="narrow"))))
+                                    self$add(jmvcore::Table$new(
                                         options=options,
                                         name="resCovMod",
                                         title="Residual Covariances \u2013 Modification Indices",
@@ -696,12 +674,8 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                                 `name`="var", 
                                                 `title`="", 
                                                 `type`="text", 
-                                                `format`="narrow")))
-                                    self$add(private$..factorLoadingsMod)
-                                    self$add(private$..resCovMod)}))$new(options=options)
-                        self$add(private$..corRes)
-                        self$add(private$..modIndices)}))$new(options=options)
-            private$..pathDiagram <- jmvcore::Image$new(
+                                                `format`="narrow"))))}))$new(options=options))}))$new(options=options))
+            self$add(jmvcore::Image$new(
                 options=options,
                 name="pathDiagram",
                 title="Path Diagram",
@@ -712,14 +686,8 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 clearWith=list(
                     "factors",
                     "resCov",
-                    "constrain"))
-            private$..modelSyntax <- NULL
-            self$add(private$..factorLoadings)
-            self$add(private$..factorEst)
-            self$add(private$..resEst)
-            self$add(private$..modelFit)
-            self$add(private$..modelPerformance)
-            self$add(private$..pathDiagram)},
+                    "constrain")))
+            private$..modelSyntax <- NULL},
         .setModelSyntax=function(x) private$..modelSyntax <- x))
 
 cfaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
@@ -747,7 +715,7 @@ cfaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'
 #' @examples
 #' data <- lavaan::HolzingerSwineford1939
-#' 
+#'
 #' jmv::cfa(
 #'     data = data,
 #'     factors = list(
@@ -755,7 +723,7 @@ cfaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'         list(label="Textual", vars=c("x4", "x5", "x6")),
 #'         list(label="Speed", vars=c("x7", "x8", "x9"))),
 #'     resCov = NULL)
-#' 
+#'
 #' # Confirmatory Factor Analysis
 #' #
 #' #  Factor Loadings
@@ -809,53 +777,53 @@ cfaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #  -----------------------------------------------
 #' #
 #' #
-#' 
+#'
 #' @param data the data as a data frame
-#' @param factors a list containing named lists that define the \code{label} 
-#'   of the factor and the \code{vars} that belong to that factor 
-#' @param resCov a list of lists specifying the residual covariances that need 
-#'   to be estimated 
-#' @param miss \code{'listwise'} or \code{'fiml'}, how to handle missing 
-#'   values; \code{'listwise'} excludes a row from all analyses if one of its 
-#'   entries is missing, \code{'fiml'} uses a full information maximum 
-#'   likelihood method to estimate the model. 
-#' @param constrain \code{'facVar'} or \code{'facInd'}, how to contrain the 
-#'   model; \code{'facVar'} fixes the factor variances to one, \code{'facInd'} 
-#'   fixes each factor to the scale of its first indicator. 
-#' @param estTest \code{TRUE} (default) or \code{FALSE}, provide 'Z' and 'p' 
-#'   values for the model estimates 
-#' @param ci \code{TRUE} or \code{FALSE} (default), provide a confidence 
-#'   interval for the model estimates 
-#' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the 
-#'   confidence interval width that is used as \code{'ci'} 
-#' @param stdEst \code{TRUE} or \code{FALSE} (default), provide a standardized 
-#'   estimate for the model estimates 
-#' @param factCovEst \code{TRUE} (default) or \code{FALSE}, provide estimates 
-#'   for the factor (co)variances 
-#' @param factInterceptEst \code{TRUE} or \code{FALSE} (default), provide 
-#'   estimates for the factor intercepts 
-#' @param resCovEst \code{TRUE} (default) or \code{FALSE}, provide estimates 
-#'   for the residual (co)variances 
-#' @param resInterceptEst \code{TRUE} or \code{FALSE} (default), provide 
-#'   estimates for the residual intercepts 
-#' @param fitMeasures one or more of \code{'cfi'}, \code{'tli'}, 
-#'   \code{'srmr'}, \code{'rmsea'}, \code{'aic'}, or \code{'bic'}; use CFI, TLI, 
-#'   SRMR, RMSEA + 90\% confidence interval, adjusted AIC, and BIC model fit 
-#'   measures, respectively 
-#' @param modelTest \code{TRUE} (default) or \code{FALSE}, provide a 
-#'   chi-square test for exact fit that compares the model with the perfect 
-#'   fitting model 
-#' @param pathDiagram \code{TRUE} or \code{FALSE} (default), provide a path 
-#'   diagram of the model 
-#' @param corRes \code{TRUE} or \code{FALSE} (default), provide the residuals 
-#'   for the observed correlation matrix (i.e., the difference between the 
-#'   expected correlation matrix and the observed correlation matrix) 
-#' @param hlCorRes a number (default: 0.1), highlight values in the 
-#'   \code{'corRes'} table above this value 
-#' @param mi \code{TRUE} or \code{FALSE} (default), provide modification 
-#'   indices for the parameters not included in the model 
-#' @param hlMI a number (default: 3), highlight values in the 
-#'   \code{'modIndices'} tables above this value 
+#' @param factors a list containing named lists that define the \code{label}
+#'   of the factor and the \code{vars} that belong to that factor
+#' @param resCov a list of lists specifying the residual covariances that need
+#'   to be estimated
+#' @param miss \code{'listwise'} or \code{'fiml'}, how to handle missing
+#'   values; \code{'listwise'} excludes a row from all analyses if one of its
+#'   entries is missing, \code{'fiml'} uses a full information maximum
+#'   likelihood method to estimate the model.
+#' @param constrain \code{'facVar'} or \code{'facInd'}, how to contrain the
+#'   model; \code{'facVar'} fixes the factor variances to one, \code{'facInd'}
+#'   fixes each factor to the scale of its first indicator.
+#' @param estTest \code{TRUE} (default) or \code{FALSE}, provide 'Z' and 'p'
+#'   values for the model estimates
+#' @param ci \code{TRUE} or \code{FALSE} (default), provide a confidence
+#'   interval for the model estimates
+#' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the
+#'   confidence interval width that is used as \code{'ci'}
+#' @param stdEst \code{TRUE} or \code{FALSE} (default), provide a standardized
+#'   estimate for the model estimates
+#' @param factCovEst \code{TRUE} (default) or \code{FALSE}, provide estimates
+#'   for the factor (co)variances
+#' @param factInterceptEst \code{TRUE} or \code{FALSE} (default), provide
+#'   estimates for the factor intercepts
+#' @param resCovEst \code{TRUE} (default) or \code{FALSE}, provide estimates
+#'   for the residual (co)variances
+#' @param resInterceptEst \code{TRUE} or \code{FALSE} (default), provide
+#'   estimates for the residual intercepts
+#' @param fitMeasures one or more of \code{'cfi'}, \code{'tli'},
+#'   \code{'srmr'}, \code{'rmsea'}, \code{'aic'}, or \code{'bic'}; use CFI, TLI,
+#'   SRMR, RMSEA + 90\% confidence interval, adjusted AIC, and BIC model fit
+#'   measures, respectively
+#' @param modelTest \code{TRUE} (default) or \code{FALSE}, provide a
+#'   chi-square test for exact fit that compares the model with the perfect
+#'   fitting model
+#' @param pathDiagram \code{TRUE} or \code{FALSE} (default), provide a path
+#'   diagram of the model
+#' @param corRes \code{TRUE} or \code{FALSE} (default), provide the residuals
+#'   for the observed correlation matrix (i.e., the difference between the
+#'   expected correlation matrix and the observed correlation matrix)
+#' @param hlCorRes a number (default: 0.1), highlight values in the
+#'   \code{'corRes'} table above this value
+#' @param mi \code{TRUE} or \code{FALSE} (default), provide modification
+#'   indices for the parameters not included in the model
+#' @param hlMI a number (default: 3), highlight values in the
+#'   \code{'modIndices'} tables above this value
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$factorLoadings} \tab \tab \tab \tab \tab a table containing the factor loadings \cr

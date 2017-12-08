@@ -5,58 +5,71 @@
 \title{Contingency Tables}
 \usage{
 contTables(data, rows, cols, counts = NULL, layers = NULL, chiSq = TRUE,
-  chiSqCorr = FALSE, likeRat = FALSE, contCoef = FALSE, phiCra = FALSE,
-  logOdds = FALSE, ciWidth = 95, gamma = FALSE, taub = FALSE,
-  exp = FALSE, pcRow = FALSE, pcCol = FALSE, pcTot = FALSE)
+  chiSqCorr = FALSE, likeRat = FALSE, fisher = FALSE, contCoef = FALSE,
+  phiCra = FALSE, logOdds = FALSE, odds = FALSE, relRisk = FALSE,
+  ci = TRUE, ciWidth = 95, gamma = FALSE, taub = FALSE, exp = FALSE,
+  pcRow = FALSE, pcCol = FALSE, pcTot = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{rows}{a string naming the variable to use as the rows in the 
+\item{rows}{a string naming the variable to use as the rows in the
 contingency table}
 
-\item{cols}{a string naming the variable to use as the columns in the 
+\item{cols}{a string naming the variable to use as the columns in the
 contingency table}
 
-\item{counts}{a string naming the variable to use as counts, or NULL if 
+\item{counts}{a string naming the variable to use as counts, or NULL if
 each row represents a single observation}
 
-\item{layers}{a character vector naming variables to split the contingency 
+\item{layers}{a character vector naming variables to split the contingency
 table across}
 
 \item{chiSq}{\code{TRUE} (default) or \code{FALSE}, provide X²}
 
-\item{chiSqCorr}{\code{TRUE} or \code{FALSE} (default), provide X² with 
+\item{chiSqCorr}{\code{TRUE} or \code{FALSE} (default), provide X² with
 continuity correction}
 
-\item{likeRat}{\code{TRUE} or \code{FALSE} (default), provide the 
+\item{likeRat}{\code{TRUE} or \code{FALSE} (default), provide the
 likelihood ratio}
 
-\item{contCoef}{\code{TRUE} or \code{FALSE} (default), provide the 
+\item{fisher}{\code{TRUE} or \code{FALSE} (default), provide Fisher's exact
+test}
+
+\item{contCoef}{\code{TRUE} or \code{FALSE} (default), provide the
 contingency coefficient}
 
-\item{phiCra}{\code{TRUE} or \code{FALSE} (default), provide Phi and 
+\item{phiCra}{\code{TRUE} or \code{FALSE} (default), provide Phi and
 Cramer's V}
 
-\item{logOdds}{\code{TRUE} or \code{FALSE} (default), provide the log odds 
+\item{logOdds}{\code{TRUE} or \code{FALSE} (default), provide the log odds
 ratio (only available for 2x2 tables)}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95), width of the 
+\item{odds}{\code{TRUE} or \code{FALSE} (default), provide the odds ratio
+(only available for 2x2 tables)}
+
+\item{relRisk}{\code{TRUE} or \code{FALSE} (default), provide the relative
+risk (only available for 2x2 tables)}
+
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
+intervals for the comparative measures}
+
+\item{ciWidth}{a number between 50 and 99.9 (default: 95), width of the
 confidence intervals to provide}
 
 \item{gamma}{\code{TRUE} or \code{FALSE} (default), provide gamma}
 
 \item{taub}{\code{TRUE} or \code{FALSE} (default), provide Kendall's tau-b}
 
-\item{exp}{\code{TRUE} or \code{FALSE} (default), provide the expected 
+\item{exp}{\code{TRUE} or \code{FALSE} (default), provide the expected
 counts}
 
 \item{pcRow}{\code{TRUE} or \code{FALSE} (default), provide row percentages}
 
-\item{pcCol}{\code{TRUE} or \code{FALSE} (default), provide column 
+\item{pcCol}{\code{TRUE} or \code{FALSE} (default), provide column
 percentages}
 
-\item{pcTot}{\code{TRUE} or \code{FALSE} (default), provide total 
+\item{pcTot}{\code{TRUE} or \code{FALSE} (default), provide total
 percentages}
 }
 \value{
@@ -64,7 +77,7 @@ A results object containing:
 \tabular{llllll}{
   \code{results$freqs} \tab \tab \tab \tab \tab a table of proportions \cr
   \code{results$chiSq} \tab \tab \tab \tab \tab a table of X² test results \cr
-  \code{results$odds} \tab \tab \tab \tab \tab a table of odds ratio results \cr
+  \code{results$odds} \tab \tab \tab \tab \tab a table of comparative measures \cr
   \code{results$nom} \tab \tab \tab \tab \tab a table of the 'nominal' test results \cr
   \code{results$gamma} \tab \tab \tab \tab \tab a table of the gamma test results \cr
   \code{results$taub} \tab \tab \tab \tab \tab a table of the Kendall's tau-b test results \cr

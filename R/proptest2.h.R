@@ -11,14 +11,20 @@ propTest2Options <- if (requireNamespace('jmvcore')) R6::R6Class(
             testValue = 0.5,
             hypothesis = "notequal",
             ci = FALSE,
-            ciWidth = 95, ...) {
+            ciWidth = 95,
+            bf = FALSE,
+            priorA = 1,
+            priorB = 1,
+            ciBayes = FALSE,
+            ciBayesWidth = 95,
+            postPlots = FALSE, ...) {
 
             super$initialize(
                 package='jmv',
                 name='propTest2',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
@@ -51,13 +57,47 @@ propTest2Options <- if (requireNamespace('jmvcore')) R6::R6Class(
                 min=50,
                 max=99.9,
                 default=95)
-        
+            private$..bf <- jmvcore::OptionBool$new(
+                "bf",
+                bf,
+                default=FALSE)
+            private$..priorA <- jmvcore::OptionNumber$new(
+                "priorA",
+                priorA,
+                min=0.01,
+                default=1)
+            private$..priorB <- jmvcore::OptionNumber$new(
+                "priorB",
+                priorB,
+                min=0.01,
+                default=1)
+            private$..ciBayes <- jmvcore::OptionBool$new(
+                "ciBayes",
+                ciBayes,
+                default=FALSE)
+            private$..ciBayesWidth <- jmvcore::OptionNumber$new(
+                "ciBayesWidth",
+                ciBayesWidth,
+                min=50,
+                max=99.9,
+                default=95)
+            private$..postPlots <- jmvcore::OptionBool$new(
+                "postPlots",
+                postPlots,
+                default=FALSE)
+
             self$.addOption(private$..vars)
             self$.addOption(private$..areCounts)
             self$.addOption(private$..testValue)
             self$.addOption(private$..hypothesis)
             self$.addOption(private$..ci)
             self$.addOption(private$..ciWidth)
+            self$.addOption(private$..bf)
+            self$.addOption(private$..priorA)
+            self$.addOption(private$..priorB)
+            self$.addOption(private$..ciBayes)
+            self$.addOption(private$..ciBayesWidth)
+            self$.addOption(private$..postPlots)
         }),
     active = list(
         vars = function() private$..vars$value,
@@ -65,29 +105,41 @@ propTest2Options <- if (requireNamespace('jmvcore')) R6::R6Class(
         testValue = function() private$..testValue$value,
         hypothesis = function() private$..hypothesis$value,
         ci = function() private$..ci$value,
-        ciWidth = function() private$..ciWidth$value),
+        ciWidth = function() private$..ciWidth$value,
+        bf = function() private$..bf$value,
+        priorA = function() private$..priorA$value,
+        priorB = function() private$..priorB$value,
+        ciBayes = function() private$..ciBayes$value,
+        ciBayesWidth = function() private$..ciBayesWidth$value,
+        postPlots = function() private$..postPlots$value),
     private = list(
         ..vars = NA,
         ..areCounts = NA,
         ..testValue = NA,
         ..hypothesis = NA,
         ..ci = NA,
-        ..ciWidth = NA)
+        ..ciWidth = NA,
+        ..bf = NA,
+        ..priorA = NA,
+        ..priorB = NA,
+        ..ciBayes = NA,
+        ..ciBayesWidth = NA,
+        ..postPlots = NA)
 )
 
 propTest2Results <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        table = function() private$..table),
-    private = list(
-        ..table = NA),
+        table = function() private$.items[["table"]],
+        postPlots = function() private$.items[["postPlots"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Proportion Test (2 Outcomes)")
-            private$..table <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="table",
                 title="Binomial Test",
@@ -96,7 +148,13 @@ propTest2Results <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "areCounts",
                     "testValue",
                     "hypothesis",
-                    "ciWidth"),
+                    "ciWidth",
+                    "bf",
+                    "ciBayes",
+                    "ciBayesWidth",
+                    "priorA",
+                    "priorB",
+                    "ci"),
                 columns=list(
                     list(
                         `name`="var", 
@@ -136,8 +194,44 @@ propTest2Results <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `title`="Upper", 
                         `superTitle`="Confidence Interval", 
                         `type`="number", 
-                        `visible`="(ci)")))
-            self$add(private$..table)}))
+                        `visible`="(ci)"),
+                    list(
+                        `name`="bf", 
+                        `title`="Bayes factor\u2081\u2080", 
+                        `type`="number", 
+                        `visible`="(bf)"),
+                    list(
+                        `name`="cilBayes", 
+                        `title`="Lower", 
+                        `superTitle`="Credible Interval", 
+                        `type`="number", 
+                        `visible`="(ciBayes)"),
+                    list(
+                        `name`="ciuBayes", 
+                        `title`="Upper", 
+                        `superTitle`="Credible Interval", 
+                        `type`="number", 
+                        `visible`="(ciBayes)"))))
+            self$add(jmvcore::Array$new(
+                options=options,
+                name="postPlots",
+                title="Posterior Plots",
+                visible="(postPlots)",
+                items="(vars)",
+                template=jmvcore::Array$new(
+                    options=options,
+                    title="($key)",
+                    template=jmvcore::Image$new(
+                        options=options,
+                        title="($key)",
+                        renderFun=".postPlot",
+                        width=400,
+                        height=350,
+                        clearWith=list(
+                            "priorA",
+                            "priorB",
+                            "testValue",
+                            "hypothesis")))))}))
 
 propTest2Base <- if (requireNamespace('jmvcore')) R6::R6Class(
     "propTest2Base",
@@ -165,9 +259,9 @@ propTest2Base <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @examples
 #' \dontrun{
 #' dat <- data.frame(x=c(8, 15))
-#' 
+#'
 #' propTest2(dat, vars = 'x', areCounts = TRUE)
-#' 
+#'
 #' #
 #' #  Binomial Test
 #' #  -------------------------------------------------------
@@ -178,22 +272,32 @@ propTest2Base <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #  -------------------------------------------------------
 #' #    Note. Ha is proportion != 0.5
 #' #
-#' }
+#'}
 #' @param data the data as a data frame
-#' @param vars a vector of strings naming the variables of interest in 
+#' @param vars a vector of strings naming the variables of interest in
 #'   \code{data}
-#' @param areCounts \code{TRUE} or \code{FALSE} (default), the variables are 
-#'   counts 
-#' @param testValue a number (default: 0.5), the value for the null hypothesis 
-#' @param hypothesis \code{'notequal'} (default), \code{'greater'} or 
-#'   \code{'less'}, the alternative hypothesis 
-#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence 
-#'   intervals 
-#' @param ciWidth a number between 50 and 99.9 (default: 95), the confidence 
-#'   interval width 
+#' @param areCounts \code{TRUE} or \code{FALSE} (default), the variables are
+#'   counts
+#' @param testValue a number (default: 0.5), the value for the null hypothesis
+#' @param hypothesis \code{'notequal'} (default), \code{'greater'} or
+#'   \code{'less'}, the alternative hypothesis
+#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence
+#'   intervals
+#' @param ciWidth a number between 50 and 99.9 (default: 95), the confidence
+#'   interval width
+#' @param bf \code{TRUE} or \code{FALSE} (default), provide Bayes factors
+#' @param priorA a number (default: 1), the beta prior 'a' parameter
+#' @param priorB a number (default: 1), the beta prior 'b' parameter
+#' @param ciBayes \code{TRUE} or \code{FALSE} (default), provide Bayesian
+#'   credible intervals
+#' @param ciBayesWidth a number between 50 and 99.9 (default: 95), the
+#'   credible interval width
+#' @param postPlots \code{TRUE} or \code{FALSE} (default), provide posterior
+#'   plots
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$table} \tab \tab \tab \tab \tab a table of the proportions and test results \cr
+#'   \code{results$postPlots} \tab \tab \tab \tab \tab an array of the posterior plots \cr
 #' }
 #'
 #' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
@@ -210,7 +314,13 @@ propTest2 <- function(
     testValue = 0.5,
     hypothesis = "notequal",
     ci = FALSE,
-    ciWidth = 95) {
+    ciWidth = 95,
+    bf = FALSE,
+    priorA = 1,
+    priorB = 1,
+    ciBayes = FALSE,
+    ciBayesWidth = 95,
+    postPlots = FALSE) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('propTest2 requires jmvcore to be installed (restart may be required)')
@@ -221,7 +331,13 @@ propTest2 <- function(
         testValue = testValue,
         hypothesis = hypothesis,
         ci = ci,
-        ciWidth = ciWidth)
+        ciWidth = ciWidth,
+        bf = bf,
+        priorA = priorA,
+        priorB = priorB,
+        ciBayes = ciBayes,
+        ciBayesWidth = ciBayesWidth,
+        postPlots = postPlots)
 
     results <- propTest2Results$new(
         options = options)

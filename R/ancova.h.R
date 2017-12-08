@@ -30,7 +30,7 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='ancova',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..dep <- jmvcore::OptionVariable$new(
                 "dep",
                 dep,
@@ -155,7 +155,7 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 min=50,
                 max=99.9,
                 default=95)
-        
+
             self$.addOption(private$..dep)
             self$.addOption(private$..factors)
             self$.addOption(private$..covs)
@@ -215,30 +215,23 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        main = function() private$..main,
+        main = function() private$.items[["main"]],
         model = function() private$..model,
-        assump = function() private$..assump,
-        contrasts = function() private$..contrasts,
-        postHoc = function() private$..postHoc,
-        desc = function() private$..desc,
-        descPlot = function() private$..descPlot,
-        descPlots = function() private$..descPlots),
+        assump = function() private$.items[["assump"]],
+        contrasts = function() private$.items[["contrasts"]],
+        postHoc = function() private$.items[["postHoc"]],
+        desc = function() private$.items[["desc"]],
+        descPlot = function() private$.items[["descPlot"]],
+        descPlots = function() private$.items[["descPlots"]]),
     private = list(
-        ..main = NA,
-        ..model = NA,
-        ..assump = NA,
-        ..contrasts = NA,
-        ..postHoc = NA,
-        ..desc = NA,
-        ..descPlot = NA,
-        ..descPlots = NA),
+        ..model = NA),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="ANCOVA")
-            private$..main <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="main",
                 title="ANCOVA",
@@ -289,23 +282,21 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `title`="\u03C9\u00B2", 
                         `type`="number", 
                         `visible`="(effectSize:omega)", 
-                        `format`="zto")))
+                        `format`="zto"))))
             private$..model <- NULL
-            private$..assump <- R6::R6Class(
+            self$add(R6::R6Class(
                 inherit = jmvcore::Group,
                 active = list(
-                    homo = function() private$..homo,
-                    qq = function() private$..qq),
-                private = list(
-                    ..homo = NA,
-                    ..qq = NA),
+                    homo = function() private$.items[["homo"]],
+                    qq = function() private$.items[["qq"]]),
+                private = list(),
                 public=list(
                     initialize=function(options) {
                         super$initialize(
                             options=options,
                             name="assump",
                             title="Assumption Checks")
-                        private$..homo <- jmvcore::Table$new(
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="homo",
                             title="Test for Homogeneity of Variances (Levene's)",
@@ -324,8 +315,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 list(
                                     `name`="p", 
                                     `type`="number", 
-                                    `format`="zto,pvalue")))
-                        private$..qq <- jmvcore::Image$new(
+                                    `format`="zto,pvalue"))))
+                        self$add(jmvcore::Image$new(
                             options=options,
                             name="qq",
                             title="Q-Q Plot",
@@ -336,10 +327,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             requiresData=TRUE,
                             clearWith=list(
                                 "dep",
-                                "modelTerms"))
-                        self$add(private$..homo)
-                        self$add(private$..qq)}))$new(options=options)
-            private$..contrasts <- jmvcore::Array$new(
+                                "modelTerms")))}))$new(options=options))
+            self$add(jmvcore::Array$new(
                 options=options,
                 name="contrasts",
                 title="Contrasts",
@@ -371,8 +360,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             `name`="p", 
                             `title`="p", 
                             `type`="number", 
-                            `format`="zto,pvalue"))))
-            private$..postHoc <- jmvcore::Array$new(
+                            `format`="zto,pvalue")))))
+            self$add(jmvcore::Array$new(
                 options=options,
                 name="postHoc",
                 title="Post Hoc Tests",
@@ -386,8 +375,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     columns=list(),
                     clearWith=list(
                         "dep",
-                        "modelTerms")))
-            private$..desc <- jmvcore::Table$new(
+                        "modelTerms"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="desc",
                 title="Descriptives",
@@ -408,8 +397,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="sd", 
                         `title`="SD", 
-                        `type`="number")))
-            private$..descPlot <- jmvcore::Image$new(
+                        `type`="number"))))
+            self$add(jmvcore::Image$new(
                 options=options,
                 name="descPlot",
                 title="Descriptive Plot",
@@ -423,8 +412,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "plotSepLines",
                     "plotSepPlots",
                     "plotError",
-                    "ciWidth"))
-            private$..descPlots <- jmvcore::Array$new(
+                    "ciWidth")))
+            self$add(jmvcore::Array$new(
                 options=options,
                 name="descPlots",
                 title="Descriptive Plots",
@@ -439,14 +428,7 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         "plotSepLines",
                         "plotSepPlots",
                         "plotError",
-                        "ciWidth")))
-            self$add(private$..main)
-            self$add(private$..assump)
-            self$add(private$..contrasts)
-            self$add(private$..postHoc)
-            self$add(private$..desc)
-            self$add(private$..descPlot)
-            self$add(private$..descPlots)},
+                        "ciWidth"))))},
         .setModel=function(x) private$..model <- x))
 
 ancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
@@ -474,9 +456,9 @@ ancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'
 #' @examples
 #' data('ToothGrowth')
-#' 
+#'
 #' ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
-#' 
+#'
 #' #
 #' #  ANCOVA
 #' #
@@ -489,44 +471,44 @@ ancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    Residuals              1023    57           17.9
 #' #  -----------------------------------------------------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
-#' @param dep a string naming the dependent variable from \code{data}, 
-#'   variable must be numeric 
-#' @param factors a vector of strings naming the fixed factors from 
+#' @param dep a string naming the dependent variable from \code{data},
+#'   variable must be numeric
+#' @param factors a vector of strings naming the fixed factors from
 #'   \code{data}
 #' @param covs a vector of strings naming the covariates from \code{data}
-#' @param modelTerms a list of character vectors describing the terms to go 
-#'   into the model 
-#' @param ss \code{'1'}, \code{'2'} or \code{'3'} (default), the sum of 
-#'   squares to use 
-#' @param effectSize one or more of \code{'eta'}, \code{'partEta'}, or 
-#'   \code{'omega'}; use eta², partial eta², and omega² effect sizes, 
-#'   respectively 
-#' @param contrasts a list of lists specifying the factor and type of contrast 
-#'   to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'}, 
-#'   \code{'helmert'}, \code{'repeated'} or \code{'polynomial'} 
-#' @param plotHAxis a string naming the variable placed on the horizontal axis 
-#'   of the plot 
-#' @param plotSepLines a string naming the variable represented as separate 
-#'   lines on the plot 
-#' @param plotSepPlots a string naming the variable to separate over to form 
-#'   multiple plots 
+#' @param modelTerms a list of character vectors describing the terms to go
+#'   into the model
+#' @param ss \code{'1'}, \code{'2'} or \code{'3'} (default), the sum of
+#'   squares to use
+#' @param effectSize one or more of \code{'eta'}, \code{'partEta'}, or
+#'   \code{'omega'}; use eta², partial eta², and omega² effect sizes,
+#'   respectively
+#' @param contrasts a list of lists specifying the factor and type of contrast
+#'   to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
+#'   \code{'helmert'}, \code{'repeated'} or \code{'polynomial'}
+#' @param plotHAxis a string naming the variable placed on the horizontal axis
+#'   of the plot
+#' @param plotSepLines a string naming the variable represented as separate
+#'   lines on the plot
+#' @param plotSepPlots a string naming the variable to separate over to form
+#'   multiple plots
 #' @param postHoc a list of terms to perform post-hoc tests on
-#' @param postHocCorr one or more of \code{'none'}, \code{'tukey'}, 
-#'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey, 
-#'   Scheffe, Bonferroni, and Holm Post Hoc corrections respectively 
-#' @param descStats \code{TRUE} or \code{FALSE} (default), provide descriptive 
-#'   statistics 
-#' @param homo \code{TRUE} or \code{FALSE} (default), perform homogeneity 
-#'   tests 
-#' @param qq \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
-#'   residuals 
-#' @param plotError \code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
-#'   no error bars, use confidence intervals, or use standard errors on the 
-#'   plots, respectively 
-#' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the 
-#'   confidence interval width 
+#' @param postHocCorr one or more of \code{'none'}, \code{'tukey'},
+#'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
+#'   Scheffe, Bonferroni, and Holm Post Hoc corrections respectively
+#' @param descStats \code{TRUE} or \code{FALSE} (default), provide descriptive
+#'   statistics
+#' @param homo \code{TRUE} or \code{FALSE} (default), perform homogeneity
+#'   tests
+#' @param qq \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+#'   residuals
+#' @param plotError \code{'none'}, \code{'ci'} (default), or \code{'se'}. Use
+#'   no error bars, use confidence intervals, or use standard errors on the
+#'   plots, respectively
+#' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the
+#'   confidence interval width
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$main} \tab \tab \tab \tab \tab a table of ANCOVA results \cr

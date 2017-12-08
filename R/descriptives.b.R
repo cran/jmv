@@ -35,9 +35,20 @@ descriptivesClass <- R6::R6Class(
         },
         .run=function() {
 
+            data <- self$data
+            splitBy <- self$options$splitBy
+
+            if ( ! is.null(splitBy)) {
+                for (item in splitBy) {
+                    if ( ! is.factor(data[[item]]))
+                        reject('Unable to split by a continuous variable')
+                }
+            }
+
+            private$.errorCheck(data)
+
             if (length(self$options$vars) > 0) {
 
-                data <- self$data
                 results <- private$.compute(data)
 
                 private$.populateDescriptivesTable(results)
@@ -102,9 +113,17 @@ descriptivesClass <- R6::R6Class(
             splitBy <- self$options$splitBy
             data <- self$data
 
-            levels <- list()
-            for (i in seq_along(splitBy))
-                levels[[i]] <- levels(data[[splitBy[i]]])
+            levels <- rep(list(NULL), length(splitBy))
+            for (i in seq_along(splitBy)) {
+                lvls <- levels(data[[splitBy[i]]])
+                if (length(lvls) == 0) {
+                    # error
+                    splitBy <- NULL
+                    levels <- list()
+                    break()
+                }
+                levels[[i]] <- lvls
+            }
 
             private$levels <- levels
 
@@ -345,7 +364,7 @@ descriptivesClass <- R6::R6Class(
             colNames <- private$colArgs$name
             desc <- results$desc
 
-            values <- list()
+            values <- list(); footnotes <- list()
             for (i in seq_along(vars)) {
 
                 r <- desc[[vars[i]]]
@@ -366,6 +385,12 @@ descriptivesClass <- R6::R6Class(
                             values[[subName]] <- stats[[name]][1]
 
                         }
+
+                        if (length(stats[['mode']]) > 1) {
+                            post <- paste0("[mode", paste0(grid[j,], collapse = ""), "]")
+                            subName <- paste0(vars[i], post)
+                            footnotes <- c(footnotes, subName)
+                        }
                     }
 
                 } else {
@@ -377,12 +402,19 @@ descriptivesClass <- R6::R6Class(
                         subName <- paste0(vars[i], post)
 
                         values[[subName]] <- r[[name]][1]
-
                     }
+
+                    if (length(r[['mode']]) > 1)
+                        footnotes <- c(footnotes, paste0(vars[i], '[mode]'))
                 }
             }
 
             table$setRow(rowNo=1, values=values)
+
+            for (i in seq_along(footnotes))
+                table$addFootnote(rowNo=1, footnotes[[i]], 'More than one mode exists, only the first is reported')
+
+
         },
         .populateFrequencyTables = function(results) {
 
@@ -754,6 +786,15 @@ descriptivesClass <- R6::R6Class(
         },
 
         #### Helper functions ----
+        .errorCheck = function(data) {
+
+            splitBy <- self$options$splitBy
+
+            for (var in splitBy) {
+                if (length(levels(data[[var]])) == 0)
+                    jmvcore::reject(jmvcore::format('The \'split by\' variable \'{}\' contains no data.', var), code='')
+            }
+        },
         .addQuantiles = function() {
 
             pcNEqGr <- self$options$pcNEqGr
@@ -803,14 +844,13 @@ descriptivesClass <- R6::R6Class(
 
                 pcNEqGr <- self$options$pcNEqGr
 
-                if (self$options$quart && pcNEqGr == 4)
-                    break()
+                if ( ! self$options$quart || pcNEqGr != 4) {
+                    pcEq <- (1:pcNEqGr / pcNEqGr)[-pcNEqGr]
+                    quants <- as.numeric(quantile(column, pcEq))
 
-                pcEq <- (1:pcNEqGr / pcNEqGr)[-pcNEqGr]
-                quants <- as.numeric(quantile(column, pcEq))
-
-                for (i in 1:(pcNEqGr-1))
-                    stats[[paste0('quant', i)]] <- quants[i]
+                    for (i in 1:(pcNEqGr-1))
+                        stats[[paste0('quant', i)]] <- quants[i]
+                }
 
             } else if (jmvcore::canBeNumeric(column)) {
 

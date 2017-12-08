@@ -15,41 +15,41 @@ descriptives(data, vars, splitBy = NULL, freq = FALSE, hist = FALSE,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{vars}{a vector of strings naming the variables of interest in 
+\item{vars}{a vector of strings naming the variables of interest in
 \code{data}}
 
-\item{splitBy}{a vector of strings naming the variables used to split 
+\item{splitBy}{a vector of strings naming the variables used to split
 \code{vars}}
 
-\item{freq}{\code{TRUE} or \code{FALSE} (default), provide frequency tables 
+\item{freq}{\code{TRUE} or \code{FALSE} (default), provide frequency tables
 (nominal, ordinal variables only)}
 
-\item{hist}{\code{TRUE} or \code{FALSE} (default), provide histograms 
+\item{hist}{\code{TRUE} or \code{FALSE} (default), provide histograms
 (continuous variables only)}
 
-\item{dens}{\code{TRUE} or \code{FALSE} (default), provide density plots 
+\item{dens}{\code{TRUE} or \code{FALSE} (default), provide density plots
 (continuous variables only)}
 
-\item{bar}{\code{TRUE} or \code{FALSE} (default), provide bar plots 
+\item{bar}{\code{TRUE} or \code{FALSE} (default), provide bar plots
 (nominal, ordinal variables only)}
 
 \item{barCounts}{\code{TRUE} or \code{FALSE} (default), add counts to the
 bar plots}
 
-\item{box}{\code{TRUE} or \code{FALSE} (default), provide box plots 
+\item{box}{\code{TRUE} or \code{FALSE} (default), provide box plots
 (continuous variables only)}
 
-\item{violin}{\code{TRUE} or \code{FALSE} (default), provide violin plots 
+\item{violin}{\code{TRUE} or \code{FALSE} (default), provide violin plots
 (continuous variables only)}
 
-\item{dot}{\code{TRUE} or \code{FALSE} (default), provide dot plots 
+\item{dot}{\code{TRUE} or \code{FALSE} (default), provide dot plots
 (continuous variables only)}
 
 \item{dotType}{.}
 
 \item{n}{\code{TRUE} (default) or \code{FALSE}, provide the sample size}
 
-\item{missing}{\code{TRUE} (default) or \code{FALSE}, provide the number of 
+\item{missing}{\code{TRUE} (default) or \code{FALSE}, provide the number of
 missing values}
 
 \item{mean}{\code{TRUE} (default) or \code{FALSE}, provide the mean}
@@ -60,7 +60,7 @@ missing values}
 
 \item{sum}{\code{TRUE} or \code{FALSE} (default), provide the sum}
 
-\item{sd}{\code{TRUE} or \code{FALSE} (default), provide the standard 
+\item{sd}{\code{TRUE} or \code{FALSE} (default), provide the standard
 deviation}
 
 \item{variance}{\code{TRUE} or \code{FALSE} (default), provide the variance}
@@ -81,7 +81,7 @@ deviation}
 
 \item{pcEqGr}{\code{TRUE} or \code{FALSE} (default), provide quantiles}
 
-\item{pcNEqGr}{an integer (default: 4) specifying the number of equal 
+\item{pcNEqGr}{an integer (default: 4) specifying the number of equal
 groups}
 }
 \value{

@@ -12,38 +12,38 @@ reliability(data, vars, alphaScale = TRUE, omegaScale = FALSE,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{vars}{a vector of strings naming the variables of interest in 
+\item{vars}{a vector of strings naming the variables of interest in
 \code{data}}
 
-\item{alphaScale}{\code{TRUE} (default) or \code{FALSE}, provide Cronbach's 
+\item{alphaScale}{\code{TRUE} (default) or \code{FALSE}, provide Cronbach's
 alpha}
 
-\item{omegaScale}{\code{TRUE} or \code{FALSE} (default), provide McDonald's 
+\item{omegaScale}{\code{TRUE} or \code{FALSE} (default), provide McDonald's
 omega}
 
 \item{meanScale}{\code{TRUE} or \code{FALSE} (default), provide the mean}
 
-\item{sdScale}{\code{TRUE} or \code{FALSE} (default), provide the standard 
+\item{sdScale}{\code{TRUE} or \code{FALSE} (default), provide the standard
 deviation}
 
-\item{corPlot}{\code{TRUE} or \code{FALSE} (default), provide a correlation 
+\item{corPlot}{\code{TRUE} or \code{FALSE} (default), provide a correlation
 plot}
 
-\item{alphaItems}{\code{TRUE} or \code{FALSE} (default), provide what the 
+\item{alphaItems}{\code{TRUE} or \code{FALSE} (default), provide what the
 Cronbach's alpha would be if the item was dropped}
 
-\item{omegaItems}{\code{TRUE} or \code{FALSE} (default), provide what the 
+\item{omegaItems}{\code{TRUE} or \code{FALSE} (default), provide what the
 McDonald's omega would be if the item was dropped}
 
 \item{meanItems}{\code{TRUE} or \code{FALSE} (default), provide item means}
 
-\item{sdItems}{\code{TRUE} or \code{FALSE} (default), provide item standard 
+\item{sdItems}{\code{TRUE} or \code{FALSE} (default), provide item standard
 deviations}
 
-\item{itemRestCor}{\code{TRUE} or \code{FALSE} (default), provide item-rest 
+\item{itemRestCor}{\code{TRUE} or \code{FALSE} (default), provide item-rest
 correlations}
 
-\item{revItems}{a vector containing strings naming the varibales that are 
+\item{revItems}{a vector containing strings naming the varibales that are
 reverse scaled}
 }
 \value{

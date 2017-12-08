@@ -11,10 +11,10 @@ propTestN(data, var, counts = NULL, expected = FALSE, ratio = NULL)
 
 \item{var}{a string naming the variable of interest in \code{data}}
 
-\item{counts}{a string naming a variable in \code{data} containing counts, 
+\item{counts}{a string naming a variable in \code{data} containing counts,
 or NULL if each row represents a single observation}
 
-\item{expected}{\code{TRUE} or \code{FALSE} (default), whether expected 
+\item{expected}{\code{TRUE} or \code{FALSE} (default), whether expected
 counts should be displayed}
 
 \item{ratio}{a vector of numbers: the expected proportions}

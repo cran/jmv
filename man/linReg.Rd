@@ -13,56 +13,56 @@ linReg(data, dep, blocks = list(list()), fitMeasures = list("r", "r2"),
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dep}{a string naming the dependent variable from \code{data}, 
+\item{dep}{a string naming the dependent variable from \code{data},
 variable must be numeric}
 
-\item{blocks}{a list containing vectors of strings that name the covariates 
-that are added to the model. The elements are added to the model according 
+\item{blocks}{a list containing vectors of strings that name the covariates
+that are added to the model. The elements are added to the model according
 to their order in the list}
 
-\item{fitMeasures}{one or more of \code{'r'}, \code{'r2'}, \code{'r2Adj'}, 
-\code{'aic'}, \code{'bic'}, or \code{'rmse'}; use R, R², adjusted R², AIC, 
+\item{fitMeasures}{one or more of \code{'r'}, \code{'r2'}, \code{'r2Adj'},
+\code{'aic'}, \code{'bic'}, or \code{'rmse'}; use R, R², adjusted R², AIC,
 BIC, and RMSE model fit measures, respectively}
 
-\item{modelTest}{one or more of \code{'f'}, or \code{'bf'}; Use classical 
+\item{modelTest}{one or more of \code{'f'}, or \code{'bf'}; Use classical
 F-test, and Bayes factor respectively as overall model tests.}
 
-\item{modelComp}{one or more of \code{'f'}, or \code{'bf'}; Use classical 
+\item{modelComp}{one or more of \code{'f'}, or \code{'bf'}; Use classical
 F-test, and Bayes factor respectively as model comparison tests.}
 
-\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized 
+\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized
 estimate for the model coefficients}
 
-\item{ci}{\code{TRUE} or \code{FALSE} (default), provide a confidence 
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide a confidence
 interval for the model coefficients}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
 confidence interval width}
 
-\item{coefPlot}{\code{TRUE} or \code{FALSE} (default), provide a 
-coefficient plot where for each predictor the estimated coefficient and 
+\item{coefPlot}{\code{TRUE} or \code{FALSE} (default), provide a
+coefficient plot where for each predictor the estimated coefficient and
 confidence intervals are plotted.}
 
-\item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
+\item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 residuals}
 
-\item{resPlots}{\code{TRUE} or \code{FALSE} (default), provide residual 
-plots where the dependent variable and each covariate is plotted against 
+\item{resPlots}{\code{TRUE} or \code{FALSE} (default), provide residual
+plots where the dependent variable and each covariate is plotted against
 the standardized residuals.}
 
-\item{durbin}{\code{TRUE} or \code{FALSE} (default), provide results of the 
+\item{durbin}{\code{TRUE} or \code{FALSE} (default), provide results of the
 Durbin- Watson test for autocorrelation}
 
-\item{collin}{\code{TRUE} or \code{FALSE} (default), provide VIF and 
+\item{collin}{\code{TRUE} or \code{FALSE} (default), provide VIF and
 tolerence collinearity statistics}
 
-\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
 
-\item{cooks}{\code{TRUE} or \code{FALSE} (default), provide summary 
+\item{cooks}{\code{TRUE} or \code{FALSE} (default), provide summary
 statistics for the Cook's distance}
 
-\item{modelSelected}{an integer defining the model for which the model 
+\item{modelSelected}{an integer defining the model for which the model
 specific output needs to be calculated (defaults to most complex model)}
 }
 \value{

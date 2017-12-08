@@ -10,24 +10,24 @@ mancova(data, deps, factors = NULL, covs = NULL, multivar = list("pillai",
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{deps}{a string naming the dependent variable from \code{data}, 
+\item{deps}{a string naming the dependent variable from \code{data},
 variable must be numeric}
 
 \item{factors}{a vector of strings naming the factors from \code{data}}
 
 \item{covs}{a vector of strings naming the covariates from \code{data}}
 
-\item{multivar}{one or more of \code{'pillai'}, \code{'wilks'}, 
-\code{'hotel'}, or \code{'roy'}; use Pillai's Trace, Wilks' Lambda, 
-Hotelling's Trace, and Roy's Largest Root multivariate statistics, 
+\item{multivar}{one or more of \code{'pillai'}, \code{'wilks'},
+\code{'hotel'}, or \code{'roy'}; use Pillai's Trace, Wilks' Lambda,
+Hotelling's Trace, and Roy's Largest Root multivariate statistics,
 respectively}
 
 \item{boxM}{\code{TRUE} or \code{FALSE} (default), provide Box's M test}
 
-\item{shapiro}{\code{TRUE} or \code{FALSE} (default), provide Shapiro-Wilk 
+\item{shapiro}{\code{TRUE} or \code{FALSE} (default), provide Shapiro-Wilk
 test}
 
-\item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
+\item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 multivariate normality}
 }
 \value{

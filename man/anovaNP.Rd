@@ -11,10 +11,10 @@ anovaNP(data, deps, group, pairs = FALSE)
 
 \item{deps}{a string naming the dependent variable in \code{data}}
 
-\item{group}{a string naming the grouping or independent variable in 
+\item{group}{a string naming the grouping or independent variable in
 \code{data}}
 
-\item{pairs}{\code{TRUE} or \code{FALSE} (default), perform pairwise 
+\item{pairs}{\code{TRUE} or \code{FALSE} (default), perform pairwise
 comparisons}
 }
 \value{

@@ -20,7 +20,7 @@ contTablesPairedOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='contTablesPaired',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..rows <- jmvcore::OptionVariable$new(
                 "rows",
                 rows,
@@ -63,7 +63,7 @@ contTablesPairedOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "pcCol",
                 pcCol,
                 default=FALSE)
-        
+
             self$.addOption(private$..rows)
             self$.addOption(private$..cols)
             self$.addOption(private$..counts)
@@ -96,18 +96,16 @@ contTablesPairedOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 contTablesPairedResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        freqs = function() private$..freqs,
-        test = function() private$..test),
-    private = list(
-        ..freqs = NA,
-        ..test = NA),
+        freqs = function() private$.items[["freqs"]],
+        test = function() private$.items[["test"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Paired Samples Contingency Tables")
-            private$..freqs <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="freqs",
                 title="Contingency Tables",
@@ -115,8 +113,8 @@ contTablesPairedResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 clearWith=list(
                     "rows",
                     "cols",
-                    "counts"))
-            private$..test <- jmvcore::Table$new(
+                    "counts")))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="test",
                 title="McNemar Test",
@@ -203,9 +201,7 @@ contTablesPairedResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="p[n]", 
                         `title`="p", 
-                        `content`="")))
-            self$add(private$..freqs)
-            self$add(private$..test)}))
+                        `content`=""))))}))
 
 contTablesPairedBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "contTablesPairedBase",
@@ -236,9 +232,9 @@ contTablesPairedBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'     `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),
 #'     `Counts` = c(794, 150, 86, 570),
 #'     check.names=FALSE)
-#' 
+#'
 #' contTablesPaired(dat, rows = '1st survey', cols = '2nd survey', counts = 'Counts')
-#' 
+#'
 #' #
 #' #  Paired Samples Contingency Tables
 #' #
@@ -260,22 +256,22 @@ contTablesPairedBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    X² continuity correction     16.8     1    < .001
 #' #  -----------------------------------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
-#' @param rows a string naming the variable to use as the rows in the 
-#'   contingency table 
-#' @param cols a string naming the variable to use as the columns in the 
-#'   contingency table 
-#' @param counts a string naming the variable to use as counts, or NULL if 
-#'   each row represents a single observation 
-#' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X² 
-#' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with 
-#'   continuity correction 
-#' @param exact \code{TRUE} or \code{FALSE} (default), provide an exact log 
-#'   odds ratio 
-#' @param pcRow \code{TRUE} or \code{FALSE} (default), provide row percentages 
-#' @param pcCol \code{TRUE} or \code{FALSE} (default), provide column 
-#'   percentages 
+#' @param rows a string naming the variable to use as the rows in the
+#'   contingency table
+#' @param cols a string naming the variable to use as the columns in the
+#'   contingency table
+#' @param counts a string naming the variable to use as counts, or NULL if
+#'   each row represents a single observation
+#' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X²
+#' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with
+#'   continuity correction
+#' @param exact \code{TRUE} or \code{FALSE} (default), provide an exact log
+#'   odds ratio
+#' @param pcRow \code{TRUE} or \code{FALSE} (default), provide row percentages
+#' @param pcCol \code{TRUE} or \code{FALSE} (default), provide column
+#'   percentages
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$freqs} \tab \tab \tab \tab \tab a proportions table \cr

@@ -29,7 +29,7 @@ ttestISOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='ttestIS',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
@@ -117,7 +117,7 @@ ttestISOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "perAnalysis",
                     "listwise"),
                 default="perAnalysis")
-        
+
             self$.addOption(private$..vars)
             self$.addOption(private$..group)
             self$.addOption(private$..students)
@@ -177,22 +177,18 @@ ttestISOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        ttest = function() private$..ttest,
-        assum = function() private$..assum,
-        desc = function() private$..desc,
-        plots = function() private$..plots),
-    private = list(
-        ..ttest = NA,
-        ..assum = NA,
-        ..desc = NA,
-        ..plots = NA),
+        ttest = function() private$.items[["ttest"]],
+        assum = function() private$.items[["assum"]],
+        desc = function() private$.items[["desc"]],
+        plots = function() private$.items[["plots"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Independent Samples T-Test")
-            private$..ttest <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="ttest",
                 title="Independent Samples T-Test",
@@ -201,7 +197,8 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "group",
                     "hypothesis",
                     "ciWidth",
-                    "miss"),
+                    "miss",
+                    "bfPrior"),
                 columns=list(
                     list(
                         `name`="var[stud]", 
@@ -442,22 +439,20 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="ciu[mann]", 
                         `title`="Upper", 
                         `type`="number", 
-                        `visible`="(ci && mann)")))
-            private$..assum <- R6::R6Class(
+                        `visible`="(ci && mann)"))))
+            self$add(R6::R6Class(
                 inherit = jmvcore::Group,
                 active = list(
-                    norm = function() private$..norm,
-                    eqv = function() private$..eqv),
-                private = list(
-                    ..norm = NA,
-                    ..eqv = NA),
+                    norm = function() private$.items[["norm"]],
+                    eqv = function() private$.items[["eqv"]]),
+                private = list(),
                 public=list(
                     initialize=function(options) {
                         super$initialize(
                             options=options,
                             name="assum",
                             title="Assumptions")
-                        private$..norm <- jmvcore::Table$new(
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="norm",
                             title="Test of Normality (Shapiro-Wilk)",
@@ -482,8 +477,8 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `name`="p", 
                                     `title`="p", 
                                     `type`="number", 
-                                    `format`="zto,pvalue")))
-                        private$..eqv <- jmvcore::Table$new(
+                                    `format`="zto,pvalue"))))
+                        self$add(jmvcore::Table$new(
                             options=options,
                             name="eqv",
                             title="Test of Equality of Variances (Levene's)",
@@ -510,10 +505,8 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 list(
                                     `name`="p", 
                                     `type`="number", 
-                                    `format`="zto,pvalue")))
-                        self$add(private$..norm)
-                        self$add(private$..eqv)}))$new(options=options)
-            private$..desc <- jmvcore::Table$new(
+                                    `format`="zto,pvalue"))))}))$new(options=options))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="desc",
                 title="Group Descriptives",
@@ -575,8 +568,8 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="se[2]", 
                         `title`="SE", 
-                        `type`="number")))
-            private$..plots <- jmvcore::Array$new(
+                        `type`="number"))))
+            self$add(jmvcore::Array$new(
                 options=options,
                 name="plots",
                 title="Plots",
@@ -588,11 +581,7 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     renderFun=".plot",
                     clearWith=list(
                         "group",
-                        "miss")))
-            self$add(private$..ttest)
-            self$add(private$..assum)
-            self$add(private$..desc)
-            self$add(private$..plots)}))
+                        "miss"))))}))
 
 ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "ttestISBase",
@@ -619,9 +608,9 @@ ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'
 #' @examples
 #' data('ToothGrowth')
-#' 
+#'
 #' ttestIS(data = ToothGrowth, vars = 'len', group = 'supp')
-#' 
+#'
 #' #
 #' #  Independent Samples T-Test
 #' #
@@ -632,43 +621,43 @@ ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    len    Student's t         1.92    58.0    0.060
 #' #  ----------------------------------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
 #' @param vars a vector of strings naming the dependent variables
 #' @param group a string naming the grouping variable, must have 2 levels
-#' @param students \code{TRUE} (default) or \code{FALSE}, perform Student's 
-#'   t-tests 
-#' @param bf \code{TRUE} or \code{FALSE} (default), provide Bayes factors 
-#' @param bfPrior a number between 0.5 and 2 (default 0.707), the prior width 
-#'   to use in calculating Bayes factors 
-#' @param welchs \code{TRUE} or \code{FALSE} (default), perform Welch's 
-#'   t-tests 
-#' @param mann \code{TRUE} or \code{FALSE} (default), perform Mann-Whitney U 
-#'   tests 
-#' @param hypothesis \code{'different'} (default), \code{'oneGreater'} or 
-#'   \code{'twoGreater'}, the alternative hypothesis; group 1 different to group 
-#'   2, group 1 greater than group 2, and group 2 greater than group 1 
-#'   respectively 
-#' @param norm \code{TRUE} or \code{FALSE} (default), perform Shapiro-Wilk 
-#'   test of normality 
-#' @param eqv \code{TRUE} or \code{FALSE} (default), perform Levene's test for 
-#'   equality of variances 
-#' @param meanDiff \code{TRUE} or \code{FALSE} (default), provide means and 
-#'   standard errors 
-#' @param effectSize \code{TRUE} or \code{FALSE} (default), provide effect 
-#'   sizes 
-#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence 
-#'   intervals 
-#' @param ciWidth a number between 50 and 99.9 (default: 95), the width of 
-#'   confidence intervals 
-#' @param desc \code{TRUE} or \code{FALSE} (default), provide descriptive 
-#'   statistics 
-#' @param plots \code{TRUE} or \code{FALSE} (default), provide descriptive 
-#'   plots 
-#' @param miss \code{'perAnalysis'} or \code{'listwise'}, how to handle 
-#'   missing values; \code{'perAnalysis'} excludes missing values for individual 
-#'   dependent variables, \code{'listwise'} excludes a row from all analyses if 
-#'   one of its entries is missing. 
+#' @param students \code{TRUE} (default) or \code{FALSE}, perform Student's
+#'   t-tests
+#' @param bf \code{TRUE} or \code{FALSE} (default), provide Bayes factors
+#' @param bfPrior a number between 0.5 and 2 (default 0.707), the prior width
+#'   to use in calculating Bayes factors
+#' @param welchs \code{TRUE} or \code{FALSE} (default), perform Welch's
+#'   t-tests
+#' @param mann \code{TRUE} or \code{FALSE} (default), perform Mann-Whitney U
+#'   tests
+#' @param hypothesis \code{'different'} (default), \code{'oneGreater'} or
+#'   \code{'twoGreater'}, the alternative hypothesis; group 1 different to group
+#'   2, group 1 greater than group 2, and group 2 greater than group 1
+#'   respectively
+#' @param norm \code{TRUE} or \code{FALSE} (default), perform Shapiro-Wilk
+#'   test of normality
+#' @param eqv \code{TRUE} or \code{FALSE} (default), perform Levene's test for
+#'   equality of variances
+#' @param meanDiff \code{TRUE} or \code{FALSE} (default), provide means and
+#'   standard errors
+#' @param effectSize \code{TRUE} or \code{FALSE} (default), provide effect
+#'   sizes
+#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence
+#'   intervals
+#' @param ciWidth a number between 50 and 99.9 (default: 95), the width of
+#'   confidence intervals
+#' @param desc \code{TRUE} or \code{FALSE} (default), provide descriptive
+#'   statistics
+#' @param plots \code{TRUE} or \code{FALSE} (default), provide descriptive
+#'   plots
+#' @param miss \code{'perAnalysis'} or \code{'listwise'}, how to handle
+#'   missing values; \code{'perAnalysis'} excludes missing values for individual
+#'   dependent variables, \code{'listwise'} excludes a row from all analyses if
+#'   one of its entries is missing.
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$ttest} \tab \tab \tab \tab \tab a table containing the t-test results \cr

@@ -17,7 +17,7 @@ anovaRMNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='anovaRMNP',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..measures <- jmvcore::OptionVariables$new(
                 "measures",
                 measures,
@@ -46,7 +46,7 @@ anovaRMNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "means",
                     "medians"),
                 default="means")
-        
+
             self$.addOption(private$..measures)
             self$.addOption(private$..pairs)
             self$.addOption(private$..desc)
@@ -70,20 +70,17 @@ anovaRMNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 anovaRMNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        table = function() private$..table,
-        comp = function() private$..comp,
-        plot = function() private$..plot),
-    private = list(
-        ..table = NA,
-        ..comp = NA,
-        ..plot = NA),
+        table = function() private$.items[["table"]],
+        comp = function() private$.items[["comp"]],
+        plot = function() private$.items[["plot"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Repeated Measures ANOVA (Non-parametric)")
-            private$..table <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="table",
                 title="Friedman",
@@ -103,8 +100,8 @@ anovaRMNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="p", 
                         `title`="p", 
                         `type`="number", 
-                        `format`="zto,pvalue")))
-            private$..comp <- jmvcore::Table$new(
+                        `format`="zto,pvalue"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="comp",
                 title="Pairwise Comparisons (Durbin-Conover)",
@@ -134,8 +131,8 @@ anovaRMNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="p", 
                         `title`="p", 
                         `type`="number", 
-                        `format`="zto,pvalue")))
-            private$..plot <- jmvcore::Image$new(
+                        `format`="zto,pvalue"))))
+            self$add(jmvcore::Image$new(
                 options=options,
                 name="plot",
                 title="Descriptive Plot",
@@ -143,10 +140,7 @@ anovaRMNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 renderFun=".plot",
                 clearWith=list(
                     "plotType",
-                    "measures"))
-            self$add(private$..table)
-            self$add(private$..comp)
-            self$add(private$..plot)}))
+                    "measures")))}))
 
 anovaRMNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "anovaRMNPBase",
@@ -173,9 +167,9 @@ anovaRMNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'
 #' @examples
 #' data('bugs', package = 'jmv')
-#' 
+#'
 #' anovaRMNP(bugs, measures = c('LDLF', 'LDHF', 'HDLF', 'HDHF'))
-#' 
+#'
 #' #
 #' #  Friedman
 #' #  ------------------------
@@ -184,17 +178,17 @@ anovaRMNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    55.8     3    < .001
 #' #  ------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
 #' @param measures a vector of strings naming the repeated measures variables
-#' @param pairs \code{TRUE} or \code{FALSE} (default), perform pairwise 
-#'   comparisons 
-#' @param desc \code{TRUE} or \code{FALSE} (default), provide descriptive 
-#'   statistics 
-#' @param plots \code{TRUE} or \code{FALSE} (default), provide a descriptive 
-#'   plot 
-#' @param plotType \code{'means'} (default) or \code{'medians'}, the error 
-#'   bars to use in the plot 
+#' @param pairs \code{TRUE} or \code{FALSE} (default), perform pairwise
+#'   comparisons
+#' @param desc \code{TRUE} or \code{FALSE} (default), provide descriptive
+#'   statistics
+#' @param plots \code{TRUE} or \code{FALSE} (default), provide a descriptive
+#'   plot
+#' @param plotType \code{'means'} (default) or \code{'medians'}, the error
+#'   bars to use in the plot
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$table} \tab \tab \tab \tab \tab a table of the Friedman test results \cr

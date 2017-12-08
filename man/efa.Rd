@@ -12,19 +12,19 @@ efa(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{vars}{a vector of strings naming the variables of interest in 
+\item{vars}{a vector of strings naming the variables of interest in
 \code{data}}
 
-\item{nFactorMethod}{\code{'parallel'} (default), \code{'eigen'} or 
+\item{nFactorMethod}{\code{'parallel'} (default), \code{'eigen'} or
 \code{'fixed'}, the way to determine the number of factors}
 
 \item{nFactors}{an integer (default: 1), the number of factors in the model}
 
-\item{minEigen}{a number (default: 1), the minimal eigenvalue for a factor 
+\item{minEigen}{a number (default: 1), the minimal eigenvalue for a factor
 to be included in the model}
 
-\item{rotation}{\code{'none'}, \code{'varimax'} (default), 
-\code{'quartimax'}, \code{'promax'}, \code{'oblimin'}, or 
+\item{rotation}{\code{'none'}, \code{'varimax'} (default),
+\code{'quartimax'}, \code{'promax'}, \code{'oblimin'}, or
 \code{'simplimax'}, the rotation to use in estimation}
 
 \item{hideLoadings}{a number (default: 0.3), hide loadings below this value}
@@ -33,19 +33,19 @@ to be included in the model}
 
 \item{eigen}{\code{TRUE} or \code{FALSE} (default), show eigenvalue table}
 
-\item{factorCor}{\code{TRUE} or \code{FALSE} (default), show factor 
+\item{factorCor}{\code{TRUE} or \code{FALSE} (default), show factor
 correlations}
 
-\item{factorSummary}{\code{TRUE} or \code{FALSE} (default), show factor 
+\item{factorSummary}{\code{TRUE} or \code{FALSE} (default), show factor
 summary}
 
-\item{modelFit}{\code{TRUE} or \code{FALSE} (default), show model fit 
+\item{modelFit}{\code{TRUE} or \code{FALSE} (default), show model fit
 measures and test}
 
-\item{kmo}{\code{TRUE} or \code{FALSE} (default), show Kaiser-Meyer-Olkin 
+\item{kmo}{\code{TRUE} or \code{FALSE} (default), show Kaiser-Meyer-Olkin
 (KMO) measure of sampling adequacy (MSA) results}
 
-\item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test 
+\item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test
 of sphericity results}
 }
 \value{

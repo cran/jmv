@@ -15,70 +15,70 @@ anovaRM(data, rm = list(list(label = "RM Factor 1", levels = list("Level 1",
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{rm}{a list of lists, where each list describes the \code{label} (as a 
-string) and the \code{levels} (as vector of strings) of a particular 
+\item{rm}{a list of lists, where each list describes the \code{label} (as a
+string) and the \code{levels} (as vector of strings) of a particular
 repeated measures factor}
 
-\item{rmCells}{a list of lists, where each list decribes a repeated measure 
-(as a string) from \code{data} defined as \code{measure} and the particular 
-combination of levels from \code{rm} that it belongs to (as a vector of 
+\item{rmCells}{a list of lists, where each list decribes a repeated measure
+(as a string) from \code{data} defined as \code{measure} and the particular
+combination of levels from \code{rm} that it belongs to (as a vector of
 strings) defined as \code{cell}}
 
-\item{bs}{a vector of strings naming the between subjects factors from 
+\item{bs}{a vector of strings naming the between subjects factors from
 \code{data}}
 
-\item{cov}{a vector of strings naming the covariates from \code{data}. 
+\item{cov}{a vector of strings naming the covariates from \code{data}.
 Variables must be numeric}
 
-\item{rmTerms}{a list of character vectors describing the repeated measures 
+\item{rmTerms}{a list of character vectors describing the repeated measures
 terms to go into the model}
 
-\item{bsTerms}{a list of character vectors describing the between subjects 
+\item{bsTerms}{a list of character vectors describing the between subjects
 terms to go into the model}
 
 \item{ss}{\code{'2'} or \code{'3'} (default), the sum of squares to use}
 
-\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or 
-\code{'omega'}; use eta², partial eta², and omega² effect sizes, 
+\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
+\code{'omega'}; use eta², partial eta², and omega² effect sizes,
 respectively}
 
-\item{spherTests}{\code{TRUE} or \code{FALSE} (default), perform sphericity 
+\item{spherTests}{\code{TRUE} or \code{FALSE} (default), perform sphericity
 tests}
 
-\item{spherCorr}{one or more of \code{'none'} (default), \code{'GG'}, or 
-\code{}HF\code{}; use no p-value correction, the Greenhouse-Geisser p-value 
-correction, and the Huynh-Feldt p-value correction for shericity, 
+\item{spherCorr}{one or more of \code{'none'} (default), \code{'GG'}, or
+\code{}HF\code{}; use no p-value correction, the Greenhouse-Geisser p-value
+correction, and the Huynh-Feldt p-value correction for shericity,
 respectively}
 
-\item{leveneTest}{\code{TRUE} or \code{FALSE} (default), test for equality 
+\item{leveneTest}{\code{TRUE} or \code{FALSE} (default), test for equality
 of variances (i.e., Levene's test)}
 
 \item{contrasts}{in development}
 
-\item{postHoc}{a list of character vectors describing the post-hoc tests 
+\item{postHoc}{a list of character vectors describing the post-hoc tests
 that need to be computed}
 
-\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'} (default), 
-\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe, 
+\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'} (default),
+\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe,
 Bonferroni and Holm posthoc corrections, respectively}
 
-\item{plotHAxis}{a string naming the variable placed on the horizontal axis 
+\item{plotHAxis}{a string naming the variable placed on the horizontal axis
 of the plot}
 
-\item{plotSepLines}{a string naming the variable represented as separate 
+\item{plotSepLines}{a string naming the variable represented as separate
 lines on the plot}
 
-\item{plotSepPlots}{a string naming the variable to separate over to form 
+\item{plotSepPlots}{a string naming the variable to separate over to form
 multiple plots}
 
-\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
-no error bars, use confidence intervals, or use standard errors on the 
+\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use
+no error bars, use confidence intervals, or use standard errors on the
 plots, respectively}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
 confidence interval width}
 
-\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
 }
 \value{

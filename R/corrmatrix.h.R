@@ -24,7 +24,7 @@ corrMatrixOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='corrMatrix',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
@@ -85,7 +85,7 @@ corrMatrixOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "pos",
                     "neg"),
                 default="corr")
-        
+
             self$.addOption(private$..vars)
             self$.addOption(private$..pearson)
             self$.addOption(private$..spearman)
@@ -130,18 +130,16 @@ corrMatrixOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 corrMatrixResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        matrix = function() private$..matrix,
-        plot = function() private$..plot),
-    private = list(
-        ..matrix = NA,
-        ..plot = NA),
+        matrix = function() private$.items[["matrix"]],
+        plot = function() private$.items[["plot"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Correlation Matrix")
-            private$..matrix <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="matrix",
                 title="Correlation Matrix",
@@ -254,8 +252,8 @@ corrMatrixResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `title`="", 
                         `type`="text", 
                         `content`="p-value", 
-                        `visible`="(kendall && sig)")))
-            private$..plot <- jmvcore::Image$new(
+                        `visible`="(kendall && sig)"))))
+            self$add(jmvcore::Image$new(
                 options=options,
                 name="plot",
                 title="Plot",
@@ -267,9 +265,7 @@ corrMatrixResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 clearWith=list(
                     "vars",
                     "plotDens",
-                    "plotStats"))
-            self$add(private$..matrix)
-            self$add(private$..plot)}))
+                    "plotStats")))}))
 
 corrMatrixBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "corrMatrixBase",
@@ -297,9 +293,9 @@ corrMatrixBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @examples
 #' \dontrun{
 #' data('mtcars')
-#' 
+#'
 #' corrMatrix(mtcars, vars = c('mpg', 'cyl', 'disp', 'hp'))
-#' 
+#'
 #' #
 #' #  Correlation Matrix
 #' #
@@ -320,32 +316,32 @@ corrMatrixBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #            p-value                                          —
 #' #  --------------------------------------------------------------
 #' #
-#' }
+#'}
 #' @param data the data as a data frame
-#' @param vars a vector of strings naming the variables to correlate in 
-#'   \code{data} 
-#' @param pearson \code{TRUE} (default) or \code{FALSE}, provide Pearson's R 
-#' @param spearman \code{TRUE} or \code{FALSE} (default), provide Spearman's 
-#'   rho 
-#' @param kendall \code{TRUE} or \code{FALSE} (default), provide Kendall's 
-#'   tau-b 
-#' @param sig \code{TRUE} (default) or \code{FALSE}, provide significance 
-#'   levels 
-#' @param flag \code{TRUE} or \code{FALSE} (default), flag significant 
-#'   correlations 
-#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence 
-#'   intervals 
-#' @param ciWidth a number between 50 and 99.9 (default: 95), the width of 
-#'   confidence intervals to provide 
-#' @param plots \code{TRUE} or \code{FALSE} (default), provide a correlation 
-#'   matrix plot 
-#' @param plotDens \code{TRUE} or \code{FALSE} (default), provide densities in 
-#'   the correlation matrix plot 
-#' @param plotStats \code{TRUE} or \code{FALSE} (default), provide statistics 
-#'   in the correlation matrix plot 
-#' @param hypothesis one of \code{'corr'} (default), \code{'pos'}, 
-#'   \code{'neg'} specifying the alernative hypothesis; correlated, correlated 
-#'   positively, correlated negatively respectively. 
+#' @param vars a vector of strings naming the variables to correlate in
+#'   \code{data}
+#' @param pearson \code{TRUE} (default) or \code{FALSE}, provide Pearson's R
+#' @param spearman \code{TRUE} or \code{FALSE} (default), provide Spearman's
+#'   rho
+#' @param kendall \code{TRUE} or \code{FALSE} (default), provide Kendall's
+#'   tau-b
+#' @param sig \code{TRUE} (default) or \code{FALSE}, provide significance
+#'   levels
+#' @param flag \code{TRUE} or \code{FALSE} (default), flag significant
+#'   correlations
+#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence
+#'   intervals
+#' @param ciWidth a number between 50 and 99.9 (default: 95), the width of
+#'   confidence intervals to provide
+#' @param plots \code{TRUE} or \code{FALSE} (default), provide a correlation
+#'   matrix plot
+#' @param plotDens \code{TRUE} or \code{FALSE} (default), provide densities in
+#'   the correlation matrix plot
+#' @param plotStats \code{TRUE} or \code{FALSE} (default), provide statistics
+#'   in the correlation matrix plot
+#' @param hypothesis one of \code{'corr'} (default), \code{'pos'},
+#'   \code{'neg'} specifying the alernative hypothesis; correlated, correlated
+#'   positively, correlated negatively respectively.
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$matrix} \tab \tab \tab \tab \tab a correlation matrix table \cr

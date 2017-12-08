@@ -13,57 +13,57 @@ ancova(data, dep, factors = NULL, covs = NULL, modelTerms = NULL,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dep}{a string naming the dependent variable from \code{data}, 
+\item{dep}{a string naming the dependent variable from \code{data},
 variable must be numeric}
 
-\item{factors}{a vector of strings naming the fixed factors from 
+\item{factors}{a vector of strings naming the fixed factors from
 \code{data}}
 
 \item{covs}{a vector of strings naming the covariates from \code{data}}
 
-\item{modelTerms}{a list of character vectors describing the terms to go 
+\item{modelTerms}{a list of character vectors describing the terms to go
 into the model}
 
-\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of 
+\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of
 squares to use}
 
-\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or 
-\code{'omega'}; use eta², partial eta², and omega² effect sizes, 
+\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
+\code{'omega'}; use eta², partial eta², and omega² effect sizes,
 respectively}
 
-\item{contrasts}{a list of lists specifying the factor and type of contrast 
-to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'}, 
+\item{contrasts}{a list of lists specifying the factor and type of contrast
+to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
 \code{'helmert'}, \code{'repeated'} or \code{'polynomial'}}
 
-\item{plotHAxis}{a string naming the variable placed on the horizontal axis 
+\item{plotHAxis}{a string naming the variable placed on the horizontal axis
 of the plot}
 
-\item{plotSepLines}{a string naming the variable represented as separate 
+\item{plotSepLines}{a string naming the variable represented as separate
 lines on the plot}
 
-\item{plotSepPlots}{a string naming the variable to separate over to form 
+\item{plotSepPlots}{a string naming the variable to separate over to form
 multiple plots}
 
 \item{postHoc}{a list of terms to perform post-hoc tests on}
 
-\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'}, 
-\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey, 
+\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'},
+\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
 Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
 
-\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
 
-\item{homo}{\code{TRUE} or \code{FALSE} (default), perform homogeneity 
+\item{homo}{\code{TRUE} or \code{FALSE} (default), perform homogeneity
 tests}
 
-\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of 
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 residuals}
 
-\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use 
-no error bars, use confidence intervals, or use standard errors on the 
+\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use
+no error bars, use confidence intervals, or use standard errors on the
 plots, respectively}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
 confidence interval width}
 }
 \value{

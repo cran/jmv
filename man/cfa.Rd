@@ -15,68 +15,68 @@ cfa(data, factors = list(list(label = "Factor 1", vars = list())), resCov,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{factors}{a list containing named lists that define the \code{label} 
+\item{factors}{a list containing named lists that define the \code{label}
 of the factor and the \code{vars} that belong to that factor}
 
-\item{resCov}{a list of lists specifying the residual covariances that need 
+\item{resCov}{a list of lists specifying the residual covariances that need
 to be estimated}
 
-\item{miss}{\code{'listwise'} or \code{'fiml'}, how to handle missing 
-values; \code{'listwise'} excludes a row from all analyses if one of its 
-entries is missing, \code{'fiml'} uses a full information maximum 
+\item{miss}{\code{'listwise'} or \code{'fiml'}, how to handle missing
+values; \code{'listwise'} excludes a row from all analyses if one of its
+entries is missing, \code{'fiml'} uses a full information maximum
 likelihood method to estimate the model.}
 
-\item{constrain}{\code{'facVar'} or \code{'facInd'}, how to contrain the 
-model; \code{'facVar'} fixes the factor variances to one, \code{'facInd'} 
+\item{constrain}{\code{'facVar'} or \code{'facInd'}, how to contrain the
+model; \code{'facVar'} fixes the factor variances to one, \code{'facInd'}
 fixes each factor to the scale of its first indicator.}
 
-\item{estTest}{\code{TRUE} (default) or \code{FALSE}, provide 'Z' and 'p' 
+\item{estTest}{\code{TRUE} (default) or \code{FALSE}, provide 'Z' and 'p'
 values for the model estimates}
 
-\item{ci}{\code{TRUE} or \code{FALSE} (default), provide a confidence 
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide a confidence
 interval for the model estimates}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the 
+\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
 confidence interval width that is used as \code{'ci'}}
 
-\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized 
+\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized
 estimate for the model estimates}
 
-\item{factCovEst}{\code{TRUE} (default) or \code{FALSE}, provide estimates 
+\item{factCovEst}{\code{TRUE} (default) or \code{FALSE}, provide estimates
 for the factor (co)variances}
 
-\item{factInterceptEst}{\code{TRUE} or \code{FALSE} (default), provide 
+\item{factInterceptEst}{\code{TRUE} or \code{FALSE} (default), provide
 estimates for the factor intercepts}
 
-\item{resCovEst}{\code{TRUE} (default) or \code{FALSE}, provide estimates 
+\item{resCovEst}{\code{TRUE} (default) or \code{FALSE}, provide estimates
 for the residual (co)variances}
 
-\item{resInterceptEst}{\code{TRUE} or \code{FALSE} (default), provide 
+\item{resInterceptEst}{\code{TRUE} or \code{FALSE} (default), provide
 estimates for the residual intercepts}
 
-\item{fitMeasures}{one or more of \code{'cfi'}, \code{'tli'}, 
-\code{'srmr'}, \code{'rmsea'}, \code{'aic'}, or \code{'bic'}; use CFI, TLI, 
-SRMR, RMSEA + 90\% confidence interval, adjusted AIC, and BIC model fit 
+\item{fitMeasures}{one or more of \code{'cfi'}, \code{'tli'},
+\code{'srmr'}, \code{'rmsea'}, \code{'aic'}, or \code{'bic'}; use CFI, TLI,
+SRMR, RMSEA + 90\% confidence interval, adjusted AIC, and BIC model fit
 measures, respectively}
 
-\item{modelTest}{\code{TRUE} (default) or \code{FALSE}, provide a 
-chi-square test for exact fit that compares the model with the perfect 
+\item{modelTest}{\code{TRUE} (default) or \code{FALSE}, provide a
+chi-square test for exact fit that compares the model with the perfect
 fitting model}
 
-\item{pathDiagram}{\code{TRUE} or \code{FALSE} (default), provide a path 
+\item{pathDiagram}{\code{TRUE} or \code{FALSE} (default), provide a path
 diagram of the model}
 
-\item{corRes}{\code{TRUE} or \code{FALSE} (default), provide the residuals 
-for the observed correlation matrix (i.e., the difference between the 
+\item{corRes}{\code{TRUE} or \code{FALSE} (default), provide the residuals
+for the observed correlation matrix (i.e., the difference between the
 expected correlation matrix and the observed correlation matrix)}
 
-\item{hlCorRes}{a number (default: 0.1), highlight values in the 
+\item{hlCorRes}{a number (default: 0.1), highlight values in the
 \code{'corRes'} table above this value}
 
-\item{mi}{\code{TRUE} or \code{FALSE} (default), provide modification 
+\item{mi}{\code{TRUE} or \code{FALSE} (default), provide modification
 indices for the parameters not included in the model}
 
-\item{hlMI}{a number (default: 3), highlight values in the 
+\item{hlMI}{a number (default: 3), highlight values in the
 \code{'modIndices'} tables above this value}
 }
 \value{

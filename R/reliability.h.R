@@ -24,7 +24,7 @@ reliabilityOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='reliability',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
@@ -80,7 +80,7 @@ reliabilityOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "revItems",
                 revItems,
                 default=NULL)
-        
+
             self$.addOption(private$..vars)
             self$.addOption(private$..alphaScale)
             self$.addOption(private$..omegaScale)
@@ -125,20 +125,17 @@ reliabilityOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 reliabilityResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        scale = function() private$..scale,
-        items = function() private$..items,
-        corPlot = function() private$..corPlot),
-    private = list(
-        ..scale = NA,
-        ..items = NA,
-        ..corPlot = NA),
+        scale = function() private$.items[["scale"]],
+        items = function() private$.items[["items"]],
+        corPlot = function() private$.items[["corPlot"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Reliability Analysis")
-            private$..scale <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="scale",
                 title="Scale Reliability Statistics",
@@ -167,8 +164,8 @@ reliabilityResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="omega", 
                         `title`="McDonald's \u03C9", 
-                        `visible`="(omegaScale)")))
-            private$..items <- jmvcore::Table$new(
+                        `visible`="(omegaScale)"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="items",
                 title="Item Reliability Statistics",
@@ -204,8 +201,8 @@ reliabilityResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="omega", 
                         `title`="McDonald's \u03C9", 
                         `superTitle`="if item dropped", 
-                        `visible`="(omegaItems)")))
-            private$..corPlot <- jmvcore::Image$new(
+                        `visible`="(omegaItems)"))))
+            self$add(jmvcore::Image$new(
                 options=options,
                 name="corPlot",
                 title="Correlation Heatmap",
@@ -215,10 +212,7 @@ reliabilityResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 renderFun=".corPlot",
                 clearWith=list(
                     "vars",
-                    "revItems"))
-            self$add(private$..scale)
-            self$add(private$..items)
-            self$add(private$..corPlot)}))
+                    "revItems")))}))
 
 reliabilityBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "reliabilityBase",
@@ -245,10 +239,10 @@ reliabilityBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'
 #' @examples
 #' data('iris')
-#' 
+#'
 #' reliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),
 #'             omegaScale = TRUE)
-#' 
+#'
 #' #
 #' #  Scale Reliability Statistics
 #' #  -----------------------------------------
@@ -257,30 +251,30 @@ reliabilityBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    scale           0.708           0.848
 #' #  -----------------------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
-#' @param vars a vector of strings naming the variables of interest in 
+#' @param vars a vector of strings naming the variables of interest in
 #'   \code{data}
-#' @param alphaScale \code{TRUE} (default) or \code{FALSE}, provide Cronbach's 
-#'   alpha 
-#' @param omegaScale \code{TRUE} or \code{FALSE} (default), provide McDonald's 
-#'   omega 
-#' @param meanScale \code{TRUE} or \code{FALSE} (default), provide the mean 
-#' @param sdScale \code{TRUE} or \code{FALSE} (default), provide the standard 
-#'   deviation 
-#' @param corPlot \code{TRUE} or \code{FALSE} (default), provide a correlation 
-#'   plot 
-#' @param alphaItems \code{TRUE} or \code{FALSE} (default), provide what the 
-#'   Cronbach's alpha would be if the item was dropped 
-#' @param omegaItems \code{TRUE} or \code{FALSE} (default), provide what the 
-#'   McDonald's omega would be if the item was dropped 
-#' @param meanItems \code{TRUE} or \code{FALSE} (default), provide item means 
-#' @param sdItems \code{TRUE} or \code{FALSE} (default), provide item standard 
-#'   deviations 
-#' @param itemRestCor \code{TRUE} or \code{FALSE} (default), provide item-rest 
-#'   correlations 
-#' @param revItems a vector containing strings naming the varibales that are 
-#'   reverse scaled 
+#' @param alphaScale \code{TRUE} (default) or \code{FALSE}, provide Cronbach's
+#'   alpha
+#' @param omegaScale \code{TRUE} or \code{FALSE} (default), provide McDonald's
+#'   omega
+#' @param meanScale \code{TRUE} or \code{FALSE} (default), provide the mean
+#' @param sdScale \code{TRUE} or \code{FALSE} (default), provide the standard
+#'   deviation
+#' @param corPlot \code{TRUE} or \code{FALSE} (default), provide a correlation
+#'   plot
+#' @param alphaItems \code{TRUE} or \code{FALSE} (default), provide what the
+#'   Cronbach's alpha would be if the item was dropped
+#' @param omegaItems \code{TRUE} or \code{FALSE} (default), provide what the
+#'   McDonald's omega would be if the item was dropped
+#' @param meanItems \code{TRUE} or \code{FALSE} (default), provide item means
+#' @param sdItems \code{TRUE} or \code{FALSE} (default), provide item standard
+#'   deviations
+#' @param itemRestCor \code{TRUE} or \code{FALSE} (default), provide item-rest
+#'   correlations
+#' @param revItems a vector containing strings naming the varibales that are
+#'   reverse scaled
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$scale} \tab \tab \tab \tab \tab a table \cr

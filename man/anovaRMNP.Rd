@@ -12,16 +12,16 @@ anovaRMNP(data, measures, pairs = FALSE, desc = FALSE, plots = FALSE,
 
 \item{measures}{a vector of strings naming the repeated measures variables}
 
-\item{pairs}{\code{TRUE} or \code{FALSE} (default), perform pairwise 
+\item{pairs}{\code{TRUE} or \code{FALSE} (default), perform pairwise
 comparisons}
 
-\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
 
-\item{plots}{\code{TRUE} or \code{FALSE} (default), provide a descriptive 
+\item{plots}{\code{TRUE} or \code{FALSE} (default), provide a descriptive
 plot}
 
-\item{plotType}{\code{'means'} (default) or \code{'medians'}, the error 
+\item{plotType}{\code{'means'} (default) or \code{'medians'}, the error
 bars to use in the plot}
 }
 \value{

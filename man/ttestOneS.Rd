@@ -12,50 +12,50 @@ ttestOneS(data, vars, students = TRUE, bf = FALSE, bfPrior = 0.707,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{vars}{a vector of strings naming the variables of interest in 
+\item{vars}{a vector of strings naming the variables of interest in
 \code{data}}
 
-\item{students}{\code{TRUE} (default) or \code{FALSE}, perform Student's 
+\item{students}{\code{TRUE} (default) or \code{FALSE}, perform Student's
 t-tests}
 
 \item{bf}{\code{TRUE} or \code{FALSE} (default), provide Bayes factors}
 
-\item{bfPrior}{a number between 0.5 and 2 (default 0.707), the prior width 
+\item{bfPrior}{a number between 0.5 and 2 (default 0.707), the prior width
 to use in calculating Bayes factors}
 
-\item{mann}{\code{TRUE} or \code{FALSE} (default), perform Mann-Whitney U 
+\item{mann}{\code{TRUE} or \code{FALSE} (default), perform Mann-Whitney U
 test}
 
 \item{testValue}{a number specifying the value of the null hypothesis}
 
-\item{hypothesis}{\code{'dt'} (default), \code{'gt'} or \code{'lt'}, the 
-alternative hypothesis; different to \code{testValue}, greater than 
+\item{hypothesis}{\code{'dt'} (default), \code{'gt'} or \code{'lt'}, the
+alternative hypothesis; different to \code{testValue}, greater than
 \code{testValue}, and less than \code{testValue} respectively}
 
-\item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk 
+\item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk
 tests of normality}
 
-\item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and 
+\item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard deviations}
 
-\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide effect 
+\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide effect
 sizes}
 
-\item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence 
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
 intervals}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95), the width of 
+\item{ciWidth}{a number between 50 and 99.9 (default: 95), the width of
 confidence intervals}
 
-\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
 
-\item{plots}{\code{TRUE} or \code{FALSE} (default), provide descriptive 
+\item{plots}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 plots}
 
-\item{miss}{\code{'perAnalysis'} or \code{'listwise'}, how to handle 
-missing values; \code{'perAnalysis'} excludes missing values for individual 
-dependent variables, \code{'listwise'} excludes a row from all analyses if 
+\item{miss}{\code{'perAnalysis'} or \code{'listwise'}, how to handle
+missing values; \code{'perAnalysis'} excludes missing values for individual
+dependent variables, \code{'listwise'} excludes a row from all analyses if
 one of its entries is missing.}
 }
 \value{

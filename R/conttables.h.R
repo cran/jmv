@@ -13,9 +13,13 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             chiSq = TRUE,
             chiSqCorr = FALSE,
             likeRat = FALSE,
+            fisher = FALSE,
             contCoef = FALSE,
             phiCra = FALSE,
             logOdds = FALSE,
+            odds = FALSE,
+            relRisk = FALSE,
+            ci = TRUE,
             ciWidth = 95,
             gamma = FALSE,
             taub = FALSE,
@@ -29,7 +33,7 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='contTables',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..rows <- jmvcore::OptionVariable$new(
                 "rows",
                 rows,
@@ -68,6 +72,10 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "likeRat",
                 likeRat,
                 default=FALSE)
+            private$..fisher <- jmvcore::OptionBool$new(
+                "fisher",
+                fisher,
+                default=FALSE)
             private$..contCoef <- jmvcore::OptionBool$new(
                 "contCoef",
                 contCoef,
@@ -80,6 +88,18 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "logOdds",
                 logOdds,
                 default=FALSE)
+            private$..odds <- jmvcore::OptionBool$new(
+                "odds",
+                odds,
+                default=FALSE)
+            private$..relRisk <- jmvcore::OptionBool$new(
+                "relRisk",
+                relRisk,
+                default=FALSE)
+            private$..ci <- jmvcore::OptionBool$new(
+                "ci",
+                ci,
+                default=TRUE)
             private$..ciWidth <- jmvcore::OptionNumber$new(
                 "ciWidth",
                 ciWidth,
@@ -110,7 +130,7 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "pcTot",
                 pcTot,
                 default=FALSE)
-        
+
             self$.addOption(private$..rows)
             self$.addOption(private$..cols)
             self$.addOption(private$..counts)
@@ -118,9 +138,13 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..chiSq)
             self$.addOption(private$..chiSqCorr)
             self$.addOption(private$..likeRat)
+            self$.addOption(private$..fisher)
             self$.addOption(private$..contCoef)
             self$.addOption(private$..phiCra)
             self$.addOption(private$..logOdds)
+            self$.addOption(private$..odds)
+            self$.addOption(private$..relRisk)
+            self$.addOption(private$..ci)
             self$.addOption(private$..ciWidth)
             self$.addOption(private$..gamma)
             self$.addOption(private$..taub)
@@ -137,9 +161,13 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         chiSq = function() private$..chiSq$value,
         chiSqCorr = function() private$..chiSqCorr$value,
         likeRat = function() private$..likeRat$value,
+        fisher = function() private$..fisher$value,
         contCoef = function() private$..contCoef$value,
         phiCra = function() private$..phiCra$value,
         logOdds = function() private$..logOdds$value,
+        odds = function() private$..odds$value,
+        relRisk = function() private$..relRisk$value,
+        ci = function() private$..ci$value,
         ciWidth = function() private$..ciWidth$value,
         gamma = function() private$..gamma$value,
         taub = function() private$..taub$value,
@@ -155,9 +183,13 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..chiSq = NA,
         ..chiSqCorr = NA,
         ..likeRat = NA,
+        ..fisher = NA,
         ..contCoef = NA,
         ..phiCra = NA,
         ..logOdds = NA,
+        ..odds = NA,
+        ..relRisk = NA,
+        ..ci = NA,
         ..ciWidth = NA,
         ..gamma = NA,
         ..taub = NA,
@@ -170,26 +202,20 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        freqs = function() private$..freqs,
-        chiSq = function() private$..chiSq,
-        odds = function() private$..odds,
-        nom = function() private$..nom,
-        gamma = function() private$..gamma,
-        taub = function() private$..taub),
-    private = list(
-        ..freqs = NA,
-        ..chiSq = NA,
-        ..odds = NA,
-        ..nom = NA,
-        ..gamma = NA,
-        ..taub = NA),
+        freqs = function() private$.items[["freqs"]],
+        chiSq = function() private$.items[["chiSq"]],
+        odds = function() private$.items[["odds"]],
+        nom = function() private$.items[["nom"]],
+        gamma = function() private$.items[["gamma"]],
+        taub = function() private$.items[["taub"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Contingency Tables")
-            private$..freqs <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="freqs",
                 title="Contingency Tables",
@@ -198,8 +224,8 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "rows",
                     "cols",
                     "counts",
-                    "layers"))
-            private$..chiSq <- jmvcore::Table$new(
+                    "layers")))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="chiSq",
                 title="\u03C7\u00B2 Tests",
@@ -273,6 +299,22 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `format`="zto,pvalue", 
                         `visible`="(likeRat)"),
                     list(
+                        `name`="test[fisher]", 
+                        `title`="", 
+                        `type`="text", 
+                        `content`="Fisher's exact test", 
+                        `visible`="(fisher)"),
+                    list(
+                        `name`="value[fisher]", 
+                        `title`="Value", 
+                        `visible`="(fisher)"),
+                    list(
+                        `name`="p[fisher]", 
+                        `title`="p", 
+                        `type`="number", 
+                        `format`="zto,pvalue", 
+                        `visible`="(fisher)"),
+                    list(
                         `name`="test[N]", 
                         `title`="", 
                         `type`="text", 
@@ -280,12 +322,12 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="value[N]", 
                         `title`="Value", 
-                        `type`="integer")))
-            private$..odds <- jmvcore::Table$new(
+                        `type`="integer"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="odds",
-                title="Log Odds Ratio",
-                visible="(logOdds)",
+                title="Comparative Measures",
+                visible="(logOdds || odds || relRisk)",
                 clearWith=list(
                     "rows",
                     "cols",
@@ -297,35 +339,63 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="t[lo]", 
                         `title`="", 
                         `type`="text", 
-                        `content`="Log odds ratio"),
+                        `content`="Log odds ratio", 
+                        `visible`="(logOdds)"),
                     list(
                         `name`="v[lo]", 
-                        `title`="Value"),
+                        `title`="Value", 
+                        `visible`="(logOdds)"),
                     list(
                         `name`="cil[lo]", 
                         `title`="Lower", 
-                        `superTitle`="Confidence Intervals"),
+                        `superTitle`="Confidence Intervals", 
+                        `visible`="(logOdds && ci)"),
                     list(
                         `name`="ciu[lo]", 
                         `title`="Upper", 
-                        `superTitle`="Confidence Intervals"),
+                        `superTitle`="Confidence Intervals", 
+                        `visible`="(logOdds && ci)"),
                     list(
-                        `name`="t[f]", 
+                        `name`="t[o]", 
                         `title`="", 
                         `type`="text", 
-                        `content`="Fisher's exact test"),
+                        `content`="Odds ratio", 
+                        `visible`="(odds)"),
                     list(
-                        `name`="v[f]", 
-                        `title`="Value"),
+                        `name`="v[o]", 
+                        `title`="Value", 
+                        `visible`="(odds)"),
                     list(
-                        `name`="cil[f]", 
+                        `name`="cil[o]", 
                         `title`="Lower", 
-                        `superTitle`="Confidence Intervals"),
+                        `superTitle`="Confidence Intervals", 
+                        `visible`="(odds && ci)"),
                     list(
-                        `name`="ciu[f]", 
+                        `name`="ciu[o]", 
                         `title`="Upper", 
-                        `superTitle`="Confidence Intervals")))
-            private$..nom <- jmvcore::Table$new(
+                        `superTitle`="Confidence Intervals", 
+                        `visible`="(odds && ci)"),
+                    list(
+                        `name`="t[rr]", 
+                        `title`="", 
+                        `type`="text", 
+                        `content`="Relative risk", 
+                        `visible`="(relRisk)"),
+                    list(
+                        `name`="v[rr]", 
+                        `title`="Value", 
+                        `visible`="(relRisk)"),
+                    list(
+                        `name`="cil[rr]", 
+                        `title`="Lower", 
+                        `superTitle`="Confidence Intervals", 
+                        `visible`="(relRisk && ci)"),
+                    list(
+                        `name`="ciu[rr]", 
+                        `title`="Upper", 
+                        `superTitle`="Confidence Intervals", 
+                        `visible`="(relRisk && ci)"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="nom",
                 title="Nominal",
@@ -360,8 +430,8 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="v[cra]", 
                         `title`="Value", 
-                        `visible`="(phiCra)")))
-            private$..gamma <- jmvcore::Table$new(
+                        `visible`="(phiCra)"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="gamma",
                 title="Gamma",
@@ -385,8 +455,8 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="ciu", 
                         `title`="Upper", 
-                        `superTitle`="Confidence Intervals")))
-            private$..taub <- jmvcore::Table$new(
+                        `superTitle`="Confidence Intervals"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="taub",
                 title="Kendall's Tau-b",
@@ -407,13 +477,7 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="p", 
                         `title`="p", 
                         `type`="number", 
-                        `format`="zto,pvalue")))
-            self$add(private$..freqs)
-            self$add(private$..chiSq)
-            self$add(private$..odds)
-            self$add(private$..nom)
-            self$add(private$..gamma)
-            self$add(private$..taub)}))
+                        `format`="zto,pvalue"))))}))
 
 contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "contTablesBase",
@@ -441,9 +505,9 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @examples
 #' data('HairEyeColor')
 #' dat <- as.data.frame(HairEyeColor)
-#' 
+#'
 #' contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
-#' 
+#'
 #' #
 #' #  Contingency Tables
 #' #
@@ -467,43 +531,51 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    N       592
 #' #  -------------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
-#' @param rows a string naming the variable to use as the rows in the 
-#'   contingency table 
-#' @param cols a string naming the variable to use as the columns in the 
-#'   contingency table 
-#' @param counts a string naming the variable to use as counts, or NULL if 
-#'   each row represents a single observation 
-#' @param layers a character vector naming variables to split the contingency 
-#'   table across 
-#' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X² 
-#' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with 
-#'   continuity correction 
-#' @param likeRat \code{TRUE} or \code{FALSE} (default), provide the 
-#'   likelihood ratio 
-#' @param contCoef \code{TRUE} or \code{FALSE} (default), provide the 
-#'   contingency coefficient 
-#' @param phiCra \code{TRUE} or \code{FALSE} (default), provide Phi and 
-#'   Cramer's V 
-#' @param logOdds \code{TRUE} or \code{FALSE} (default), provide the log odds 
-#'   ratio (only available for 2x2 tables) 
-#' @param ciWidth a number between 50 and 99.9 (default: 95), width of the 
-#'   confidence intervals to provide 
-#' @param gamma \code{TRUE} or \code{FALSE} (default), provide gamma 
-#' @param taub \code{TRUE} or \code{FALSE} (default), provide Kendall's tau-b 
-#' @param exp \code{TRUE} or \code{FALSE} (default), provide the expected 
-#'   counts 
-#' @param pcRow \code{TRUE} or \code{FALSE} (default), provide row percentages 
-#' @param pcCol \code{TRUE} or \code{FALSE} (default), provide column 
-#'   percentages 
-#' @param pcTot \code{TRUE} or \code{FALSE} (default), provide total 
-#'   percentages 
+#' @param rows a string naming the variable to use as the rows in the
+#'   contingency table
+#' @param cols a string naming the variable to use as the columns in the
+#'   contingency table
+#' @param counts a string naming the variable to use as counts, or NULL if
+#'   each row represents a single observation
+#' @param layers a character vector naming variables to split the contingency
+#'   table across
+#' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X²
+#' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with
+#'   continuity correction
+#' @param likeRat \code{TRUE} or \code{FALSE} (default), provide the
+#'   likelihood ratio
+#' @param fisher \code{TRUE} or \code{FALSE} (default), provide Fisher's exact
+#'   test
+#' @param contCoef \code{TRUE} or \code{FALSE} (default), provide the
+#'   contingency coefficient
+#' @param phiCra \code{TRUE} or \code{FALSE} (default), provide Phi and
+#'   Cramer's V
+#' @param logOdds \code{TRUE} or \code{FALSE} (default), provide the log odds
+#'   ratio (only available for 2x2 tables)
+#' @param odds \code{TRUE} or \code{FALSE} (default), provide the odds ratio
+#'   (only available for 2x2 tables)
+#' @param relRisk \code{TRUE} or \code{FALSE} (default), provide the relative
+#'   risk (only available for 2x2 tables)
+#' @param ci \code{TRUE} or \code{FALSE} (default), provide confidence
+#'   intervals for the comparative measures
+#' @param ciWidth a number between 50 and 99.9 (default: 95), width of the
+#'   confidence intervals to provide
+#' @param gamma \code{TRUE} or \code{FALSE} (default), provide gamma
+#' @param taub \code{TRUE} or \code{FALSE} (default), provide Kendall's tau-b
+#' @param exp \code{TRUE} or \code{FALSE} (default), provide the expected
+#'   counts
+#' @param pcRow \code{TRUE} or \code{FALSE} (default), provide row percentages
+#' @param pcCol \code{TRUE} or \code{FALSE} (default), provide column
+#'   percentages
+#' @param pcTot \code{TRUE} or \code{FALSE} (default), provide total
+#'   percentages
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$freqs} \tab \tab \tab \tab \tab a table of proportions \cr
 #'   \code{results$chiSq} \tab \tab \tab \tab \tab a table of X² test results \cr
-#'   \code{results$odds} \tab \tab \tab \tab \tab a table of odds ratio results \cr
+#'   \code{results$odds} \tab \tab \tab \tab \tab a table of comparative measures \cr
 #'   \code{results$nom} \tab \tab \tab \tab \tab a table of the 'nominal' test results \cr
 #'   \code{results$gamma} \tab \tab \tab \tab \tab a table of the gamma test results \cr
 #'   \code{results$taub} \tab \tab \tab \tab \tab a table of the Kendall's tau-b test results \cr
@@ -525,9 +597,13 @@ contTables <- function(
     chiSq = TRUE,
     chiSqCorr = FALSE,
     likeRat = FALSE,
+    fisher = FALSE,
     contCoef = FALSE,
     phiCra = FALSE,
     logOdds = FALSE,
+    odds = FALSE,
+    relRisk = FALSE,
+    ci = TRUE,
     ciWidth = 95,
     gamma = FALSE,
     taub = FALSE,
@@ -547,9 +623,13 @@ contTables <- function(
         chiSq = chiSq,
         chiSqCorr = chiSqCorr,
         likeRat = likeRat,
+        fisher = fisher,
         contCoef = contCoef,
         phiCra = phiCra,
         logOdds = logOdds,
+        odds = odds,
+        relRisk = relRisk,
+        ci = ci,
         ciWidth = ciWidth,
         gamma = gamma,
         taub = taub,

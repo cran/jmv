@@ -16,7 +16,7 @@ propTestNOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='propTestN',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..var <- jmvcore::OptionVariable$new(
                 "var",
                 var,
@@ -48,7 +48,7 @@ propTestNOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     min=0,
                     default=1),
                 default=NULL)
-        
+
             self$.addOption(private$..var)
             self$.addOption(private$..counts)
             self$.addOption(private$..expected)
@@ -69,18 +69,16 @@ propTestNOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 propTestNResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        props = function() private$..props,
-        tests = function() private$..tests),
-    private = list(
-        ..props = NA,
-        ..tests = NA),
+        props = function() private$.items[["props"]],
+        tests = function() private$.items[["tests"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="Proportion Test (N Outcomes)")
-            private$..props <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="props",
                 title="Proportions",
@@ -124,8 +122,8 @@ propTestNResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="prop[exp]", 
                         `title`="Proportion", 
                         `type`="number", 
-                        `visible`="(expected)")))
-            private$..tests <- jmvcore::Table$new(
+                        `visible`="(expected)"))))
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="tests",
                 title="\u03C7\u00B2 Goodness of Fit",
@@ -147,9 +145,7 @@ propTestNResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="p", 
                         `title`="p", 
                         `type`="number", 
-                        `format`="zto,pvalue")))
-            self$add(private$..props)
-            self$add(private$..tests)}))
+                        `format`="zto,pvalue"))))}))
 
 propTestNBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "propTestNBase",
@@ -177,9 +173,9 @@ propTestNBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @examples
 #' data('HairEyeColor')
 #' dat <- as.data.frame(HairEyeColor)
-#' 
+#'
 #' propTestN(dat, var = 'Eye', counts = 'Freq', ratio = c(1,1,1,1))
-#' 
+#'
 #' #
 #' #  Proportion Test (N Outcomes)
 #' #
@@ -201,14 +197,14 @@ propTestNBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    133     3    < .001
 #' #  -----------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
 #' @param var a string naming the variable of interest in \code{data}
-#' @param counts a string naming a variable in \code{data} containing counts, 
-#'   or NULL if each row represents a single observation 
-#' @param expected \code{TRUE} or \code{FALSE} (default), whether expected 
-#'   counts should be displayed 
-#' @param ratio a vector of numbers: the expected proportions 
+#' @param counts a string naming a variable in \code{data} containing counts,
+#'   or NULL if each row represents a single observation
+#' @param expected \code{TRUE} or \code{FALSE} (default), whether expected
+#'   counts should be displayed
+#' @param ratio a vector of numbers: the expected proportions
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$props} \tab \tab \tab \tab \tab a table of the proportions \cr

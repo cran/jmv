@@ -10,26 +10,26 @@ contTablesPaired(data, rows, cols, counts = NULL, chiSq = TRUE,
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{rows}{a string naming the variable to use as the rows in the 
+\item{rows}{a string naming the variable to use as the rows in the
 contingency table}
 
-\item{cols}{a string naming the variable to use as the columns in the 
+\item{cols}{a string naming the variable to use as the columns in the
 contingency table}
 
-\item{counts}{a string naming the variable to use as counts, or NULL if 
+\item{counts}{a string naming the variable to use as counts, or NULL if
 each row represents a single observation}
 
 \item{chiSq}{\code{TRUE} (default) or \code{FALSE}, provide X²}
 
-\item{chiSqCorr}{\code{TRUE} or \code{FALSE} (default), provide X² with 
+\item{chiSqCorr}{\code{TRUE} or \code{FALSE} (default), provide X² with
 continuity correction}
 
-\item{exact}{\code{TRUE} or \code{FALSE} (default), provide an exact log 
+\item{exact}{\code{TRUE} or \code{FALSE} (default), provide an exact log
 odds ratio}
 
 \item{pcRow}{\code{TRUE} or \code{FALSE} (default), provide row percentages}
 
-\item{pcCol}{\code{TRUE} or \code{FALSE} (default), provide column 
+\item{pcCol}{\code{TRUE} or \code{FALSE} (default), provide column
 percentages}
 }
 \value{

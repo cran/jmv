@@ -5,32 +5,50 @@
 \title{Proportion Test (2 Outcomes)}
 \usage{
 propTest2(data, vars, areCounts = FALSE, testValue = 0.5,
-  hypothesis = "notequal", ci = FALSE, ciWidth = 95)
+  hypothesis = "notequal", ci = FALSE, ciWidth = 95, bf = FALSE,
+  priorA = 1, priorB = 1, ciBayes = FALSE, ciBayesWidth = 95,
+  postPlots = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{vars}{a vector of strings naming the variables of interest in 
+\item{vars}{a vector of strings naming the variables of interest in
 \code{data}}
 
-\item{areCounts}{\code{TRUE} or \code{FALSE} (default), the variables are 
+\item{areCounts}{\code{TRUE} or \code{FALSE} (default), the variables are
 counts}
 
 \item{testValue}{a number (default: 0.5), the value for the null hypothesis}
 
-\item{hypothesis}{\code{'notequal'} (default), \code{'greater'} or 
+\item{hypothesis}{\code{'notequal'} (default), \code{'greater'} or
 \code{'less'}, the alternative hypothesis}
 
-\item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence 
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
 intervals}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95), the confidence 
+\item{ciWidth}{a number between 50 and 99.9 (default: 95), the confidence
 interval width}
+
+\item{bf}{\code{TRUE} or \code{FALSE} (default), provide Bayes factors}
+
+\item{priorA}{a number (default: 1), the beta prior 'a' parameter}
+
+\item{priorB}{a number (default: 1), the beta prior 'b' parameter}
+
+\item{ciBayes}{\code{TRUE} or \code{FALSE} (default), provide Bayesian
+credible intervals}
+
+\item{ciBayesWidth}{a number between 50 and 99.9 (default: 95), the
+credible interval width}
+
+\item{postPlots}{\code{TRUE} or \code{FALSE} (default), provide posterior
+plots}
 }
 \value{
 A results object containing:
 \tabular{llllll}{
   \code{results$table} \tab \tab \tab \tab \tab a table of the proportions and test results \cr
+  \code{results$postPlots} \tab \tab \tab \tab \tab an array of the posterior plots \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

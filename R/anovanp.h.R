@@ -15,7 +15,7 @@ anovaNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name='anovaNP',
                 requiresData=TRUE,
                 ...)
-        
+
             private$..deps <- jmvcore::OptionVariables$new(
                 "deps",
                 deps,
@@ -35,7 +35,7 @@ anovaNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "pairs",
                 pairs,
                 default=FALSE)
-        
+
             self$.addOption(private$..deps)
             self$.addOption(private$..group)
             self$.addOption(private$..pairs)
@@ -53,18 +53,16 @@ anovaNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 anovaNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
     inherit = jmvcore::Group,
     active = list(
-        table = function() private$..table,
-        comparisons = function() private$..comparisons),
-    private = list(
-        ..table = NA,
-        ..comparisons = NA),
+        table = function() private$.items[["table"]],
+        comparisons = function() private$.items[["comparisons"]]),
+    private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
                 title="One-way ANOVA (Non-parametric)")
-            private$..table <- jmvcore::Table$new(
+            self$add(jmvcore::Table$new(
                 options=options,
                 name="table",
                 title="Kruskal-Wallis",
@@ -89,8 +87,8 @@ anovaNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="p", 
                         `title`="p", 
                         `type`="number", 
-                        `format`="zto,pvalue")))
-            private$..comparisons <- jmvcore::Array$new(
+                        `format`="zto,pvalue"))))
+            self$add(jmvcore::Array$new(
                 options=options,
                 name="comparisons",
                 title="Dwass-Steel-Critchlow-Fligner pairwise comparisons",
@@ -121,9 +119,7 @@ anovaNPResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             `name`="p", 
                             `title`="p", 
                             `type`="number", 
-                            `format`="zto,pvalue"))))
-            self$add(private$..table)
-            self$add(private$..comparisons)}))
+                            `format`="zto,pvalue")))))}))
 
 anovaNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "anovaNPBase",
@@ -150,9 +146,9 @@ anovaNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'
 #' @examples
 #' data('ToothGrowth')
-#' 
+#'
 #' anovaNP(ToothGrowth, deps = 'len', group = 'dose')
-#' 
+#'
 #' #
 #' #  One-way ANOVA (Non-parametric)
 #' #
@@ -163,13 +159,13 @@ anovaNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #    len    40.7     2    < .001
 #' #  -------------------------------
 #' #
-#' 
+#'
 #' @param data the data as a data frame
 #' @param deps a string naming the dependent variable in \code{data}
-#' @param group a string naming the grouping or independent variable in 
+#' @param group a string naming the grouping or independent variable in
 #'   \code{data}
-#' @param pairs \code{TRUE} or \code{FALSE} (default), perform pairwise 
-#'   comparisons 
+#' @param pairs \code{TRUE} or \code{FALSE} (default), perform pairwise
+#'   comparisons
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$table} \tab \tab \tab \tab \tab a table of the test results \cr
