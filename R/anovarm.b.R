@@ -490,7 +490,7 @@ anovaRMClass <- R6::R6Class(
 
                     table$setStatus('running')
 
-                    referenceGrid <- lsmeans::lsmeans(result, formula)
+                    referenceGrid <- emmeans::emmeans(result, formula)
                     none <- summary(pairs(referenceGrid, adjust='none'))
                     tukey <- summary(pairs(referenceGrid, adjust='tukey'))
                     scheffe <- summary(pairs(referenceGrid, adjust='scheffe'))
@@ -708,8 +708,8 @@ anovaRMClass <- R6::R6Class(
                 jmvcore::reject("Item '{}' needs to be numeric", code='error', varsNumeric[factorItems])
             if (any(infItems))
                 jmvcore::reject("Item '{}' contains infinite values", code='error', varsNumeric[infItems])
-            if (any(noVarItems))
-                jmvcore::reject("Item '{}' has no variance", code='error', varsNumeric[noVarItems])
+            # if (any(noVarItems))
+            #     jmvcore::reject("Item '{}' has no variance", code='error', varsNumeric[noVarItems])
         },
         .rmTerms=function() {
 
