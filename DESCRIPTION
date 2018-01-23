@@ -1,8 +1,8 @@
 Package: jmv
 Type: Package
 Title: The 'jamovi' Analyses
-Version: 0.8.1.14
-Date: 2018-01-13
+Version: 0.8.1.16
+Date: 2018-01-23
 Author: Ravi Selker, Jonathon Love, Damian Dropmann
 Maintainer: Jonathon Love <jon@thon.cc>
 Description: A suite of common statistical methods such as descriptives,
@@ -18,6 +18,6 @@ Suggests: exact2x2, testthat, semPlot
 Encoding: UTF-8
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-01-17 03:40:32 UTC; jonathon
+Packaged: 2018-01-23 11:06:38 UTC; jonathon
 Repository: CRAN
-Date/Publication: 2018-01-17 04:51:04 UTC
+Date/Publication: 2018-01-23 22:03:50 UTC
