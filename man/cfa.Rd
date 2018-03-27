@@ -115,7 +115,8 @@ jmv::cfa(
         list(label="Speed", vars=c("x7", "x8", "x9"))),
     resCov = NULL)
 
-# Confirmatory Factor Analysis
+#
+#  CONFIRMATORY FACTOR ANALYSIS
 #
 #  Factor Loadings
 #  -----------------------------------------------------------------
@@ -133,7 +134,7 @@ jmv::cfa(
 #  -----------------------------------------------------------------
 #
 #
-# Factor Estimates
+#  FACTOR ESTIMATES
 #
 #  Factor Covariances
 #  --------------------------------------------------------------
@@ -149,7 +150,7 @@ jmv::cfa(
 #    a fixed parameter
 #
 #
-# Model Fit
+#  MODEL FIT
 #
 #  Test for Exact Fit
 #  ------------------------
@@ -159,14 +160,12 @@ jmv::cfa(
 #  ------------------------
 #
 #
-#
 #  Fit Measures
 #  -----------------------------------------------
 #    CFI      TLI      RMSEA     Lower     Upper
 #  -----------------------------------------------
 #    0.931    0.896    0.0921    0.0714    0.114
 #  -----------------------------------------------
-#
 #
 
 }

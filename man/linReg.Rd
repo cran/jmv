@@ -4,11 +4,14 @@
 \alias{linReg}
 \title{Linear Regression}
 \usage{
-linReg(data, dep, blocks = list(list()), fitMeasures = list("r", "r2"),
-  modelTest = NULL, modelComp = list("f"), stdEst = FALSE, ci = FALSE,
-  ciWidth = 95, coefPlot = FALSE, qqPlot = FALSE, resPlots = FALSE,
-  durbin = FALSE, collin = FALSE, desc = FALSE, cooks = FALSE,
-  modelSelected = -1)
+linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
+  refLevels = NULL, r = TRUE, r2 = TRUE, r2Adj = FALSE, aic = FALSE,
+  bic = FALSE, rmse = FALSE, modelTest = FALSE, anova = FALSE,
+  ci = FALSE, ciWidth = 95, stdEst = FALSE, ciStdEst = FALSE,
+  ciWidthStdEst = 95, coefPlot = FALSE, qqPlot = FALSE,
+  resPlots = FALSE, durbin = FALSE, collin = FALSE, cooks = FALSE,
+  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
+  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -16,28 +19,56 @@ linReg(data, dep, blocks = list(list()), fitMeasures = list("r", "r2"),
 \item{dep}{a string naming the dependent variable from \code{data},
 variable must be numeric}
 
-\item{blocks}{a list containing vectors of strings that name the covariates
+\item{covs}{a vector of strings naming the covariates from \code{data}}
+
+\item{factors}{a vector of strings naming the fixed factors from
+\code{data}}
+
+\item{blocks}{a list containing vectors of strings that name the predictors
 that are added to the model. The elements are added to the model according
 to their order in the list}
 
-\item{fitMeasures}{one or more of \code{'r'}, \code{'r2'}, \code{'r2Adj'},
-\code{'aic'}, \code{'bic'}, or \code{'rmse'}; use R, R², adjusted R², AIC,
-BIC, and RMSE model fit measures, respectively}
+\item{refLevels}{a list of lists specifying reference levels of the
+dependent variable and all the factors}
 
-\item{modelTest}{one or more of \code{'f'}, or \code{'bf'}; Use classical
-F-test, and Bayes factor respectively as overall model tests.}
+\item{r}{\code{TRUE} (default) or \code{FALSE}, provide the statistical
+measure \code{R} for the models}
 
-\item{modelComp}{one or more of \code{'f'}, or \code{'bf'}; Use classical
-F-test, and Bayes factor respectively as model comparison tests.}
+\item{r2}{\code{TRUE} (default) or \code{FALSE}, provide the statistical
+measure \code{R-squared} for the models}
 
-\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized
-estimate for the model coefficients}
+\item{r2Adj}{\code{TRUE} or \code{FALSE} (default), provide the statistical
+measure \code{adjusted R-squared} for the models}
+
+\item{aic}{\code{TRUE} or \code{FALSE} (default), provide Aikaike's
+Information Criterion (AIC) for the models}
+
+\item{bic}{\code{TRUE} or \code{FALSE} (default), provide Bayesian
+Information Criterion (BIC) for the models}
+
+\item{rmse}{\code{TRUE} or \code{FALSE} (default), provide RMSE for the
+models}
+
+\item{modelTest}{\code{TRUE} (default) or \code{FALSE}, provide the model
+comparison between the models and the NULL model}
+
+\item{anova}{\code{TRUE} or \code{FALSE} (default), provide the omnibus
+ANOVA test for the predictors}
 
 \item{ci}{\code{TRUE} or \code{FALSE} (default), provide a confidence
 interval for the model coefficients}
 
 \item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
 confidence interval width}
+
+\item{stdEst}{\code{TRUE} or \code{FALSE} (default), provide a standardized
+estimate for the model coefficients}
+
+\item{ciStdEst}{\code{TRUE} or \code{FALSE} (default), provide a confidence
+interval for the model coefficient standardized estimates}
+
+\item{ciWidthStdEst}{a number between 50 and 99.9 (default: 95) specifying
+the confidence interval width}
 
 \item{coefPlot}{\code{TRUE} or \code{FALSE} (default), provide a
 coefficient plot where for each predictor the estimated coefficient and
@@ -56,28 +87,34 @@ Durbin- Watson test for autocorrelation}
 \item{collin}{\code{TRUE} or \code{FALSE} (default), provide VIF and
 tolerence collinearity statistics}
 
-\item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive
-statistics}
-
 \item{cooks}{\code{TRUE} or \code{FALSE} (default), provide summary
 statistics for the Cook's distance}
 
-\item{modelSelected}{an integer defining the model for which the model
-specific output needs to be calculated (defaults to most complex model)}
+\item{emMeans}{a list of lists specifying the variables for which the
+estimated marginal means need to be calculate. Supports up to three
+variables per term.}
+
+\item{ciEmm}{\code{TRUE} (default) or \code{FALSE}, provide a confidence
+interval for the estimated marginal means}
+
+\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
+confidence interval width for the estimated marginal means}
+
+\item{emmPlots}{\code{TRUE} (default) or \code{FALSE}, provide estimated
+marginal means plots}
+
+\item{emmTables}{\code{TRUE} or \code{FALSE} (default), provide estimated
+marginal means tables}
+
+\item{emmWeights}{\code{TRUE} (default) or \code{FALSE}, weigh each cell
+equally or weigh them according to the cell frequency}
 }
 \value{
 A results object containing:
 \tabular{llllll}{
   \code{results$modelFit} \tab \tab \tab \tab \tab a table \cr
   \code{results$modelComp} \tab \tab \tab \tab \tab a table \cr
-  \code{results$coef} \tab \tab \tab \tab \tab a table \cr
-  \code{results$coefPlot} \tab \tab \tab \tab \tab an image \cr
-  \code{results$dataSummary$desc} \tab \tab \tab \tab \tab a table \cr
-  \code{results$dataSummary$cooks} \tab \tab \tab \tab \tab a table \cr
-  \code{results$assump$durbin} \tab \tab \tab \tab \tab a table \cr
-  \code{results$assump$collin} \tab \tab \tab \tab \tab a table \cr
-  \code{results$assump$qqPlot} \tab \tab \tab \tab \tab an image \cr
-  \code{results$assump$resPlots} \tab \tab \tab \tab \tab an array \cr
+  \code{results$models} \tab \tab \tab \tab \tab an array of model specific results \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
@@ -93,27 +130,34 @@ Linear Regression
 data('Prestige', package='car')
 
 linReg(data = Prestige, dep = 'income',
-       blocks = list(c('education', 'prestige', 'women')))
+       covs = c('education', 'prestige', 'women'),
+       blocks = list(list('education', 'prestige', 'women')))
 
+#
+#  LINEAR REGRESSION
 #
 #  Model Fit Measures
 #  ---------------------------
 #    Model    R        R²
 #  ---------------------------
-#    1        0.802    0.643
+#        1    0.802    0.643
 #  ---------------------------
 #
 #
+#  MODEL SPECIFIC RESULTS
+#
+#  MODEL 1
+#
 #
 #  Model Coefficients
-#  -----------------------------------------------------------------
-#    Model    Predictor    Estimate    SE         t         p
-#  -----------------------------------------------------------------
-#    1        Intercept      -253.8    1086.16    -0.234     0.816
-#             education       177.2     187.63     0.944     0.347
-#             prestige        141.4      29.91     4.729    < .001
-#             women           -50.9       8.56    -5.948    < .001
-#  -----------------------------------------------------------------
+#  --------------------------------------------------------
+#    Predictor    Estimate    SE         t         p
+#  --------------------------------------------------------
+#    Intercept      -253.8    1086.16    -0.234     0.816
+#    women           -50.9       8.56    -5.948    < .001
+#    prestige        141.4      29.91     4.729    < .001
+#    education       177.2     187.63     0.944     0.347
+#  --------------------------------------------------------
 #
 
 }

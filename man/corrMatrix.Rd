@@ -70,7 +70,7 @@ data('mtcars')
 corrMatrix(mtcars, vars = c('mpg', 'cyl', 'disp', 'hp'))
 
 #
-#  Correlation Matrix
+#  CORRELATION MATRIX
 #
 #  Correlation Matrix
 #  --------------------------------------------------------------

@@ -112,7 +112,7 @@ dat$gear <- as.factor(dat$gear)
 descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
 
 #
-#  Descriptives
+#  DESCRIPTIVES
 #
 #  Descriptives
 #  -------------------------------------------
@@ -127,7 +127,7 @@ descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
 #  -------------------------------------------
 #
 #
-#  Frequencies
+#  FREQUENCIES
 #
 #  Frequencies of gear
 #  --------------------
@@ -137,7 +137,6 @@ descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
 #    4             12
 #    5              5
 #  --------------------
-#
 #
 }
 }

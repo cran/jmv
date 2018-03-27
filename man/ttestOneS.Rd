@@ -82,7 +82,7 @@ data('ToothGrowth')
 ttestOneS(ToothGrowth, vars = c('len', 'dose'))
 
 #
-#  One Sample T-Test
+#  ONE SAMPLE T-TEST
 #
 #  One Sample T-Test
 #  ------------------------------------------------------

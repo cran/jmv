@@ -58,7 +58,7 @@ dat <- data.frame(
 contTablesPaired(dat, rows = '1st survey', cols = '2nd survey', counts = 'Counts')
 
 #
-#  Paired Samples Contingency Tables
+#  PAIRED SAMPLES CONTINGENCY TABLES
 #
 #  Contingency Tables
 #  ------------------------------------------------

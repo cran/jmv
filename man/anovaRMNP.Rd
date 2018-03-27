@@ -47,6 +47,8 @@ data('bugs', package = 'jmv')
 anovaRMNP(bugs, measures = c('LDLF', 'LDHF', 'HDLF', 'HDHF'))
 
 #
+#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)
+#
 #  Friedman
 #  ------------------------
 #    X²      df    p

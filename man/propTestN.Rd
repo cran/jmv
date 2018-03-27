@@ -42,7 +42,7 @@ dat <- as.data.frame(HairEyeColor)
 propTestN(dat, var = 'Eye', counts = 'Freq', ratio = c(1,1,1,1))
 
 #
-#  Proportion Test (N Outcomes)
+#  PROPORTION TEST (N OUTCOMES)
 #
 #  Proportions
 #  --------------------------------

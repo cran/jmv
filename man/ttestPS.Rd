@@ -83,6 +83,8 @@ ttestPS(bugs, pairs = list(
         list(i1 = 'LDLF', i2 = 'LDHF')))
 
 #
+#  PAIRED SAMPLES T-TEST
+#
 #  Paired Samples T-Test
 #  --------------------------------------------------------------
 #                                   statistic    df      p

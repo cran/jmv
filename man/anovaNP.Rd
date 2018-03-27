@@ -39,7 +39,7 @@ data('ToothGrowth')
 anovaNP(ToothGrowth, deps = 'len', group = 'dose')
 
 #
-#  One-way ANOVA (Non-parametric)
+#  ONE-WAY ANOVA (NON-PARAMETRIC)
 #
 #  Kruskal-Wallis
 #  -------------------------------

@@ -74,6 +74,8 @@ data('iris')
 pca(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
 
 #
+#  PRINCIPAL COMPONENT ANALYSIS
+#
 #  Component Loadings
 #  ----------------------------------------
 #                    1         Uniqueness
@@ -84,7 +86,6 @@ pca(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width')
 #    Petal.Width      0.965        0.0688
 #  ----------------------------------------
 #    Note. 'varimax' rotation was used
-#
 #
 
 }

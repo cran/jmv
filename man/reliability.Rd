@@ -70,6 +70,8 @@ reliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal
             omegaScale = TRUE)
 
 #
+#  RELIABILITY ANALYSIS
+#
 #  Scale Reliability Statistics
 #  -----------------------------------------
 #             Cronbach's alpha    McDonald's omega
