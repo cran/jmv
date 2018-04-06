@@ -127,7 +127,7 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 Linear Regression
 }
 \examples{
-data('Prestige', package='car')
+data('Prestige', package='carData')
 
 linReg(data = Prestige, dep = 'income',
        covs = c('education', 'prestige', 'women'),

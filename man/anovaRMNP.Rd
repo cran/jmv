@@ -29,6 +29,7 @@ A results object containing:
 \tabular{llllll}{
   \code{results$table} \tab \tab \tab \tab \tab a table of the Friedman test results \cr
   \code{results$comp} \tab \tab \tab \tab \tab a table of the pairwise comparisons \cr
+  \code{results$desc} \tab \tab \tab \tab \tab a table containing the descriptives \cr
   \code{results$plot} \tab \tab \tab \tab \tab a descriptives plot \cr
 }
 
