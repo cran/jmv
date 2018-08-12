@@ -5,7 +5,7 @@
 \title{Paired Samples T-Test}
 \usage{
 ttestPS(data, pairs, students = TRUE, bf = FALSE, bfPrior = 0.707,
-  wilcoxon = FALSE, hypothesis = "different", norm = FALSE,
+  wilcoxon = FALSE, hypothesis = "different", norm = FALSE, qq = FALSE,
   meanDiff = FALSE, effectSize = FALSE, ci = FALSE, ciWidth = 95,
   desc = FALSE, plots = FALSE, miss = "perAnalysis")
 }
@@ -33,6 +33,9 @@ respectively}
 
 \item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk
 normality tests}
+
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+residuals}
 
 \item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard errors}

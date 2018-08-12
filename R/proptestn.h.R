@@ -24,17 +24,13 @@ propTestNOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "nominal",
                     "ordinal"),
                 permitted=list(
-                    "nominal",
-                    "ordinal",
-                    "nominaltext"))
+                    "factor"))
             private$..counts <- jmvcore::OptionVariable$new(
                 "counts",
                 counts,
                 default=NULL,
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"))
+                    "numeric"))
             private$..expected <- jmvcore::OptionBool$new(
                 "expected",
                 expected,
@@ -227,6 +223,12 @@ propTestN <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('propTestN requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(var), var, NULL),
+            `if`( ! missing(counts), counts, NULL))
 
     options <- propTestNOptions$new(
         var = var,

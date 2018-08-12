@@ -55,28 +55,23 @@ logRegBinOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 suggested=list(
                     "nominal"),
                 permitted=list(
-                    "nominal",
-                    "nominaltext",
-                    "ordinal"))
+                    "factor"))
             private$..covs <- jmvcore::OptionVariables$new(
                 "covs",
                 covs,
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"),
+                    "numeric"),
                 default=NULL)
             private$..factors <- jmvcore::OptionVariables$new(
                 "factors",
                 factors,
+                rejectUnusedLevels=TRUE,
                 suggested=list(
                     "nominal"),
                 permitted=list(
-                    "nominal",
-                    "nominaltext",
-                    "ordinal"),
+                    "factor"),
                 default=NULL)
             private$..blocks <- jmvcore::OptionArray$new(
                 "blocks",
@@ -982,6 +977,13 @@ logRegBin <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('logRegBin requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(dep), dep, NULL),
+            `if`( ! missing(covs), covs, NULL),
+            `if`( ! missing(factors), factors, NULL))
 
     options <- logRegBinOptions$new(
         dep = dep,

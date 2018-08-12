@@ -6,13 +6,14 @@ descriptivesClass <- R6::R6Class(
         #### Member variables ----
         colArgs = list(
             name = c("n", "missing", "mean", "se", "median", "mode", "sum", "sd", "variance", "range",
-                     "min", "max", "skew", "seSkew", "kurt", "seKurt", "quart1", "quart2", "quart3"),
+                     "min", "max", "skew", "seSkew", "kurt", "seKurt", "sw", "quart1", "quart2", "quart3"),
             title = c("N", "Missing", "Mean", "Std. error mean", "Median", "Mode", "Sum", "Standard deviation", "Variance",
                       "Range", "Minimum", "Maximum", "Skewness", "Std. error skewness",
-                      "Kurtosis", "Std. error kurtosis", "25th percentile", "50th percentile", "75th percentile"),
-            type = c(rep("integer", 2), rep("number", 17)),
+                      "Kurtosis", "Std. error kurtosis", "Shapiro-Wilk p", "25th percentile", "50th percentile", "75th percentile"),
+            type = c(rep("integer", 2), rep("number", 18)),
+            format = c(rep("", 16), "zto,pvalue", rep("", 3)),
             visible = c("(n)", "(missing)", "(mean)", "(se)", "(median)", "(mode)", "(sum)", "(sd)", "(variance)", "(range)",
-                        "(min)", "(max)", "(skew)", "(skew)", "(kurt)", "(kurt)", "(quart)", "(quart)", "(quart)")
+                        "(min)", "(max)", "(skew)", "(skew)", "(kurt)", "(kurt)", "(sw)", "(quart)", "(quart)", "(quart)")
         ),
         levels = NULL,
 
@@ -136,6 +137,7 @@ descriptivesClass <- R6::R6Class(
 
                 name <- colArgs$name[i]
                 title <- colArgs$title[i]
+                format <- colArgs$format[i]
                 type <- colArgs$type[i]
                 visible <- colArgs$visible[i]
 
@@ -156,7 +158,7 @@ descriptivesClass <- R6::R6Class(
                         for (k in seq_along(vars)) {
 
                             subName <- paste0(vars[k], post)
-                            table$addColumn(name=subName, title=vars[k], type=type, visible=visible)
+                            table$addColumn(name=subName, title=vars[k], type=type, format=format, visible=visible)
                         }
                     }
 
@@ -168,7 +170,7 @@ descriptivesClass <- R6::R6Class(
                     for (k in seq_along(vars)) {
 
                         subName <- paste0(vars[k], post)
-                        table$addColumn(name=subName, title=vars[k], type=type, visible=visible)
+                        table$addColumn(name=subName, title=vars[k], type=type, format=format, visible=visible)
                     }
                 }
             }
@@ -209,11 +211,13 @@ descriptivesClass <- R6::R6Class(
                         for (col in cols)
                             table$addColumn(name=col, title=col, type='text', combineBelow=TRUE)
 
-                        for (lev in private$levels[[1]])
-                            table$addColumn(name=paste0(lev), title=lev, type='integer', superTitle=splitBy[1])
+                        if (length(private$levels) >= 1) {
+                            for (lev in private$levels[[1]])
+                                table$addColumn(name=paste0(lev), title=lev, type='integer', superTitle=splitBy[1])
+                        }
 
                         prev <- NULL
-                        for (j in 1:nrow(grid)) {
+                        for (j in seq_len(nrow(grid))) {
 
                             row <- list()
                             for (k in seq_along(cols))
@@ -264,7 +268,7 @@ descriptivesClass <- R6::R6Class(
 
                     }
 
-                } else {
+                } else if (canBeNumeric(column)) {
 
                     names <- na.omit(splitBy[1:3])
                     df <- data[names]
@@ -282,7 +286,6 @@ descriptivesClass <- R6::R6Class(
                                                     clearWith=list("splitBy", "hist", "dens"))
 
                         group$add(image)
-
                     }
 
                     if (self$options$box || self$options$violin || self$options$dot) {
@@ -295,6 +298,21 @@ descriptivesClass <- R6::R6Class(
                                                     width=size[1],
                                                     height=size[2],
                                                     clearWith=list("splitBy", "box", "violin", "dot", "dotType"))
+
+                        group$add(image)
+                    }
+
+                    if (self$options$qq) {
+
+                        size <- private$.plotSize(levels, 'qq')
+
+                        image <- jmvcore::Image$new(options=self$options,
+                                                    name="qq",
+                                                    renderFun=".qq",
+                                                    requiresData=TRUE,
+                                                    width=size[1],
+                                                    height=size[2],
+                                                    clearWith=list("splitBy"))
 
                         group$add(image)
                     }
@@ -458,7 +476,7 @@ descriptivesClass <- R6::R6Class(
                         grid <- rev(do.call(expandGrid, rev(c(list(levels), private$levels[-1]))))
                         cols <- c(var, splitBy[-1])
 
-                        for (j in 1:nrow(grid)) {
+                        for (j in seq_len(nrow(grid))) {
 
                             row <- list()
                             for (lev in private$levels[[1]]) {
@@ -528,10 +546,14 @@ descriptivesClass <- R6::R6Class(
                         bar$setState(list(data=plotData, names=names, labels=labels))
                     }
 
-                } else {
+                } else if (canBeNumeric(column)) {
 
                     hist  <- group$get('hist')
-                    box  <- group$get('box')
+                    box   <- group$get('box')
+                    qq    <- group$get('qq')
+
+                    if (self$options$qq)
+                        qq$setState(var)
 
                     if (self$options$hist || self$options$dens || self$options$box || self$options$violin || self$options$dot) {
 
@@ -571,6 +593,67 @@ descriptivesClass <- R6::R6Class(
                     }
                 }
             }
+        },
+        .qq = function(image, ggtheme, theme, ...) {
+
+            if (is.null(image$state))
+                return(FALSE)
+
+            var <- image$state
+            data <- self$data
+            splitBy <- self$options$splitBy
+
+            if (length(splitBy) > 3)
+                splitBy <- splitBy[1:3]
+
+            nSplits <- length(splitBy)
+            splitNames <- paste0('s', seq_len(nSplits))
+
+            grid <- list()
+            for (i in seq_along(splitBy))
+                grid[[ splitNames[i] ]] <- data[[ splitBy[[i]] ]]
+            grid <- as.data.frame(grid)
+
+            y <- data[[var]]
+
+            if (nSplits > 0) {
+                # split into groups
+                pieces <- split(y, grid)
+                # scale groups individually
+                pieces <- lapply(pieces, function(x) as.vector(scale(x)))
+                # join back together
+                y <- unsplit(pieces, grid)
+                data <- cbind(grid, y=y)
+            } else {
+                y <- as.vector(scale(y))
+                data <- data.frame(y=y)
+            }
+
+            data <- na.omit(data)
+
+            plot <- ggplot(data=data) +
+                geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
+                stat_qq(aes(sample=y), size=2, colour=theme$color[1]) +
+                xlab("Theoretical Quantiles") +
+                ylab("Standardized Residuals") +
+                ggtheme
+
+            if (nSplits == 0) {
+                facetFmla <- NULL
+            } else if (nSplits == 1) {
+                facetFmla <- . ~ s1
+            } else if (nSplits == 2) {
+                facetFmla <- s1 ~ s2
+            } else {
+                facetFmla <- s3 ~ s2 * s1
+            }
+
+            if ( ! is.null(facetFmla))
+                plot <- plot + facet_grid(as.formula(facetFmla), drop=FALSE)
+
+            print(plot)
+
+            return(TRUE)
         },
         .histogram = function(image, ggtheme, theme, ...) {
 
@@ -847,10 +930,12 @@ descriptivesClass <- R6::R6Class(
                 deviation <- column-mean(column)
                 skew <- private$.skewness(column)
                 kurt <- private$.kurtosis(column)
+                norm <- jmvcore::tryNaN(shapiro.test(column)$p.value)
                 stats[['skew']] <- skew$skew
                 stats[['seSkew']] <- skew$seSkew
                 stats[['kurt']] <- kurt$kurt
                 stats[['seKurt']] <- kurt$seKurt
+                stats[['sw']] <- norm
 
                 stats[['quart1']] <- as.numeric(quantile(column, c(.25)))
                 stats[['quart2']] <- as.numeric(quantile(column, c(.5)))
@@ -870,7 +955,7 @@ descriptivesClass <- R6::R6Class(
 
                 l <- list(mean=NaN, median=NaN, mode=NaN, sum=NaN, sd=NaN, variance=NaN,
                           range=NaN, min=NaN, max=NaN, se=NaN, skew=NaN, seSkew=NaN,
-                          kurt=NaN, seKurt=NaN, quart1=NaN, quart2=NaN, quart3=NaN)
+                          kurt=NaN, seKurt=NaN, sw=NaN, quart1=NaN, quart2=NaN, quart3=NaN)
 
                 pcNEqGr <- self$options$pcNEqGr
                 if ( ! (self$options$quart && pcNEqGr == 4)) {
@@ -884,7 +969,7 @@ descriptivesClass <- R6::R6Class(
 
                 l <- list(mean='', median='', mode='', sum='', sd='', variance='',
                           range='', min='', max='', se='', skew='', seSkew='',
-                          kurt='', seKurt='', quart1='', quart2='', quart3='')
+                          kurt='', seKurt='', sw='', quart1='', quart2='', quart3='')
 
                 pcNEqGr <- self$options$pcNEqGr
                 if ( ! (self$options$quart && pcNEqGr == 4)) {
@@ -927,6 +1012,28 @@ descriptivesClass <- R6::R6Class(
                 legend <- max(25 + 21 + 3.5 + 8.3 * nCharLevels[1] + 28, 25 + 10 * nCharNames[1] + 28)
 
                 width <- yAxis + width + ifelse(nLevels[1] > 1, legend, 0)
+                height <- xAxis + height
+
+            } else if (plot == "qq") {
+
+                xAxis <- 30 + 20
+                yAxis <- 45 + 11 + 8.3 * nCharLevels[1]
+
+                if (nLevels[1] == 1) {
+                    width <- 300
+                    height <- 300
+                } else if (nLevels[2] == 1) {
+                    width <- 200 * nLevels[1]
+                    height <- 200
+                } else if (nLevels[3] == 1) {
+                    width <- 200 * nLevels[2]
+                    height <- 200 * nLevels[1]
+                } else {
+                    width <- 200 * nLevels[1] * nLevels[2]
+                    height <- 200 * nLevels[3]
+                }
+
+                width <- yAxis + width
                 height <- xAxis + height
 
             } else {

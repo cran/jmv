@@ -17,6 +17,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             violin = FALSE,
             dot = FALSE,
             dotType = "jitter",
+            qq = FALSE,
             n = TRUE,
             missing = TRUE,
             mean = TRUE,
@@ -31,6 +32,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             se = FALSE,
             skew = FALSE,
             kurt = FALSE,
+            sw = FALSE,
             quart = FALSE,
             pcEqGr = FALSE,
             pcNEqGr = 4, ...) {
@@ -43,16 +45,19 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
 
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
-                vars)
+                vars,
+                takeFromDataIfMissing=TRUE,
+                permitted=list(
+                    "numeric",
+                    "factor",
+                    "id"))
             private$..splitBy <- jmvcore::OptionVariables$new(
                 "splitBy",
                 splitBy,
                 suggested=list(
                     "nominal"),
                 permitted=list(
-                    "nominal",
-                    "ordinal",
-                    "nominaltext"),
+                    "factor"),
                 default=NULL)
             private$..freq <- jmvcore::OptionBool$new(
                 "freq",
@@ -94,6 +99,10 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "jitter",
                     "stack"),
                 default="jitter")
+            private$..qq <- jmvcore::OptionBool$new(
+                "qq",
+                qq,
+                default=FALSE)
             private$..n <- jmvcore::OptionBool$new(
                 "n",
                 n,
@@ -150,6 +159,10 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "kurt",
                 kurt,
                 default=FALSE)
+            private$..sw <- jmvcore::OptionBool$new(
+                "sw",
+                sw,
+                default=FALSE)
             private$..quart <- jmvcore::OptionBool$new(
                 "quart",
                 quart,
@@ -176,6 +189,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..violin)
             self$.addOption(private$..dot)
             self$.addOption(private$..dotType)
+            self$.addOption(private$..qq)
             self$.addOption(private$..n)
             self$.addOption(private$..missing)
             self$.addOption(private$..mean)
@@ -190,6 +204,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..se)
             self$.addOption(private$..skew)
             self$.addOption(private$..kurt)
+            self$.addOption(private$..sw)
             self$.addOption(private$..quart)
             self$.addOption(private$..pcEqGr)
             self$.addOption(private$..pcNEqGr)
@@ -206,6 +221,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         violin = function() private$..violin$value,
         dot = function() private$..dot$value,
         dotType = function() private$..dotType$value,
+        qq = function() private$..qq$value,
         n = function() private$..n$value,
         missing = function() private$..missing$value,
         mean = function() private$..mean$value,
@@ -220,6 +236,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         se = function() private$..se$value,
         skew = function() private$..skew$value,
         kurt = function() private$..kurt$value,
+        sw = function() private$..sw$value,
         quart = function() private$..quart$value,
         pcEqGr = function() private$..pcEqGr$value,
         pcNEqGr = function() private$..pcNEqGr$value),
@@ -235,6 +252,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..violin = NA,
         ..dot = NA,
         ..dotType = NA,
+        ..qq = NA,
         ..n = NA,
         ..missing = NA,
         ..mean = NA,
@@ -249,6 +267,7 @@ descriptivesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..se = NA,
         ..skew = NA,
         ..kurt = NA,
+        ..sw = NA,
         ..quart = NA,
         ..pcEqGr = NA,
         ..pcNEqGr = NA)
@@ -389,6 +408,8 @@ descriptivesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param dot \code{TRUE} or \code{FALSE} (default), provide dot plots
 #'   (continuous variables only)
 #' @param dotType .
+#' @param qq \code{TRUE} or \code{FALSE} (default), provide Q-Q plots
+#'   (continuous variables only)
 #' @param n \code{TRUE} (default) or \code{FALSE}, provide the sample size
 #' @param missing \code{TRUE} (default) or \code{FALSE}, provide the number of
 #'   missing values
@@ -405,6 +426,8 @@ descriptivesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param se \code{TRUE} or \code{FALSE} (default), provide the standard error
 #' @param skew \code{TRUE} or \code{FALSE} (default), provide the skewness
 #' @param kurt \code{TRUE} or \code{FALSE} (default), provide the kurtosis
+#' @param sw \code{TRUE} or \code{FALSE} (default), provide Shapiro-Wilk
+#'   p-value
 #' @param quart \code{TRUE} or \code{FALSE} (default), provide quartiles
 #' @param pcEqGr \code{TRUE} or \code{FALSE} (default), provide quantiles
 #' @param pcNEqGr an integer (default: 4) specifying the number of equal
@@ -436,6 +459,7 @@ descriptives <- function(
     violin = FALSE,
     dot = FALSE,
     dotType = "jitter",
+    qq = FALSE,
     n = TRUE,
     missing = TRUE,
     mean = TRUE,
@@ -450,6 +474,7 @@ descriptives <- function(
     se = FALSE,
     skew = FALSE,
     kurt = FALSE,
+    sw = FALSE,
     quart = FALSE,
     pcEqGr = FALSE,
     pcNEqGr = 4) {
@@ -457,6 +482,13 @@ descriptives <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('descriptives requires jmvcore to be installed (restart may be required)')
 
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(vars), vars, NULL),
+            `if`( ! missing(splitBy), splitBy, NULL))
+
+    vars <- `if`( ! missing(vars), vars, colnames(data))
     options <- descriptivesOptions$new(
         vars = vars,
         splitBy = splitBy,
@@ -469,6 +501,7 @@ descriptives <- function(
         violin = violin,
         dot = dot,
         dotType = dotType,
+        qq = qq,
         n = n,
         missing = missing,
         mean = mean,
@@ -483,6 +516,7 @@ descriptives <- function(
         se = se,
         skew = skew,
         kurt = kurt,
+        sw = sw,
         quart = quart,
         pcEqGr = pcEqGr,
         pcNEqGr = pcNEqGr)

@@ -10,17 +10,19 @@ ttestOneSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             students = TRUE,
             bf = FALSE,
             bfPrior = 0.707,
-            mann = FALSE,
+            wilcoxon = FALSE,
             testValue = 0,
             hypothesis = "dt",
             norm = FALSE,
+            qq = FALSE,
             meanDiff = FALSE,
             effectSize = FALSE,
             ci = FALSE,
             ciWidth = 95,
             desc = FALSE,
             plots = FALSE,
-            miss = "perAnalysis", ...) {
+            miss = "perAnalysis",
+            mann = FALSE, ...) {
 
             super$initialize(
                 package='jmv',
@@ -34,9 +36,7 @@ ttestOneSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"),
+                    "numeric"),
                 rejectInf=FALSE)
             private$..students <- jmvcore::OptionBool$new(
                 "students",
@@ -52,9 +52,9 @@ ttestOneSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 default=0.707,
                 min=0.5,
                 max=2)
-            private$..mann <- jmvcore::OptionBool$new(
-                "mann",
-                mann,
+            private$..wilcoxon <- jmvcore::OptionBool$new(
+                "wilcoxon",
+                wilcoxon,
                 default=FALSE)
             private$..testValue <- jmvcore::OptionNumber$new(
                 "testValue",
@@ -71,6 +71,10 @@ ttestOneSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..norm <- jmvcore::OptionBool$new(
                 "norm",
                 norm,
+                default=FALSE)
+            private$..qq <- jmvcore::OptionBool$new(
+                "qq",
+                qq,
                 default=FALSE)
             private$..meanDiff <- jmvcore::OptionBool$new(
                 "meanDiff",
@@ -105,15 +109,21 @@ ttestOneSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "perAnalysis",
                     "listwise"),
                 default="perAnalysis")
+            private$..mann <- jmvcore::OptionBool$new(
+                "mann",
+                mann,
+                default=FALSE,
+                hidden=TRUE)
 
             self$.addOption(private$..vars)
             self$.addOption(private$..students)
             self$.addOption(private$..bf)
             self$.addOption(private$..bfPrior)
-            self$.addOption(private$..mann)
+            self$.addOption(private$..wilcoxon)
             self$.addOption(private$..testValue)
             self$.addOption(private$..hypothesis)
             self$.addOption(private$..norm)
+            self$.addOption(private$..qq)
             self$.addOption(private$..meanDiff)
             self$.addOption(private$..effectSize)
             self$.addOption(private$..ci)
@@ -121,39 +131,44 @@ ttestOneSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..desc)
             self$.addOption(private$..plots)
             self$.addOption(private$..miss)
+            self$.addOption(private$..mann)
         }),
     active = list(
         vars = function() private$..vars$value,
         students = function() private$..students$value,
         bf = function() private$..bf$value,
         bfPrior = function() private$..bfPrior$value,
-        mann = function() private$..mann$value,
+        wilcoxon = function() private$..wilcoxon$value,
         testValue = function() private$..testValue$value,
         hypothesis = function() private$..hypothesis$value,
         norm = function() private$..norm$value,
+        qq = function() private$..qq$value,
         meanDiff = function() private$..meanDiff$value,
         effectSize = function() private$..effectSize$value,
         ci = function() private$..ci$value,
         ciWidth = function() private$..ciWidth$value,
         desc = function() private$..desc$value,
         plots = function() private$..plots$value,
-        miss = function() private$..miss$value),
+        miss = function() private$..miss$value,
+        mann = function() private$..mann$value),
     private = list(
         ..vars = NA,
         ..students = NA,
         ..bf = NA,
         ..bfPrior = NA,
-        ..mann = NA,
+        ..wilcoxon = NA,
         ..testValue = NA,
         ..hypothesis = NA,
         ..norm = NA,
+        ..qq = NA,
         ..meanDiff = NA,
         ..effectSize = NA,
         ..ci = NA,
         ..ciWidth = NA,
         ..desc = NA,
         ..plots = NA,
-        ..miss = NA)
+        ..miss = NA,
+        ..mann = NA)
 )
 
 ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
@@ -162,7 +177,8 @@ ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
         ttest = function() private$.items[["ttest"]],
         normality = function() private$.items[["normality"]],
         descriptives = function() private$.items[["descriptives"]],
-        plots = function() private$.items[["plots"]]),
+        plots = function() private$.items[["plots"]],
+        qq = function() private$.items[["qq"]]),
     private = list(),
     public=list(
         initialize=function(options) {
@@ -193,6 +209,7 @@ ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="name[stud]", 
                         `title`="", 
                         `content`="Student's t", 
+                        `type`="text", 
                         `visible`="(students)"),
                     list(
                         `name`="stat[stud]", 
@@ -303,54 +320,55 @@ ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `visible`="(effectSize && bf)", 
                         `content`=""),
                     list(
-                        `name`="var[mann]", 
+                        `name`="var[wilc]", 
                         `title`="", 
                         `content`="($key)", 
                         `type`="text", 
                         `combineBelow`=TRUE, 
-                        `visible`="(mann)"),
+                        `visible`="(wilcoxon || mann)"),
                     list(
-                        `name`="name[mann]", 
+                        `name`="name[wilc]", 
                         `title`="", 
-                        `content`="Mann-Whitney U", 
-                        `visible`="(mann)"),
+                        `content`="Wilcoxon W", 
+                        `type`="text", 
+                        `visible`="(wilcoxon || mann)"),
                     list(
-                        `name`="stat[mann]", 
+                        `name`="stat[wilc]", 
                         `title`="stat", 
                         `type`="number", 
-                        `visible`="(mann)"),
+                        `visible`="(wilcoxon || mann)"),
                     list(
-                        `name`="err[mann]", 
+                        `name`="err[wilc]", 
                         `title`="\u00B1%", 
                         `type`="number", 
-                        `visible`="(mann && bf)", 
+                        `visible`="(bf && (wilcoxon || mann))", 
                         `content`=""),
                     list(
-                        `name`="p[mann]", 
+                        `name`="p[wilc]", 
                         `title`="p", 
                         `type`="number", 
                         `format`="zto,pvalue", 
-                        `visible`="(mann)"),
+                        `visible`="(wilcoxon || mann)"),
                     list(
-                        `name`="md[mann]", 
+                        `name`="md[wilc]", 
                         `title`="Mean difference", 
                         `type`="number", 
-                        `visible`="(meanDiff && mann)"),
+                        `visible`="(meanDiff && (wilcoxon || mann))"),
                     list(
-                        `name`="cil[mann]", 
+                        `name`="cil[wilc]", 
                         `title`="Lower", 
                         `type`="number", 
-                        `visible`="(ci && mann)"),
+                        `visible`="(ci && (wilcoxon || mann))"),
                     list(
-                        `name`="ciu[mann]", 
+                        `name`="ciu[wilc]", 
                         `title`="Upper", 
                         `type`="number", 
-                        `visible`="(ci && mann)"),
+                        `visible`="(ci && (wilcoxon || mann))"),
                     list(
-                        `name`="es[mann]", 
+                        `name`="es[wilc]", 
                         `title`="Cohen's d", 
                         `type`="number", 
-                        `visible`="(effectSize && mann)"))))
+                        `visible`="(effectSize && (wilcoxon || mann))"))))
             self$add(jmvcore::Table$new(
                 options=options,
                 name="normality",
@@ -414,10 +432,25 @@ ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name="plots",
                 title="Plots",
                 visible="(plots)",
-                renderFun=".plot",
+                renderFun=".desc",
                 clearWith=list(
                     "vars",
-                    "miss")))}))
+                    "miss")))
+            self$add(jmvcore::Array$new(
+                options=options,
+                name="qq",
+                title="Q-Q plots",
+                visible="(qq)",
+                items="(vars)",
+                clearWith=list(
+                    "miss"),
+                template=jmvcore::Image$new(
+                    options=options,
+                    width=350,
+                    height=300,
+                    requiresData=TRUE,
+                    renderFun=".qq",
+                    clearWith=list())))}))
 
 ttestOneSBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "ttestOneSBase",
@@ -467,14 +500,16 @@ ttestOneSBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param bf \code{TRUE} or \code{FALSE} (default), provide Bayes factors
 #' @param bfPrior a number between 0.5 and 2 (default 0.707), the prior width
 #'   to use in calculating Bayes factors
-#' @param mann \code{TRUE} or \code{FALSE} (default), perform Mann-Whitney U
-#'   test
+#' @param wilcoxon \code{TRUE} or \code{FALSE} (default), perform Wilcoxon
+#'   signed rank tests
 #' @param testValue a number specifying the value of the null hypothesis
 #' @param hypothesis \code{'dt'} (default), \code{'gt'} or \code{'lt'}, the
 #'   alternative hypothesis; different to \code{testValue}, greater than
 #'   \code{testValue}, and less than \code{testValue} respectively
 #' @param norm \code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk
 #'   tests of normality
+#' @param qq \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+#'   residuals
 #' @param meanDiff \code{TRUE} or \code{FALSE} (default), provide means and
 #'   standard deviations
 #' @param effectSize \code{TRUE} or \code{FALSE} (default), provide effect
@@ -491,12 +526,14 @@ ttestOneSBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   missing values; \code{'perAnalysis'} excludes missing values for individual
 #'   dependent variables, \code{'listwise'} excludes a row from all analyses if
 #'   one of its entries is missing.
+#' @param mann deprecated
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$ttest} \tab \tab \tab \tab \tab a table containing the t-test results \cr
 #'   \code{results$normality} \tab \tab \tab \tab \tab a table containing the normality test results \cr
 #'   \code{results$descriptives} \tab \tab \tab \tab \tab a table containing the descriptives \cr
 #'   \code{results$plots} \tab \tab \tab \tab \tab an image of the descriptive plots \cr
+#'   \code{results$qq} \tab \tab \tab \tab \tab an array of Q-Q plots \cr
 #' }
 #'
 #' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
@@ -512,37 +549,46 @@ ttestOneS <- function(
     students = TRUE,
     bf = FALSE,
     bfPrior = 0.707,
-    mann = FALSE,
+    wilcoxon = FALSE,
     testValue = 0,
     hypothesis = "dt",
     norm = FALSE,
+    qq = FALSE,
     meanDiff = FALSE,
     effectSize = FALSE,
     ci = FALSE,
     ciWidth = 95,
     desc = FALSE,
     plots = FALSE,
-    miss = "perAnalysis") {
+    miss = "perAnalysis",
+    mann = FALSE) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('ttestOneS requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(vars), vars, NULL))
 
     options <- ttestOneSOptions$new(
         vars = vars,
         students = students,
         bf = bf,
         bfPrior = bfPrior,
-        mann = mann,
+        wilcoxon = wilcoxon,
         testValue = testValue,
         hypothesis = hypothesis,
         norm = norm,
+        qq = qq,
         meanDiff = meanDiff,
         effectSize = effectSize,
         ci = ci,
         ciWidth = ciWidth,
         desc = desc,
         plots = plots,
-        miss = miss)
+        miss = miss,
+        mann = mann)
 
     results <- ttestOneSResults$new(
         options = options)

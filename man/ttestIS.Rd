@@ -6,8 +6,9 @@
 \usage{
 ttestIS(data, vars, group, students = TRUE, bf = FALSE, bfPrior = 0.707,
   welchs = FALSE, mann = FALSE, hypothesis = "different", norm = FALSE,
-  eqv = FALSE, meanDiff = FALSE, effectSize = FALSE, ci = FALSE,
-  ciWidth = 95, desc = FALSE, plots = FALSE, miss = "perAnalysis")
+  qq = FALSE, eqv = FALSE, meanDiff = FALSE, effectSize = FALSE,
+  ci = FALSE, ciWidth = 95, desc = FALSE, plots = FALSE,
+  miss = "perAnalysis")
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -37,6 +38,9 @@ respectively}
 
 \item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-Wilk
 test of normality}
+
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+residuals}
 
 \item{eqv}{\code{TRUE} or \code{FALSE} (default), perform Levene's test for
 equality of variances}
@@ -71,7 +75,7 @@ A results object containing:
   \code{results$assum$norm} \tab \tab \tab \tab \tab a table containing the normality tests \cr
   \code{results$assum$eqv} \tab \tab \tab \tab \tab a table containing the equality of variances tests \cr
   \code{results$desc} \tab \tab \tab \tab \tab a table containing the group descriptives \cr
-  \code{results$plots} \tab \tab \tab \tab \tab an array of the descriptive plots \cr
+  \code{results$plots} \tab \tab \tab \tab \tab an array of groups of plots \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

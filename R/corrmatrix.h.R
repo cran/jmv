@@ -28,13 +28,12 @@ corrMatrixOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
+                takeFromDataIfMissing=TRUE,
                 suggested=list(
                     "continuous",
                     "ordinal"),
                 permitted=list(
-                    "continuous",
-                    "ordinal",
-                    "nominal"))
+                    "numeric"))
             private$..pearson <- jmvcore::OptionBool$new(
                 "pearson",
                 pearson,
@@ -373,6 +372,12 @@ corrMatrix <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('corrMatrix requires jmvcore to be installed (restart may be required)')
 
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(vars), vars, NULL))
+
+    vars <- `if`( ! missing(vars), vars, colnames(data))
     options <- corrMatrixOptions$new(
         vars = vars,
         pearson = pearson,

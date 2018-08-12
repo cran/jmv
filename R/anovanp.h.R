@@ -19,18 +19,21 @@ anovaNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..deps <- jmvcore::OptionVariables$new(
                 "deps",
                 deps,
+                required=TRUE,
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"))
+                    "numeric"))
             private$..group <- jmvcore::OptionVariable$new(
                 "group",
                 group,
+                required=TRUE,
+                rejectUnusedLevels=TRUE,
                 suggested=list(
                     "nominal",
-                    "ordinal"))
+                    "ordinal"),
+                permitted=list(
+                    "factor"))
             private$..pairs <- jmvcore::OptionBool$new(
                 "pairs",
                 pairs,
@@ -187,6 +190,12 @@ anovaNP <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('anovaNP requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(deps), deps, NULL),
+            `if`( ! missing(group), group, NULL))
 
     options <- anovaNPOptions$new(
         deps = deps,

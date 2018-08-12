@@ -24,9 +24,7 @@ anovaRMNPOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"))
+                    "numeric"))
             private$..pairs <- jmvcore::OptionBool$new(
                 "pairs",
                 pairs,
@@ -237,6 +235,11 @@ anovaRMNP <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('anovaRMNP requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(measures), measures, NULL))
 
     options <- anovaRMNPOptions$new(
         measures = measures,

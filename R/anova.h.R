@@ -33,18 +33,21 @@ anovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..dep <- jmvcore::OptionVariable$new(
                 "dep",
                 dep,
+                required=TRUE,
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"))
+                    "numeric"))
             private$..factors <- jmvcore::OptionVariables$new(
                 "factors",
                 factors,
+                required=TRUE,
+                rejectUnusedLevels=TRUE,
                 suggested=list(
                     "nominal",
                     "ordinal"),
+                permitted=list(
+                    "factor"),
                 default=NULL)
             private$..modelTerms <- jmvcore::OptionTerms$new(
                 "modelTerms",
@@ -398,6 +401,15 @@ anova <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('anova requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(dep), dep, NULL),
+            `if`( ! missing(factors), factors, NULL),
+            `if`( ! missing(plotHAxis), plotHAxis, NULL),
+            `if`( ! missing(plotSepLines), plotSepLines, NULL),
+            `if`( ! missing(plotSepPlots), plotSepPlots, NULL))
 
     options <- anovaOptions$new(
         dep = dep,

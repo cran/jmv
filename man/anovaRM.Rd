@@ -8,9 +8,9 @@ anovaRM(data, rm = list(list(label = "RM Factor 1", levels = list("Level 1",
   "Level 2"))), rmCells = NULL, bs = NULL, cov = NULL, rmTerms = NULL,
   bsTerms = NULL, ss = "3", effectSize = NULL, spherTests = FALSE,
   spherCorr = list("none"), leveneTest = FALSE, contrasts = NULL,
-  postHoc = NULL, postHocCorr = list("tukey"), plotHAxis = NULL,
-  plotSepLines = NULL, plotSepPlots = NULL, plotError = "ci",
-  ciWidth = 95, descStats = FALSE)
+  postHoc = NULL, postHocCorr = list("tukey"), descStats = FALSE,
+  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
+  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -62,24 +62,27 @@ that need to be computed}
 \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe,
 Bonferroni and Holm posthoc corrections, respectively}
 
-\item{plotHAxis}{a string naming the variable placed on the horizontal axis
-of the plot}
-
-\item{plotSepLines}{a string naming the variable represented as separate
-lines on the plot}
-
-\item{plotSepPlots}{a string naming the variable to separate over to form
-multiple plots}
-
-\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use
-no error bars, use confidence intervals, or use standard errors on the
-plots, respectively}
-
-\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
-confidence interval width}
-
 \item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
+
+\item{emMeans}{a list of lists specifying the variables for which the
+estimated marginal means need to be calculate. Supports up to three
+variables per term.}
+
+\item{ciEmm}{\code{TRUE} (default) or \code{FALSE}, provide a confidence
+interval for the estimated marginal means}
+
+\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
+confidence interval width for the estimated marginal means}
+
+\item{emmPlots}{\code{TRUE} (default) or \code{FALSE}, provide estimated
+marginal means plots}
+
+\item{emmTables}{\code{TRUE} or \code{FALSE} (default), provide estimated
+marginal means tables}
+
+\item{emmWeights}{\code{TRUE} (default) or \code{FALSE}, weigh each cell
+equally or weigh them according to the cell frequency}
 }
 \value{
 A results object containing:
@@ -90,8 +93,7 @@ A results object containing:
   \code{results$assump$leveneTable} \tab \tab \tab \tab \tab a table \cr
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of tables \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of tables \cr
-  \code{results$descPlot} \tab \tab \tab \tab \tab an image \cr
-  \code{results$descPlots} \tab \tab \tab \tab \tab an array of images \cr
+  \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

@@ -5,9 +5,10 @@
 \title{One Sample T-Test}
 \usage{
 ttestOneS(data, vars, students = TRUE, bf = FALSE, bfPrior = 0.707,
-  mann = FALSE, testValue = 0, hypothesis = "dt", norm = FALSE,
-  meanDiff = FALSE, effectSize = FALSE, ci = FALSE, ciWidth = 95,
-  desc = FALSE, plots = FALSE, miss = "perAnalysis")
+  wilcoxon = FALSE, testValue = 0, hypothesis = "dt", norm = FALSE,
+  qq = FALSE, meanDiff = FALSE, effectSize = FALSE, ci = FALSE,
+  ciWidth = 95, desc = FALSE, plots = FALSE, miss = "perAnalysis",
+  mann = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -23,8 +24,8 @@ t-tests}
 \item{bfPrior}{a number between 0.5 and 2 (default 0.707), the prior width
 to use in calculating Bayes factors}
 
-\item{mann}{\code{TRUE} or \code{FALSE} (default), perform Mann-Whitney U
-test}
+\item{wilcoxon}{\code{TRUE} or \code{FALSE} (default), perform Wilcoxon
+signed rank tests}
 
 \item{testValue}{a number specifying the value of the null hypothesis}
 
@@ -34,6 +35,9 @@ alternative hypothesis; different to \code{testValue}, greater than
 
 \item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk
 tests of normality}
+
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+residuals}
 
 \item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard deviations}
@@ -57,6 +61,8 @@ plots}
 missing values; \code{'perAnalysis'} excludes missing values for individual
 dependent variables, \code{'listwise'} excludes a row from all analyses if
 one of its entries is missing.}
+
+\item{mann}{deprecated}
 }
 \value{
 A results object containing:
@@ -65,6 +71,7 @@ A results object containing:
   \code{results$normality} \tab \tab \tab \tab \tab a table containing the normality test results \cr
   \code{results$descriptives} \tab \tab \tab \tab \tab a table containing the descriptives \cr
   \code{results$plots} \tab \tab \tab \tab \tab an image of the descriptive plots \cr
+  \code{results$qq} \tab \tab \tab \tab \tab an array of Q-Q plots \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

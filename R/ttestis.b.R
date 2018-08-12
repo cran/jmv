@@ -216,11 +216,24 @@ ttestISClass <- R6::R6Class(
                         x <- dataTTest$dep[dataTTest$group == groupLevels[1]]
                         y <- dataTTest$dep[dataTTest$group == groupLevels[2]]
 
+                        if (self$options$hypothesis == 'oneGreater') {
+                            Ha1 <- "greater"
+                            Ha2 <- "less"
+                        }
+                        else if (self$options$hypothesis == 'twoGreater') {
+                            Ha1 <- "less"
+                            Ha2 <- "greater"
+                        }
+                        else {
+                            Ha1 <- "two.sided"
+                            Ha2 <- "two.sided"
+                        }
+
                         res <- try(suppressWarnings(
                             wilcox.test(
                                 x=x,
                                 y=y,
-                                alternative=Ha,
+                                alternative=Ha1,
                                 paired=FALSE,
                                 conf.int=TRUE,
                                 conf.level=confInt)
@@ -230,7 +243,7 @@ ttestISClass <- R6::R6Class(
                             wilcox.test(
                                 x=y,
                                 y=x,
-                                alternative=Ha,
+                                alternative=Ha2,
                                 paired=FALSE,
                                 conf.int=TRUE,
                                 conf.level=confInt)
@@ -238,6 +251,7 @@ ttestISClass <- R6::R6Class(
 
                         m1 <- res$statistic
                         m2 <- res2$statistic
+                        mm <- res$estimate
 
                         if ( ! is.na(m1) && m2 < m1)
                             res <- res2
@@ -249,7 +263,7 @@ ttestISClass <- R6::R6Class(
                             "stat[mann]"=res$statistic,
                             "df[mann]"=res$parameter,
                             "p[mann]"=res$p.value,
-                            "md[mann]"=res$estimate,
+                            "md[mann]"=mm,
                             "sed[mann]"='',
                             "es[mann]"=d,
                             "cil[mann]"=res$conf.int[1],
@@ -294,7 +308,10 @@ ttestISClass <- R6::R6Class(
                         values[['p']] <- ''
                         footnote <- 'Too many samples to compute statistic (N > 5000)'
                     } else {
-                        res <- try(shapiro.test(dataTTest$dep), silent=TRUE)
+                        residuals <- tapply(dataTTest$dep, dataTTest$group, function(x) x - mean(x))
+                        residuals <- unlist(residuals, use.names=FALSE)
+                        res <- try(shapiro.test(residuals), silent=TRUE)
+
                         if ( ! isError(res)) {
                             values[['w']] <- res$statistic
                             values[['p']] <- res$p.value
@@ -386,9 +403,14 @@ ttestISClass <- R6::R6Class(
                     }
                 }
 
+                if (self$options$qq) {
+                    image <- self$results$plots$get(key=depName)$qq
+                    image$setState(depName)
+                }
+
                 if (self$options$plots) {
 
-                    image <- self$results$plots$get(key=depName)
+                    image <- self$results$plots$get(key=depName)$desc
 
                     if (nrow(dataTTest) > 0) {
 
@@ -453,7 +475,7 @@ ttestISClass <- R6::R6Class(
             else
                 table$setNote("hyp", NULL)
         },
-        .plot=function(image, ggtheme, theme, ...) {
+        .desc=function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
@@ -473,6 +495,34 @@ ttestISClass <- R6::R6Class(
                               plot.margin = ggplot2::margin(5.5, 5.5, 5.5, 5.5))
 
             suppressWarnings(print(plot))
+
+            return(TRUE)
+        },
+        .qq = function(image, ggtheme, theme, ...) {
+
+            if (is.null(image$state))
+                return(FALSE)
+
+            y <- toNumeric(self$data[[image$state]])
+            x <- self$data[[self$options$group]]
+
+            pieces <- split(y, x)
+            # scale groups individually
+            pieces <- lapply(pieces, function(y) y - mean(y))
+            # join back together
+            y <- unsplit(pieces, x)
+            y <- scale(y)
+
+            data <- data.frame(x=x, y=y)
+
+            plot <- ggplot(data=data) +
+                geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
+                stat_qq(aes(sample=y), size=2, colour=theme$color[1]) +
+                xlab("Theoretical Quantiles") +
+                ylab("Standardized Residuals") +
+                ggtheme
+
+            print(plot)
 
             return(TRUE)
         }

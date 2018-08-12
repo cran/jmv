@@ -6,11 +6,11 @@
 \usage{
 descriptives(data, vars, splitBy = NULL, freq = FALSE, hist = FALSE,
   dens = FALSE, bar = FALSE, barCounts = FALSE, box = FALSE,
-  violin = FALSE, dot = FALSE, dotType = "jitter", n = TRUE,
-  missing = TRUE, mean = TRUE, median = TRUE, mode = FALSE,
+  violin = FALSE, dot = FALSE, dotType = "jitter", qq = FALSE,
+  n = TRUE, missing = TRUE, mean = TRUE, median = TRUE, mode = FALSE,
   sum = FALSE, sd = FALSE, variance = FALSE, range = FALSE,
   min = TRUE, max = TRUE, se = FALSE, skew = FALSE, kurt = FALSE,
-  quart = FALSE, pcEqGr = FALSE, pcNEqGr = 4)
+  sw = FALSE, quart = FALSE, pcEqGr = FALSE, pcNEqGr = 4)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -47,6 +47,9 @@ bar plots}
 
 \item{dotType}{.}
 
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide Q-Q plots
+(continuous variables only)}
+
 \item{n}{\code{TRUE} (default) or \code{FALSE}, provide the sample size}
 
 \item{missing}{\code{TRUE} (default) or \code{FALSE}, provide the number of
@@ -76,6 +79,9 @@ deviation}
 \item{skew}{\code{TRUE} or \code{FALSE} (default), provide the skewness}
 
 \item{kurt}{\code{TRUE} or \code{FALSE} (default), provide the kurtosis}
+
+\item{sw}{\code{TRUE} or \code{FALSE} (default), provide Shapiro-Wilk
+p-value}
 
 \item{quart}{\code{TRUE} or \code{FALSE} (default), provide quartiles}
 

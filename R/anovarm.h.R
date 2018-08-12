@@ -25,12 +25,14 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             postHoc = NULL,
             postHocCorr = list(
                 "tukey"),
-            plotHAxis = NULL,
-            plotSepLines = NULL,
-            plotSepPlots = NULL,
-            plotError = "ci",
-            ciWidth = 95,
-            descStats = FALSE, ...) {
+            descStats = FALSE,
+            emMeans = list(
+                list()),
+            ciEmm = TRUE,
+            ciWidthEmm = 95,
+            emmPlots = TRUE,
+            emmTables = FALSE,
+            emmWeights = TRUE, ...) {
 
             super$initialize(
                 package='jmv',
@@ -78,9 +80,12 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..bs <- jmvcore::OptionVariables$new(
                 "bs",
                 bs,
+                rejectUnusedLevels=TRUE,
                 suggested=list(
                     "nominal",
                     "ordinal"),
+                permitted=list(
+                    "factor"),
                 default=NULL)
             private$..cov <- jmvcore::OptionVariables$new(
                 "cov",
@@ -88,9 +93,7 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"),
+                    "numeric"),
                 default=NULL)
             private$..rmTerms <- jmvcore::OptionTerms$new(
                 "rmTerms",
@@ -177,36 +180,40 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "holm"),
                 default=list(
                     "tukey"))
-            private$..plotHAxis <- jmvcore::OptionVariable$new(
-                "plotHAxis",
-                plotHAxis,
-                default=NULL)
-            private$..plotSepLines <- jmvcore::OptionVariable$new(
-                "plotSepLines",
-                plotSepLines,
-                default=NULL)
-            private$..plotSepPlots <- jmvcore::OptionVariable$new(
-                "plotSepPlots",
-                plotSepPlots,
-                default=NULL)
-            private$..plotError <- jmvcore::OptionList$new(
-                "plotError",
-                plotError,
-                options=list(
-                    "none",
-                    "ci",
-                    "se"),
-                default="ci")
-            private$..ciWidth <- jmvcore::OptionNumber$new(
-                "ciWidth",
-                ciWidth,
-                min=50,
-                max=99.9,
-                default=95)
             private$..descStats <- jmvcore::OptionBool$new(
                 "descStats",
                 descStats,
                 default=FALSE)
+            private$..emMeans <- jmvcore::OptionArray$new(
+                "emMeans",
+                emMeans,
+                default=list(
+                    list()),
+                template=jmvcore::OptionVariables$new(
+                    "emMeans",
+                    NULL))
+            private$..ciEmm <- jmvcore::OptionBool$new(
+                "ciEmm",
+                ciEmm,
+                default=TRUE)
+            private$..ciWidthEmm <- jmvcore::OptionNumber$new(
+                "ciWidthEmm",
+                ciWidthEmm,
+                min=50,
+                max=99.9,
+                default=95)
+            private$..emmPlots <- jmvcore::OptionBool$new(
+                "emmPlots",
+                emmPlots,
+                default=TRUE)
+            private$..emmTables <- jmvcore::OptionBool$new(
+                "emmTables",
+                emmTables,
+                default=FALSE)
+            private$..emmWeights <- jmvcore::OptionBool$new(
+                "emmWeights",
+                emmWeights,
+                default=TRUE)
 
             self$.addOption(private$..rm)
             self$.addOption(private$..rmCells)
@@ -222,12 +229,13 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..contrasts)
             self$.addOption(private$..postHoc)
             self$.addOption(private$..postHocCorr)
-            self$.addOption(private$..plotHAxis)
-            self$.addOption(private$..plotSepLines)
-            self$.addOption(private$..plotSepPlots)
-            self$.addOption(private$..plotError)
-            self$.addOption(private$..ciWidth)
             self$.addOption(private$..descStats)
+            self$.addOption(private$..emMeans)
+            self$.addOption(private$..ciEmm)
+            self$.addOption(private$..ciWidthEmm)
+            self$.addOption(private$..emmPlots)
+            self$.addOption(private$..emmTables)
+            self$.addOption(private$..emmWeights)
         }),
     active = list(
         rm = function() private$..rm$value,
@@ -244,12 +252,13 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         contrasts = function() private$..contrasts$value,
         postHoc = function() private$..postHoc$value,
         postHocCorr = function() private$..postHocCorr$value,
-        plotHAxis = function() private$..plotHAxis$value,
-        plotSepLines = function() private$..plotSepLines$value,
-        plotSepPlots = function() private$..plotSepPlots$value,
-        plotError = function() private$..plotError$value,
-        ciWidth = function() private$..ciWidth$value,
-        descStats = function() private$..descStats$value),
+        descStats = function() private$..descStats$value,
+        emMeans = function() private$..emMeans$value,
+        ciEmm = function() private$..ciEmm$value,
+        ciWidthEmm = function() private$..ciWidthEmm$value,
+        emmPlots = function() private$..emmPlots$value,
+        emmTables = function() private$..emmTables$value,
+        emmWeights = function() private$..emmWeights$value),
     private = list(
         ..rm = NA,
         ..rmCells = NA,
@@ -265,12 +274,13 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..contrasts = NA,
         ..postHoc = NA,
         ..postHocCorr = NA,
-        ..plotHAxis = NA,
-        ..plotSepLines = NA,
-        ..plotSepPlots = NA,
-        ..plotError = NA,
-        ..ciWidth = NA,
-        ..descStats = NA)
+        ..descStats = NA,
+        ..emMeans = NA,
+        ..ciEmm = NA,
+        ..ciWidthEmm = NA,
+        ..emmPlots = NA,
+        ..emmTables = NA,
+        ..emmWeights = NA)
 )
 
 anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
@@ -281,8 +291,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
         assump = function() private$.items[["assump"]],
         contrasts = function() private$.items[["contrasts"]],
         postHoc = function() private$.items[["postHoc"]],
-        descPlot = function() private$.items[["descPlot"]],
-        descPlots = function() private$.items[["descPlots"]]),
+        emm = function() private$.items[["emm"]]),
     private = list(),
     public=list(
         initialize=function(options) {
@@ -662,39 +671,61 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         "cov",
                         "rmTerms",
                         "bsTerms"))))
-            self$add(jmvcore::Image$new(
-                options=options,
-                name="descPlot",
-                title="Descriptive Plot",
-                visible="(plotHAxis)",
-                width=500,
-                height=300,
-                renderFun=".descPlot",
-                clearWith=list(
-                    "plotHAxis",
-                    "plotSepLines",
-                    "plotSepPlots",
-                    "rm",
-                    "rmCells",
-                    "plotError",
-                    "ciWidth")))
             self$add(jmvcore::Array$new(
                 options=options,
-                name="descPlots",
-                title="Descriptive Plots",
-                visible="(plotSepPlots)",
-                template=jmvcore::Image$new(
-                    options=options,
-                    title="$key",
-                    renderFun=".descPlot",
-                    clearWith=list(
-                        "plotHAxis",
-                        "plotSepLines",
-                        "plotSepPlots",
-                        "rm",
-                        "rmCells",
-                        "plotError",
-                        "ciWidth"))))}))
+                name="emm",
+                title="Estimated Marginal Means",
+                clearWith=list(
+                    "emMeans"),
+                template=R6::R6Class(
+                    inherit = jmvcore::Group,
+                    active = list(
+                        emmPlot = function() private$.items[["emmPlot"]],
+                        emmTable = function() private$.items[["emmTable"]]),
+                    private = list(),
+                    public=list(
+                        initialize=function(options) {
+                            super$initialize(
+                                options=options,
+                                name="undefined",
+                                title="")
+                            self$add(jmvcore::Image$new(
+                                options=options,
+                                name="emmPlot",
+                                title="",
+                                width=450,
+                                height=400,
+                                renderFun=".emmPlot",
+                                visible="(emmPlots)",
+                                clearWith=list(
+                                    "ciEmm",
+                                    "ciWidthEmm",
+                                    "emmWeights",
+                                    "rmCells",
+                                    "rmcModelTerms",
+                                    "bscModelTerms",
+                                    "bs",
+                                    "rm",
+                                    "cov",
+                                    "rmTerms",
+                                    "bsTerms")))
+                            self$add(jmvcore::Table$new(
+                                options=options,
+                                name="emmTable",
+                                title="",
+                                visible="(emmTables)",
+                                columns=list(),
+                                clearWith=list(
+                                    "ciWidthEmm",
+                                    "emmWeights",
+                                    "rmCells",
+                                    "rmcModelTerms",
+                                    "bscModelTerms",
+                                    "bs",
+                                    "rm",
+                                    "cov",
+                                    "rmTerms",
+                                    "bsTerms")))}))$new(options=options)))}))
 
 anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "anovaRMBase",
@@ -704,7 +735,7 @@ anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
             super$initialize(
                 package = 'jmv',
                 name = 'anovaRM',
-                version = c(1,0,0),
+                version = c(2,0,0),
                 options = options,
                 results = anovaRMResults$new(options=options),
                 data = data,
@@ -797,19 +828,21 @@ anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param postHocCorr one or more of \code{'none'}, \code{'tukey'} (default),
 #'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe,
 #'   Bonferroni and Holm posthoc corrections, respectively
-#' @param plotHAxis a string naming the variable placed on the horizontal axis
-#'   of the plot
-#' @param plotSepLines a string naming the variable represented as separate
-#'   lines on the plot
-#' @param plotSepPlots a string naming the variable to separate over to form
-#'   multiple plots
-#' @param plotError \code{'none'}, \code{'ci'} (default), or \code{'se'}. Use
-#'   no error bars, use confidence intervals, or use standard errors on the
-#'   plots, respectively
-#' @param ciWidth a number between 50 and 99.9 (default: 95) specifying the
-#'   confidence interval width
 #' @param descStats \code{TRUE} or \code{FALSE} (default), provide descriptive
 #'   statistics
+#' @param emMeans a list of lists specifying the variables for which the
+#'   estimated marginal means need to be calculate. Supports up to three
+#'   variables per term.
+#' @param ciEmm \code{TRUE} (default) or \code{FALSE}, provide a confidence
+#'   interval for the estimated marginal means
+#' @param ciWidthEmm a number between 50 and 99.9 (default: 95) specifying the
+#'   confidence interval width for the estimated marginal means
+#' @param emmPlots \code{TRUE} (default) or \code{FALSE}, provide estimated
+#'   marginal means plots
+#' @param emmTables \code{TRUE} or \code{FALSE} (default), provide estimated
+#'   marginal means tables
+#' @param emmWeights \code{TRUE} (default) or \code{FALSE}, weigh each cell
+#'   equally or weigh them according to the cell frequency
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$rmTable} \tab \tab \tab \tab \tab a table \cr
@@ -818,8 +851,7 @@ anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   \code{results$assump$leveneTable} \tab \tab \tab \tab \tab a table \cr
 #'   \code{results$contrasts} \tab \tab \tab \tab \tab an array of tables \cr
 #'   \code{results$postHoc} \tab \tab \tab \tab \tab an array of tables \cr
-#'   \code{results$descPlot} \tab \tab \tab \tab \tab an image \cr
-#'   \code{results$descPlots} \tab \tab \tab \tab \tab an array of images \cr
+#'   \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
 #' }
 #'
 #' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
@@ -850,15 +882,23 @@ anovaRM <- function(
     postHoc = NULL,
     postHocCorr = list(
                 "tukey"),
-    plotHAxis = NULL,
-    plotSepLines = NULL,
-    plotSepPlots = NULL,
-    plotError = "ci",
-    ciWidth = 95,
-    descStats = FALSE) {
+    descStats = FALSE,
+    emMeans = list(
+                list()),
+    ciEmm = TRUE,
+    ciWidthEmm = 95,
+    emmPlots = TRUE,
+    emmTables = FALSE,
+    emmWeights = TRUE) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('anovaRM requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(bs), bs, NULL),
+            `if`( ! missing(cov), cov, NULL))
 
     options <- anovaRMOptions$new(
         rm = rm,
@@ -875,12 +915,13 @@ anovaRM <- function(
         contrasts = contrasts,
         postHoc = postHoc,
         postHocCorr = postHocCorr,
-        plotHAxis = plotHAxis,
-        plotSepLines = plotSepLines,
-        plotSepPlots = plotSepPlots,
-        plotError = plotError,
-        ciWidth = ciWidth,
-        descStats = descStats)
+        descStats = descStats,
+        emMeans = emMeans,
+        ciEmm = ciEmm,
+        ciWidthEmm = ciWidthEmm,
+        emmPlots = emmPlots,
+        emmTables = emmTables,
+        emmWeights = emmWeights)
 
     results <- anovaRMResults$new(
         options = options)

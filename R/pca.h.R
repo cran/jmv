@@ -32,9 +32,7 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "ordinal",
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"),
+                    "numeric"),
                 rejectInf=FALSE)
             private$..nFactorMethod <- jmvcore::OptionList$new(
                 "nFactorMethod",
@@ -499,6 +497,11 @@ pca <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('pca requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(vars), vars, NULL))
 
     options <- pcaOptions$new(
         vars = vars,

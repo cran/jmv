@@ -13,6 +13,7 @@ ttestPSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             wilcoxon = FALSE,
             hypothesis = "different",
             norm = FALSE,
+            qq = FALSE,
             meanDiff = FALSE,
             effectSize = FALSE,
             ci = FALSE,
@@ -33,9 +34,7 @@ ttestPSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"))
+                    "numeric"))
             private$..students <- jmvcore::OptionBool$new(
                 "students",
                 students,
@@ -65,6 +64,10 @@ ttestPSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..norm <- jmvcore::OptionBool$new(
                 "norm",
                 norm,
+                default=FALSE)
+            private$..qq <- jmvcore::OptionBool$new(
+                "qq",
+                qq,
                 default=FALSE)
             private$..meanDiff <- jmvcore::OptionBool$new(
                 "meanDiff",
@@ -107,6 +110,7 @@ ttestPSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..wilcoxon)
             self$.addOption(private$..hypothesis)
             self$.addOption(private$..norm)
+            self$.addOption(private$..qq)
             self$.addOption(private$..meanDiff)
             self$.addOption(private$..effectSize)
             self$.addOption(private$..ci)
@@ -123,6 +127,7 @@ ttestPSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         wilcoxon = function() private$..wilcoxon$value,
         hypothesis = function() private$..hypothesis$value,
         norm = function() private$..norm$value,
+        qq = function() private$..qq$value,
         meanDiff = function() private$..meanDiff$value,
         effectSize = function() private$..effectSize$value,
         ci = function() private$..ci$value,
@@ -138,6 +143,7 @@ ttestPSOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..wilcoxon = NA,
         ..hypothesis = NA,
         ..norm = NA,
+        ..qq = NA,
         ..meanDiff = NA,
         ..effectSize = NA,
         ..ci = NA,
@@ -438,13 +444,36 @@ ttestPSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 options=options,
                 name="plots",
                 title="Plots",
-                visible="(plots)",
                 items="(pairs)",
-                template=jmvcore::Image$new(
-                    options=options,
-                    renderFun=".plot",
-                    clearWith=list(
-                        "miss"))))}))
+                clearWith=list(
+                    "miss"),
+                template=R6::R6Class(
+                    inherit = jmvcore::Group,
+                    active = list(
+                        desc = function() private$.items[["desc"]],
+                        qq = function() private$.items[["qq"]]),
+                    private = list(),
+                    public=list(
+                        initialize=function(options) {
+                            super$initialize(
+                                options=options,
+                                name="undefined",
+                                title="no title")
+                            self$add(jmvcore::Image$new(
+                                options=options,
+                                name="desc",
+                                visible="(plots)",
+                                renderFun=".desc",
+                                clearWith=list()))
+                            self$add(jmvcore::Image$new(
+                                options=options,
+                                name="qq",
+                                visible="(qq)",
+                                width=350,
+                                height=300,
+                                requiresData=TRUE,
+                                renderFun=".qq",
+                                clearWith=list()))}))$new(options=options)))}))
 
 ttestPSBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "ttestPSBase",
@@ -503,6 +532,8 @@ ttestPSBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   respectively
 #' @param norm \code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk
 #'   normality tests
+#' @param qq \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+#'   residuals
 #' @param meanDiff \code{TRUE} or \code{FALSE} (default), provide means and
 #'   standard errors
 #' @param effectSize \code{TRUE} or \code{FALSE} (default), provide effect
@@ -543,6 +574,7 @@ ttestPS <- function(
     wilcoxon = FALSE,
     hypothesis = "different",
     norm = FALSE,
+    qq = FALSE,
     meanDiff = FALSE,
     effectSize = FALSE,
     ci = FALSE,
@@ -554,6 +586,10 @@ ttestPS <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('ttestPS requires jmvcore to be installed (restart may be required)')
 
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame())
+
     options <- ttestPSOptions$new(
         pairs = pairs,
         students = students,
@@ -562,6 +598,7 @@ ttestPS <- function(
         wilcoxon = wilcoxon,
         hypothesis = hypothesis,
         norm = norm,
+        qq = qq,
         meanDiff = meanDiff,
         effectSize = effectSize,
         ci = ci,

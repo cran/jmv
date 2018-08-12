@@ -32,9 +32,7 @@ reliabilityOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "ordinal",
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"),
+                    "numeric"),
                 rejectInf=FALSE)
             private$..alphaScale <- jmvcore::OptionBool$new(
                 "alphaScale",
@@ -308,6 +306,12 @@ reliability <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('reliability requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(vars), vars, NULL),
+            `if`( ! missing(revItems), revItems, NULL))
 
     options <- reliabilityOptions$new(
         vars = vars,

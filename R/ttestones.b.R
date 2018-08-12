@@ -97,7 +97,7 @@ ttestOneSClass <- R6::R6Class(
                     }
                 }
 
-                if (self$options$get("mann")) {
+                if (self$options$wilcoxon || self$options$mann) {
 
                     if (is.factor(column))
                         res <- createError('Variable is not numeric')
@@ -109,27 +109,27 @@ ttestOneSClass <- R6::R6Class(
                     if ( ! isError(res)) {
 
                         ttest$setRow(rowNo=i, list(
-                            "stat[mann]"=res$statistic,
-                            "p[mann]"=res$p.value,
-                            "md[mann]"=res$estimate - testValue,
-                            "es[mann]"=d,
-                            "cil[mann]"=res$conf.int[1],
-                            "ciu[mann]"=res$conf.int[2]))
+                            "stat[wilc]"=res$statistic,
+                            "p[wilc]"=res$p.value,
+                            "md[wilc]"=res$estimate - testValue,
+                            "es[wilc]"=d,
+                            "cil[wilc]"=res$conf.int[1],
+                            "ciu[wilc]"=res$conf.int[2]))
 
                     } else {
 
                         ttest$setRow(rowNo=i, list(
-                            "stat[mann]"=NaN,
-                            "p[mann]"='',
-                            "md[mann]"='',
-                            "es[mann]"='',
-                            "cil[mann]"='',
-                            "ciu[mann]"=''))
+                            "stat[wilc]"=NaN,
+                            "p[wilc]"='',
+                            "md[wilc]"='',
+                            "es[wilc]"='',
+                            "cil[wilc]"='',
+                            "ciu[wilc]"=''))
 
                         message <- extractErrorMessage(res)
                         if (message == 'cannot compute confidence interval when all observations are tied')
                             message <- 'All observations are tied'
-                        ttest$addFootnote(rowNo=i, 'stat[mann]', message)
+                        ttest$addFootnote(rowNo=i, 'stat[wilc]', message)
                     }
                 }
 
@@ -246,8 +246,8 @@ ttestOneSClass <- R6::R6Class(
             table$getColumn('cil[stud]')$setSuperTitle(ciTitle)
             table$getColumn('ciu[bf]')$setSuperTitle(ciTitle)
             table$getColumn('cil[bf]')$setSuperTitle(ciTitle)
-            table$getColumn('ciu[mann]')$setSuperTitle(ciTitle)
-            table$getColumn('cil[mann]')$setSuperTitle(ciTitle)
+            table$getColumn('ciu[wilc]')$setSuperTitle(ciTitle)
+            table$getColumn('cil[wilc]')$setSuperTitle(ciTitle)
 
             if (hypothesis == 'dt' && testValue == 0)
                 table$setNote("hyp", NULL)
@@ -258,7 +258,7 @@ ttestOneSClass <- R6::R6Class(
             else if (hypothesis == 'lt')
                 table$setNote("hyp", jmvcore::format("H\u2090 population mean < {}", testValue))
         },
-        .plot=function(image, ggtheme, theme, ...) {
+        .desc=function(image, ggtheme, theme, ...) {
 
             if (is.null(image$state))
                 return(FALSE)
@@ -277,6 +277,25 @@ ttestOneSClass <- R6::R6Class(
                               plot.margin = ggplot2::margin(5.5, 5.5, 5.5, 5.5))
 
             suppressWarnings(print(plot))
+
+            return(TRUE)
+        },
+        .qq=function(image, ggtheme, theme, ...) {
+
+            y <- self$data[[image$key]]
+            y <- toNumeric(y)
+            y <- scale(y)
+
+            data <- data.frame(y=y)
+
+            plot <- ggplot(data=data) +
+                geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
+                stat_qq(aes(sample=y), size=2, colour=theme$color[1]) +
+                xlab("Theoretical Quantiles") +
+                ylab("Standardized Residuals") +
+                ggtheme
+
+            print(plot)
 
             return(TRUE)
         }

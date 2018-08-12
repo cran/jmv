@@ -26,22 +26,24 @@ contTablesPairedOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 rows,
                 suggested=list(
                     "nominal",
-                    "ordinal"))
+                    "ordinal"),
+                permitted=list(
+                    "factor"))
             private$..cols <- jmvcore::OptionVariable$new(
                 "cols",
                 cols,
                 suggested=list(
                     "nominal",
-                    "ordinal"))
+                    "ordinal"),
+                permitted=list(
+                    "factor"))
             private$..counts <- jmvcore::OptionVariable$new(
                 "counts",
                 counts,
                 suggested=list(
                     "continuous"),
                 permitted=list(
-                    "continuous",
-                    "nominal",
-                    "ordinal"),
+                    "numeric"),
                 default=NULL)
             private$..chiSq <- jmvcore::OptionBool$new(
                 "chiSq",
@@ -298,6 +300,13 @@ contTablesPaired <- function(
 
     if ( ! requireNamespace('jmvcore'))
         stop('contTablesPaired requires jmvcore to be installed (restart may be required)')
+
+    if (missing(data))
+        data <- jmvcore:::marshalData(
+            parent.frame(),
+            `if`( ! missing(rows), rows, NULL),
+            `if`( ! missing(cols), cols, NULL),
+            `if`( ! missing(counts), counts, NULL))
 
     options <- contTablesPairedOptions$new(
         rows = rows,
