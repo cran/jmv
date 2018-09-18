@@ -6,11 +6,12 @@
 \usage{
 anovaRM(data, rm = list(list(label = "RM Factor 1", levels = list("Level 1",
   "Level 2"))), rmCells = NULL, bs = NULL, cov = NULL, rmTerms = NULL,
-  bsTerms = NULL, ss = "3", effectSize = NULL, spherTests = FALSE,
-  spherCorr = list("none"), leveneTest = FALSE, contrasts = NULL,
-  postHoc = NULL, postHocCorr = list("tukey"), descStats = FALSE,
-  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
-  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
+  bsTerms = NULL, ss = "3", depLabel = "Dependent", effectSize = NULL,
+  spherTests = FALSE, spherCorr = list("none"), leveneTest = FALSE,
+  contrasts = NULL, postHoc = NULL, postHocCorr = list("tukey"),
+  descStats = FALSE, emMeans = list(list()), ciWidthEmm = 95,
+  emmPlots = TRUE, emmPlotData = FALSE, emmPlotError = "ci",
+  emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -37,6 +38,9 @@ terms to go into the model}
 terms to go into the model}
 
 \item{ss}{\code{'2'} or \code{'3'} (default), the sum of squares to use}
+
+\item{depLabel}{a string (default: 'Dependent') describing the label used
+for the dependent variable throughout the analysis}
 
 \item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
 \code{'omega'}; use eta², partial eta², and omega² effect sizes,
@@ -69,14 +73,18 @@ statistics}
 estimated marginal means need to be calculate. Supports up to three
 variables per term.}
 
-\item{ciEmm}{\code{TRUE} (default) or \code{FALSE}, provide a confidence
-interval for the estimated marginal means}
-
 \item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
 confidence interval width for the estimated marginal means}
 
 \item{emmPlots}{\code{TRUE} (default) or \code{FALSE}, provide estimated
 marginal means plots}
+
+\item{emmPlotData}{\code{TRUE} or \code{FALSE} (default), plot the data on
+top of the marginal means}
+
+\item{emmPlotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}.
+Use no error bars, use confidence intervals, or use standard errors on the
+marginal mean plots, respectively}
 
 \item{emmTables}{\code{TRUE} or \code{FALSE} (default), provide estimated
 marginal means tables}

@@ -25,7 +25,7 @@ each row represents a single observation}
 continuity correction}
 
 \item{exact}{\code{TRUE} or \code{FALSE} (default), provide an exact log
-odds ratio}
+odds ratio (requires exact2x2 to be installed)}
 
 \item{pcRow}{\code{TRUE} or \code{FALSE} (default), provide row percentages}
 

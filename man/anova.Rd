@@ -5,10 +5,11 @@
 \title{ANOVA}
 \usage{
 anova(data, dep, factors = NULL, modelTerms = NULL, ss = "3",
-  effectSize = NULL, contrasts = NULL, plotHAxis = NULL,
-  plotSepLines = NULL, plotSepPlots = NULL, postHoc = NULL,
-  postHocCorr = list("tukey"), descStats = FALSE, homo = FALSE,
-  qq = FALSE, plotError = "ci", ciWidth = 95)
+  effectSize = NULL, contrasts = NULL, postHoc = NULL,
+  postHocCorr = list("tukey"), homo = FALSE, qq = FALSE,
+  emMeans = list(list()), ciWidthEmm = 95, emmPlots = TRUE,
+  emmPlotData = FALSE, emmPlotError = "ci", emmTables = FALSE,
+  emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -33,23 +34,11 @@ respectively}
 to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
 \code{'helmert'}, \code{'repeated'} or \code{'polynomial'}}
 
-\item{plotHAxis}{a string naming the variable placed on the horizontal axis
-of the plot}
-
-\item{plotSepLines}{a string naming the variable represented as separate
-lines on the plot}
-
-\item{plotSepPlots}{a string naming the variable to separate over to form
-multiple plots}
-
 \item{postHoc}{a list of terms to perform post-hoc tests on}
 
 \item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'},
 \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
 Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
-
-\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive
-statistics}
 
 \item{homo}{\code{TRUE} or \code{FALSE} (default), perform homogeneity
 tests}
@@ -57,12 +46,28 @@ tests}
 \item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 residuals}
 
-\item{plotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}. Use
-no error bars, use confidence intervals, or use standard errors on the
-plots, respectively}
+\item{emMeans}{a list of lists specifying the variables for which the
+estimated marginal means need to be calculate. Supports up to three
+variables per term.}
 
-\item{ciWidth}{a number between 50 and 99.9 (default: 95) specifying the
-confidence interval width}
+\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
+confidence interval width for the estimated marginal means}
+
+\item{emmPlots}{\code{TRUE} (default) or \code{FALSE}, provide estimated
+marginal means plots}
+
+\item{emmPlotData}{\code{TRUE} or \code{FALSE} (default), plot the data on
+top of the marginal means}
+
+\item{emmPlotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}.
+Use no error bars, use confidence intervals, or use standard errors on the
+marginal mean plots, respectively}
+
+\item{emmTables}{\code{TRUE} or \code{FALSE} (default), provide estimated
+marginal means tables}
+
+\item{emmWeights}{\code{TRUE} (default) or \code{FALSE}, weigh each cell
+equally or weigh them according to the cell frequency}
 }
 \value{
 A results object containing:
@@ -73,9 +78,7 @@ A results object containing:
   \code{results$assump$qq} \tab \tab \tab \tab \tab a q-q plot \cr
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of contrasts tables \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of post-hoc tables \cr
-  \code{results$desc} \tab \tab \tab \tab \tab a table of descriptive statistics \cr
-  \code{results$descPlot} \tab \tab \tab \tab \tab a descriptives plot \cr
-  \code{results$descPlots} \tab \tab \tab \tab \tab an array of descriptives plots \cr
+  \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

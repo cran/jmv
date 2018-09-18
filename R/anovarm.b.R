@@ -263,8 +263,8 @@ anovaRMClass <- R6::R6Class(
 
                     table$addColumn(name='mean', title='Mean', type='number')
                     table$addColumn(name='se', title='SE', type='number')
-                    table$addColumn(name='lower', title='Lower', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'), visibl="(ciEmm)")
-                    table$addColumn(name='upper', title='Upper', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'), visibl="(ciEmm)")
+                    table$addColumn(name='lower', title='Lower', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'))
+                    table$addColumn(name='upper', title='Upper', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'))
 
                     nRows <- prod(nLevels)
 
@@ -292,7 +292,8 @@ anovaRMClass <- R6::R6Class(
             bsRows <- bsTable$rowKeys
             modelRows <- jmvcore::decomposeTerms(as.list(rownames(model)))
             epsilonRows <- jmvcore::decomposeTerms(as.list(rownames(epsilon)))
-            resIndices <- which(sapply(rmRows, function(x) '.RES' %in% x))
+
+            SSt <- private$.getSSt(model)
 
             # Populate RM table
             for (i in seq_along(rmRows)) {
@@ -332,9 +333,7 @@ anovaRMClass <- R6::R6Class(
                     row[['p[HF]']] <- pf(row[['F[HF]']], row[['df[HF]']], dfResHF, lower.tail=FALSE)
 
                     # Add effect sizes
-                    termsTotal <- private$.getTermsTotal(i, rmRows, resIndices, model)
                     SSr <- model[index,'Error SS']
-                    SSt <- termsTotal + SSr
                     MSr <- SSr/dfRes
                     row[['eta[none]']] <- row[['eta[GG]']] <- row[['eta[HF]']] <- row[['ss[none]']] / SSt
                     row[['partEta[none]']] <- row[['partEta[GG]']] <- row[['partEta[HF]']] <- row[['ss[none]']] / (row[['ss[none]']] + SSr)
@@ -403,7 +402,6 @@ anovaRMClass <- R6::R6Class(
 
                     # Add effect sizes
                     SSr <- model[index,'Error SS']
-                    SSt <- sum(model[bsIndices,'Sum Sq']) + SSr
                     MSr <- SSr/model[index,'den Df']
                     row[['eta']] <- row[['ss']] / SSt
                     row[['partEta']] <- row[['ss']] / (row[['ss']] + SSr)
@@ -624,6 +622,8 @@ anovaRMClass <- R6::R6Class(
                 }
             }
         },
+
+        #### Plot functions ----
         .prepareEmmPlots = function(model, data) {
 
             emMeans <- self$options$emMeans
@@ -667,10 +667,16 @@ anovaRMClass <- R6::R6Class(
                     names <- list('x'=termB64[1], 'y'='emmean', 'lines'=termB64[2], 'plots'=termB64[3], 'lower'='lower.CL', 'upper'='upper.CL')
                     names <- lapply(names, function(x) if (is.na(x)) NULL else x)
 
-                    labels <- list('x'=term[1], 'y'='Marginal Mean', 'lines'=term[2], 'plots'=term[3])
+                    labels <- list('x'=term[1], 'y'=self$options$depLabel, 'lines'=term[2], 'plots'=term[3])
                     labels <- lapply(labels, function(x) if (is.na(x)) NULL else x)
 
-                    image$setState(list(data=d, names=names, labels=labels))
+                    dataNew <- lapply(data, function(x) {
+                        if (is.factor(x))
+                            levels(x) <- jmvcore::fromB64(levels(x))
+                        return(x)
+                    })
+
+                    image$setState(list(emm=d, data=dataNew, names=names, labels=labels))
 
                 }
             }
@@ -682,17 +688,35 @@ anovaRMClass <- R6::R6Class(
             if (is.null(image$state))
                 return(FALSE)
 
-            data <- image$state$data
+            data <- as.data.frame(image$state$data)
+            emm <- image$state$emm
             names <- image$state$names
             labels <- image$state$labels
 
-            dodge <- position_dodge(0.2)
+            emm$lowerSE <- emm[names$y] - emm['SE']
+            emm$upperSE <- emm[names$y] + emm['SE']
 
-            p <- ggplot(data=data, aes_string(x=names$x, y=names$y, color=names$lines, fill=names$lines, group=names$lines), inherit.aes = FALSE) +
-                geom_line(size=.8, position=dodge)
+            if (self$options$emmPlotData)
+                dodge <- position_dodge(0.7)
+            else
+                dodge <- position_dodge(0.3)
 
-            if (self$options$ciEmm)
+            if (is.null(names$lines))
+                jitterdodge <- position_jitter(width = 0.1)
+            else
+                jitterdodge <- position_jitterdodge(dodge.width = 0.7, jitter.width = 0.4)
+
+            p <- ggplot(data=emm, aes_string(x=names$x, y=names$y, color=names$lines, fill=names$lines, group=names$lines), inherit.aes = FALSE)
+
+            if (self$options$emmPlotData)
+                p <- p + geom_point(data=data, aes_string(y=jmvcore::toB64('.DEPENDENT')), alpha=0.3, position=jitterdodge)
+
+            p <- p + geom_line(size=.8, position=dodge)
+
+            if (self$options$emmPlotError == 'ci')
                 p <- p + geom_errorbar(aes_string(x=names$x, ymin=names$lower, ymax=names$upper), width=.1, size=.8, position=dodge)
+            else if (self$options$emmPlotError == 'se')
+                p <- p + geom_errorbar(aes_string(x=names$x, ymin='lowerSE', ymax='upperSE'), width=.1, size=.8, position=dodge)
 
             p <- p + geom_point(shape=21, fill='white', size=3, position=dodge)
 
@@ -994,32 +1018,33 @@ anovaRMClass <- R6::R6Class(
 
             return(c(width, height))
         },
-        .getTermsTotal=function (x, y, z, model) {
-            for(i in x:1) {
-                if (i %in% z) {
-                    lower <- i + 1
-                    break
-                } else if (i == 1) {
-                    lower <- i
-                    break
-                }
-            }
-            for(i in x:length(y)) {
-                if (i %in% z) {
-                    upper <- i - 1
-                    break
-                } else if (i == length(y)) {
-                    upper <- i
-                    break
-                }
-            }
-            termsIndex <- lapply(y[lower:upper], toB64)
+        .getSSt=function (model) {
+
+            rmTerms <- lapply(self$options$rmTerms, jmvcore::toB64)
+            bsTerms <- lapply(self$options$bsTerms, jmvcore::toB64)
+
+            if (length(bsTerms) == 0)
+                bsTerms <- list('(Intercept)')
+
+            terms <- c(rmTerms, bsTerms)
+
             modelRows <- jmvcore::decomposeTerms(as.list(rownames(model)))
-            indicesTotal <- sapply(termsIndex, function(x) which(sapply(modelRows, function(y) setequal(y,x))))
 
-            termsTotal <- sum(model[indicesTotal,'Sum Sq'])
+            termSSt <- sum(model[-1, 'Sum Sq'])
 
-            return(termsTotal)
+            errorSSt <- 0
+            for (i in seq_along(terms)) {
+                for (j in seq_along(modelRows)) {
+                    if (all(terms[[i]] %in% modelRows[[j]]) && length(terms[[i]]) == length(modelRows[[j]])) {
+                        errorSSt <- errorSSt + model[j, 'Error SS']
+                        break
+                    }
+                }
+            }
+
+            SSt <- termSSt + errorSSt
+
+            return(SSt)
         },
         .sourcifyOption = function(option) {
 
