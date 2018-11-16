@@ -75,7 +75,7 @@ descriptivesClass <- R6::R6Class(
 
                 column <- data[[var]]
 
-                if (is.factor(column)) {
+                if (private$.treatAsFactor(column)) {
 
                     if (length(splitBy) > 0) {
 
@@ -186,10 +186,14 @@ descriptivesClass <- R6::R6Class(
                 var <- vars[i]
                 column <- self$data[[var]]
 
-                if (is.factor(column)) {
+                if (private$.treatAsFactor(column)) {
 
                     table <- tables$get(var)
                     levels <- base::levels(column)
+                    if (is.null(levels)) {
+                        levels <- levels(factor(naOmit(column)))
+                        table$setVisible(TRUE)
+                    }
 
                     if (length(splitBy) == 0) {
 
@@ -204,7 +208,6 @@ descriptivesClass <- R6::R6Class(
                     } else {
 
                         expandGrid <- function(...) expand.grid(..., stringsAsFactors = FALSE)
-                        levels <- base::levels(column)
                         grid <- rev(do.call(expandGrid, rev(c(list(levels), private$levels[-1]))))
                         cols <- c(var, splitBy[-1])
 
@@ -270,7 +273,11 @@ descriptivesClass <- R6::R6Class(
 
                 } else if (canBeNumeric(column)) {
 
-                    names <- na.omit(splitBy[1:3])
+                    if (is.null(splitBy))
+                        names <- NULL
+                    else
+                        names <- na.omit(splitBy[1:3])
+
                     df <- data[names]
                     levels <- lapply(df, levels)
 
@@ -448,10 +455,18 @@ descriptivesClass <- R6::R6Class(
                 var <- vars[i]
                 column <- self$data[[var]]
 
-                if (is.factor(column)) {
+                if (private$.treatAsFactor(column)) {
 
                     table <- tables$get(var)
+
+                    if ( !  table$visible)
+                        next()
+
                     levels <- base::levels(column)
+                    if (is.null(levels)) {
+                        levels <- levels(factor(naOmit(column)))
+                        table$setVisible(TRUE)
+                    }
                     freq <- freqs[[var]]
 
                     if (length(splitBy) == 0) {
@@ -651,9 +666,7 @@ descriptivesClass <- R6::R6Class(
             if ( ! is.null(facetFmla))
                 plot <- plot + facet_grid(as.formula(facetFmla), drop=FALSE)
 
-            print(plot)
-
-            return(TRUE)
+            return(plot)
         },
         .histogram = function(image, ggtheme, theme, ...) {
 
@@ -687,10 +700,15 @@ descriptivesClass <- R6::R6Class(
                 max <- max(data[names$x])
 
                 range <- max - min
-                binWidth <- range / nBins
+
+                nUniques <- length(unique(data[[names$x]]))
+                if (nUniques > nBins)
+                    binWidth <- range / nBins
+                else
+                    binWidth <- range / (nUniques - 1)
 
                 plot <- ggplot(data=data, aes_string(x=names$x)) +
-                    labs(list(x=labels$x, y='density'))
+                    labs(x=labels$x, y='density')
 
                 if (self$options$hist)
                     plot <- plot + geom_histogram(aes(y=..density..), position="identity",
@@ -707,7 +725,7 @@ descriptivesClass <- R6::R6Class(
                 data$s1 <- factor(data$s1, rev(levels(data$s1)))
 
                 plot <- ggplot(data=data, aes_string(x=names$x, y=names$s1, fill=names$s1)) +
-                    labs(list(x=labels$x, y=labels$s1)) +
+                    labs(x=labels$x, y=labels$s1) +
                     scale_y_discrete(expand = c(0.05, 0)) +
                     scale_x_continuous(expand = c(0.01, 0))
 
@@ -725,13 +743,7 @@ descriptivesClass <- R6::R6Class(
 
             plot <- plot + ggtheme + themeSpec
 
-            suppressWarnings(
-                suppressMessages(
-                    print(plot)
-                )
-            )
-
-            TRUE
+            return(plot)
         },
         .barPlot = function(image, ggtheme, theme, ...) {
 
@@ -757,7 +769,7 @@ descriptivesClass <- R6::R6Class(
 
                 plot <- ggplot(data=data, aes_string(x=names$x, y=names$y)) +
                     geom_bar(stat="identity", position="dodge", width = 0.7, fill=fill, color=color) +
-                    labs(list(x=labels$x, y='counts'))
+                    labs(x=labels$x, y='counts')
 
                 # if (self$options$barCounts)
                 #     plot <- plot + geom_text(aes_string(label=names$y), vjust=-0.3)
@@ -766,7 +778,7 @@ descriptivesClass <- R6::R6Class(
 
                 plot <- ggplot(data=data, aes_string(x=names$x, y=names$y, fill=names$s1)) +
                     geom_bar(stat="identity", position=position_dodge(0.85), width = 0.7, color='#333333') +
-                    labs(list(x=labels$x, y='counts', fill=labels$s1))
+                    labs(x=labels$x, y='counts', fill=labels$s1)
 
                 # if (self$options$barCounts)
                 #     plot <- plot + geom_text(aes_string(label=names$y), position=position_dodge(.75), vjust=-0.3)
@@ -778,13 +790,7 @@ descriptivesClass <- R6::R6Class(
 
             plot <- plot + ggtheme + themeSpec
 
-            suppressWarnings(
-                suppressMessages(
-                    print(plot)
-                )
-            )
-
-            TRUE
+            return(plot)
         },
         .boxPlot = function(image, ggtheme, theme, ...) {
 
@@ -815,7 +821,7 @@ descriptivesClass <- R6::R6Class(
                     x <- names$s1
 
                 plot <- ggplot(data=data, aes_string(x=x, y=names$x)) +
-                    labs(list(x=labels$s1, y=labels$x))
+                    labs(x=labels$s1, y=labels$x)
 
                 if (self$options$violin)
                     plot <- plot + ggplot2::geom_violin(fill=theme$fill[1], color=theme$color[1], alpha=0.5)
@@ -841,7 +847,7 @@ descriptivesClass <- R6::R6Class(
             } else {
 
                 plot <- ggplot(data=data, aes_string(x=names$s2, y=names$x, fill=names$s1)) +
-                    labs(list(x=labels$s2, y=labels$x, fill=labels$s1, color=labels$s1))
+                    labs(x=labels$s2, y=labels$x, fill=labels$s1, color=labels$s1)
 
                 if (self$options$violin)
                     plot <- plot + ggplot2::geom_violin(color=theme$color[1], position=position_dodge(0.9), alpha=0.3)
@@ -869,13 +875,7 @@ descriptivesClass <- R6::R6Class(
 
             plot <- plot + ggtheme + themeSpec
 
-            suppressWarnings(
-                suppressMessages(
-                    print(plot)
-                )
-            )
-
-            TRUE
+            return(plot)
         },
 
         #### Helper functions ----
@@ -887,6 +887,17 @@ descriptivesClass <- R6::R6Class(
                 if (length(levels(data[[var]])) == 0)
                     jmvcore::reject(jmvcore::format('The \'split by\' variable \'{}\' contains no data.', var), code='')
             }
+        },
+        .treatAsFactor = function(column) {
+
+            if (is.factor(column))
+                return(TRUE)
+
+            nUniques <- length(unique(column))
+            if (nUniques > 0 && nUniques <= 10)
+                return(TRUE)
+            else
+                return(FALSE)
         },
         .addQuantiles = function() {
 

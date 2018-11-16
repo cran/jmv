@@ -2,7 +2,7 @@
 % Please edit documentation in R/anovanp.h.R
 \name{anovaNP}
 \alias{anovaNP}
-\title{One Way ANOVA (Non-parametric)}
+\title{One-Way ANOVA (Non-parametric)}
 \usage{
 anovaNP(data, deps, group, pairs = FALSE)
 }

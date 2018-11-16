@@ -5,9 +5,10 @@
 \title{Exploratory Factor Analysis}
 \usage{
 efa(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
-  rotation = "oblimin", hideLoadings = 0.3, screePlot = FALSE,
-  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE,
-  modelFit = FALSE, kmo = FALSE, bartlett = FALSE)
+  extraction = "minres", rotation = "oblimin", hideLoadings = 0.3,
+  sortLoadings = FALSE, screePlot = FALSE, eigen = FALSE,
+  factorCor = FALSE, factorSummary = FALSE, modelFit = FALSE,
+  kmo = FALSE, bartlett = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -23,11 +24,19 @@ efa(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
 \item{minEigen}{a number (default: 1), the minimal eigenvalue for a factor
 to be included in the model}
 
-\item{rotation}{\code{'none'}, \code{'varimax'} (default),
-\code{'quartimax'}, \code{'promax'}, \code{'oblimin'}, or
-\code{'simplimax'}, the rotation to use in estimation}
+\item{extraction}{\code{'minres'} (default), \code{'ml'}, or \code{'pa'}
+use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal
+axis' as the factor extraction method}
 
-\item{hideLoadings}{a number (default: 0.3), hide loadings below this value}
+\item{rotation}{\code{'none'}, \code{'varimax'}, \code{'quartimax'},
+\code{'promax'}, \code{'oblimin'} (default), or \code{'simplimax'}, the
+rotation to use in estimation}
+
+\item{hideLoadings}{a number (default: 0.3), hide factor loadings below
+this value}
+
+\item{sortLoadings}{\code{TRUE} or \code{FALSE} (default), sort the factor
+loadings by size}
 
 \item{screePlot}{\code{TRUE} or \code{FALSE} (default), show scree plot}
 

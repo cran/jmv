@@ -693,8 +693,8 @@ anovaRMClass <- R6::R6Class(
             names <- image$state$names
             labels <- image$state$labels
 
-            emm$lowerSE <- emm[names$y] - emm['SE']
-            emm$upperSE <- emm[names$y] + emm['SE']
+            emm$lowerSE <- emm[[names$y]] - emm[['SE']]
+            emm$upperSE <- emm[[names$y]] + emm[['SE']]
 
             if (self$options$emmPlotData)
                 dodge <- position_dodge(0.7)
@@ -726,12 +726,10 @@ anovaRMClass <- R6::R6Class(
             }
 
             p <- p +
-                labs(list(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines)) +
+                labs(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines) +
                 ggtheme + theme(panel.spacing = unit(2, "lines"))
 
-            print(p)
-
-            TRUE
+            return(p)
         },
 
         #### Helper functions ----

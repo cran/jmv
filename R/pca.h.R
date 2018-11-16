@@ -12,6 +12,7 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             minEigen = 1,
             rotation = "varimax",
             hideLoadings = 0.3,
+            sortLoadings = FALSE,
             screePlot = FALSE,
             eigen = FALSE,
             factorCor = FALSE,
@@ -28,6 +29,7 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
+                takeFromDataIfMissing=TRUE,
                 suggested=list(
                     "ordinal",
                     "continuous"),
@@ -66,6 +68,10 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "hideLoadings",
                 hideLoadings,
                 default=0.3)
+            private$..sortLoadings <- jmvcore::OptionBool$new(
+                "sortLoadings",
+                sortLoadings,
+                default=FALSE)
             private$..screePlot <- jmvcore::OptionBool$new(
                 "screePlot",
                 screePlot,
@@ -97,6 +103,7 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..minEigen)
             self$.addOption(private$..rotation)
             self$.addOption(private$..hideLoadings)
+            self$.addOption(private$..sortLoadings)
             self$.addOption(private$..screePlot)
             self$.addOption(private$..eigen)
             self$.addOption(private$..factorCor)
@@ -111,6 +118,7 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         minEigen = function() private$..minEigen$value,
         rotation = function() private$..rotation$value,
         hideLoadings = function() private$..hideLoadings$value,
+        sortLoadings = function() private$..sortLoadings$value,
         screePlot = function() private$..screePlot$value,
         eigen = function() private$..eigen$value,
         factorCor = function() private$..factorCor$value,
@@ -124,6 +132,7 @@ pcaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..minEigen = NA,
         ..rotation = NA,
         ..hideLoadings = NA,
+        ..sortLoadings = NA,
         ..screePlot = NA,
         ..eigen = NA,
         ..factorCor = NA,
@@ -451,6 +460,8 @@ pcaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   \code{'quartimax'}, \code{'promax'}, \code{'oblimin'}, or
 #'   \code{'simplimax'}, the rotation to use in estimation
 #' @param hideLoadings a number (default: 0.3), hide loadings below this value
+#' @param sortLoadings \code{TRUE} or \code{FALSE} (default), sort the factor
+#'   loadings by size
 #' @param screePlot \code{TRUE} or \code{FALSE} (default), show scree plot
 #' @param eigen \code{TRUE} or \code{FALSE} (default), show eigenvalue table
 #' @param factorCor \code{TRUE} or \code{FALSE} (default), show factor
@@ -488,6 +499,7 @@ pca <- function(
     minEigen = 1,
     rotation = "varimax",
     hideLoadings = 0.3,
+    sortLoadings = FALSE,
     screePlot = FALSE,
     eigen = FALSE,
     factorCor = FALSE,
@@ -503,6 +515,8 @@ pca <- function(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL))
 
+    vars <- `if`( ! missing(vars), vars, colnames(data))
+
     options <- pcaOptions$new(
         vars = vars,
         nFactorMethod = nFactorMethod,
@@ -510,6 +524,7 @@ pca <- function(
         minEigen = minEigen,
         rotation = rotation,
         hideLoadings = hideLoadings,
+        sortLoadings = sortLoadings,
         screePlot = screePlot,
         eigen = eigen,
         factorCor = factorCor,

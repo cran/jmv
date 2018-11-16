@@ -388,7 +388,8 @@ anovaOneWResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     clearWith=list(
                         "group",
                         "miss",
-                        "phMethod"),
+                        "phMethod",
+                        "phFlag"),
                     columns=list(
                         list(
                             `name`=".name[md]", 
@@ -562,6 +563,8 @@ anovaOneW <- function(
             parent.frame(),
             `if`( ! missing(deps), deps, NULL),
             `if`( ! missing(group), group, NULL))
+
+    for (v in group) data[[v]] <- as.factor(data[[v]])
 
     options <- anovaOneWOptions$new(
         deps = deps,

@@ -5,9 +5,9 @@
 \title{Principal Component Analysis}
 \usage{
 pca(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
-  rotation = "varimax", hideLoadings = 0.3, screePlot = FALSE,
-  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE, kmo = FALSE,
-  bartlett = FALSE)
+  rotation = "varimax", hideLoadings = 0.3, sortLoadings = FALSE,
+  screePlot = FALSE, eigen = FALSE, factorCor = FALSE,
+  factorSummary = FALSE, kmo = FALSE, bartlett = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -29,6 +29,9 @@ component to be included in the model}
 \code{'simplimax'}, the rotation to use in estimation}
 
 \item{hideLoadings}{a number (default: 0.3), hide loadings below this value}
+
+\item{sortLoadings}{\code{TRUE} or \code{FALSE} (default), sort the factor
+loadings by size}
 
 \item{screePlot}{\code{TRUE} or \code{FALSE} (default), show scree plot}
 

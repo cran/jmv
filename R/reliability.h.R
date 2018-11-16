@@ -33,7 +33,8 @@ reliabilityOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "continuous"),
                 permitted=list(
                     "numeric"),
-                rejectInf=FALSE)
+                rejectInf=FALSE,
+                takeFromDataIfMissing=TRUE)
             private$..alphaScale <- jmvcore::OptionBool$new(
                 "alphaScale",
                 alphaScale,
@@ -312,6 +313,8 @@ reliability <- function(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL),
             `if`( ! missing(revItems), revItems, NULL))
+
+    vars <- `if`( ! missing(vars), vars, colnames(data))
 
     options <- reliabilityOptions$new(
         vars = vars,

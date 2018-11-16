@@ -524,12 +524,10 @@ logLinearClass <- R6::R6Class(
             }
 
             p <- p +
-                labs(list(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines)) +
+                labs(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines) +
                 ggtheme + theme(panel.spacing = unit(2, "lines"))
 
-            print(p)
-
-            TRUE
+            return(p)
         },
 
         #### Helper functions ----
@@ -544,7 +542,6 @@ logLinearClass <- R6::R6Class(
             } else {
                 for (i in seq_along(blocks)) {
                     terms[[i]] <- unlist(blocks[1:i], recursive = FALSE)
-                    terms[[i]][sapply(terms[[i]], is.null)] <- NULL
                 }
             }
 

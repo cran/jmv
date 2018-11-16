@@ -10,8 +10,10 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             nFactorMethod = "parallel",
             nFactors = 1,
             minEigen = 1,
+            extraction = "minres",
             rotation = "oblimin",
             hideLoadings = 0.3,
+            sortLoadings = FALSE,
             screePlot = FALSE,
             eigen = FALSE,
             factorCor = FALSE,
@@ -29,6 +31,7 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             private$..vars <- jmvcore::OptionVariables$new(
                 "vars",
                 vars,
+                takeFromDataIfMissing=TRUE,
                 suggested=list(
                     "ordinal",
                     "continuous"),
@@ -52,6 +55,14 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "minEigen",
                 minEigen,
                 default=1)
+            private$..extraction <- jmvcore::OptionList$new(
+                "extraction",
+                extraction,
+                options=list(
+                    "minres",
+                    "ml",
+                    "pa"),
+                default="minres")
             private$..rotation <- jmvcore::OptionList$new(
                 "rotation",
                 rotation,
@@ -67,6 +78,10 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "hideLoadings",
                 hideLoadings,
                 default=0.3)
+            private$..sortLoadings <- jmvcore::OptionBool$new(
+                "sortLoadings",
+                sortLoadings,
+                default=FALSE)
             private$..screePlot <- jmvcore::OptionBool$new(
                 "screePlot",
                 screePlot,
@@ -100,8 +115,10 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..nFactorMethod)
             self$.addOption(private$..nFactors)
             self$.addOption(private$..minEigen)
+            self$.addOption(private$..extraction)
             self$.addOption(private$..rotation)
             self$.addOption(private$..hideLoadings)
+            self$.addOption(private$..sortLoadings)
             self$.addOption(private$..screePlot)
             self$.addOption(private$..eigen)
             self$.addOption(private$..factorCor)
@@ -115,8 +132,10 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         nFactorMethod = function() private$..nFactorMethod$value,
         nFactors = function() private$..nFactors$value,
         minEigen = function() private$..minEigen$value,
+        extraction = function() private$..extraction$value,
         rotation = function() private$..rotation$value,
         hideLoadings = function() private$..hideLoadings$value,
+        sortLoadings = function() private$..sortLoadings$value,
         screePlot = function() private$..screePlot$value,
         eigen = function() private$..eigen$value,
         factorCor = function() private$..factorCor$value,
@@ -129,8 +148,10 @@ efaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..nFactorMethod = NA,
         ..nFactors = NA,
         ..minEigen = NA,
+        ..extraction = NA,
         ..rotation = NA,
         ..hideLoadings = NA,
+        ..sortLoadings = NA,
         ..screePlot = NA,
         ..eigen = NA,
         ..factorCor = NA,
@@ -154,7 +175,14 @@ efaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$add(jmvcore::Preformatted$new(
                 options=options,
                 name="text",
-                title="Exploratory Factor Analysis"))}))
+                title="Exploratory Factor Analysis",
+                clearWith=list(
+                    "vars",
+                    "nFactorMethod",
+                    "nFactors",
+                    "hideLoadings",
+                    "rotation",
+                    "factorMethod")))}))
 
 efaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "efaBase",
@@ -207,10 +235,16 @@ efaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param nFactors an integer (default: 1), the number of factors in the model
 #' @param minEigen a number (default: 1), the minimal eigenvalue for a factor
 #'   to be included in the model
-#' @param rotation \code{'none'}, \code{'varimax'} (default),
-#'   \code{'quartimax'}, \code{'promax'}, \code{'oblimin'}, or
-#'   \code{'simplimax'}, the rotation to use in estimation
-#' @param hideLoadings a number (default: 0.3), hide loadings below this value
+#' @param extraction \code{'minres'} (default), \code{'ml'}, or \code{'pa'}
+#'   use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal
+#'   axis' as the factor extraction method
+#' @param rotation \code{'none'}, \code{'varimax'}, \code{'quartimax'},
+#'   \code{'promax'}, \code{'oblimin'} (default), or \code{'simplimax'}, the
+#'   rotation to use in estimation
+#' @param hideLoadings a number (default: 0.3), hide factor loadings below
+#'   this value
+#' @param sortLoadings \code{TRUE} or \code{FALSE} (default), sort the factor
+#'   loadings by size
 #' @param screePlot \code{TRUE} or \code{FALSE} (default), show scree plot
 #' @param eigen \code{TRUE} or \code{FALSE} (default), show eigenvalue table
 #' @param factorCor \code{TRUE} or \code{FALSE} (default), show factor
@@ -235,8 +269,10 @@ efa <- function(
     nFactorMethod = "parallel",
     nFactors = 1,
     minEigen = 1,
+    extraction = "minres",
     rotation = "oblimin",
     hideLoadings = 0.3,
+    sortLoadings = FALSE,
     screePlot = FALSE,
     eigen = FALSE,
     factorCor = FALSE,
@@ -253,13 +289,17 @@ efa <- function(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL))
 
+    vars <- `if`( ! missing(vars), vars, colnames(data))
+
     options <- efaOptions$new(
         vars = vars,
         nFactorMethod = nFactorMethod,
         nFactors = nFactors,
         minEigen = minEigen,
+        extraction = extraction,
         rotation = rotation,
         hideLoadings = hideLoadings,
+        sortLoadings = sortLoadings,
         screePlot = screePlot,
         eigen = eigen,
         factorCor = factorCor,
