@@ -506,7 +506,7 @@ ttestISClass <- R6::R6Class(
 
             pieces <- split(y, x)
             # scale groups individually
-            pieces <- lapply(pieces, function(y) y - mean(y))
+            pieces <- lapply(pieces, function(y) y - mean(y, na.rm=TRUE))
             # join back together
             y <- unsplit(pieces, x)
             y <- scale(y)
@@ -523,6 +523,14 @@ ttestISClass <- R6::R6Class(
             print(plot)
 
             return(TRUE)
+        },
+        .sourcifyOption = function(option) {
+            if (option$name %in% c('deps', 'group'))
+                return('')
+            super$.sourcifyOption(option)
+        },
+        .formula=function() {
+            jmvcore:::composeFormula(self$options$vars, self$options$group)
         }
     )
 )

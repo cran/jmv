@@ -4,18 +4,20 @@
 \alias{ttestIS}
 \title{Independent Samples T-Test}
 \usage{
-ttestIS(data, vars, group, students = TRUE, bf = FALSE, bfPrior = 0.707,
-  welchs = FALSE, mann = FALSE, hypothesis = "different", norm = FALSE,
-  qq = FALSE, eqv = FALSE, meanDiff = FALSE, effectSize = FALSE,
-  ci = FALSE, ciWidth = 95, desc = FALSE, plots = FALSE,
-  miss = "perAnalysis")
+ttestIS(data, vars, group, students = TRUE, bf = FALSE,
+  bfPrior = 0.707, welchs = FALSE, mann = FALSE,
+  hypothesis = "different", norm = FALSE, qq = FALSE, eqv = FALSE,
+  meanDiff = FALSE, effectSize = FALSE, ci = FALSE, ciWidth = 95,
+  desc = FALSE, plots = FALSE, miss = "perAnalysis", formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{vars}{a vector of strings naming the dependent variables}
+\item{vars}{the dependent variables (not necessary when using a formula,
+see the examples)}
 
-\item{group}{a string naming the grouping variable, must have 2 levels}
+\item{group}{the grouping variable with two levels (not necessary when
+using a formula, see the examples)}
 
 \item{students}{\code{TRUE} (default) or \code{FALSE}, perform Student's
 t-tests}
@@ -37,13 +39,13 @@ tests}
 respectively}
 
 \item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-Wilk
-test of normality}
+tests of normality}
 
-\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide Q-Q plots of
 residuals}
 
-\item{eqv}{\code{TRUE} or \code{FALSE} (default), perform Levene's test for
-equality of variances}
+\item{eqv}{\code{TRUE} or \code{FALSE} (default), perform Levene's tests
+for equality of variances}
 
 \item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard errors}
@@ -67,6 +69,8 @@ plots}
 missing values; \code{'perAnalysis'} excludes missing values for individual
 dependent variables, \code{'listwise'} excludes a row from all analyses if
 one of its entries is missing.}
+
+\item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
 A results object containing:
@@ -85,12 +89,25 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$ttest)}
 }
 \description{
-Independent Samples T-Test
+The Student's Independent samples t-test (sometimes called a two-samples
+t-test) is used to test the null hypothesis that two groups have the
+same mean. A low p-value suggests that the null hypothesis is not true,
+and therefore the group means are different.
+}
+\details{
+The Student's independent t-test assumes that the data from each group
+are from a normal distribution, and that the variances of these groups
+are equal. If unwilling to assume the groups have equal variances, the
+Welch's t-test can be used in it's place. If one is additionally
+unwilling to assume the data from each group are from a normal
+distribution, the non-parametric Mann-Whitney U test can be used instead
+(However, note that the Mann-Whitney U test has a slightly different
+null hypothesis; that the distributions of each group is equal).
 }
 \examples{
 data('ToothGrowth')
 
-ttestIS(data = ToothGrowth, vars = 'len', group = 'supp')
+ttestIS(formula = len ~ supp, data = ToothGrowth)
 
 #
 #  INDEPENDENT SAMPLES T-TEST

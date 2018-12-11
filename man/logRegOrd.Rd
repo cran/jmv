@@ -4,10 +4,11 @@
 \alias{logRegOrd}
 \title{Ordinal Logistic Regression}
 \usage{
-logRegOrd(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
-  refLevels = NULL, modelTest = FALSE, dev = TRUE, aic = TRUE,
-  bic = FALSE, pseudoR2 = list("r2mf"), omni = FALSE, thres = FALSE,
-  ci = FALSE, ciWidth = 95, OR = FALSE, ciOR = FALSE, ciWidthOR = 95)
+logRegOrd(data, dep, covs = NULL, factors = NULL,
+  blocks = list(list()), refLevels = NULL, modelTest = FALSE,
+  dev = TRUE, aic = TRUE, bic = FALSE, pseudoR2 = list("r2mf"),
+  omni = FALSE, thres = FALSE, ci = FALSE, ciWidth = 95,
+  OR = FALSE, ciOR = FALSE, ciWidthOR = 95)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -90,8 +91,8 @@ x2 <- rnorm(100)
 
 df <- data.frame(y=y, x1=x1, x2=x2)
 
-logRegOrd(data = df, dep = "y",
-          covs = c("x1", "x2"),
+logRegOrd(data = df, dep = y,
+          covs = vars(x1, x2),
           blocks = list(list("x1", "x2")))
 
 #

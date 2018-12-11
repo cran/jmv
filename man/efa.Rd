@@ -4,11 +4,11 @@
 \alias{efa}
 \title{Exploratory Factor Analysis}
 \usage{
-efa(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
-  extraction = "minres", rotation = "oblimin", hideLoadings = 0.3,
-  sortLoadings = FALSE, screePlot = FALSE, eigen = FALSE,
-  factorCor = FALSE, factorSummary = FALSE, modelFit = FALSE,
-  kmo = FALSE, bartlett = FALSE)
+efa(data, vars, nFactorMethod = "parallel", nFactors = 1,
+  minEigen = 1, extraction = "minres", rotation = "oblimin",
+  hideLoadings = 0.3, sortLoadings = FALSE, screePlot = FALSE,
+  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE,
+  modelFit = FALSE, kmo = FALSE, bartlett = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -69,7 +69,7 @@ Exploratory Factor Analysis
 \examples{
 data('iris')
 
-efa(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
+efa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))
 
 #
 #  EXPLORATORY FACTOR ANALYSIS

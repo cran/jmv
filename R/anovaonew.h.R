@@ -465,14 +465,26 @@ anovaOneWBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' One-Way ANOVA
 #'
-#' One-Way ANOVA
+#' The Analysis of Variance (ANOVA) is used to explore the relationship
+#' between a continuous dependent variable, and one or more categorical
+#' explanatory variables. This 'One-Way ANOVA' is a simplified version of
+#' the 'normal' ANOVA, allowing only a single explanatory factor, however
+#' also providing a Welch's ANOVA. The Welch's ANOVA has the advantage that
+#' it need not assume that the variances of all groups are equal.
+#' 
+#' For convenience, this method allows specifying multiple dependent
+#' variables, resulting in multiple independent tests.
+#' 
+#' Note that the Welch's ANOVA is the same procedure as the Welch's
+#' independent samples t-test.
+#' 
 #'
 #' @examples
 #' data('ToothGrowth')
 #' dat <- ToothGrowth
 #' dat$dose <- factor(dat$dose)
 #'
-#' anovaOneW(dat, deps = "len", group = "dose")
+#' anovaOneW(formula = len ~ dose, data = dat)
 #'
 #' #
 #' #  ONE-WAY ANOVA
@@ -520,6 +532,7 @@ anovaOneWBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   (t-value and degrees of freedom) for post-hoc tests
 #' @param phFlag \code{TRUE} or \code{FALSE} (default), flag significant
 #'   post-hoc comparisons
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$anova} \tab \tab \tab \tab \tab a table of the test results \cr
@@ -553,18 +566,35 @@ anovaOneW <- function(
     phMeanDif = TRUE,
     phSig = TRUE,
     phTest = FALSE,
-    phFlag = FALSE) {
+    phFlag = FALSE,
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('anovaOneW requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(deps))
+            deps <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                required=TRUE)
+        if (missing(group))
+            group <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs')
+    }
+
+    if ( ! missing(deps)) deps <- jmvcore:::resolveQuo(jmvcore:::enquo(deps))
+    if ( ! missing(group)) group <- jmvcore:::resolveQuo(jmvcore:::enquo(group))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
             `if`( ! missing(deps), deps, NULL),
             `if`( ! missing(group), group, NULL))
 
-    for (v in group) data[[v]] <- as.factor(data[[v]])
+    for (v in group) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- anovaOneWOptions$new(
         deps = deps,

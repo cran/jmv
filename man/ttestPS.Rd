@@ -5,9 +5,9 @@
 \title{Paired Samples T-Test}
 \usage{
 ttestPS(data, pairs, students = TRUE, bf = FALSE, bfPrior = 0.707,
-  wilcoxon = FALSE, hypothesis = "different", norm = FALSE, qq = FALSE,
-  meanDiff = FALSE, effectSize = FALSE, ci = FALSE, ciWidth = 95,
-  desc = FALSE, plots = FALSE, miss = "perAnalysis")
+  wilcoxon = FALSE, hypothesis = "different", norm = FALSE,
+  qq = FALSE, meanDiff = FALSE, effectSize = FALSE, ci = FALSE,
+  ciWidth = 95, desc = FALSE, plots = FALSE, miss = "perAnalysis")
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -58,7 +58,7 @@ plots}
 \item{miss}{\code{'perAnalysis'} or \code{'listwise'}, how to handle
 missing values; \code{'perAnalysis'} excludes missing values for individual
 dependent variables, \code{'listwise'} excludes a row from all analyses if
-one of its entries is missing.}
+one of its entries is missing}
 }
 \value{
 A results object containing:
@@ -76,7 +76,19 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$ttest)}
 }
 \description{
-Paired Samples T-Test
+The Student's paired samples t-test (sometimes called a
+dependent-samples t-test) is used to test the null hypothesis that the
+difference between pairs of measurements is equal to zero. A low p-value
+suggests that the null hypothesis is not true, and that the
+difference between the measurement pairs is not zero.
+}
+\details{
+The Student's paired samples t-test assumes that pair differences follow
+a normal distribution -- in the case that one is unwilling to assume
+this, the non-parametric Wilcoxon signed-rank can be used in it's place
+(However, note that the Wilcoxon signed-rank has a slightly different
+null hypothesis; that the two groups of measurements follow the same
+distribution).
 }
 \examples{
 \dontrun{

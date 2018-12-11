@@ -4,14 +4,15 @@
 \alias{anovaRM}
 \title{Repeated Measures ANOVA}
 \usage{
-anovaRM(data, rm = list(list(label = "RM Factor 1", levels = list("Level 1",
-  "Level 2"))), rmCells = NULL, bs = NULL, cov = NULL, rmTerms = NULL,
-  bsTerms = NULL, ss = "3", depLabel = "Dependent", effectSize = NULL,
-  spherTests = FALSE, spherCorr = list("none"), leveneTest = FALSE,
-  contrasts = NULL, postHoc = NULL, postHocCorr = list("tukey"),
-  descStats = FALSE, emMeans = list(list()), ciWidthEmm = 95,
-  emmPlots = TRUE, emmPlotData = FALSE, emmPlotError = "ci",
-  emmTables = FALSE, emmWeights = TRUE)
+anovaRM(data, rm = list(list(label = "RM Factor 1", levels =
+  list("Level 1", "Level 2"))), rmCells = NULL, bs = NULL,
+  cov = NULL, effectSize = NULL, depLabel = "Dependent",
+  rmTerms = NULL, bsTerms = NULL, ss = "3", spherTests = FALSE,
+  spherCorr = list("none"), leveneTest = FALSE, contrasts = NULL,
+  postHoc = NULL, postHocCorr = list("tukey"),
+  emMeans = list(list()), emmPlots = TRUE, emmTables = FALSE,
+  emmWeights = TRUE, ciWidthEmm = 95, emmPlotData = FALSE,
+  emmPlotError = "ci")
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -31,6 +32,13 @@ strings) defined as \code{cell}}
 \item{cov}{a vector of strings naming the covariates from \code{data}.
 Variables must be numeric}
 
+\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
+\code{'omega'}; use eta², partial eta², and omega² effect sizes,
+respectively}
+
+\item{depLabel}{a string (default: 'Dependent') describing the label used
+for the dependent variable throughout the analysis}
+
 \item{rmTerms}{a list of character vectors describing the repeated measures
 terms to go into the model}
 
@@ -38,13 +46,6 @@ terms to go into the model}
 terms to go into the model}
 
 \item{ss}{\code{'2'} or \code{'3'} (default), the sum of squares to use}
-
-\item{depLabel}{a string (default: 'Dependent') describing the label used
-for the dependent variable throughout the analysis}
-
-\item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
-\code{'omega'}; use eta², partial eta², and omega² effect sizes,
-respectively}
 
 \item{spherTests}{\code{TRUE} or \code{FALSE} (default), perform sphericity
 tests}
@@ -66,18 +67,21 @@ that need to be computed}
 \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; use no, Tukey, Scheffe,
 Bonferroni and Holm posthoc corrections, respectively}
 
-\item{descStats}{\code{TRUE} or \code{FALSE} (default), provide descriptive
-statistics}
-
 \item{emMeans}{a list of lists specifying the variables for which the
 estimated marginal means need to be calculate. Supports up to three
 variables per term.}
 
-\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
-confidence interval width for the estimated marginal means}
-
 \item{emmPlots}{\code{TRUE} (default) or \code{FALSE}, provide estimated
 marginal means plots}
+
+\item{emmTables}{\code{TRUE} or \code{FALSE} (default), provide estimated
+marginal means tables}
+
+\item{emmWeights}{\code{TRUE} (default) or \code{FALSE}, weigh each cell
+equally or weigh them according to the cell frequency}
+
+\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
+confidence interval width for the estimated marginal means}
 
 \item{emmPlotData}{\code{TRUE} or \code{FALSE} (default), plot the data on
 top of the marginal means}
@@ -85,12 +89,6 @@ top of the marginal means}
 \item{emmPlotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}.
 Use no error bars, use confidence intervals, or use standard errors on the
 marginal mean plots, respectively}
-
-\item{emmTables}{\code{TRUE} or \code{FALSE} (default), provide estimated
-marginal means tables}
-
-\item{emmWeights}{\code{TRUE} (default) or \code{FALSE}, weigh each cell
-equally or weigh them according to the cell frequency}
 }
 \value{
 A results object containing:
@@ -111,7 +109,21 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$rmTable)}
 }
 \description{
-Repeated Measures ANOVA
+The Repeated Measures ANOVA is used to explore the relationship
+between a continuous dependent variable and one or more categorical
+explanatory variables, where one or more of the explanatory variables
+are 'within subjects' (where multiple measurements are from the same
+subject). Additionally, this analysis allows the inclusion of
+covariates, allowing for repeated measures ANCOVAs as well.
+}
+\details{
+This analysis requires that the data be in 'wide format', where each
+row represents a subject (as opposed to long format, where each
+measurement of the dependent variable is represented as a row).
+
+A non-parametric equivalent of the repeated measures ANOVA also exists;
+the Friedman test. However, it has the limitation of only being able to
+test a single factor.
 }
 \examples{
 \dontrun{

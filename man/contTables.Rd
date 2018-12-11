@@ -4,26 +4,27 @@
 \alias{contTables}
 \title{Contingency Tables}
 \usage{
-contTables(data, rows, cols, counts = NULL, layers = NULL, chiSq = TRUE,
-  chiSqCorr = FALSE, likeRat = FALSE, fisher = FALSE, contCoef = FALSE,
-  phiCra = FALSE, logOdds = FALSE, odds = FALSE, relRisk = FALSE,
-  ci = TRUE, ciWidth = 95, gamma = FALSE, taub = FALSE, exp = FALSE,
-  pcRow = FALSE, pcCol = FALSE, pcTot = FALSE)
+contTables(data, rows, cols, counts = NULL, layers = NULL,
+  chiSq = TRUE, chiSqCorr = FALSE, likeRat = FALSE, fisher = FALSE,
+  contCoef = FALSE, phiCra = FALSE, logOdds = FALSE, odds = FALSE,
+  relRisk = FALSE, ci = TRUE, ciWidth = 95, gamma = FALSE,
+  taub = FALSE, exp = FALSE, pcRow = FALSE, pcCol = FALSE,
+  pcTot = FALSE, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{rows}{a string naming the variable to use as the rows in the
-contingency table}
+\item{rows}{the variable to use as the rows in the contingency table (not
+necessary when providing a formula, see the examples)}
 
-\item{cols}{a string naming the variable to use as the columns in the
-contingency table}
+\item{cols}{the variable to use as the columns in the contingency table
+(not necessary when providing a formula, see the examples)}
 
-\item{counts}{a string naming the variable to use as counts, or NULL if
-each row represents a single observation}
+\item{counts}{the variable to use as the counts in the contingency table
+(not necessary when providing a formula, see the examples)}
 
-\item{layers}{a character vector naming variables to split the contingency
-table across}
+\item{layers}{the variables to use to split the contingency table (not
+necessary when providing a formula, see the examples)}
 
 \item{chiSq}{\code{TRUE} (default) or \code{FALSE}, provide X²}
 
@@ -71,6 +72,8 @@ percentages}
 
 \item{pcTot}{\code{TRUE} or \code{FALSE} (default), provide total
 percentages}
+
+\item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
 A results object containing:
@@ -96,7 +99,7 @@ X² test of association
 data('HairEyeColor')
 dat <- as.data.frame(HairEyeColor)
 
-contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
+contTables(formula = Freq ~ Hair:Eye, dat)
 
 #
 #  CONTINGENCY TABLES
@@ -121,5 +124,10 @@ contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
 #    N       592
 #  -------------------------------
 #
+
+# Alternatively, omit the left of the formula (`Freq`) if each row
+# represents a single observation:
+
+contTables(formula = ~ Hair:Eye, dat)
 
 }

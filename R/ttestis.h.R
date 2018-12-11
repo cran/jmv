@@ -634,12 +634,25 @@ ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' Independent Samples T-Test
 #'
+#' The Student's Independent samples t-test (sometimes called a two-samples
+#' t-test) is used to test the null hypothesis that two groups have the
+#' same mean. A low p-value suggests that the null hypothesis is not true,
+#' and therefore the group means are different.
+#' 
+#' The Student's independent t-test assumes that the data from each group
+#' are from a normal distribution, and that the variances of these groups
+#' are equal. If unwilling to assume the groups have equal variances, the
+#' Welch's t-test can be used in it's place. If one is additionally
+#' unwilling to assume the data from each group are from a normal
+#' distribution, the non-parametric Mann-Whitney U test can be used instead
+#' (However, note that the Mann-Whitney U test has a slightly different
+#' null hypothesis; that the distributions of each group is equal).
 #' 
 #'
 #' @examples
 #' data('ToothGrowth')
 #'
-#' ttestIS(data = ToothGrowth, vars = 'len', group = 'supp')
+#' ttestIS(formula = len ~ supp, data = ToothGrowth)
 #'
 #' #
 #' #  INDEPENDENT SAMPLES T-TEST
@@ -653,8 +666,10 @@ ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #
 #'
 #' @param data the data as a data frame
-#' @param vars a vector of strings naming the dependent variables
-#' @param group a string naming the grouping variable, must have 2 levels
+#' @param vars the dependent variables (not necessary when using a formula,
+#'   see the examples)
+#' @param group the grouping variable with two levels (not necessary when
+#'   using a formula, see the examples)
 #' @param students \code{TRUE} (default) or \code{FALSE}, perform Student's
 #'   t-tests
 #' @param bf \code{TRUE} or \code{FALSE} (default), provide Bayes factors
@@ -669,11 +684,11 @@ ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   2, group 1 greater than group 2, and group 2 greater than group 1
 #'   respectively
 #' @param norm \code{TRUE} or \code{FALSE} (default), perform Shapiro-Wilk
-#'   test of normality
-#' @param qq \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+#'   tests of normality
+#' @param qq \code{TRUE} or \code{FALSE} (default), provide Q-Q plots of
 #'   residuals
-#' @param eqv \code{TRUE} or \code{FALSE} (default), perform Levene's test for
-#'   equality of variances
+#' @param eqv \code{TRUE} or \code{FALSE} (default), perform Levene's tests
+#'   for equality of variances
 #' @param meanDiff \code{TRUE} or \code{FALSE} (default), provide means and
 #'   standard errors
 #' @param effectSize \code{TRUE} or \code{FALSE} (default), provide effect
@@ -690,6 +705,7 @@ ttestISBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   missing values; \code{'perAnalysis'} excludes missing values for individual
 #'   dependent variables, \code{'listwise'} excludes a row from all analyses if
 #'   one of its entries is missing.
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$ttest} \tab \tab \tab \tab \tab a table containing the t-test results \cr
@@ -725,18 +741,36 @@ ttestIS <- function(
     ciWidth = 95,
     desc = FALSE,
     plots = FALSE,
-    miss = "perAnalysis") {
+    miss = "perAnalysis",
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('ttestIS requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(vars))
+            vars <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                required=TRUE)
+        if (missing(group))
+            group <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                subset='1')
+    }
+
+    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
+    if ( ! missing(group)) group <- jmvcore:::resolveQuo(jmvcore:::enquo(group))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL),
             `if`( ! missing(group), group, NULL))
 
-    for (v in group) data[[v]] <- as.factor(data[[v]])
+    for (v in group) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- ttestISOptions$new(
         vars = vars,

@@ -510,7 +510,7 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' data('HairEyeColor')
 #' dat <- as.data.frame(HairEyeColor)
 #'
-#' contTables(dat, rows = 'Hair', cols = 'Eye', counts = 'Freq')
+#' contTables(formula = Freq ~ Hair:Eye, dat)
 #'
 #' #
 #' #  CONTINGENCY TABLES
@@ -536,15 +536,20 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #  -------------------------------
 #' #
 #'
+#' # Alternatively, omit the left of the formula (`Freq`) if each row
+#' # represents a single observation:
+#'
+#' contTables(formula = ~ Hair:Eye, dat)
+#'
 #' @param data the data as a data frame
-#' @param rows a string naming the variable to use as the rows in the
-#'   contingency table
-#' @param cols a string naming the variable to use as the columns in the
-#'   contingency table
-#' @param counts a string naming the variable to use as counts, or NULL if
-#'   each row represents a single observation
-#' @param layers a character vector naming variables to split the contingency
-#'   table across
+#' @param rows the variable to use as the rows in the contingency table (not
+#'   necessary when providing a formula, see the examples)
+#' @param cols the variable to use as the columns in the contingency table
+#'   (not necessary when providing a formula, see the examples)
+#' @param counts the variable to use as the counts in the contingency table
+#'   (not necessary when providing a formula, see the examples)
+#' @param layers the variables to use to split the contingency table (not
+#'   necessary when providing a formula, see the examples)
 #' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X²
 #' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with
 #'   continuity correction
@@ -575,6 +580,7 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   percentages
 #' @param pcTot \code{TRUE} or \code{FALSE} (default), provide total
 #'   percentages
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$freqs} \tab \tab \tab \tab \tab a table of proportions \cr
@@ -614,11 +620,47 @@ contTables <- function(
     exp = FALSE,
     pcRow = FALSE,
     pcCol = FALSE,
-    pcTot = FALSE) {
+    pcTot = FALSE,
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('contTables requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(counts))
+            counts <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                type='vars',
+                subset='1')
+        if (missing(rows))
+            rows <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                subset='1')
+        if (missing(cols))
+            cols <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                subset='2')
+        if (missing(layers))
+            layers <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                subset='3:')
+    }
+
+    if ( ! missing(rows)) rows <- jmvcore:::resolveQuo(jmvcore:::enquo(rows))
+    if ( ! missing(cols)) cols <- jmvcore:::resolveQuo(jmvcore:::enquo(cols))
+    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
+    if ( ! missing(layers)) layers <- jmvcore:::resolveQuo(jmvcore:::enquo(layers))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
@@ -627,9 +669,9 @@ contTables <- function(
             `if`( ! missing(counts), counts, NULL),
             `if`( ! missing(layers), layers, NULL))
 
-    for (v in rows) data[[v]] <- as.factor(data[[v]])
-    for (v in cols) data[[v]] <- as.factor(data[[v]])
-    for (v in layers) data[[v]] <- as.factor(data[[v]])
+    for (v in rows) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in cols) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in layers) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- contTablesOptions$new(
         rows = rows,

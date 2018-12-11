@@ -523,7 +523,7 @@ logLinearBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' tab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)
 #' dat <- as.data.frame(tab)
 #'
-#' logLinear(data = dat, factors = c("gear", "cyl"),  counts = "Freq",
+#' logLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,
 #'           blocks = list(list("gear", "cyl", c("gear", "cyl"))),
 #'           refLevels = list(
 #'               list(var="gear", ref="3"),
@@ -653,13 +653,16 @@ logLinear <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('logLinear requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
+    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
             `if`( ! missing(factors), factors, NULL),
             `if`( ! missing(counts), counts, NULL))
 
-    for (v in factors) data[[v]] <- as.factor(data[[v]])
+    for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
 
     options <- logLinearOptions$new(
         factors = factors,

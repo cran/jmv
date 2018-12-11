@@ -308,6 +308,8 @@ reliability <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('reliability requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
+    if ( ! missing(revItems)) revItems <- jmvcore:::resolveQuo(jmvcore:::enquo(revItems))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),

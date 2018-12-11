@@ -40,12 +40,18 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$table)}
 }
 \description{
-Friedman
+The Friedman test is used to explore the relationship between a continuous 
+dependent variable and a categorical explanatory variable, where the 
+explanatory variable is 'within subjects' (where multiple measurements are 
+from the same subject). It is analagous to Repeated Measures ANOVA, but 
+with the advantage of being non-parametric, and not requiring the 
+assumptions of normality or homogeneity of variances. However, it has the 
+limitation that it can only test a single explanatory variable at a time.
 }
 \examples{
 data('bugs', package = 'jmv')
 
-anovaRMNP(bugs, measures = c('LDLF', 'LDHF', 'HDLF', 'HDHF'))
+anovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))
 
 #
 #  REPEATED MEASURES ANOVA (NON-PARAMETRIC)

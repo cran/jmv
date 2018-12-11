@@ -5,19 +5,20 @@
 \title{Paired Samples Contingency Tables}
 \usage{
 contTablesPaired(data, rows, cols, counts = NULL, chiSq = TRUE,
-  chiSqCorr = FALSE, exact = FALSE, pcRow = FALSE, pcCol = FALSE)
+  chiSqCorr = FALSE, exact = FALSE, pcRow = FALSE, pcCol = FALSE,
+  formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{rows}{a string naming the variable to use as the rows in the
-contingency table}
+\item{rows}{the variable to use as the rows in the contingency table (not
+necessary when providing a formula, see the examples)}
 
-\item{cols}{a string naming the variable to use as the columns in the
-contingency table}
+\item{cols}{the variable to use as the columns in the contingency table
+(not necessary when providing a formula, see the examples)}
 
-\item{counts}{a string naming the variable to use as counts, or NULL if
-each row represents a single observation}
+\item{counts}{the variable to use as the counts in the contingency table
+(not necessary when providing a formula, see the examples)}
 
 \item{chiSq}{\code{TRUE} (default) or \code{FALSE}, provide X²}
 
@@ -31,6 +32,8 @@ odds ratio (requires exact2x2 to be installed)}
 
 \item{pcCol}{\code{TRUE} or \code{FALSE} (default), provide column
 percentages}
+
+\item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
 A results object containing:
@@ -55,7 +58,7 @@ dat <- data.frame(
     `Counts` = c(794, 150, 86, 570),
     check.names=FALSE)
 
-contTablesPaired(dat, rows = '1st survey', cols = '2nd survey', counts = 'Counts')
+contTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)
 
 #
 #  PAIRED SAMPLES CONTINGENCY TABLES
@@ -78,5 +81,11 @@ contTablesPaired(dat, rows = '1st survey', cols = '2nd survey', counts = 'Counts
 #    X² continuity correction     16.8     1    < .001
 #  -----------------------------------------------------
 #
+
+
+# Alternatively, omit the left of the formula (`Counts`) from the
+# formula if each row represents a single observation:
+
+contTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)
 
 }

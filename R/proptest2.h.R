@@ -256,13 +256,17 @@ propTest2Base <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' Proportion Test (2 Outcomes)
 #'
-#' Binomial test
+#' The Binomial test is used to test the Null hypothesis that the proportion 
+#' of observations match some expected value. If the p-value is low, this 
+#' suggests that the Null hypothesis is false, and that the true proportion 
+#' must be some other value.
+#' 
 #'
 #' @examples
 #' \dontrun{
 #' dat <- data.frame(x=c(8, 15))
 #'
-#' propTest2(dat, vars = 'x', areCounts = TRUE)
+#' propTest2(dat, vars = x, areCounts = TRUE)
 #'
 #' #
 #' #  PROPORTION TEST (2 OUTCOMES)
@@ -329,12 +333,13 @@ propTest2 <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('propTest2 requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL))
 
-    for (v in vars) data[[v]] <- as.factor(data[[v]])
+    for (v in vars) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- propTest2Options$new(
         vars = vars,

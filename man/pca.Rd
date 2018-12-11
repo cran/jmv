@@ -4,10 +4,11 @@
 \alias{pca}
 \title{Principal Component Analysis}
 \usage{
-pca(data, vars, nFactorMethod = "parallel", nFactors = 1, minEigen = 1,
-  rotation = "varimax", hideLoadings = 0.3, sortLoadings = FALSE,
-  screePlot = FALSE, eigen = FALSE, factorCor = FALSE,
-  factorSummary = FALSE, kmo = FALSE, bartlett = FALSE)
+pca(data, vars, nFactorMethod = "parallel", nFactors = 1,
+  minEigen = 1, rotation = "varimax", hideLoadings = 0.3,
+  sortLoadings = FALSE, screePlot = FALSE, eigen = FALSE,
+  factorCor = FALSE, factorSummary = FALSE, kmo = FALSE,
+  bartlett = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -74,7 +75,7 @@ Principal Component Analysis
 \examples{
 data('iris')
 
-pca(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
+pca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))
 
 #
 #  PRINCIPAL COMPONENT ANALYSIS

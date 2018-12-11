@@ -4,14 +4,15 @@
 \alias{logRegBin}
 \title{Binomial Logistic Regression}
 \usage{
-logRegBin(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
-  refLevels = NULL, modelTest = FALSE, dev = TRUE, aic = TRUE,
-  bic = FALSE, pseudoR2 = list("r2mf"), omni = FALSE, ci = FALSE,
-  ciWidth = 95, OR = FALSE, ciOR = FALSE, ciWidthOR = 95,
-  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
-  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE, class = FALSE,
-  acc = FALSE, spec = FALSE, sens = FALSE, auc = FALSE,
-  rocPlot = FALSE, cutOff = 0.5, cutOffPlot = FALSE, collin = FALSE,
+logRegBin(data, dep, covs = NULL, factors = NULL,
+  blocks = list(list()), refLevels = NULL, modelTest = FALSE,
+  dev = TRUE, aic = TRUE, bic = FALSE, pseudoR2 = list("r2mf"),
+  omni = FALSE, ci = FALSE, ciWidth = 95, OR = FALSE,
+  ciOR = FALSE, ciWidthOR = 95, emMeans = list(list()),
+  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
+  emmTables = FALSE, emmWeights = TRUE, class = FALSE, acc = FALSE,
+  spec = FALSE, sens = FALSE, auc = FALSE, rocPlot = FALSE,
+  cutOff = 0.5, cutOffPlot = FALSE, collin = FALSE,
   boxTidwell = FALSE, cooks = FALSE)
 }
 \arguments{
@@ -143,8 +144,8 @@ dat <- data.frame(
             age = birthwt$age,
             bwt = birthwt$bwt)
 
-logRegBin(data = dat, dep = "low",
-          covs = c("age", "bwt"),
+logRegBin(data = dat, dep = low,
+          covs = vars(age, bwt),
           blocks = list(list("age", "bwt")),
           refLevels = list(list(var="low", ref="0")))
 

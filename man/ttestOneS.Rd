@@ -21,8 +21,8 @@ t-tests}
 
 \item{bf}{\code{TRUE} or \code{FALSE} (default), provide Bayes factors}
 
-\item{bfPrior}{a number between 0.5 and 2 (default 0.707), the prior width
-to use in calculating Bayes factors}
+\item{bfPrior}{a number between 0.5 and 2.0 (default 0.707), the prior
+width to use in calculating Bayes factors}
 
 \item{wilcoxon}{\code{TRUE} or \code{FALSE} (default), perform Wilcoxon
 signed rank tests}
@@ -42,8 +42,8 @@ residuals}
 \item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard deviations}
 
-\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide effect
-sizes}
+\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide Cohen's d
+effect sizes}
 
 \item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
 intervals for the mean difference}
@@ -81,12 +81,22 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$ttest)}
 }
 \description{
-One Sample T-Test
+The Student's One-sample t-test is used to test the null hypothesis that
+the true mean is equal to a particular value (typically zero). A low
+p-value suggests that the null hypothesis is not true, and therefore
+the true mean must be different from the test value.
+}
+\details{
+The Student's One-sample t-test assumes that the data are from a normal
+distribution -- in the case that one is unwilling to assume this, the
+non-parametric Wilcoxon signed-rank can be used in it's place (However,
+note that the Wilcoxon signed-rank has a slightly different null
+hypothesis; that the *median* is equal to the test value).
 }
 \examples{
 data('ToothGrowth')
 
-ttestOneS(ToothGrowth, vars = c('len', 'dose'))
+ttestOneS(ToothGrowth, vars = vars(len, dose))
 
 #
 #  ONE SAMPLE T-TEST

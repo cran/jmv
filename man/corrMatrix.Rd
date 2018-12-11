@@ -4,9 +4,10 @@
 \alias{corrMatrix}
 \title{Correlation Matrix}
 \usage{
-corrMatrix(data, vars, pearson = TRUE, spearman = FALSE, kendall = FALSE,
-  sig = TRUE, flag = FALSE, ci = FALSE, ciWidth = 95, plots = FALSE,
-  plotDens = FALSE, plotStats = FALSE, hypothesis = "corr")
+corrMatrix(data, vars, pearson = TRUE, spearman = FALSE,
+  kendall = FALSE, sig = TRUE, flag = FALSE, ci = FALSE,
+  ciWidth = 95, plots = FALSE, plotDens = FALSE, plotStats = FALSE,
+  hypothesis = "corr")
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -61,13 +62,30 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$matrix)}
 }
 \description{
-Correlation Matrix
+Correlation matrices are a way to examine linear relationships between
+two or more continuous variables.
+}
+\details{
+For each pair of variables, a Pearson's r value indicates the strength
+and direction of the relationship between those two variables. A
+positive value indicates a positive relationship (higher values of one
+variable predict higher values of the other variable). A negative
+Pearson's r indicates a negative relationship (higher values of one
+variable predict lower values of the other variable, and vice-versa).
+A value of zero indicates no relationship (whether a variable is high
+or low, does not tell us anything about the value of the other
+variable).
+
+More formally, it is possible to test the null hypothesis that the
+correlation is zero using and calculate a p-value. If the p-value is
+low, it suggests the correlation co-efficient is not zero, and there is
+a linear (or more complex) relationship between the two variables.
 }
 \examples{
 \dontrun{
 data('mtcars')
 
-corrMatrix(mtcars, vars = c('mpg', 'cyl', 'disp', 'hp'))
+corrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))
 
 #
 #  CORRELATION MATRIX

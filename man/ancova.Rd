@@ -4,43 +4,34 @@
 \alias{ancova}
 \title{ANCOVA}
 \usage{
-ancova(data, dep, factors = NULL, covs = NULL, modelTerms = NULL,
-  ss = "3", effectSize = NULL, contrasts = NULL, postHoc = NULL,
-  postHocCorr = list("tukey"), homo = FALSE, qq = FALSE,
-  emMeans = list(list()), ciWidthEmm = 95, emmPlots = TRUE,
-  emmPlotData = FALSE, emmPlotError = "ci", emmTables = FALSE,
-  emmWeights = TRUE)
+ancova(data, dep, factors = NULL, covs = NULL, effectSize = NULL,
+  modelTerms = NULL, ss = "3", homo = FALSE, qq = FALSE,
+  contrasts = NULL, postHoc = NULL, postHocCorr = list("tukey"),
+  emMeans = list(list()), emmPlots = TRUE, emmPlotData = FALSE,
+  emmPlotError = "ci", emmTables = FALSE, emmWeights = TRUE,
+  ciWidthEmm = 95, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dep}{a string naming the dependent variable from \code{data},
-variable must be numeric}
+\item{dep}{the dependent variable from \code{data}, variable must be
+numeric (not necessary when providing a formula, see examples)}
 
-\item{factors}{a vector of strings naming the fixed factors from
-\code{data}}
+\item{factors}{the explanatory factors in \code{data} (not necessary when
+providing a formula, see examples)}
 
-\item{covs}{a vector of strings naming the covariates from \code{data}}
-
-\item{modelTerms}{a list of character vectors describing the terms to go
-into the model}
-
-\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of
-squares to use}
+\item{covs}{the explanatory covariates (not necessary when providing a
+formula, see examples)}
 
 \item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
 \code{'omega'}; use eta², partial eta², and omega² effect sizes,
 respectively}
 
-\item{contrasts}{a list of lists specifying the factor and type of contrast
-to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
-\code{'helmert'}, \code{'repeated'} or \code{'polynomial'}}
+\item{modelTerms}{a formula describing the terms to go into the model (not
+necessary when providing a formula, see examples)}
 
-\item{postHoc}{a list of terms to perform post-hoc tests on}
-
-\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'},
-\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
-Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
+\item{ss}{\code{'1'}, \code{'2'} or \code{'3'} (default), the sum of
+squares to use}
 
 \item{homo}{\code{TRUE} or \code{FALSE} (default), perform homogeneity
 tests}
@@ -48,12 +39,19 @@ tests}
 \item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 residuals}
 
-\item{emMeans}{a list of lists specifying the variables for which the
-estimated marginal means need to be calculate. Supports up to three
-variables per term.}
+\item{contrasts}{a list of lists specifying the factor and type of contrast
+to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
+\code{'helmert'}, \code{'repeated'} or \code{'polynomial'}}
 
-\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
-confidence interval width for the estimated marginal means}
+\item{postHoc}{a formula containing the terms to perform post-hoc tests on
+(see the examples)}
+
+\item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'},
+\code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
+Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
+
+\item{emMeans}{a formula containing the terms to estimate marginal means
+for (see the examples)}
 
 \item{emmPlots}{\code{TRUE} (default) or \code{FALSE}, provide estimated
 marginal means plots}
@@ -70,6 +68,11 @@ marginal means tables}
 
 \item{emmWeights}{\code{TRUE} (default) or \code{FALSE}, weigh each cell
 equally or weigh them according to the cell frequency}
+
+\item{ciWidthEmm}{a number between 50 and 99.9 (default: 95) specifying the
+confidence interval width for the estimated marginal means}
+
+\item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
 A results object containing:
@@ -90,12 +93,16 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$main)}
 }
 \description{
-Analysis of Covariance
+The Analysis of Covariance (ANCOVA) is used to explore the relationship
+between a continuous dependent variable, one or more categorical
+explanatory variables, and one or more continuous explanatory variables
+(or covariates). It is essentially the same analysis as ANOVA, but
+with the addition of covariates.
 }
 \examples{
 data('ToothGrowth')
 
-ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
+ancova(formula = len ~ supp + dose, data = ToothGrowth)
 
 #
 #  ANCOVA
@@ -109,5 +116,11 @@ ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
 #    Residuals              1023    57           17.9
 #  -----------------------------------------------------------------------
 #
+
+ancova(
+    formula = len ~ supp + dose,
+    data = ToothGrowth,
+    postHoc = ~ supp,
+    emMeans = ~ supp)
 
 }

@@ -406,8 +406,8 @@ mancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' data('iris')
 #'
 #' mancova(data = iris,
-#'     deps = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),
-#'     factors = 'Species')
+#'     deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),
+#'     factors = Species)
 #'
 #' #
 #' #  MANCOVA
@@ -485,6 +485,9 @@ mancova <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('mancova requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(deps)) deps <- jmvcore:::resolveQuo(jmvcore:::enquo(deps))
+    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
+    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
@@ -492,7 +495,7 @@ mancova <- function(
             `if`( ! missing(factors), factors, NULL),
             `if`( ! missing(covs), covs, NULL))
 
-    for (v in factors) data[[v]] <- as.factor(data[[v]])
+    for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- mancovaOptions$new(
         deps = deps,

@@ -210,7 +210,7 @@ efaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @examples
 #' data('iris')
 #'
-#' efa(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
+#' efa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))
 #'
 #' #
 #' #  EXPLORATORY FACTOR ANALYSIS
@@ -284,6 +284,7 @@ efa <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('efa requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),

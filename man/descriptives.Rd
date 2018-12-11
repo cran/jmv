@@ -7,10 +7,11 @@
 descriptives(data, vars, splitBy = NULL, freq = FALSE, hist = FALSE,
   dens = FALSE, bar = FALSE, barCounts = FALSE, box = FALSE,
   violin = FALSE, dot = FALSE, dotType = "jitter", qq = FALSE,
-  n = TRUE, missing = TRUE, mean = TRUE, median = TRUE, mode = FALSE,
-  sum = FALSE, sd = FALSE, variance = FALSE, range = FALSE,
-  min = TRUE, max = TRUE, se = FALSE, skew = FALSE, kurt = FALSE,
-  sw = FALSE, quart = FALSE, pcEqGr = FALSE, pcNEqGr = 4)
+  n = TRUE, missing = TRUE, mean = TRUE, median = TRUE,
+  mode = FALSE, sum = FALSE, sd = FALSE, variance = FALSE,
+  range = FALSE, min = TRUE, max = TRUE, se = FALSE,
+  skew = FALSE, kurt = FALSE, sw = FALSE, quart = FALSE,
+  pcEqGr = FALSE, pcNEqGr = 4, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -89,6 +90,8 @@ p-value}
 
 \item{pcNEqGr}{an integer (default: 4) specifying the number of equal
 groups}
+
+\item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
 A results object containing:
@@ -105,7 +108,10 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$descriptives)}
 }
 \description{
-Provides a range of descriptive statistics
+Descriptives are an assortment of summarising statistics, and 
+visualizations which allow exploring the shape and distribution of data. It 
+is good practice to explore your data with descriptives before proceeding 
+to more formal tests.
 }
 \examples{
 \dontrun{
@@ -115,7 +121,7 @@ dat <- mtcars
 # frequency tables can be provided for factors
 dat$gear <- as.factor(dat$gear)
 
-descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
+descriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)
 
 #
 #  DESCRIPTIVES
@@ -144,5 +150,17 @@ descriptives(dat, vars = c('mpg', 'cyl', 'disp', 'gear'), freq = TRUE)
 #    5              5
 #  --------------------
 #
+
+# spliting by a variable
+descriptives(formula = disp + mpg ~ cyl, dat,
+    median=F, min=F, max=F, n=F, missing=F)
+
+# providing histograms
+descriptives(formula = mpg ~ cyl, dat, hist=T,
+    median=F, min=F, max=F, n=F, missing=F)
+
+# splitting by multiple variables
+descriptives(formula = mpg ~ cyl:gear, dat,
+    median=F, min=F, max=F, missing=F)
 }
 }

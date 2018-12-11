@@ -235,7 +235,7 @@ contTablesPairedBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'     `Counts` = c(794, 150, 86, 570),
 #'     check.names=FALSE)
 #'
-#' contTablesPaired(dat, rows = '1st survey', cols = '2nd survey', counts = 'Counts')
+#' contTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)
 #'
 #' #
 #' #  PAIRED SAMPLES CONTINGENCY TABLES
@@ -259,13 +259,19 @@ contTablesPairedBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #  -----------------------------------------------------
 #' #
 #'
+#'
+#' # Alternatively, omit the left of the formula (`Counts`) from the
+#' # formula if each row represents a single observation:
+#'
+#' contTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)
+#'
 #' @param data the data as a data frame
-#' @param rows a string naming the variable to use as the rows in the
-#'   contingency table
-#' @param cols a string naming the variable to use as the columns in the
-#'   contingency table
-#' @param counts a string naming the variable to use as counts, or NULL if
-#'   each row represents a single observation
+#' @param rows the variable to use as the rows in the contingency table (not
+#'   necessary when providing a formula, see the examples)
+#' @param cols the variable to use as the columns in the contingency table
+#'   (not necessary when providing a formula, see the examples)
+#' @param counts the variable to use as the counts in the contingency table
+#'   (not necessary when providing a formula, see the examples)
 #' @param chiSq \code{TRUE} (default) or \code{FALSE}, provide X²
 #' @param chiSqCorr \code{TRUE} or \code{FALSE} (default), provide X² with
 #'   continuity correction
@@ -274,6 +280,7 @@ contTablesPairedBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param pcRow \code{TRUE} or \code{FALSE} (default), provide row percentages
 #' @param pcCol \code{TRUE} or \code{FALSE} (default), provide column
 #'   percentages
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$freqs} \tab \tab \tab \tab \tab a proportions table \cr
@@ -296,11 +303,39 @@ contTablesPaired <- function(
     chiSqCorr = FALSE,
     exact = FALSE,
     pcRow = FALSE,
-    pcCol = FALSE) {
+    pcCol = FALSE,
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('contTablesPaired requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(counts))
+            counts <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                type='vars',
+                subset='1')
+        if (missing(rows))
+            rows <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                subset='1')
+        if (missing(cols))
+            cols <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                subset='2')
+    }
+
+    if ( ! missing(rows)) rows <- jmvcore:::resolveQuo(jmvcore:::enquo(rows))
+    if ( ! missing(cols)) cols <- jmvcore:::resolveQuo(jmvcore:::enquo(cols))
+    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
@@ -308,8 +343,8 @@ contTablesPaired <- function(
             `if`( ! missing(cols), cols, NULL),
             `if`( ! missing(counts), counts, NULL))
 
-    for (v in rows) data[[v]] <- as.factor(data[[v]])
-    for (v in cols) data[[v]] <- as.factor(data[[v]])
+    for (v in rows) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in cols) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- contTablesPairedOptions$new(
         rows = rows,

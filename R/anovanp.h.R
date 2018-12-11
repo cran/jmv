@@ -145,12 +145,17 @@ anovaNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' One-Way ANOVA (Non-parametric)
 #'
-#' Kruskal-Wallis
+#' The Kruskal-Wallis test is used to explore the relationship between a 
+#' continuous dependent variable, and a categorical explanatory variable. It 
+#' is analagous to ANOVA, but with the advantage of being non-parametric and 
+#' having fewer assumptions. However, it has the limitation that it can only 
+#' test a single explanatory variable at a time.
+#' 
 #'
 #' @examples
 #' data('ToothGrowth')
 #'
-#' anovaNP(ToothGrowth, deps = 'len', group = 'dose')
+#' anovaNP(formula = len ~ dose, data=ToothGrowth)
 #'
 #' #
 #' #  ONE-WAY ANOVA (NON-PARAMETRIC)
@@ -169,6 +174,7 @@ anovaNPBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   \code{data}
 #' @param pairs \code{TRUE} or \code{FALSE} (default), perform pairwise
 #'   comparisons
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$table} \tab \tab \tab \tab \tab a table of the test results \cr
@@ -186,18 +192,36 @@ anovaNP <- function(
     data,
     deps,
     group,
-    pairs = FALSE) {
+    pairs = FALSE,
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('anovaNP requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(deps))
+            deps <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                required=TRUE)
+        if (missing(group))
+            group <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                subset='1')
+    }
+
+    if ( ! missing(deps)) deps <- jmvcore:::resolveQuo(jmvcore:::enquo(deps))
+    if ( ! missing(group)) group <- jmvcore:::resolveQuo(jmvcore:::enquo(group))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
             `if`( ! missing(deps), deps, NULL),
             `if`( ! missing(group), group, NULL))
 
-    for (v in group) data[[v]] <- as.factor(data[[v]])
+    for (v in group) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- anovaNPOptions$new(
         deps = deps,

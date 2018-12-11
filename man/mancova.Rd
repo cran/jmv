@@ -4,8 +4,9 @@
 \alias{mancova}
 \title{MANCOVA}
 \usage{
-mancova(data, deps, factors = NULL, covs = NULL, multivar = list("pillai",
-  "wilks", "hotel", "roy"), boxM = FALSE, shapiro = FALSE, qqPlot = FALSE)
+mancova(data, deps, factors = NULL, covs = NULL,
+  multivar = list("pillai", "wilks", "hotel", "roy"), boxM = FALSE,
+  shapiro = FALSE, qqPlot = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -53,8 +54,8 @@ Multivariate Analysis of Covariance
 data('iris')
 
 mancova(data = iris,
-    deps = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),
-    factors = 'Species')
+    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),
+    factors = Species)
 
 #
 #  MANCOVA

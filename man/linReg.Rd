@@ -5,24 +5,24 @@
 \title{Linear Regression}
 \usage{
 linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
-  refLevels = NULL, r = TRUE, r2 = TRUE, r2Adj = FALSE, aic = FALSE,
-  bic = FALSE, rmse = FALSE, modelTest = FALSE, anova = FALSE,
-  ci = FALSE, ciWidth = 95, stdEst = FALSE, ciStdEst = FALSE,
-  ciWidthStdEst = 95, coefPlot = FALSE, qqPlot = FALSE,
-  resPlots = FALSE, durbin = FALSE, collin = FALSE, cooks = FALSE,
-  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
-  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
+  refLevels = NULL, r = TRUE, r2 = TRUE, r2Adj = FALSE,
+  aic = FALSE, bic = FALSE, rmse = FALSE, modelTest = FALSE,
+  anova = FALSE, ci = FALSE, ciWidth = 95, stdEst = FALSE,
+  ciStdEst = FALSE, ciWidthStdEst = 95, coefPlot = FALSE,
+  qqPlot = FALSE, resPlots = FALSE, durbin = FALSE, collin = FALSE,
+  cooks = FALSE, emMeans = list(list()), ciEmm = TRUE,
+  ciWidthEmm = 95, emmPlots = TRUE, emmTables = FALSE,
+  emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
 
-\item{dep}{a string naming the dependent variable from \code{data},
-variable must be numeric}
+\item{dep}{the dependent variable from \code{data}, variable must be
+numeric}
 
-\item{covs}{a vector of strings naming the covariates from \code{data}}
+\item{covs}{the covariates from \code{data}}
 
-\item{factors}{a vector of strings naming the fixed factors from
-\code{data}}
+\item{factors}{the fixed factors from \code{data}}
 
 \item{blocks}{a list containing vectors of strings that name the predictors
 that are added to the model. The elements are added to the model according
@@ -90,9 +90,8 @@ tolerence collinearity statistics}
 \item{cooks}{\code{TRUE} or \code{FALSE} (default), provide summary
 statistics for the Cook's distance}
 
-\item{emMeans}{a list of lists specifying the variables for which the
-estimated marginal means need to be calculate. Supports up to three
-variables per term.}
+\item{emMeans}{a formula containing the terms to estimate marginal means
+for, supports up to three variables per term}
 
 \item{ciEmm}{\code{TRUE} (default) or \code{FALSE}, provide a confidence
 interval for the estimated marginal means}
@@ -129,8 +128,8 @@ Linear Regression
 \examples{
 data('Prestige', package='carData')
 
-linReg(data = Prestige, dep = 'income',
-       covs = c('education', 'prestige', 'women'),
+linReg(data = Prestige, dep = income,
+       covs = vars(education, prestige, women),
        blocks = list(list('education', 'prestige', 'women')))
 
 #

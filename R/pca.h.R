@@ -430,7 +430,7 @@ pcaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @examples
 #' data('iris')
 #'
-#' pca(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
+#' pca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))
 #'
 #' #
 #' #  PRINCIPAL COMPONENT ANALYSIS
@@ -510,6 +510,7 @@ pca <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('pca requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),

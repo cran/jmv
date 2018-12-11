@@ -9,23 +9,23 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             dep = NULL,
             factors = NULL,
             covs = NULL,
+            effectSize = NULL,
             modelTerms = NULL,
             ss = "3",
-            effectSize = NULL,
+            homo = FALSE,
+            qq = FALSE,
             contrasts = NULL,
             postHoc = NULL,
             postHocCorr = list(
                 "tukey"),
-            homo = FALSE,
-            qq = FALSE,
             emMeans = list(
                 list()),
-            ciWidthEmm = 95,
             emmPlots = TRUE,
             emmPlotData = FALSE,
             emmPlotError = "ci",
             emmTables = FALSE,
-            emmWeights = TRUE, ...) {
+            emmWeights = TRUE,
+            ciWidthEmm = 95, ...) {
 
             super$initialize(
                 package='jmv',
@@ -60,6 +60,14 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 permitted=list(
                     "numeric"),
                 default=NULL)
+            private$..effectSize <- jmvcore::OptionNMXList$new(
+                "effectSize",
+                effectSize,
+                options=list(
+                    "eta",
+                    "partEta",
+                    "omega"),
+                default=NULL)
             private$..modelTerms <- jmvcore::OptionTerms$new(
                 "modelTerms",
                 modelTerms,
@@ -72,14 +80,14 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "2",
                     "3"),
                 default="3")
-            private$..effectSize <- jmvcore::OptionNMXList$new(
-                "effectSize",
-                effectSize,
-                options=list(
-                    "eta",
-                    "partEta",
-                    "omega"),
-                default=NULL)
+            private$..homo <- jmvcore::OptionBool$new(
+                "homo",
+                homo,
+                default=FALSE)
+            private$..qq <- jmvcore::OptionBool$new(
+                "qq",
+                qq,
+                default=FALSE)
             private$..contrasts <- jmvcore::OptionArray$new(
                 "contrasts",
                 contrasts,
@@ -119,14 +127,6 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "holm"),
                 default=list(
                     "tukey"))
-            private$..homo <- jmvcore::OptionBool$new(
-                "homo",
-                homo,
-                default=FALSE)
-            private$..qq <- jmvcore::OptionBool$new(
-                "qq",
-                qq,
-                default=FALSE)
             private$..emMeans <- jmvcore::OptionArray$new(
                 "emMeans",
                 emMeans,
@@ -135,12 +135,6 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 template=jmvcore::OptionVariables$new(
                     "emMeans",
                     NULL))
-            private$..ciWidthEmm <- jmvcore::OptionNumber$new(
-                "ciWidthEmm",
-                ciWidthEmm,
-                min=50,
-                max=99.9,
-                default=95)
             private$..emmPlots <- jmvcore::OptionBool$new(
                 "emmPlots",
                 emmPlots,
@@ -165,64 +159,70 @@ ancovaOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "emmWeights",
                 emmWeights,
                 default=TRUE)
+            private$..ciWidthEmm <- jmvcore::OptionNumber$new(
+                "ciWidthEmm",
+                ciWidthEmm,
+                min=50,
+                max=99.9,
+                default=95)
 
             self$.addOption(private$..dep)
             self$.addOption(private$..factors)
             self$.addOption(private$..covs)
+            self$.addOption(private$..effectSize)
             self$.addOption(private$..modelTerms)
             self$.addOption(private$..ss)
-            self$.addOption(private$..effectSize)
+            self$.addOption(private$..homo)
+            self$.addOption(private$..qq)
             self$.addOption(private$..contrasts)
             self$.addOption(private$..postHoc)
             self$.addOption(private$..postHocCorr)
-            self$.addOption(private$..homo)
-            self$.addOption(private$..qq)
             self$.addOption(private$..emMeans)
-            self$.addOption(private$..ciWidthEmm)
             self$.addOption(private$..emmPlots)
             self$.addOption(private$..emmPlotData)
             self$.addOption(private$..emmPlotError)
             self$.addOption(private$..emmTables)
             self$.addOption(private$..emmWeights)
+            self$.addOption(private$..ciWidthEmm)
         }),
     active = list(
         dep = function() private$..dep$value,
         factors = function() private$..factors$value,
         covs = function() private$..covs$value,
+        effectSize = function() private$..effectSize$value,
         modelTerms = function() private$..modelTerms$value,
         ss = function() private$..ss$value,
-        effectSize = function() private$..effectSize$value,
+        homo = function() private$..homo$value,
+        qq = function() private$..qq$value,
         contrasts = function() private$..contrasts$value,
         postHoc = function() private$..postHoc$value,
         postHocCorr = function() private$..postHocCorr$value,
-        homo = function() private$..homo$value,
-        qq = function() private$..qq$value,
         emMeans = function() private$..emMeans$value,
-        ciWidthEmm = function() private$..ciWidthEmm$value,
         emmPlots = function() private$..emmPlots$value,
         emmPlotData = function() private$..emmPlotData$value,
         emmPlotError = function() private$..emmPlotError$value,
         emmTables = function() private$..emmTables$value,
-        emmWeights = function() private$..emmWeights$value),
+        emmWeights = function() private$..emmWeights$value,
+        ciWidthEmm = function() private$..ciWidthEmm$value),
     private = list(
         ..dep = NA,
         ..factors = NA,
         ..covs = NA,
+        ..effectSize = NA,
         ..modelTerms = NA,
         ..ss = NA,
-        ..effectSize = NA,
+        ..homo = NA,
+        ..qq = NA,
         ..contrasts = NA,
         ..postHoc = NA,
         ..postHocCorr = NA,
-        ..homo = NA,
-        ..qq = NA,
         ..emMeans = NA,
-        ..ciWidthEmm = NA,
         ..emmPlots = NA,
         ..emmPlotData = NA,
         ..emmPlotError = NA,
         ..emmTables = NA,
-        ..emmWeights = NA)
+        ..emmWeights = NA,
+        ..ciWidthEmm = NA)
 )
 
 ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
@@ -248,6 +248,8 @@ ancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 title="ANCOVA",
                 clearWith=list(
                     "dep",
+                    "factors",
+                    "covs",
                     "modelTerms",
                     "ss"),
                 columns=list(
@@ -454,12 +456,17 @@ ancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' ANCOVA
 #'
-#' Analysis of Covariance
+#' The Analysis of Covariance (ANCOVA) is used to explore the relationship
+#' between a continuous dependent variable, one or more categorical
+#' explanatory variables, and one or more continuous explanatory variables
+#' (or covariates). It is essentially the same analysis as ANOVA, but
+#' with the addition of covariates.
+#' 
 #'
 #' @examples
 #' data('ToothGrowth')
 #'
-#' ancova(ToothGrowth, dep = 'len', factors = 'supp', covs = 'dose')
+#' ancova(formula = len ~ supp + dose, data = ToothGrowth)
 #'
 #' #
 #' #  ANCOVA
@@ -474,35 +481,40 @@ ancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #  -----------------------------------------------------------------------
 #' #
 #'
+#' ancova(
+#'     formula = len ~ supp + dose,
+#'     data = ToothGrowth,
+#'     postHoc = ~ supp,
+#'     emMeans = ~ supp)
+#'
 #' @param data the data as a data frame
-#' @param dep a string naming the dependent variable from \code{data},
-#'   variable must be numeric
-#' @param factors a vector of strings naming the fixed factors from
-#'   \code{data}
-#' @param covs a vector of strings naming the covariates from \code{data}
-#' @param modelTerms a list of character vectors describing the terms to go
-#'   into the model
-#' @param ss \code{'1'}, \code{'2'} or \code{'3'} (default), the sum of
-#'   squares to use
+#' @param dep the dependent variable from \code{data}, variable must be
+#'   numeric (not necessary when providing a formula, see examples)
+#' @param factors the explanatory factors in \code{data} (not necessary when
+#'   providing a formula, see examples)
+#' @param covs the explanatory covariates (not necessary when providing a
+#'   formula, see examples)
 #' @param effectSize one or more of \code{'eta'}, \code{'partEta'}, or
 #'   \code{'omega'}; use eta², partial eta², and omega² effect sizes,
 #'   respectively
-#' @param contrasts a list of lists specifying the factor and type of contrast
-#'   to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
-#'   \code{'helmert'}, \code{'repeated'} or \code{'polynomial'}
-#' @param postHoc a list of terms to perform post-hoc tests on
-#' @param postHocCorr one or more of \code{'none'}, \code{'tukey'},
-#'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
-#'   Scheffe, Bonferroni, and Holm Post Hoc corrections respectively
+#' @param modelTerms a formula describing the terms to go into the model (not
+#'   necessary when providing a formula, see examples)
+#' @param ss \code{'1'}, \code{'2'} or \code{'3'} (default), the sum of
+#'   squares to use
 #' @param homo \code{TRUE} or \code{FALSE} (default), perform homogeneity
 #'   tests
 #' @param qq \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 #'   residuals
-#' @param emMeans a list of lists specifying the variables for which the
-#'   estimated marginal means need to be calculate. Supports up to three
-#'   variables per term.
-#' @param ciWidthEmm a number between 50 and 99.9 (default: 95) specifying the
-#'   confidence interval width for the estimated marginal means
+#' @param contrasts a list of lists specifying the factor and type of contrast
+#'   to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
+#'   \code{'helmert'}, \code{'repeated'} or \code{'polynomial'}
+#' @param postHoc a formula containing the terms to perform post-hoc tests on
+#'   (see the examples)
+#' @param postHocCorr one or more of \code{'none'}, \code{'tukey'},
+#'   \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
+#'   Scheffe, Bonferroni, and Holm Post Hoc corrections respectively
+#' @param emMeans a formula containing the terms to estimate marginal means
+#'   for (see the examples)
 #' @param emmPlots \code{TRUE} (default) or \code{FALSE}, provide estimated
 #'   marginal means plots
 #' @param emmPlotData \code{TRUE} or \code{FALSE} (default), plot the data on
@@ -514,6 +526,9 @@ ancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   marginal means tables
 #' @param emmWeights \code{TRUE} (default) or \code{FALSE}, weigh each cell
 #'   equally or weigh them according to the cell frequency
+#' @param ciWidthEmm a number between 50 and 99.9 (default: 95) specifying the
+#'   confidence interval width for the estimated marginal means
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$main} \tab \tab \tab \tab \tab a table of ANCOVA results \cr
@@ -537,27 +552,61 @@ ancova <- function(
     dep,
     factors = NULL,
     covs = NULL,
+    effectSize = NULL,
     modelTerms = NULL,
     ss = "3",
-    effectSize = NULL,
+    homo = FALSE,
+    qq = FALSE,
     contrasts = NULL,
     postHoc = NULL,
     postHocCorr = list(
                 "tukey"),
-    homo = FALSE,
-    qq = FALSE,
     emMeans = list(
                 list()),
-    ciWidthEmm = 95,
     emmPlots = TRUE,
     emmPlotData = FALSE,
     emmPlotError = "ci",
     emmTables = FALSE,
-    emmWeights = TRUE) {
+    emmWeights = TRUE,
+    ciWidthEmm = 95,
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('ancova requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(dep))
+            dep <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                subset='1',
+                required=TRUE)
+        if (missing(factors))
+            factors <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                permitted='factor')
+        if (missing(covs))
+            covs <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='vars',
+                permitted='numeric')
+        if (missing(modelTerms))
+            modelTerms <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                type='terms')
+    }
+
+    if ( ! missing(dep)) dep <- jmvcore:::resolveQuo(jmvcore:::enquo(dep))
+    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
+    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
@@ -565,27 +614,30 @@ ancova <- function(
             `if`( ! missing(factors), factors, NULL),
             `if`( ! missing(covs), covs, NULL))
 
-    for (v in factors) data[[v]] <- as.factor(data[[v]])
+    for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    if (inherits(modelTerms, 'formula')) modelTerms <- jmvcore:::decomposeFormula(modelTerms)
+    if (inherits(postHoc, 'formula')) postHoc <- jmvcore:::decomposeFormula(postHoc)
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
 
     options <- ancovaOptions$new(
         dep = dep,
         factors = factors,
         covs = covs,
+        effectSize = effectSize,
         modelTerms = modelTerms,
         ss = ss,
-        effectSize = effectSize,
+        homo = homo,
+        qq = qq,
         contrasts = contrasts,
         postHoc = postHoc,
         postHocCorr = postHocCorr,
-        homo = homo,
-        qq = qq,
         emMeans = emMeans,
-        ciWidthEmm = ciWidthEmm,
         emmPlots = emmPlots,
         emmPlotData = emmPlotData,
         emmPlotError = emmPlotError,
         emmTables = emmTables,
-        emmWeights = emmWeights)
+        emmWeights = emmWeights,
+        ciWidthEmm = ciWidthEmm)
 
     results <- ancovaResults$new(
         options = options)

@@ -820,8 +820,8 @@ logRegBinBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'             age = birthwt$age,
 #'             bwt = birthwt$bwt)
 #'
-#' logRegBin(data = dat, dep = "low",
-#'           covs = c("age", "bwt"),
+#' logRegBin(data = dat, dep = low,
+#'           covs = vars(age, bwt),
 #'           blocks = list(list("age", "bwt")),
 #'           refLevels = list(list(var="low", ref="0")))
 #'
@@ -978,6 +978,9 @@ logRegBin <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('logRegBin requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(dep)) dep <- jmvcore:::resolveQuo(jmvcore:::enquo(dep))
+    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
+    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
@@ -985,8 +988,9 @@ logRegBin <- function(
             `if`( ! missing(covs), covs, NULL),
             `if`( ! missing(factors), factors, NULL))
 
-    for (v in dep) data[[v]] <- as.factor(data[[v]])
-    for (v in factors) data[[v]] <- as.factor(data[[v]])
+    for (v in dep) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
 
     options <- logRegBinOptions$new(
         dep = dep,

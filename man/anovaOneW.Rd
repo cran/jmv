@@ -5,9 +5,10 @@
 \title{One-Way ANOVA}
 \usage{
 anovaOneW(data, deps, group, welchs = TRUE, fishers = FALSE,
-  miss = "perAnalysis", desc = FALSE, descPlot = FALSE, norm = FALSE,
-  qq = FALSE, eqv = FALSE, phMethod = "none", phMeanDif = TRUE,
-  phSig = TRUE, phTest = FALSE, phFlag = FALSE)
+  miss = "perAnalysis", desc = FALSE, descPlot = FALSE,
+  norm = FALSE, qq = FALSE, eqv = FALSE, phMethod = "none",
+  phMeanDif = TRUE, phSig = TRUE, phTest = FALSE, phFlag = FALSE,
+  formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -60,6 +61,8 @@ levels for post-hoc tests}
 
 \item{phFlag}{\code{TRUE} or \code{FALSE} (default), flag significant
 post-hoc comparisons}
+
+\item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
 A results object containing:
@@ -79,14 +82,26 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$anova)}
 }
 \description{
-One-Way ANOVA
+The Analysis of Variance (ANOVA) is used to explore the relationship
+between a continuous dependent variable, and one or more categorical
+explanatory variables. This 'One-Way ANOVA' is a simplified version of
+the 'normal' ANOVA, allowing only a single explanatory factor, however
+also providing a Welch's ANOVA. The Welch's ANOVA has the advantage that
+it need not assume that the variances of all groups are equal.
+}
+\details{
+For convenience, this method allows specifying multiple dependent
+variables, resulting in multiple independent tests.
+
+Note that the Welch's ANOVA is the same procedure as the Welch's
+independent samples t-test.
 }
 \examples{
 data('ToothGrowth')
 dat <- ToothGrowth
 dat$dose <- factor(dat$dose)
 
-anovaOneW(dat, deps = "len", group = "dose")
+anovaOneW(formula = len ~ dose, data = dat)
 
 #
 #  ONE-WAY ANOVA

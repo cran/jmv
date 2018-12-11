@@ -164,13 +164,18 @@ propTestNBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' Proportion Test (N Outcomes)
 #'
-#' X² Goodness of fit
+#' The X² Goodness of fit test (not to be confused with the X² test of 
+#' independence), tests the Null hypothesis that the proportions of 
+#' observations match some expected proportions. If the p-value is low, this 
+#' suggests that the Null hypothesis is false, and that the true proportions 
+#' are different to those tested.
+#' 
 #'
 #' @examples
 #' data('HairEyeColor')
 #' dat <- as.data.frame(HairEyeColor)
 #'
-#' propTestN(dat, var = 'Eye', counts = 'Freq', ratio = c(1,1,1,1))
+#' propTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))
 #'
 #' #
 #' #  PROPORTION TEST (N OUTCOMES)
@@ -195,12 +200,13 @@ propTestNBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' #
 #'
 #' @param data the data as a data frame
-#' @param var a string naming the variable of interest in \code{data}
-#' @param counts a string naming a variable in \code{data} containing counts,
-#'   or NULL if each row represents a single observation
+#' @param var the variable of interest in \code{data} (not necessary when
+#'   using a formula, see the examples)
+#' @param counts the counts in \code{data}
 #' @param expected \code{TRUE} or \code{FALSE} (default), whether expected
 #'   counts should be displayed
 #' @param ratio a vector of numbers: the expected proportions
+#' @param formula (optional) the formula to use, see the examples
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$props} \tab \tab \tab \tab \tab a table of the proportions \cr
@@ -219,18 +225,36 @@ propTestN <- function(
     var,
     counts = NULL,
     expected = FALSE,
-    ratio = NULL) {
+    ratio = NULL,
+    formula) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('propTestN requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(formula)) {
+        if (missing(counts))
+            counts <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='lhs',
+                subset='1')
+        if (missing(var))
+            var <- jmvcore:::marshalFormula(
+                formula=formula,
+                data=`if`( ! missing(data), data, NULL),
+                from='rhs',
+                subset='1')
+    }
+
+    if ( ! missing(var)) var <- jmvcore:::resolveQuo(jmvcore:::enquo(var))
+    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
             `if`( ! missing(var), var, NULL),
             `if`( ! missing(counts), counts, NULL))
 
-    for (v in var) data[[v]] <- as.factor(data[[v]])
+    for (v in var) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- propTestNOptions$new(
         var = var,

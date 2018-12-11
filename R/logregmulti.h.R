@@ -540,8 +540,8 @@ logRegMultiBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'             age = birthwt$age,
 #'             low = factor(birthwt$low))
 #'
-#' logRegMulti(data = dat, dep = "race",
-#'             covs = "age", factors = "low",
+#' logRegMulti(data = dat, dep = race,
+#'             covs = age, factors = low,
 #'             blocks = list(list("age", "low")),
 #'             refLevels = list(
 #'                 list(var="race", ref="1"),
@@ -670,6 +670,9 @@ logRegMulti <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('logRegMulti requires jmvcore to be installed (restart may be required)')
 
+    if ( ! missing(dep)) dep <- jmvcore:::resolveQuo(jmvcore:::enquo(dep))
+    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
+    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
     if (missing(data))
         data <- jmvcore:::marshalData(
             parent.frame(),
@@ -677,8 +680,9 @@ logRegMulti <- function(
             `if`( ! missing(covs), covs, NULL),
             `if`( ! missing(factors), factors, NULL))
 
-    for (v in dep) data[[v]] <- as.factor(data[[v]])
-    for (v in factors) data[[v]] <- as.factor(data[[v]])
+    for (v in dep) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
 
     options <- logRegMultiOptions$new(
         dep = dep,
