@@ -1,7 +1,7 @@
 Package: jmv
 Type: Package
 Title: The 'jamovi' Analyses
-Version: 0.9.6
+Version: 0.9.6.1
 Date: 2018-12-11
 Author: Ravi Selker, Jonathon Love, Damian Dropmann
 Maintainer: Jonathon Love <jon@thon.cc>
@@ -21,6 +21,6 @@ Encoding: UTF-8
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2018-12-11 00:33:21 UTC; jonathon
+Packaged: 2019-04-21 09:33:01 UTC; ripley
 Repository: CRAN
-Date/Publication: 2018-12-11 05:50:03 UTC
+Date/Publication: 2019-04-22 06:58:25 UTC

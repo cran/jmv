@@ -1,4 +1,4 @@
-acf3000a34025bbeafb88d8984c623b8 *DESCRIPTION
+faef0346c9bf92a5a42a4ec04b6d3d89 *DESCRIPTION
 0f04b9a21b97808092f87012c45ce63a *NAMESPACE
 2df659425891ce6f6faa5eb46b1077e0 *R/ancova.b.R
 5684f87774e1d3221ba34d1f3f9b91d3 *R/ancova.h.R
@@ -53,11 +53,11 @@ d1cbef0dce811ac95899060c449d8037 *R/ttestones.b.R
 14f60fa54d15e28a77e8dc43a469d963 *R/ttestps.b.R
 cec96d2d89264bb0ff9238c50e4f7399 *R/ttestps.h.R
 e9c337d2a100461cd595c57a957b537f *R/utils.R
-082e775da4b6bf15649beff6ec476c5b *build/vignette.rds
+858ad8f30f85dc8a55a73aaa6274c829 *build/vignette.rds
 9d4faba41186555927a26ef6e75010be *data/bugs.csv.gz
 bbc07ec72cddb8d28f1c2a7ab322f031 *inst/doc/new-syntax.R
 df6d706413066b7d2f9af017b2811f2d *inst/doc/new-syntax.Rmd
-0a687e438611da3a983ed3a6f3405898 *inst/doc/new-syntax.html
+303a12ed03a10541d4fb1c381bb7a60e *inst/doc/new-syntax.html
 302d264ca8a6fd6fda0f12b7d39a6c92 *man/ANOVA.Rd
 aecc4689ad17365cb97e653c07e62f01 *man/ancova.Rd
 54237dcc4f3c13e00cc76bb0b204bfa1 *man/anovaNP.Rd
@@ -84,7 +84,7 @@ af1f2158a755fca4e61068c11cfe7b52 *man/propTest2.Rd
 a43c2e9c05036bcd0b809586e607e29a *man/ttestIS.Rd
 bcab2a317708ee2489bc038a426975e9 *man/ttestOneS.Rd
 8b34829661d75e412f3b3df817edfa65 *man/ttestPS.Rd
-b21c4f5ab882bbe2b04fadbdf90bf57b *tests/testthat.R
+bab41be06bb17eada49a947420d0f3d7 *tests/testthat.R
 dec2f0cc10adff79c206fcb8fa7c97cf *tests/testthat/testancova.R
 15a1fedcee89d263f1ea4d1cb2ee578a *tests/testthat/testanova.R
 cc040e469889811a7fe313bd2c2a5a07 *tests/testthat/testanovanp.R
