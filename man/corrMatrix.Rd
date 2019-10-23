@@ -77,9 +77,9 @@ or low, does not tell us anything about the value of the other
 variable).
 
 More formally, it is possible to test the null hypothesis that the
-correlation is zero using and calculate a p-value. If the p-value is
-low, it suggests the correlation co-efficient is not zero, and there is
-a linear (or more complex) relationship between the two variables.
+correlation is zero and calculate a p-value. If the p-value is low, it
+suggests the correlation co-efficient is not zero, and there is a linear
+(or more complex) relationship between the two variables.
 }
 \examples{
 \dontrun{

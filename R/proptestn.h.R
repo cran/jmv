@@ -77,7 +77,7 @@ propTestNResults <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$add(jmvcore::Table$new(
                 options=options,
                 name="props",
-                title="Proportions",
+                title="`Proportions - ${var}`",
                 rows="(levels(var))",
                 clearWith=list(
                     "var",
@@ -112,7 +112,7 @@ propTestNResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                     list(
                         `name`="count[exp]", 
                         `title`="Count", 
-                        `type`="integer", 
+                        `type`="number", 
                         `visible`="(expected)"),
                     list(
                         `name`="prop[exp]", 
@@ -233,23 +233,23 @@ propTestN <- function(
 
     if ( ! missing(formula)) {
         if (missing(counts))
-            counts <- jmvcore:::marshalFormula(
+            counts <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='lhs',
                 subset='1')
         if (missing(var))
-            var <- jmvcore:::marshalFormula(
+            var <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='rhs',
                 subset='1')
     }
 
-    if ( ! missing(var)) var <- jmvcore:::resolveQuo(jmvcore:::enquo(var))
-    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
+    if ( ! missing(var)) var <- jmvcore::resolveQuo(jmvcore::enquo(var))
+    if ( ! missing(counts)) counts <- jmvcore::resolveQuo(jmvcore::enquo(counts))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(var), var, NULL),
             `if`( ! missing(counts), counts, NULL))
@@ -261,9 +261,6 @@ propTestN <- function(
         counts = counts,
         expected = expected,
         ratio = ratio)
-
-    results <- propTestNResults$new(
-        options = options)
 
     analysis <- propTestNClass$new(
         options = options,

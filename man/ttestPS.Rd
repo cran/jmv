@@ -27,9 +27,9 @@ to use in calculating Bayes factors}
 signed rank tests}
 
 \item{hypothesis}{\code{'different'} (default), \code{'oneGreater'} or
-\code{'twoGreater'}, the alternative hypothesis; group 1 different to group
-2, group 1 greater than group 2, and group 2 greater than group 1
-respectively}
+\code{'twoGreater'}, the alternative hypothesis; measure 1 different to
+measure 2, measure 1 greater than measure 2, and measure 2 greater than
+measure 1 respectively}
 
 \item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-wilk
 normality tests}

@@ -1,5 +1,6 @@
 
 #' @import ggplot2
+#' @importFrom jmvcore matchSet
 ancovaClass <- R6::R6Class(
     "ancovaClass",
     inherit=ancovaBase,
@@ -38,6 +39,12 @@ ancovaClass <- R6::R6Class(
 
             data <- private$.cleanData()
 
+            for (name in colnames(data)) {
+                column <- data[[name]]
+                if (is.factor(column) && any(table(column) == 0))
+                    reject("Column '{}' contains unused levels (possibly only when rows with missing values are excluded)", name=name)
+            }
+
             dataB64 <- lapply(data, function(x) {
                 if (is.factor(x))
                     levels(x) <- toB64(levels(x))
@@ -51,6 +58,7 @@ ancovaClass <- R6::R6Class(
             private$.populateMainTable(results)
             private$.populateContrasts(dataB64)
             private$.populateLevenes(dataB64)
+            private$.populateNormality()
             private$.populatePostHoc(dataB64)
             private$.prepareEmmPlots(data)
             private$.populateEmmTables()
@@ -147,6 +155,11 @@ ancovaClass <- R6::R6Class(
             table$addRow(rowKey='', list(name='Residuals'))
             table$addFormat(col=1, rowKey='', format=Cell.BEGIN_END_GROUP)
 
+            if (self$options$ss == '1') {
+                table$setRefs('R')
+            } else {
+                table$setRefs('car')
+            }
         },
         .initContrastTables = function(data) {
 
@@ -319,47 +332,53 @@ ancovaClass <- R6::R6Class(
             errMS <- errSS / errDF
             totalSS <- sum(r[['Sum Sq']], na.rm=TRUE)
 
-            for (i in seq_len(rowCount)) {
-                rowName <- rowNames[i]
+            decomposed <- decomposeTerms(rowNames)
 
-                ss <- r[i,'Sum Sq']
-                df <- r[i,'Df']
-                ms <- ss / df
-                F  <- r[i,'F value']
-                p  <- r[i,'Pr(>F)']
+            for (rowKey in table$rowKeys) {
+                if (identical(rowKey, ''))
+                    index <- rowCount
+                else
+                    index <- matchSet(rowKey, decomposed)
 
-                if ( is.finite(F)) {
-                    e <- ss / totalSS
-                    ep <- ss / (ss + errSS)
-                    w <- (ss - (df * errMS)) / (totalSS + errMS)
+                if (index != -1) {
+                    ss <- r[index, 'Sum Sq']
+                    df <- r[index, 'Df']
+                    ms <- ss / df
+                    F  <- r[index, 'F value']
+                    p  <- r[index, 'Pr(>F)']
+
+                    if (length(F) == 1 && is.finite(F)) {
+                        e <- ss / totalSS
+                        ep <- ss / (ss + errSS)
+                        w <- (ss - (df * errMS)) / (totalSS + errMS)
+                    } else {
+                        e <- ''
+                        ep <- ''
+                        w <- ''
+                    }
+
+                    if ( ! is.finite(ss))
+                        ss <- 0
+                    if ( ! is.finite(ms))
+                        ms <- ''
+                    if (length(F) != 1 || ! is.finite(F))
+                        F <- ''
+                    if ( ! is.finite(p))
+                        p <- ''
                 } else {
+
+                    ss <- 0
+                    df <- NaN
+                    ms <- ''
+                    F  <- ''
+                    p  <- ''
                     e <- ''
                     ep <- ''
                     w <- ''
                 }
 
-                if ( ! is.finite(ss))
-                    ss <- 0
-                if ( ! is.finite(ms))
-                    ms <- ''
-                if ( ! is.finite(F))
-                    F <- ''
-                if ( ! is.finite(p))
-                    p <- ''
-
                 tableRow <- list(ss=ss, df=df, ms=ms, F=F, p=p, etaSq=e, etaSqP=ep, omegaSq=w)
-
-                if (i < rowCount) {
-                    table$setRow(rowNo=i, tableRow)
-                }
-                else {
-                    if (rowCount < table$rowCount) {
-                        blankRow <- list(ss=0, df=0, ms='', F='', p='', etaSq='', etaSqP='', omegaSq='')
-                        for (j in seq(i, table$rowCount-1))
-                            table$setRow(rowNo=j, blankRow)
-                    }
-                    table$setRow(rowKey='', tableRow) # residual
-                }
+                table$setRow(rowKey=rowKey, tableRow)
             }
         },
         .populatePostHoc=function(data) {
@@ -414,25 +433,37 @@ ancovaClass <- R6::R6Class(
                             return(list(FALSE,FALSE))
                     })
 
+
                     index <- which(sapply(location, function(x) return(x[[1]])))
-                    reverse <- location[[index]][[2]]
 
-                    row <- list()
-                    row[['md']] <- if(reverse) -none[index,'estimate'] else none[index,'estimate']
-                    row[['se']] <- none[index,'SE']
-                    row[['df']] <- none[index,'df']
-                    row[['t']] <- if(reverse) -none[index,'t.ratio'] else none[index,'t.ratio']
+                    if (length(index) == 1) {
 
-                    row[['pnone']] <- none[index,'p.value']
-                    row[['ptukey']] <- tukey[index,'p.value']
-                    row[['pscheffe']] <- scheffe[index,'p.value']
-                    row[['pbonferroni']] <- bonferroni[index,'p.value']
-                    row[['pholm']] <- holm[index,'p.value']
+                        reverse <- location[[index]][[2]]
 
-                    table$setRow(rowNo=i, values=row)
-                    private$.checkpoint()
+                        row <- list()
+                        row[['md']] <- if(reverse) -none[index,'estimate'] else none[index,'estimate']
+                        row[['se']] <- none[index,'SE']
+                        row[['df']] <- none[index,'df']
+                        row[['t']] <- if(reverse) -none[index,'t.ratio'] else none[index,'t.ratio']
+
+                        row[['pnone']] <- none[index,'p.value']
+                        row[['ptukey']] <- tukey[index,'p.value']
+                        row[['pscheffe']] <- scheffe[index,'p.value']
+                        row[['pbonferroni']] <- bonferroni[index,'p.value']
+                        row[['pholm']] <- holm[index,'p.value']
+
+                        table$setRow(rowNo=i, values=row)
+
+                    } else {
+
+                        table$setRow(rowNo=i, values=list(
+                            md=NaN, se='', df='', t='',
+                            pnone='', ptukey='', pscheffe='', pbonferroni='', pholm=''))
+                    }
                 }
+
                 table$setStatus('complete')
+                private$.checkpoint()
             }
         },
         .populateContrasts=function(data) {
@@ -486,6 +517,23 @@ ancovaClass <- R6::R6Class(
                 df2=result[2,'Df'],
                 p=result[1,'Pr(>F)']))
         },
+        .populateNormality = function() {
+            if ( ! self$options$norm)
+                return()
+
+            residuals <- self$residuals
+            if (is.null(residuals))
+                return()
+
+            res <- try(shapiro.test(residuals))
+            if (jmvcore::isError(res)) {
+                values <- list(`s[sw]`=NaN, `p[sw]`='')
+            } else {
+                values <- list(`s[sw]`=res$statistic, `p[sw]`=res$p.value)
+            }
+
+            self$results$assump$norm$setRow(rowNo=1, values)
+        },
         .populateEmmTables = function() {
 
             emMeans <- self$options$emMeans
@@ -526,21 +574,10 @@ ancovaClass <- R6::R6Class(
 
         #### Plot functions ----
         .qqPlot=function(image, ggtheme, theme, ...) {
+            residuals <- self$residuals
+            if (is.null(residuals))
+                return()
 
-            dep <- self$options$dep
-            factors <- self$options$factors
-            modelTerms <- private$.modelTerms()
-
-            if (is.null(dep) || length(factors) == 0 || length(modelTerms) == 0)
-                return(FALSE)
-
-            data <- private$.cleanData()
-
-            formula <- jmvcore::constructFormula(dep, modelTerms)
-            formula <- stats::as.formula(formula)
-            model <- stats::aov(formula, data)
-
-            residuals <- rstandard(model)
             df <- as.data.frame(qqnorm(residuals, plot.it=FALSE))
 
             return(ggplot(data=df, aes(y=y, x=x)) +
@@ -904,5 +941,24 @@ ancovaClass <- R6::R6Class(
             data <- na.omit(data)
 
             data
-        })
+        }),
+    active=list(
+        residuals=function() {
+            dep <- self$options$dep
+            factors <- self$options$factors
+            modelTerms <- private$.modelTerms()
+
+            if (is.null(dep) || length(factors) == 0 || length(modelTerms) == 0)
+                return(NULL)
+
+            data <- private$.cleanData()
+
+            formula <- jmvcore::constructFormula(dep, modelTerms)
+            formula <- stats::as.formula(formula)
+            model <- stats::aov(formula, data)
+
+            residuals <- rstandard(model)
+            return(residuals)
+        }
+    )
 )

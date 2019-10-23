@@ -229,6 +229,7 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 options=options,
                 name="factorLoadings",
                 title="Factor Loadings",
+                refs="lavaan",
                 clearWith=list(
                     "factors",
                     "resCov",
@@ -681,6 +682,7 @@ cfaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 height=600,
                 renderFun=".pathDiagram",
                 visible="(pathDiagram)",
+                refs="semPlot",
                 clearWith=list(
                     "factors",
                     "resCov",
@@ -873,7 +875,7 @@ cfa <- function(
         stop('cfa requires jmvcore to be installed (restart may be required)')
 
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame())
 
 
@@ -897,9 +899,6 @@ cfa <- function(
         hlCorRes = hlCorRes,
         mi = mi,
         hlMI = hlMI)
-
-    results <- cfaResults$new(
-        options = options)
 
     analysis <- cfaClass$new(
         options = options,

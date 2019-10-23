@@ -335,6 +335,7 @@ logRegOrdResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     "dep",
                                     "blocks"),
                                 visible="(omni)",
+                                refs="car",
                                 columns=list(
                                     list(
                                         `name`="term", 
@@ -356,11 +357,12 @@ logRegOrdResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             self$add(jmvcore::Table$new(
                                 options=options,
                                 name="coef",
-                                title="Model Coefficients",
+                                title="`Model Coefficients - ${dep}`",
                                 clearWith=list(
                                     "dep",
                                     "blocks",
                                     "refLevels"),
+                                refs="MASS",
                                 columns=list(
                                     list(
                                         `name`="term", 
@@ -581,11 +583,11 @@ logRegOrd <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('logRegOrd requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(dep)) dep <- jmvcore:::resolveQuo(jmvcore:::enquo(dep))
-    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
-    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
+    if ( ! missing(dep)) dep <- jmvcore::resolveQuo(jmvcore::enquo(dep))
+    if ( ! missing(covs)) covs <- jmvcore::resolveQuo(jmvcore::enquo(covs))
+    if ( ! missing(factors)) factors <- jmvcore::resolveQuo(jmvcore::enquo(factors))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(dep), dep, NULL),
             `if`( ! missing(covs), covs, NULL),
@@ -612,9 +614,6 @@ logRegOrd <- function(
         OR = OR,
         ciOR = ciOR,
         ciWidthOR = ciWidthOR)
-
-    results <- logRegOrdResults$new(
-        options = options)
 
     analysis <- logRegOrdClass$new(
         options = options,

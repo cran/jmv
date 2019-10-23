@@ -8,8 +8,8 @@ contTables(data, rows, cols, counts = NULL, layers = NULL,
   chiSq = TRUE, chiSqCorr = FALSE, likeRat = FALSE, fisher = FALSE,
   contCoef = FALSE, phiCra = FALSE, logOdds = FALSE, odds = FALSE,
   relRisk = FALSE, ci = TRUE, ciWidth = 95, gamma = FALSE,
-  taub = FALSE, exp = FALSE, pcRow = FALSE, pcCol = FALSE,
-  pcTot = FALSE, formula)
+  taub = FALSE, obs = TRUE, exp = FALSE, pcRow = FALSE,
+  pcCol = FALSE, pcTot = FALSE, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -62,6 +62,9 @@ confidence intervals to provide}
 
 \item{taub}{\code{TRUE} or \code{FALSE} (default), provide Kendall's tau-b}
 
+\item{obs}{\code{TRUE} or \code{FALSE} (default), provide the observed
+counts}
+
 \item{exp}{\code{TRUE} or \code{FALSE} (default), provide the expected
 counts}
 
@@ -93,7 +96,10 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$freqs)}
 }
 \description{
-X² test of association
+The X² test of association (not to be confused with the X² goodness of fit) 
+is used to test whether two categorical variables are independent or 
+associated. If the p-value is low, it suggests the variables are not 
+independent, and that there is a relationship between the two variables.
 }
 \examples{
 data('HairEyeColor')

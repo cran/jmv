@@ -139,6 +139,7 @@ reliabilityResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name="scale",
                 title="Scale Reliability Statistics",
                 rows=1,
+                refs="psych",
                 clearWith=list(
                     "vars",
                     "revItems"),
@@ -308,10 +309,10 @@ reliability <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('reliability requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
-    if ( ! missing(revItems)) revItems <- jmvcore:::resolveQuo(jmvcore:::enquo(revItems))
+    if ( ! missing(vars)) vars <- jmvcore::resolveQuo(jmvcore::enquo(vars))
+    if ( ! missing(revItems)) revItems <- jmvcore::resolveQuo(jmvcore::enquo(revItems))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL),
             `if`( ! missing(revItems), revItems, NULL))
@@ -331,9 +332,6 @@ reliability <- function(
         sdItems = sdItems,
         itemRestCor = itemRestCor,
         revItems = revItems)
-
-    results <- reliabilityResults$new(
-        options = options)
 
     analysis <- reliabilityClass$new(
         options = options,

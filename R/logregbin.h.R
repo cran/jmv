@@ -480,6 +480,7 @@ logRegBinResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     "dep",
                                     "blocks"),
                                 visible="(omni)",
+                                refs="car",
                                 columns=list(
                                     list(
                                         `name`="term", 
@@ -501,7 +502,7 @@ logRegBinResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             self$add(jmvcore::Table$new(
                                 options=options,
                                 name="coef",
-                                title="Model Coefficients",
+                                title="`Model Coefficients - ${dep}`",
                                 clearWith=list(
                                     "dep",
                                     "blocks",
@@ -613,6 +614,7 @@ logRegBinResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                             name="collin",
                                             title="Collinearity Statistics",
                                             visible="(collin)",
+                                            refs="car",
                                             clearWith=list(
                                                 "dep",
                                                 "blocks"),
@@ -660,6 +662,7 @@ logRegBinResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 options=options,
                                 name="emm",
                                 title="Estimated Marginal Means",
+                                refs="emmeans",
                                 clearWith=list(
                                     "dep",
                                     "blocks",
@@ -784,6 +787,7 @@ logRegBinResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                             height=400,
                                             renderFun=".rocPlot",
                                             visible="(rocPlot)",
+                                            refs="ROCR",
                                             clearWith=list(
                                                 "dep",
                                                 "blocks",
@@ -978,11 +982,11 @@ logRegBin <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('logRegBin requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(dep)) dep <- jmvcore:::resolveQuo(jmvcore:::enquo(dep))
-    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
-    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
+    if ( ! missing(dep)) dep <- jmvcore::resolveQuo(jmvcore::enquo(dep))
+    if ( ! missing(covs)) covs <- jmvcore::resolveQuo(jmvcore::enquo(covs))
+    if ( ! missing(factors)) factors <- jmvcore::resolveQuo(jmvcore::enquo(factors))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(dep), dep, NULL),
             `if`( ! missing(covs), covs, NULL),
@@ -990,7 +994,7 @@ logRegBin <- function(
 
     for (v in dep) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
     for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore::decomposeFormula(emMeans)
 
     options <- logRegBinOptions$new(
         dep = dep,
@@ -1026,9 +1030,6 @@ logRegBin <- function(
         collin = collin,
         boxTidwell = boxTidwell,
         cooks = cooks)
-
-    results <- logRegBinResults$new(
-        options = options)
 
     analysis <- logRegBinClass$new(
         options = options,

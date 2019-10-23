@@ -270,7 +270,10 @@ ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="stat[bf]", 
                         `title`="statistic", 
                         `type`="number", 
-                        `visible`="(bf)"),
+                        `visible`="(bf)", 
+                        `refs`=list(
+                            "BF",
+                            "btt")),
                     list(
                         `name`="err[bf]", 
                         `title`="\u00B1%", 
@@ -334,7 +337,7 @@ ttestOneSResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `visible`="(wilcoxon || mann)"),
                     list(
                         `name`="stat[wilc]", 
-                        `title`="stat", 
+                        `title`="statistic", 
                         `type`="number", 
                         `visible`="(wilcoxon || mann)"),
                     list(
@@ -576,9 +579,9 @@ ttestOneS <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('ttestOneS requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
+    if ( ! missing(vars)) vars <- jmvcore::resolveQuo(jmvcore::enquo(vars))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL))
 
@@ -601,9 +604,6 @@ ttestOneS <- function(
         plots = plots,
         miss = miss,
         mann = mann)
-
-    results <- ttestOneSResults$new(
-        options = options)
 
     analysis <- ttestOneSClass$new(
         options = options,

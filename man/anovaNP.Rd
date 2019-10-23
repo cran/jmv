@@ -4,7 +4,7 @@
 \alias{anovaNP}
 \title{One-Way ANOVA (Non-parametric)}
 \usage{
-anovaNP(data, deps, group, pairs = FALSE, formula)
+anovaNP(data, deps, group, es = FALSE, pairs = FALSE, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -13,6 +13,8 @@ anovaNP(data, deps, group, pairs = FALSE, formula)
 
 \item{group}{a string naming the grouping or independent variable in
 \code{data}}
+
+\item{es}{\code{TRUE} or \code{FALSE} (default), provide effect-sizes}
 
 \item{pairs}{\code{TRUE} or \code{FALSE} (default), perform pairwise
 comparisons}

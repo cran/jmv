@@ -33,7 +33,8 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             emmWeights = TRUE,
             ciWidthEmm = 95,
             emmPlotData = FALSE,
-            emmPlotError = "ci", ...) {
+            emmPlotError = "ci",
+            groupSumm = FALSE, ...) {
 
             super$initialize(
                 package='jmv',
@@ -102,6 +103,7 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 options=list(
                     "eta",
                     "partEta",
+                    "ges",
                     "omega"),
                 default=NULL)
             private$..depLabel <- jmvcore::OptionString$new(
@@ -224,6 +226,10 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                     "ci",
                     "se"),
                 default="ci")
+            private$..groupSumm <- jmvcore::OptionBool$new(
+                "groupSumm",
+                groupSumm,
+                default=FALSE)
 
             self$.addOption(private$..rm)
             self$.addOption(private$..rmCells)
@@ -247,6 +253,7 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..ciWidthEmm)
             self$.addOption(private$..emmPlotData)
             self$.addOption(private$..emmPlotError)
+            self$.addOption(private$..groupSumm)
         }),
     active = list(
         rm = function() private$..rm$value,
@@ -270,7 +277,8 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         emmWeights = function() private$..emmWeights$value,
         ciWidthEmm = function() private$..ciWidthEmm$value,
         emmPlotData = function() private$..emmPlotData$value,
-        emmPlotError = function() private$..emmPlotError$value),
+        emmPlotError = function() private$..emmPlotError$value,
+        groupSumm = function() private$..groupSumm$value),
     private = list(
         ..rm = NA,
         ..rmCells = NA,
@@ -293,7 +301,8 @@ anovaRMOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..emmWeights = NA,
         ..ciWidthEmm = NA,
         ..emmPlotData = NA,
-        ..emmPlotError = NA)
+        ..emmPlotError = NA,
+        ..groupSumm = NA)
 )
 
 anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
@@ -304,7 +313,8 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
         assump = function() private$.items[["assump"]],
         contrasts = function() private$.items[["contrasts"]],
         postHoc = function() private$.items[["postHoc"]],
-        emm = function() private$.items[["emm"]]),
+        emm = function() private$.items[["emm"]],
+        groupSummary = function() private$.items[["groupSummary"]]),
     private = list(),
     public=list(
         initialize=function(options) {
@@ -316,6 +326,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 options=options,
                 name="rmTable",
                 title="Within Subjects Effects",
+                refs="afex",
                 clearWith=list(
                     "dependent",
                     "ss",
@@ -367,6 +378,12 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `format`="zto,pvalue", 
                         `visible`="(spherCorr:none)"),
                     list(
+                        `name`="ges[none]", 
+                        `title`="\u03B7\u00B2<sub>G</sub>", 
+                        `type`="number", 
+                        `format`="zto", 
+                        `visible`="(effectSize:ges && spherCorr:none)"),
+                    list(
                         `name`="eta[none]", 
                         `title`="\u03B7\u00B2", 
                         `type`="number", 
@@ -374,7 +391,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `visible`="(effectSize:eta && spherCorr:none)"),
                     list(
                         `name`="partEta[none]", 
-                        `title`="partial \u03B7\u00B2", 
+                        `title`="\u03B7\u00B2<sub>p</sub>", 
                         `type`="number", 
                         `format`="zto", 
                         `visible`="(effectSize:partEta && spherCorr:none)"),
@@ -423,6 +440,12 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `format`="zto,pvalue", 
                         `visible`="(spherCorr:GG)"),
                     list(
+                        `name`="ges[GG]", 
+                        `title`="\u03B7\u00B2<sub>G</sub>", 
+                        `type`="number", 
+                        `format`="zto", 
+                        `visible`="(effectSize:ges && spherCorr:GG)"),
+                    list(
                         `name`="eta[GG]", 
                         `title`="\u03B7\u00B2", 
                         `type`="number", 
@@ -430,7 +453,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `visible`="(effectSize:eta && spherCorr:GG)"),
                     list(
                         `name`="partEta[GG]", 
-                        `title`="partial \u03B7\u00B2", 
+                        `title`="\u03B7\u00B2<sub>p</sub>", 
                         `type`="number", 
                         `format`="zto", 
                         `visible`="(effectSize:partEta && spherCorr:GG)"),
@@ -479,6 +502,12 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `format`="zto,pvalue", 
                         `visible`="(spherCorr:HF)"),
                     list(
+                        `name`="ges[HF]", 
+                        `title`="\u03B7\u00B2<sub>G</sub>", 
+                        `type`="number", 
+                        `format`="zto", 
+                        `visible`="(effectSize:ges && spherCorr:HF)"),
+                    list(
                         `name`="eta[HF]", 
                         `title`="\u03B7\u00B2", 
                         `type`="number", 
@@ -486,7 +515,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `visible`="(effectSize:eta && spherCorr:HF)"),
                     list(
                         `name`="partEta[HF]", 
-                        `title`="partial \u03B7\u00B2", 
+                        `title`="\u03B7\u00B2<sub>p</sub>", 
                         `type`="number", 
                         `format`="zto", 
                         `visible`="(effectSize:partEta && spherCorr:HF)"),
@@ -539,6 +568,12 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `type`="number", 
                         `format`="zto,pvalue"),
                     list(
+                        `name`="ges", 
+                        `title`="\u03B7\u00B2<sub>G</sub>", 
+                        `type`="number", 
+                        `format`="zto", 
+                        `visible`="(effectSize:ges)"),
+                    list(
                         `name`="eta", 
                         `title`="\u03B7\u00B2", 
                         `type`="number", 
@@ -546,7 +581,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `visible`="(effectSize:eta)"),
                     list(
                         `name`="partEta", 
-                        `title`="partial \u03B7\u00B2", 
+                        `title`="\u03B7\u00B2<sub>p</sub>", 
                         `type`="number", 
                         `format`="zto", 
                         `visible`="(effectSize:partEta)"),
@@ -669,6 +704,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name="postHoc",
                 title="Post Hoc Tests",
                 items="(postHoc)",
+                refs="emmeans",
                 template=jmvcore::Table$new(
                     options=options,
                     title="",
@@ -688,6 +724,7 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 options=options,
                 name="emm",
                 title="Estimated Marginal Means",
+                refs="emmeans",
                 clearWith=list(
                     "emMeans"),
                 template=R6::R6Class(
@@ -740,7 +777,25 @@ anovaRMResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     "rm",
                                     "cov",
                                     "rmTerms",
-                                    "bsTerms")))}))$new(options=options)))}))
+                                    "bsTerms")))}))$new(options=options)))
+            self$add(jmvcore::Table$new(
+                options=options,
+                name="groupSummary",
+                title="Group Summary",
+                visible="(groupSumm)",
+                clearWith=list(
+                    "dep",
+                    "factors",
+                    "covs"),
+                columns=list(
+                    list(
+                        `name`="n", 
+                        `title`="N", 
+                        `type`="integer"),
+                    list(
+                        `name`="ex", 
+                        `title`="Excluded", 
+                        `type`="integer"))))}))
 
 anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "anovaRMBase",
@@ -875,6 +930,8 @@ anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param emmPlotError \code{'none'}, \code{'ci'} (default), or \code{'se'}.
 #'   Use no error bars, use confidence intervals, or use standard errors on the
 #'   marginal mean plots, respectively
+#' @param groupSumm \code{TRUE} or \code{FALSE} (default), report a summary of
+#'   the different groups
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$rmTable} \tab \tab \tab \tab \tab a table \cr
@@ -884,6 +941,7 @@ anovaRMBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   \code{results$contrasts} \tab \tab \tab \tab \tab an array of tables \cr
 #'   \code{results$postHoc} \tab \tab \tab \tab \tab an array of tables \cr
 #'   \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
+#'   \code{results$groupSummary} \tab \tab \tab \tab \tab a summary of the groups \cr
 #' }
 #'
 #' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
@@ -922,23 +980,24 @@ anovaRM <- function(
     emmWeights = TRUE,
     ciWidthEmm = 95,
     emmPlotData = FALSE,
-    emmPlotError = "ci") {
+    emmPlotError = "ci",
+    groupSumm = FALSE) {
 
     if ( ! requireNamespace('jmvcore'))
         stop('anovaRM requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(bs)) bs <- jmvcore:::resolveQuo(jmvcore:::enquo(bs))
-    if ( ! missing(cov)) cov <- jmvcore:::resolveQuo(jmvcore:::enquo(cov))
+    if ( ! missing(bs)) bs <- jmvcore::resolveQuo(jmvcore::enquo(bs))
+    if ( ! missing(cov)) cov <- jmvcore::resolveQuo(jmvcore::enquo(cov))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(bs), bs, NULL),
             `if`( ! missing(cov), cov, NULL))
 
     for (v in bs) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    if (inherits(rmTerms, 'formula')) rmTerms <- jmvcore:::decomposeFormula(rmTerms)
-    if (inherits(bsTerms, 'formula')) bsTerms <- jmvcore:::decomposeFormula(bsTerms)
-    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
+    if (inherits(rmTerms, 'formula')) rmTerms <- jmvcore::decomposeFormula(rmTerms)
+    if (inherits(bsTerms, 'formula')) bsTerms <- jmvcore::decomposeFormula(bsTerms)
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore::decomposeFormula(emMeans)
 
     options <- anovaRMOptions$new(
         rm = rm,
@@ -962,10 +1021,8 @@ anovaRM <- function(
         emmWeights = emmWeights,
         ciWidthEmm = ciWidthEmm,
         emmPlotData = emmPlotData,
-        emmPlotError = emmPlotError)
-
-    results <- anovaRMResults$new(
-        options = options)
+        emmPlotError = emmPlotError,
+        groupSumm = groupSumm)
 
     analysis <- anovaRMClass$new(
         options = options,

@@ -264,7 +264,10 @@ corrMatrixResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 clearWith=list(
                     "vars",
                     "plotDens",
-                    "plotStats")))}))
+                    "plotStats",
+                    "pearson",
+                    "spearman",
+                    "kendall")))}))
 
 corrMatrixBase <- if (requireNamespace('jmvcore')) R6::R6Class(
     "corrMatrixBase",
@@ -301,9 +304,9 @@ corrMatrixBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' variable).
 #' 
 #' More formally, it is possible to test the null hypothesis that the
-#' correlation is zero using and calculate a p-value. If the p-value is
-#' low, it suggests the correlation co-efficient is not zero, and there is
-#' a linear (or more complex) relationship between the two variables.
+#' correlation is zero and calculate a p-value. If the p-value is low, it
+#' suggests the correlation co-efficient is not zero, and there is a linear
+#' (or more complex) relationship between the two variables.
 #' 
 #'
 #' @examples
@@ -389,9 +392,9 @@ corrMatrix <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('corrMatrix requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
+    if ( ! missing(vars)) vars <- jmvcore::resolveQuo(jmvcore::enquo(vars))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL))
 
@@ -410,9 +413,6 @@ corrMatrix <- function(
         plotDens = plotDens,
         plotStats = plotStats,
         hypothesis = hypothesis)
-
-    results <- corrMatrixResults$new(
-        options = options)
 
     analysis <- corrMatrixClass$new(
         options = options,

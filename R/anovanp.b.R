@@ -12,21 +12,26 @@ anovaNPClass <- R6::R6Class(
 
             data <- self$data
             table <- self$results$get('table')
-
             groupColumn  <- as.factor(data[[group]])
 
             for (depName in self$options$get('deps')) {
                 depColumn <- jmvcore::toNumeric(data[[depName]])
-                result <- kruskal.test(x=depColumn, g=groupColumn)
+                subset <- data.frame(y=depColumn, x=groupColumn)
+                subset <- na.omit(subset)
+                n <- nrow(subset)
+                result <- kruskal.test(y ~ x, subset)
+                es <- result$statistic * (n+1) / (n^2-1)
                 table$setRow(rowKey=depName, values=list(
                     chiSq=result$statistic,
                     df=result$parameter,
-                    p=result$p.value
+                    p=result$p.value,
+                    es=es
                 ))
             }
 
             if (self$options$get("pairs")) {
 
+                nGroups = nlevels(groupColumn)
                 pairs <- private$.genPairs(groupColumn)
 
                 for (depName in deps) {
@@ -43,7 +48,7 @@ anovaNPClass <- R6::R6Class(
                             private$.checkpoint()
 
                             pairData <- list(sdata[[pair[1]]], sdata[[pair[2]]])
-                            result <- pSDCFlig(pairData, method="Asymptotic")
+                            result <- pSDCFlig(pairData, method="Asymptotic", n.g=nGroups)
 
                             table$setRow(rowKey=pair, list(
                                 p1=pair[1],
@@ -129,7 +134,7 @@ pRangeNor<-function(x,k){
 }
 
 #' @importFrom stats complete.cases
-pSDCFlig<-function(x,g=NA,method=NA,n.mc=10000){
+pSDCFlig<-function(x,g=NA,method=NA,n.mc=10000,n.g){
     outp<-list()
     outp$stat.name<-"Dwass, Steel, Critchlow-Fligner W"
 
@@ -240,7 +245,7 @@ pSDCFlig<-function(x,g=NA,method=NA,n.mc=10000){
     }
     if(method=="Asymptotic"){
         for(j in 1:num.comp){
-            outp$p.val[j]<-pRangeNor(abs(outp$obs.stat[j]),k)
+            outp$p.val[j]<-pRangeNor(abs(outp$obs.stat[j]),n.g)
         }
     }
 

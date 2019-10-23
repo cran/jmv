@@ -373,6 +373,7 @@ logLinearResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     "counts",
                                     "blocks"),
                                 visible="(omni)",
+                                refs="car",
                                 columns=list(
                                     list(
                                         `name`="term", 
@@ -450,6 +451,7 @@ logLinearResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 options=options,
                                 name="emm",
                                 title="Estimated Marginal Means",
+                                refs="emmeans",
                                 clearWith=list(
                                     "counts",
                                     "blocks",
@@ -653,16 +655,16 @@ logLinear <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('logLinear requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
-    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
+    if ( ! missing(factors)) factors <- jmvcore::resolveQuo(jmvcore::enquo(factors))
+    if ( ! missing(counts)) counts <- jmvcore::resolveQuo(jmvcore::enquo(counts))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(factors), factors, NULL),
             `if`( ! missing(counts), counts, NULL))
 
     for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore::decomposeFormula(emMeans)
 
     options <- logLinearOptions$new(
         factors = factors,
@@ -686,9 +688,6 @@ logLinear <- function(
         emmPlots = emmPlots,
         emmTables = emmTables,
         emmWeights = emmWeights)
-
-    results <- logLinearResults$new(
-        options = options)
 
     analysis <- logLinearClass$new(
         options = options,

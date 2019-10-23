@@ -43,6 +43,7 @@ linRegClass <- R6::R6Class(
                 private$.populateCooksTable(results)
                 private$.populateCollinearityTable(results)
                 private$.populateDurbinWatsonTable(results)
+                private$.populateNormality(results)
                 private$.prepareQQPlot(results)
                 private$.prepareResPlots(data, results)
 
@@ -57,26 +58,26 @@ linRegClass <- R6::R6Class(
         .compute = function(data) {
 
             formulas <- private$.formulas()
+            scaledData <- private$.scaleData(data)
 
-            models <- list(); modelsBF <- list(); anovaTerms <- list()
+            models <- list(); modelsScaled <- list(); anovaTerms <- list()
             for (i in seq_along(formulas)) {
-                # modelsBF[[i]] <- BayesFactor::lmBF(formulas[[i]], data=data)
                 models[[i]] <- lm(formulas[[i]], data=data)
-
                 anovaTerms[[i]] <- car::Anova(models[[i]], type=3, singular.ok=TRUE)
+                modelsScaled[[i]] <- lm(formulas[[i]], data=scaledData)
             }
 
             ANOVA <- do.call(stats::anova, models)
 
-            AIC <- list(); BIC <- list(); betas <- list(); CI <- list();
-            dwTest <- list(); VIF <- list(); cooks <- list()
+            AIC <- list(); BIC <- list(); CI <- list();
+            CIScaled <- list(); dwTest <- list(); VIF <- list(); cooks <- list()
             for (i in seq_along(models)) {
 
                 AIC[[i]] <- stats::AIC(models[[i]])
                 BIC[[i]] <- stats::BIC(models[[i]])
-                betas[[i]] <- private$.stdEst(models[[i]])
+                # betas[[i]] <- private$.stdEst(models[[i]])
                 CI[[i]] <- stats::confint(models[[i]], level = self$options$ciWidth / 100)
-                dwTest[[i]] <- car::durbinWatsonTest(models[[i]])
+                CIScaled[[i]] <- stats::confint(modelsScaled[[i]], level = self$options$ciWidth / 100)
                 cooks[[i]] <- stats::cooks.distance(models[[i]])
 
                 if (length(private$terms[[i]]) > 1)
@@ -84,10 +85,15 @@ linRegClass <- R6::R6Class(
                 else
                     VIF[[i]] <- NULL
 
+                if (self$options$durbin)
+                    dwTest[[i]] <- car::durbinWatsonTest(models[[i]])
+                else
+                    dwTest[[i]] <- NULL
             }
 
-            return(list(models=models, ANOVA=ANOVA, anovaTerms=anovaTerms,
-                        AIC=AIC, BIC=BIC, betas=betas, CI=CI, dwTest=dwTest, VIF=VIF, cooks=cooks))
+            return(list(models=models, modelsScaled=modelsScaled, ANOVA=ANOVA,
+                        anovaTerms=anovaTerms, AIC=AIC, BIC=BIC, CI=CI, CIScaled=CIScaled,
+                        dwTest=dwTest, VIF=VIF, cooks=cooks))
         },
 
         #### Init tables/plots functions ----
@@ -457,16 +463,20 @@ linRegClass <- R6::R6Class(
             groups <- self$results$models
             termsAll <- private$coefTerms
             models <- results$models
+            modelsScaled <- results$modelsScaled
 
             for (i in seq_along(termsAll)) {
 
                 table <- groups$get(key=i)$coef
 
                 model <- summary(models[[i]])
+                modelScaled <- summary(modelsScaled[[i]])
 
                 CI <- results$CI[[i]]
+                CIScaled <- results$CIScaled[[i]]
                 coef<- model$coef
-                stdEst <- results$betas[[i]]
+                coefScaled <- modelScaled$coef
+                # stdEst <- results$betas[[i]]
                 terms <- termsAll[[i]]
                 rowTerms <- jmvcore::decomposeTerms(rownames(coef))
 
@@ -491,9 +501,9 @@ linRegClass <- R6::R6Class(
                         row[["stdEstLower"]] <- ""
                         row[["stdEstUpper"]] <- ""
                     } else {
-                        row[["stdEst"]] <- stdEst$beta[jmvcore::composeTerm(term)]
-                        row[["stdEstLower"]] <- stdEst$lower[jmvcore::composeTerm(term)]
-                        row[["stdEstUpper"]] <- stdEst$upper[jmvcore::composeTerm(term)]
+                        row[["stdEst"]] <- coefScaled[index, 1]
+                        row[["stdEstLower"]] <- CIScaled[index, 1]
+                        row[["stdEstUpper"]] <- CIScaled[index, 2]
                     }
 
                     table$setRow(rowKey=jmvcore::composeTerm(term), values = row)
@@ -522,6 +532,9 @@ linRegClass <- R6::R6Class(
             }
         },
         .populateDurbinWatsonTable = function(results) {
+
+            if (length(results$dwTest) == 0)
+                return()
 
             groups <- self$results$models
             termsAll <- private$terms
@@ -657,6 +670,26 @@ linRegClass <- R6::R6Class(
                         }
                     }
                 }
+            }
+        },
+
+        .populateNormality = function(results) {
+
+            groups <- self$results$models
+            termsAll <- private$terms
+
+            for (i in seq_along(termsAll)) {
+
+                model <- results$models[[i]]
+                table <- groups$get(key=i)$assump$get('norm')
+
+                res <- try(shapiro.test(model$residuals), silent=TRUE)
+                if (jmvcore::isError(res)) {
+                    values <- list(`s[sw]`=NaN, `p[sw]`='')
+                } else {
+                    values <- list(`s[sw]`=res$statistic, `p[sw]`=res$p.value)
+                }
+                table$setRow(rowNo=1, values)
             }
         },
 
@@ -1107,5 +1140,13 @@ linRegClass <- R6::R6Class(
                 r <- list(beta=beta, lower=betaCI[1], upper=betaCI[2])
 
             return(r)
+        },
+        .scaleData = function(data) {
+            for (col in names(data)) {
+                if ( ! is.factor(data[[col]]))
+                    data[[col]] <- scale(data[[col]])
+            }
+
+            return(data)
         })
 )

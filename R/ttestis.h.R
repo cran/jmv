@@ -285,7 +285,10 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `name`="stat[bf]", 
                         `title`="statistic", 
                         `type`="number", 
-                        `visible`="(bf)"),
+                        `visible`="(bf)", 
+                        `refs`=list(
+                            "BF",
+                            "btt")),
                     list(
                         `name`="err[bf]", 
                         `title`="\u00B1%", 
@@ -497,6 +500,7 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 "miss"),
                             notes=list(
                                 `p`="A low p-value suggests a violation of the assumption of equal variances"),
+                            refs="car",
                             columns=list(
                                 list(
                                     `name`="name", 
@@ -509,6 +513,9 @@ ttestISResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                     `type`="number"),
                                 list(
                                     `name`="df", 
+                                    `type`="number"),
+                                list(
+                                    `name`="df2", 
                                     `type`="number"),
                                 list(
                                     `name`="p", 
@@ -749,23 +756,23 @@ ttestIS <- function(
 
     if ( ! missing(formula)) {
         if (missing(vars))
-            vars <- jmvcore:::marshalFormula(
+            vars <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='lhs',
                 required=TRUE)
         if (missing(group))
-            group <- jmvcore:::marshalFormula(
+            group <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='rhs',
                 subset='1')
     }
 
-    if ( ! missing(vars)) vars <- jmvcore:::resolveQuo(jmvcore:::enquo(vars))
-    if ( ! missing(group)) group <- jmvcore:::resolveQuo(jmvcore:::enquo(group))
+    if ( ! missing(vars)) vars <- jmvcore::resolveQuo(jmvcore::enquo(vars))
+    if ( ! missing(group)) group <- jmvcore::resolveQuo(jmvcore::enquo(group))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL),
             `if`( ! missing(group), group, NULL))
@@ -791,9 +798,6 @@ ttestIS <- function(
         desc = desc,
         plots = plots,
         miss = miss)
-
-    results <- ttestISResults$new(
-        options = options)
 
     analysis <- ttestISClass$new(
         options = options,

@@ -23,6 +23,7 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             ciWidth = 95,
             gamma = FALSE,
             taub = FALSE,
+            obs = TRUE,
             exp = FALSE,
             pcRow = FALSE,
             pcCol = FALSE,
@@ -118,6 +119,10 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 "taub",
                 taub,
                 default=FALSE)
+            private$..obs <- jmvcore::OptionBool$new(
+                "obs",
+                obs,
+                default=TRUE)
             private$..exp <- jmvcore::OptionBool$new(
                 "exp",
                 exp,
@@ -152,6 +157,7 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..ciWidth)
             self$.addOption(private$..gamma)
             self$.addOption(private$..taub)
+            self$.addOption(private$..obs)
             self$.addOption(private$..exp)
             self$.addOption(private$..pcRow)
             self$.addOption(private$..pcCol)
@@ -175,6 +181,7 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ciWidth = function() private$..ciWidth$value,
         gamma = function() private$..gamma$value,
         taub = function() private$..taub$value,
+        obs = function() private$..obs$value,
         exp = function() private$..exp$value,
         pcRow = function() private$..pcRow$value,
         pcCol = function() private$..pcCol$value,
@@ -197,6 +204,7 @@ contTablesOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..ciWidth = NA,
         ..gamma = NA,
         ..taub = NA,
+        ..obs = NA,
         ..exp = NA,
         ..pcRow = NA,
         ..pcCol = NA,
@@ -286,7 +294,8 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `title`="", 
                         `type`="text", 
                         `content`="Likelihood ratio", 
-                        `visible`="(likeRat)"),
+                        `visible`="(likeRat)", 
+                        `refs`="vcd"),
                     list(
                         `name`="value[likeRat]", 
                         `title`="Value", 
@@ -344,7 +353,8 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                         `title`="", 
                         `type`="text", 
                         `content`="Log odds ratio", 
-                        `visible`="(logOdds)"),
+                        `visible`="(logOdds)", 
+                        `refs`="vcd"),
                     list(
                         `name`="v[lo]", 
                         `title`="Value", 
@@ -440,6 +450,7 @@ contTablesResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                 name="gamma",
                 title="Gamma",
                 visible="(gamma)",
+                refs="vcdExtra",
                 clearWith=list(
                     "rows",
                     "cols",
@@ -504,7 +515,11 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' Contingency Tables
 #'
-#' X² test of association
+#' The X² test of association (not to be confused with the X² goodness of fit) 
+#' is used to test whether two categorical variables are independent or 
+#' associated. If the p-value is low, it suggests the variables are not 
+#' independent, and that there is a relationship between the two variables.
+#' 
 #'
 #' @examples
 #' data('HairEyeColor')
@@ -573,6 +588,8 @@ contTablesBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #'   confidence intervals to provide
 #' @param gamma \code{TRUE} or \code{FALSE} (default), provide gamma
 #' @param taub \code{TRUE} or \code{FALSE} (default), provide Kendall's tau-b
+#' @param obs \code{TRUE} or \code{FALSE} (default), provide the observed
+#'   counts
 #' @param exp \code{TRUE} or \code{FALSE} (default), provide the expected
 #'   counts
 #' @param pcRow \code{TRUE} or \code{FALSE} (default), provide row percentages
@@ -617,6 +634,7 @@ contTables <- function(
     ciWidth = 95,
     gamma = FALSE,
     taub = FALSE,
+    obs = TRUE,
     exp = FALSE,
     pcRow = FALSE,
     pcCol = FALSE,
@@ -628,28 +646,28 @@ contTables <- function(
 
     if ( ! missing(formula)) {
         if (missing(counts))
-            counts <- jmvcore:::marshalFormula(
+            counts <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='lhs',
                 type='vars',
                 subset='1')
         if (missing(rows))
-            rows <- jmvcore:::marshalFormula(
+            rows <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='rhs',
                 type='vars',
                 subset='1')
         if (missing(cols))
-            cols <- jmvcore:::marshalFormula(
+            cols <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='rhs',
                 type='vars',
                 subset='2')
         if (missing(layers))
-            layers <- jmvcore:::marshalFormula(
+            layers <- jmvcore::marshalFormula(
                 formula=formula,
                 data=`if`( ! missing(data), data, NULL),
                 from='rhs',
@@ -657,12 +675,12 @@ contTables <- function(
                 subset='3:')
     }
 
-    if ( ! missing(rows)) rows <- jmvcore:::resolveQuo(jmvcore:::enquo(rows))
-    if ( ! missing(cols)) cols <- jmvcore:::resolveQuo(jmvcore:::enquo(cols))
-    if ( ! missing(counts)) counts <- jmvcore:::resolveQuo(jmvcore:::enquo(counts))
-    if ( ! missing(layers)) layers <- jmvcore:::resolveQuo(jmvcore:::enquo(layers))
+    if ( ! missing(rows)) rows <- jmvcore::resolveQuo(jmvcore::enquo(rows))
+    if ( ! missing(cols)) cols <- jmvcore::resolveQuo(jmvcore::enquo(cols))
+    if ( ! missing(counts)) counts <- jmvcore::resolveQuo(jmvcore::enquo(counts))
+    if ( ! missing(layers)) layers <- jmvcore::resolveQuo(jmvcore::enquo(layers))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(rows), rows, NULL),
             `if`( ! missing(cols), cols, NULL),
@@ -691,13 +709,11 @@ contTables <- function(
         ciWidth = ciWidth,
         gamma = gamma,
         taub = taub,
+        obs = obs,
         exp = exp,
         pcRow = pcRow,
         pcCol = pcCol,
         pcTot = pcTot)
-
-    results <- contTablesResults$new(
-        options = options)
 
     analysis <- contTablesClass$new(
         options = options,

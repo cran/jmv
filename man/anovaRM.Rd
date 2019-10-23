@@ -12,7 +12,7 @@ anovaRM(data, rm = list(list(label = "RM Factor 1", levels =
   postHoc = NULL, postHocCorr = list("tukey"),
   emMeans = list(list()), emmPlots = TRUE, emmTables = FALSE,
   emmWeights = TRUE, ciWidthEmm = 95, emmPlotData = FALSE,
-  emmPlotError = "ci")
+  emmPlotError = "ci", groupSumm = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -89,6 +89,9 @@ top of the marginal means}
 \item{emmPlotError}{\code{'none'}, \code{'ci'} (default), or \code{'se'}.
 Use no error bars, use confidence intervals, or use standard errors on the
 marginal mean plots, respectively}
+
+\item{groupSumm}{\code{TRUE} or \code{FALSE} (default), report a summary of
+the different groups}
 }
 \value{
 A results object containing:
@@ -100,6 +103,7 @@ A results object containing:
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of tables \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of tables \cr
   \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
+  \code{results$groupSummary} \tab \tab \tab \tab \tab a summary of the groups \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

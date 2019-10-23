@@ -356,6 +356,7 @@ mancovaResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             title="Shapiro-Wilk Multivariate Normality Test",
                             visible="(shapiro)",
                             rows=1,
+                            refs="mvnormtest",
                             clearWith=list(
                                 "deps"),
                             columns=list(
@@ -400,7 +401,10 @@ mancovaBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' MANCOVA
 #'
-#' Multivariate Analysis of Covariance
+#' Multivariate Analysis of (Co)Variance (MANCOVA) is used to explore the 
+#' relationship between multiple dependent variables, and one or more 
+#' categorical and/or continuous explanatory variables.
+#' 
 #'
 #' @examples
 #' data('iris')
@@ -485,11 +489,11 @@ mancova <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('mancova requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(deps)) deps <- jmvcore:::resolveQuo(jmvcore:::enquo(deps))
-    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
-    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
+    if ( ! missing(deps)) deps <- jmvcore::resolveQuo(jmvcore::enquo(deps))
+    if ( ! missing(factors)) factors <- jmvcore::resolveQuo(jmvcore::enquo(factors))
+    if ( ! missing(covs)) covs <- jmvcore::resolveQuo(jmvcore::enquo(covs))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(deps), deps, NULL),
             `if`( ! missing(factors), factors, NULL),
@@ -505,9 +509,6 @@ mancova <- function(
         boxM = boxM,
         shapiro = shapiro,
         qqPlot = qqPlot)
-
-    results <- mancovaResults$new(
-        options = options)
 
     analysis <- mancovaClass$new(
         options = options,

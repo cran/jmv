@@ -9,10 +9,10 @@ linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
   aic = FALSE, bic = FALSE, rmse = FALSE, modelTest = FALSE,
   anova = FALSE, ci = FALSE, ciWidth = 95, stdEst = FALSE,
   ciStdEst = FALSE, ciWidthStdEst = 95, coefPlot = FALSE,
-  qqPlot = FALSE, resPlots = FALSE, durbin = FALSE, collin = FALSE,
-  cooks = FALSE, emMeans = list(list()), ciEmm = TRUE,
-  ciWidthEmm = 95, emmPlots = TRUE, emmTables = FALSE,
-  emmWeights = TRUE)
+  norm = FALSE, qqPlot = FALSE, resPlots = FALSE, durbin = FALSE,
+  collin = FALSE, cooks = FALSE, emMeans = list(list()),
+  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
+  emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -74,6 +74,9 @@ the confidence interval width}
 coefficient plot where for each predictor the estimated coefficient and
 confidence intervals are plotted.}
 
+\item{norm}{\code{TRUE} or \code{FALSE} (default), perform a Shapiro-Wilk
+test on the residuals}
+
 \item{qqPlot}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 residuals}
 
@@ -123,7 +126,10 @@ Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.f
 \code{as.data.frame(results$modelFit)}
 }
 \description{
-Linear Regression
+Linear regression is used to explore the relationship between a continuous 
+dependent variable, and one or more continuous and/or categorical 
+explanatory variables. Other statistical methods, such as ANOVA and ANCOVA, 
+are in reality just forms of linear regression.
 }
 \examples{
 data('Prestige', package='carData')

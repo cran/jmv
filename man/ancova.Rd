@@ -5,11 +5,11 @@
 \title{ANCOVA}
 \usage{
 ancova(data, dep, factors = NULL, covs = NULL, effectSize = NULL,
-  modelTerms = NULL, ss = "3", homo = FALSE, qq = FALSE,
-  contrasts = NULL, postHoc = NULL, postHocCorr = list("tukey"),
-  emMeans = list(list()), emmPlots = TRUE, emmPlotData = FALSE,
-  emmPlotError = "ci", emmTables = FALSE, emmWeights = TRUE,
-  ciWidthEmm = 95, formula)
+  modelTerms = NULL, ss = "3", homo = FALSE, norm = FALSE,
+  qq = FALSE, contrasts = NULL, postHoc = NULL,
+  postHocCorr = list("tukey"), emMeans = list(list()),
+  emmPlots = TRUE, emmPlotData = FALSE, emmPlotError = "ci",
+  emmTables = FALSE, emmWeights = TRUE, ciWidthEmm = 95, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -35,6 +35,9 @@ squares to use}
 
 \item{homo}{\code{TRUE} or \code{FALSE} (default), perform homogeneity
 tests}
+
+\item{norm}{\code{TRUE} or \code{FALSE} (default), perform Shapiro-Wilk
+tests of normality}
 
 \item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 residuals}
@@ -80,6 +83,7 @@ A results object containing:
   \code{results$main} \tab \tab \tab \tab \tab a table of ANCOVA results \cr
   \code{results$model} \tab \tab \tab \tab \tab The underlying \code{aov} object \cr
   \code{results$assump$homo} \tab \tab \tab \tab \tab a table of homogeneity tests \cr
+  \code{results$assump$norm} \tab \tab \tab \tab \tab a table of normality tests \cr
   \code{results$assump$qq} \tab \tab \tab \tab \tab a q-q plot \cr
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of contrasts tables \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of post-hoc tables \cr

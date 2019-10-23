@@ -26,6 +26,7 @@ linRegOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             ciStdEst = FALSE,
             ciWidthStdEst = 95,
             coefPlot = FALSE,
+            norm = FALSE,
             qqPlot = FALSE,
             resPlots = FALSE,
             durbin = FALSE,
@@ -154,6 +155,10 @@ linRegOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
                 coefPlot,
                 default=FALSE,
                 hidden=TRUE)
+            private$..norm <- jmvcore::OptionBool$new(
+                "norm",
+                norm,
+                default=FALSE)
             private$..qqPlot <- jmvcore::OptionBool$new(
                 "qqPlot",
                 qqPlot,
@@ -224,6 +229,7 @@ linRegOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
             self$.addOption(private$..ciStdEst)
             self$.addOption(private$..ciWidthStdEst)
             self$.addOption(private$..coefPlot)
+            self$.addOption(private$..norm)
             self$.addOption(private$..qqPlot)
             self$.addOption(private$..resPlots)
             self$.addOption(private$..durbin)
@@ -256,6 +262,7 @@ linRegOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ciStdEst = function() private$..ciStdEst$value,
         ciWidthStdEst = function() private$..ciWidthStdEst$value,
         coefPlot = function() private$..coefPlot$value,
+        norm = function() private$..norm$value,
         qqPlot = function() private$..qqPlot$value,
         resPlots = function() private$..resPlots$value,
         durbin = function() private$..durbin$value,
@@ -287,6 +294,7 @@ linRegOptions <- if (requireNamespace('jmvcore')) R6::R6Class(
         ..ciStdEst = NA,
         ..ciWidthStdEst = NA,
         ..coefPlot = NA,
+        ..norm = NA,
         ..qqPlot = NA,
         ..resPlots = NA,
         ..durbin = NA,
@@ -458,6 +466,7 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 name="anova",
                                 title="Omnibus ANOVA Test",
                                 visible="(anova)",
+                                refs="car",
                                 clearWith=list(
                                     "dep",
                                     "blocks"),
@@ -490,7 +499,7 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                             self$add(jmvcore::Table$new(
                                 options=options,
                                 name="coef",
-                                title="Model Coefficients",
+                                title="`Model Coefficients - ${ dep }`",
                                 clearWith=list(
                                     "dep",
                                     "blocks",
@@ -604,6 +613,7 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 active = list(
                                     durbin = function() private$.items[["durbin"]],
                                     collin = function() private$.items[["collin"]],
+                                    norm = function() private$.items[["norm"]],
                                     qqPlot = function() private$.items[["qqPlot"]],
                                     resPlots = function() private$.items[["resPlots"]]),
                                 private = list(),
@@ -619,6 +629,7 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                             title="Durbin\u2013Watson Test for Autocorrelation",
                                             rows=1,
                                             visible="(durbin)",
+                                            refs="car",
                                             clearWith=list(
                                                 "dep",
                                                 "blocks"),
@@ -641,6 +652,7 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                             name="collin",
                                             title="Collinearity Statistics",
                                             visible="(collin)",
+                                            refs="car",
                                             clearWith=list(
                                                 "dep",
                                                 "blocks"),
@@ -657,6 +669,29 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                                     `name`="tol", 
                                                     `title`="Tolerance", 
                                                     `type`="number"))))
+                                        self$add(jmvcore::Table$new(
+                                            options=options,
+                                            name="norm",
+                                            title="Normality test (Shapiro-Wilk)",
+                                            visible="(norm)",
+                                            rows=1,
+                                            clearWith=list(
+                                                "dep",
+                                                "blocks"),
+                                            columns=list(
+                                                list(
+                                                    `name`="t[sw]", 
+                                                    `title`="", 
+                                                    `type`="text", 
+                                                    `content`="Shapiro-Wilk", 
+                                                    `visible`=FALSE),
+                                                list(
+                                                    `name`="s[sw]", 
+                                                    `title`="statistic"),
+                                                list(
+                                                    `name`="p[sw]", 
+                                                    `title`="p", 
+                                                    `format`="zto,pvalue"))))
                                         self$add(jmvcore::Image$new(
                                             options=options,
                                             name="qqPlot",
@@ -683,6 +718,7 @@ linRegResults <- if (requireNamespace('jmvcore')) R6::R6Class(
                                 options=options,
                                 name="emm",
                                 title="Estimated Marginal Means",
+                                refs="emmeans",
                                 clearWith=list(
                                     "dep",
                                     "blocks",
@@ -748,7 +784,11 @@ linRegBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 
 #' Linear Regression
 #'
-#' Linear Regression
+#' Linear regression is used to explore the relationship between a continuous 
+#' dependent variable, and one or more continuous and/or categorical 
+#' explanatory variables. Other statistical methods, such as ANOVA and ANCOVA, 
+#' are in reality just forms of linear regression.
+#' 
 #'
 #' @examples
 #' data('Prestige', package='carData')
@@ -823,6 +863,8 @@ linRegBase <- if (requireNamespace('jmvcore')) R6::R6Class(
 #' @param coefPlot \code{TRUE} or \code{FALSE} (default), provide a
 #'   coefficient plot where for each predictor the estimated coefficient and
 #'   confidence intervals are plotted.
+#' @param norm \code{TRUE} or \code{FALSE} (default), perform a Shapiro-Wilk
+#'   test on the residuals
 #' @param qqPlot \code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
 #'   residuals
 #' @param resPlots \code{TRUE} or \code{FALSE} (default), provide residual
@@ -882,6 +924,7 @@ linReg <- function(
     ciStdEst = FALSE,
     ciWidthStdEst = 95,
     coefPlot = FALSE,
+    norm = FALSE,
     qqPlot = FALSE,
     resPlots = FALSE,
     durbin = FALSE,
@@ -898,18 +941,18 @@ linReg <- function(
     if ( ! requireNamespace('jmvcore'))
         stop('linReg requires jmvcore to be installed (restart may be required)')
 
-    if ( ! missing(dep)) dep <- jmvcore:::resolveQuo(jmvcore:::enquo(dep))
-    if ( ! missing(covs)) covs <- jmvcore:::resolveQuo(jmvcore:::enquo(covs))
-    if ( ! missing(factors)) factors <- jmvcore:::resolveQuo(jmvcore:::enquo(factors))
+    if ( ! missing(dep)) dep <- jmvcore::resolveQuo(jmvcore::enquo(dep))
+    if ( ! missing(covs)) covs <- jmvcore::resolveQuo(jmvcore::enquo(covs))
+    if ( ! missing(factors)) factors <- jmvcore::resolveQuo(jmvcore::enquo(factors))
     if (missing(data))
-        data <- jmvcore:::marshalData(
+        data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(dep), dep, NULL),
             `if`( ! missing(covs), covs, NULL),
             `if`( ! missing(factors), factors, NULL))
 
     for (v in factors) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    if (inherits(emMeans, 'formula')) emMeans <- jmvcore:::decomposeFormula(emMeans)
+    if (inherits(emMeans, 'formula')) emMeans <- jmvcore::decomposeFormula(emMeans)
 
     options <- linRegOptions$new(
         dep = dep,
@@ -931,6 +974,7 @@ linReg <- function(
         ciStdEst = ciStdEst,
         ciWidthStdEst = ciWidthStdEst,
         coefPlot = coefPlot,
+        norm = norm,
         qqPlot = qqPlot,
         resPlots = resPlots,
         durbin = durbin,
@@ -942,9 +986,6 @@ linReg <- function(
         emmPlots = emmPlots,
         emmTables = emmTables,
         emmWeights = emmWeights)
-
-    results <- linRegResults$new(
-        options = options)
 
     analysis <- linRegClass$new(
         options = options,
