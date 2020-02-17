@@ -7,9 +7,10 @@
 ANOVA(data, dep, factors = NULL, effectSize = NULL,
   modelTerms = NULL, ss = "3", homo = FALSE, norm = FALSE,
   qq = FALSE, contrasts = NULL, postHoc = NULL,
-  postHocCorr = list("tukey"), emMeans = list(list()),
-  emmPlots = TRUE, emmPlotData = FALSE, emmPlotError = "ci",
-  emmTables = FALSE, emmWeights = TRUE, ciWidthEmm = 95, formula)
+  postHocCorr = list("tukey"), postHocES = list(),
+  emMeans = list(list()), emmPlots = TRUE, emmPlotData = FALSE,
+  emmPlotError = "ci", emmTables = FALSE, emmWeights = TRUE,
+  ciWidthEmm = 95, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -49,6 +50,9 @@ to use, one of \code{'deviation'}, \code{'simple'}, \code{'difference'},
 \item{postHocCorr}{one or more of \code{'none'}, \code{'tukey'},
 \code{'scheffe'}, \code{'bonf'}, or \code{'holm'}; provide no, Tukey,
 Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
+
+\item{postHocES}{a possible value of \code{'d'}; provide cohen's d measure
+of effect size for the post-hoc tests}
 
 \item{emMeans}{a formula containing the terms to estimate marginal means
 for (see the examples)}

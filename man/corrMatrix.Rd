@@ -5,9 +5,9 @@
 \title{Correlation Matrix}
 \usage{
 corrMatrix(data, vars, pearson = TRUE, spearman = FALSE,
-  kendall = FALSE, sig = TRUE, flag = FALSE, ci = FALSE,
-  ciWidth = 95, plots = FALSE, plotDens = FALSE, plotStats = FALSE,
-  hypothesis = "corr")
+  kendall = FALSE, sig = TRUE, flag = FALSE, n = FALSE,
+  ci = FALSE, ciWidth = 95, plots = FALSE, plotDens = FALSE,
+  plotStats = FALSE, hypothesis = "corr")
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -28,6 +28,8 @@ levels}
 
 \item{flag}{\code{TRUE} or \code{FALSE} (default), flag significant
 correlations}
+
+\item{n}{\code{TRUE} or \code{FALSE} (default), provide the number of cases}
 
 \item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
 intervals}

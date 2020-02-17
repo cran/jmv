@@ -5,14 +5,14 @@
 \title{Linear Regression}
 \usage{
 linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
-  refLevels = NULL, r = TRUE, r2 = TRUE, r2Adj = FALSE,
-  aic = FALSE, bic = FALSE, rmse = FALSE, modelTest = FALSE,
-  anova = FALSE, ci = FALSE, ciWidth = 95, stdEst = FALSE,
-  ciStdEst = FALSE, ciWidthStdEst = 95, coefPlot = FALSE,
-  norm = FALSE, qqPlot = FALSE, resPlots = FALSE, durbin = FALSE,
-  collin = FALSE, cooks = FALSE, emMeans = list(list()),
-  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
-  emmTables = FALSE, emmWeights = TRUE)
+  refLevels = NULL, intercept = "refLevel", r = TRUE, r2 = TRUE,
+  r2Adj = FALSE, aic = FALSE, bic = FALSE, rmse = FALSE,
+  modelTest = FALSE, anova = FALSE, ci = FALSE, ciWidth = 95,
+  stdEst = FALSE, ciStdEst = FALSE, ciWidthStdEst = 95,
+  coefPlot = FALSE, norm = FALSE, qqPlot = FALSE, resPlots = FALSE,
+  durbin = FALSE, collin = FALSE, cooks = FALSE,
+  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
+  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -30,6 +30,10 @@ to their order in the list}
 
 \item{refLevels}{a list of lists specifying reference levels of the
 dependent variable and all the factors}
+
+\item{intercept}{\code{'refLevel'} (default) or \code{'grandMean'}, coding
+of the intercept. Either creates contrast so that the intercept represents
+the reference level or the grand mean}
 
 \item{r}{\code{TRUE} (default) or \code{FALSE}, provide the statistical
 measure \code{R} for the models}
