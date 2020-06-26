@@ -4,8 +4,7 @@
 \alias{propTestN}
 \title{Proportion Test (N Outcomes)}
 \usage{
-propTestN(data, var, counts = NULL, expected = FALSE, ratio = NULL,
-  formula)
+propTestN(data, var, counts = NULL, expected = FALSE, ratio = NULL, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}

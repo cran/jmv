@@ -471,7 +471,8 @@ anovaRMClass <- R6::R6Class(
         },
         .populateSpericityTable=function(result) {
 
-            spherTable <- self$results$get('assump')$get('spherTable')
+            spherTable <- self$results$assump$spherTable
+
             summaryResult <- suppressWarnings({summary(result)})
             epsilon <- summaryResult$pval.adjustments
             mauchly <- summaryResult$sphericity.tests
@@ -506,9 +507,16 @@ anovaRMClass <- R6::R6Class(
 
                 for (term in self$options$rmTerms) {
 
-                    spherTable$setRow(rowKey=term, values=list('mauch'=1, 'p'=NaN, 'gg'=1, 'hf'=1))
-                    if (length(spherTable$getRow(rowKey=term)$name$footnotes) == 0)
-                        spherTable$addFootnote(rowKey=term, 'p', 'The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels')
+                    if (any(nLevels > 2)) {
+                        spherTable$setRow(rowKey=term, values=list('mauch'=NaN, 'p'=NaN, 'gg'=NaN, 'hf'=NaN))
+                        if (length(spherTable$getRow(rowKey=term)$name$footnotes) == 0)
+                            spherTable$addFootnote(rowKey=term, 'name', 'Singularity error. Sphericity tests are not available')
+
+                    } else {
+                        spherTable$setRow(rowKey=term, values=list('mauch'=1, 'p'=NaN, 'gg'=1, 'hf'=1))
+                        if (length(spherTable$getRow(rowKey=term)$name$footnotes) == 0)
+                            spherTable$addFootnote(rowKey=term, 'p', 'The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels')
+                    }
                 }
             }
         },
@@ -583,6 +591,7 @@ anovaRMClass <- R6::R6Class(
 
                     table$setStatus('running')
 
+                    emmeans::emm_options(sep = ",", parens = "a^")
                     referenceGrid <- emmeans::emmeans(result, formula)
                     none <- summary(pairs(referenceGrid, adjust='none'))
                     tukey <- summary(pairs(referenceGrid, adjust='tukey'))
@@ -717,6 +726,8 @@ anovaRMClass <- R6::R6Class(
                         weights <- 'cells'
 
                     suppressMessages({
+                        emmeans::emm_options(sep = ",", parens = "a^")
+                        
                         mm <- try(
                             emmeans::emmeans(model, formula, options=list(level=self$options$ciWidthEmm / 100), weights = weights),
                             silent = TRUE
@@ -818,7 +829,7 @@ anovaRMClass <- R6::R6Class(
 
             dataNumeric <- list()
             for (i in seq_along(varsNumeric))
-                dataNumeric[[varsNumeric[i]]] <- data[[varsNumeric[i]]]
+                dataNumeric[[varsNumeric[i]]] <- jmvcore::toNumeric(data[[varsNumeric[i]]])
 
             # Check all values
             allNAItems <- sapply(c(dataFactors, dataNumeric), function(x) all(is.na(x)))
@@ -937,10 +948,10 @@ anovaRMClass <- R6::R6Class(
                 terms <- list()
 
                 # terms that include covariates:
-                covTerms <- c()
+                covTerms <- logical()
                 if (length(covariates) > 0) {
                     for (i in seq_along(bsTerms)) {
-                        covTerms[[i]] <- any(covariates %in% bsTerms[[i]])
+                        covTerms[i] <- any(covariates %in% bsTerms[[i]])
                     }
                 }
 

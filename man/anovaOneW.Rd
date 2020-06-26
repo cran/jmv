@@ -4,11 +4,25 @@
 \alias{anovaOneW}
 \title{One-Way ANOVA}
 \usage{
-anovaOneW(data, deps, group, welchs = TRUE, fishers = FALSE,
-  miss = "perAnalysis", desc = FALSE, descPlot = FALSE,
-  norm = FALSE, qq = FALSE, eqv = FALSE, phMethod = "none",
-  phMeanDif = TRUE, phSig = TRUE, phTest = FALSE, phFlag = FALSE,
-  formula)
+anovaOneW(
+  data,
+  deps,
+  group,
+  welchs = TRUE,
+  fishers = FALSE,
+  miss = "perAnalysis",
+  desc = FALSE,
+  descPlot = FALSE,
+  norm = FALSE,
+  qq = FALSE,
+  eqv = FALSE,
+  phMethod = "none",
+  phMeanDif = TRUE,
+  phSig = TRUE,
+  phTest = FALSE,
+  phFlag = FALSE,
+  formula
+)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -42,7 +56,7 @@ test of normality}
 residuals}
 
 \item{eqv}{\code{TRUE} or \code{FALSE} (default), perform Levene's test for
-equality of variances}
+homogeneity of variances}
 
 \item{phMethod}{\code{'none'}, \code{'gamesHowell'} or \code{'tukey'},
 which post-hoc tests to provide; \code{'none'} shows no post-hoc tests,
@@ -70,7 +84,7 @@ A results object containing:
   \code{results$anova} \tab \tab \tab \tab \tab a table of the test results \cr
   \code{results$desc} \tab \tab \tab \tab \tab a table containing the group descriptives \cr
   \code{results$assump$norm} \tab \tab \tab \tab \tab a table containing the normality tests \cr
-  \code{results$assump$eqv} \tab \tab \tab \tab \tab a table of equality of variances tests \cr
+  \code{results$assump$eqv} \tab \tab \tab \tab \tab a table of homogeneity of variances tests \cr
   \code{results$plots} \tab \tab \tab \tab \tab an array of groups of plots \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of post-hoc tables \cr
 }

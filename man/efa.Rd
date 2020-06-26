@@ -4,11 +4,24 @@
 \alias{efa}
 \title{Exploratory Factor Analysis}
 \usage{
-efa(data, vars, nFactorMethod = "parallel", nFactors = 1,
-  minEigen = 0, extraction = "minres", rotation = "oblimin",
-  hideLoadings = 0.3, sortLoadings = FALSE, screePlot = FALSE,
-  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE,
-  modelFit = FALSE, kmo = FALSE, bartlett = FALSE)
+efa(
+  data,
+  vars,
+  nFactorMethod = "parallel",
+  nFactors = 1,
+  minEigen = 0,
+  extraction = "minres",
+  rotation = "oblimin",
+  hideLoadings = 0.3,
+  sortLoadings = FALSE,
+  screePlot = FALSE,
+  eigen = FALSE,
+  factorCor = FALSE,
+  factorSummary = FALSE,
+  modelFit = FALSE,
+  kmo = FALSE,
+  bartlett = FALSE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

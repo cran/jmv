@@ -4,12 +4,32 @@
 \alias{contTables}
 \title{Contingency Tables}
 \usage{
-contTables(data, rows, cols, counts = NULL, layers = NULL,
-  chiSq = TRUE, chiSqCorr = FALSE, likeRat = FALSE, fisher = FALSE,
-  contCoef = FALSE, phiCra = FALSE, logOdds = FALSE, odds = FALSE,
-  relRisk = FALSE, ci = TRUE, ciWidth = 95, gamma = FALSE,
-  taub = FALSE, obs = TRUE, exp = FALSE, pcRow = FALSE,
-  pcCol = FALSE, pcTot = FALSE, formula)
+contTables(
+  data,
+  rows,
+  cols,
+  counts = NULL,
+  layers = NULL,
+  chiSq = TRUE,
+  chiSqCorr = FALSE,
+  likeRat = FALSE,
+  fisher = FALSE,
+  contCoef = FALSE,
+  phiCra = FALSE,
+  logOdds = FALSE,
+  odds = FALSE,
+  relRisk = FALSE,
+  ci = TRUE,
+  ciWidth = 95,
+  gamma = FALSE,
+  taub = FALSE,
+  obs = TRUE,
+  exp = FALSE,
+  pcRow = FALSE,
+  pcCol = FALSE,
+  pcTot = FALSE,
+  formula
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

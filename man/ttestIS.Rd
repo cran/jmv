@@ -4,11 +4,30 @@
 \alias{ttestIS}
 \title{Independent Samples T-Test}
 \usage{
-ttestIS(data, vars, group, students = TRUE, bf = FALSE,
-  bfPrior = 0.707, welchs = FALSE, mann = FALSE,
-  hypothesis = "different", norm = FALSE, qq = FALSE, eqv = FALSE,
-  meanDiff = FALSE, effectSize = FALSE, ci = FALSE, ciWidth = 95,
-  desc = FALSE, plots = FALSE, miss = "perAnalysis", formula)
+ttestIS(
+  data,
+  vars,
+  group,
+  students = TRUE,
+  bf = FALSE,
+  bfPrior = 0.707,
+  welchs = FALSE,
+  mann = FALSE,
+  hypothesis = "different",
+  norm = FALSE,
+  qq = FALSE,
+  eqv = FALSE,
+  meanDiff = FALSE,
+  ci = FALSE,
+  ciWidth = 95,
+  effectSize = FALSE,
+  ciES = FALSE,
+  ciWidthES = 95,
+  desc = FALSE,
+  plots = FALSE,
+  miss = "perAnalysis",
+  formula
+)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -45,19 +64,25 @@ tests of normality}
 residuals}
 
 \item{eqv}{\code{TRUE} or \code{FALSE} (default), perform Levene's tests
-for equality of variances}
+for homogeneity of variances}
 
 \item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard errors}
-
-\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide effect
-sizes}
 
 \item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
 intervals}
 
 \item{ciWidth}{a number between 50 and 99.9 (default: 95), the width of
 confidence intervals}
+
+\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide effect
+sizes}
+
+\item{ciES}{\code{TRUE} or \code{FALSE} (default), provide confidence
+intervals for the effect-sizes}
+
+\item{ciWidthES}{a number between 50 and 99.9 (default: 95), the width of
+confidence intervals for the effect sizes}
 
 \item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}
@@ -77,7 +102,7 @@ A results object containing:
 \tabular{llllll}{
   \code{results$ttest} \tab \tab \tab \tab \tab a table containing the t-test results \cr
   \code{results$assum$norm} \tab \tab \tab \tab \tab a table containing the normality tests \cr
-  \code{results$assum$eqv} \tab \tab \tab \tab \tab a table containing the equality of variances tests \cr
+  \code{results$assum$eqv} \tab \tab \tab \tab \tab a table containing the homogeneity of variances tests \cr
   \code{results$desc} \tab \tab \tab \tab \tab a table containing the group descriptives \cr
   \code{results$plots} \tab \tab \tab \tab \tab an array of groups of plots \cr
 }

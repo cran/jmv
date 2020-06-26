@@ -4,11 +4,22 @@
 \alias{pca}
 \title{Principal Component Analysis}
 \usage{
-pca(data, vars, nFactorMethod = "parallel", nFactors = 1,
-  minEigen = 1, rotation = "varimax", hideLoadings = 0.3,
-  sortLoadings = FALSE, screePlot = FALSE, eigen = FALSE,
-  factorCor = FALSE, factorSummary = FALSE, kmo = FALSE,
-  bartlett = FALSE)
+pca(
+  data,
+  vars,
+  nFactorMethod = "parallel",
+  nFactors = 1,
+  minEigen = 1,
+  rotation = "varimax",
+  hideLoadings = 0.3,
+  sortLoadings = FALSE,
+  screePlot = FALSE,
+  eigen = FALSE,
+  factorCor = FALSE,
+  factorSummary = FALSE,
+  kmo = FALSE,
+  bartlett = FALSE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

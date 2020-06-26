@@ -4,10 +4,21 @@
 \alias{propTest2}
 \title{Proportion Test (2 Outcomes)}
 \usage{
-propTest2(data, vars, areCounts = FALSE, testValue = 0.5,
-  hypothesis = "notequal", ci = FALSE, ciWidth = 95, bf = FALSE,
-  priorA = 1, priorB = 1, ciBayes = FALSE, ciBayesWidth = 95,
-  postPlots = FALSE)
+propTest2(
+  data,
+  vars,
+  areCounts = FALSE,
+  testValue = 0.5,
+  hypothesis = "notequal",
+  ci = FALSE,
+  ciWidth = 95,
+  bf = FALSE,
+  priorA = 1,
+  priorB = 1,
+  ciBayes = FALSE,
+  ciBayesWidth = 95,
+  postPlots = FALSE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

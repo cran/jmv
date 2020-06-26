@@ -4,15 +4,41 @@
 \alias{linReg}
 \title{Linear Regression}
 \usage{
-linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
-  refLevels = NULL, intercept = "refLevel", r = TRUE, r2 = TRUE,
-  r2Adj = FALSE, aic = FALSE, bic = FALSE, rmse = FALSE,
-  modelTest = FALSE, anova = FALSE, ci = FALSE, ciWidth = 95,
-  stdEst = FALSE, ciStdEst = FALSE, ciWidthStdEst = 95,
-  coefPlot = FALSE, norm = FALSE, qqPlot = FALSE, resPlots = FALSE,
-  durbin = FALSE, collin = FALSE, cooks = FALSE,
-  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
-  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
+linReg(
+  data,
+  dep,
+  covs = NULL,
+  factors = NULL,
+  blocks = list(list()),
+  refLevels = NULL,
+  intercept = "refLevel",
+  r = TRUE,
+  r2 = TRUE,
+  r2Adj = FALSE,
+  aic = FALSE,
+  bic = FALSE,
+  rmse = FALSE,
+  modelTest = FALSE,
+  anova = FALSE,
+  ci = FALSE,
+  ciWidth = 95,
+  stdEst = FALSE,
+  ciStdEst = FALSE,
+  ciWidthStdEst = 95,
+  coefPlot = FALSE,
+  norm = FALSE,
+  qqPlot = FALSE,
+  resPlots = FALSE,
+  durbin = FALSE,
+  collin = FALSE,
+  cooks = FALSE,
+  emMeans = list(list()),
+  ciEmm = TRUE,
+  ciWidthEmm = 95,
+  emmPlots = TRUE,
+  emmTables = FALSE,
+  emmWeights = TRUE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

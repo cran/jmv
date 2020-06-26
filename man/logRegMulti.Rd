@@ -4,13 +4,31 @@
 \alias{logRegMulti}
 \title{Multinomial Logistic Regression}
 \usage{
-logRegMulti(data, dep, covs = NULL, factors = NULL,
-  blocks = list(list()), refLevels = NULL, modelTest = FALSE,
-  dev = TRUE, aic = TRUE, bic = FALSE, pseudoR2 = list("r2mf"),
-  omni = FALSE, ci = FALSE, ciWidth = 95, OR = FALSE,
-  ciOR = FALSE, ciWidthOR = 95, emMeans = list(list()),
-  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
-  emmTables = FALSE, emmWeights = TRUE)
+logRegMulti(
+  data,
+  dep,
+  covs = NULL,
+  factors = NULL,
+  blocks = list(list()),
+  refLevels = NULL,
+  modelTest = FALSE,
+  dev = TRUE,
+  aic = TRUE,
+  bic = FALSE,
+  pseudoR2 = list("r2mf"),
+  omni = FALSE,
+  ci = FALSE,
+  ciWidth = 95,
+  OR = FALSE,
+  ciOR = FALSE,
+  ciWidthOR = 95,
+  emMeans = list(list()),
+  ciEmm = TRUE,
+  ciWidthEmm = 95,
+  emmPlots = TRUE,
+  emmTables = FALSE,
+  emmWeights = TRUE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

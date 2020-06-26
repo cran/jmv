@@ -4,15 +4,32 @@
 \alias{anovaRM}
 \title{Repeated Measures ANOVA}
 \usage{
-anovaRM(data, rm = list(list(label = "RM Factor 1", levels =
-  list("Level 1", "Level 2"))), rmCells = NULL, bs = NULL,
-  cov = NULL, effectSize = NULL, depLabel = "Dependent",
-  rmTerms = NULL, bsTerms = NULL, ss = "3", spherTests = FALSE,
-  spherCorr = list("none"), leveneTest = FALSE, contrasts = NULL,
-  postHoc = NULL, postHocCorr = list("tukey"),
-  emMeans = list(list()), emmPlots = TRUE, emmTables = FALSE,
-  emmWeights = TRUE, ciWidthEmm = 95, emmPlotData = FALSE,
-  emmPlotError = "ci", groupSumm = FALSE)
+anovaRM(
+  data,
+  rm = list(list(label = "RM Factor 1", levels = list("Level 1", "Level 2"))),
+  rmCells = NULL,
+  bs = NULL,
+  cov = NULL,
+  effectSize = NULL,
+  depLabel = "Dependent",
+  rmTerms = NULL,
+  bsTerms = NULL,
+  ss = "3",
+  spherTests = FALSE,
+  spherCorr = list("none"),
+  leveneTest = FALSE,
+  contrasts = NULL,
+  postHoc = NULL,
+  postHocCorr = list("tukey"),
+  emMeans = list(list()),
+  emmPlots = TRUE,
+  emmTables = FALSE,
+  emmWeights = TRUE,
+  ciWidthEmm = 95,
+  emmPlotData = FALSE,
+  emmPlotError = "ci",
+  groupSumm = FALSE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -55,8 +72,8 @@ tests}
 correction, and the Huynh-Feldt p-value correction for shericity,
 respectively}
 
-\item{leveneTest}{\code{TRUE} or \code{FALSE} (default), test for equality
-of variances (i.e., Levene's test)}
+\item{leveneTest}{\code{TRUE} or \code{FALSE} (default), test for
+homogeneity of variances (i.e., Levene's test)}
 
 \item{contrasts}{in development}
 

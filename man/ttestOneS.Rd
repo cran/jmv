@@ -4,11 +4,28 @@
 \alias{ttestOneS}
 \title{One Sample T-Test}
 \usage{
-ttestOneS(data, vars, students = TRUE, bf = FALSE, bfPrior = 0.707,
-  wilcoxon = FALSE, testValue = 0, hypothesis = "dt", norm = FALSE,
-  qq = FALSE, meanDiff = FALSE, effectSize = FALSE, ci = FALSE,
-  ciWidth = 95, desc = FALSE, plots = FALSE, miss = "perAnalysis",
-  mann = FALSE)
+ttestOneS(
+  data,
+  vars,
+  students = TRUE,
+  bf = FALSE,
+  bfPrior = 0.707,
+  wilcoxon = FALSE,
+  testValue = 0,
+  hypothesis = "dt",
+  norm = FALSE,
+  qq = FALSE,
+  meanDiff = FALSE,
+  ci = FALSE,
+  ciWidth = 95,
+  effectSize = FALSE,
+  ciES = FALSE,
+  ciWidthES = 95,
+  desc = FALSE,
+  plots = FALSE,
+  miss = "perAnalysis",
+  mann = FALSE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -42,14 +59,20 @@ residuals}
 \item{meanDiff}{\code{TRUE} or \code{FALSE} (default), provide means and
 standard deviations}
 
-\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide Cohen's d
-effect sizes}
-
 \item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
 intervals for the mean difference}
 
 \item{ciWidth}{a number between 50 and 99.9 (default: 95), the width of
 confidence intervals}
+
+\item{effectSize}{\code{TRUE} or \code{FALSE} (default), provide Cohen's d
+effect sizes}
+
+\item{ciES}{\code{TRUE} or \code{FALSE} (default), provide confidence
+intervals for the effect-sizes}
+
+\item{ciWidthES}{a number between 50 and 99.9 (default: 95), the width of
+confidence intervals for the effect sizes}
 
 \item{desc}{\code{TRUE} or \code{FALSE} (default), provide descriptive
 statistics}

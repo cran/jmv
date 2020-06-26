@@ -4,9 +4,16 @@
 \alias{mancova}
 \title{MANCOVA}
 \usage{
-mancova(data, deps, factors = NULL, covs = NULL,
-  multivar = list("pillai", "wilks", "hotel", "roy"), boxM = FALSE,
-  shapiro = FALSE, qqPlot = FALSE)
+mancova(
+  data,
+  deps,
+  factors = NULL,
+  covs = NULL,
+  multivar = list("pillai", "wilks", "hotel", "roy"),
+  boxM = FALSE,
+  shapiro = FALSE,
+  qqPlot = FALSE
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

@@ -4,8 +4,14 @@
 \alias{anovaRMNP}
 \title{Repeated Measures ANOVA (Non-parametric)}
 \usage{
-anovaRMNP(data, measures, pairs = FALSE, desc = FALSE, plots = FALSE,
-  plotType = "means")
+anovaRMNP(
+  data,
+  measures,
+  pairs = FALSE,
+  desc = FALSE,
+  plots = FALSE,
+  plotType = "means"
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

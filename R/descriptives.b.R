@@ -6,14 +6,14 @@ descriptivesClass <- R6::R6Class(
         #### Member variables ----
         colArgs = list(
             name = c("n", "missing", "mean", "se", "median", "mode", "sum", "sd", "variance", "range",
-                     "min", "max", "skew", "seSkew", "kurt", "seKurt", "sw", "quart1", "quart2", "quart3"),
+                     "min", "max", "skew", "seSkew", "kurt", "seKurt", "sww", "sw", "quart1", "quart2", "quart3"),
             title = c("N", "Missing", "Mean", "Std. error mean", "Median", "Mode", "Sum", "Standard deviation", "Variance",
                       "Range", "Minimum", "Maximum", "Skewness", "Std. error skewness",
-                      "Kurtosis", "Std. error kurtosis", "Shapiro-Wilk p", "25th percentile", "50th percentile", "75th percentile"),
-            type = c(rep("integer", 2), rep("number", 18)),
-            format = c(rep("", 16), "zto,pvalue", rep("", 3)),
+                      "Kurtosis", "Std. error kurtosis", "Shapiro-Wilk W", "Shapiro-Wilk p", "25th percentile", "50th percentile", "75th percentile"),
+            type = c(rep("integer", 2), rep("number", 19)),
+            format = c(rep("", 17), "zto,pvalue", rep("", 3)),
             visible = c("(n)", "(missing)", "(mean)", "(se)", "(median)", "(mode)", "(sum)", "(sd)", "(variance)", "(range)",
-                        "(min)", "(max)", "(skew)", "(skew)", "(kurt)", "(kurt)", "(sw)", "(quart)", "(quart)", "(quart)")
+                        "(min)", "(max)", "(skew)", "(skew)", "(kurt)", "(kurt)", "(sw)", "(sw)", "(quart)", "(quart)", "(quart)")
         ),
         levels = NULL,
 
@@ -723,14 +723,6 @@ descriptivesClass <- R6::R6Class(
             labels <- image$state$labels
             splitBy <- self$options$splitBy
 
-            fill <- theme$fill[2]
-            color <- theme$color[1]
-            if (length(splitBy) == 2) {
-                formula <- as.formula(paste(". ~", names$s2))
-            } else if (length(splitBy) > 2) {
-                formula <- as.formula(paste(names$s3, "~", names$s2))
-            }
-
             if (self$options$hist && self$options$dens)
                 alpha <- 0.4
             else
@@ -738,8 +730,12 @@ descriptivesClass <- R6::R6Class(
 
             themeSpec <- NULL
             nBins <- 18
+            nSplits <- length(splitBy)
 
-            if (is.null(splitBy)) {
+            if (nSplits == 0) {
+
+                fill <- theme$fill[2]
+                color <- theme$color[1]
 
                 min <- min(data[names$x])
                 max <- max(data[names$x])
@@ -765,11 +761,11 @@ descriptivesClass <- R6::R6Class(
                 themeSpec <- theme(axis.text.y=element_blank(),
                                    axis.ticks.y=element_blank())
 
-            } else {
+            } else {  # if (nSplits > 0) {
 
-                data$s1 <- factor(data$s1, rev(levels(data$s1)))
+                data$s1rev <- factor(data$s1, rev(levels(data$s1)))
 
-                plot <- ggplot(data=data, aes_string(x=names$x, y=names$s1, fill=names$s1)) +
+                plot <- ggplot(data=data, aes_string(x='x', y='s1rev', fill='s1')) +
                     labs(x=labels$x, y=labels$s1) +
                     scale_y_discrete(expand = c(0.05, 0)) +
                     scale_x_continuous(expand = c(0.01, 0))
@@ -780,11 +776,14 @@ descriptivesClass <- R6::R6Class(
                 if (self$options$dens)
                     plot <- plot + ggridges::geom_density_ridges(scale=0.9, alpha=alpha)
 
+                if (nSplits == 2) {
+                    plot <- plot + facet_grid(cols=vars(s2))
+                } else if (nSplits > 2) {
+                    plot <- plot + facet_grid(cols=vars(s2), rows=vars(s3))
+                }
+
                 themeSpec <- theme(legend.position = 'none')
             }
-
-            if (length(splitBy) > 1)
-                plot <- plot + facet_grid(formula)
 
             plot <- plot + ggtheme + themeSpec
 
@@ -895,9 +894,14 @@ descriptivesClass <- R6::R6Class(
                                                        stackratio=0.9, dotsize=0.7)
                 }
 
-                if (self$options$box)
+                if (self$options$box) {
+                    # hide outliers it plotting the data
+                    outlier.shape <- `if`(self$options$dot, NA, 19)
+
                     plot <- plot + ggplot2::geom_boxplot(color=theme$color[1], width=0.3, alpha=0.9,
-                                                   fill=theme$fill[2], outlier.colour=theme$color[1])
+                                                   fill=theme$fill[2], outlier.colour=theme$color[1],
+                                                   outlier.shape=outlier.shape)
+                }
 
                 if (is.null(splitBy))
                     themeSpec <- theme(axis.text.x=element_blank(),
@@ -1002,10 +1006,12 @@ descriptivesClass <- R6::R6Class(
                 skew <- private$.skewness(column)
                 kurt <- private$.kurtosis(column)
                 norm <- jmvcore::tryNaN(shapiro.test(column)$p.value)
+                normw <- jmvcore::tryNaN(shapiro.test(column)$statistic)
                 stats[['skew']] <- skew$skew
                 stats[['seSkew']] <- skew$seSkew
                 stats[['kurt']] <- kurt$kurt
                 stats[['seKurt']] <- kurt$seKurt
+                stats[['sww']] <- normw
                 stats[['sw']] <- norm
 
                 stats[['quart1']] <- as.numeric(quantile(column, c(.25)))

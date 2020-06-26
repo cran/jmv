@@ -4,10 +4,22 @@
 \alias{corrMatrix}
 \title{Correlation Matrix}
 \usage{
-corrMatrix(data, vars, pearson = TRUE, spearman = FALSE,
-  kendall = FALSE, sig = TRUE, flag = FALSE, n = FALSE,
-  ci = FALSE, ciWidth = 95, plots = FALSE, plotDens = FALSE,
-  plotStats = FALSE, hypothesis = "corr")
+corrMatrix(
+  data,
+  vars,
+  pearson = TRUE,
+  spearman = FALSE,
+  kendall = FALSE,
+  sig = TRUE,
+  flag = FALSE,
+  n = FALSE,
+  ci = FALSE,
+  ciWidth = 95,
+  plots = FALSE,
+  plotDens = FALSE,
+  plotStats = FALSE,
+  hypothesis = "corr"
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

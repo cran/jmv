@@ -4,14 +4,40 @@
 \alias{descriptives}
 \title{Descriptives}
 \usage{
-descriptives(data, vars, splitBy = NULL, freq = FALSE, hist = FALSE,
-  dens = FALSE, bar = FALSE, barCounts = FALSE, box = FALSE,
-  violin = FALSE, dot = FALSE, dotType = "jitter", qq = FALSE,
-  n = TRUE, missing = TRUE, mean = TRUE, median = TRUE,
-  mode = FALSE, sum = FALSE, sd = FALSE, variance = FALSE,
-  range = FALSE, min = TRUE, max = TRUE, se = FALSE,
-  skew = FALSE, kurt = FALSE, sw = FALSE, quart = FALSE,
-  pcEqGr = FALSE, pcNEqGr = 4, formula)
+descriptives(
+  data,
+  vars,
+  splitBy = NULL,
+  freq = FALSE,
+  hist = FALSE,
+  dens = FALSE,
+  bar = FALSE,
+  barCounts = FALSE,
+  box = FALSE,
+  violin = FALSE,
+  dot = FALSE,
+  dotType = "jitter",
+  qq = FALSE,
+  n = TRUE,
+  missing = TRUE,
+  mean = TRUE,
+  median = TRUE,
+  mode = FALSE,
+  sum = FALSE,
+  sd = FALSE,
+  variance = FALSE,
+  range = FALSE,
+  min = TRUE,
+  max = TRUE,
+  se = FALSE,
+  skew = FALSE,
+  kurt = FALSE,
+  sw = FALSE,
+  quart = FALSE,
+  pcEqGr = FALSE,
+  pcNEqGr = 4,
+  formula
+)
 }
 \arguments{
 \item{data}{the data as a data frame}

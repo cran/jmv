@@ -4,13 +4,31 @@
 \alias{ancova}
 \title{ANCOVA}
 \usage{
-ancova(data, dep, factors = NULL, covs = NULL, effectSize = NULL,
-  modelTerms = NULL, ss = "3", homo = FALSE, norm = FALSE,
-  qq = FALSE, contrasts = NULL, postHoc = NULL,
-  postHocCorr = list("tukey"), postHocES = list(),
-  emMeans = list(list()), emmPlots = TRUE, emmPlotData = FALSE,
-  emmPlotError = "ci", emmTables = FALSE, emmWeights = TRUE,
-  ciWidthEmm = 95, formula)
+ancova(
+  data,
+  dep,
+  factors = NULL,
+  covs = NULL,
+  effectSize = NULL,
+  modelTest = FALSE,
+  modelTerms = NULL,
+  ss = "3",
+  homo = FALSE,
+  norm = FALSE,
+  qq = FALSE,
+  contrasts = NULL,
+  postHoc = NULL,
+  postHocCorr = list("tukey"),
+  postHocES = list(),
+  emMeans = list(list()),
+  emmPlots = TRUE,
+  emmPlotData = FALSE,
+  emmPlotError = "ci",
+  emmTables = FALSE,
+  emmWeights = TRUE,
+  ciWidthEmm = 95,
+  formula
+)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -27,6 +45,9 @@ formula, see examples)}
 \item{effectSize}{one or more of \code{'eta'}, \code{'partEta'}, or
 \code{'omega'}; use eta², partial eta², and omega² effect sizes,
 respectively}
+
+\item{modelTest}{\code{TRUE} or \code{FALSE} (default); perform an overall
+model test}
 
 \item{modelTerms}{a formula describing the terms to go into the model (not
 necessary when providing a formula, see examples)}

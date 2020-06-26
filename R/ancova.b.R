@@ -14,6 +14,8 @@ ancovaClass <- R6::R6Class(
         #### Init + run functions ----
         .init=function() {
 
+            private$.initMainTable()
+
             factors <- self$options$factors
             modelTerms <- private$.modelTerms()
 
@@ -22,7 +24,6 @@ ancovaClass <- R6::R6Class(
 
             private$.data <- private$.cleanData()
 
-            private$.initMainTable()
             private$.initContrastTables()
             private$.initPostHoc()
             private$.initEmm()
@@ -143,19 +144,29 @@ ancovaClass <- R6::R6Class(
 
             table    <- self$results$main
 
+            if (self$options$modelTest) {
+                table$addRow(rowKey='.', list(name='Overall model'))
+                table$addFormat(rowKey='.', col=1, format=Cell.BEGIN_END_GROUP)
+            }
+
             modelTerms <- private$.modelTerms()
             if (length(modelTerms) > 0) {
-                for (term in modelTerms)
+                for (i in seq_along(modelTerms)) {
+                    term <- modelTerms[[i]]
                     table$addRow(rowKey=term, list(name=stringifyTerm(term)))
-                table$addFormat(col=1, rowNo=1,                  format=Cell.BEGIN_GROUP)
-                table$addFormat(col=1, rowNo=length(modelTerms), format=Cell.END_GROUP)
+                    if (i == 1)
+                        table$addFormat(rowKey=term, col=1, format=Cell.BEGIN_GROUP)
+                    else if (i == length(modelTerms))
+                        table$addFormat(rowKey=term, col=1, format=Cell.END_GROUP)
+                }
+
             } else {
-                table$addRow(rowKey='.', list(name='.'))
-                table$addFormat(col=1, rowKey='.', format=Cell.BEGIN_END_GROUP)
+                table$addRow(rowKey='...', list(name='...'))
+                table$addFormat(rowKey='...', col=1, format=Cell.BEGIN_END_GROUP)
             }
 
             table$addRow(rowKey='', list(name='Residuals'))
-            table$addFormat(col=1, rowKey='', format=Cell.BEGIN_END_GROUP)
+            table$addFormat(rowKey='', col=1, format=Cell.BEGIN_END_GROUP)
 
             if (self$options$ss == '1') {
                 table$setRefs('R')
@@ -337,16 +348,19 @@ ancovaClass <- R6::R6Class(
             errDF <- r[errIndex,'Df']
             errMS <- errSS / errDF
             totalSS <- sum(r[['Sum Sq']], na.rm=TRUE)
+            modelSS <- totalSS - errSS
 
             decomposed <- decomposeTerms(rowNames)
 
             for (rowKey in table$rowKeys) {
                 if (identical(rowKey, ''))
                     index <- rowCount
+                else if (identical(rowKey, '.'))
+                    index <- 0
                 else
                     index <- matchSet(rowKey, decomposed)
 
-                if (index != -1) {
+                if (index > 0) {
                     ss <- r[index, 'Sum Sq']
                     df <- r[index, 'Df']
                     ms <- ss / df
@@ -371,6 +385,20 @@ ancovaClass <- R6::R6Class(
                         F <- ''
                     if ( ! is.finite(p))
                         p <- ''
+                } else if (index == 0) {
+
+                    summ <- summary.lm(private$.model)
+                    fstat <- summ$fstatistic
+
+                    ss <- modelSS
+                    df <- unname(fstat[2])
+                    ms <- modelSS / df
+                    F  <- unname(fstat[1])
+                    p <- stats::pf(fstat[1], fstat[2], fstat[3], lower.tail=FALSE)
+                    e <- ''
+                    ep <- ''
+                    w <- ''
+
                 } else {
 
                     ss <- 0
@@ -411,6 +439,7 @@ ancovaClass <- R6::R6Class(
 
                     # table$setStatus('running')
 
+                    emmeans::emm_options(sep = ",", parens = "a^")
                     referenceGrid <- emmeans::emmeans(private$.model, formula)
                     none <- summary(pairs(referenceGrid, adjust='none'))
                     tukey <- summary(pairs(referenceGrid, adjust='tukey'))
@@ -459,7 +488,7 @@ ancovaClass <- R6::R6Class(
                         row[['pholm']] <- holm[index,'p.value']
 
                         n <- nrow(private$.data)
-                        row[['d']] <- abs(row[['md']] / (n * sqrt(row[['se']])))
+                        row[['d']] <- abs(row[['md']] / (sqrt(n) * row[['se']]))
 
                         table$setRow(rowNo=i, values=row)
 
@@ -512,20 +541,23 @@ ancovaClass <- R6::R6Class(
             if ( ! self$options$homo)
                 return()
 
-            dep <- self$options$dep
+            data[[".RES"]] = abs(private$.model$residuals)
+            modelTerms <- private$.modelTerms()
             factors <- self$options$factors
-            rhs <- paste0('`', factors, '`', collapse=':')
-            formula <- as.formula(paste0('`', dep, '`', '~', rhs))
 
-            result <- car::leveneTest(formula, data, center="mean")
+            rhs <- paste0('`', factors, '`', collapse=':')
+            formula <- as.formula(paste0('.RES ~', rhs))
+
+            model <- stats::lm(formula, data)
+            summary <- stats::anova(model)
 
             table <- self$results$get('assump')$get('homo')
 
             table$setRow(rowNo=1, values=list(
-                F=result[1,'F value'],
-                df1=result[1,'Df'],
-                df2=result[2,'Df'],
-                p=result[1,'Pr(>F)']))
+                F=summary$`F value`[1],
+                df1=summary$Df[1],
+                df2=summary$Df[2],
+                p=summary$`Pr(>F)`[1]))
         },
         .populateNormality = function() {
             if ( ! self$options$norm)
@@ -625,6 +657,8 @@ ancovaClass <- R6::R6Class(
                         weights <- 'cells'
 
                     suppressMessages({
+                        emmeans::emm_options(sep = ",", parens = "a^")
+                        
                         mm <- try(
                             emmeans::emmeans(model, formula, options=list(level=self$options$ciWidthEmm / 100), weights = weights),
                             silent = TRUE
@@ -680,7 +714,7 @@ ancovaClass <- R6::R6Class(
             p <- ggplot(data=emm, aes_string(x=names$x, y=names$y, color=names$lines, fill=names$lines, group=names$lines), inherit.aes = FALSE)
 
             if (self$options$emmPlotData)
-                p <- p + geom_point(data=data, aes_string(y=labels$y), alpha=0.3, position=jitterdodge)
+                p <- p + geom_point(data=data, aes(y=!!data[[labels$y]]), alpha=0.3, position=jitterdodge)
 
             p <- p + geom_line(size=.8, position=dodge)
 

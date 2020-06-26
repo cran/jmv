@@ -4,10 +4,21 @@
 \alias{reliability}
 \title{Reliability Analysis}
 \usage{
-reliability(data, vars, alphaScale = TRUE, omegaScale = FALSE,
-  meanScale = FALSE, sdScale = FALSE, corPlot = FALSE,
-  alphaItems = FALSE, omegaItems = FALSE, meanItems = FALSE,
-  sdItems = FALSE, itemRestCor = FALSE, revItems = NULL)
+reliability(
+  data,
+  vars,
+  alphaScale = TRUE,
+  omegaScale = FALSE,
+  meanScale = FALSE,
+  sdScale = FALSE,
+  corPlot = FALSE,
+  alphaItems = FALSE,
+  omegaItems = FALSE,
+  meanItems = FALSE,
+  sdItems = FALSE,
+  itemRestCor = FALSE,
+  revItems = NULL
+)
 }
 \arguments{
 \item{data}{the data as a data frame}
