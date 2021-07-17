@@ -4,31 +4,13 @@
 \alias{ancova}
 \title{ANCOVA}
 \usage{
-ancova(
-  data,
-  dep,
-  factors = NULL,
-  covs = NULL,
-  effectSize = NULL,
-  modelTest = FALSE,
-  modelTerms = NULL,
-  ss = "3",
-  homo = FALSE,
-  norm = FALSE,
-  qq = FALSE,
-  contrasts = NULL,
-  postHoc = NULL,
-  postHocCorr = list("tukey"),
-  postHocES = list(),
-  emMeans = list(list()),
-  emmPlots = TRUE,
-  emmPlotData = FALSE,
-  emmPlotError = "ci",
-  emmTables = FALSE,
-  emmWeights = TRUE,
-  ciWidthEmm = 95,
-  formula
-)
+ancova(data, dep, factors = NULL, covs = NULL, effectSize = NULL,
+  modelTest = FALSE, modelTerms = NULL, ss = "3", homo = FALSE,
+  norm = FALSE, qq = FALSE, contrasts = NULL, postHoc = NULL,
+  postHocCorr = list("tukey"), postHocES = list(),
+  postHocEsCi = FALSE, postHocEsCiWidth = 95, emMeans = list(list()),
+  emmPlots = TRUE, emmPlotData = FALSE, emmPlotError = "ci",
+  emmTables = FALSE, emmWeights = TRUE, ciWidthEmm = 95, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -78,6 +60,12 @@ Scheffe, Bonferroni, and Holm Post Hoc corrections respectively}
 \item{postHocES}{a possible value of \code{'d'}; provide cohen's d measure
 of effect size for the post-hoc tests}
 
+\item{postHocEsCi}{\code{TRUE} or \code{FALSE} (default), provide
+confidence intervals for the post-hoc effect sizes}
+
+\item{postHocEsCiWidth}{a number between 50 and 99.9 (default: 95), the
+width of confidence intervals for the post-hoc effect sizes}
+
 \item{emMeans}{a formula containing the terms to estimate marginal means
 for (see the examples)}
 
@@ -113,6 +101,7 @@ A results object containing:
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of contrasts tables \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of post-hoc tables \cr
   \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
+  \code{results$residsOV} \tab \tab \tab \tab \tab an output \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

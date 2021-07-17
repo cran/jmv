@@ -75,3 +75,112 @@ test_that('linreg works', {
     expect_equal(20.663, emmeans$emmean[1], tolerance = 1e-3)
 
 })
+
+test_that('cooks summary in linreg works', {
+
+    set.seed(100)
+    intercept <- rnorm(100) + 1
+    a <- rnorm(100) * 2.5
+    b <- rnorm(100) * .5
+    c <- rnorm(100) * .1
+
+    y <- intercept + a + b + c
+
+    data <- list()
+    data[["dep"]] <- y
+    data[["var1"]] <- a
+    data[["var 2"]] <- b
+    data[["var3"]] <- c
+
+    attr(data, 'row.names') <- seq_len(length(data[[1]]))
+    attr(data, 'class') <- 'data.frame'
+
+    dep <- "dep"
+    covs <- c("var1", "var 2", "var3")
+    blocks = list(list("var1", "var 2", "var3"))
+
+    linreg <- jmv::linReg(
+        data,
+        dep=!!dep,
+        covs=!!covs,
+        blocks=blocks,
+        cooks=TRUE
+    )
+
+    cooksTable <- linreg$models[[1]]$dataSummary$cooks$asDF
+
+    expect_equal(0.0109, cooksTable$mean, tolerance = 1e-4)
+    expect_equal(0.0031, cooksTable$median, tolerance = 1e-4)
+    expect_equal(0.0188, cooksTable$sd, tolerance = 1e-4)
+    expect_equal(0.0000, cooksTable$min, tolerance = 1e-4)
+    expect_equal(0.0966, cooksTable$max, tolerance = 1e-4)
+})
+
+test_that('emmeans table in linreg works with covariate with only two unique values', {
+
+    set.seed(100)
+    data <- data.frame(
+        dep = rnorm(100),
+        var1 = rnorm(100),
+        var2 = sample(0:1, 100, replace = TRUE)
+    )
+
+    dep <- "dep"
+    covs <- c("var1", "var2")
+    blocks = list(list("var1", "var2"))
+
+    linreg <- jmv::linReg(
+        data,
+        dep=!!dep,
+        covs=!!covs,
+        blocks=blocks,
+        emMeans = ~var1:var2,
+        emmTables = TRUE
+    )
+
+    emmeansTable <- linreg$models[[1]]$emm[[1]]$emmTable$asDF
+
+    expect_equal(0.0077, emmeansTable$emmean[1], tolerance = 1e-4)
+    expect_equal(0.1441, emmeansTable$se[2], tolerance = 1e-4)
+    expect_equal(-0.1564, emmeansTable$lower[4], tolerance = 1e-4)
+    expect_equal(0.1623, emmeansTable$upper[6], tolerance = 1e-4)
+    expect_equal(0.2515, emmeansTable$emmean[7], tolerance = 1e-4)
+    expect_equal(0.1821, emmeansTable$se[9], tolerance = 1e-4)
+})
+
+test_that("analysis shows warning note on singular fit", {
+
+    suppressWarnings(RNGversion("3.5.0"))
+    set.seed(1337)
+
+    N <- 20
+    data <- data.frame(
+        x1 = sample(letters[1:4], N, replace = TRUE),
+        x2 = sample(letters[1:4], N, replace = TRUE),
+        y = rnorm(N)
+    )
+
+    dep <- "y"
+    factors <- c("x1", "x2")
+    blocks = list(list("x1", "x2", c("x1", "x2")))
+    refLevels = list(list(var="x1", ref="a"),
+                     list(var="x2", ref="a"))
+
+    r <- jmv::linReg(
+        data,
+        dep=!!dep,
+        factors=!!factors,
+        blocks=blocks,
+        refLevels=refLevels,
+        anova = TRUE,
+        collin = TRUE
+    )
+
+    noteAnova <- r$models[[1]]$anova$notes$alias$note
+    noteCoef <- r$models[[1]]$coef$notes$alias$note
+    noteVIF <- r$models[[1]]$assump$collin$notes$alias$note
+
+    expect_equal(noteAnova, "Linear model contains aliased coefficients (singular fit)")
+    expect_equal(noteCoef, "Linear model contains aliased coefficients (singular fit)")
+    expect_equal(noteVIF, "Linear model contains aliased coefficients (singular fit)")
+})

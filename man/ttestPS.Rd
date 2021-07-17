@@ -4,26 +4,11 @@
 \alias{ttestPS}
 \title{Paired Samples T-Test}
 \usage{
-ttestPS(
-  data,
-  pairs,
-  students = TRUE,
-  bf = FALSE,
-  bfPrior = 0.707,
-  wilcoxon = FALSE,
-  hypothesis = "different",
-  norm = FALSE,
-  qq = FALSE,
-  meanDiff = FALSE,
-  ci = FALSE,
-  ciWidth = 95,
-  effectSize = FALSE,
-  ciES = FALSE,
-  ciWidthES = 95,
-  desc = FALSE,
-  plots = FALSE,
-  miss = "perAnalysis"
-)
+ttestPS(data, pairs, students = TRUE, bf = FALSE, bfPrior = 0.707,
+  wilcoxon = FALSE, hypothesis = "different", norm = FALSE,
+  qq = FALSE, meanDiff = FALSE, ci = FALSE, ciWidth = 95,
+  effectSize = FALSE, ciES = FALSE, ciWidthES = 95, desc = FALSE,
+  plots = FALSE, miss = "perAnalysis")
 }
 \arguments{
 \item{data}{the data as a data frame}

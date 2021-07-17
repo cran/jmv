@@ -4,22 +4,11 @@
 \alias{pca}
 \title{Principal Component Analysis}
 \usage{
-pca(
-  data,
-  vars,
-  nFactorMethod = "parallel",
-  nFactors = 1,
-  minEigen = 1,
-  rotation = "varimax",
-  hideLoadings = 0.3,
-  sortLoadings = FALSE,
-  screePlot = FALSE,
-  eigen = FALSE,
-  factorCor = FALSE,
-  factorSummary = FALSE,
-  kmo = FALSE,
-  bartlett = FALSE
-)
+pca(data, vars, nFactorMethod = "parallel", nFactors = 1,
+  minEigen = 1, rotation = "varimax", hideLoadings = 0.3,
+  sortLoadings = FALSE, screePlot = FALSE, eigen = FALSE,
+  factorCor = FALSE, factorSummary = FALSE, kmo = FALSE,
+  bartlett = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -49,7 +38,7 @@ loadings by size}
 
 \item{eigen}{\code{TRUE} or \code{FALSE} (default), show eigenvalue table}
 
-\item{factorCor}{\code{TRUE} or \code{FALSE} (default), show factor
+\item{factorCor}{\code{TRUE} or \code{FALSE} (default), show inter-factor
 correlations}
 
 \item{factorSummary}{\code{TRUE} or \code{FALSE} (default), show factor
@@ -72,6 +61,7 @@ A results object containing:
   \code{results$assump$kmo} \tab \tab \tab \tab \tab a table \cr
   \code{results$eigen$initEigen} \tab \tab \tab \tab \tab a table \cr
   \code{results$eigen$screePlot} \tab \tab \tab \tab \tab an image \cr
+  \code{results$factorScoresOV} \tab \tab \tab \tab \tab an output \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

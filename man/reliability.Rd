@@ -4,21 +4,10 @@
 \alias{reliability}
 \title{Reliability Analysis}
 \usage{
-reliability(
-  data,
-  vars,
-  alphaScale = TRUE,
-  omegaScale = FALSE,
-  meanScale = FALSE,
-  sdScale = FALSE,
-  corPlot = FALSE,
-  alphaItems = FALSE,
-  omegaItems = FALSE,
-  meanItems = FALSE,
-  sdItems = FALSE,
-  itemRestCor = FALSE,
-  revItems = NULL
-)
+reliability(data, vars, alphaScale = TRUE, omegaScale = FALSE,
+  meanScale = FALSE, sdScale = FALSE, corPlot = FALSE,
+  alphaItems = FALSE, omegaItems = FALSE, meanItems = FALSE,
+  sdItems = FALSE, itemRestCor = FALSE, revItems = NULL)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -63,6 +52,8 @@ A results object containing:
   \code{results$scale} \tab \tab \tab \tab \tab a table \cr
   \code{results$items} \tab \tab \tab \tab \tab a table \cr
   \code{results$corPlot} \tab \tab \tab \tab \tab an image \cr
+  \code{results$meanScoreOV} \tab \tab \tab \tab \tab an output \cr
+  \code{results$sumScoreOV} \tab \tab \tab \tab \tab an output \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

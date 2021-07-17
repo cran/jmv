@@ -4,40 +4,16 @@
 \alias{descriptives}
 \title{Descriptives}
 \usage{
-descriptives(
-  data,
-  vars,
-  splitBy = NULL,
-  freq = FALSE,
-  hist = FALSE,
-  dens = FALSE,
-  bar = FALSE,
-  barCounts = FALSE,
-  box = FALSE,
-  violin = FALSE,
-  dot = FALSE,
-  dotType = "jitter",
-  qq = FALSE,
-  n = TRUE,
-  missing = TRUE,
-  mean = TRUE,
-  median = TRUE,
-  mode = FALSE,
-  sum = FALSE,
-  sd = FALSE,
-  variance = FALSE,
-  range = FALSE,
-  min = TRUE,
-  max = TRUE,
-  se = FALSE,
-  skew = FALSE,
-  kurt = FALSE,
-  sw = FALSE,
-  quart = FALSE,
-  pcEqGr = FALSE,
-  pcNEqGr = 4,
-  formula
-)
+descriptives(data, vars, splitBy = NULL, freq = FALSE,
+  desc = "columns", hist = FALSE, dens = FALSE, bar = FALSE,
+  barCounts = FALSE, box = FALSE, violin = FALSE, dot = FALSE,
+  dotType = "jitter", boxMean = FALSE, qq = FALSE, n = TRUE,
+  missing = TRUE, mean = TRUE, median = TRUE, mode = FALSE,
+  sum = FALSE, sd = TRUE, variance = FALSE, range = FALSE,
+  min = TRUE, max = TRUE, se = FALSE, ci = FALSE, ciWidth = 95,
+  iqr = FALSE, skew = FALSE, kurt = FALSE, sw = FALSE,
+  pcEqGr = FALSE, pcNEqGr = 4, pc = FALSE, pcValues = "25,50,75",
+  formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -50,6 +26,9 @@ descriptives(
 
 \item{freq}{\code{TRUE} or \code{FALSE} (default), provide frequency tables
 (nominal, ordinal variables only)}
+
+\item{desc}{\code{'rows'} or \code{'columns'} (default), display the
+variables across the rows or across the columns (default)}
 
 \item{hist}{\code{TRUE} or \code{FALSE} (default), provide histograms
 (continuous variables only)}
@@ -74,6 +53,8 @@ bar plots}
 
 \item{dotType}{.}
 
+\item{boxMean}{\code{TRUE} or \code{FALSE} (default), add mean to box plot}
+
 \item{qq}{\code{TRUE} or \code{FALSE} (default), provide Q-Q plots
 (continuous variables only)}
 
@@ -90,7 +71,7 @@ missing values}
 
 \item{sum}{\code{TRUE} or \code{FALSE} (default), provide the sum}
 
-\item{sd}{\code{TRUE} or \code{FALSE} (default), provide the standard
+\item{sd}{\code{TRUE} (default) or \code{FALSE}, provide the standard
 deviation}
 
 \item{variance}{\code{TRUE} or \code{FALSE} (default), provide the variance}
@@ -103,6 +84,15 @@ deviation}
 
 \item{se}{\code{TRUE} or \code{FALSE} (default), provide the standard error}
 
+\item{ci}{\code{TRUE} or \code{FALSE} (default), provide confidence
+intervals for the mean}
+
+\item{ciWidth}{a number between 50 and 99.9 (default: 95), the width of
+confidence intervals}
+
+\item{iqr}{\code{TRUE} or \code{FALSE} (default), provide the interquartile
+range}
+
 \item{skew}{\code{TRUE} or \code{FALSE} (default), provide the skewness}
 
 \item{kurt}{\code{TRUE} or \code{FALSE} (default), provide the kurtosis}
@@ -110,12 +100,15 @@ deviation}
 \item{sw}{\code{TRUE} or \code{FALSE} (default), provide Shapiro-Wilk
 p-value}
 
-\item{quart}{\code{TRUE} or \code{FALSE} (default), provide quartiles}
-
 \item{pcEqGr}{\code{TRUE} or \code{FALSE} (default), provide quantiles}
 
 \item{pcNEqGr}{an integer (default: 4) specifying the number of equal
 groups}
+
+\item{pc}{\code{TRUE} or \code{FALSE} (default), provide percentiles}
+
+\item{pcValues}{a comma-sepated list (default: 25,50,75) specifying the
+percentiles}
 
 \item{formula}{(optional) the formula to use, see the examples}
 }
@@ -123,6 +116,7 @@ groups}
 A results object containing:
 \tabular{llllll}{
   \code{results$descriptives} \tab \tab \tab \tab \tab a table of the descriptive statistics \cr
+  \code{results$descriptivesT} \tab \tab \tab \tab \tab a table of the descriptive statistics \cr
   \code{results$frequencies} \tab \tab \tab \tab \tab an array of frequency tables \cr
   \code{results$plots} \tab \tab \tab \tab \tab an array of descriptive plots \cr
 }

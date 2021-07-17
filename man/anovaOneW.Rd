@@ -4,25 +4,11 @@
 \alias{anovaOneW}
 \title{One-Way ANOVA}
 \usage{
-anovaOneW(
-  data,
-  deps,
-  group,
-  welchs = TRUE,
-  fishers = FALSE,
-  miss = "perAnalysis",
-  desc = FALSE,
-  descPlot = FALSE,
-  norm = FALSE,
-  qq = FALSE,
-  eqv = FALSE,
-  phMethod = "none",
-  phMeanDif = TRUE,
-  phSig = TRUE,
-  phTest = FALSE,
-  phFlag = FALSE,
-  formula
-)
+anovaOneW(data, deps, group, welchs = TRUE, fishers = FALSE,
+  miss = "perAnalysis", desc = FALSE, descPlot = FALSE,
+  norm = FALSE, qq = FALSE, eqv = FALSE, phMethod = "none",
+  phMeanDif = TRUE, phSig = TRUE, phTest = FALSE, phFlag = FALSE,
+  formula)
 }
 \arguments{
 \item{data}{the data as a data frame}

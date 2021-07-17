@@ -4,30 +4,12 @@
 \alias{ttestIS}
 \title{Independent Samples T-Test}
 \usage{
-ttestIS(
-  data,
-  vars,
-  group,
-  students = TRUE,
-  bf = FALSE,
-  bfPrior = 0.707,
-  welchs = FALSE,
-  mann = FALSE,
-  hypothesis = "different",
-  norm = FALSE,
-  qq = FALSE,
-  eqv = FALSE,
-  meanDiff = FALSE,
-  ci = FALSE,
-  ciWidth = 95,
-  effectSize = FALSE,
-  ciES = FALSE,
-  ciWidthES = 95,
-  desc = FALSE,
-  plots = FALSE,
-  miss = "perAnalysis",
-  formula
-)
+ttestIS(data, vars, group, students = TRUE, bf = FALSE,
+  bfPrior = 0.707, welchs = FALSE, mann = FALSE,
+  hypothesis = "different", norm = FALSE, qq = FALSE, eqv = FALSE,
+  meanDiff = FALSE, ci = FALSE, ciWidth = 95, effectSize = FALSE,
+  ciES = FALSE, ciWidthES = 95, desc = FALSE, plots = FALSE,
+  miss = "perAnalysis", formula)
 }
 \arguments{
 \item{data}{the data as a data frame}

@@ -4,41 +4,15 @@
 \alias{linReg}
 \title{Linear Regression}
 \usage{
-linReg(
-  data,
-  dep,
-  covs = NULL,
-  factors = NULL,
-  blocks = list(list()),
-  refLevels = NULL,
-  intercept = "refLevel",
-  r = TRUE,
-  r2 = TRUE,
-  r2Adj = FALSE,
-  aic = FALSE,
-  bic = FALSE,
-  rmse = FALSE,
-  modelTest = FALSE,
-  anova = FALSE,
-  ci = FALSE,
-  ciWidth = 95,
-  stdEst = FALSE,
-  ciStdEst = FALSE,
-  ciWidthStdEst = 95,
-  coefPlot = FALSE,
-  norm = FALSE,
-  qqPlot = FALSE,
-  resPlots = FALSE,
-  durbin = FALSE,
-  collin = FALSE,
-  cooks = FALSE,
-  emMeans = list(list()),
-  ciEmm = TRUE,
-  ciWidthEmm = 95,
-  emmPlots = TRUE,
-  emmTables = FALSE,
-  emmWeights = TRUE
-)
+linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
+  refLevels = NULL, intercept = "refLevel", r = TRUE, r2 = TRUE,
+  r2Adj = FALSE, aic = FALSE, bic = FALSE, rmse = FALSE,
+  modelTest = FALSE, anova = FALSE, ci = FALSE, ciWidth = 95,
+  stdEst = FALSE, ciStdEst = FALSE, ciWidthStdEst = 95,
+  norm = FALSE, qqPlot = FALSE, resPlots = FALSE, durbin = FALSE,
+  collin = FALSE, cooks = FALSE, emMeans = list(list()),
+  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
+  emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -100,10 +74,6 @@ interval for the model coefficient standardized estimates}
 \item{ciWidthStdEst}{a number between 50 and 99.9 (default: 95) specifying
 the confidence interval width}
 
-\item{coefPlot}{\code{TRUE} or \code{FALSE} (default), provide a
-coefficient plot where for each predictor the estimated coefficient and
-confidence intervals are plotted.}
-
 \item{norm}{\code{TRUE} or \code{FALSE} (default), perform a Shapiro-Wilk
 test on the residuals}
 
@@ -147,6 +117,9 @@ A results object containing:
   \code{results$modelFit} \tab \tab \tab \tab \tab a table \cr
   \code{results$modelComp} \tab \tab \tab \tab \tab a table \cr
   \code{results$models} \tab \tab \tab \tab \tab an array of model specific results \cr
+  \code{results$predictOV} \tab \tab \tab \tab \tab an output \cr
+  \code{results$residsOV} \tab \tab \tab \tab \tab an output \cr
+  \code{results$cooksOV} \tab \tab \tab \tab \tab an output \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

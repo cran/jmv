@@ -4,30 +4,12 @@
 \alias{logLinear}
 \title{Log-Linear Regression}
 \usage{
-logLinear(
-  data,
-  factors = NULL,
-  counts = NULL,
-  blocks = list(list()),
-  refLevels = NULL,
-  modelTest = FALSE,
-  dev = TRUE,
-  aic = TRUE,
-  bic = FALSE,
-  pseudoR2 = list("r2mf"),
-  omni = FALSE,
-  ci = FALSE,
-  ciWidth = 95,
-  RR = FALSE,
-  ciRR = FALSE,
-  ciWidthRR = 95,
-  emMeans = list(list()),
-  ciEmm = TRUE,
-  ciWidthEmm = 95,
-  emmPlots = TRUE,
-  emmTables = FALSE,
-  emmWeights = TRUE
-)
+logLinear(data, factors = NULL, counts = NULL, blocks = list(list()),
+  refLevels = NULL, modelTest = FALSE, dev = TRUE, aic = TRUE,
+  bic = FALSE, pseudoR2 = list("r2mf"), omni = FALSE, ci = FALSE,
+  ciWidth = 95, RR = FALSE, ciRR = FALSE, ciWidthRR = 95,
+  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
+  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}

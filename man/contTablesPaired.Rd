@@ -4,18 +4,9 @@
 \alias{contTablesPaired}
 \title{Paired Samples Contingency Tables}
 \usage{
-contTablesPaired(
-  data,
-  rows,
-  cols,
-  counts = NULL,
-  chiSq = TRUE,
-  chiSqCorr = FALSE,
-  exact = FALSE,
-  pcRow = FALSE,
-  pcCol = FALSE,
-  formula
-)
+contTablesPaired(data, rows, cols, counts = NULL, chiSq = TRUE,
+  chiSqCorr = FALSE, exact = FALSE, pcRow = FALSE, pcCol = FALSE,
+  formula)
 }
 \arguments{
 \item{data}{the data as a data frame}

@@ -4,42 +4,16 @@
 \alias{logRegBin}
 \title{Binomial Logistic Regression}
 \usage{
-logRegBin(
-  data,
-  dep,
-  covs = NULL,
-  factors = NULL,
-  blocks = list(list()),
-  refLevels = NULL,
-  modelTest = FALSE,
-  dev = TRUE,
-  aic = TRUE,
-  bic = FALSE,
-  pseudoR2 = list("r2mf"),
-  omni = FALSE,
-  ci = FALSE,
-  ciWidth = 95,
-  OR = FALSE,
-  ciOR = FALSE,
-  ciWidthOR = 95,
-  emMeans = list(list()),
-  ciEmm = TRUE,
-  ciWidthEmm = 95,
-  emmPlots = TRUE,
-  emmTables = FALSE,
-  emmWeights = TRUE,
-  class = FALSE,
-  acc = FALSE,
-  spec = FALSE,
-  sens = FALSE,
-  auc = FALSE,
-  rocPlot = FALSE,
-  cutOff = 0.5,
-  cutOffPlot = FALSE,
-  collin = FALSE,
-  boxTidwell = FALSE,
-  cooks = FALSE
-)
+logRegBin(data, dep, covs = NULL, factors = NULL,
+  blocks = list(list()), refLevels = NULL, modelTest = FALSE,
+  dev = TRUE, aic = TRUE, bic = FALSE, pseudoR2 = list("r2mf"),
+  omni = FALSE, ci = FALSE, ciWidth = 95, OR = FALSE,
+  ciOR = FALSE, ciWidthOR = 95, emMeans = list(list()),
+  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
+  emmTables = FALSE, emmWeights = TRUE, class = FALSE, acc = FALSE,
+  spec = FALSE, sens = FALSE, auc = FALSE, rocPlot = FALSE,
+  cutOff = 0.5, cutOffPlot = FALSE, collin = FALSE,
+  boxTidwell = FALSE, cooks = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -151,6 +125,9 @@ A results object containing:
   \code{results$modelFit} \tab \tab \tab \tab \tab a table \cr
   \code{results$modelComp} \tab \tab \tab \tab \tab a table \cr
   \code{results$models} \tab \tab \tab \tab \tab an array of model specific results \cr
+  \code{results$predictOV} \tab \tab \tab \tab \tab an output \cr
+  \code{results$residsOV} \tab \tab \tab \tab \tab an output \cr
+  \code{results$cooksOV} \tab \tab \tab \tab \tab an output \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

@@ -4,28 +4,11 @@
 \alias{ttestOneS}
 \title{One Sample T-Test}
 \usage{
-ttestOneS(
-  data,
-  vars,
-  students = TRUE,
-  bf = FALSE,
-  bfPrior = 0.707,
-  wilcoxon = FALSE,
-  testValue = 0,
-  hypothesis = "dt",
-  norm = FALSE,
-  qq = FALSE,
-  meanDiff = FALSE,
-  ci = FALSE,
-  ciWidth = 95,
-  effectSize = FALSE,
-  ciES = FALSE,
-  ciWidthES = 95,
-  desc = FALSE,
-  plots = FALSE,
-  miss = "perAnalysis",
-  mann = FALSE
-)
+ttestOneS(data, vars, students = TRUE, bf = FALSE, bfPrior = 0.707,
+  wilcoxon = FALSE, testValue = 0, hypothesis = "dt", norm = FALSE,
+  qq = FALSE, meanDiff = FALSE, ci = FALSE, ciWidth = 95,
+  effectSize = FALSE, ciES = FALSE, ciWidthES = 95, desc = FALSE,
+  plots = FALSE, miss = "perAnalysis", mann = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}

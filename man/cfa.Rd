@@ -4,28 +4,13 @@
 \alias{cfa}
 \title{Confirmatory Factor Analysis}
 \usage{
-cfa(
-  data,
-  factors = list(list(label = "Factor 1", vars = list())),
-  resCov,
-  miss = "fiml",
-  constrain = "facVar",
-  estTest = TRUE,
-  ci = FALSE,
-  ciWidth = 95,
-  stdEst = FALSE,
-  factCovEst = TRUE,
-  factInterceptEst = FALSE,
-  resCovEst = FALSE,
-  resInterceptEst = FALSE,
-  fitMeasures = list("cfi", "tli", "rmsea"),
-  modelTest = TRUE,
-  pathDiagram = FALSE,
-  corRes = FALSE,
-  hlCorRes = 0.1,
-  mi = FALSE,
-  hlMI = 3
-)
+cfa(data, factors = list(list(label = "Factor 1", vars = list())),
+  resCov, miss = "fiml", constrain = "facVar", estTest = TRUE,
+  ci = FALSE, ciWidth = 95, stdEst = FALSE, factCovEst = TRUE,
+  factInterceptEst = FALSE, resCovEst = FALSE,
+  resInterceptEst = FALSE, fitMeasures = list("cfi", "tli", "rmsea"),
+  modelTest = TRUE, pathDiagram = FALSE, corRes = FALSE,
+  hlCorRes = 0.1, mi = FALSE, hlMI = 3)
 }
 \arguments{
 \item{data}{the data as a data frame}

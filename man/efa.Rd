@@ -4,24 +4,11 @@
 \alias{efa}
 \title{Exploratory Factor Analysis}
 \usage{
-efa(
-  data,
-  vars,
-  nFactorMethod = "parallel",
-  nFactors = 1,
-  minEigen = 0,
-  extraction = "minres",
-  rotation = "oblimin",
-  hideLoadings = 0.3,
-  sortLoadings = FALSE,
-  screePlot = FALSE,
-  eigen = FALSE,
-  factorCor = FALSE,
-  factorSummary = FALSE,
-  modelFit = FALSE,
-  kmo = FALSE,
-  bartlett = FALSE
-)
+efa(data, vars, nFactorMethod = "parallel", nFactors = 1,
+  minEigen = 1, extraction = "minres", rotation = "oblimin",
+  hideLoadings = 0.3, sortLoadings = FALSE, screePlot = FALSE,
+  eigen = FALSE, factorCor = FALSE, factorSummary = FALSE,
+  modelFit = FALSE, kmo = FALSE, bartlett = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -34,7 +21,7 @@ efa(
 
 \item{nFactors}{an integer (default: 1), the number of factors in the model}
 
-\item{minEigen}{a number (default: 0), the minimal eigenvalue for a factor
+\item{minEigen}{a number (default: 1), the minimal eigenvalue for a factor
 to be included in the model}
 
 \item{extraction}{\code{'minres'} (default), \code{'ml'}, or \code{'pa'}
@@ -55,7 +42,7 @@ loadings by size}
 
 \item{eigen}{\code{TRUE} or \code{FALSE} (default), show eigenvalue table}
 
-\item{factorCor}{\code{TRUE} or \code{FALSE} (default), show factor
+\item{factorCor}{\code{TRUE} or \code{FALSE} (default), show inter-factor
 correlations}
 
 \item{factorSummary}{\code{TRUE} or \code{FALSE} (default), show factor

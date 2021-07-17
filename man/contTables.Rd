@@ -4,32 +4,15 @@
 \alias{contTables}
 \title{Contingency Tables}
 \usage{
-contTables(
-  data,
-  rows,
-  cols,
-  counts = NULL,
-  layers = NULL,
-  chiSq = TRUE,
-  chiSqCorr = FALSE,
-  likeRat = FALSE,
-  fisher = FALSE,
-  contCoef = FALSE,
-  phiCra = FALSE,
-  logOdds = FALSE,
-  odds = FALSE,
-  relRisk = FALSE,
-  ci = TRUE,
-  ciWidth = 95,
-  gamma = FALSE,
-  taub = FALSE,
-  obs = TRUE,
-  exp = FALSE,
-  pcRow = FALSE,
-  pcCol = FALSE,
-  pcTot = FALSE,
-  formula
-)
+contTables(data, rows, cols, counts = NULL, layers = NULL,
+  chiSq = TRUE, chiSqCorr = FALSE, zProp = FALSE, likeRat = FALSE,
+  fisher = FALSE, contCoef = FALSE, phiCra = FALSE,
+  diffProp = FALSE, logOdds = FALSE, odds = FALSE, relRisk = FALSE,
+  ci = TRUE, ciWidth = 95, compare = "rows",
+  hypothesis = "different", gamma = FALSE, taub = FALSE,
+  mh = FALSE, obs = TRUE, exp = FALSE, pcRow = FALSE,
+  pcCol = FALSE, pcTot = FALSE, barplot = FALSE, yaxis = "ycounts",
+  yaxisPc = "total_pc", xaxis = "xrows", bartype = "dodge", formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -51,6 +34,9 @@ necessary when providing a formula, see the examples)}
 \item{chiSqCorr}{\code{TRUE} or \code{FALSE} (default), provide X² with
 continuity correction}
 
+\item{zProp}{\code{TRUE} or \code{FALSE} (default), provide a z test for
+differences between two proportions}
+
 \item{likeRat}{\code{TRUE} or \code{FALSE} (default), provide the
 likelihood ratio}
 
@@ -62,6 +48,9 @@ contingency coefficient}
 
 \item{phiCra}{\code{TRUE} or \code{FALSE} (default), provide Phi and
 Cramer's V}
+
+\item{diffProp}{\code{TRUE} or \code{FALSE} (default), provide the
+differences in proportions (only available for 2x2 tables)}
 
 \item{logOdds}{\code{TRUE} or \code{FALSE} (default), provide the log odds
 ratio (only available for 2x2 tables)}
@@ -78,9 +67,20 @@ intervals for the comparative measures}
 \item{ciWidth}{a number between 50 and 99.9 (default: 95), width of the
 confidence intervals to provide}
 
+\item{compare}{\code{columns} or \code{rows} (default), compare
+columns/rows in difference of proportions or relative risks (2x2 tables)}
+
+\item{hypothesis}{\code{'different'} (default), \code{'oneGreater'} or
+\code{'twoGreater'}, the alternative hypothesis; group 1 different to group
+2, group 1 greater than group 2, and group 2 greater than group 1
+respectively}
+
 \item{gamma}{\code{TRUE} or \code{FALSE} (default), provide gamma}
 
 \item{taub}{\code{TRUE} or \code{FALSE} (default), provide Kendall's tau-b}
+
+\item{mh}{\code{TRUE} or \code{FALSE} (default), provide Mantel-Haenszel
+test for trend}
 
 \item{obs}{\code{TRUE} or \code{FALSE} (default), provide the observed
 counts}
@@ -96,6 +96,19 @@ percentages}
 \item{pcTot}{\code{TRUE} or \code{FALSE} (default), provide total
 percentages}
 
+\item{barplot}{\code{TRUE} or \code{FALSE} (default), show barplots}
+
+\item{yaxis}{ycounts (default) or ypc. Use respectively \code{counts} or
+\code{percentages} for the bar plot y-axis}
+
+\item{yaxisPc}{total_pc (default), column_pc, or row_pc. Use respectively
+percentages \code{of total}, \code{within columns}, or \code{within rows}
+for the bar plot y-axis.}
+
+\item{xaxis}{rows (default), or columns in bar plot X axis}
+
+\item{bartype}{stack or side by side (default), barplot type}
+
 \item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
@@ -107,6 +120,8 @@ A results object containing:
   \code{results$nom} \tab \tab \tab \tab \tab a table of the 'nominal' test results \cr
   \code{results$gamma} \tab \tab \tab \tab \tab a table of the gamma test results \cr
   \code{results$taub} \tab \tab \tab \tab \tab a table of the Kendall's tau-b test results \cr
+  \code{results$mh} \tab \tab \tab \tab \tab a table of the Mantel-Haenszel test for trend \cr
+  \code{results$barplot} \tab \tab \tab \tab \tab an image \cr
 }
 
 Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:

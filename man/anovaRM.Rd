@@ -4,32 +4,15 @@
 \alias{anovaRM}
 \title{Repeated Measures ANOVA}
 \usage{
-anovaRM(
-  data,
-  rm = list(list(label = "RM Factor 1", levels = list("Level 1", "Level 2"))),
-  rmCells = NULL,
-  bs = NULL,
-  cov = NULL,
-  effectSize = NULL,
-  depLabel = "Dependent",
-  rmTerms = NULL,
-  bsTerms = NULL,
-  ss = "3",
-  spherTests = FALSE,
-  spherCorr = list("none"),
-  leveneTest = FALSE,
-  contrasts = NULL,
-  postHoc = NULL,
-  postHocCorr = list("tukey"),
-  emMeans = list(list()),
-  emmPlots = TRUE,
-  emmTables = FALSE,
-  emmWeights = TRUE,
-  ciWidthEmm = 95,
-  emmPlotData = FALSE,
-  emmPlotError = "ci",
-  groupSumm = FALSE
-)
+anovaRM(data, rm = list(list(label = "RM Factor 1", levels =
+  list("Level 1", "Level 2"))), rmCells = NULL, bs = NULL,
+  cov = NULL, effectSize = NULL, depLabel = "Dependent",
+  rmTerms = NULL, bsTerms = NULL, ss = "3", spherTests = FALSE,
+  spherCorr = list("none"), leveneTest = FALSE, qq = FALSE,
+  contrasts = NULL, postHoc = NULL, postHocCorr = list("tukey"),
+  emMeans = list(list()), emmPlots = TRUE, emmTables = FALSE,
+  emmWeights = TRUE, ciWidthEmm = 95, emmPlotData = FALSE,
+  emmPlotError = "ci", groupSumm = FALSE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -75,6 +58,9 @@ respectively}
 \item{leveneTest}{\code{TRUE} or \code{FALSE} (default), test for
 homogeneity of variances (i.e., Levene's test)}
 
+\item{qq}{\code{TRUE} or \code{FALSE} (default), provide a Q-Q plot of
+residuals}
+
 \item{contrasts}{in development}
 
 \item{postHoc}{a list of character vectors describing the post-hoc tests
@@ -117,6 +103,7 @@ A results object containing:
   \code{results$bsTable} \tab \tab \tab \tab \tab a table \cr
   \code{results$assump$spherTable} \tab \tab \tab \tab \tab a table \cr
   \code{results$assump$leveneTable} \tab \tab \tab \tab \tab a table \cr
+  \code{results$assump$qq} \tab \tab \tab \tab \tab a q-q plot \cr
   \code{results$contrasts} \tab \tab \tab \tab \tab an array of tables \cr
   \code{results$postHoc} \tab \tab \tab \tab \tab an array of tables \cr
   \code{results$emm} \tab \tab \tab \tab \tab an array of the estimated marginal means plots + tables \cr
