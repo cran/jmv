@@ -48,6 +48,7 @@ test_that('linreg works', {
     expect_equal(0.394, coef2$stdEstUpper[3], tolerance = 1e-3)
 
     # Test different intercept codings
+    data('ToothGrowth', package='datasets')
     data <- ToothGrowth
     data$dose <- factor(data$dose)
 
@@ -184,3 +185,107 @@ test_that("analysis shows warning note on singular fit", {
     expect_equal(noteCoef, "Linear model contains aliased coefficients (singular fit)")
     expect_equal(noteVIF, "Linear model contains aliased coefficients (singular fit)")
 })
+
+test_that("analysis works for covariate with one unique value", {
+
+    suppressWarnings(RNGversion("3.5.0"))
+    set.seed(1337)
+
+    df <- data.frame(
+        x = rep(1, 100),
+        y = rnorm(100)
+    )
+
+    r <- jmv::linReg(
+        df,
+        dep="y",
+        covs="x",
+        blocks=list(list("x")),
+    )
+
+    coef <- r$models[[1]]$coef$asDF
+    expect_equal(0.237, coef[1, "est"], tolerance = 1e-4)
+    expect_equal(NaN, coef[2, "est"])
+})
+
+test_that("analysis throws error for factor with one level", {
+
+    suppressWarnings(RNGversion("3.5.0"))
+    set.seed(1337)
+
+    df <- data.frame(
+        x = factor(rep(1, 100)),
+        y = rnorm(100)
+    )
+
+    testthat::expect_error(
+        {
+            jmv::linReg(
+                df,
+                dep="y",
+                factors="x",
+                blocks=list(list("x")),
+                refLevels = list(list(var="x", ref="1"))
+            )
+        },
+        regexp = "needs to have at least 2 levels"
+    )
+})
+
+test_that("analysis works with weights", {
+    suppressWarnings(RNGversion("3.5.0"))
+    set.seed(1337)
+
+    df <- data.frame(
+        weights = abs(rnorm(100)),
+        dep = rnorm(100),
+        cov = rnorm(100),
+        factor = factor(sample(LETTERS[1:3], 100, replace=TRUE))
+    )
+
+    refLevels = list(list(var="factor", ref="A"))
+
+    r <- jmv::linReg(
+        df,
+        dep="dep",
+        covs="cov",
+        factors="factor",
+        weights="weights",
+        blocks=list(list("cov", "factor")),
+        refLevels=refLevels,
+    )
+
+    coef <- r$models[[1]]$coef
+    coefDf <- coef$asDF
+
+    testthat::expect_equal("Weighted by 'weights'", coef$notes$weights$note)
+    testthat::expect_equal(coefDf$est[1], -0.100, tolerance = 1e-3)
+    testthat::expect_equal(coefDf$se[2], 0.089, tolerance = 1e-3)
+    testthat::expect_equal(coefDf$t[4], 1.004, tolerance = 1e-3)
+    testthat::expect_equal(coefDf$p[5], 0.247, tolerance = 1e-3)
+})
+
+test_that("analysis throws error with negative weights", {
+    suppressWarnings(RNGversion("3.5.0"))
+    set.seed(1337)
+
+    df <- data.frame(
+        weights = rnorm(100),
+        dep = rnorm(100),
+        cov = rnorm(100)
+    )
+
+    testthat::expect_error(
+        {
+            jmv::linReg(
+                df,
+                dep="dep",
+                covs="cov",
+                weights="weights",
+                blocks=list(list("cov")),
+            )
+        },
+        regexp = "Negative weights are not permitted"
+    )
+})
+

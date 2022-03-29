@@ -1,45 +1,50 @@
 
+#' @importFrom magrittr %>%
+#' @importFrom jmvcore .
 descriptivesClass <- R6::R6Class(
     "descriptivesClass",
     inherit=descriptivesBase,
     private=list(
         #### Member variables ----
-        colArgs = list(
-            name = c(
-                "n", "missing", "mean", "se", "ciLower", "ciUpper", "median",
-                "mode", "sum", "sd", "variance", "iqr", "range", "min", "max",
-                "skew", "seSkew", "kurt", "seKurt", "sww", "sw"
-            ),
-            title = c(
-                "N", "Missing", "Mean", "Std. error mean", "lower bound",
-                "upper bound", "Median", "Mode", "Sum", "Standard deviation",
-                "Variance", "IQR", "Range", "Minimum", "Maximum", "Skewness",
-                "Std. error skewness", "Kurtosis", "Std. error kurtosis",
-                "Shapiro-Wilk W", "Shapiro-Wilk p"
-            ),
-            titleT = c(
-                "N", "Missing", "Mean", "SE", "Lower", "Upper", "Median",
-                "Mode", "Sum", "SD", "Variance", "IQR", "Range", "Minimum",
-                "Maximum", "Skewness", "SE", "Kurtosis", "SE", "W", "p"
-            ),
-            superTitle = c(
-                rep("", 4), rep("ci", 2), rep("", 9), rep("Skewness", 2),
-                rep("Kurtosis", 2), rep("Shapiro-Wilk", 2)
-            ),
-            type = c(rep("integer", 2), rep("number", 19)),
-            format = c(rep("", 20), "zto,pvalue"),
-            visible = c(
-                "(n)", "(missing)", "(mean)", "(se)", "(ci)", "(ci)",
-                "(median)", "(mode)", "(sum)", "(sd)", "(variance)", "(iqr)",
-                "(range)", "(min)", "(max)", "(skew)", "(skew)", "(kurt)",
-                "(kurt)", "(sw)", "(sw)"
-            )
-        ),
+        colArgs = NA,
         .levels = NULL,
         .splitByGrid = NULL,
 
         #### Init + run functions ----
         .init = function() {
+
+            private$colArgs <- list(
+                name = c(
+                    "n", "missing", "mean", "se", "ciLower", "ciUpper", "median",
+                    "mode", "sum", "sd", "variance", "iqr", "range", "min", "max",
+                    "skew", "seSkew", "kurt", "seKurt", "sww", "sw"
+                ),
+                title = c(
+                    .("N"), .("Missing"), .("Mean"), .("Std. error mean"), .("lower bound"),
+                    .("upper bound"), .("Median"), .("Mode"), .("Sum"), .("Standard deviation"),
+                    .("Variance"), .("IQR"), .("Range"), .("Minimum"), .("Maximum"), .("Skewness"),
+                    .("Std. error skewness"), .("Kurtosis"), .("Std. error kurtosis"),
+                    .("Shapiro-Wilk W"), .("Shapiro-Wilk p")
+                ),
+                titleT = c(
+                    .("N"), .("Missing"), .("Mean"), .("SE"), .("Lower"), .("Upper"), .("Median"),
+                    .("Mode"), .("Sum"), .("SD"), .("Variance"), .("IQR"), .("Range"), .("Minimum"),
+                    .("Maximum"), .("Skewness"), .("SE"), .("Kurtosis"), .("SE"), .("W"), .("p")
+                ),
+                superTitle = c(
+                    rep("", 4), rep("ci", 2), rep("", 9), rep(.("Skewness"), 2),
+                    rep(.("Kurtosis"), 2), rep(.("Shapiro-Wilk"), 2)
+                ),
+                type = c(rep("integer", 2), rep("number", 19)),
+                format = c(rep("", 20), "zto,pvalue"),
+                visible = c(
+                    "(n)", "(missing)", "(mean)", "(se)", "(ci)", "(ci)",
+                    "(median)", "(mode)", "(sum)", "(sd)", "(variance)", "(iqr)",
+                    "(range)", "(min)", "(max)", "(skew)", "(skew)", "(kurt)",
+                    "(kurt)", "(sw)", "(sw)"
+                )
+            )
+
             private$.addQuantiles()
             private$.initDescriptivesTable()
             private$.initDescriptivesTTable()
@@ -122,7 +127,7 @@ descriptivesClass <- R6::R6Class(
 
                 if (name == "ciLower" || name == "ciUpper") {
                     title <- jmvcore::format(
-                        "{}% CI mean {}", self$options$ciWidth, title
+                        .("{ciWidth}% CI mean {title}"), ciWidth=self$options$ciWidth, title=title
                     )
                 }
 
@@ -221,7 +226,7 @@ descriptivesClass <- R6::R6Class(
 
                 if (colArgs$superTitle[i] == "ci")
                     superTitle <- jmvcore::format(
-                        '{}% Confidence Interval', self$options$ciWidth
+                        .('{ciWidth}% Confidence Interval'), ciWidth=self$options$ciWidth
                     )
                 else
                     superTitle <- colArgs$superTitle[i]
@@ -280,16 +285,16 @@ descriptivesClass <- R6::R6Class(
 
                     if (length(splitBy) == 0) {
                         table$addColumn(
-                            name='levels', title='Levels', type='text'
+                            name='levels', title=.('Levels'), type='text'
                         )
                         table$addColumn(
-                            name='counts', title='Counts', type='integer'
+                            name='counts', title=.('Counts'), type='integer'
                         )
                         table$addColumn(
-                            name='pc', title='% of Total', type='number', format='pc'
+                            name='pc', title=.('% of Total'), type='number', format='pc'
                         )
                         table$addColumn(
-                            name='cumpc', title='Cumulative %', type='number', format='pc'
+                            name='cumpc', title=.('Cumulative %'), type='number', format='pc'
                         )
 
                         for (k in seq_along(levels)) {
@@ -364,21 +369,23 @@ descriptivesClass <- R6::R6Class(
                 )
 
                 if (length(varsCannotBeNumeric) == 1) {
-                    content <- jmvcore::format(
-                        "<p class=\"warning\">
-                            The variable {} cannot be treated as numeric. Therefore plots that expect
-                            numeric data will not be created for this variable.
-                        </p>", listItems(varsCannotBeNumeric)
+                    warningMessage <- jmvcore::format(
+                        .("The variable {var} cannot be treated as numeric. Plots that expect numeric data will not be created for this variable."),
+                        var=listItems(self, varsCannotBeNumeric)
                     )
                 } else {
-                    content <- jmvcore::format(
-                        "<p class=\"warning\">
-                            The variables {} cannot be treated as numeric. Therefore plots that expect
-                            numeric data will not be created for these variables.
-                        </p>", listItems(varsCannotBeNumeric)
+                    warningMessage <- jmvcore::format(
+                        .("The variables {vars} cannot be treated as numeric. Plots that expect numeric data will not be created for these variables."),
+                        vars=listItems(self, varsCannotBeNumeric)
                     )
-
                 }
+
+                content <- jmvcore::format(
+                    "<p class=\"warning\">
+                        {}
+                    </p>",
+                    warningMessage
+                )
 
                 html$setContent(content)
                 plots$setHeader(html)
@@ -442,7 +449,7 @@ descriptivesClass <- R6::R6Class(
                             renderFun = ".boxPlot",
                             width = size[1],
                             height = size[2],
-                            clearWith = list("splitBy", "box", "violin", "dot", "dotType", "boxMean")
+                            clearWith = list("splitBy", "box", "violin", "dot", "dotType", "boxMean", "boxLabelOutliers")
                         )
 
                         group$add(image)
@@ -579,7 +586,7 @@ descriptivesClass <- R6::R6Class(
                 table$addFootnote(
                     rowNo=1,
                     footnotes[[i]],
-                    'More than one mode exists, only the first is reported'
+                    .('More than one mode exists, only the first is reported')
                 )
             }
         },
@@ -613,7 +620,7 @@ descriptivesClass <- R6::R6Class(
                             table$addFootnote(
                                 rowNo=iter,
                                 'mode',
-                                'More than one mode exists, only the first is reported'
+                                .('More than one mode exists, only the first is reported')
                             )
                         }
 
@@ -632,7 +639,7 @@ descriptivesClass <- R6::R6Class(
                         table$addFootnote(
                             rowNo=i,
                             'mode',
-                            'More than one mode exists, only the first is reported'
+                            .('More than one mode exists, only the first is reported')
                         )
                     }
                 }
@@ -752,16 +759,16 @@ descriptivesClass <- R6::R6Class(
                         }
 
                         if (length(splitBy) >= 3) {
-                            names <- list("x"="x", "s1"="s1", "s2"="s2", "s3"="s3", "y"="y")
+                            names <- list("x"="y", "s1"="s1", "s2"="s2", "s3"="s3", "y"="y")
                             labels <- list("x"=var, "s1"=splitBy[1], "s2"=splitBy[2], "s3"=splitBy[3])
                         } else if (length(splitBy) == 2) {
-                            names <- list("x"="x", "s1"="s1", "s2"="s2", "s3"=NULL, "y"="y")
+                            names <- list("x"="y", "s1"="s1", "s2"="s2", "s3"=NULL, "y"="y")
                             labels <- list("x"=var, "s1"=splitBy[1], "s2"=splitBy[2], "s3"=NULL)
                         } else if (length(splitBy) == 1) {
-                            names <- list("x"="x", "s1"="s1", "s2"=NULL, "s3"=NULL, "y"="y")
+                            names <- list("x"="y", "s1"="s1", "s2"=NULL, "s3"=NULL, "y"="y")
                             labels <- list("x"=var, "s1"=splitBy[1], "s2"=NULL, "s3"=NULL)
                         } else {
-                            names <- list("x"="x", "s1"=NULL, "s2"=NULL, "s3"=NULL, "y"="y")
+                            names <- list("x"="y", "s1"=NULL, "s2"=NULL, "s3"=NULL, "y"="y")
                             labels <- list("x"=var, "s1"=NULL, "s2"=NULL, "s3"=NULL)
                         }
 
@@ -894,8 +901,8 @@ descriptivesClass <- R6::R6Class(
             plot <- ggplot(data=data) +
                 geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
                 stat_qq(aes(sample=y), size=2, colour=theme$color[1]) +
-                xlab("Theoretical Quantiles") +
-                ylab("Standardized Residuals") +
+                xlab(.("Theoretical Quantiles")) +
+                ylab(.("Standardized Residuals")) +
                 ggtheme
 
             if (nSplits == 0) {
@@ -935,8 +942,13 @@ descriptivesClass <- R6::R6Class(
                 fill <- theme$fill[2]
                 color <- theme$color[1]
 
-                min <- min(data[names$x])
-                max <- max(data[names$x])
+                min <- min(data[[names$x]])
+                if (is.na(min))
+                    min <- 0
+
+                max <- max(data[[names$x]])
+                if (is.na(max))
+                    max <- 0
 
                 range <- max - min
 
@@ -965,7 +977,7 @@ descriptivesClass <- R6::R6Class(
                 themeSpec <- theme(axis.text.y=element_blank(),
                                    axis.ticks.y=element_blank())
 
-            } else {  # if (nSplits > 0) {
+            } else {
                 data$s1rev <- factor(data$s1, rev(levels(data$s1)))
 
                 plot <- ggplot(data=data, aes_string(x='x', y='s1rev', fill='s1')) +
@@ -989,7 +1001,6 @@ descriptivesClass <- R6::R6Class(
             }
 
             plot <- plot + ggtheme + themeSpec
-
             return(plot)
         },
         .barPlot = function(image, ggtheme, theme, ...) {
@@ -1000,19 +1011,20 @@ descriptivesClass <- R6::R6Class(
             names <- image$state$names
             labels <- image$state$labels
             splitBy <- self$options$splitBy
-            type <- `if`(identical(image$state$type, 'continuous'), 'continuous', 'categorical')
+            type <- `if`(
+                identical(image$state$type, 'continuous'),
+                'continuous',
+                'categorical'
+            )
 
             fill <- theme$fill[2]
             color <- theme$color[1]
+            pd <- position_dodge(0.85)
 
-            if (length(splitBy) == 2) {
-                formula <- as.formula(paste(". ~", names$s2))
-            } else if (length(splitBy) > 2) {
-                formula <- as.formula(paste(names$s3, "~", names$s2))
-            }
+            plotSpecificTheme <- NULL
 
-            if (is.null(splitBy)) {
-                if (type == 'categorical') {
+            if (type == 'categorical') {
+                if (is.null(splitBy)) {
                     plot <-
                         ggplot(data=data, aes_string(x=names$x, y=names$y)) +
                         geom_bar(
@@ -1024,19 +1036,6 @@ descriptivesClass <- R6::R6Class(
                         ) +
                         labs(x=labels$x, y='counts')
                 } else {
-                    plot <- ggplot(data=data, aes_string(x=names$x, y=names$y)) +
-                        geom_col(
-                            position="dodge", width = 0.7, fill=fill, color=color
-                        ) +
-                        geom_errorbar(
-                            aes_string(x=names$x, ymin='sel', ymax='seu'), width=.1
-                        ) +
-                        labs(x=labels$x, y='')
-                }
-            } else {
-                pd <- position_dodge(0.85)
-
-                if (type == 'categorical') {
                     plot <-
                         ggplot(
                             data=data,
@@ -1050,11 +1049,39 @@ descriptivesClass <- R6::R6Class(
                         ) +
                         labs(x=labels$x, y='counts', fill=labels$s1)
 
+                    if (length(splitBy) == 2) {
+                        plot <- plot +
+                            facet_grid(as.formula(paste(". ~", names$s2)))
+                    } else if (length(splitBy) > 2) {
+                        plot <- plot +
+                            facet_grid(as.formula(paste(names$s3, "~", names$s2)))
+                    }
+                }
+            } else {
+                if (length(splitBy) <= 1) {
+                    if (is.null(names$s1))
+                        names$s1 <- "x"
+
+                    plot <- ggplot(data=data, aes_string(x=names$s1, y=names$x)) +
+                        geom_col(
+                            position="dodge", width = 0.7, fill=fill, color=color
+                        ) +
+                        geom_errorbar(
+                            aes_string(y=names$x, ymin='sel', ymax='seu'), width=.1
+                        ) +
+                        labs(x=labels$s1, y=labels$x)
+
+                    if (is.null(splitBy)) {
+                        plotSpecificTheme <- theme(
+                            axis.text.x = element_blank(),
+                            axis.ticks.x = element_blank()
+                        )
+                    }
                 } else {
                     plot <-
                         ggplot(
                             data=data,
-                            aes_string(x=names$x, y=names$y, fill=names$s1)
+                            aes_string(x=names$s1, y=names$x, fill=names$s2)
                         ) +
                         geom_col(position=pd, width = 0.7, color='#333333') +
                         geom_errorbar(
@@ -1062,13 +1089,15 @@ descriptivesClass <- R6::R6Class(
                             aes_string(ymin='sel', ymax='seu'),
                             width=.1
                         ) +
-                        labs(x=labels$x, y='', fill=labels$s1)
-                }
+                        labs(x=labels$s1, y=labels$x, fill=labels$s2)
 
-                if (length(splitBy) > 1)
-                    plot <- plot + facet_grid(formula)
+                    if (length(splitBy) > 2) {
+                        plot <- plot +
+                            facet_grid(as.formula(paste(". ~", names$s3)))
+                    }
+                }
             }
-            plot <- plot + ggtheme
+            plot <- plot + ggtheme + plotSpecificTheme
 
             return(plot)
         },
@@ -1089,6 +1118,9 @@ descriptivesClass <- R6::R6Class(
 
             themeSpec <- NULL
 
+            # hide outliers if plotting the data
+            outlierShape <- `if`(self$options$dot, NA, 19)
+
             if (is.null(splitBy) || length(splitBy) == 1) {
                 data[["placeHolder"]] <- rep('var1', nrow(data))
 
@@ -1096,6 +1128,13 @@ descriptivesClass <- R6::R6Class(
                     x <- "placeHolder"
                 else
                     x <- names$s1
+
+                if (self$options$box && self$options$boxLabelOutliers) {
+                    data$.ROWNAMES <- rownames(data)
+                    data <- data %>%
+                        dplyr::group_by_at(x) %>%
+                        dplyr::mutate(outlier=private$.isOutlier(x))
+                }
 
                 plot <- ggplot(data=data, aes_string(x=x, y=names$x)) +
                     labs(x=labels$s1, y=labels$x)
@@ -1115,7 +1154,7 @@ descriptivesClass <- R6::R6Class(
                             )
                     } else if (self$options$dotType == 'stack') {
                         plot <- plot +
-                            gplot2::geom_dotplot(
+                            ggplot2::geom_dotplot(
                                 binaxis="y",
                                 stackdir="center",
                                 color=theme$color[1],
@@ -1127,9 +1166,6 @@ descriptivesClass <- R6::R6Class(
                 }
 
                 if (self$options$box) {
-                    # hide outliers it plotting the data
-                    outlier.shape <- `if`(self$options$dot, NA, 19)
-
                     plot <- plot +
                         ggplot2::geom_boxplot(
                             color=theme$color[1],
@@ -1137,8 +1173,17 @@ descriptivesClass <- R6::R6Class(
                             alpha=0.9,
                             fill=theme$fill[2],
                             outlier.colour=theme$color[1],
-                            outlier.shape=outlier.shape
+                            outlier.shape=outlierShape
                         )
+
+                    if (self$options$boxLabelOutliers) {
+                        plot <- plot +
+                            ggrepel::geom_label_repel(
+                                data=. %>% dplyr::filter(outlier),
+                                aes(label=.ROWNAMES),
+                                position = position_dodge(0.8)
+                            )
+                    }
                 }
 
                 if (self$options$boxMean) {
@@ -1207,6 +1252,7 @@ descriptivesClass <- R6::R6Class(
                             color=theme$color[1],
                             width=0.3,
                             alpha=0.8,
+                            outlier.shape=outlierShape,
                             outlier.colour=theme$color[1],
                             position=position_dodge(0.9)
                         )
@@ -1219,7 +1265,9 @@ descriptivesClass <- R6::R6Class(
                             geom="point",
                             shape=15,
                             size=3.5,
-                            color=theme$color[1]
+                            color=theme$color[1],
+                            position=position_dodge(0.9),
+                            show.legend = FALSE
                         )
                 }
             }
@@ -1241,7 +1289,7 @@ descriptivesClass <- R6::R6Class(
                 for (item in splitBy) {
                     if ( ! is.factor(data[[item]])) {
                         jmvcore::reject(
-                            'Unable to split by a continuous variable'
+                            .('Unable to split by a continuous variable')
                         )
                     }
                 }
@@ -1251,7 +1299,7 @@ descriptivesClass <- R6::R6Class(
                 if (length(levels(data[[var]])) == 0) {
                     jmvcore::reject(
                         jmvcore::format(
-                            "The 'split by' variable '{}' contains no data.", var
+                            .("The 'split by' variable '{var}' contains no data."), var=var
                         ),
                         code=''
                     )
@@ -1321,9 +1369,9 @@ descriptivesClass <- R6::R6Class(
                 pcEq <- (1:pcNEqGr / pcNEqGr)[-pcNEqGr]
 
                 private$colArgs$name <- c(colArgs$name, paste0('quant', 1:(pcNEqGr-1)))
-                private$colArgs$title <- c(colArgs$title, paste0(round(pcEq * 100, 2), 'th percentile'))
+                private$colArgs$title <- c(colArgs$title, paste0(round(pcEq * 100, 2), .('th percentile')))
                 private$colArgs$titleT <- c(colArgs$titleT, paste0(round(pcEq * 100, 2), 'th'))
-                private$colArgs$superTitle <- c(colArgs$superTitle, rep("Percentiles", pcNEqGr-1))
+                private$colArgs$superTitle <- c(colArgs$superTitle, rep(.("Percentiles"), pcNEqGr-1))
                 private$colArgs$type <- c(colArgs$type, rep('number', pcNEqGr - 1))
                 private$colArgs$visible <- c(colArgs$visible, rep("(pcEqGr)", pcNEqGr - 1))
             }
@@ -1336,9 +1384,9 @@ descriptivesClass <- R6::R6Class(
                     colArgs <- private$colArgs
 
                     private$colArgs$name <- c(colArgs$name, paste0('perc', 1:npcValues))
-                    private$colArgs$title <- c(colArgs$title, paste0(round(pcValues * 100, 2), 'th percentile'))
+                    private$colArgs$title <- c(colArgs$title, paste0(round(pcValues * 100, 2), .('th percentile')))
                     private$colArgs$titleT <- c(colArgs$titleT, paste0(round(pcValues * 100, 2), 'th'))
-                    private$colArgs$superTitle <- c(colArgs$superTitle, rep("Percentiles", npcValues))
+                    private$colArgs$superTitle <- c(colArgs$superTitle, rep(.("Percentiles"), npcValues))
                     private$colArgs$type <- c(colArgs$type, rep('number', npcValues))
                     private$colArgs$visible <- c(colArgs$visible, rep("(pc)", npcValues))
                 }
@@ -1557,6 +1605,9 @@ descriptivesClass <- R6::R6Class(
             if (length(self$options$splitBy) == 0)
                 return('')
             jmvcore:::composeFormula(self$options$vars, list(self$options$splitBy))
+        },
+        .isOutlier = function(x) {
+            return(x < quantile(x, 0.25) - 1.5 * IQR(x) | x > quantile(x, 0.75) + 1.5 * IQR(x))
         }
     )
 )

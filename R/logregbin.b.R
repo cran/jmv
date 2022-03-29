@@ -1,4 +1,5 @@
 
+#' @importFrom jmvcore .
 logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
     "logRegBinClass",
     inherit = logRegBinBase,
@@ -162,6 +163,9 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
         #### Init + run functions ----
         .init = function() {
+            if (! is.null(self$options$dep))
+                private$.errorCheck()
+
             private$.initModelFitTable()
             private$.initModelCompTable()
             private$.initModelSpec()
@@ -307,7 +311,11 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                     VIF[[i]] <- try(car::vif(self$models[[i]]), silent=TRUE)
 
                     if (isError(VIF[[i]]) && extractErrorMessage(VIF[[i]]) == 'there are aliased coefficients in the model') {
-                        jmvcore::reject("One or more coefficients in model '{}' could not be estimated due to perfect collinearity.", code='error', i)
+                        jmvcore::reject(
+                            .("One or more coefficients in model '{modelNo}' could not be estimated due to perfect collinearity."),
+                            code='error',
+                            modelNo=i
+                        )
                     }
                 } else {
                     VIF[[i]] <- NULL
@@ -432,7 +440,7 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             for (i in seq_along(private$.getModelTerms())) {
                 groups$addItem(key=i)
                 group <- groups$get(key=i)
-                group$setTitle(paste("Model",i))
+                group$setTitle(paste(.("Model"),i))
             }
         },
         .initLrtTables = function() {
@@ -455,30 +463,37 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
             dep <- self$options$dep
             if (is.null(dep) ) {
-                note <- paste0("Estimates represent the log odds of \u2026")
+                note <- paste0(.("Estimates represent the log odds of \u2026"))
             } else {
                 depLevels <- private$.getLevelsDep()
-                note <- paste0("Estimates represent the log odds of \"",
-                               dep, " = ", depLevels$other, "\" vs. \"", dep, " = ",
-                               depLevels$ref, "\"")
+                note <- jmvcore::format(
+                    .('Estimates represent the log odds of "{dep} = {level1}" vs. "{dep} = {level2}"'),
+                    dep = dep,
+                    level1 = depLevels$other,
+                    level2 = depLevels$ref
+                )
             }
 
             rowNamesModel <- private$.getRowNamesModel()
+
+            ciWidthTitleString <- .('{ciWidth}% Confidence Interval')
 
             for (i in seq_along(termsAll)) {
                 table <- groups$get(key=i)$coef
 
                 ciWidth <- self$options$ciWidth
-                table$getColumn('lower')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidth))
-                table$getColumn('upper')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidth))
+                ciWidthTitle <- jmvcore::format(ciWidthTitleString, ciWidth=ciWidth)
+                table$getColumn('lower')$setSuperTitle(ciWidthTitle)
+                table$getColumn('upper')$setSuperTitle(ciWidthTitle)
 
                 ciWidthOR <- self$options$ciWidthOR
-                table$getColumn('oddsLower')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidthOR))
-                table$getColumn('oddsUpper')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidthOR))
+                ciWidthORTitle <- jmvcore::format(ciWidthTitleString, ciWidth=ciWidthOR)
+                table$getColumn('oddsLower')$setSuperTitle(ciWidthORTitle)
+                table$getColumn('oddsUpper')$setSuperTitle(ciWidthORTitle)
 
                 coefTerms <- rowNamesModel[[i]]
 
-                table$addRow(rowKey="`(Intercept)`", values=list(term = "Intercept"))
+                table$addRow(rowKey="`(Intercept)`", values=list(term = .("Intercept")))
 
                 terms <- termsAll[[i]]
 
@@ -543,6 +558,9 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             emMeans <- self$options$emMeans
             factors <- self$options$factors
 
+            emMeansTableTitle <- .('Estimated Marginal Means - {term}')
+            ciWidthTitle <- jmvcore::format(.('{ciWidth}% Confidence Interval'), ciWidth=self$options$ciWidthEmm)
+
             for (i in seq_along(termsAll)) {
 
                 group <- groups$get(key=i)$emm
@@ -557,7 +575,7 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                         emmGroup <- group$get(key=j)
 
                         table <- emmGroup$emmTable
-                        table$setTitle(paste0('Estimated Marginal Means - ', jmvcore::stringifyTerm(emm)))
+                        table$setTitle(jmvcore::format(emMeansTableTitle, term=jmvcore::stringifyTerm(emm)))
 
                         nLevels <- numeric(length(emm))
                         for (k in rev(seq_along(emm))) {
@@ -570,10 +588,10 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                             }
                         }
 
-                        table$addColumn(name='prob', title='Probability', type='number')
-                        table$addColumn(name='se', title='SE', type='number')
-                        table$addColumn(name='lower', title='Lower', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'), visibl="(ciEmm)")
-                        table$addColumn(name='upper', title='Upper', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'), visibl="(ciEmm)")
+                        table$addColumn(name='prob', title=.('Probability'), type='number')
+                        table$addColumn(name='se', title=.('SE'), type='number')
+                        table$addColumn(name='lower', title=.('Lower'), type='number', superTitle=ciWidthTitle, visibl="(ciEmm)")
+                        table$addColumn(name='upper', title=.('Upper'), type='number', superTitle=ciWidthTitle, visibl="(ciEmm)")
 
                         nRows <- prod(nLevels)
 
@@ -598,25 +616,41 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                 levels <- c('0', '1')
             } else {
                 levels <- levels(data[[dep]])
-                ref <- which(refLevels[[1]]$ref == levels)
-                levels <- c(levels[ref], levels[-ref])
+                refLevel <- refLevels[[1]]$ref
+                # workaround ... client currently initially sends null
+                # before issuing a second request with the correct value
+                if ( ! is.null(refLevel)) {
+                    ref <- which(refLevel == levels)
+                    levels <- c(levels[ref], levels[-ref])
+                }
             }
 
             for (i in seq_along(self$options$blocks)) {
 
                 table <- groups$get(key=i)$pred$class
-                table$setTitle(paste0('Classification Table \u2013 ', dep))
+                table$setTitle(jmvcore::format(.("Classification Table \u2013 {dep}"), dep))
 
                 name <- c('name[0]', 'neg[0]', 'pos[0]', 'perc[0]', 'name[1]', 'neg[1]', 'pos[1]', 'perc[1]')
-                title <- rep(c('Observed', levels[1], levels[2], '% Correct'), 2)
-                superTitle <- rep(c('', 'Predicted', 'Predicted', ''), 2)
+                title <- rep(c(.('Observed'), levels[1], levels[2], .('% Correct')), 2)
+                superTitle <- rep(c('', .('Predicted'), .('Predicted'), ''), 2)
 
-                for (j in seq_along(name))
-                    table$addColumn(name=name[j], title=title[j], superTitle=superTitle[j], type='number')
+                for (j in seq_along(name)) {
+                    table$addColumn(
+                        name=name[j],
+                        title=title[j],
+                        superTitle=superTitle[j],
+                        type='number'
+                    )
+                }
 
-                table$setRow(rowNo=1, values=list('name[0]'=levels[1], 'name[1]'=levels[2]))
+                table$setRow(
+                    rowNo=1, values=list('name[0]'=levels[1], 'name[1]'=levels[2])
+                )
 
-                table$setNote("thres", jmvcore::format("The cut-off value is set to {}", cutOff))
+                table$setNote(
+                    "thres",
+                    jmvcore::format(.("The cut-off value is set to {}"), cutOff)
+                )
 
             }
         },
@@ -628,7 +662,9 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
             for (i in seq_along(termsAll)) {
                 table <- groups$get(key=i)$pred$measures
-                table$setNote("thres", jmvcore::format("The cut-off value is set to {}", cutOff))
+                table$setNote(
+                    "thres", jmvcore::format(.("The cut-off value is set to {}"), cutOff)
+                )
             }
         },
         .initCollinearityTable = function() {
@@ -651,9 +687,9 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             description = function(part1, part2=NULL) {
                 return(
                     jmvcore::format(
-                        "{} of binomial logistic regression model{}",
-                        part1,
-                        ifelse(is.null(part2), "", paste0(" ", part2))
+                        .("{varType} of binomial logistic regression model{modelNo}"),
+                        varType=part1,
+                        modelNo=ifelse(is.null(part2), "", paste0(" ", part2))
                     )
                 )
             }
@@ -662,20 +698,21 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                 return(jmvcore::format("{} - {}", part1, part2))
             }
 
-            predictTitle <- "Predicted"
-            residsTitle <- "Residuals"
-            cooksTitle <- "Cook's distance"
+            predictTitle <- .("Predicted")
+            residsTitle <- .("Residuals")
+            cooksTitle <- .("Cook's distance")
 
             if (is.null(self$options$dep)) {
                 dep <- "\u2026"
-                predictDescPrefix <- "Predicted probability of \u2026 = \u2026 (vs \u2026 = \u2026)"
+                predictDescPrefix <- .("Predicted probability of \u2026 = \u2026 (vs \u2026 = \u2026)")
             } else {
                 dep <- self$options$dep
-                predictDescPrefix <- jmvcore::format("Predicted probability of {} = {} (vs {} = {})",
-                                                     dep,
-                                                     private$.getLevelsDep()$other,
-                                                     dep,
-                                                     private$.getLevelsDep()$ref)
+                predictDescPrefix <- jmvcore::format(
+                    .("Predicted probability of {dep} = {level1} (vs {dep} = {level2})"),
+                    dep=dep,
+                    level1=private$.getLevelsDep()$other,
+                    level2=private$.getLevelsDep()$ref
+                )
             }
 
             if (self$nModels == 1) {
@@ -863,7 +900,7 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                             table$setRow(rowNo=k, values=row)
 
                             if (length(covValues) > 0) {
-                                table$setNote("sub", "\u207B mean - 1SD, <sup>\u03BC</sup> mean, \u207A mean + 1SD")
+                                table$setNote("sub", .("\u207B mean - 1SD, <sup>\u03BC</sup> mean, \u207A mean + 1SD"))
 
                                 for (l in seq_along(emm)) {
                                     if (emm[l] %in% covs)
@@ -1090,8 +1127,8 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             p <- ggplot(data=df, aes(x=x, y=y)) +
                 geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
                 geom_line(color="red") +
-                xlab("1 - Specificity") +
-                ylab("Sensitivity") +
+                xlab(.("1 - Specificity")) +
+                ylab(.("Sensitivity")) +
                 ggtheme
 
             return(p)
@@ -1122,13 +1159,13 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
             df <- data.frame(x=rep(c(0, cutoff), 2),
                              y=c(1, sens, 0, spec),
-                             group=c(rep('Sensitivity', length(sens) + 1),
-                                     rep('Specificity', length(spec) + 1)))
+                             group=c(rep(.('Sensitivity'), length(sens) + 1),
+                                     rep(.('Specificity'), length(spec) + 1)))
 
             p <- ggplot(data=df, aes(x=x, y=y, color=group)) +
                 geom_vline(xintercept = cutOff, linetype=3, color=theme$color[1]) +
                 geom_line() +
-                xlab("Cut-Off") + xlim(0,1) + ylim(0,1) +
+                xlab(.("Cut-Off")) + xlim(0,1) + ylim(0,1) +
                 ggtheme + theme(legend.title = element_blank(), legend.position = 'top',
                                 axis.title.y = element_blank())
 
@@ -1188,6 +1225,10 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             refLevels <- self$options$refLevels
             refVars <- sapply(refLevels, function(x) x$var)
             ref <- refLevels[[which(var == refVars)]][['ref']]
+            # workaround ... client currently initially sends null
+            # before issuing a second request with the correct value
+            if (is.null(ref))
+                ref <- levels[1]
             other <- levels[-which(ref == levels)]
 
             return(list("ref"=ref, "other"=other))
@@ -1222,10 +1263,15 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             dep <- self$options$dep
             column <- self$data[[dep]]
 
-            if (length(levels(column)) > 2)
-                jmvcore::reject(jmvcore::format('The dependent variable \'{}\' has more than two levels;
-                                                binomial logistic regression can only be performed on dependent
-                                                variables with two levels.', dep), code='')
+            if (length(levels(column)) > 2) {
+                jmvcore::reject(
+                    jmvcore::format(
+                        .("The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels."),
+                        dep
+                    ),
+                    code=''
+                )
+            }
         },
         .cleanData = function(naOmit=TRUE, naSkip=NULL) {
             dep <- self$options$dep
@@ -1241,7 +1287,11 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
             for (factor in c(dep, factors)) {
                 ref <- refLevels[[which(factor == refVars)]][['ref']]
-                column <- dataRaw[[factor]]
+                column <- factor(
+                    dataRaw[[factor]],
+                    ordered = FALSE,
+                    levels = levels(dataRaw[[factor]])
+                )
                 levels(column) <- jmvcore::toB64(levels(column))
                 column <- relevel(column, ref = jmvcore::toB64(ref))
 

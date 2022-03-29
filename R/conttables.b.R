@@ -1,4 +1,5 @@
 
+#' @importFrom jmvcore .
 contTablesClass <- R6::R6Class(
     "contTablesClass",
     inherit=contTablesBase,
@@ -59,7 +60,7 @@ contTablesClass <- R6::R6Class(
             }
 
             subNames  <- c('[count]', '[expected]', '[pcRow]', '[pcCol]', '[pcTot]')
-            subTitles <- c('Observed', 'Expected', '% within row', '% within column', '% of total')
+            subTitles <- c(.('Observed'), .('Expected'), .('% within row'), .('% within column'), .('% of total'))
             visible   <- c('(obs)', '(exp)', '(pcRow)', '(pcCol)', '(pcTot)')
             types     <- c('integer', 'number', 'number', 'number', 'number')
             formats   <- c('', '', 'pc', 'pc', 'pc')
@@ -100,21 +101,21 @@ contTablesClass <- R6::R6Class(
             if (self$options$obs) {
                 freqs$addColumn(
                     name='.total[count]',
-                    title='Total',
+                    title=.('Total'),
                     type='integer')
             }
 
             if (self$options$exp) {
                 freqs$addColumn(
                     name='.total[exp]',
-                    title='Total',
+                    title=.('Total'),
                     type='number')
             }
 
             if (self$options$pcRow) {
                 freqs$addColumn(
                     name='.total[pcRow]',
-                    title='Total',
+                    title=.('Total'),
                     type='number',
                     format='pc')
             }
@@ -122,7 +123,7 @@ contTablesClass <- R6::R6Class(
             if (self$options$pcCol) {
                 freqs$addColumn(
                     name='.total[pcCol]',
-                    title='Total',
+                    title=.('Total'),
                     type='number',
                     format='pc')
             }
@@ -130,7 +131,7 @@ contTablesClass <- R6::R6Class(
             if (self$options$pcTot) {
                 freqs$addColumn(
                     name='.total[pcTot]',
-                    title='Total',
+                    title=.('Total'),
                     type='number',
                     format='pc')
             }
@@ -150,7 +151,7 @@ contTablesClass <- R6::R6Class(
                 for (name in colnames(rows)) {
                     value <- as.character(rows[i, name])
                     if (value == '.total')
-                        value <- 'Total'
+                        value <- .('Total')
                     values[[name]] <- value
                 }
 
@@ -189,7 +190,7 @@ contTablesClass <- R6::R6Class(
                     for (name in dimnames(rows)[[2]]) {
                         value <- as.character(rows[i, name])
                         if (value == '.total')
-                            value <- 'Total'
+                            value <- .('Total')
                         values[[name]] <- value
                     }
 
@@ -202,7 +203,7 @@ contTablesClass <- R6::R6Class(
                 }
             }
 
-            ciText <- paste0(self$options$ciWidth, '% Confidence Intervals')
+            ciText <- jmvcore::format(.('{ciWidth}% Confidence Intervals'), ciWidth=self$options$ciWidth)
             odds$getColumn('cil[dp]')$setSuperTitle(ciText)
             odds$getColumn('ciu[dp]')$setSuperTitle(ciText)
             odds$getColumn('cil[lo]')$setSuperTitle(ciText)
@@ -228,16 +229,16 @@ contTablesClass <- R6::R6Class(
             data <- private$.cleanData()
 
             if (nlevels(data[[rowVarName]]) < 2)
-                jmvcore::reject("Row variable '{}' contains less than 2 levels", code='', rowVarName)
+                jmvcore::reject(.("Row variable '{var}' contains fewer than 2 levels"), code='', var=rowVarName)
             if (nlevels(data[[colVarName]]) < 2)
-                jmvcore::reject("Column variable '{}' contains less than 2 levels", code='', colVarName)
+                jmvcore::reject(.("Column variable '{var}' contains fewer than 2 levels"), code='', var=colVarName)
 
             if ( ! is.null(countsName)) {
                 countCol <- data[[countsName]]
                 if (any(countCol < 0, na.rm=TRUE))
-                    jmvcore::reject('Counts may not be negative')
+                    jmvcore::reject(.('Counts may not be negative'))
                 if (any(is.infinite(countCol)))
-                    jmvcore::reject('Counts may not be infinite')
+                    jmvcore::reject(.('Counts may not be infinite'))
             }
 
             freqs <- self$results$freqs
@@ -259,14 +260,14 @@ contTablesClass <- R6::R6Class(
                     variable <- rowVarName
                     groups <- base::levels(data[[rowVarName]])
                 } else {
-                    groups <- c('Group 1', 'Group 2')
+                    groups <- c(.('Group 1'), .('Group 2'))
                 }
             } else { # compare columns
                 if (!is.null(colVarName)) {
                     variable <- colVarName
                     groups <- base::levels(data[[colVarName]])
                 } else {
-                    groups <- c('Group 1', 'Group 2')
+                    groups <- c(.('Group 1'), .('Group 2'))
                 }
             }
 
@@ -467,7 +468,7 @@ contTablesClass <- R6::R6Class(
                     hypothesisTested <- 'two-sided'
 
                 if (is.null(zP))
-                    chiSq$addFootnote(rowNo=othRowNo, 'value[zProp]', 'z test only available for 2x2 tables')
+                    chiSq$addFootnote(rowNo=othRowNo, 'value[zProp]', .('z test only available for 2x2 tables'))
                 else if (hypothesis!="different")
                     chiSq$addFootnote(rowNo=othRowNo, 'p[zProp]', hypothesisTested)
 
@@ -503,13 +504,13 @@ contTablesClass <- R6::R6Class(
                         values <- list(chi2=NaN, df='', p='')
                     else
                         values <- list(chi2=mhchi2, df=1, p=1-pchisq(mhchi2,1))
-                    
+
                     mh$setRow(rowNo=othRowNo, values=values)
-                    
+
                     if (base::inherits(mhchi2, 'try-error') || is.na(mhchi2))
-                        mh$addFootnote(rowNo=othRowNo, 'chi2', 'Variables must have at least two levels')
+                        mh$addFootnote(rowNo=othRowNo, 'chi2', .('Variables must have at least two levels'))
                     else if (mhchi2 == -1)
-                        mh$addFootnote(rowNo=othRowNo, 'chi2', 'At least one variable must have two levels')
+                        mh$addFootnote(rowNo=othRowNo, 'chi2', .('At least one variable must have two levels'))
                 }
 
                 if ( ! is.null(lor)) {
@@ -527,11 +528,14 @@ contTablesClass <- R6::R6Class(
                         `v[rr]`=rr$rr,
                         `cil[rr]`=rr$lower,
                         `ciu[rr]`=rr$upper))
-                    odds$addFootnote(rowNo=othRowNo, 'v[dp]', paste(self$options$compare, 'compared'))
-                    odds$addFootnote(rowNo=othRowNo, 'v[rr]', paste(self$options$compare, 'compared'))
+                    
+                    footnote <- `if`(self$options$compare == 'rows', .('Rows compared'), .('Columns compared'))
+                    odds$addFootnote(rowNo=othRowNo, 'v[dp]', footnote)
+                    odds$addFootnote(rowNo=othRowNo, 'v[rr]', footnote)
+                    
                     if (any(mat == 0)){
-                        odds$addFootnote(rowNo=othRowNo, 'v[lo]', 'Haldane-Ascombe correction applied')
-                        odds$addFootnote(rowNo=othRowNo, 'v[o]', 'Haldane-Ascombe correction applied')
+                        odds$addFootnote(rowNo=othRowNo, 'v[lo]', .('Haldane-Anscombe correction applied'))
+                        odds$addFootnote(rowNo=othRowNo, 'v[o]', .('Haldane-Anscombe correction applied'))
                     }
                 } else {
                     odds$setRow(rowNo=othRowNo, list(
@@ -539,10 +543,10 @@ contTablesClass <- R6::R6Class(
                         `v[lo]`=NaN, `cil[lo]`='', `ciu[lo]`='',
                         `v[o]`=NaN, `cil[o]`='', `ciu[o]`='',
                         `v[rr]`=NaN, `cil[rr]`='', `ciu[rr]`=''))
-                    odds$addFootnote(rowNo=othRowNo, 'v[dp]', 'Available for 2x2 tables only')
-                    odds$addFootnote(rowNo=othRowNo, 'v[lo]', 'Available for 2x2 tables only')
-                    odds$addFootnote(rowNo=othRowNo, 'v[o]', 'Available for 2x2 tables only')
-                    odds$addFootnote(rowNo=othRowNo, 'v[rr]', 'Available for 2x2 tables only')
+                    odds$addFootnote(rowNo=othRowNo, 'v[dp]', .('Available for 2x2 tables only'))
+                    odds$addFootnote(rowNo=othRowNo, 'v[lo]', .('Available for 2x2 tables only'))
+                    odds$addFootnote(rowNo=othRowNo, 'v[o]', .('Available for 2x2 tables only'))
+                    odds$addFootnote(rowNo=othRowNo, 'v[rr]', .('Available for 2x2 tables only'))
                 }
 
                 othRowNo <- othRowNo + 1
@@ -557,7 +561,7 @@ contTablesClass <- R6::R6Class(
             height <- 400
 
             layerNames <- self$options$layers
-            if (length(layerNames) == 1) 
+            if (length(layerNames) == 1)
                 image$setSize(width * 2, height)
             else if (length(layerNames) >= 2)
                 image$setSize(width * 2, height * 2)
@@ -568,28 +572,39 @@ contTablesClass <- R6::R6Class(
                 return()
 
             rowVarName <- self$options$rows
+            if (! is.null(rowVarName))
+                rowVarName <- jmvcore::toB64(rowVarName)
+
             colVarName <- self$options$cols
+            if (! is.null(colVarName))
+                colVarName <- jmvcore::toB64(colVarName)
+
             countsName <- self$options$counts
+            if (! is.null(countsName))
+                countsName <- jmvcore::toB64(countsName)
+
             layerNames <- self$options$layers
+            if (! is.null(layerNames))
+                layerNames <- jmvcore::toB64(layerNames)
             if (length(layerNames) > 2)
                 layerNames <- layerNames[1:2] # max 2
 
             if (is.null(rowVarName) || is.null(colVarName))
                 return()
 
-            data <- private$.cleanData()
+            data <- private$.cleanData(B64 = TRUE)
             data <- na.omit(data)
 
             if (! is.null(countsName)){
                 untable <- function (df, counts) df[rep(1:nrow(df), counts), ]
-                data <- untable(data[, c(rowVarName, colVarName, layerNames)], counts=data[, countsName])              
+                data <- untable(data[, c(rowVarName, colVarName, layerNames)], counts=data[, countsName])
             }
 
             formula <- jmvcore::composeFormula(NULL, c(rowVarName, colVarName, layerNames))
             counts <- xtabs(formula, data)
             d <- dim(counts)
 
-            expand <- list() 
+            expand <- list()
             for (i in c(rowVarName, colVarName, layerNames))
                 expand[[i]] <- base::levels(data[[i]])
             tab <- expand.grid(expand)
@@ -597,7 +612,7 @@ contTablesClass <- R6::R6Class(
 
             if (self$options$yaxis == "ypc") { # percentages
                 props <- counts
-                
+
                 if (self$options$yaxisPc == "column_pc") {
                     pctVarName <- colVarName
                 } else if (self$options$yaxisPc == "row_pc") {
@@ -621,38 +636,41 @@ contTablesClass <- R6::R6Class(
                 }
 
                 tab$Percentages <- as.numeric(props) * 100
-            } 
+            }
 
             if (self$options$xaxis == "xcols") {
-                xVarName <- colVarName
-                zVarName <- rowVarName
+                xVarName <- ensym(colVarName)
+                zVarName <- ensym(rowVarName)
             } else {
-                xVarName <- rowVarName
-                zVarName <- colVarName
+                xVarName <- ensym(rowVarName)
+                zVarName <- ensym(colVarName)
             }
 
             position <- self$options$bartype
 
             if (self$options$yaxis == "ycounts") {
-                p <- ggplot(data=tab, aes_string(y="Counts", x=xVarName, fill=zVarName)) +
-                    geom_col(position=position, width = 0.7)
+                p <- ggplot(data=tab, aes(y=Counts, x=!!xVarName, fill=!!zVarName)) +
+                    geom_col(position=position, width = 0.7) +
+                    labs(y = .("Counts"))
             } else {
-                p <- ggplot(data=tab, aes_string(y="Percentages", x=xVarName, fill=zVarName)) +
+                p <- ggplot(data=tab, aes(y=Percentages, x=!!xVarName, fill=!!zVarName)) +
                     geom_col(position=position, width = 0.7)
 
                 if (self$options$yaxisPc == "total_pc") {
-                    p <- p + labs(y = "Percentages of total")
+                    p <- p + labs(y = .("Percentages of total"))
                 } else {
-                    p <- p + labs(y = paste0("Percentages within ", pctVarName))
+                    p <- p + labs(y = jmvcore::format(.("Percentages within {var}"), var=jmvcore::fromB64(pctVarName)))
                 }
             }
 
+            p <- p + labs(x=jmvcore::fromB64(xVarName), fill=jmvcore::fromB64(zVarName))
+
             if (! is.null(layerNames)) {
                 if (length(layerNames) == 1)
-                    layers <- as.formula(paste0("~ ", layerNames))
+                    layers <- as.formula(jmvcore::composeFormula(NULL, layerNames))
                 else
-                    layers <- as.formula(paste0(layerNames[1], " ~ ", layerNames[2]))
-                
+                    layers <- as.formula(jmvcore::composeFormula(layerNames[1], layerNames[2]))
+
                 p <- p + facet_grid(layers)
             }
             p <- p + ggtheme
@@ -661,7 +679,7 @@ contTablesClass <- R6::R6Class(
         },
 
         #### Helper functions ----
-        .cleanData = function() {
+        .cleanData = function(B64 = FALSE) {
 
             data <- self$data
 
@@ -670,16 +688,24 @@ contTablesClass <- R6::R6Class(
             layerNames <- self$options$layers
             countsName <- self$options$counts
 
-            if ( ! is.null(rowVarName))
-                data[[rowVarName]] <- as.factor(data[[rowVarName]])
-            if ( ! is.null(colVarName))
-                data[[colVarName]] <- as.factor(data[[colVarName]])
-            for (layerName in layerNames)
-                data[[layerName]] <- as.factor(data[[layerName]])
-            if ( ! is.null(countsName))
-                data[[countsName]] <- toNumeric(data[[countsName]])
+            if ( ! is.null(rowVarName)) {
+                rowVarNameNew <- ifelse(B64, jmvcore::toB64(rowVarName), rowVarName)
+                data[[rowVarNameNew]] <- as.factor(data[[rowVarName]])
+            }
+            if ( ! is.null(colVarName)) {
+                colVarNameNew <- ifelse(B64, jmvcore::toB64(colVarName), colVarName)
+                data[[colVarNameNew]] <- as.factor(data[[colVarName]])
+            }
+            for (layerName in layerNames) {
+                layerNameNew <- ifelse(B64, jmvcore::toB64(layerName), layerName)
+                data[[layerNameNew]] <- as.factor(data[[layerName]])
+            }
+            if ( ! is.null(countsName)) {
+                countsNameNew <- ifelse(B64, jmvcore::toB64(countsName), countsName)
+                data[[countsNameNew]] <- jmvcore::toNumeric(data[[countsName]])
+            }
 
-            data
+            return(data)
         },
         .matrices=function(data) {
 
@@ -756,7 +782,7 @@ contTablesClass <- R6::R6Class(
 
             if (incRows) {
                 if (is.null(rowVarName))
-                    expand[['.']] <- c('.', '. ', 'Total')
+                    expand[['.']] <- c('.', '. ', .('Total'))
                 else
                     expand[[rowVarName]] <- c(base::levels(data[[rowVarName]]), '.total')
             }

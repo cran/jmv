@@ -1,0 +1,3976 @@
+{
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "1": [
+                "1"
+            ],
+            "": {
+                "domain": "messages",
+                "plural_forms": "nplurals=2; plural=(n != 1);",
+                "lang": "zh-cn"
+            },
+            "'{col}' contains infinite values": [
+                "“{col}”包含无限值"
+            ],
+            "'{col}' contains missing values": [
+                "“{col}”包含缺失值"
+            ],
+            "'{col}' contains only missing values": [
+                "“{col}”全为缺失值"
+            ],
+            "'{col}' contains only one unique value": [
+                "“{col}”仅包含唯一值"
+            ],
+            "'{method}' extraction method was used in combination with a '{rotation}' rotation": [
+                "“{method}”提取法和“{rotation}”旋转法相结合使用"
+            ],
+            "'{rotation}' rotation was used": [
+                "“{rotation}”进行旋转"
+            ],
+            "'{var}' contains negative values. Negative weights are not permitted.": [
+                "'{var}' 中包含负值，不允许有负数权重。"
+            ],
+            "{} - Kendall's Tau B": [
+                "{} -Kendall's Tau B系数"
+            ],
+            "{} - Pearson's r": [
+                "{} - Pearson's相关系数r"
+            ],
+            "{} - Spearman's rho": [
+                "{} - Spearman's秩相关系数rho"
+            ],
+            "{ciWidth}% CI Lower": [
+                "{ciWidth}% CI 下限"
+            ],
+            "{ciWidth}% CI mean {title}": [
+                "{ciWidth}% CI 均值 {title}"
+            ],
+            "{ciWidth}% CI Upper": [
+                "{ciWidth}% CI 上限"
+            ],
+            "{ciWidth}% Confidence Interval": [
+                "{ciWidth}% 置信区间"
+            ],
+            "{ciWidth}% Confidence Intervals": [
+                "{ciWidth}% 置信区间"
+            ],
+            "{item1} and {item2}": [
+                "{item1} 和 {item2}"
+            ],
+            "{list}, {nextItem}": [
+                "{list}, {nextItem}"
+            ],
+            "{list}, and {lastItem}": [
+                "{list}, 和{lastItem}"
+            ],
+            "{n} pair(s) of values were tied": [
+                "{n} 对值是相等的"
+            ],
+            "{type} score based on the variables {vars}": [
+                "基于变量{vars}的{type}类型得分"
+            ],
+            "{varName} (reversed)": [
+                "{varName} (反向)"
+            ],
+            "{varType} of binomial logistic regression model{modelNo}": [
+                "二分类Logistic回归模型{modelNo}的{varType}"
+            ],
+            "{varType} of linear regression model{modelNo}": [
+                "线性回归模型{modelNo}的{varType}"
+            ],
+            "* p < .05, ** p < .01, *** p < .001, one-tailed": [
+                "* p < .05, ** p < .01, *** p < .001, 单侧"
+            ],
+            "%": [
+                "%"
+            ],
+            "% Correct": [
+                "正确%"
+            ],
+            "% of Total": [
+                "合计%"
+            ],
+            "% of total": [
+                "合计%"
+            ],
+            "% of Variance": [
+                "方差%"
+            ],
+            "% within column": [
+                "列%"
+            ],
+            "% within row": [
+                "行%"
+            ],
+            "`'1'`, `'2'` or `'3'` (default), the sum of squares to use": [
+                "“1”、“2”或“3”（默认），使用平方和"
+            ],
+            "`'2'` or `'3'` (default), the sum of squares to use": [
+                "“2”或“3”（默认），使用平方和"
+            ],
+            "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; group 1 different to group 2, group 1 greater than group 2, and group 2 greater than group 1 respectively": [
+                "备择假设：`'different'` （默认）、`'oneGreater'`或`'twoGreater'`分别为组1与组2不同，组1大于组2，组2大于组1"
+            ],
+            "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; measure 1 different to measure 2, measure 1 greater than measure 2, and measure 2 greater than measure 1 respectively": [
+                "备择假设：`'different'` （默认）、`'oneGreater'`或`'twoGreater'`分别为系数1与系数2不同，系数1大于系数2，系数2大于系数1"
+            ],
+            "`'dt'` (default), `'gt'` or `'lt'`, the alternative hypothesis; different to `testValue`, greater than `testValue`, and less than `testValue` respectively": [
+                "备择假设：`‘dt’`（默认）、‘gt’或‘lt’`分别为与 `testValue`不同，大于 `testValue`和小于 `testValue`"
+            ],
+            "`'facVar'` or `'facInd'`, how to contrain the model; `'facVar'` fixes the factor variances to one, `'facInd'` fixes each factor to the scale of its first indicator.": [
+                "`“facVar”或“facInd”表示如何在模型中设置约束参数；`”facVar'`为将因子方差固定为1，`facInd'为将每个因子的第一个水平设为参照。"
+            ],
+            "`'listwise'` or `'fiml'`, how to handle missing values; `'listwise'` excludes a row from all analyses if one of its entries is missing, `'fiml'` uses a full information maximum likelihood method to estimate the model.": [
+                "“listwise”或“fiml”表示如何处理缺失值；`'listwise'`为如果某行有数据缺失，则在所有分析中删除该行；`fiml为`使用完全信息最大似然法来估计模型。"
+            ],
+            "`'means'` (default) or `'medians'`, the error bars to use in the plot": [
+                "`'means'` (默认) 或`'medians'`表示绘图的误差线"
+            ],
+            "`'minres'` (default), `'ml'`, or `'pa'` use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal axis' as the factor extraction method": [
+                "`“minres”（默认）、“ml”或“pa”分别表示使用'minimum residual'、'maximum likelihood'或'prinicipal axis'作为因子提取方法"
+            ],
+            "`'none'`, `'ci'` (default), or `'se'`. Use no error bars, use confidence intervals, or use standard errors on the marginal mean plots, respectively": [
+                "`'none'`、`'ci'` (默认)或`'se'`分别表示绘制边际均值图时不使用误差线, 使用置信区间线或标准误差线"
+            ],
+            "`'none'`, `'gamesHowell'` or `'tukey'`, which post-hoc tests to provide; `'none'` shows no post-hoc tests, `'gamesHowell'` shows Games-Howell post-hoc tests where no equivalence of variances is assumed, and `'tukey'` shows Tukey post-hoc tests where equivalence of variances is assumed": [
+                "`'none''、`'gamesHowell'`或`'tukey'`为事后检验方法。'none'`表示未进行事后检验，`'gamesHowell'`为方差不齐事后检验方法，`'tukey'`为方差齐的事后检验方法"
+            ],
+            "`'none'`, `'varimax'` (default), `'quartimax'`, `'promax'`, `'oblimin'`, or `'simplimax'`, the rotation to use in estimation": [
+                "`'无'`、“最大方差法” (默认)、“四次方极大法”、“最优法”、“斜交法”或“最简法”为估计中使用的旋转方法"
+            ],
+            "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (default), or `'simplimax'`, the rotation to use in estimation": [
+                "`'无'`、“最大方差法”、“四次方极大法”、“最优法”、“斜交法”（默认）或“最简法”为估计中使用的旋转方法"
+            ],
+            "`'notequal'` (default), `'greater'` or `'less'`, the alternative hypothesis": [
+                "备择假设：`'notequal'`（默认）、`'greater'`或 `'less'`"
+            ],
+            "`'parallel'` (default), `'eigen'` or `'fixed'`, the way to determine the number of factors": [
+                "确定因子个数的方法：`'parallel'` （默认）、`'eigen'` 或`'fixed'`"
+            ],
+            "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing": [
+                "`'perAnalysis'` 或`'listwise'`表示如何处理缺失值；`'perAnalysis'`为只有分析的变量有缺失值时才删除该缺失值；`'listwise'`为如果某行有数据缺失，则在所有分析中删除该行"
+            ],
+            "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing.": [
+                "`’perAnalysis’` 或`’listwise’`表示如何处理缺失值；`’perAnalysis’`为只有分析的变量有缺失值时才删除该缺失值；`’listwise’`为如果某行有数据缺失，则在所有分析中删除该行."
+            ],
+            "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
+                "`'refLevel'` (默认) 或`'grandMean'`, 截距的编码. 表示参考水平或总平均的截距"
+            ],
+            "`'rows'` or `'columns'` (default), display the variables across the rows or across the columns (default)": [
+                "`'rows'`或 `'columns'`（默认）表示行变量或列变量（默认）"
+            ],
+            "`'Thurstone'` (default), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, or `'Harman'` use respectively 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', or 'Harman' method for estimating factor scores": [
+                "`'Thurstone'` (默认)、`'Bartlett'`、`'tenBerge'`、`'Anderson'` 或 `'Harman'` 分别表示使用 `'Thurstone 法'` (默认)、`'Bartlett法'`、`'tenBerge法'`、`'Anderson法'` 或 `'Harman法'` 估算因子得分"
+            ],
+            "`ANCOVA - ${dep}`": [
+                "`协方差分析- ${dep}`"
+            ],
+            "`ANOVA - ${dep}`": [
+                "`方差分析- ${dep}`"
+            ],
+            "`columns` or `rows` (default), compare columns/rows in difference of proportions or relative risks (2x2 tables)": [
+                "`正确` 或 `错误`(默认) ,比较行/列的比例差异或相对危险度（2x2四格表）"
+            ],
+            "`Model Coefficients - ${ dep }`": [
+                "`模型系数 - ${ dep }`"
+            ],
+            "`Model Coefficients - ${dep}`": [
+                "`模型系数 - ${dep}`"
+            ],
+            "`Proportions - ${var}`": [
+                "`比例 - ${var}`"
+            ],
+            "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
+                "`TRUE'（默认）或`FALSE'，在箱形图中为离群值添加带有行号的标签"
+            ],
+            "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
+                "`正确` (默认) 或 `错误`, 执行Student's t检验"
+            ],
+            "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
+                "`正确` (默认) 或 `错误`, 执行Welch's单因素方差分析，该方法不要求方差齐"
+            ],
+            "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
+                "`正确` (默认) 或 `错误`, 提供模型估计的'Z'值和'p'值"
+            ],
+            "`TRUE` (default) or `FALSE`, provide a chi-square test for exact fit that compares the model with the perfect fitting model": [
+                "`正确` (默认) 或 `错误`, 提供精确拟合的卡方检验，并将拟合模型与完美拟合模型进行比较"
+            ],
+            "`TRUE` (default) or `FALSE`, provide a confidence interval for the estimated marginal means": [
+                "`正确` (默认) 或 `错误`, 提供边际估计均值的置信区间"
+            ],
+            "`TRUE` (default) or `FALSE`, provide Aikaike's Information Criterion (AIC) for the models": [
+                "`正确` (默认) 或 `错误`, 提供模型的AIC"
+            ],
+            "`TRUE` (default) or `FALSE`, provide Cronbach's α": [
+                "`正确` (默认) 或 `错误`, 提供Cronbach's α系数"
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
+                "`正确` (默认) 或 `错误`, 提供边际估计均值图"
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimates for the factor (co)variances": [
+                "`正确` (默认) 或 `错误`, 提供因子（协）方差的估计值"
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimates for the residual (co)variances": [
+                "`正确` (默认) 或 `错误`, 提供剩余（协）方差的估计值"
+            ],
+            "`TRUE` (default) or `FALSE`, provide mean differences for post-hoc tests": [
+                "`正确` (默认) 或 `错误`, 提供事后检验的均值差"
+            ],
+            "`TRUE` (default) or `FALSE`, provide Pearson's R": [
+                "`正确` (默认) 或 `错误`, 提供Pearson's相关系数r"
+            ],
+            "`TRUE` (default) or `FALSE`, provide significance levels": [
+                "`正确` (默认) 或 `错误`, 提供显著性水平"
+            ],
+            "`TRUE` (default) or `FALSE`, provide significance levels for post-hoc tests": [
+                "`正确` (默认) 或 `错误`, 提供事后检验的显著性水平"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the deviance (or -2LogLikelihood) for the models": [
+                "`正确` (默认) 或 `错误`, 提供模型的偏差（或-2对数似然值）"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the mean": [
+                "`正确` (默认) 或 `错误`, 提供均值"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the median": [
+                "`正确` (默认) 或 `错误`, 提供中位数"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the model comparison between the models and the NULL model": [
+                "`正确` (默认) 或 `错误`, 提供模型与空模型的比较结果"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the number of missing values": [
+                "`正确` (默认) 或 `错误`, 提供缺失值的数量"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the sample size": [
+                "`正确` (默认) 或 `错误`, 提供样本量"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the standard deviation": [
+                "`正确` (默认) 或 `错误`, 提供标准差"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the statistical measure `R-squared` for the models": [
+                "`正确` (默认) 或 `错误`, 提供模型的统计评价指标“R²”"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the statistical measure `R` for the models": [
+                "`正确` (默认) 或 `错误`, 提供模型的统计评价指标“R”"
+            ],
+            "`TRUE` (default) or `FALSE`, provide χ²": [
+                "`正确` (默认) 或 `错误`, 提供χ²值"
+            ],
+            "`TRUE` (default) or `FALSE`, weigh each cell equally or weigh them according to the cell frequency": [
+                "`正确` (默认) 或 `错误`, 对每个单元格进行平均加权或根据单元格频率进行加权"
+            ],
+            "`TRUE` or `FALSE` (default), add counts to the  bar plots": [
+                "`正确` 或 `错误`(默认) , 在条形图中添加计数"
+            ],
+            "`TRUE` or `FALSE` (default), add mean to box plot": [
+                "`正确` 或 `错误`(默认) , 在条形图中添加均值"
+            ],
+            "`TRUE` or `FALSE` (default), flag significant correlations": [
+                "`正确` 或 `错误`(默认) , 标记有统计学意义的相关"
+            ],
+            "`TRUE` or `FALSE` (default), flag significant post-hoc comparisons": [
+                "`正确` 或 `错误`(默认) , 标记有统计学意义的事后检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform a Shapiro-Wilk test on the residuals": [
+                "`正确` 或 `错误`(默认) , 对残差进行Shapiro-Wilk正态性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Fisher's one-way ANOVA which assumes equal variances": [
+                "`正确` 或 `错误`(默认) , 执行 Fisher's 单因素方差分析，该方法需要满足方差齐性的条件"
+            ],
+            "`TRUE` or `FALSE` (default), perform homogeneity tests": [
+                "`正确` 或 `错误`(默认) , 执行方差齐性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Levene's test for homogeneity of variances": [
+                "`正确` 或 `错误`(默认) , 执行Levene's 方差齐性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Levene's tests for homogeneity of variances": [
+                "`正确` 或 `错误`(默认) , 执行Levene's 方差齐性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Mann-Whitney U tests": [
+                "`正确` 或 `错误`(默认) , 执行Mann-Whitney U检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform pairwise comparisons": [
+                "`正确` 或 `错误`(默认) , 进行两两比较"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-wilk normality tests": [
+                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-Wilk test of normality": [
+                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-Wilk tests of normality": [
+                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-wilk tests of normality": [
+                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform sphericity tests": [
+                "`正确` 或 `错误`(默认) , 执行球形度检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Welch's t-tests": [
+                "`正确` 或 `错误`(默认) , 执行Welch's t检验"
+            ],
+            "`TRUE` or `FALSE` (default), perform Wilcoxon signed rank tests": [
+                "`正确` 或 `错误`(默认) , 执行Wilcoxon符号秩检验"
+            ],
+            "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
+                "`正确` 或 `错误`(默认) , 将数据绘制在边际均值上方"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
+                "`正确` 或 `错误`(默认) , 提供模型系数的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient odds ratio estimates": [
+                "`正确` 或 `错误`(默认) , 提供模型系数OR值的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient rate ratio estimates": [
+                "`正确` 或 `错误`(默认) , 提供模型系数rr值的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient standardized estimates": [
+                "`正确` 或 `错误`(默认) , 提供模型标准化系数的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficients": [
+                "`正确` 或 `错误`(默认) , 提供模型系数的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model estimates": [
+                "`正确` 或 `错误`(默认) , 提供模型系数的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide a correlation matrix plot": [
+                "`正确` 或 `错误`(默认) , 提供相关矩阵图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a correlation plot": [
+                "`正确` 或 `错误`(默认) , 提供相关图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a cut-off plot": [
+                "`正确` 或 `错误`(默认) , 提供截断值图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a descriptive plot": [
+                "`正确` 或 `错误`(默认) , 提供描述图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a path diagram of the model": [
+                "`正确` 或 `错误`(默认) , 提供模型的路径图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a predicted classification table (or confusion matrix)": [
+                "`正确` 或 `错误`(默认) , 提供预测分类表（或混合矩阵）"
+            ],
+            "`TRUE` or `FALSE` (default), provide a Q-Q plot of multivariate normality": [
+                "`正确` 或 `错误`(默认) , 提供多元正态Q-Q图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a Q-Q plot of residuals": [
+                "`正确` 或 `错误`(默认) , 提供残差Q-Q图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a ROC curve plot": [
+                "`正确` 或 `错误`(默认) , 提供ROC曲线图"
+            ],
+            "`TRUE` or `FALSE` (default), provide a standardized estimate for the model coefficients": [
+                "`正确` 或 `错误`(默认) , 提供模型标准化系数"
+            ],
+            "`TRUE` or `FALSE` (default), provide a standardized estimate for the model estimates": [
+                "`正确` 或 `错误`(默认) , 提供模型标准化系数"
+            ],
+            "`TRUE` or `FALSE` (default), provide a z test for differences between two proportions": [
+                "`正确` 或 `错误`(默认) , 提供两比例差异比较的Z检验"
+            ],
+            "`TRUE` or `FALSE` (default), provide Aikaike's Information Criterion (AIC) for the models": [
+                "`正确` 或 `错误`(默认) , 提供模型的AIC"
+            ],
+            "`TRUE` or `FALSE` (default), provide an exact log odds ratio (requires exact2x2 to be installed)": [
+                "`正确` 或 `错误`(默认) , 提供精确的对数OR（需要安装2x2精确法模块）"
+            ],
+            "`TRUE` or `FALSE` (default), provide bar plots (nominal, ordinal variables only)": [
+                "`正确` 或 `错误`(默认) , 提供条形图（仅限无序多分类和有序多分类变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayes factors": [
+                "`正确` 或 `错误`(默认) , 提供贝叶斯因子"
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayesian credible intervals": [
+                "`正确` 或 `错误`(默认) , 提供贝叶斯可信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayesian Information Criterion (BIC) for the models": [
+                "`正确` 或 `错误`(默认) , 提供模型的BIC"
+            ],
+            "`TRUE` or `FALSE` (default), provide box plots (continuous variables only)": [
+                "`正确` 或 `错误`(默认) , 提供箱线图（仅限连续性变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide Box-Tidwell test for linearity of the logit": [
+                "`正确` 或 `错误`(默认) , 为Logistic回归的线性部分提供 Box-Tidwell检验"
+            ],
+            "`TRUE` or `FALSE` (default), provide Box's M test": [
+                "`正确` 或 `错误`(默认) , 提供Box's M检验"
+            ],
+            "`TRUE` or `FALSE` (default), provide Cohen's d effect sizes": [
+                "`正确` 或 `错误`(默认) , 提供Cohen's d效应量"
+            ],
+            "`TRUE` or `FALSE` (default), provide column percentages": [
+                "`正确` 或 `错误`(默认) , 提供列百分比"
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals": [
+                "`正确` 或 `错误`(默认) , 提供置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the comparative measures": [
+                "`正确` 或 `错误`(默认) , 提供比较指标的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the effect-sizes": [
+                "`正确` 或 `错误`(默认) , 提供效应量的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the mean": [
+                "`正确` 或 `错误`(默认) , 提供均值的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the mean difference": [
+                "`正确` 或 `错误`(默认) , 提供均值差的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the post-hoc effect sizes": [
+                "`正确` 或 `错误`(默认) , 提供事后检验效应量的置信区间"
+            ],
+            "`TRUE` or `FALSE` (default), provide densities in the correlation matrix plot": [
+                "`正确` 或 `错误`(默认) , 在相关矩阵图中提供概率密度"
+            ],
+            "`TRUE` or `FALSE` (default), provide density plots (continuous variables only)": [
+                "`正确` 或 `错误`(默认) ,提供概率密度图（仅限连续性变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide descriptive plots": [
+                "`正确` 或 `错误`(默认) ,提供描述图"
+            ],
+            "`TRUE` or `FALSE` (default), provide descriptive statistics": [
+                "`正确` 或 `错误`(默认) ,提供描述性统计"
+            ],
+            "`TRUE` or `FALSE` (default), provide dot plots (continuous variables only)": [
+                "`正确` 或 `错误`(默认），提供点图（仅限连续性变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide effect sizes": [
+                "`正确` 或 `错误`(默认) ,提供效应量"
+            ],
+            "`TRUE` or `FALSE` (default), provide effect-sizes": [
+                "`正确` 或 `错误`(默认) ,提供效应量"
+            ],
+            "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
+                "`正确` 或 `错误`(默认) ,提供边际估计均值表"
+            ],
+            "`TRUE` or `FALSE` (default), provide estimates for the factor intercepts": [
+                "`正确` 或 `错误`(默认) ,提供因子截距的估计值"
+            ],
+            "`TRUE` or `FALSE` (default), provide estimates for the residual intercepts": [
+                "`正确` 或 `错误`(默认) ,提供残差截距的估计值"
+            ],
+            "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
+                "`正确` 或 `错误`(默认) , 提供 Fisher's 精确检验"
+            ],
+            "`TRUE` or `FALSE` (default), provide frequency tables (nominal, ordinal variables only)": [
+                "`正确` 或 `错误`(默认) ,提供频率表（仅限无序多分类和有序多分类变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide gamma": [
+                "`正确` 或 `错误`(默认) ,提供γ值"
+            ],
+            "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
+                "`正确` 或 `错误`(默认) ,提供直方图（仅限连续性变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide item means": [
+                "`正确` 或 `错误`(默认) ,提供条目均值"
+            ],
+            "`TRUE` or `FALSE` (default), provide item standard deviations": [
+                "`正确` 或 `错误`(默认) ,提供条目标准差"
+            ],
+            "`TRUE` or `FALSE` (default), provide item-rest correlations": [
+                "`正确` 或 `错误`(默认) ,提供条目剩余相关性"
+            ],
+            "`TRUE` or `FALSE` (default), provide Kendall's tau-b": [
+                "`正确` 或 `错误`(默认) , 提供 Kendall's tau-b值"
+            ],
+            "`TRUE` or `FALSE` (default), provide Mantel-Haenszel test for trend": [
+                "`正确` 或 `错误`(默认) , 提供 Mantel-Haenszel 趋势检验"
+            ],
+            "`TRUE` or `FALSE` (default), provide McDonald's ω": [
+                "`正确` 或 `错误`(默认) , 提供 McDonald's ω值"
+            ],
+            "`TRUE` or `FALSE` (default), provide means and standard deviations": [
+                "`正确` 或 `错误`(默认) ,提供均值和标准差"
+            ],
+            "`TRUE` or `FALSE` (default), provide means and standard errors": [
+                "`正确` 或 `错误`(默认) ,提供均值和标准误"
+            ],
+            "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
+                "`正确` 或 `错误`(默认) ,为模型中未包含的参数提供修正指数"
+            ],
+            "`TRUE` or `FALSE` (default), provide percentiles": [
+                "`正确` 或 `错误`(默认) ,提供百分位数"
+            ],
+            "`TRUE` or `FALSE` (default), provide Phi and Cramer's V": [
+                "`正确` 或 `错误`(默认) , 提供φ系数和Cramer’s V系数"
+            ],
+            "`TRUE` or `FALSE` (default), provide posterior plots": [
+                "`正确` 或 `错误`(默认) ,提供后验概率图"
+            ],
+            "`TRUE` or `FALSE` (default), provide Q-Q plots (continuous variables only)": [
+                "`正确` 或 `错误`(默认) , 提供Q-Q图(仅限于连续性变量)"
+            ],
+            "`TRUE` or `FALSE` (default), provide Q-Q plots of residuals": [
+                "`正确` 或 `错误`(默认) , 提供残差Q-Q图"
+            ],
+            "`TRUE` or `FALSE` (default), provide quantiles": [
+                "`正确` 或 `错误`(默认) ,提供分位数"
+            ],
+            "`TRUE` or `FALSE` (default), provide residual plots where the dependent variable and each covariate is plotted against the standardized residuals.": [
+                "`正确` 或 `错误`(默认) ,根据标准残差绘制因变量和每个协变量的残差图."
+            ],
+            "`TRUE` or `FALSE` (default), provide results of the Durbin- Watson test for autocorrelation": [
+                "`正确` 或 `错误`(默认) ,提供Durbin- Watson自相关检验的结果"
+            ],
+            "`TRUE` or `FALSE` (default), provide RMSE for the models": [
+                "`正确` 或 `错误`(默认) , 提供模型的均方根误差（RMSE）"
+            ],
+            "`TRUE` or `FALSE` (default), provide row percentages": [
+                "`正确` 或 `错误`(默认) ,提供行百分比"
+            ],
+            "`TRUE` or `FALSE` (default), provide Shapiro-Wilk p-value": [
+                "`正确` 或 `错误`(默认) , 提供Shapiro-Wilk正态性检验的P值"
+            ],
+            "`TRUE` or `FALSE` (default), provide Shapiro-Wilk test": [
+                "`正确` 或 `错误`(默认) , 提供Shapiro-Wilk正态性检验"
+            ],
+            "`TRUE` or `FALSE` (default), provide Spearman's rho": [
+                "`正确` 或 `错误`(默认) , 提供Spearman's相关系数rho"
+            ],
+            "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
+                "`正确` 或 `错误`(默认) ,在相关矩阵图中提供统计信息"
+            ],
+            "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
+                "`正确` 或 `错误`(默认) ,提供Cook's距离的摘要信息"
+            ],
+            "`TRUE` or `FALSE` (default), provide test results (t-value and degrees of freedom) for post-hoc tests": [
+                "`正确` 或 `错误`(默认) ,提供事后检验的结果（t值和自由度）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the contingency coefficient": [
+                "`正确` 或 `错误`(默认) ,提供列联系数"
+            ],
+            "`TRUE` or `FALSE` (default), provide the differences in proportions (only available for 2x2 tables)": [
+                "`正确` 或 `错误`(默认) ,提供比例差异（仅限于2x2四格表）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the expected counts": [
+                "`正确` 或 `错误`(默认) ,提供理论频数"
+            ],
+            "`TRUE` or `FALSE` (default), provide the exponential of the log-odds ratio estimate, or the odds ratio estimate": [
+                "`正确` 或 `错误`(默认) ,提供对数OR值指数或OR估计值"
+            ],
+            "`TRUE` or `FALSE` (default), provide the exponential of the log-rate ratio estimate, or the rate ratio estimate": [
+                "`正确` 或 `错误`(默认) ,提供对数RR值指数或RR估计值"
+            ],
+            "`TRUE` or `FALSE` (default), provide the interquartile range": [
+                "`正确` 或 `错误`(默认) ,提供四分位数间距"
+            ],
+            "`TRUE` or `FALSE` (default), provide the kurtosis": [
+                "`正确` 或 `错误`(默认) ,提供峰度"
+            ],
+            "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
+                "`正确` 或 `错误`(默认) ,提供似然比"
+            ],
+            "`TRUE` or `FALSE` (default), provide the log odds ratio (only available for 2x2 tables)": [
+                "`正确` 或 `错误`(默认) ,提供对数OR值（仅限于2x2四格表）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the maximum": [
+                "`正确` 或 `错误`(默认) ,提供最大值"
+            ],
+            "`TRUE` or `FALSE` (default), provide the mean": [
+                "`正确` 或 `错误`(默认) ,提供均值"
+            ],
+            "`TRUE` or `FALSE` (default), provide the minimum": [
+                "`正确` 或 `错误`(默认) ,提供最小值"
+            ],
+            "`TRUE` or `FALSE` (default), provide the mode": [
+                "`正确` 或 `错误`(默认) ,提供众数"
+            ],
+            "`TRUE` or `FALSE` (default), provide the model comparison between the models and the NULL model": [
+                "`正确` 或 `错误`(默认) ,提供模型与空模型比较的结果"
+            ],
+            "`TRUE` or `FALSE` (default), provide the number of cases": [
+                "`正确` 或 `错误`(默认) ,提供个案数"
+            ],
+            "`TRUE` or `FALSE` (default), provide the observed counts": [
+                "`正确` 或 `错误`(默认) ,提供实际频数"
+            ],
+            "`TRUE` or `FALSE` (default), provide the odds ratio (only available for 2x2 tables)": [
+                "`正确` 或 `错误`(默认) ,提供OR值（仅限于2x2四格表）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the omnibus ANOVA test for the predictors": [
+                "`正确` 或 `错误`(默认) ,提供预测因子的Omnibus方差分析检验结果"
+            ],
+            "`TRUE` or `FALSE` (default), provide the omnibus likelihood ratio tests for the predictors": [
+                "`正确` 或 `错误`(默认) ,提供预测因子的Omnibus似然比检验结果"
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted accuracy of outcomes grouped by the cut-off value": [
+                "`正确` 或 `错误`(默认) ,提供截断值分组的预测准确性"
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted sensitivity of outcomes grouped by the cut-off value": [
+                "`正确` 或 `错误`(默认) ,提供截断值分组的预测灵敏度"
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted specificity of outcomes grouped by the cut-off value": [
+                "`正确` 或 `错误`(默认) ,提供截断值分组的预测特异度"
+            ],
+            "`TRUE` or `FALSE` (default), provide the range": [
+                "`正确` 或 `错误`(默认) ,提供全距"
+            ],
+            "`TRUE` or `FALSE` (default), provide the rea under the ROC curve (AUC)": [
+                "`正确` 或 `错误`(默认) ,提供ROC曲线下面积（AUC）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the relative risk (only available for 2x2 tables)": [
+                "`正确` 或 `错误`(默认) ,提供相对危险度RR（仅限于2x2四格表）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the residuals for the observed correlation matrix (i.e., the difference between the expected correlation matrix and the observed correlation matrix)": [
+                "`正确` 或 `错误`(默认) ,提供实际相关矩阵的残差（即理论相关矩阵和实际相关矩阵之间的差异）"
+            ],
+            "`TRUE` or `FALSE` (default), provide the skewness": [
+                "`正确` 或 `错误`(默认) ,提供偏度"
+            ],
+            "`TRUE` or `FALSE` (default), provide the standard deviation": [
+                "`正确` 或 `错误`(默认) ,提供标准差"
+            ],
+            "`TRUE` or `FALSE` (default), provide the standard error": [
+                "`正确` 或 `错误`(默认) ,提供标准吴"
+            ],
+            "`TRUE` or `FALSE` (default), provide the statistical measure `adjusted R-squared` for the models": [
+                "`正确` 或 `错误`(默认) , 提供模型评价指标“校正R²”"
+            ],
+            "`TRUE` or `FALSE` (default), provide the sum": [
+                "`正确` 或 `错误`(默认) ,提供和"
+            ],
+            "`TRUE` or `FALSE` (default), provide the thresholds that are used as cut-off scores for the levels of the dependent variable": [
+                "`正确` 或 `错误`(默认) , 提供因变量分级的截断值"
+            ],
+            "`TRUE` or `FALSE` (default), provide the variance": [
+                "`正确` 或 `错误`(默认) ,提供方差"
+            ],
+            "`TRUE` or `FALSE` (default), provide total percentages": [
+                "`正确` 或 `错误`(默认) ,提供合计百分比"
+            ],
+            "`TRUE` or `FALSE` (default), provide VIF and tolerence collinearity statistics": [
+                "`正确` 或 `错误`(默认) , 提供方差膨胀因子（VIF ）和容忍度（1/VIF）"
+            ],
+            "`TRUE` or `FALSE` (default), provide violin plots (continuous variables only)": [
+                "`正确` 或 `错误`(默认) ,提供小提琴图（仅限连续性变量）"
+            ],
+            "`TRUE` or `FALSE` (default), provide what the Cronbach's α would be if the item was dropped": [
+                "`正确` 或 `错误`(默认) ,提供该条目删除后的Cronbach's α系数"
+            ],
+            "`TRUE` or `FALSE` (default), provide what the McDonald's ω would be if the item was dropped": [
+                "`正确` 或 `错误`(默认) ,提供该条目删除后的McDonald's ω系数"
+            ],
+            "`TRUE` or `FALSE` (default), provide χ² with continuity correction": [
+                "`正确` 或 `错误`(默认) ,提供连续校正χ²值"
+            ],
+            "`TRUE` or `FALSE` (default), report a summary of the different groups": [
+                "`正确` 或 `错误`(默认) ,分组报告摘要"
+            ],
+            "`TRUE` or `FALSE` (default), set a cut-off used for the predictions": [
+                "`正确` 或 `错误`(默认) ,设置预测变量的截断值"
+            ],
+            "`TRUE` or `FALSE` (default), show barplots": [
+                "`正确` 或 `错误`(默认) ,显示条形图"
+            ],
+            "`TRUE` or `FALSE` (default), show Bartlett's test of sphericity results": [
+                "`正确` 或 `错误`(默认) ,报告Bartlett's球形度检验结果"
+            ],
+            "`TRUE` or `FALSE` (default), show eigenvalue table": [
+                "`正确` 或 `错误`(默认) ,显示特征值表"
+            ],
+            "`TRUE` or `FALSE` (default), show factor summary": [
+                "`正确` 或 `错误`(默认) ,显示因子摘要"
+            ],
+            "`TRUE` or `FALSE` (default), show inter-factor correlations": [
+                "`正确` 或 `错误`(默认) ,显示因子间相关性"
+            ],
+            "`TRUE` or `FALSE` (default), show Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results": [
+                "`正确` 或 `错误`(默认) ,报告KMO抽样适合性检验结果"
+            ],
+            "`TRUE` or `FALSE` (default), show model fit measures and test": [
+                "`正确` 或 `错误`(默认) ,显示模型拟合评价和检验结果"
+            ],
+            "`TRUE` or `FALSE` (default), show scree plot": [
+                "`正确` 或 `错误`(默认) ,显示碎石图"
+            ],
+            "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
+                "`正确` 或 `错误`(默认) ,按因子载荷大小排序"
+            ],
+            "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
+                "`正确` 或 `错误`(默认) ,方差齐性检验（Levene's检验）"
+            ],
+            "`TRUE` or `FALSE` (default), the variables are counts": [
+                "`正确` 或 `错误`(默认)，变量是计数变量"
+            ],
+            "`TRUE` or `FALSE` (default), whether expected counts should be displayed": [
+                "`正确` 或 `错误`(默认) ,是否应显示理论频数"
+            ],
+            "`TRUE` or `FALSE` (default); perform an overall model test": [
+                "`正确` 或 `错误`(默认) ,执行整体模型检验"
+            ],
+            "±%": [
+                "±%"
+            ],
+            "< Test value": [
+                "<检验值"
+            ],
+            "≠ Test value": [
+                "≠ 检测值"
+            ],
+            "> Test value": [
+                ">检验值"
+            ],
+            "⁻ mean - 1SD, <sup>μ</sup> mean, ⁺ mean + 1SD": [
+                "⁻ 均值 - 1个标准差, <sup>μ</sup> 均值, ⁺ 均值 + 1个标准差"
+            ],
+            "1 - Specificity": [
+                "1-特异度"
+            ],
+            "2 Outcomes": [
+                "二分类结局"
+            ],
+            "25,50,75": [
+                "25,50,75"
+            ],
+            "a (semi)partial correlation matrix table": [
+                "（半）偏相关矩阵表"
+            ],
+            "a comma-sepated list (default: 25,50,75) specifying the percentiles": [
+                "指定百分位数的逗号分隔列表（默认:25,50,75）"
+            ],
+            "a correlation matrix plot": [
+                "相关矩阵图"
+            ],
+            "a correlation matrix table": [
+                "相关矩阵表"
+            ],
+            "a descriptives plot": [
+                "描述图"
+            ],
+            "a formula containing the terms to estimate marginal means for (see the examples)": [
+                "包含估算边际均值项的公式（见示例）"
+            ],
+            "a formula containing the terms to estimate marginal means for, supports up to three variables per term": [
+                "包含估算边际均值项的公式, 每个项最多支持三个变量"
+            ],
+            "a formula containing the terms to perform post-hoc tests on (see the examples)": [
+                "包含事后检验项的公式（见示例）"
+            ],
+            "a formula describing the terms to go into the model (not necessary when providing a formula, see examples)": [
+                "描述进入模型的项的公式（提供公式时不需要，见示例）"
+            ],
+            "a list containing named lists that define the `label` of the factor and the `vars` that belong to that factor": [
+                "包含命名清单的列表，该列表定义了因子的“标签”和相对应的“变量”"
+            ],
+            "a list containing vectors of strings that name the predictors that are added to the model. The elements are added to the model according to their order in the list": [
+                "一个包含添加到模型中的自变量的字符串向量的列表。这些元素将根据其在列表中的顺序被添加到模型中"
+            ],
+            "a list of character vectors describing the between subjects terms to go into the model": [
+                "描述进入模型的组间项的字符向量列表"
+            ],
+            "a list of character vectors describing the post-hoc tests that need to be computed": [
+                "描述事后检验的字符向量列表"
+            ],
+            "a list of character vectors describing the repeated measures terms to go into the model": [
+                "描述进入模型的重复测量项的字符向量列表"
+            ],
+            "a list of lists specifying reference levels of the dependent variable and all the factors": [
+                "设置因变量和所有因子参考水平的列表"
+            ],
+            "a list of lists specifying the factor and type of contrast to use, one of `'deviation'`, `'simple'`, `'difference'`, `'helmert'`, `'repeated'` or `'polynomial'`": [
+                "指定因子和待使用类型的列表，如，“离差”、“单独”、“差异”、“赫尔默特”、“重复”或“多项式”"
+            ],
+            "a list of lists specifying the pairs of measurement in `data`": [
+                "指定“数据”中比较对的列表"
+            ],
+            "a list of lists specifying the residual covariances that need to be estimated": [
+                "指定需要估计的剩余协方差的列表"
+            ],
+            "a list of lists specifying the variables for which the estimated marginal means need to be calculate. Supports up to three variables per term.": [
+                "指定需要计算边际估计均值的变量的列表。每个项最多支持三个变量。"
+            ],
+            "a list of lists, where each list decribes a repeated measure (as a string) from `data` defined as `measure` and the particular combination of levels from `rm` that it belongs to (as a vector of strings) defined as `cell`": [
+                "描述重复测量`数据`中被定义为`测量`（作为字符串）以及`rm`中特定水平组合被定义为`单元`（作为字符串向量）的列表"
+            ],
+            "a list of lists, where each list describes the `label` (as a string) and the `levels` (as vector of strings) of a particular repeated measures factor": [
+                "描述特定重复测量因子的“标签”（作为字符串）和“水平”（作为字符串向量）的列表"
+            ],
+            "A low p-value suggests a violation of the assumption of equal variances": [
+                "低p值提示方差不齐"
+            ],
+            "A low p-value suggests a violation of the assumption of normality": [
+                "低p值提示不服从正态分布"
+            ],
+            "A nice correlation data set": [
+                "一个理想相关数据集"
+            ],
+            "a number (default: 0.1), highlight values in the `'corRes'` table above this value": [
+                "数字（默认为0），突出显示“corRes”表中高于该指标的值"
+            ],
+            "a number (default: 0.3), hide factor loadings below this value": [
+                "数字（默认为0.3），隐藏低于此值的因子载荷"
+            ],
+            "a number (default: 0.3), hide loadings below this value": [
+                "数字（默认为0.3），隐藏低于此值的载荷"
+            ],
+            "a number (default: 0.5), the value for the null hypothesis": [
+                "数字（默认为0.5），零假设的值"
+            ],
+            "a number (default: 0), the minimal eigenvalue for a factor to be included in the model": [
+                "数字（默认为0），模型中因子的最小特征值"
+            ],
+            "a number (default: 1), the beta prior 'a' parameter": [
+                "数字（默认为1），β分布先验的 'a'参数"
+            ],
+            "a number (default: 1), the beta prior 'b' parameter": [
+                "数字（默认为1），β分布先验的'b'参数"
+            ],
+            "a number (default: 1), the minimal eigenvalue for a component to be included in the model": [
+                "数字（默认为1），模型中主成分的最小特征值"
+            ],
+            "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
+                "数字（默认为3），突出显示“modIndices”表中高于该指标的值"
+            ],
+            "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "介于0.5和2之间的数字（默认为0.707），用于计算Bayes因子的先验宽度"
+            ],
+            "a number between 0.5 and 2.0 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "介于0.5和2.0之间的数字（默认为0.707），用于计算Bayes因子的先验宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width": [
+                "介于50和99.9之间的数字（默认为95），用于指定置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width for the estimated marginal means": [
+                "介于50和99.9之间的数字（默认为95），用于指定边际估计均值的置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width that is used as `'ci'`": [
+                "介于50和99.9之间的数字（默认为95），使用`'ci'`表示置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), the confidence interval width": [
+                "介于50和99.9之间的数字（默认为95），置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), the credible interval width": [
+                "介于50和99.9之间的数字（默认为95），可信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals": [
+                "介于50和99.9之间的数字（默认为95），置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the effect sizes": [
+                "介于50和99.9之间的数字（默认为95），效应量的置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the post-hoc effect sizes": [
+                "介于50和99.9之间的数字（默认为95），事后检验效应量的置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals to provide": [
+                "介于50和99.9之间的数字（默认为95），置信区间宽度"
+            ],
+            "a number between 50 and 99.9 (default: 95), width of the confidence intervals to provide": [
+                "介于50和99.9之间的数字（默认为95），置信区间宽度"
+            ],
+            "a number specifying the value of the null hypothesis": [
+                "设定零假设的数值"
+            ],
+            "a parameter": [
+                "a参数"
+            ],
+            "a possible value of `'d'`; provide cohen's d measure of effect size for the post-hoc tests": [
+                "可能值“d”；报告事后检验效应量cohen's d值"
+            ],
+            "a post-hoc table": [
+                "事后检验表格"
+            ],
+            "a proportions table": [
+                "比例表"
+            ],
+            "a q-q plot": [
+                "q-q图"
+            ],
+            "A repeated measures ANOVA data set": [
+                "重复测量方差分析数据集"
+            ],
+            "a string (default: 'Dependent') describing the label used for the dependent variable throughout the analysis": [
+                "描述整个分析过程中因变量所用标签的字符（默认为“Dependent”）"
+            ],
+            "a string naming a variable in `data` containing counts, or NULL if each row represents a single observation": [
+                "在包含计数资料的 `数据`中命名变量的字符，如果每行代表一个的观察对象，则为零"
+            ],
+            "a string naming the dependent variable from `data`, variable must be a factor": [
+                "'数据'中命名因变量的字符，变量必须是分类变量"
+            ],
+            "a string naming the dependent variable from `data`, variable must be numeric": [
+                "'数据'中命名因变量的字符，变量必须是数值型变量"
+            ],
+            "a string naming the dependent variable in `data`": [
+                "命名`数据`中因变量的字符"
+            ],
+            "a string naming the dependent variables in `data`": [
+                "命名`数据`中因变量的字符"
+            ],
+            "a string naming the grouping or independent variable in `data`": [
+                "`数据`中命名分组变量或自变量的字符"
+            ],
+            "a summary of the groups": [
+                "分组汇总摘要"
+            ],
+            "a table containing estimated marginal means": [
+                "边际估计均值表"
+            ],
+            "a table containing factor covariances estimates": [
+                "因子协方差表"
+            ],
+            "a table containing factor intercept estimates": [
+                "因子截距表"
+            ],
+            "a table containing fit measures": [
+                "拟合评价表"
+            ],
+            "a table containing modification indices for the factor loadings not included in the model": [
+                "未进入模型中的因子荷载的修正指数表"
+            ],
+            "a table containing modification indices for the residual covariances not included in the model": [
+                "未进入模型中的剩余协方差的修正指数表"
+            ],
+            "a table containing residual covariances estimates": [
+                "剩余协方差表"
+            ],
+            "a table containing residual intercept estimates": [
+                "残差截距表"
+            ],
+            "a table containing residuals for the observed correlation matrix": [
+                "实际相关矩阵残差表"
+            ],
+            "a table containing the chi-square test for exact fit": [
+                "精确卡方检验表"
+            ],
+            "a table containing the collinearity statistics": [
+                "共线性统计表"
+            ],
+            "a table containing the descriptives": [
+                "统计描述表"
+            ],
+            "a table containing the factor loadings": [
+                "因子载荷表"
+            ],
+            "a table containing the group descriptives": [
+                "分组描述表"
+            ],
+            "a table containing the homogeneity of variances tests": [
+                "方差齐性检验表"
+            ],
+            "a table containing the normality test results": [
+                "正态性检验表"
+            ],
+            "a table containing the normality tests": [
+                "正态性检验表"
+            ],
+            "a table containing the results from the Box-Tidwell test": [
+                "box-Tidwell检验表"
+            ],
+            "a table containing the t-test results": [
+                "t检验表"
+            ],
+            "a table of ANCOVA results": [
+                "协方差分析表"
+            ],
+            "a table of ANOVA results": [
+                "方差分析表"
+            ],
+            "a table of comparative measures": [
+                "效应比较表"
+            ],
+            "a table of homogeneity of variances tests": [
+                "方差齐性检验表"
+            ],
+            "a table of homogeneity tests": [
+                "方差齐性检验表"
+            ],
+            "a table of likelihood ratio tests": [
+                "似然比检验表"
+            ],
+            "a table of model coefficient thresholds": [
+                "模型系数阈值表"
+            ],
+            "a table of model coefficients": [
+                "模型系数表"
+            ],
+            "a table of normality tests": [
+                "正态性检验表"
+            ],
+            "a table of predicted classifications": [
+                "预测分类表"
+            ],
+            "a table of predictive measures": [
+                "预测评价表"
+            ],
+            "a table of proportions": [
+                "比例表"
+            ],
+            "a table of test results": [
+                "检验结果表"
+            ],
+            "a table of the 'nominal' test results": [
+                "'nominal'检验结果表"
+            ],
+            "a table of the descriptive statistics": [
+                "描述统计表"
+            ],
+            "a table of the Friedman test results": [
+                "friedman检验结果表"
+            ],
+            "a table of the gamma test results": [
+                "gamma检验结果表"
+            ],
+            "a table of the Kendall's tau-b test results": [
+                "kendall's tau-b检验结果表"
+            ],
+            "a table of the Mantel-Haenszel test for trend": [
+                "mantel-Haenszel趋势检验结果表"
+            ],
+            "a table of the pairwise comparisons": [
+                "两两比较结果表"
+            ],
+            "a table of the proportions": [
+                "比例表"
+            ],
+            "a table of the proportions and test results": [
+                "比例表和检验结果表"
+            ],
+            "a table of the test results": [
+                "检验结果表"
+            ],
+            "a table of χ² test results": [
+                "χ² 检验结果表"
+            ],
+            "a vector containing strings naming the varibales that are reverse scaled": [
+                "命名反向计分变量的字符串向量"
+            ],
+            "a vector of numbers: the expected proportions": [
+                "数字向量：理论比例"
+            ],
+            "a vector of strings naming the between subjects factors from `data`": [
+                "对`数据`中组间因子命名的字符串向量"
+            ],
+            "a vector of strings naming the control variables in `data`": [
+                "对`数据`中控制变量命名的字符串向量"
+            ],
+            "a vector of strings naming the covariates from `data`": [
+                "对`数据`中协变量命名的字符串向量"
+            ],
+            "a vector of strings naming the covariates from `data`. Variables must be numeric": [
+                "对`数据`中协变量命名的字符串向量。变量必须是数值型"
+            ],
+            "a vector of strings naming the factors from `data`": [
+                "对`数据`中因子命名的字符串向量"
+            ],
+            "a vector of strings naming the fixed factors from `data`": [
+                "对`数据`中固定因子命名的字符串向量"
+            ],
+            "a vector of strings naming the repeated measures variables": [
+                "对`数据`中重复测量变量命名的字符串向量"
+            ],
+            "a vector of strings naming the variables of interest in `data`": [
+                "对`数据`中目标变量命名的字符串向量"
+            ],
+            "a vector of strings naming the variables to correlate in `data`": [
+                "对`数据`中关联变量命名的字符串向量"
+            ],
+            "a vector of strings naming the variables used to split `vars`": [
+                "命名拆分`变量`的字符串向量"
+            ],
+            "Accuracy": [
+                "准确度"
+            ],
+            "Add New Block": [
+                "添加新的层"
+            ],
+            "Add New Factor": [
+                "添加新的因子"
+            ],
+            "Add New Term": [
+                "添加新的项"
+            ],
+            "Additional Options": [
+                "附加选项"
+            ],
+            "Additional Output": [
+                "附加输出结果"
+            ],
+            "Additional Statistics": [
+                "附加统计信息"
+            ],
+            "Adjusted R²": [
+                "校正R²"
+            ],
+            "AIC": [
+                "AIC"
+            ],
+            "All observations are tied": [
+                "所有观察结果一致"
+            ],
+            "Alternative hypothesis": [
+                "备择假设"
+            ],
+            "an array of contrasts tables": [
+                "一组对比表"
+            ],
+            "an array of descriptive plots": [
+                "一组描述图"
+            ],
+            "an array of frequency tables": [
+                "一组频数表"
+            ],
+            "an array of groups of plots": [
+                "一组图"
+            ],
+            "an array of model specific results": [
+                "一系列详细模型结果"
+            ],
+            "an array of pairwise comparison tables": [
+                "一组两两比较结果表"
+            ],
+            "an array of post-hoc tables": [
+                "一组事后检验结果表"
+            ],
+            "an array of Q-Q plots": [
+                "一组Q-Q图"
+            ],
+            "an array of the descriptive plots": [
+                "一组描述图"
+            ],
+            "an array of the estimated marginal means plots + tables": [
+                "一组边际估计均值图+表"
+            ],
+            "an array of the posterior plots": [
+                "一组后验概率图"
+            ],
+            "an image containing the model path diagram": [
+                "模型路径图"
+            ],
+            "an image of the descriptive plots": [
+                "描述图"
+            ],
+            "an integer (default: 1), the number of components in the model": [
+                "整数（默认为1），表示模型中的成分个数"
+            ],
+            "an integer (default: 1), the number of factors in the model": [
+                "整数（默认为1），表示模型中的因子个数"
+            ],
+            "an integer (default: 4) specifying the number of equal groups": [
+                "整数（默认为4），表示相等组的个数"
+            ],
+            "An uninspiring ANOVA data set": [
+                "一个不理想的方差分析数据集"
+            ],
+            "Analyses bundled with jamovi": [
+                "使用jamovi进行分析"
+            ],
+            "ANCOVA": [
+                "协方差分析"
+            ],
+            "Anderson & Rubin": [
+                "Anderson & Rubin 检验"
+            ],
+            "Anderson's Iris Data": [
+                "Anderson's Iris 数据集"
+            ],
+            "ANOVA": [
+                "方差分析"
+            ],
+            "ANOVA test": [
+                "方差分析"
+            ],
+            "As there are no between subjects factors specified this assumption is always met.": [
+                "未指定组间因子，该假设始终满足。"
+            ],
+            "Assume equal (Fisher's)": [
+                "方差齐(Fisher's)"
+            ],
+            "Assumption Checks": [
+                "适用条件判断"
+            ],
+            "Assumptions": [
+                "假设检验"
+            ],
+            "At least one variable must have two levels": [
+                "至少有一个两个水平的变量"
+            ],
+            "AUC": [
+                "AUC"
+            ],
+            "Autocorrelation": [
+                "自相关"
+            ],
+            "Autocorrelation test": [
+                "自相关检验"
+            ],
+            "Available for 2x2 tables only": [
+                "仅限于2x2四格表"
+            ],
+            "b parameter": [
+                "b参数"
+            ],
+            "Bar Plot": [
+                "条形图"
+            ],
+            "Bar plot": [
+                "条形图"
+            ],
+            "Bar Plots": [
+                "条形图"
+            ],
+            "Bar Type": [
+                "条形图类型"
+            ],
+            "Bartlett": [
+                "Bartlett 法"
+            ],
+            "Bartlett's Test of Sphericity": [
+                "Bartlett's球形检验"
+            ],
+            "Bartlett's test of sphericity": [
+                "Bartlett's球形检验"
+            ],
+            "Based on eigenvalue": [
+                "基于特征值"
+            ],
+            "Based on parallel analysis": [
+                "基于平行性分析"
+            ],
+            "Bayes factor": [
+                "贝叶斯因子法"
+            ],
+            "Bayes factor₁₀": [
+                "贝叶斯因子₁₀"
+            ],
+            "Bayesian Statistics": [
+                "贝叶斯统计"
+            ],
+            "beta 'a' parameter": [
+                "β分布的'a'参数"
+            ],
+            "beta 'b' parameter": [
+                "β分布的'b'参数"
+            ],
+            "Between Subject Factors": [
+                "组间因子"
+            ],
+            "Between Subjects Components": [
+                "组间构成"
+            ],
+            "Between Subjects Effects": [
+                "组间效应"
+            ],
+            "BIC": [
+                "BIC"
+            ],
+            "Big 5 (Dolan, Oort, Stoel & Wicherts, 2009)": [
+                "Big 5 (Dolan, Oort, Stoel & Wicherts, 2009)"
+            ],
+            "Binomial": [
+                "二分类"
+            ],
+            "Binomial Logistic Regression": [
+                "二分类Logistic回归"
+            ],
+            "Binomial Test": [
+                "二项分布检验"
+            ],
+            "Binomial test": [
+                "二项分布检验"
+            ],
+            "Block {0}": [
+                "层{0}"
+            ],
+            "Block 1": [
+                "层 1"
+            ],
+            "Blocks": [
+                "层"
+            ],
+            "Bonferroni": [
+                "Bonferroni法"
+            ],
+            "Box plot": [
+                "箱线图"
+            ],
+            "Box Plots": [
+                "箱线图"
+            ],
+            "Box-Tidwell test": [
+                "Box-Tidwell检验"
+            ],
+            "Box-Tidwell Test for Linearity of the Logit": [
+                "对数线性Box-Tidwell检验"
+            ],
+            "Box's Homogeneity of Covariance Matrices Test": [
+                "协方差矩阵Box's 齐性检验"
+            ],
+            "Box's M test": [
+                "Box'sM检验"
+            ],
+            "Box's M test for homogeneity of covariance matrices": [
+                "协方差矩阵Box'M齐性检验"
+            ],
+            "Bugs (Ryan, Wilde & Crist, 2013)": [
+                "Bugs (Ryan, Wilde & Crist, 2013)"
+            ],
+            "Cells": [
+                "单元格"
+            ],
+            "Central Tendency": [
+                "集中趋势"
+            ],
+            "CFI": [
+                "相对拟合指数"
+            ],
+            "Chi-Square Quantiles": [
+                "卡方分位数"
+            ],
+            "CI Lower": [
+                "置信区间下限"
+            ],
+            "CI Upper": [
+                "置信区间上限"
+            ],
+            "Classification Table": [
+                "分类表"
+            ],
+            "Classification table": [
+                "分类表"
+            ],
+            "Classification Table – {dep}": [
+                "分类表– {dep}"
+            ],
+            "Cohen's d": [
+                "Cohen's d值"
+            ],
+            "Collinearity Statistics": [
+                "共线性分析"
+            ],
+            "Collinearity statistics": [
+                "共线性分析"
+            ],
+            "Column": [
+                "列"
+            ],
+            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
+                "列“{name}”包含未使用的水平(仅在删除有缺失值的行时才会出现)"
+            ],
+            "Column variable '{var}' contains fewer than 2 levels": [
+                "列变量“{var}”少于2个水平"
+            ],
+            "Columns": [
+                "列"
+            ],
+            "columns": [
+                "列"
+            ],
+            "Columns compared": [
+                "比较列"
+            ],
+            "Comparative Measures": [
+                "比较方法"
+            ],
+            "Comparative Measures (2x2 only)": [
+                "比较方法(仅限于2x2四格表)"
+            ],
+            "Compare": [
+                "对比"
+            ],
+            "Comparison": [
+                "比较"
+            ],
+            "Comparisons are based on estimated marginal means": [
+                "基于边际估计均值进行比较"
+            ],
+            "Component": [
+                "成分"
+            ],
+            "Component correlations": [
+                "成分相关"
+            ],
+            "Component Loadings": [
+                "成分载荷"
+            ],
+            "Component scores": [
+                "成分得分"
+            ],
+            "Component Statistics": [
+                "成分分析"
+            ],
+            "Component summary": [
+                "成分摘要"
+            ],
+            "component(s)": [
+                "主成分"
+            ],
+            "Components": [
+                "组分"
+            ],
+            "components": [
+                "组成"
+            ],
+            "Confidence Interval": [
+                "置信区间"
+            ],
+            "Confidence interval": [
+                "置信区间"
+            ],
+            "Confidence interval for Mean": [
+                "均值的置信区间"
+            ],
+            "Confidence interval width": [
+                "置信区间宽度"
+            ],
+            "Confidence Intervals": [
+                "置信区间"
+            ],
+            "Confidence intervals": [
+                "置信区间"
+            ],
+            "Confidence level": [
+                "置信水平"
+            ],
+            "Confirmatory Factor Analysis": [
+                "验证性因子分析"
+            ],
+            "Constraints": [
+                "约束条件"
+            ],
+            "Contingency coefficient": [
+                "列联系数"
+            ],
+            "Contingency Tables": [
+                "列联表"
+            ],
+            "Contrasts": [
+                "对比"
+            ],
+            "Contrasts - $key": [
+                "对比-$key"
+            ],
+            "Control Variables": [
+                "控制变量"
+            ],
+            "Control variables": [
+                "控制变量"
+            ],
+            "controlling for {items}": [
+                "控制{items}"
+            ],
+            "Cook's Distance": [
+                "Cook's距离"
+            ],
+            "Cook's distance": [
+                "Cook's距离"
+            ],
+            "Correction": [
+                "校正"
+            ],
+            "Corrections": [
+                "校正"
+            ],
+            "Correlated": [
+                "相关"
+            ],
+            "Correlated negatively": [
+                "负相关"
+            ],
+            "Correlated positively": [
+                "正相关"
+            ],
+            "Correlation": [
+                "相关性"
+            ],
+            "Correlation Coefficients": [
+                "相关系数"
+            ],
+            "Correlation Heatmap": [
+                "相关性热图"
+            ],
+            "Correlation heatmap": [
+                "相关性热图"
+            ],
+            "Correlation matrices are a way to examine linear relationships between\ntwo or more continuous variables.": [
+                "相关矩阵是检验两个或多个连续变量之间线性关系的一种方法。"
+            ],
+            "Correlation matrices are a way to examine linear relationships between\ntwo or more continuous variables.\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                "相关矩阵是检验两个或多个连续变量之间线性关系的一种方法。\n对于每一对变量，Pearson's相关系数r值表示两个变量之间关系的强度和方向。\n正值表示正相关(一个值随着另一个值的增加而增加)。\n负值表示负相关(一个值随着另一个值的增加而减小，反之亦然)。\n通常，通过检验相关系数是否为0的原假设来判断相关系数是否具有统计学意义(计算P值)。如果p值较低(低于检验水准)，则表明相关系数不为零，两个变量之间存在线性(或更复杂)的关系。"
+            ],
+            "Correlation Matrix": [
+                "相关矩阵"
+            ],
+            "Correlation matrix": [
+                "相关矩阵"
+            ],
+            "Correlation Type": [
+                "相关类型"
+            ],
+            "Correlation type": [
+                "相关类型"
+            ],
+            "Count": [
+                "计数"
+            ],
+            "Counts": [
+                "计数"
+            ],
+            "Counts (optional)": [
+                "计数（可选）"
+            ],
+            "Counts may not be infinite": [
+                "计数资料不可为无限值"
+            ],
+            "Counts may not be negative": [
+                "计数资料不可为负数"
+            ],
+            "Counts must be non-negative and finite": [
+                "计数资料必须是非负且有限数"
+            ],
+            "Covariates": [
+                "协变量"
+            ],
+            "Cox & Snell's R²": [
+                "Cox & Snell's R²"
+            ],
+            "Cramer's V": [
+                "Cramer’s V系数"
+            ],
+            "Credible Interval": [
+                "可信区间"
+            ],
+            "Credible intervals": [
+                "可信区间"
+            ],
+            "Cronbach's α": [
+                "Cronbach's α系数"
+            ],
+            "Cronbach's α (if item is dropped)": [
+                "删除条目后的Cronbach's α系数"
+            ],
+            "cubic": [
+                "三次方的"
+            ],
+            "Cumulative %": [
+                "累计%"
+            ],
+            "Cut point values": [
+                "截断值"
+            ],
+            "Cut points for": [
+                "截断为"
+            ],
+            "Cut-Off": [
+                "截断"
+            ],
+            "Cut-Off Plot": [
+                "截断值图"
+            ],
+            "Cut-off plot": [
+                "截断值图"
+            ],
+            "Cut-off value": [
+                "截断值"
+            ],
+            "dat <- data.frame(\n    `1st survey` = c('Approve', 'Approve', 'Disapprove', 'Disapprove'),\n    `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),\n    `Counts` = c(794, 150, 86, 570),\n    check.names=FALSE)\n\ncontTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)\n\n#\n#  PAIRED SAMPLES CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ────────────────────────────────────────────────\n#    1st survey    Approve    Disapprove    Total\n#  ────────────────────────────────────────────────\n#    Approve           794           150      944\n#    Disapprove         86           570      656\n#    Total             880           720     1600\n#  ────────────────────────────────────────────────\n#\n#\n#  McNemar Test\n#  ─────────────────────────────────────────────────────\n#                                Value    df    p\n#  ─────────────────────────────────────────────────────\n#    χ²                           17.4     1    < .001\n#    χ² continuity correction     16.8     1    < .001\n#  ─────────────────────────────────────────────────────\n#\n\n\n# Alternatively, omit the left of the formula (`Counts`) from the\n# formula if each row represents a single observation:\n\ncontTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)": [
+                "dat <- data.frame(\n    `1st survey` = c('Approve', 'Approve', 'Disapprove', 'Disapprove'),\n    `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),\n    `Counts` = c(794, 150, 86, 570),\n    check.names=FALSE)\n\ncontTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)\n\n#\n#  配对样本列联表\n#\n#  列联表\n#  ────────────────────────────────────────────────\n#    1st survey    Approve    Disapprove     合计\n#  ────────────────────────────────────────────────\n#    Approve             794          150      944\n#    Disapprove         86           570      656\n#    合计                     880          720     1600\n#  ────────────────────────────────────────────────\n#\n#\n#  McNemar 检验\n#  ─────────────────────────────────────────────────────\n#                                统计量    自由度    p值\n#  ─────────────────────────────────────────────────────\n#    χ²                           17.4     1    < .001\n#    连续校正χ²             16.8     1    < .001\n#  ─────────────────────────────────────────────────────\n#\n\n\n# 如果每行代表一个观察值，则省略公式的左边的(`计数`)\n\ncontTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)"
+            ],
+            "dat <- data.frame(x=c(8, 15))\n\npropTest2(dat, vars = x, areCounts = TRUE)\n\n#\n#  PROPORTION TEST (2 OUTCOMES)\n#\n#  Binomial Test\n#  ───────────────────────────────────────────────────────\n#         Level    Count    Total    Proportion    p\n#  ───────────────────────────────────────────────────────\n#    x    1            8       23         0.348    0.210\n#         2           15       23         0.652    0.210\n#  ───────────────────────────────────────────────────────\n#    Note. Hₐ is proportion ≠ 0.5\n#": [
+                "dat <- data.frame(x=c(8, 15))\n\npropTest2(dat, vars = x, areCounts = TRUE)\n\n#\n#  比例检验 (2 分类结局)\n#\n#  二项分布检验\n#  ───────────────────────────────────────────────────────\n#         水平    计数    合计           比例    p值\n#  ───────────────────────────────────────────────────────\n#    x    1            8       23         0.348    0.210\n#         2           15       23         0.652    0.210\n#  ───────────────────────────────────────────────────────\n#    注. Hₐ 为比例 ≠ 0.5\n#"
+            ],
+            "Data": [
+                "数据"
+            ],
+            "data <- lavaan::HolzingerSwineford1939\n\njmv::cfa(\n    data = data,\n    factors = list(\n        list(label=\"Visual\", vars=c(\"x1\", \"x2\", \"x3\")),\n        list(label=\"Textual\", vars=c(\"x4\", \"x5\", \"x6\")),\n        list(label=\"Speed\", vars=c(\"x7\", \"x8\", \"x9\"))),\n    resCov = NULL)\n\n#\n#  CONFIRMATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ─────────────────────────────────────────────────────────────────\n#    Factor     Indicator    Estimate    SE        Z        p\n#  ─────────────────────────────────────────────────────────────────\n#    Visual     x1              0.900    0.0832    10.81    < .001\n#               x2              0.498    0.0808     6.16    < .001\n#               x3              0.656    0.0776     8.46    < .001\n#    Textual    x4              0.990    0.0567    17.46    < .001\n#               x5              1.102    0.0626    17.60    < .001\n#               x6              0.917    0.0538    17.05    < .001\n#    Speed      x7              0.619    0.0743     8.34    < .001\n#               x8              0.731    0.0755     9.68    < .001\n#               x9              0.670    0.0775     8.64    < .001\n#  ─────────────────────────────────────────────────────────────────\n#\n#\n#  FACTOR ESTIMATES\n#\n#  Factor Covariances\n#  ──────────────────────────────────────────────────────────────\n#                          Estimate    SE        Z       p\n#  ──────────────────────────────────────────────────────────────\n#    Visual     Visual      1.000 ᵃ\n#               Textual     0.459      0.0635    7.22    < .001\n#               Speed       0.471      0.0862    5.46    < .001\n#    Textual    Textual     1.000 ᵃ\n#               Speed       0.283      0.0715    3.96    < .001\n#    Speed      Speed       1.000 ᵃ\n#  ──────────────────────────────────────────────────────────────\n#    ᵃ fixed parameter\n#\n#\n#  MODEL FIT\n#\n#  Test for Exact Fit\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    85.3    24    < .001\n#  ────────────────────────\n#\n#\n#  Fit Measures\n#  ───────────────────────────────────────────────\n#    CFI      TLI      RMSEA     Lower     Upper\n#  ───────────────────────────────────────────────\n#    0.931    0.896    0.0921    0.0714    0.114\n#  ───────────────────────────────────────────────\n#": [
+                "data <- lavaan::HolzingerSwineford1939\n\njmv::cfa(\n    data = data,\n    factors = list(\n        list(label=\"Visual\", vars=c(\"x1\", \"x2\", \"x3\")),\n        list(label=\"Textual\", vars=c(\"x4\", \"x5\", \"x6\")),\n        list(label=\"Speed\", vars=c(\"x7\", \"x8\", \"x9\"))),\n    resCov = NULL)\n\n#\n#  验证性因子分析\n#\n#  因子载荷\n#  ─────────────────────────────────────────────────────────────────\n#    因子       变量          系数    标准误        Z值        p值\n#  ─────────────────────────────────────────────────────────────────\n#    Visual     x1          0.900    0.0832    10.81    < .001\n#               x2              0.498    0.0808     6.16    < .001\n#               x3              0.656    0.0776     8.46    < .001\n#    Textual    x4         0.990    0.0567    17.46    < .001\n#               x5              1.102    0.0626    17.60    < .001\n#               x6              0.917    0.0538    17.05    < .001\n#    Speed      x7              0.619    0.0743     8.34    < .001\n#               x8              0.731    0.0755     9.68    < .001\n#               x9              0.670    0.0775     8.64    < .001\n#  ─────────────────────────────────────────────────────────────────\n#\n#\n# 因子系数\n#\n#  因子协方差\n#  ──────────────────────────────────────────────────────────────\n#                                    系数    标准误        Z值       p值\n#  ──────────────────────────────────────────────────────────────\n#    Visual     Visual      1.000 ᵃ\n#               Textual     0.459      0.0635    7.22    < .001\n#               Speed       0.471      0.0862    5.46    < .001\n#    Textual    Textual     1.000 ᵃ\n#               Speed       0.283      0.0715    3.96    < .001\n#    Speed      Speed       1.000 ᵃ\n#  ──────────────────────────────────────────────────────────────\n#    ᵃ 固定系数\n#\n#\n#  模型拟合\n#\n#  精确拟合检验\n#  ────────────────────────\n#    χ²值    自由度   p值\n#  ────────────────────────\n#    85.3    24    < .001\n#  ────────────────────────\n#\n#\n#  拟合评价\n#  ───────────────────────────────────────────────\n#     CFI        TLI         RMSEA     下限     上限\n#  ───────────────────────────────────────────────\n#    0.931    0.896    0.0921    0.0714    0.114\n#  ───────────────────────────────────────────────\n#"
+            ],
+            "Data Reduction": [
+                "数据降维"
+            ],
+            "Data Summary": [
+                "数据摘要"
+            ],
+            "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1     4.97e-7    6.00     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────────\n#    Predictor    Estimate      SE          Z           p\n#  ────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2      0.0136    0.989\n#    age            -0.00653       482.7    -1.35e-5    1.000\n#    bwt            -1.18532        87.0     -0.0136    0.989\n#  ────────────────────────────────────────────────────────────\n#    Note. Estimates represent the log odds of \"low = 1\"\n#    vs. \"low = 0\"\n#\n#": [
+                "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  二分类Logistic回归\n#\n#  模型拟合评价\n#  ───────────────────────────────────────\n#    模型    偏差        AIC值     R²-McF值\n#  ───────────────────────────────────────\n#        1     4.97e-7    6.00     1.000\n#  ───────────────────────────────────────\n#\n#\n#  模型详细结果\n#\n#  模型 1\n#\n#  模型系数\n#  ────────────────────────────────────────────────────────────\n#    变量                系数                 标准误          Z值           p值\n#  ────────────────────────────────────────────────────────────\n#    截距         2974.73225    218237.2      0.0136    0.989\n#    age            -0.00653         482.7          -1.35e-5     1.000\n#    bwt            -1.18532         87.0            -0.0136       0.989\n#  ────────────────────────────────────────────────────────────\n#    注. 系数表示\"low = 1\"与\"low = 0\"相比的对数比"
+            ],
+            "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ──────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ───────────────────────────────────────────────────────────────\n#    race     Predictor    Estimate    SE        Z         p\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    Intercept      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────\n#\n#": [
+                "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  无序多分类Logistic回归\n#\n#  模型拟合评价\n#  ──────────────────────────────────────\n#    模型    偏差    AIC值    R²-McF值\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  模型详细结果\n#\n#模型 1\n#\n#  模型系数\n#  ───────────────────────────────────────────────────────────────\n#    race   变量            系数    标准误        Z值         p值\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1 截距           0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    截距      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────"
+            ],
+            "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  REPEATED MEASURES ANOVA\n#\n#  Within Subjects Effects\n#  ───────────────────────────────────────────────────────────────────────\n#                  Sum of Squares    df    Mean Square    F       p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#\n#\n#\n#  Between Subjects Effects\n#  ─────────────────────────────────────────────────────────────────\n#                Sum of Squares    df    Mean Square    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#": [
+                "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  重复测量方差分析\n#\n#  组内效应\n#  ───────────────────────────────────────────────────────────────────────\n#                                  平方和    自由度    均方       F值     p值\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    残差                           257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    注. 类型3平方和\n#\n#\n#\n#  组间效应\n#  ─────────────────────────────────────────────────────────────────\n#                              平方和    自由度    均方    F值    p值\n#  ─────────────────────────────────────────────────────────────────\n#    残差                   954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    注. 类型3平方和\n#"
+            ],
+            "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#": [
+                "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  重复测量方差分析（非参数法）\n#\n#  Friedman检验\n#  ────────────────────────\n#    χ²值      自由度    p值\n#  ────────────────────────\n#    55.8        3       < .001\n#  ────────────────────────\n#"
+            ],
+            "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  PAIRED SAMPLES T-TEST\n#\n#  Paired Samples T-Test\n#  ──────────────────────────────────────────────────────────────\n#                                   statistic    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#": [
+                "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  配对样本T检验\n#\n#  配对样本T检验\n#  ──────────────────────────────────────────────────────────────\n#                                                         统计量    自由度     p值\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t值        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#"
+            ],
+            "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ─────────────────────────────────────────────────────\n#    Hair     Brown    Blue    Hazel    Green    Total\n#  ─────────────────────────────────────────────────────\n#    Black       68      20       15        5      108\n#    Brown      119      84       54       29      286\n#    Red         26      17       14       14       71\n#    Blond        7      94       10       16      127\n#    Total      220     215       93       64      592\n#  ─────────────────────────────────────────────────────\n#\n#\n#  χ² Tests\n#  ───────────────────────────────\n#          Value    df    p\n#  ───────────────────────────────\n#    χ²      138     9    < .001\n#    N       592\n#  ───────────────────────────────\n#\n\n# Alternatively, omit the left of the formula (`Freq`) if each row\n# represents a single observation:\n\ncontTables(formula = ~ Hair:Eye, dat)": [
+                "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  列联表\n#\n#  列联表\n#  ─────────────────────────────────────────────────────\n#    Hair     Brown    Blue    Hazel    Green    合计\n#  ─────────────────────────────────────────────────────\n#    Black       68      20       15        5      108\n#    Brown      119      84       54       29      286\n#    Red         26      17       14       14       71\n#    Blond        7      94       10       16      127\n#    合计      220     215       93       64      592\n#  ─────────────────────────────────────────────────────\n#\n#\n#  χ²检验\n#  ───────────────────────────────\n#          统计量    自由度    p值\n#  ───────────────────────────────\n#    χ²值  138         9       < .001\n#    个案数   592\n#  ───────────────────────────────\n#\n\n# 如果每行代表一个观察值，则省略公式的左边的 (`Freq`)\n\ncontTables(formula = ~ Hair:Eye, dat)"
+            ],
+            "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  PROPORTION TEST (N OUTCOMES)\n#\n#  Proportions\n#  ────────────────────────────────\n#    Level    Count    Proportion\n#  ────────────────────────────────\n#    Brown      220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  χ² Goodness of Fit\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#": [
+                "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  比例检验 (多分类结局)\n#\n#  比例\n#  ────────────────────────────────\n#       水平     计数         比例\n#  ────────────────────────────────\n#    Brown    220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  拟合优度χ²检验\n#  ───────────────────────\n#    χ²值   自由度    p值\n#  ───────────────────────\n#    133     3        < .001\n#  ───────────────────────\n#"
+            ],
+            "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Note. 'oblimin' rotation was used\n#": [
+                "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  探索性因子分析\n#\n#  因子载荷\n#  ────────────────────────────────────────────────\n#                    1        2                      独特剩余值\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    注. 使用斜交旋转法\n#"
+            ],
+            "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA\n#\n#  Multivariate Tests\n#  ───────────────────────────────────────────────────────────────────────────\n#                                     value     F       df1    df2    p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  Univariate Tests\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                 Dependent Variable    Sum of Squares    df     Mean Square    F         p\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    Residuals    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#": [
+                "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  多元协方差分析\n#\n#  多变量检验\n#  ───────────────────────────────────────────────────────────────────────────\n#                                             统计量     F值      自由度1    自由度2    p值\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  单变量检验\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                               因变量                    平方和    自由度     均方    F值         p值\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    残差    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#"
+            ],
+            "data('iris')\n\npca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  PRINCIPAL COMPONENT ANALYSIS\n#\n#  Component Loadings\n#  ────────────────────────────────────────\n#                    1         Uniqueness\n#  ────────────────────────────────────────\n#    Sepal.Length     0.890        0.2076\n#    Sepal.Width     -0.460        0.7883\n#    Petal.Length     0.992        0.0168\n#    Petal.Width      0.965        0.0688\n#  ────────────────────────────────────────\n#    Note. 'varimax' rotation was used\n#": [
+                "data('iris')\n\npca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  主成分分析\n#\n#  成分载荷\n#  ────────────────────────────────────────\n#                    1         独特剩余值\n#  ────────────────────────────────────────\n#    Sepal.Length     0.890        0.2076\n#    Sepal.Width     -0.460        0.7883\n#    Petal.Length     0.992        0.0168\n#    Petal.Width      0.965        0.0688\n#  ────────────────────────────────────────\n#    注. 使用最大方差法\n#"
+            ],
+            "data('iris')\n\nreliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),\n            omegaScale = TRUE)\n\n#\n#  RELIABILITY ANALYSIS\n#\n#  Scale Reliability Statistics\n#  ─────────────────────────────────────────\n#             Cronbach's α    McDonald's ω\n#  ─────────────────────────────────────────\n#    scale           0.708           0.848\n#  ─────────────────────────────────────────\n#": [
+                "data('iris')\n\nreliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),\n            omegaScale = TRUE)\n\n#\n#  信度分析\n#\n#  量表信度统计\n#  ─────────────────────────────────────────\n#             Cronbach's α系数    McDonald's ω系数\n#  ─────────────────────────────────────────\n#    scale           0.708           0.848\n#  ─────────────────────────────────────────\n#"
+            ],
+            "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  CORRELATION MATRIX\n#\n#  Correlation Matrix\n#  ──────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ──────────────────────────────────────────────────────────────\n#    mpg     Pearson's r        —    -0.852    -0.848    -0.776\n#            p-value            —    < .001    < .001    < .001\n#\n#    cyl     Pearson's r                  —     0.902     0.832\n#            p-value                      —    < .001    < .001\n#\n#    disp    Pearson's r                            —     0.791\n#            p-value                                —    < .001\n#\n#    hp      Pearson's r                                      —\n#            p-value                                          —\n#  ──────────────────────────────────────────────────────────────\n#": [
+                "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  相关矩阵\n#\n#  相关矩阵\n#  ──────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ──────────────────────────────────────────────────────────────\n#    mpg     Pearson's r系数        —    -0.852    -0.848    -0.776\n#                  p值           —    < .001    < .001    < .001\n#\n#    cyl     Pearson's r系数                  —     0.902     0.832\n#            p值                      —    < .001    < .001\n#\n#    disp    Pearson's r系数                            —     0.791\n#            p值                                —    < .001\n#\n#    hp      Pearson's r系数                                      —\n#            p值                                          —\n#  ──────────────────────────────────────────────────────────────\n#"
+            ],
+            "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIAL CORRELATION\n#\n#  Partial Correlation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-value             —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-value        < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-value        < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Note. controlling for 'hp'\n#": [
+                "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  偏相关\n#\n#  偏相关\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r系数         —\n#            p值             —\n#\n#    cyl     Pearson's r系数    -0.590         —\n#            p值        < .001         —\n#\n#    disp    Pearson's r系数    -0.606     0.719        —\n#            p值        < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    注. 控制'hp'变量\n#"
+            ],
+            "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1    4.12e-10    41.4     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ──────────────────────────────────────────────────────────────────\n#    Predictor          Estimate     SE          Z            p\n#  ──────────────────────────────────────────────────────────────────\n#    Intercept          -4.71e-16        1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079        1.06        1.961    0.050\n#    5 – 3                  0.693        1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693        1.22        0.566    0.571\n#    8 – 4                  2.485        1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386        1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386        1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867    42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485        1.44       -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────\n#\n#": [
+                "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  对数线性回归\n#\n#  模型拟合评价\n#  ───────────────────────────────────────\n#    模型    偏差    AIC值     R²-McF值\n#  ───────────────────────────────────────\n#        1    4.12e-10    41.4     1.000\n#  ───────────────────────────────────────\n#\n#\n#  模型详细结果\n#\n#  模型 1\n#\n#  模型系数\n#  ──────────────────────────────────────────────────────────────────\n#    变量                  系数     标准误          Z值            p值\n#  ──────────────────────────────────────────────────────────────────\n#    截距          -4.71e-16        1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079        1.06        1.961    0.050\n#    5 – 3                  0.693        1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693        1.22        0.566    0.571\n#    8 – 4                  2.485        1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386        1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386        1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867    42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485        1.44       -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────\n#\n#"
+            ],
+            "data('mtcars')\ndat <- mtcars\n\n# frequency tables can be provided for factors\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESCRIPTIVES\n#\n#  Descriptives\n#  ───────────────────────────────────────────\n#               mpg     cyl     disp    gear\n#  ───────────────────────────────────────────\n#    N            32      32      32      32\n#    Missing       0       0       0       0\n#    Mean       20.1    6.19     231    3.69\n#    Median     19.2    6.00     196    4.00\n#    Minimum    10.4    4.00    71.1       3\n#    Maximum    33.9    8.00     472       5\n#  ───────────────────────────────────────────\n#\n#\n#  FREQUENCIES\n#\n#  Frequencies of gear\n#  ────────────────────\n#    Levels    Counts\n#  ────────────────────\n#    3             15\n#    4             12\n#    5              5\n#  ────────────────────\n#\n\n# spliting by a variable\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# providing histograms\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# splitting by multiple variables\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)": [
+                "data('mtcars')\ndat <- mtcars\n\n# 为因子提供频数表\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  描述\n#\n#  描述\n#  ───────────────────────────────────────────\n#               mpg     cyl     disp    gear\n#  ───────────────────────────────────────────\n#    个案数           32      32      32      32\n#    缺失值       0       0       0       0\n#    均值       20.1    6.19     231    3.69\n#    中位数     19.2    6.00     196    4.00\n#    最小值    10.4    4.00    71.1       3\n#    最大值    33.9    8.00     472       5\n#  ───────────────────────────────────────────\n#\n#\n#  频数\n#\n#  gear的频数\n#  ────────────────────\n#    水平    计数\n#  ────────────────────\n#    3             15\n#    4             12\n#    5              5\n#  ────────────────────\n#\n\n# 按变量拆分\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n#提供直方图\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# 根据多个变量拆分\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)"
+            ],
+            "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────\n#    Model    R        R²\n#  ───────────────────────────\n#        1    0.802    0.643\n#  ───────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────\n#    Predictor    Estimate    SE         t         p\n#  ────────────────────────────────────────────────────────\n#    Intercept      -253.8    1086.16    -0.234     0.816\n#    women           -50.9       8.56    -5.948    < .001\n#    prestige        141.4      29.91     4.729    < .001\n#    education       177.2     187.63     0.944     0.347\n#  ────────────────────────────────────────────────────────\n#": [
+                "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  线性回归\n#\n#  模型拟合评价\n#  ───────────────────────────\n#    模型     R           R²\n#  ───────────────────────────\n#        1    0.802    0.643\n#  ───────────────────────────\n#\n#\n#  模型详细结果\n#\n#  模型 1\n#\n#\n#  模型系数\n#  ────────────────────────────────────────────────────────\n#      变量               系数    标准误         t值           p值\n#  ────────────────────────────────────────────────────────\n#    Intercept      -253.8    1086.16    -0.234     0.816\n#    women           -50.9       8.56    -5.948    < .001\n#    prestige        141.4      29.91     4.729    < .001\n#    education       177.2     187.63     0.944     0.347\n#  ────────────────────────────────────────────────────────\n#"
+            ],
+            "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    Residuals              1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)": [
+                "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  协方差分析\n#\n#  协方差分析\n#  ───────────────────────────────────────────────────────────────────────\n#                               平方和    自由度    均方    F值        p值\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    残差                    1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)"
+            ],
+            "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means": [
+                "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  方差分析\n#\n#  方差分析\n#  ───────────────────────────────────────────────────────────────────────\n#                               平方和   自由度    均方    F值        p值\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp           108     2           54.2     4.11     0.022\n#    残差                      712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # 估计supp和dose:supp的边际均值\n    emmPlots = TRUE,              # 绘制边际均值图\n    emmTables = TRUE)             # 绘制边际均值表"
+            ],
+            "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ONE-WAY ANOVA (NON-PARAMETRIC)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#": [
+                "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  单因素方差分析 (非参数法)\n#\n#  Kruskal-Wallis检验\n#  ───────────────────────────────\n#              χ²值    自由度   p值\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#"
+            ],
+            "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  INDEPENDENT SAMPLES T-TEST\n#\n#  Independent Samples T-Test\n#  ────────────────────────────────────────────────────\n#                          statistic    df      p\n#  ────────────────────────────────────────────────────\n#    len    Student's t         1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#": [
+                "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  独立样本T检验\n#\n#  独立样本T检验\n#  ────────────────────────────────────────────────────\n#                                      统计量    自由度   p值\n#  ────────────────────────────────────────────────────\n#    len    Student's t值     1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#"
+            ],
+            "data('ToothGrowth')\n\nttestOneS(ToothGrowth, vars = vars(len, dose))\n\n#\n#  ONE SAMPLE T-TEST\n#\n#  One Sample T-Test\n#  ──────────────────────────────────────────────────────\n#                           statistic    df      p\n#  ──────────────────────────────────────────────────────\n#    len     Student's t         19.1    59.0    < .001\n#    dose    Student's t         14.4    59.0    < .001\n#  ──────────────────────────────────────────────────────\n#": [
+                "data('ToothGrowth')\n\nttestOneS(ToothGrowth, vars = vars(len, dose))\n\n#\n#  单样本T检验\n#\n#  单样本T检验\n#  ──────────────────────────────────────────────────────\n#                                           统计量    自由度      p值\n#  ──────────────────────────────────────────────────────\n#    len       Student's t值        19.1    59.0    < .001\n#    dose    Student's t值         14.4    59.0    < .001\n#  ──────────────────────────────────────────────────────\n#"
+            ],
+            "data('ToothGrowth')\ndat <- ToothGrowth\ndat$dose <- factor(dat$dose)\n\nanovaOneW(formula = len ~ dose, data = dat)\n\n#\n#  ONE-WAY ANOVA\n#\n#  One-Way ANOVA (Welch's)\n#  ────────────────────────────────────────\n#           F       df1    df2     p\n#  ────────────────────────────────────────\n#    len    68.4      2    37.7    < .001\n#  ────────────────────────────────────────\n#": [
+                "data('ToothGrowth')\ndat <- ToothGrowth\ndat$dose <- factor(dat$dose)\n\nanovaOneW(formula = len ~ dose, data = dat)\n\n#\n#  单因素方差分析\n#\n#  单因素方差分析 (Welch's法)\n#  ────────────────────────────────────────\n#              F值   自由度1  自由度2     p值\n#  ────────────────────────────────────────\n#    len    68.4      2           37.7      < .001\n#  ────────────────────────────────────────\n#"
+            ],
+            "Densities for variables": [
+                "变量概率密度"
+            ],
+            "Density": [
+                "概率密度"
+            ],
+            "Dependent": [
+                "因变量"
+            ],
+            "Dependent Variable": [
+                "因变量"
+            ],
+            "Dependent Variable Label": [
+                "因变量标签"
+            ],
+            "Dependent variable must be numeric": [
+                "因变量必须是数值变量"
+            ],
+            "Dependent Variables": [
+                "因变量"
+            ],
+            "deprecated": [
+                "不赞成"
+            ],
+            "Descriptive Plot": [
+                "描述图"
+            ],
+            "Descriptive plot": [
+                "描述图"
+            ],
+            "Descriptives": [
+                "描述"
+            ],
+            "Descriptives are an assortment of summarising statistics, and visualizations which allow exploring the shape and distribution of data. It is good practice to explore your data with descriptives before proceeding to more formal tests.": [
+                "统计描述是对数据进行分类和可视化的过程，以探索数据的形状和分布。在进行更正式的数据分析之前，最好先对数据进行统计学描述。"
+            ],
+            "descriptives plot": [
+                "描述图"
+            ],
+            "Descriptives Plots": [
+                "描述图"
+            ],
+            "Descriptives plots": [
+                "描述图"
+            ],
+            "Descriptives Table": [
+                "描述表"
+            ],
+            "Descriptives table": [
+                "描述表"
+            ],
+            "dev": [
+                "偏差"
+            ],
+            "Deviance": [
+                "离差"
+            ],
+            "Deviation": [
+                "离差"
+            ],
+            "df": [
+                "自由度"
+            ],
+            "df1": [
+                "自由度1"
+            ],
+            "df2": [
+                "自由度2"
+            ],
+            "Difference": [
+                "差异"
+            ],
+            "Difference in 2 proportions": [
+                "两比例间的差异"
+            ],
+            "Difference in proportions": [
+                "比例间的差异"
+            ],
+            "Dispersion": [
+                "离散"
+            ],
+            "Distribution": [
+                "分布"
+            ],
+            "Don't assume equal (Welch's)": [
+                "方差不齐(Welch's)"
+            ],
+            "drag variable here": [
+                "将变量选入这里"
+            ],
+            "drag variables here": [
+                "将变量选入这里"
+            ],
+            "DSCF pairwise comparisons": [
+                "DSCF两两比较"
+            ],
+            "Durbin–Watson Test for Autocorrelation": [
+                "Durbin–Watson自相关检验"
+            ],
+            "DW Statistic": [
+                "DW统计量"
+            ],
+            "Dwass-Steel-Critchlow-Fligner pairwise comparisons": [
+                "Dwass-Steel-Critchlow-Fligner两两比较"
+            ],
+            "Effect Size": [
+                "效应量"
+            ],
+            "Effect size": [
+                "效应量"
+            ],
+            "Eigenvalue": [
+                "特征值"
+            ],
+            "Eigenvalues": [
+                "特征值"
+            ],
+            "Eigenvalues greater than": [
+                "特征值大于"
+            ],
+            "Equal cell weights": [
+                "相等的单元格权重"
+            ],
+            "equal groups": [
+                "个相等的组"
+            ],
+            "error %": [
+                "误差%"
+            ],
+            "Error bars": [
+                "误差线"
+            ],
+            "Estimate": [
+                "系数"
+            ],
+            "Estimate (Log Odds Ratio)": [
+                "系数（对数比值比）"
+            ],
+            "Estimate (Log Rate Ratio)": [
+                "系数（对数率比）"
+            ],
+            "Estimated Marginal Means": [
+                "边际估计均值"
+            ],
+            "Estimated Marginal Means - {term}": [
+                "边际估计均值- {term}"
+            ],
+            "Estimates": [
+                "系数"
+            ],
+            "Estimates represent the log odds of …": [
+                "系数表示…的比值对数"
+            ],
+            "Estimates represent the log odds of \"{dep} = {level1}\" vs. \"{dep} = {level2}\"": [
+                "系数表示 \"{dep} = {level1}\"与 \"{dep} = {level2}\"相比的对数比"
+            ],
+            "Estimation method": [
+                "估算方法"
+            ],
+            "Exclude cases analysis by analysis": [
+                "按分析删除缺失值"
+            ],
+            "Exclude cases listwise": [
+                "按样本删除缺失值"
+            ],
+            "Excluded": [
+                "删除"
+            ],
+            "Expected": [
+                "理论"
+            ],
+            "Expected counts": [
+                "理论频数"
+            ],
+            "Expected Proportions": [
+                "理论比例"
+            ],
+            "Exploration": [
+                "探索"
+            ],
+            "Exploratory Factor Analysis": [
+                "探索性因子分析"
+            ],
+            "Extraction": [
+                "提取"
+            ],
+            "F": [
+                "F值"
+            ],
+            "F test": [
+                "F检验"
+            ],
+            "F-statistic could not be calculated": [
+                "不能计算F统计量"
+            ],
+            "Factor": [
+                "因子"
+            ],
+            "Factor '{factor}' needs to have at least 2 levels": [
+                "因子“{factorName}”至少需要两个水平"
+            ],
+            "Factor '{factorName}' contains no data": [
+                "因子“{factorName}”不包含任何数据"
+            ],
+            "Factor '{factorName}' contains only a single level": [
+                "因子“{factorName}”只有一个水平"
+            ],
+            "Factor {0}": [
+                "因子 {0}"
+            ],
+            "Factor 1": [
+                "因子1"
+            ],
+            "Factor correlations": [
+                "因子相关"
+            ],
+            "Factor Covariances": [
+                "因子协方差"
+            ],
+            "Factor covariances": [
+                "因子协方差"
+            ],
+            "Factor Estimates": [
+                "因子系数"
+            ],
+            "Factor Intercepts": [
+                "因子截距"
+            ],
+            "Factor intercepts": [
+                "因子截距"
+            ],
+            "Factor Loadings": [
+                "因子载荷"
+            ],
+            "Factor Loadings – Modification Indices": [
+                "因子载荷-修正指数"
+            ],
+            "Factor scores": [
+                "因子得分"
+            ],
+            "Factor Statistics": [
+                "因子分析"
+            ],
+            "Factor summary": [
+                "因子摘要"
+            ],
+            "Factor variances = 1": [
+                "因子方差=1"
+            ],
+            "factor(s)": [
+                "因子"
+            ],
+            "Factors": [
+                "因子"
+            ],
+            "factors": [
+                "因子"
+            ],
+            "Fisher's": [
+                "Fisher's法"
+            ],
+            "Fisher's exact test": [
+                "Fisher's精确检验"
+            ],
+            "Fit Measures": [
+                "拟合评价"
+            ],
+            "Fitted": [
+                "拟合"
+            ],
+            "Fixed Factors": [
+                "固定因子"
+            ],
+            "Fixed number": [
+                "固定主成分个数"
+            ],
+            "fixed parameter": [
+                "固定系数"
+            ],
+            "Flag significant comparisons": [
+                "标记有统计学意义的比较结果"
+            ],
+            "Flag significant correlations": [
+                "标记有统计学意义的相关"
+            ],
+            "flag significant correlations (p < .05) with symbols.": [
+                "用符号标记有统计学意义的相关（p<0.05）"
+            ],
+            "flag significant post-hoc comparisons.": [
+                "标记有统计学意义的事后检验."
+            ],
+            "Frequencies": [
+                "频数"
+            ],
+            "Frequencies of $key": [
+                "$key频数"
+            ],
+            "Frequency tables": [
+                "频数表"
+            ],
+            "Friedman": [
+                "Friedman检验"
+            ],
+            "Full information maximum likelihood": [
+                "完全信息最大似然法"
+            ],
+            "Games-Howell (unequal variances)": [
+                "Games-Howell (方差不齐)"
+            ],
+            "Games-Howell Post-Hoc Test – {dep}": [
+                "Games-Howell 事后检验 – {dep}"
+            ],
+            "Gamma": [
+                "Gamma系数"
+            ],
+            "General Options": [
+                "一般选项"
+            ],
+            "Generalised η²": [
+                "普通η²值"
+            ],
+            "Grand mean (simple coding)": [
+                "总平均数(简单编码)"
+            ],
+            "Greenhouse-Geisser": [
+                "Greenhouse-Geisser"
+            ],
+            "Greenhouse-Geisser ε": [
+                "Greenhouse-Geisser ε"
+            ],
+            "Group": [
+                "分组"
+            ],
+            "Group 1": [
+                "组1"
+            ],
+            "Group 1 < Group 2": [
+                "组1<组2"
+            ],
+            "Group 1 ≠ Group 2": [
+                "组1≠组2"
+            ],
+            "Group 1 > Group 2": [
+                "组1>组2"
+            ],
+            "Group 2": [
+                "组2"
+            ],
+            "Group Descriptives": [
+                "分组描述"
+            ],
+            "Group Summary": [
+                "分组汇总摘要"
+            ],
+            "Group summary": [
+                "分组汇总摘要"
+            ],
+            "Grouping Variable": [
+                "分组变量"
+            ],
+            "Grouping variable '{a}' has less than 2 levels after missing values are excluded": [
+                "排除缺失值后，分组变量“{a}”少于2个水平"
+            ],
+            "Grouping variable '{a}' must have exactly 2 levels": [
+                "分组变量“{a}”必须正好有两个水平"
+            ],
+            "Grouping variable '{a}' must not also be a dependent variable": [
+                "分组变量“{a}”不能同时是因变量"
+            ],
+            "Hₐ is negative correlation": [
+                "Hₐ为负相关"
+            ],
+            "Hₐ is positive correlation": [
+                "Hₐ为正相关"
+            ],
+            "Hₐ is proportion {direction} {testValue}": [
+                "Hₐ为比例 {direction} {testValue}"
+            ],
+            "Haldane-Anscombe correction applied": [
+                "使用Haldane-Anscombe法校正"
+            ],
+            "Harman": [
+                "Harman 法"
+            ],
+            "Helmert": [
+                "Helmert"
+            ],
+            "Hide loadings below": [
+                "隐藏低于此值的因子载荷"
+            ],
+            "Highlight values above": [
+                "突出显示高于此值的结果"
+            ],
+            "Histogram": [
+                "直方图"
+            ],
+            "Histograms": [
+                "直方图"
+            ],
+            "Holm": [
+                "Holm法"
+            ],
+            "Homogeneity of Variances Test (Levene's)": [
+                "方差齐性检验(Levene's)"
+            ],
+            "Homogeneity test": [
+                "方差齐性检验"
+            ],
+            "Hotelling's Trace": [
+                "Hotelling's Trace法"
+            ],
+            "Huynh-Feldt": [
+                "Huynh-Feldt"
+            ],
+            "Huynh-Feldt ε": [
+                "Huynh-Feldt ε"
+            ],
+            "Hypothesis": [
+                "假设检验"
+            ],
+            "if item dropped": [
+                "如果剔除该条目"
+            ],
+            "in development": [
+                "进行中"
+            ],
+            "include a summary of the groups": [
+                "包括各组的信息摘要"
+            ],
+            "Independent Samples": [
+                "独立样本"
+            ],
+            "Independent Samples T-Test": [
+                "独立样本T检验"
+            ],
+            "Indicator": [
+                "条目"
+            ],
+            "Initial Eigenvalues": [
+                "初始特征值"
+            ],
+            "Initial eigenvalues": [
+                "初始特征值"
+            ],
+            "Inter-Component Correlations": [
+                "成分间相关性"
+            ],
+            "Inter-Factor Correlations": [
+                "因子间相关性"
+            ],
+            "Intercept": [
+                "截距"
+            ],
+            "Interval": [
+                "区间"
+            ],
+            "IQR": [
+                "四分位数间距"
+            ],
+            "Item '{item}' consists of one level only": [
+                "条目“{item}”仅包含一个水平"
+            ],
+            "Item '{item}' contains infinite values": [
+                "条目“{item}”包含无限值"
+            ],
+            "Item '{item}' contains only missing values": [
+                "条目“{item}”中仅包含缺失值"
+            ],
+            "Item '{item}' has no variance": [
+                "条目“{item}”中的值都相等"
+            ],
+            "Item '{item}' needs to be numeric": [
+                "条目“{item}”必须是数值型变量"
+            ],
+            "item {item} correlates negatively with the total scale and probably should be reversed": [
+                "条目{item}与总分呈负相关，可能应该反向计分"
+            ],
+            "Item Reliability Statistics": [
+                "条目信度统计"
+            ],
+            "Item Statistics": [
+                "条目统计"
+            ],
+            "Item-rest correlation": [
+                "条目剩余相关性"
+            ],
+            "item-rest correlation": [
+                "剩余条目相关性"
+            ],
+            "Items": [
+                "条目"
+            ],
+            "items {items} correlate negatively with the total scale and probably should be reversed": [
+                "条目{item}与总分呈负相关，可能应该反向计分"
+            ],
+            "Jittered": [
+                "散点"
+            ],
+            "Kendall's Tau B": [
+                "Kendall's Tau B系数"
+            ],
+            "Kendall's Tau-B": [
+                "Kendall's Tau-B系数"
+            ],
+            "Kendall's Tau-b": [
+                "Kendall's Tau-b系数"
+            ],
+            "Kendall's tau-b": [
+                "Kendall's tau-b系数"
+            ],
+            "KMO Measure of Sampling Adequacy": [
+                "KMO抽样适合性检验"
+            ],
+            "KMO measure of sampling adequacy": [
+                "KMO抽样适合性检验"
+            ],
+            "Kruskal-Wallis": [
+                "Kruskal-Wallis"
+            ],
+            "Kurtosis": [
+                "峰度"
+            ],
+            "Label outliers": [
+                "标注离群值"
+            ],
+            "Layers": [
+                "分层"
+            ],
+            "Level": [
+                "水平"
+            ],
+            "Level 1": [
+                "水平1"
+            ],
+            "Level 2": [
+                "水平2"
+            ],
+            "Levels": [
+                "水平"
+            ],
+            "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
+                "Levene's检验有统计学意义（p<0.05），表明方差不齐"
+            ],
+            "Likelihood": [
+                "似然法"
+            ],
+            "Likelihood ratio": [
+                "似然比"
+            ],
+            "Likelihood ratio tests": [
+                "似然比检验"
+            ],
+            "linear": [
+                "线性的"
+            ],
+            "Linear Regression": [
+                "线性回归"
+            ],
+            "Linear regression is used to explore the relationship between a continuous dependent variable, and one or more continuous and/or categorical explanatory variables. Other statistical methods, such as ANOVA and ANCOVA, are in reality just forms of linear regression.": [
+                "线性回归用于探索一个连续性因变量与一个或多个连续和/或分类变量之间的关系。其他统计方法，如方差分析和协方差分析，其本质也是线性回归。"
+            ],
+            "Log odds ratio": [
+                "对数比值比"
+            ],
+            "Log odds ratio exact": [
+                "精确对数比值比"
+            ],
+            "Log-Linear Regression": [
+                "对数线性回归"
+            ],
+            "Logistic Regression": [
+                "Logistic回归"
+            ],
+            "Lower": [
+                "下限"
+            ],
+            "lower bound": [
+                "下限"
+            ],
+            "MANCOVA": [
+                "多元协方差分析"
+            ],
+            "Mann-Whitney U": [
+                "Mann-Whitney U检验"
+            ],
+            "Mantel-Haenszel": [
+                "Mantel-Haenszel检验"
+            ],
+            "Mantel-Haenszel Test for Trend": [
+                "Mantel-Haenszel趋势检验"
+            ],
+            "Marginal Mean": [
+                "边际均值"
+            ],
+            "Marginal Means": [
+                "边际均值"
+            ],
+            "Marginal means plots": [
+                "边际均值图"
+            ],
+            "Marginal means tables": [
+                "边际均值表"
+            ],
+            "Mauchly's W": [
+                "Mauchly's W系数"
+            ],
+            "Max": [
+                "最大"
+            ],
+            "Maximum": [
+                "最大值"
+            ],
+            "Maximum likelihood": [
+                "最大似然法"
+            ],
+            "McDonald's ω": [
+                "McDonald's ω系数"
+            ],
+            "McDonald's ω (if item is dropped)": [
+                "删除条目后的McDonald's ω系数"
+            ],
+            "McFadden's R²": [
+                "McFadden's R²"
+            ],
+            "McNemar requires a 2x2 table": [
+                "McNemar检验仅适用于2x2四格表"
+            ],
+            "McNemar Test": [
+                "McNemar 检验"
+            ],
+            "McNemar test": [
+                "McNemar 检验"
+            ],
+            "Mean": [
+                "均值"
+            ],
+            "mean": [
+                "均值"
+            ],
+            "Mean ({ciWidth}% CI)": [
+                "均值({ciWidth}% 置信区间)"
+            ],
+            "Mean Difference": [
+                "均值差"
+            ],
+            "Mean difference": [
+                "均值差"
+            ],
+            "Mean Dispersion": [
+                "均值离散度"
+            ],
+            "Mean score": [
+                "均分"
+            ],
+            "Mean Square": [
+                "均方"
+            ],
+            "Means": [
+                "均值"
+            ],
+            "Measure": [
+                "估算值"
+            ],
+            "Measure 1 - Measure 2": [
+                "检测值1－检测值2"
+            ],
+            "Measure 1 < Measure 2": [
+                "检测值1＜检测值2"
+            ],
+            "Measure 1 ≠ Measure 2": [
+                "检测值1≠检测值2"
+            ],
+            "Measure 1 > Measure 2": [
+                "检测值1＞检测值2"
+            ],
+            "Measures": [
+                "检验值"
+            ],
+            "Median": [
+                "中位数"
+            ],
+            "Medians": [
+                "中位数"
+            ],
+            "Method": [
+                "方法"
+            ],
+            "Min": [
+                "最小"
+            ],
+            "Minimum": [
+                "最小值"
+            ],
+            "Minimum residual": [
+                "最小残差"
+            ],
+            "Minimum residuals": [
+                "最小残差法"
+            ],
+            "Minimum value": [
+                "最小值"
+            ],
+            "Missing": [
+                "缺失"
+            ],
+            "Missing Values": [
+                "缺失值"
+            ],
+            "Missing values": [
+                "缺失值"
+            ],
+            "Missing values exclusion method": [
+                "缺失值排除法"
+            ],
+            "Missing Values Method": [
+                "缺失值法"
+            ],
+            "Mode": [
+                "众数"
+            ],
+            "Model": [
+                "模型"
+            ],
+            "Model Builder": [
+                "建模"
+            ],
+            "Model Coefficients": [
+                "模型系数"
+            ],
+            "Model Comparisons": [
+                "模型对比"
+            ],
+            "Model Fit": [
+                "模型拟合"
+            ],
+            "Model Fit Measures": [
+                "模型拟合评价"
+            ],
+            "Model fit measures": [
+                "模型拟合评价"
+            ],
+            "Model Specific Results": [
+                "模型详细结果"
+            ],
+            "Model Terms": [
+                "模型项"
+            ],
+            "Model Test": [
+                "模型检验"
+            ],
+            "Model Thresholds": [
+                "模型阈值"
+            ],
+            "Model thresholds": [
+                "模型阈值"
+            ],
+            "Modification Indices": [
+                "修正指数"
+            ],
+            "Modification indices": [
+                "修正指数"
+            ],
+            "More than one mode exists, only the first is reported": [
+                "当存在多个众数时，仅报告第一个"
+            ],
+            "MSA": [
+                "MSA系数"
+            ],
+            "Multinomial": [
+                "无序多分类"
+            ],
+            "Multinomial Logistic Regression": [
+                "无序多分类Logistic回归"
+            ],
+            "Multivariate Analysis of (Co)Variance (MANCOVA) is used to explore the relationship between multiple dependent variables, and one or more categorical and/or continuous explanatory variables.": [
+                "多元（协）方差分析（MANCOVA）用于探索多个因变量与一个或多个分类和/或连续变量之间的关系。"
+            ],
+            "Multivariate Statistics": [
+                "多元统计"
+            ],
+            "Multivariate Tests": [
+                "多变量检验"
+            ],
+            "N": [
+                "个案数"
+            ],
+            "N Outcomes": [
+                "多分类结局"
+            ],
+            "Nagelkerke's R²": [
+                "Nagelkerke's R²"
+            ],
+            "No components have an eigenvalue greater than {value}": [
+                "不存在特征值大于{value}的成分"
+            ],
+            "No correction": [
+                "未校正"
+            ],
+            "No factors defined. Box's M test is only relevant when model contains factors.": [
+                "不存在任何因子。Box's M检验仅在模型中包含因子时才能运行。"
+            ],
+            "Nominal": [
+                "名义"
+            ],
+            "Non-Parametric": [
+                "非参数法"
+            ],
+            "None": [
+                "无"
+            ],
+            "none": [
+                "无"
+            ],
+            "Normal Scaled Items": [
+                "正向计分条目"
+            ],
+            "Normality": [
+                "正态性"
+            ],
+            "Normality test": [
+                "正态性检验"
+            ],
+            "Normality Test (Shapiro-Wilk)": [
+                "正态性检验 (Shapiro-Wilk)"
+            ],
+            "Number of Components": [
+                "成分个数"
+            ],
+            "Number of components": [
+                "成分个数"
+            ],
+            "Number of Factors": [
+                "因子个数"
+            ],
+            "Number of factors": [
+                "因子个数"
+            ],
+            "Oblimin": [
+                "斜交法"
+            ],
+            "oblimin": [
+                "斜交"
+            ],
+            "Observed": [
+                "实际"
+            ],
+            "Observed counts": [
+                "实际频数"
+            ],
+            "Observed scores": [
+                "实际值"
+            ],
+            "octic": [
+                "octic"
+            ],
+            "Odds Ratio": [
+                "比值比"
+            ],
+            "Odds ratio": [
+                "比值比"
+            ],
+            "of total": [
+                "合计"
+            ],
+            "Omnibus ANOVA Test": [
+                "Omnibus方差检验"
+            ],
+            "Omnibus Likelihood Ratio Tests": [
+                "Omnibus似然比检验"
+            ],
+            "Omnibus Test": [
+                "Omnibus检验"
+            ],
+            "Omnibus Tests": [
+                "Omnibus检验"
+            ],
+            "one of `'corr'` (default), `'pos'`, `'neg'` specifying the alernative hypothesis; correlated, correlated positively, correlated negatively respectively.": [
+                "备择假设中的“'corr'”（默认）、“'pos'”、“'neg'”分别对应相关、正相关、负相关。"
+            ],
+            "one of `'part'` (default) or `'semi'` specifying the type of partial correlation to calculate; partial or semipartial correlation.": [
+                "相关类型“part”（默认）或“semi”分别对应偏相关或半偏相关."
+            ],
+            "One or both groups do not contain enough observations": [
+                "某一组或两组内个案数太少"
+            ],
+            "One or both variables are not numeric": [
+                "某一个或两个变量不是数值变量"
+            ],
+            "One or both variables contain infinite values": [
+                "某一个或两个变量包含无限值"
+            ],
+            "One or both variables contain no observations": [
+                "某一个或两个变量的个案数为0"
+            ],
+            "One or both variables do not contain enough observations": [
+                "某一个或两个变量的个案数太少"
+            ],
+            "One or more coefficients in model '{modelNo}' could not be estimated due to perfect collinearity.": [
+                "由于存在严重共线性问题，无法估计模型“{modelNo}”中的一个或多个系数。"
+            ],
+            "one or more of `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'`, or `'bic'`; use CFI, TLI, SRMR, RMSEA + 90% confidence interval, adjusted AIC, and BIC model fit measures, respectively": [
+                "`'cfi'`、`'tli'`、 `'srmr'`、`'rmsea'`、`'aic'`或 `'bic'`分别对应CFI、TLI、SRMR、RMSEA的90%置信区间、校正AIC和BIC模型拟合指标"
+            ],
+            "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
+                "“eta”、“partEta”或“omega”分别用η²、偏η²和ω²效应量表示"
+            ],
+            "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
+                "`'none'` （默认）、“GG”或“HF”分别表示对球形度检验未进行P值校正、进行Greenhouse-Geisser P值校正和Huynh-Feldt P值校正"
+            ],
+            "one or more of `'none'`, `'tukey'` (default), `'scheffe'`, `'bonf'`, or `'holm'`; use no, Tukey, Scheffe, Bonferroni and Holm posthoc corrections, respectively": [
+                "`'none'`、“tukey”（默认）、“scheffe”、“bonf”或“holm”分别表示未校正、Tukey、Scheffe、Bonferroni和Holm校正"
+            ],
+            "one or more of `'none'`, `'tukey'`, `'scheffe'`, `'bonf'`, or `'holm'`; provide no, Tukey, Scheffe, Bonferroni, and Holm Post Hoc corrections respectively": [
+                "“none”、“tukey”、“scheffe”、“bonf”或“holm”分别表示未校正、Tukey、Scheffe、Bonferroni和Holm校正"
+            ],
+            "one or more of `'pillai'`, `'wilks'`, `'hotel'`, or `'roy'`; use Pillai's Trace, Wilks' Lambda, Hotelling's Trace, and Roy's Largest Root multivariate statistics, respectively": [
+                "`'pillai'`、`'wilks'`、`'hotel'`或`'roy'`分别表示Pillai's Trace、Wilks' Lambda、Hotelling's Trace和Roy's最大根多元统计"
+            ],
+            "one or more of `'r2mf'`, `'r2cs'`, or `'r2n'`; use McFadden's, Cox & Snell, and Nagelkerke pseudo-R², respectively": [
+                "`'r2mf'`、`'r2cs'`或`'r2n'`分别表示McFadden's、Cox & Snell和Nagelkerke pseudo-R²"
+            ],
+            "One Sample Proportion Tests": [
+                "单样本比例检验"
+            ],
+            "One Sample T-Test": [
+                "单样本T检验"
+            ],
+            "One-Way ANOVA": [
+                "单因素方差分析"
+            ],
+            "One-Way ANOVA (Fisher's)": [
+                "单因素方差分析(Fisher's法)"
+            ],
+            "One-Way ANOVA (Non-parametric)": [
+                "单因素方差分析(非参数法)"
+            ],
+            "One-Way ANOVA (Welch's)": [
+                "单因素方差分析(Welch's法)"
+            ],
+            "Options": [
+                "选项"
+            ],
+            "Ordinal": [
+                "定序"
+            ],
+            "Ordinal Logistic Regression": [
+                "有序Logistic回归"
+            ],
+            "Ordinal Outcomes": [
+                "有序分类结局"
+            ],
+            "Output": [
+                "输出"
+            ],
+            "Overall": [
+                "整体"
+            ],
+            "Overall model": [
+                "整体模型"
+            ],
+            "Overall Model Test": [
+                "整体模型检验"
+            ],
+            "Overall model test": [
+                "整体模型检验"
+            ],
+            "p": [
+                "p值"
+            ],
+            "p-value": [
+                "p值"
+            ],
+            "p<sub>bonferroni</sub>": [
+                "p<sub>bonferroni</sub>"
+            ],
+            "p<sub>holm</sub>": [
+                "p<sub>holm</sub>"
+            ],
+            "p<sub>scheffe</sub>": [
+                "p<sub>scheffe</sub>"
+            ],
+            "p<sub>tukey</sub>": [
+                "p<sub>tukey</sub>"
+            ],
+            "Paired Samples": [
+                "配对样本"
+            ],
+            "Paired Samples Contingency Tables": [
+                "配对样本列联表"
+            ],
+            "Paired Samples T-Test": [
+                "配对样本T检验"
+            ],
+            "Paired Variables": [
+                "配对变量"
+            ],
+            "Pairwise comparisons - $key": [
+                "两两比较- $key"
+            ],
+            "Pairwise Comparisons (Durbin-Conover)": [
+                "两两比较 (Durbin-Conover法)"
+            ],
+            "Pairwise comparisons (Durbin-Conover)": [
+                "两两比较 (Durbin-Conover法)"
+            ],
+            "Partial": [
+                "偏相关"
+            ],
+            "Partial Correlation": [
+                "偏相关"
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables": [
+                "偏相关矩阵是一种在控制其他变量影响的情况下，检验两个或多个连续性变量之间线性关系的方法"
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                "偏相关矩阵是一种在控制其他变量影响的情况下，检验两个或多个连续性变量之间线性关系的方法。\n对于每一对变量，Pearson's相关系数r值表示这两个变量之间关系的强度和方向。正值表示正相关(一个值随着另一个值的增加而增加)。负值表示负相关(一个值随着另一个值的增加而减小，反之亦然)。\n零表示不存在相关关系(无论一个变量如何改变，另一个变量均不会随之发生变化)。\n通常，通过检验相关系数是否为0的原假设来判断相关系数是否具有统计学意义(计算P值)。如果p值较低(低于检验水准)，则表明相关系数不为零，两个变量之间存在线性(或更复杂)的关系。"
+            ],
+            "Partial η²": [
+                "偏η²值"
+            ],
+            "partial η²": [
+                "偏 η²"
+            ],
+            "Path Diagram": [
+                "路径图"
+            ],
+            "Path diagram": [
+                "路径图"
+            ],
+            "Pearson": [
+                "Pearson系数"
+            ],
+            "Pearson's r": [
+                "Pearson's相关系数r"
+            ],
+            "Pearson{}Correlation": [
+                "Pearson{}相关"
+            ],
+            "Percentages": [
+                "百分比"
+            ],
+            "Percentages of total": [
+                "合计百分比"
+            ],
+            "Percentages within {var}": [
+                "{var}内的百分比"
+            ],
+            "Percentile": [
+                "百分位数"
+            ],
+            "Percentile Values": [
+                "百分位数"
+            ],
+            "Percentile values": [
+                "百分位数"
+            ],
+            "Percentiles": [
+                "百分位数"
+            ],
+            "perform a Mann-Whitney U test.": [
+                "执行Mann-Whitney U检验."
+            ],
+            "perform a Shapiro-Wilk test of normality. A low p-value suggests the data is not from a normal distribution.": [
+                "执行Shapiro-Wilk正态性检验。较低的p值提示数据不服从正态分布。"
+            ],
+            "perform an overall model test.": [
+                "执行整体模型检验."
+            ],
+            "perform Fisher's (or what might be call 'normal') ANOVAs.": [
+                "执行Fisher's（即通常所称的）方差分析。"
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
+                "执行Shapiro-Wilk正态性检验。较低的p值提示数据不服从正态分布。"
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the residuals are not normally distributed.": [
+                "执行Shapiro-Wilk正态性检验。较低的p值提示残差不服从正态分布。"
+            ],
+            "perform Student's independent samples t-tests.": [
+                "执行独立样本t检验."
+            ],
+            "perform Student's one-sample t-tests.": [
+                "执行单样本t检验."
+            ],
+            "perform Student's paired samples t-tests.": [
+                "执行配对样本t检验."
+            ],
+            "perform Welch's ANOVAs.": [
+                "执行 Welch's 方差分析."
+            ],
+            "perform Welch's tests.": [
+                "执行 Welch's 检验."
+            ],
+            "perform Wilcoxon signed rank tests.": [
+                "执行Wilcoxon符号秩检验."
+            ],
+            "Phi and Cramer's V": [
+                "φ系数和Cramer’s V系数"
+            ],
+            "Phi-coefficient": [
+                "φ系数"
+            ],
+            "Pillai's Trace": [
+                "Pillai's Trace法"
+            ],
+            "Plot": [
+                "图"
+            ],
+            "plot densities along the diagonal of the correlation matrix plot.": [
+                "沿着相关矩阵图的对角线绘制密度。"
+            ],
+            "plot the data along with the marginal means.": [
+                "绘制边际均值图."
+            ],
+            "Plot Type": [
+                "图类型"
+            ],
+            "Plots": [
+                "绘图"
+            ],
+            "Polynomial": [
+                "多项式"
+            ],
+            "Post Hoc Comparisons - {term}": [
+                "事后比较- {term}"
+            ],
+            "Post Hoc Tests": [
+                "事后检验"
+            ],
+            "Post Hoc Tests – $key": [
+                "事后检验– $key"
+            ],
+            "Post-Hoc Model Performance": [
+                "事后模型性能"
+            ],
+            "Post-Hoc Test": [
+                "事后检验"
+            ],
+            "Post-Hoc Tests": [
+                "事后检验"
+            ],
+            "Posterior": [
+                "后验"
+            ],
+            "Posterior plot": [
+                "后验图"
+            ],
+            "Posterior Plots": [
+                "后验图"
+            ],
+            "Predicted": [
+                "预测"
+            ],
+            "Predicted probability of … = … (vs … = …)": [
+                "…=…（相比…=…）的预测概率"
+            ],
+            "Predicted probability of {dep} = {level1} (vs {dep} = {level2})": [
+                "{dep} = {level1}与(相比 {dep} = {level2})的预测概率"
+            ],
+            "Predicted values": [
+                "预测值"
+            ],
+            "Prediction": [
+                "预测"
+            ],
+            "Predictive Measures": [
+                "预测评价"
+            ],
+            "Predictor": [
+                "预测变量"
+            ],
+            "Predictors": [
+                "预测变量"
+            ],
+            "Principal axis": [
+                "主轴法"
+            ],
+            "Principal axis factoring": [
+                "主轴因子"
+            ],
+            "Principal Component Analysis": [
+                "主成分分析"
+            ],
+            "Prior": [
+                "先验"
+            ],
+            "Prior width": [
+                "先验宽度"
+            ],
+            "Probability": [
+                "概率"
+            ],
+            "Promax": [
+                "最优法"
+            ],
+            "promax": [
+                "最优法"
+            ],
+            "Proportion": [
+                "比例"
+            ],
+            "Proportion Test (2 Outcomes)": [
+                "比例检验 (2分类)"
+            ],
+            "Proportion Test (N Outcomes)": [
+                "比例检验 (多分类)"
+            ],
+            "provide a Cohen's d measure of effect size for the post-hoc tests.": [
+                "为事后检验提供Cohen’s d效应量。"
+            ],
+            "provide a confidence interval for the difference between the mean estimate and the test value.": [
+                "提供平均值和比较值之差的置信区间。"
+            ],
+            "provide a correlation matrix plot.": [
+                "提供相关矩阵图."
+            ],
+            "provide a Kendall's tau-b for each combination of variables.": [
+                "为每一组变量提供Kendall's tau-b值."
+            ],
+            "provide a p-value for each correlation co-efficient.": [
+                "为每个相关系数提供p值."
+            ],
+            "provide a Pearson's r for each combination of variables.": [
+                "为每一组变量提供Pearson's 相关系数r."
+            ],
+            "provide a Q-Q plot of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                "提供残差Q-Q图：通过对比实际残差与预期残差判断数据是否完全服从正态分布。偏离对角线较远表明数据不服从正态分布。"
+            ],
+            "provide a Spearman's rho for each combination of variables.": [
+                "为每一组变量提供Spearman's相关系数rho."
+            ],
+            "provide a table of descriptives for each variable.": [
+                "为每个变量提供描述表."
+            ],
+            "provide a table of the estimated marginal means.": [
+                "提供边际估计均值表."
+            ],
+            "provide Bayes factors for the Student's independent samples t-tests.": [
+                "提供独立样本t检验的贝叶斯因子."
+            ],
+            "provide Bayes factors for the Student's one-sample t-tests.": [
+                "提供单样本t检验的贝叶斯因子."
+            ],
+            "provide Bayes factors for the Student's paired samples t-tests.": [
+                "提供配对样本t检验的贝叶斯因子."
+            ],
+            "provide confidence intervals for Pearson's r.": [
+                "提供Pearson's相关系数r的置信区间."
+            ],
+            "provide confidence intervals for the effect-sizes": [
+                "提供效应量的置信区间"
+            ],
+            "provide confidence intervals for the mean differences.": [
+                "提供均值差的置信区间."
+            ],
+            "provide confidence intervals for the post-hoc effect sizes.": [
+                "提供事后检验效应量的置信区间."
+            ],
+            "provide correlation co-efficients in the correlation matrix plot.": [
+                "在相关矩阵图中提供相关系数."
+            ],
+            "provide descriptive plots for each group.": [
+                "为每组提供描述图。"
+            ],
+            "provide descriptive plots for each variable.": [
+                "为每个变量提供描述图。"
+            ],
+            "provide descriptives for each group of measurements.": [
+                "为每组测量值进行描述."
+            ],
+            "provide descriptives for each group.": [
+                "对每组进行描述."
+            ],
+            "provide descriptives plots.": [
+                "提供描述图."
+            ],
+            "provide effect-sizes (Cohen's D).": [
+                "提供效应量（Cohen's d值）。"
+            ],
+            "provide effect-sizes (Cohen's d).": [
+                "提供效应量（Cohen's d值）。"
+            ],
+            "provide Levene's test for homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                "提供Levene's方差齐性检验结果。较低的p值提示组间方差不齐。"
+            ],
+            "provide Levene's tests for the homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                "提供Levene's方差齐性检验结果。较低的p值提示组间方差不齐。"
+            ],
+            "provide mean differences and standard errors of the mean differences.": [
+                "提供均值差及其标准误."
+            ],
+            "provide mean differences with the post-hoc tests.": [
+                "提供事后检验的均值差."
+            ],
+            "provide mean differences, and standard errors of the mean differences, between the mean estimate, and the test value.": [
+                "提供估计均值与比较值的均值差及其标准误."
+            ],
+            "provide measures of effect size; η², partial η², or ω².": [
+                "提供效应量η², 偏 η², 或ω²."
+            ],
+            "provide p-value corrections for sphericity.": [
+                "提供球形度校正的p值."
+            ],
+            "provide plots of the estimated marginal means.": [
+                "绘制边际估计均值图."
+            ],
+            "provide post-hoc tests.": [
+                "提供事后检验结果."
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                "提供残差Q-Q图：通过对比实际残差与预期残差判断数据是否完全服从正态分布。偏离对角线较远表明数据不服从正态分布。"
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
+                "提供残差Q-Q图：通过对比实际残差与预期残差判断数据是否完全服从正态分布。偏离对角线较远表明残差不服从正态分布。"
+            ],
+            "provide significance levels for the post-hoc tests.": [
+                "提供事后检验的显著性水平."
+            ],
+            "provide sphericity tests.": [
+                "提供球形度检验结果."
+            ],
+            "provide test results (t-value and degrees of freedom) for post-hoc tests.": [
+                "提供事后检验结果（t值和自由度）。"
+            ],
+            "provide the number of cases.": [
+                "提供个案数."
+            ],
+            "Pseudo R²": [
+                "伪R²"
+            ],
+            "Q-Q": [
+                "Q-Q图"
+            ],
+            "Q-Q Plot": [
+                "Q-Q图"
+            ],
+            "Q-Q plot": [
+                "Q-Q图"
+            ],
+            "Q-Q Plot Assessing Multivariate Normality": [
+                "评估多元正态性的Q-Q图"
+            ],
+            "Q-Q plot of multivariate normality": [
+                "多元正态Q-Q图"
+            ],
+            "Q-Q plot of residuals": [
+                "残差Q-Q图"
+            ],
+            "Q-Q Plots": [
+                "Q-Q图"
+            ],
+            "Q-Q plots": [
+                "Q-Q图"
+            ],
+            "quadratic": [
+                "二次方"
+            ],
+            "quartic": [
+                "四次方"
+            ],
+            "Quartimax": [
+                "四次方极大法"
+            ],
+            "quartimax": [
+                "四次方极大法"
+            ],
+            "quintic": [
+                "五次方"
+            ],
+            "R": [
+                "复相关系数R"
+            ],
+            "R²": [
+                "决定系数R²"
+            ],
+            "R²<sub>CS</sub>": [
+                "决定系数R²<sub>CS</sub>"
+            ],
+            "R²<sub>McF</sub>": [
+                "决定系数R²<sub>McF</sub>"
+            ],
+            "R²<sub>N</sub>": [
+                "决定系数R²<sub>N</sub>"
+            ],
+            "Range": [
+                "全距"
+            ],
+            "Rank biserial correlation": [
+                "秩二列相关系数"
+            ],
+            "Rate Ratio": [
+                "率比"
+            ],
+            "Rate ratio": [
+                "率比"
+            ],
+            "Ratio": [
+                "比"
+            ],
+            "Reference Level": [
+                "参考水平"
+            ],
+            "Reference level (dummy coding)": [
+                "参考水平(虚拟变量)"
+            ],
+            "Reference Levels": [
+                "参考水平"
+            ],
+            "Regression": [
+                "回归"
+            ],
+            "Relative risk": [
+                "相对危险度"
+            ],
+            "Reliability Analysis": [
+                "信度分析"
+            ],
+            "Repeated": [
+                "重复"
+            ],
+            "Repeated Measures ANOVA": [
+                "重复测量方差分析"
+            ],
+            "Repeated Measures ANOVA (Non-parametric)": [
+                "重复测量方差分析 (非参数法)"
+            ],
+            "Repeated Measures Cells": [
+                "重复测量单元"
+            ],
+            "Repeated Measures Components": [
+                "重复测量内容"
+            ],
+            "Repeated Measures Factors": [
+                "重复测量因子"
+            ],
+            "Report significance": [
+                "报告p值"
+            ],
+            "Represents grand mean": [
+                "表示总平均"
+            ],
+            "Represents reference level": [
+                "表示参考水平"
+            ],
+            "Residual": [
+                "残差"
+            ],
+            "Residual Covariances": [
+                "剩余协方差"
+            ],
+            "Residual covariances": [
+                "剩余协方差"
+            ],
+            "Residual Covariances – Modification Indices": [
+                "剩余协方差 – 修正指数"
+            ],
+            "Residual Estimates": [
+                "残差估计值"
+            ],
+            "Residual Intercepts": [
+                "残差截距"
+            ],
+            "Residual intercepts": [
+                "残差截距"
+            ],
+            "Residual plots": [
+                "残差图"
+            ],
+            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
+                "剩余平方和与/或自由度为零，表示拟合较好"
+            ],
+            "Residuals": [
+                "残差"
+            ],
+            "Residuals for Observed Correlation Matrix": [
+                "实际相关矩阵残差"
+            ],
+            "Residuals from ANOVA": [
+                "方差分析残差"
+            ],
+            "Residuals observed correlation matrix": [
+                "实际相关矩阵残差"
+            ],
+            "Residuals Plots": [
+                "残差图"
+            ],
+            "Results": [
+                "结果"
+            ],
+            "reverse scaled item": [
+                "反向计分条目"
+            ],
+            "Reverse Scaled Items": [
+                "反向计分条目"
+            ],
+            "RM Factor {0}": [
+                "重复测量因子{0}"
+            ],
+            "RM Factor 1": [
+                "重复测量因子1"
+            ],
+            "RMSE": [
+                "均方根误差"
+            ],
+            "RMSEA": [
+                "近似均方根误差"
+            ],
+            "RMSEA 90% CI": [
+                "近似均方根误差的90%置信区间"
+            ],
+            "ROC": [
+                "ROC"
+            ],
+            "ROC Curve": [
+                "ROC曲线"
+            ],
+            "ROC curve": [
+                "ROC曲线"
+            ],
+            "Rotation": [
+                "旋转"
+            ],
+            "Row": [
+                "行"
+            ],
+            "Row variable '{var}' contains fewer than 2 levels": [
+                "行变量“{var}”的水平数少于2个"
+            ],
+            "Rows": [
+                "行"
+            ],
+            "rows": [
+                "行"
+            ],
+            "rows (default), or columns in bar plot X axis": [
+                "条形图X轴中的行（默认）或列"
+            ],
+            "Rows compared": [
+                "比较行"
+            ],
+            "Roy's Largest Root": [
+                "Roy's 最大根法"
+            ],
+            "Sample Size": [
+                "样本量"
+            ],
+            "Save": [
+                "保存"
+            ],
+            "scale": [
+                "标度"
+            ],
+            "Scale Analysis": [
+                "量表分析"
+            ],
+            "Scale factor = scale first indicator": [
+                "量表因子=以第一个为参照"
+            ],
+            "Scale Reliability Statistics": [
+                "量表信度统计"
+            ],
+            "Scale Statistics": [
+                "标度统计"
+            ],
+            "Scheffe": [
+                "Scheffe法"
+            ],
+            "Score Component": [
+                "成分的得分"
+            ],
+            "Score Factor": [
+                "得分因子"
+            ],
+            "Score for component": [
+                "成分的得分"
+            ],
+            "Score for factor {i}. Estimated using the '{fsMethod}' method.": [
+                "因子 {i} 的分数。 使用“{fsMethod}”方法估计。"
+            ],
+            "Scree Plot": [
+                "碎石图"
+            ],
+            "Scree plot": [
+                "碎石图"
+            ],
+            "SD": [
+                "标准差"
+            ],
+            "sd": [
+                "标准差"
+            ],
+            "SE": [
+                "标准误"
+            ],
+            "SE difference": [
+                "均数差标准误"
+            ],
+            "Semipartial": [
+                "半偏相关"
+            ],
+            "Semipartial Correlation": [
+                "半偏相关"
+            ],
+            "Sensitivity": [
+                "灵敏度"
+            ],
+            "septic": [
+                "七次方"
+            ],
+            "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
+                "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  有序Logistic回归\n#\n#  模型拟合评价\n#  ───────────────────────────────────────\n#      模型    偏差    AIC值    R²-McF值\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  模型详细结果\n#\n#  模型 1\n#\n#  模型系数\n#  ────────────────────────────────────────────────────\n#    变量           系数    标准误       Z值        p值\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#"
+            ],
+            "sextic": [
+                "六次方的"
+            ],
+            "Shapiro-Wilk": [
+                "Shapiro-Wilk检验"
+            ],
+            "Shapiro-Wilk Multivariate Normality Test": [
+                "Shapiro-Wilk多元正态性检验"
+            ],
+            "Shapiro-Wilk p": [
+                "Shapiro-Wilk p值"
+            ],
+            "Shapiro-Wilk test": [
+                "Shapiro-Wilk 检验"
+            ],
+            "Shapiro-Wilk test for multivariate normality": [
+                "Shapiro-Wilk多元正态性检验"
+            ],
+            "Shapiro-Wilk W": [
+                "Shapiro-Wilk W统计量"
+            ],
+            "Side by side": [
+                "并排"
+            ],
+            "Simple": [
+                "简单"
+            ],
+            "Simplimax": [
+                "最简法"
+            ],
+            "simplimax": [
+                "最简法"
+            ],
+            "Simulations": [
+                "模拟"
+            ],
+            "Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables.": [
+                "发生奇异拟合：一个或多个预测变量是其他预测变量的线性组合。"
+            ],
+            "Singularity error. Sphericity tests are not available": [
+                "奇点错误，球形检验不能运行"
+            ],
+            "Skewness": [
+                "偏度"
+            ],
+            "Sort loadings by size": [
+                "按载荷大小排序"
+            ],
+            "Spearman": [
+                "Spearman系数"
+            ],
+            "Spearman's rho": [
+                "Spearman相关系数rho"
+            ],
+            "Specificity": [
+                "特异度"
+            ],
+            "Sphericity Correction": [
+                "球形度校正"
+            ],
+            "Sphericity corrections": [
+                "球形度校正"
+            ],
+            "Sphericity tests": [
+                "球形度检验"
+            ],
+            "Split by": [
+                "拆分"
+            ],
+            "Squared Mahalanobis Distance": [
+                "平方马氏距离"
+            ],
+            "SRMR": [
+                "标准化均方根残差"
+            ],
+            "SS Loadings": [
+                "SS载荷"
+            ],
+            "stack or side by side (default), barplot type": [
+                "堆积或并排（默认），条形图类型"
+            ],
+            "Stacked": [
+                "堆积"
+            ],
+            "Stand. Estimate": [
+                "标准化系数"
+            ],
+            "Standard deviation": [
+                "标准差"
+            ],
+            "Standard Error": [
+                "标准误"
+            ],
+            "Standard error": [
+                "标准误"
+            ],
+            "Standardized Estimate": [
+                "标准化系数"
+            ],
+            "Standardized estimate": [
+                "标准化系数"
+            ],
+            "Standardized Residuals": [
+                "标准化残差"
+            ],
+            "Statistic": [
+                "统计量"
+            ],
+            "statistic": [
+                "统计量"
+            ],
+            "Statistics": [
+                "统计"
+            ],
+            "Std. deviation": [
+                "标准差"
+            ],
+            "Std. error kurtosis": [
+                "峰度标准误"
+            ],
+            "Std. error mean": [
+                "均值标准误"
+            ],
+            "Std. error of Mean": [
+                "均值标准误"
+            ],
+            "Std. error skewness": [
+                "偏度标准误"
+            ],
+            "Student's": [
+                "Student's法"
+            ],
+            "Student's t": [
+                "Student's t值"
+            ],
+            "Student's test": [
+                "Student's t检验"
+            ],
+            "Sum": [
+                "总数"
+            ],
+            "Sum of Squares": [
+                "平方和"
+            ],
+            "Sum of squares": [
+                "平方和"
+            ],
+            "Sum score": [
+                "总分"
+            ],
+            "Summary": [
+                "摘要"
+            ],
+            "t": [
+                "t值"
+            ],
+            "T-Tests": [
+                "T检验"
+            ],
+            "t-value": [
+                "t值"
+            ],
+            "ten Berge": [
+                "ten Berge 法"
+            ],
+            "Term {0}": [
+                "项{0}"
+            ],
+            "Term 1": [
+                "项1"
+            ],
+            "Test for Exact Fit": [
+                "精确拟合检验"
+            ],
+            "Test results (t and df)": [
+                "检验结果(t值和自由度df)"
+            ],
+            "Test statistics": [
+                "检验统计"
+            ],
+            "Test Value": [
+                "检验值"
+            ],
+            "Test value": [
+                "检验值"
+            ],
+            "Tests": [
+                "检验"
+            ],
+            "Tests of Sphericity": [
+                "球形度检验"
+            ],
+            "th percentile": [
+                "百分位数"
+            ],
+            "The 'iris' data set from R": [
+                "来自R的“iris”数据集"
+            ],
+            "The 'split by' variable '{var}' contains no data.": [
+                "“拆分”变量“{var}”没有数据。"
+            ],
+            "the (optional) weights from `data` to be used in the fitting process": [
+                "来自 `data` 的权重（可选）被用于拟合过程。"
+            ],
+            "the alternative and null hypotheses;\n\n|              | Alternative (Hₐ)  | Null (H₀)          |\n|--------------|-------------------|--------------------|\n| ≠ Test value | Mean ≠ Test value | Mean = Test value  |\n| > Test value | Mean > Test value | Mean <= Test value |\n| < Test value | Mean < Test value | Mean >= Test value |": [
+                "备择假设和零假设;\n\n|              | 备择假设 (Hₐ)  | 零假设 (H₀)          |\n|--------------|-------------------|--------------------|\n| ≠ 比较值 | 均值 ≠ 比较值 | 均值 = 比较值  |\n| > 比较值 | 均值 > 比较值 | 均值 <= 比较值 |\n| < 比较值 | 均值 < 比较值 | 均值 >= 比较值 |"
+            ],
+            "the alternative hypothesis.": [
+                "备择假设."
+            ],
+            "the alternative hypothesis. Allows for one-tailed tests.": [
+                "备择假设。可以进行单侧检验."
+            ],
+            "The Analysis of Covariance (ANCOVA) is used to explore the relationship\nbetween a continuous dependent variable, one or more categorical\nexplanatory variables, and one or more continuous explanatory variables\n(or covariates). It is essentially the same analysis as ANOVA, but\nwith the addition of covariates.": [
+                "协方差分析（ANCOVA）用于探索一个连续性因变量与一个或多个分类变量或连续性变量（或协变量）之间的关系。其本质与方差分析相同，只是增加了协变量。"
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.": [
+                "方差分析（ANOVA）用于探索一个连续性因变量与一个或多个分类变量之间的关系。"
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.\n\nANOVA assumes that the residuals are normally distributed, and that the\nvariances of all groups are equal. If one is unwilling to assume that\nthe variances are equal, then a Welch's test can be used instead\n(However, the Welch's test does not support more than one explanatory\nfactor). Alternatively, if one is unwilling to assume that the data is\nnormally distributed, a non-parametric approach (such as Kruskal-Wallis)\ncan be used.": [
+                "方差分析（ANOVA）用于探索一个连续性因变量与一个或多个分类变量之间的关系。\n方差分析假设残差为正态分布，且所有组的方差相等。如果不满足方差齐性，可使用Welch's 检验（但是Welch's 检验不能用于分析因素≥2的情况）。如果正态性和方差齐性都不满足，可以使用非参数检验（如Kruskal-Wallis检验）。"
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.": [
+                "方差分析（ANOVA）用于探索一个连续性因变量与一个或多个分类变量之间的关系。单因素方差分析是方差分析中最简单的一种，只有一个分组因素，但也提供了Welch's校正法。Welch's校正法不需要假设所有组的方差相等。"
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.\n\nFor convenience, this method allows specifying multiple dependent\nvariables, resulting in multiple independent tests.\n\nNote that the Welch's ANOVA is the same procedure as the Welch's\nindependent samples t-test.": [
+                "方差分析（ANOVA）用于探索一个连续性因变量与一个或多个分类变量之间的关系。单因素方差分析是方差分析中最简单的一种，只有一个分组因素，但也提供了Welch's校正法。Welch's校正法不需要假设所有组的方差相等。\n为方便起见，该方法允许选择多个因变量，分别开展分析。\n需要注意的是，Welch's方差分析与Welch's独立样本t检验的过程相同。"
+            ],
+            "the between subjects factors (optional).": [
+                "组间因子（可选）。"
+            ],
+            "the between subjects terms of the model.": [
+                "模型的组间项."
+            ],
+            "The Binomial test is used to test the Null hypothesis that the proportion of observations match some expected value. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportion must be some other value.": [
+                "二项分布检验用于检验某观察比例是否与某个期望比例相同。如果P值较低（低于检验水准）则拒绝原假设，表明观察比例与期望比例不同。"
+            ],
+            "the categorical explanatory (or independent) variables.": [
+                "分类解释变量（或自变量）。"
+            ],
+            "the confidence interval width for the effect-sizes.": [
+                "效应量的置信区间宽度."
+            ],
+            "the confidence interval width for the post-hoc effect sizes.": [
+                "事后检验效应量的置信区间宽度."
+            ],
+            "the confidence interval width.": [
+                "置信区间宽度."
+            ],
+            "the continuous explanatory (or independent) variables, also known as covariates.": [
+                "连续性解释变量（或自变量），也称协变量."
+            ],
+            "the contrasts to use.": [
+                "对比."
+            ],
+            "the control variables of interest.": [
+                "需要控制的协变量."
+            ],
+            "the counts in `data`": [
+                "`数据`中的计数资料"
+            ],
+            "the covariates (specifying these makes this an ANCOVA)": [
+                "协变量（在协方差分析中指定这些变量）"
+            ],
+            "the covariates from `data`": [
+                "`数据`中的协变量"
+            ],
+            "The cut-off value is set to {}": [
+                "截断值设置为{}"
+            ],
+            "the data as a data frame": [
+                "数据框格式"
+            ],
+            "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
+                "因变量“{}”的水平多于两个；二分类logistic回归只能对两水平的因变量进行分析。"
+            ],
+            "The dependent variable '{dep}' has the following order: {orderedLevels}": [
+                "因变量“{dep}”的顺序如下：{orderedLevels}"
+            ],
+            "The dependent variable \"{dep}\" has only two levels, consider doing a binomial logistic regression.": [
+                "因变量“{DEP}”只有两个水平，因此可考虑使用二分类Logistic回归。"
+            ],
+            "the dependent variable from `data`, variable must be numeric": [
+                "`数据`中的因变量，必须是数值型"
+            ],
+            "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
+                "`数据`中的因变量，必须是数值型（提供公式时不需要，见示例）。"
+            ],
+            "the dependent variable. For ANCOVA, these will be continuous.": [
+                "因变量. 对于协方差分析，必须是连续性变量."
+            ],
+            "the dependent variable. For ANOVA, these will be continuous.": [
+                "因变量. 对于方差分析，必须是连续性变量."
+            ],
+            "the dependent variables -- a separate t-test is performed for each dependent variable specified.": [
+                "因变量 -- 对每个特定的因变量进行单独的t检验."
+            ],
+            "the dependent variables (not necessary when using a formula, see the examples)": [
+                "因变量（使用公式时不需要，见示例）"
+            ],
+            "the dependent variables. For ANOVA, these will be continuous.": [
+                "因变量. 对于方差分析，必须是连续性变量."
+            ],
+            "the error bars to plot on the marginal means.": [
+                "绘制在边际均值图上的误差线."
+            ],
+            "the explanatory covariates (not necessary when providing a formula, see examples)": [
+                "协变量（提供公式时不需要，见示例）"
+            ],
+            "the explanatory factors in `data` (not necessary when providing a formula, see examples)": [
+                "`数据`中的解释性因子变量（提供公式时不需要，见示例）"
+            ],
+            "the explanatory or independent variable. For ANOVA this will be categorical.": [
+                "解释性变量或自变量. 对方差分析必须是分类变量."
+            ],
+            "the explanatory or independent variables. For ANOVA these will be categorical.": [
+                "解释性变量或自变量. 对方差分析必须是分类变量."
+            ],
+            "the fixed factors from `data`": [
+                "`数据`中的固定因子"
+            ],
+            "The Friedman test is used to explore the relationship between a continuous dependent variable and a categorical explanatory variable, where the explanatory variable is 'within subjects' (where multiple measurements are from the same subject). It is analagous to Repeated Measures ANOVA, but with the advantage of being non-parametric, and not requiring the assumptions of normality or homogeneity of variances. However, it has the limitation that it can only test a single explanatory variable at a time.": [
+                "Friedman检验用于探索连续性因变量和分类变量之间的关系，其特点为这些连续性因变量的数值都是来自相同个体。Friedman检验具有非参数检验的优点，相比重复测量方差分析，不需要数据满足正态性和方差齐性的条件。但是，该方法只能用于探索一个分类变量与因变量之间的关系。"
+            ],
+            "the grouping variable with two levels (not necessary when using a formula, see the examples)": [
+                "两水平的分组变量（使用公式时不需要，见示例）"
+            ],
+            "The Kruskal-Wallis test is used to explore the relationship between a continuous dependent variable, and a categorical explanatory variable. It is analagous to ANOVA, but with the advantage of being non-parametric and having fewer assumptions. However, it has the limitation that it can only test a single explanatory variable at a time.": [
+                "Kruskal-Wallis检验用于探索一个连续性因变量和分类变量之间的关系。Kruskal-Wallis检验具有非参数检验方法的优点，相比方差分析，适用条件更为宽松，不需要数据满足正态性和方差齐性的条件。但是，该方法只能用于探索一个分类变量与因变量之间的关系。"
+            ],
+            "the label to use for the dependent variable.": [
+                "因变量标签."
+            ],
+            "the lavaan syntax used to fit the model": [
+                "用于拟合模型的lavaan语法"
+            ],
+            "the missing value exclusion method. `Analysis by analysis` excludes missing values from each analysis. `Listwise` excludes a row from all analyses if one of its values is missing.": [
+                "缺失值处理方法。`Analysis by analysis` 为每次分析时删除缺失值。`Listwise`为所有分析过程中删除有缺失值的行."
+            ],
+            "the missing value exclusion method. `Analysis by analysis` excludes missing values from each variable. `Listwise` excludes a row from all analyses if one of its values is missing.": [
+                "缺失值处理方法。`Analysis by analysis` 为删除每个变量的缺失值。`Listwise`为所有分析过程中删除有缺失值的行."
+            ],
+            "the model terms which make up the model.": [
+                "模型项."
+            ],
+            "the model terms which make up the model. By default a full factorial model is created, but here the exact terms making up the model can be adjusted.": [
+                "模型项。默认情况下，会创建一个全因子模型，这里可以自定义模型的项."
+            ],
+            "the pairs of measurements -- a separate t-test is performed for each pair of measurements.": [
+                "两两比较 -- 对每对比较进行单独的t检验."
+            ],
+            "the post-hoc multiple comparisons corrections to use.": [
+                "要使用的事后多重比较方法."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
+                "student's t检验贝叶斯因子的先验宽度。该值介于0.5和2.0之间，默认为0.707."
+            ],
+            "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.": [
+                "重复测量方差分析用于探索连续性因变量和一个或多个分类变量之间的关系，其特点为这些连续性因变量的数值都是来自相同个体。此外，该分析模块下可以纳入协变量，即可开展重复测量协方差分析。"
+            ],
+            "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.\n\nThis analysis requires that the data be in 'wide format', where each\nrow represents a subject (as opposed to long format, where each\nmeasurement of the dependent variable is represented as a row).\n\nA non-parametric equivalent of the repeated measures ANOVA also exists;\nthe Friedman test. However, it has the limitation of only being able to\ntest a single factor.": [
+                "重复测量方差分析用于探索连续性因变量和一个或多个分类变量之间的关系，其特点为这些连续性因变量的数值都是来自相同个体。此外，该分析模块下可以纳入协变量，即可开展重复测量协方差分析。\n该分析要求数据采用“宽格式”，其中每行代表一个受试对象（与长格式相反，在长格式中，因变量的每个测量值代表一行）。\nFriedman检验是重复测量方差分析的非参数检验方法，只不过该方法只能用于探索一个分类变量与因变量之间的关系。"
+            ],
+            "the repeated measures design.": [
+                "重复测量设计."
+            ],
+            "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels": [
+                "重复测量只有两个水平。当重复测量只有两个水平时，始终满足球形假设"
+            ],
+            "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels.": [
+                "重复测量只有两个水平。当重复测量只有两个水平时，始终满足球形假设。"
+            ],
+            "the repeated measures measurements.": [
+                "重复测量指标."
+            ],
+            "the repeated measures terms of the model.": [
+                "模型中的重复测量项."
+            ],
+            "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.": [
+                "独立样本t检验（有时也称为两样本t检验）用于检验两组均值是否相同。如果P值较低（低于检验水准）则拒绝原假设，表明两组均值不同。"
+            ],
+            "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.\n\nThe Student's independent t-test assumes that the data from each group\nare from a normal distribution, and that the variances of these groups\nare equal. If unwilling to assume the groups have equal variances, the\nWelch's t-test can be used in it's place. If one is additionally\nunwilling to assume the data from each group are from a normal\ndistribution, the non-parametric Mann-Whitney U test can be used instead\n(However, note that the Mann-Whitney U test has a slightly different\nnull hypothesis; that the distributions of each group is equal).": [
+                "独立样本t检验（有时也称为两样本t检验）用于检验两组均值是否相同。如果P值较低（低于检验水准）则拒绝零假设，表明两组均值不同。\n独立样本t检验适用前提是假设数据服从正态分布，且两组方差相等。如果不满足方差齐性条件，可使用Welch's t检验。如果正态性和方差齐性都不满足可使用非参数Mann-Whitney U检验。需要注意的是，Mann-Whitney U检验的零假设是两组的分布相同。"
+            ],
+            "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.": [
+                "单样本t检验用于比较样本均值是否与某个特定的均值相等。如果P值较低（低于检验水准）则拒绝零假设，表明样本均值与特定均值不等。"
+            ],
+            "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.\n\nThe Student's One-sample t-test assumes that the data are from a normal\ndistribution -- in the case that one is unwilling to assume this, the\nnon-parametric Wilcoxon signed-rank can be used in it's place (However,\nnote that the Wilcoxon signed-rank has a slightly different null\nhypothesis; that the *median* is equal to the test value).": [
+                "单样本t检验用于比较样本均值是否与某个特定的均值相等。如果P值较低（低于检验水准）则拒绝零假设，表明样本均值与特定均值不等。\n单样本t检验适用前提是假设数据服从正态分布。如果不满足正态性条件，可使用Wilcoxon 符号秩检验。需要注意的是，Wilcoxon 符号秩检验的零假设是样本中位数与某个特定的中位数相等。"
+            ],
+            "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.": [
+                "配对样本t检验（有时也称为相关样本t检验）用于比较配对样本差值是否为0。如果P值较低（低于检验水准）则拒绝零假设，表明配对样本差值不为0。"
+            ],
+            "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.\n\nThe Student's paired samples t-test assumes that pair differences follow\na normal distribution -- in the case that one is unwilling to assume\nthis, the non-parametric Wilcoxon signed-rank can be used in it's place\n(However, note that the Wilcoxon signed-rank has a slightly different\nnull hypothesis; that the two groups of measurements follow the same\ndistribution).": [
+                "配对样本t检验（有时也称为相关样本t检验）用于比较配对样本差值是否为0。如果P值较低（低于检验水准）则拒绝零假设，表明配对样本差值不为0。\n配对样本t检验适用前提是假设差值服从正态分布。如果不满足正态性条件，可使用Wilcoxon 符号秩检验。需要注意的是，Wilcoxon 符号秩检验的零假设是两配对样本具有相同的分布。"
+            ],
+            "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
+                "提供边际估计均值项。可以指定多个项."
+            ],
+            "the test value to test against (typically zero).": [
+                "比较值（通常为零）。"
+            ],
+            "the type of correlation to calculate": [
+                "相关性计算类型"
+            ],
+            "the type of sums of squares to use; Type 1, 2, or 3.": [
+                "平方和类型；类型1、2或3。"
+            ],
+            "the type of sums of squares to use; Type 2, or 3.": [
+                "平方和类型；类型2或3。"
+            ],
+            "The underlying `aov` object": [
+                "潜在的`aov` 对象"
+            ],
+            "The variable {var} cannot be treated as numeric. Plots that expect numeric data will not be created for this variable.": [
+                "变量{var}不是数值型。不能为此变量绘图。"
+            ],
+            "the variable of interest in `data` (not necessary when using a formula, see the examples)": [
+                "`数据`中的目标变量（提供公式时不需要，见示例）"
+            ],
+            "the variable specifying the groups; must have 2 levels.": [
+                "分组变量；必须有两个水平."
+            ],
+            "the variable to use as the columns in the contingency table (not necessary when providing a formula, see the examples)": [
+                "列联表中的列变量（提供公式时不需要，见示例）"
+            ],
+            "the variable to use as the counts in the contingency table (not necessary when providing a formula, see the examples)": [
+                "列联表中用作计数的变量（提供公式时不需要，见示例）"
+            ],
+            "the variable to use as the rows in the contingency table (not necessary when providing a formula, see the examples)": [
+                "列联表中的行变量（提供公式时不需要，见示例）"
+            ],
+            "The variables {vars} cannot be treated as numeric. Plots that expect numeric data will not be created for these variables.": [
+                "这些变量{var}不是数值型。不能为这些变量绘图。"
+            ],
+            "the variables of interest -- a separate t-test is performed for each variable specified.": [
+                "目标变量 -- 对每个指定的变量进行单独的t检验。"
+            ],
+            "the variables of interest.": [
+                "目标变量."
+            ],
+            "the variables to use to split the contingency table (not necessary when providing a formula, see the examples)": [
+                "用于拆分列联表的变量（提供公式时不需要，见示例）"
+            ],
+            "the width for the Confidence intervals.": [
+                "置信区间宽度."
+            ],
+            "The χ² Goodness of fit test (not to be confused with the χ² test of independence), tests the Null hypothesis that the proportions of observations match some expected proportions. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportions are different to those tested.": [
+                "拟合优度χ²检验（要与独立χ²检验相区别）用于检验某观察值的比例是否与预期比例相同。如果P值较低（低于检验水准）则拒绝零假设，表明观察值的比例与预期比例不同。"
+            ],
+            "The χ² test of association (not to be confused with the χ² goodness of fit) is used to test whether two categorical variables are independent or associated. If the p-value is low, it suggests the variables are not independent, and that there is a relationship between the two variables.": [
+                "关联χ²检验（要与拟合优度χ²检验相区别）用于检验两个分类变量是否具有关联。如果P值较低（低于检验水准），表明两个分类变量不独立，具有相关性。"
+            ],
+            "Theoretical Quantiles": [
+                "理论分位数"
+            ],
+            "This module represents the analyses included with jamovi. It contains many common analyses (such as t-tests, ANOVAs, regression, correlation matrices, proportion tests, contingency tables, factor analysis, etc).": [
+                "此模块罗列了jamovi中包含的分析方法。包含许多常见分析（如t检验、方差分析、回归、相关矩阵、比例检验、列联表、因子分析等）。"
+            ],
+            "Threshold": [
+                "阈值"
+            ],
+            "Thresholds": [
+                "阈值"
+            ],
+            "Thurstone": [
+                "Thurstone 法"
+            ],
+            "TLI": [
+                "TLI指数"
+            ],
+            "Tolerance": [
+                "容忍度"
+            ],
+            "Too few observations (N < 3) to compute statistic": [
+                "观测值太少（N < 3）不能计算统计量"
+            ],
+            "Too few observations to calculate statistic. Each (sub)group must have at least as many observations as there are dependent variables.": [
+                "观测值太少不能计算统计量。每个（亚）组必须至少包含与因变量相同的观测值。"
+            ],
+            "Too few samples to compute statistic (N < {n})": [
+                "样本量太小(N < {n})不能计算统计量"
+            ],
+            "Too few samples to compute statistic (N < 3)": [
+                "样本量太小（N < 3）不能计算统计量"
+            ],
+            "Too many observations (N > 5000) to compute statistic": [
+                "观测值太多 (N > 5000) 不能计算统计量"
+            ],
+            "Too many samples to compute statistic (N > {n})": [
+                "样本量太大 (N > {n}) 不能计算统计量"
+            ],
+            "Too many samples to compute statistic (N > 5000)": [
+                "样本量太大 (N > 5000) 不能计算统计量"
+            ],
+            "Tooth Growth": [
+                "Tooth Growth数据集"
+            ],
+            "Total": [
+                "合计"
+            ],
+            "total_pc (default), column_pc, or row_pc. Use respectively percentages `of total`, `within columns`, or `within rows` for the bar plot y-axis.": [
+                "合计_百分比（默认）、列_百分比或行_百分比。分别使用`合计`, `列内`或`行内`百分比作为条形图的y轴."
+            ],
+            "Tukey": [
+                "Tukey法"
+            ],
+            "Tukey (equal variances)": [
+                "Tukey法(方差齐)"
+            ],
+            "Tukey Post-Hoc Test – {dep}": [
+                "Tukey 事后检验法 – {dep}"
+            ],
+            "Type {ssType} Sums of Squares": [
+                "类型{ssType} 平方和"
+            ],
+            "Type 1": [
+                "类型1"
+            ],
+            "Type 2": [
+                "类型2"
+            ],
+            "Type 3": [
+                "类型3"
+            ],
+            "Type 3 sum of squares": [
+                "类型3平方和"
+            ],
+            "Unable to split by a continuous variable": [
+                "不能使用连续性变量拆分"
+            ],
+            "Uniqueness": [
+                "独特剩余值"
+            ],
+            "Univariate Tests": [
+                "单变量检验"
+            ],
+            "Upper": [
+                "上限"
+            ],
+            "upper bound": [
+                "上限"
+            ],
+            "Value": [
+                "值"
+            ],
+            "value": [
+                "值"
+            ],
+            "Values are counts": [
+                "值为计数资料"
+            ],
+            "Variable": [
+                "变量"
+            ],
+            "Variable '{var}' contains no data": [
+                "变量“{var}”中无数据"
+            ],
+            "Variable contains infinite values": [
+                "变量包含无限值"
+            ],
+            "Variable does not contain enough observations": [
+                "变量中的个案数不够"
+            ],
+            "Variable is not numeric": [
+                "变量不是数值型"
+            ],
+            "Variables": [
+                "变量"
+            ],
+            "Variables across columns": [
+                "列变量"
+            ],
+            "Variables across rows": [
+                "行变量"
+            ],
+            "Variables must have at least two levels": [
+                "变量必须至少有两个水平"
+            ],
+            "Variance": [
+                "方差"
+            ],
+            "Variances": [
+                "方差"
+            ],
+            "variation from the control variables is only removed from the variables in the columns": [
+                "仅从列变量中删除变化较大的控制变量"
+            ],
+            "Varimax": [
+                "最大方差法"
+            ],
+            "varimax": [
+                "最大方差法"
+            ],
+            "VIF": [
+                "方差膨胀因子"
+            ],
+            "Violin": [
+                "小提琴图"
+            ],
+            "W": [
+                "W值"
+            ],
+            "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
+                "每个单元格平均加权。(默认情况下为根据单元格频率进行加权)"
+            ],
+            "Weighted by '{varName}'": [
+                "已由 '{varName}' 加权"
+            ],
+            "Weights (optional)": [
+                "权重（可选）"
+            ],
+            "Welch's": [
+                "Welch's法"
+            ],
+            "Welch's t": [
+                "Welch's t值"
+            ],
+            "Wilcoxon rank": [
+                "Wilcoxon 秩和检验"
+            ],
+            "Wilcoxon signed rank test": [
+                "Wilcoxon 符号秩检验"
+            ],
+            "Wilcoxon W": [
+                "Wilcoxon W值"
+            ],
+            "Wilks' Lambda": [
+                "Wilks' Lambda法"
+            ],
+            "within column": [
+                "列内"
+            ],
+            "within rows": [
+                "行内"
+            ],
+            "Within Subjects Effects": [
+                "组内效应"
+            ],
+            "X-Axis": [
+                "X轴"
+            ],
+            "X-axis": [
+                "X轴"
+            ],
+            "Y-Axis": [
+                "Y轴"
+            ],
+            "Y-axis": [
+                "Y轴"
+            ],
+            "ycounts (default) or ypc. Use respectively `counts` or `percentages` for the bar plot y-axis": [
+                "y计数（默认）或y百分比。分别使用`计数` 或 `百分比`作为条形图的y轴"
+            ],
+            "Z": [
+                "Z值"
+            ],
+            "z test difference in 2 proportions": [
+                "2比例差异的z检验"
+            ],
+            "z test for difference in 2 proportions": [
+                "z检验"
+            ],
+            "z test only available for 2x2 tables": [
+                "z检验仅适用于2x2四格表"
+            ],
+            "ΔR²": [
+                "ΔR²"
+            ],
+            "ε²": [
+                "ε²"
+            ],
+            "η²": [
+                "η²值"
+            ],
+            "η²<sub>G</sub>": [
+                "η²<sub>G</sub>"
+            ],
+            "η²<sub>p</sub>": [
+                "η²<sub>p</sub>"
+            ],
+            "η²p": [
+                "η²p"
+            ],
+            "χ²": [
+                "χ²"
+            ],
+            "χ² continuity correction": [
+                "连续性校正χ²"
+            ],
+            "χ² Goodness of Fit": [
+                "χ² 拟合优度检验"
+            ],
+            "χ² Goodness of fit": [
+                "χ² 拟合优度检验"
+            ],
+            "χ² test": [
+                "χ² 检验"
+            ],
+            "χ² test of association": [
+                "χ² 关联检验"
+            ],
+            "χ² Tests": [
+                "χ² 检验"
+            ],
+            "ω²": [
+                "ω²"
+            ],
+            "specific factor\u0004Factor": [
+                "因子"
+            ]
+        }
+    },
+    "code": "zh-cn"
+}

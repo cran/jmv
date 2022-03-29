@@ -7,13 +7,13 @@
 descriptives(data, vars, splitBy = NULL, freq = FALSE,
   desc = "columns", hist = FALSE, dens = FALSE, bar = FALSE,
   barCounts = FALSE, box = FALSE, violin = FALSE, dot = FALSE,
-  dotType = "jitter", boxMean = FALSE, qq = FALSE, n = TRUE,
-  missing = TRUE, mean = TRUE, median = TRUE, mode = FALSE,
-  sum = FALSE, sd = TRUE, variance = FALSE, range = FALSE,
-  min = TRUE, max = TRUE, se = FALSE, ci = FALSE, ciWidth = 95,
-  iqr = FALSE, skew = FALSE, kurt = FALSE, sw = FALSE,
-  pcEqGr = FALSE, pcNEqGr = 4, pc = FALSE, pcValues = "25,50,75",
-  formula)
+  dotType = "jitter", boxMean = FALSE, boxLabelOutliers = TRUE,
+  qq = FALSE, n = TRUE, missing = TRUE, mean = TRUE,
+  median = TRUE, mode = FALSE, sum = FALSE, sd = TRUE,
+  variance = FALSE, range = FALSE, min = TRUE, max = TRUE,
+  se = FALSE, ci = FALSE, ciWidth = 95, iqr = FALSE,
+  skew = FALSE, kurt = FALSE, sw = FALSE, pcEqGr = FALSE,
+  pcNEqGr = 4, pc = FALSE, pcValues = "25,50,75", formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -54,6 +54,9 @@ bar plots}
 \item{dotType}{.}
 
 \item{boxMean}{\code{TRUE} or \code{FALSE} (default), add mean to box plot}
+
+\item{boxLabelOutliers}{\code{TRUE} (default) or \code{FALSE}, add labels
+with the row number to the outliers in the box plot}
 
 \item{qq}{\code{TRUE} or \code{FALSE} (default), provide Q-Q plots
 (continuous variables only)}

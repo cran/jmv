@@ -1,4 +1,5 @@
 
+#' @importFrom jmvcore .
 mancovaClass <- R6::R6Class(
     "mancovaClass",
     inherit = mancovaBase,
@@ -79,18 +80,16 @@ mancovaClass <- R6::R6Class(
             }
         },
         .initUnivarTables = function(modelTerms) {
-
-            deps <- self$options$deps
-
             table <- self$results$univar
 
+            deps <- self$options$deps
             terms <- c(modelTerms, "Residuals")
+            termTitles <- c(modelTerms, .("Residuals"))
 
-            for (term in terms) {
+            for (i in seq_along(terms)) {
                 for (dep in deps) {
-
-                    termString <- jmvcore::stringifyTerm(term)
-                    key <- paste0(paste0(term, collapse=""), dep)
+                    termString <- jmvcore::stringifyTerm(termTitles[[i]])
+                    key <- paste0(paste0(terms[[i]], collapse=""), dep)
                     table$addRow(rowKey=key, values=list(term = termString, dep = dep))
 
                     if (dep == deps[1])
@@ -237,8 +236,8 @@ mancovaClass <- R6::R6Class(
             return(ggplot(data=image$state, aes(x=chi, y=dist)) +
                       geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
                       geom_point(aes(x=chi,y=dist), size=2, colour=theme$color[1]) +
-                      xlab("Chi-Square Quantiles") +
-                      ylab("Squared Mahalanobis Distance") +
+                      xlab(.("Chi-Square Quantiles")) +
+                      ylab(.("Squared Mahalanobis Distance")) +
                       ggtheme)
         },
 
@@ -316,8 +315,16 @@ mancovaClass <- R6::R6Class(
 
             dataDeps <- data[jmvcore::toB64(deps)]
 
-            if (length(factors) == 0)
-                return(list(chiSq = NaN, df = NaN, p = NaN, warning = "No factors defined. Box's M test is only relevant when model contains factors."))
+            if (length(factors) == 0) {
+                return(
+                    list(
+                        chiSq = NaN,
+                        df = NaN,
+                        p = NaN,
+                        warning = .("No factors defined. Box's M test is only relevant when model contains factors.")
+                    )
+                )
+            }
 
             dataFactors <- data[jmvcore::toB64(factors)]
 
@@ -339,7 +346,7 @@ mancovaClass <- R6::R6Class(
 
             warning <- NULL
             if (any(dfs < p))
-                warning <- "Too few observations to calculate statistic. Each (sub)group must have at least as many observations as there are dependent variables."
+                warning <- .("Too few observations to calculate statistic. Each (sub)group must have at least as many observations as there are dependent variables.")
 
             mats <- list(); aux <- list()
             for(i in 1:nlev) {

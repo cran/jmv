@@ -1,6 +1,7 @@
 
 #' @import ggplot2
 #' @importFrom jmvcore matchSet
+#' @importFrom jmvcore .
 ancovaClass <- R6::R6Class(
     "ancovaClass",
     inherit=ancovaBase,
@@ -44,10 +45,11 @@ ancovaClass <- R6::R6Class(
 
             data <- self$finalData
 
+            errorMessage <- .("Column '{name}' contains unused levels (possible only when rows with missing values are excluded)")
             for (name in colnames(data)) {
                 column <- data[[name]]
                 if (is.factor(column) && any(table(column) == 0))
-                    reject("Column '{}' contains unused levels (possibly only when rows with missing values are excluded)", name=name)
+                    reject(errorMessage, name=name)
             }
 
             dataB64 <- lapply(data, function(x) {
@@ -77,6 +79,9 @@ ancovaClass <- R6::R6Class(
             factors <- self$options$factors
             modelTerms <- private$.modelTerms()
 
+            singularErrorMessage <- .("Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables.")
+            perfectFitErrorMessage <- .("Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit")
+
             suppressWarnings({
 
                 base::options(contrasts = c("contr.sum","contr.poly"))
@@ -105,7 +110,7 @@ ancovaClass <- R6::R6Class(
                     if (isError(results)) {
                         message <- extractErrorMessage(results)
                         if (message == 'there are aliased coefficients in the model')
-                            singular <- 'Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables'
+                            singular <- singularErrorMessage
                         results <- try(car::Anova(private$.model, type=2, singular.ok=TRUE), silent=TRUE)
                     }
 
@@ -119,7 +124,7 @@ ancovaClass <- R6::R6Class(
                     if (isError(results)) {
                         message <- extractErrorMessage(results)
                         if (message == 'there are aliased coefficients in the model')
-                            singular <- 'Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables'
+                            singular <- singularErrorMessage
                         results <- try({
                             r <- car::Anova(private$.model, type=3, singular.ok=TRUE, silent=TRUE)
                             r <- r[-1,]
@@ -130,11 +135,11 @@ ancovaClass <- R6::R6Class(
                 if (isError(results)) {
                     message <- extractErrorMessage(results)
                     if (message == 'residual df = 0')
-                        reject('Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit')
+                        reject(perfectFitErrorMessage)
                 }
 
                 if (results['Residuals', 'Sum Sq'] == 0 || results['Residuals', 'Df'] == 0)
-                    reject('Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit')
+                    reject(perfectFitErrorMessage)
 
             }) # suppressWarnings
 
@@ -148,7 +153,7 @@ ancovaClass <- R6::R6Class(
             table    <- self$results$main
 
             if (self$options$modelTest) {
-                table$addRow(rowKey='.', list(name='Overall model'))
+                table$addRow(rowKey='.', list(name=.('Overall model')))
                 table$addFormat(rowKey='.', col=1, format=Cell.BEGIN_END_GROUP)
             }
 
@@ -168,7 +173,7 @@ ancovaClass <- R6::R6Class(
                 table$addFormat(rowKey='...', col=1, format=Cell.BEGIN_END_GROUP)
             }
 
-            table$addRow(rowKey='', list(name='Residuals'))
+            table$addRow(rowKey='', list(name=.('Residuals')))
             table$addFormat(rowKey='', col=1, format=Cell.BEGIN_END_GROUP)
 
             if (self$options$ss == '1') {
@@ -209,36 +214,38 @@ ancovaClass <- R6::R6Class(
             tables <- self$results$postHoc
 
             postHocRows <- list()
+            postHocTableTitle <- .('Post Hoc Comparisons - {term}')
 
             for (ph in phTerms) {
 
                 table <- tables$get(key=ph)
 
-                table$setTitle(paste0('Post Hoc Comparisons - ', stringifyTerm(ph)))
+                table$setTitle(jmvcore::format(postHocTableTitle, term=stringifyTerm(ph)))
 
                 for (i in seq_along(ph))
-                    table$addColumn(name=paste0(ph[i],'1'), title=ph[i], type='text', superTitle='Comparison', combineBelow=TRUE)
+                    table$addColumn(name=paste0(ph[i],'1'), title=ph[i], type='text', superTitle=.('Comparison'), combineBelow=TRUE)
 
-                table$addColumn(name='sep', title='', type='text', content='-', superTitle='Comparison', format='narrow')
+                table$addColumn(name='sep', title='', type='text', content='-', superTitle=.('Comparison'), format='narrow')
 
                 for (i in seq_along(ph))
-                    table$addColumn(name=paste0(ph[i],'2'), title=ph[i], type='text', superTitle='Comparison')
+                    table$addColumn(name=paste0(ph[i],'2'), title=ph[i], type='text', superTitle=.('Comparison'))
 
-                table$addColumn(name='md', title='Mean Difference', type='number')
-                table$addColumn(name='se', title='SE', type='number')
-                table$addColumn(name='df', title='df', type='number')
-                table$addColumn(name='t', title='t', type='number')
+                table$addColumn(name='md', title=.('Mean Difference'), type='number')
+                table$addColumn(name='se', title=.('SE'), type='number')
+                table$addColumn(name='df', title=.('df'), type='number')
+                table$addColumn(name='t', title=.('t'), type='number')
 
-                table$addColumn(name='pnone', title='p', type='number', format='zto,pvalue', visible="(postHocCorr:none)")
-                table$addColumn(name='ptukey', title='p<sub>tukey</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:tukey)")
-                table$addColumn(name='pscheffe', title='p<sub>scheffe</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:scheffe)")
-                table$addColumn(name='pbonferroni', title='p<sub>bonferroni</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:bonf)")
-                table$addColumn(name='pholm', title='p<sub>holm</sub>', type='number', format='zto,pvalue', visible="(postHocCorr:holm)")
+                table$addColumn(name='pnone', title=.('p'), type='number', format='zto,pvalue', visible="(postHocCorr:none)")
+                table$addColumn(name='ptukey', title=.('p<sub>tukey</sub>'), type='number', format='zto,pvalue', visible="(postHocCorr:tukey)")
+                table$addColumn(name='pscheffe', title=.('p<sub>scheffe</sub>'), type='number', format='zto,pvalue', visible="(postHocCorr:scheffe)")
+                table$addColumn(name='pbonferroni', title=.('p<sub>bonferroni</sub>'), type='number', format='zto,pvalue', visible="(postHocCorr:bonf)")
+                table$addColumn(name='pholm', title=.('p<sub>holm</sub>'), type='number', format='zto,pvalue', visible="(postHocCorr:holm)")
 
-                ciTitleES <- paste0(self$options$postHocEsCiWidth, '% Confidence Interval')
-                table$addColumn(name='d', title='Cohen\'s d', type='number', visible="(postHocES:d)")
-                table$addColumn(name='dlower', title='Lower', type='number', visible="(postHocES:d && postHocEsCi)", superTitle=ciTitleES)
-                table$addColumn(name='dupper', title='Upper', type='number', visible="(postHocES:d && postHocEsCi)", superTitle=ciTitleES)
+
+                ciTitleES <- jmvcore::format(.('{ciWidth}% Confidence Interval'), ciWidth=self$options$postHocEsCiWidth)
+                table$addColumn(name='d', title=.("Cohen's d"), type='number', visible="(postHocES:d)")
+                table$addColumn(name='dlower', title=.('Lower'), type='number', visible="(postHocES:d && postHocEsCi)", superTitle=ciTitleES)
+                table$addColumn(name='dupper', title=.('Upper'), type='number', visible="(postHocES:d && postHocEsCi)", superTitle=ciTitleES)
 
                 combin <- expand.grid(bsLevels[rev(ph)])
                 combin <- sapply(combin, as.character, simplify = 'matrix')
@@ -276,7 +283,7 @@ ancovaClass <- R6::R6Class(
                         table$addFormat(rowNo=i, col=1, Cell.END_GROUP)
                 }
 
-                table$setNote('note', 'Comparisons are based on estimated marginal means')
+                table$setNote('note', .('Comparisons are based on estimated marginal means'))
             }
             private$.postHocRows <- postHocRows
         },
@@ -305,6 +312,9 @@ ancovaClass <- R6::R6Class(
             emMeans <- self$options$emMeans
             group <- self$results$emm
 
+            emMeansTableTitle <- .('Estimated Marginal Means - {term}')
+            ciWidthTitle <- jmvcore::format(.('{ciWidth}% Confidence Interval'), ciWidth=self$options$ciWidthEmm)
+
             for (j in seq_along(emMeans)) {
 
                 emm <- emMeans[[j]]
@@ -314,7 +324,7 @@ ancovaClass <- R6::R6Class(
                     emmGroup <- group$get(key=j)
 
                     table <- emmGroup$emmTable
-                    table$setTitle(paste0('Estimated Marginal Means - ', jmvcore::stringifyTerm(emm)))
+                    table$setTitle(jmvcore::format(emMeansTableTitle, term=jmvcore::stringifyTerm(emm)))
 
                     nLevels <- numeric(length(emm))
                     for (k in rev(seq_along(emm))) {
@@ -322,10 +332,10 @@ ancovaClass <- R6::R6Class(
                         nLevels[k] <- length(levels(self$data[[ emm[k] ]]))
                     }
 
-                    table$addColumn(name='mean', title='Mean', type='number')
-                    table$addColumn(name='se', title='SE', type='number')
-                    table$addColumn(name='lower', title='Lower', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'))
-                    table$addColumn(name='upper', title='Upper', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'))
+                    table$addColumn(name='mean', title=.('Mean'), type='number')
+                    table$addColumn(name='se', title=.('SE'), type='number')
+                    table$addColumn(name='lower', title=.('Lower'), type='number', superTitle=ciWidthTitle)
+                    table$addColumn(name='upper', title=.('Upper'), type='number', superTitle=ciWidthTitle)
 
                     nRows <- prod(nLevels)
 
@@ -647,8 +657,8 @@ ancovaClass <- R6::R6Class(
             return(ggplot(data=df, aes(y=y, x=x)) +
                       geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
                       geom_point(aes(x=x,y=y), size=2, colour=theme$color[1]) +
-                      xlab("Theoretical Quantiles") +
-                      ylab("Standardized Residuals") +
+                      xlab(.("Theoretical Quantiles")) +
+                      ylab(.("Standardized Residuals")) +
                       ggtheme)
         },
         .prepareEmmPlots = function(data) {
@@ -711,7 +721,6 @@ ancovaClass <- R6::R6Class(
             private$emMeans <- emmTables
         },
         .emmPlot = function(image, ggtheme, theme, ...) {
-
             if (is.null(image$state))
                 return(FALSE)
 
@@ -723,6 +732,12 @@ ancovaClass <- R6::R6Class(
             emm$lowerSE <- emm[[names$y]] - emm[['SE']]
             emm$upperSE <- emm[[names$y]] + emm[['SE']]
 
+            if (theme$bw) {
+                lty <- names$lines
+            } else {
+                lty <- NULL
+            }
+
             if (self$options$emmPlotData)
                 dodge <- position_dodge(0.7)
             else
@@ -733,17 +748,35 @@ ancovaClass <- R6::R6Class(
             else
                 jitterdodge <- position_jitterdodge(dodge.width = 0.7, jitter.width = 0.4)
 
-            p <- ggplot(data=emm, aes_string(x=names$x, y=names$y, color=names$lines, fill=names$lines, group=names$lines), inherit.aes = FALSE)
+            p <- ggplot(
+                data=emm,
+                aes_string(
+                    x=names$x,
+                    y=names$y,
+                    color=names$lines,
+                    fill=names$lines,
+                    linetype=lty,
+                    group=names$lines
+                ),
+                inherit.aes = FALSE
+            )
 
             if (self$options$emmPlotData)
                 p <- p + geom_point(data=data, aes(y=!!data[[labels$y]]), alpha=0.3, position=jitterdodge)
 
             p <- p + geom_line(size=.8, position=dodge)
 
-            if (self$options$emmPlotError == 'ci')
-                p <- p + geom_errorbar(aes_string(x=names$x, ymin=names$lower, ymax=names$upper), width=.1, size=.8, position=dodge)
-            else if (self$options$emmPlotError == 'se')
-                p <- p + geom_errorbar(aes_string(x=names$x, ymin='lowerSE', ymax='upperSE'), width=.1, size=.8, position=dodge)
+            if (self$options$emmPlotError == 'ci') {
+                p <- p + geom_errorbar(
+                    aes_string(x=names$x, ymin=names$lower, ymax=names$upper, linetype=NULL),
+                    width=.1, size=.8, position=dodge
+                )
+            } else if (self$options$emmPlotError == 'se') {
+                p <- p + geom_errorbar(
+                    aes_string(x=names$x, ymin='lowerSE', ymax='upperSE', linetype=NULL),
+                    width=.1, size=.8, position=dodge
+                )
+            }
 
             p <- p + geom_point(shape=21, fill='white', size=3, position=dodge)
 
@@ -753,7 +786,7 @@ ancovaClass <- R6::R6Class(
             }
 
             p <- p +
-                labs(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines) +
+                labs(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines, linetype=labels$lines) +
                 ggtheme + theme(panel.spacing = unit(2, "lines"))
 
             return(p)
@@ -801,7 +834,10 @@ ancovaClass <- R6::R6Class(
 
             } else if (type == 'polynomial') {
 
-                names <- c('linear', 'quadratic', 'cubic', 'quartic', 'quintic', 'sextic', 'septic', 'octic')
+                names <- c(
+                    .('linear'), .('quadratic'), .('cubic'), .('quartic'),
+                    .('quintic'), .('sextic'), .('septic'), .('octic')
+                )
 
                 for (i in seq_len(nLevels-1)) {
                     if (i <= length(names)) {
@@ -973,16 +1009,16 @@ ancovaClass <- R6::R6Class(
             factors <- self$options$factors
 
             if (is.factor(data[[dep]]))
-                reject('Dependent variable must be numeric')
+                reject(.('Dependent variable must be numeric'))
 
             for (factorName in factors) {
                 lvls <- base::levels(data[[factorName]])
-                if (length(lvls) == 1)
-                    reject("Factor '{}' contains only a single level", factorName=factorName)
-                else if (length(lvls) == 0)
-                    reject("Factor '{}' contains no data", factorName=factorName)
+                if (length(lvls) == 1) {
+                    reject(.("Factor '{factorName}' contains only a single level"), factorName=factorName)
+                } else if (length(lvls) == 0) {
+                    reject(.("Factor '{factorName}' contains no data"), factorName=factorName)
+                }
             }
-
         }),
     #### Active bindings ----
     active=list(

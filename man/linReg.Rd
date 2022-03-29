@@ -4,15 +4,15 @@
 \alias{linReg}
 \title{Linear Regression}
 \usage{
-linReg(data, dep, covs = NULL, factors = NULL, blocks = list(list()),
-  refLevels = NULL, intercept = "refLevel", r = TRUE, r2 = TRUE,
-  r2Adj = FALSE, aic = FALSE, bic = FALSE, rmse = FALSE,
-  modelTest = FALSE, anova = FALSE, ci = FALSE, ciWidth = 95,
-  stdEst = FALSE, ciStdEst = FALSE, ciWidthStdEst = 95,
-  norm = FALSE, qqPlot = FALSE, resPlots = FALSE, durbin = FALSE,
-  collin = FALSE, cooks = FALSE, emMeans = list(list()),
-  ciEmm = TRUE, ciWidthEmm = 95, emmPlots = TRUE,
-  emmTables = FALSE, emmWeights = TRUE)
+linReg(data, dep, covs = NULL, factors = NULL, weights = NULL,
+  blocks = list(list()), refLevels = NULL, intercept = "refLevel",
+  r = TRUE, r2 = TRUE, r2Adj = FALSE, aic = FALSE, bic = FALSE,
+  rmse = FALSE, modelTest = FALSE, anova = FALSE, ci = FALSE,
+  ciWidth = 95, stdEst = FALSE, ciStdEst = FALSE,
+  ciWidthStdEst = 95, norm = FALSE, qqPlot = FALSE,
+  resPlots = FALSE, durbin = FALSE, collin = FALSE, cooks = FALSE,
+  emMeans = list(list()), ciEmm = TRUE, ciWidthEmm = 95,
+  emmPlots = TRUE, emmTables = FALSE, emmWeights = TRUE)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -23,6 +23,9 @@ numeric}
 \item{covs}{the covariates from \code{data}}
 
 \item{factors}{the fixed factors from \code{data}}
+
+\item{weights}{the (optional) weights from \code{data} to be used in the
+fitting process}
 
 \item{blocks}{a list containing vectors of strings that name the predictors
 that are added to the model. The elements are added to the model according

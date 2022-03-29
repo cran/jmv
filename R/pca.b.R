@@ -1,4 +1,5 @@
 
+#' @importFrom jmvcore .
 pcaClass <- R6::R6Class(
     "pcaClass",
     inherit = pcaBase,
@@ -79,8 +80,8 @@ pcaClass <- R6::R6Class(
             return(private$.bartlett)
         },
         scores = function() {
-            if (is.null(private$.scores) && private$analysis == 'pca')
-                private$.scores <- private$.getPsychResult()$scores
+            if (is.null(private$.scores))
+                private$.scores <- private$.computeFactorScores()
 
             return(private$.scores)
         }
@@ -138,9 +139,15 @@ pcaClass <- R6::R6Class(
             } else if (method == "eigen") {
                 nFactors <- sum(self$eigen > self$options$minEigen)
 
-                if (nFactors <= 0)
-                    jmvcore::reject(jmvcore::format('No components have an eigenvalue greater than {}'),
-                                    self$options$minEigen, code='')
+                if (nFactors <= 0) {
+                    jmvcore::reject(
+                        jmvcore::format(
+                            .('No components have an eigenvalue greater than {value}'),
+                            value=self$options$minEigen
+                        ),
+                        code=''
+                    )
+                }
             } else {
                 nFactors <- self$options$nFactors
             }
@@ -172,29 +179,61 @@ pcaClass <- R6::R6Class(
 
             return(bartlett)
         },
+        .computeFactorScores = function() {
+            if (private$analysis == 'pca') {
+                scores <- private$.getPsychResult()$scores
+            } else {
+                scores <- psych::factor.scores(
+                    self$dataProcessed,
+                    private$.getPsychResult(),
+                    method = self$options$factorScoreMethod
+                )$scores
+            }
+
+            return(scores)
+        },
 
         #### Init tables/plots functions ----
         .initLoadingsTable = function() {
             table <- self$results$loadings
 
+            rotation <- self$options$rotation
+            if (rotation == 'varimax')
+                rotationName <- .("varimax")
+            else if (rotation == 'quartimax')
+                rotationName <- .("quartimax")
+            else if (rotation == 'promax')
+                rotationName <- .("promax")
+            else if (rotation == 'oblimin')
+                rotationName <- .("oblimin")
+            else if (rotation == 'simplimax')
+                rotationName <- .("simplimax")
+            else
+                rotationName <- .("none")
+
             if (private$analysis == 'pca') {
-                table$setNote("note", jmvcore::format("\'{}\' rotation was used", self$options$rotation))
+                table$setNote(
+                    "note",
+                    jmvcore::format(
+                        .("'{rotation}' rotation was used"),
+                        rotation=rotationName
+                    )
+                )
             } else {
                 extr <- self$options$extraction
-
                 if (extr == 'pa')
-                    extrName <- 'Principal axis factoring'
+                    extrName <- .('Principal axis factoring')
                 else if (extr == 'ml')
-                    extrName <- 'Maximum likelihood'
+                    extrName <- .('Maximum likelihood')
                 else
-                    extrName <- 'Minimum residual'
+                    extrName <- .('Minimum residual')
 
                 table$setNote(
                     "note",
                     jmvcore::format(
-                        "\'{}\' extraction method was used in combination with a \'{}\' rotation",
-                        extrName,
-                        self$options$rotation
+                        .("'{method}' extraction method was used in combination with a '{rotation}' rotation"),
+                        method=extrName,
+                        rotation=rotationName
                     )
                 )
             }
@@ -215,7 +254,7 @@ pcaClass <- R6::R6Class(
             table <- self$results$assump$kmo
             vars <- self$options$vars
 
-            table$addRow(rowKey=1, values=list(name = "Overall"))
+            table$addRow(rowKey=1, values=list(name = .("Overall")))
             table$addFormat(rowKey=1, col=1, Cell.END_GROUP)
 
             for (i in seq_along(vars))
@@ -224,7 +263,7 @@ pcaClass <- R6::R6Class(
         .initFactorCor = function() {
             if (private$analysis == 'efa') {
                 table <- self$results$factorStats$factorCor
-                table$setTitle("Inter-Factor Correlations")
+                table$setTitle(.("Inter-Factor Correlations"))
             }
         },
 
@@ -239,9 +278,9 @@ pcaClass <- R6::R6Class(
             hide <- self$options$hideLoadings
 
             if (private$analysis == 'pca')
-                type <- 'Component'
+                type <- .('Component')
             else
-                type <- 'Factor'
+                type <- .('Factor [specific factor]')
 
             if (nFactors > 1) {
                 for (i in 2:nFactors) {
@@ -398,15 +437,25 @@ pcaClass <- R6::R6Class(
 
             table$setRow(rowNo=1, values=list(chi=r$chisq, df=r$df, p=r$p.value))
         },
-        .populateOutputs = function() {
-            if (private$analysis == 'pca'
-                    && self$options$factorScoresOV
-                    && self$results$factorScoresOV$isNotFilled()) {
-
+        .populateOutputs = function(n) {
+            if (self$options$factorScoresOV && self$results$factorScoresOV$isNotFilled()) {
                 keys <- 1:self$nFactors
-                titles <- paste("Score Component", 1:self$nFactors)
-                descriptions <- paste("Score for component", 1:self$nFactors)
                 measureTypes <- rep("continuous", self$nFactors)
+
+                if (private$analysis == 'pca') {
+                    titles <- paste(.("Score Component"), keys)
+                    descriptions <- paste(.("Score for component"), keys)
+                } else {
+                    titles <- paste(.("Score Factor"), keys)
+                    descriptions <- character(length(keys))
+                    for (i in keys) {
+                        descriptions[i] = jmvcore::format(
+                            .("Score for factor {i}. Estimated using the '{fsMethod}' method."),
+                            i=i,
+                            fsMethod=self$options$factorScoreMethod
+                        )
+                    }
+                }
 
                 self$results$factorScoresOV$set(
                     keys=keys,
@@ -431,7 +480,7 @@ pcaClass <- R6::R6Class(
             df <- list()
             df[["eigen"]] <- c(private$.getSimEigenCI(), self$eigen)
             df[["comp"]] <- factor(c(1:length(self$eigen), 1:length(self$eigen)))
-            df[["type"]] <- c(rep("Simulations", length(self$eigen)), rep("Data", length(self$eigen)))
+            df[["type"]] <- c(rep(.("Simulations"), length(self$eigen)), rep(.("Data"), length(self$eigen)))
 
             attr(df, 'row.names') <- seq_len(length(df[[1]]))
             attr(df, 'class') <- 'data.frame'
@@ -454,17 +503,17 @@ pcaClass <- R6::R6Class(
             data <- image$state
 
             if (nFactorMethod != "parallel")
-                data <- subset(data, type == "Data")
+                data <- subset(data, type == .("Data"))
 
             if (private$analysis == 'pca')
-                type <- 'Component'
+                type <- .('Component')
             else
-                type <- 'Factor'
+                type <- .('Factor [specific factor]')
 
             p <- ggplot(data=data, aes(x=comp, y=eigen, group=type, linetype=factor(type))) +
                         geom_line(size=.8, colour=theme$color[1]) +
                         geom_point(aes(fill=factor(type), colour=factor(type)), shape=21, size=3) +
-                        xlab(type) + ylab("Eigenvalue") +
+                        xlab(type) + ylab(.("Eigenvalue")) +
                         ggtheme + themeSpec
 
             if (nFactorMethod != "parallel")
@@ -543,12 +592,19 @@ pcaClass <- R6::R6Class(
             vars <- self$options$vars
 
             if (private$analysis == 'pca')
-                type <- 'components'
+                type <- .('components')
             else
-                type <- 'factors'
+                type <- .('factors')
 
-            if (nFactorMethod == "fixed" && nFactors > length(vars))
-                jmvcore::reject(jmvcore::format('Number of {} cannot be bigger than number of variables', type), code='')
+            if (nFactorMethod == "fixed" && nFactors > length(vars)) {
+                jmvcore::reject(
+                    jmvcore::format(
+                        'Number of {factors} cannot be bigger than number of variables',
+                        factors=type
+                    ),
+                    code=''
+                )
+            }
         },
         .cleanData = function() {
             vars <- self$options$vars

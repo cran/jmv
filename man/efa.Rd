@@ -5,10 +5,11 @@
 \title{Exploratory Factor Analysis}
 \usage{
 efa(data, vars, nFactorMethod = "parallel", nFactors = 1,
-  minEigen = 1, extraction = "minres", rotation = "oblimin",
+  minEigen = 0, extraction = "minres", rotation = "oblimin",
   hideLoadings = 0.3, sortLoadings = FALSE, screePlot = FALSE,
   eigen = FALSE, factorCor = FALSE, factorSummary = FALSE,
-  modelFit = FALSE, kmo = FALSE, bartlett = FALSE)
+  modelFit = FALSE, kmo = FALSE, bartlett = FALSE,
+  factorScoreMethod = "Thurstone")
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -21,7 +22,7 @@ efa(data, vars, nFactorMethod = "parallel", nFactors = 1,
 
 \item{nFactors}{an integer (default: 1), the number of factors in the model}
 
-\item{minEigen}{a number (default: 1), the minimal eigenvalue for a factor
+\item{minEigen}{a number (default: 0), the minimal eigenvalue for a factor
 to be included in the model}
 
 \item{extraction}{\code{'minres'} (default), \code{'ml'}, or \code{'pa'}
@@ -56,6 +57,11 @@ measures and test}
 
 \item{bartlett}{\code{TRUE} or \code{FALSE} (default), show Bartlett's test
 of sphericity results}
+
+\item{factorScoreMethod}{\code{'Thurstone'} (default), \code{'Bartlett'},
+\code{'tenBerge'}, \code{'Anderson'}, or \code{'Harman'} use respectively
+'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', or 'Harman'
+method for estimating factor scores}
 }
 \value{
 A results object containing:

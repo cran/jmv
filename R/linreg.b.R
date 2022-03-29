@@ -1,4 +1,5 @@
 
+#' @importFrom jmvcore .
 linRegClass <- R6::R6Class(
     "linRegClass",
     inherit = linRegBase,
@@ -9,6 +10,12 @@ linRegClass <- R6::R6Class(
                 private$.dataProcessed <- private$.cleanData()
 
             return(private$.dataProcessed)
+        },
+        weights = function() {
+            if (is.null(private$.weights))
+                private$.weights <- private$.computeWeights()
+
+            return(private$.weights)
         },
         models = function() {
             if (is.null(private$.models))
@@ -111,6 +118,7 @@ linRegClass <- R6::R6Class(
         #### Member variables ----
         .dataProcessed = NULL,
         .dataRowNums = NULL,
+        .weights = NULL,
         .models = NULL,
         .modelsScaled = NULL,
         .isAliased = NULL,
@@ -181,9 +189,25 @@ linRegClass <- R6::R6Class(
 
             models <- list()
             for (i in seq_along(formulas))
-                models[[i]] <- lm(formulas[[i]], data=data)
+                models[[i]] <- lm(formulas[[i]], data=data, weights=self$weights)
 
             return(models)
+        },
+        .computeWeights = function() {
+            var <- self$options$weights
+            if (is.null(var)) {
+                weights <- NULL
+            } else {
+                weights <- self$dataProcessed[[jmvcore::toB64(var)]]
+                if (any(weights < 0)) {
+                    jmvcore::reject(
+                        .("'{var}' contains negative values. Negative weights are not permitted."),
+                        var=var
+                    )
+                }
+            }
+
+            return(weights)
         },
         .computeAnovaModelTerms = function() {
             anovaTerms <- list()
@@ -382,17 +406,18 @@ linRegClass <- R6::R6Class(
                 terms <- termsAll[[i]]
 
                 for (j in seq_along(terms))
-                    table$addRow(rowKey=paste0(terms[[j]]), values=list(term = jmvcore::stringifyTerm(terms[j])))
+                    table$addRow(rowKey=paste0(terms[[j]]), values=list(term = jmvcore::stringifyTerm(terms[[j]])))
 
-                table$addRow(rowKey='.RES', values=list(term = 'Residuals'))
+                table$addRow(rowKey='.RES', values=list(term = .('Residuals')))
                 table$addFormat(col=1, rowKey='.RES', format=Cell.BEGIN_GROUP)
 
-                table$setNote("ss", "Type 3 sum of squares")
+                table$setNote("ss", .("Type 3 sum of squares"))
             }
         },
         .initCoefTable = function() {
             groups <- self$results$models
             factors <- self$options$factors
+            weights <- self$options$weights
             termsAll <- private$.getModelTerms()
             rowNamesModel <- private$.getRowNamesModel()
 
@@ -400,21 +425,31 @@ linRegClass <- R6::R6Class(
                 table <- groups$get(key=i)$coef
 
                 ciWidth <- self$options$ciWidth
-                table$getColumn('lower')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidth))
-                table$getColumn('upper')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidth))
+                ciWidthTitle <- jmvcore::format(.('{ciWidth}% Confidence Interval'), ciWidth=ciWidth)
+                table$getColumn('lower')$setSuperTitle(ciWidthTitle)
+                table$getColumn('upper')$setSuperTitle(ciWidthTitle)
 
                 ciWidthStdEst <- self$options$ciWidthStdEst
-                table$getColumn('stdEstLower')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidthStdEst))
-                table$getColumn('stdEstUpper')$setSuperTitle(jmvcore::format('{}% Confidence Interval', ciWidthStdEst))
+                ciWidthStdEstTitle <- jmvcore::format(.('{ciWidth}% Confidence Interval'), ciWidth=ciWidthStdEst)
+                table$getColumn('stdEstLower')$setSuperTitle(ciWidthStdEstTitle)
+                table$getColumn('stdEstUpper')$setSuperTitle(ciWidthStdEstTitle)
 
                 coefTerms <- rowNamesModel[[i]]
 
-                table$addRow(rowKey="`(Intercept)`", values=list(term = "Intercept"))
+                table$addRow(rowKey="`(Intercept)`", values=list(term = .("Intercept")))
+
+
+                if (! is.null(weights)) {
+                    table$setNote(
+                        "weights",
+                        jmvcore::format(.("Weighted by '{varName}'"), varName=weights)
+                    )
+                }
 
                 if ( ! is.null(factors)) {
                     note <- ifelse(self$options$intercept == 'refLevel',
-                                   'Represents reference level',
-                                   'Represents grand mean')
+                                   .('Represents reference level'),
+                                   .('Represents grand mean'))
                     table$addFootnote(rowKey="`(Intercept)`", 'term', note)
                 }
 
@@ -470,7 +505,7 @@ linRegClass <- R6::R6Class(
                 if (length(modelTerms) < 1) {
                     terms <- ''
                 } else {
-                    terms <- c('Fitted', self$options$dep)
+                    terms <- c(.('Fitted'), self$options$dep)
                     for (term in modelTerms) {
                         if (length(term) == 1 && term %in% covs)
                             terms <- c(terms, term)
@@ -513,6 +548,9 @@ linRegClass <- R6::R6Class(
             emMeans <- self$options$emMeans
             factors <- self$options$factors
 
+            emMeansTableTitle <- .('Estimated Marginal Means - {term}')
+            ciWidthTitle <- jmvcore::format(.('{ciWidth}% Confidence Interval'), ciWidth=self$options$ciWidthEmm)
+
             for (i in seq_along(termsAll)) {
                 group <- groups$get(key=i)$emm
                 terms <- unique(unlist(termsAll[[i]]))
@@ -524,7 +562,7 @@ linRegClass <- R6::R6Class(
                         emmGroup <- group$get(key=j)
 
                         table <- emmGroup$emmTable
-                        table$setTitle(paste0('Estimated Marginal Means - ', jmvcore::stringifyTerm(emm)))
+                        table$setTitle(jmvcore::format(emMeansTableTitle, term=jmvcore::stringifyTerm(emm)))
 
                         nLevels <- numeric(length(emm))
                         for (k in rev(seq_along(emm))) {
@@ -537,10 +575,10 @@ linRegClass <- R6::R6Class(
                             }
                         }
 
-                        table$addColumn(name='emmean', title='Marginal Mean', type='number')
-                        table$addColumn(name='se', title='SE', type='number')
-                        table$addColumn(name='lower', title='Lower', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'), visibl="(ciEmm)")
-                        table$addColumn(name='upper', title='Upper', type='number', superTitle=paste0(self$options$ciWidthEmm, '% Confidence Interval'), visibl="(ciEmm)")
+                        table$addColumn(name='emmean', title=.('Marginal Mean'), type='number')
+                        table$addColumn(name='se', title=.('SE'), type='number')
+                        table$addColumn(name='lower', title=.('Lower'), type='number', superTitle=ciWidthTitle, visible="(ciEmm)")
+                        table$addColumn(name='upper', title=.('Upper'), type='number', superTitle=ciWidthTitle, visible="(ciEmm)")
 
                         nRows <- prod(nLevels)
 
@@ -556,9 +594,9 @@ linRegClass <- R6::R6Class(
             description = function(varType, modelNo=NULL) {
                 return(
                     jmvcore::format(
-                        "{} of linear regression model{}",
-                        varType,
-                        ifelse(is.null(modelNo), "", paste0(" ", modelNo))
+                        .("{varType} of linear regression model{modelNo}"),
+                        varType=varType,
+                        modelNo=ifelse(is.null(modelNo), "", paste0(" ", modelNo))
                     )
                 )
             }
@@ -568,20 +606,19 @@ linRegClass <- R6::R6Class(
             }
 
             if (self$nModels > 1) {
-
                 keys <- seq_len(self$nModels)
                 measureTypes <- rep('continuous', self$nModels)
 
-                titles <- vapply(keys, function(key) title('Residuals', key), '')
-                descriptions <- vapply(keys, function(key) description('Residuals', key), '')
+                titles <- vapply(keys, function(key) title(.('Residuals'), key), '')
+                descriptions <- vapply(keys, function(key) description(.('Residuals'), key), '')
                 self$results$residsOV$set(keys, titles, descriptions, measureTypes)
 
-                titles <- vapply(keys, function(key) title('Predicted values', key), '')
-                descriptions <- vapply(keys, function(key) description('Predicted values', key), '')
+                titles <- vapply(keys, function(key) title(.('Predicted values'), key), '')
+                descriptions <- vapply(keys, function(key) description(.('Predicted values'), key), '')
                 self$results$predictOV$set(keys, titles, descriptions, measureTypes)
 
-                titles <- vapply(keys, function(key) title("Cook's distance", key), '')
-                descriptions <- vapply(keys, function(key) description("Cook's distance", key), '')
+                titles <- vapply(keys, function(key) title(.("Cook's distance"), key), '')
+                descriptions <- vapply(keys, function(key) description(.("Cook's distance"), key), '')
                 self$results$cooksOV$set(keys, titles, descriptions, measureTypes)
             }
         },
@@ -691,7 +728,7 @@ linRegClass <- R6::R6Class(
                 table$setRow(rowKey='.RES', values = row)
 
                 if ( private$.getIsAliased()[[i]] )
-                    table$setNote("alias", SINGULAR_WARNING)
+                    table$setNote("alias", .(SINGULAR_WARNING))
             }
         },
         .populateCoefTables = function() {
@@ -755,7 +792,7 @@ linRegClass <- R6::R6Class(
                     table$setRow(rowKey=jmvcore::composeTerm(term), values=row)
 
                     if ( private$.getIsAliased()[[i]] )
-                        table$setNote("alias", SINGULAR_WARNING)
+                        table$setNote("alias", .(SINGULAR_WARNING))
                 }
             }
         },
@@ -834,7 +871,7 @@ linRegClass <- R6::R6Class(
                 }
 
                 if ( private$.getIsAliased()[[i]] )
-                    table$setNote("alias", SINGULAR_WARNING)
+                    table$setNote("alias", .(SINGULAR_WARNING))
             }
         },
         .populateEmmTables = function() {
@@ -895,7 +932,7 @@ linRegClass <- R6::R6Class(
                             table$setRow(rowNo=k, values=row)
 
                             if (length(covValues) > 0) {
-                                table$setNote("sub", "\u207B mean - 1SD, <sup>\u03BC</sup> mean, \u207A mean + 1SD")
+                                table$setNote("sub", .("\u207B mean - 1SD, <sup>\u03BC</sup> mean, \u207A mean + 1SD"))
 
                                 for (l in seq_along(emm)) {
                                     if (emm[l] %in% covs)
@@ -963,8 +1000,8 @@ linRegClass <- R6::R6Class(
             p <- ggplot(data=df, aes(x=x, y=y)) +
                       geom_abline(slope=1, intercept=0, colour=theme$color[1]) +
                       geom_point(aes(x=x,y=y), size=2, colour=theme$color[1]) +
-                      xlab("Theoretical Quantiles") +
-                      ylab("Standardized Residuals") +
+                      xlab(.("Theoretical Quantiles")) +
+                      ylab(.("Standardized Residuals")) +
                       ggtheme
 
             return(p)
@@ -987,7 +1024,7 @@ linRegClass <- R6::R6Class(
 
             res <- self$residuals[[image$state$modelNo]]
 
-            if (image$state$term == 'Fitted') {
+            if (image$state$term == .('Fitted')) {
                 x <- self$fitted[[image$state$modelNo]]
             } else {
                 x <- self$dataProcessed[[jmvcore::toB64(image$state$term)]]
@@ -998,7 +1035,7 @@ linRegClass <- R6::R6Class(
             p <- ggplot(data=df, aes(y=y, x=x)) +
                       geom_point(aes(x=x,y=y), colour=theme$color[1]) +
                       xlab(image$state$term) +
-                      ylab("Residuals") +
+                      ylab(.("Residuals")) +
                       ggtheme
 
             return(p)
@@ -1066,22 +1103,43 @@ linRegClass <- R6::R6Class(
 
             dodge <- position_dodge(0.4)
 
+            if (theme$bw) {
+                lty <- names$lines
+                color <- NULL
+            } else {
+                lty <- NULL
+                color <- names$lines
+            }
+
             p <- ggplot(data=data,
-                        aes_string(x=names$x, y=names$y, color=names$lines, fill=names$lines),
+                        aes_string(x=names$x, y=names$y, group=names$lines),
                         inherit.aes = FALSE)
 
             if (cont) {
-                p <- p + geom_line()
+                p <- p + geom_line(aes_string(color=color, fill=color, linetype=lty))
 
                 if (self$options$ciEmm && is.null(names$plots) && is.null(names$lines))
-                    p <- p + geom_ribbon(aes_string(x=names$x, ymin=names$lower, ymax=names$upper),
-                                         show.legend=TRUE, alpha=.3)
+                    p <- p +
+                        geom_ribbon(
+                            aes_string(x=names$x, ymin=names$lower, ymax=names$upper),
+                            show.legend=TRUE, alpha=.3
+                        )
             } else {
-                p <- p + geom_point(position = dodge)
+                p <- p +
+                    geom_point(
+                        aes_string(color=names$lines, fill=names$lines),
+                        position = dodge
+                    )
 
                 if (self$options$ciEmm)
-                    p <- p + geom_errorbar(aes_string(x=names$x, ymin=names$lower, ymax=names$upper),
-                                           width=.1, size=.8, position=dodge)
+                    p <- p +
+                        geom_errorbar(
+                            aes_string(
+                                x=names$x, ymin=names$lower, ymax=names$upper,
+                                color=names$lines, fill=names$lines
+                            ),
+                            width=.1, size=.8, position=dodge
+                        )
             }
 
             if ( ! is.null(names$plots)) {
@@ -1090,7 +1148,7 @@ linRegClass <- R6::R6Class(
             }
 
             p <- p +
-                labs(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines) +
+                labs(x=labels$x, y=labels$y, fill=labels$lines, color=labels$lines, linetype=labels$lines) +
                 ggtheme + theme(panel.spacing = unit(2, "lines"))
 
             return(p)
@@ -1240,6 +1298,7 @@ linRegClass <- R6::R6Class(
             dep <- self$options$dep
             covs <- self$options$covs
             factors <- self$options$factors
+            weights <- self$options$weights
             refLevels <- self$options$refLevels
 
             dataRaw <- self$data
@@ -1249,8 +1308,15 @@ linRegClass <- R6::R6Class(
             refVars <- sapply(refLevels, function(x) x$var)
 
             for (factor in factors) {
+                if (length(levels(dataRaw[[factor]])) <= 1)
+                    stop(jmvcore::format(.("Factor '{factor}' needs to have at least 2 levels"), factor=factor))
+
                 ref <- refLevels[[which(factor == refVars)]][['ref']]
-                column <- dataRaw[[factor]]
+                column <- factor(
+                    dataRaw[[factor]],
+                    ordered = FALSE,
+                    levels = levels(dataRaw[[factor]])
+                )
                 levels(column) <- jmvcore::toB64(levels(column))
                 column <- relevel(column, ref = jmvcore::toB64(ref))
 
@@ -1258,7 +1324,7 @@ linRegClass <- R6::R6Class(
                 stats::contrasts(data[[jmvcore::toB64(factor)]]) <- private$.createContrasts(levels(column))
             }
 
-            for (cov in c(dep, covs))
+            for (cov in c(dep, covs, weights))
                 data[[jmvcore::toB64(cov)]] <- jmvcore::toNumeric(dataRaw[[cov]])
 
             attr(data, 'row.names') <- rownames(self$data)
@@ -1330,7 +1396,7 @@ linRegClass <- R6::R6Class(
         },
         .scaleData = function(data) {
             for (col in names(data)) {
-                if ( ! is.factor(data[[col]]))
+                if ( ! is.factor(data[[col]]) && length(unique(data[[col]])) > 1 )
                     data[[col]] <- scale(data[[col]])
             }
 
