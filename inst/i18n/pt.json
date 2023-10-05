@@ -80,7 +80,7 @@
                 "{varType} do modelo de regressão linear {modelNo}"
             ],
             "* p < .05, ** p < .01, *** p < .001, one-tailed": [
-                "* p < .05, ** p < .01, *** p < .001, unilateral"
+                "* p < .05, ** p < .01, *** p < .001, unicaudal"
             ],
             "%": [
                 "%"
@@ -131,28 +131,28 @@
                 "`'minres'` (padrão),`' ml'`, ou `'pa'` usam respetivamente 'resíduo mínimo ','máxima verosimilhança' ou 'eixo principal' como método de extração de fatores"
             ],
             "`'none'`, `'ci'` (default), or `'se'`. Use no error bars, use confidence intervals, or use standard errors on the marginal mean plots, respectively": [
-                "`'none'`,`' ci'` (padrão) ou `'se'`. Não use barras de erro, use intervalos de confiança ou use erros-padrão nos gráficos de médias marginais, respetivamente"
+                "`'none'`, `' ci'` (padrão) ou `'se'`. Não use barras de erro, use intervalos de confiança ou use erros-padrão nos gráficos de médias marginais, respetivamente"
             ],
             "`'none'`, `'gamesHowell'` or `'tukey'`, which post-hoc tests to provide; `'none'` shows no post-hoc tests, `'gamesHowell'` shows Games-Howell post-hoc tests where no equivalence of variances is assumed, and `'tukey'` shows Tukey post-hoc tests where equivalence of variances is assumed": [
-                "`'none'`,`' gamesHowell'` ou `'tukey'`, que testes post-hoc fornecer; `'none'` não faz testes post-hoc,`' gamesHowell'` mostra o teste post-hoc de Games-Howell onde não se assume igualdade de variâncias, e `'tukey'` mostra o teste post-hoc de Tukey onde se assume igualdade de variâncias"
+                "`'none'`, `' gamesHowell'` ou `'tukey'`, que testes post-hoc fornecer; `'none'` não faz testes post-hoc,`' gamesHowell'` mostra o teste post-hoc de Games-Howell onde não se assume igualdade de variâncias, e `'tukey'` mostra o teste post-hoc de Tukey onde se assume igualdade de variâncias"
             ],
             "`'none'`, `'varimax'` (default), `'quartimax'`, `'promax'`, `'oblimin'`, or `'simplimax'`, the rotation to use in estimation": [
-                "`'none'`,`' varimax'` (padrão), `'quartimax'`,`' promax'`, `'oblimin'`, ou`' simplimax'`, a rotação a ser usada na estimação"
+                "`'none'`, `' varimax'` (padrão), `'quartimax'`, `' promax'`, `'oblimin'`, ou`' simplimax'`, a rotação a ser usada na estimação"
             ],
             "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (default), or `'simplimax'`, the rotation to use in estimation": [
-                "`'none'`,`' varimax'`, `'quartimax'`,`' promax'`, `'oblimin'` (padrão), ou`' simplimax'`, a rotação a ser usada na estimação"
+                "`'none'`, `' varimax'`, `'quartimax'`, `' promax'`, `'oblimin'` (padrão), ou`' simplimax'`, a rotação a ser usada na estimação"
             ],
             "`'notequal'` (default), `'greater'` or `'less'`, the alternative hypothesis": [
-                "`'notequal'` (padrão),`' greater'` ou `'less'`, a hipótese alternativa"
+                "`'notequal'` (padrão), `' greater'` ou `'less'`, a hipótese alternativa"
             ],
             "`'parallel'` (default), `'eigen'` or `'fixed'`, the way to determine the number of factors": [
-                "`'parallel'` (padrão),`' eigen'` ou `'fixed'`, a forma de determinar o número de fatores"
+                "`'parallel'` (padrão), `' eigen'` ou `'fixed'`, a forma de determinar o número de fatores"
             ],
             "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing": [
-                "`'perAnalysis'` ou`' listwise'`, como lidar com valores omissos; `'perAnalysis'` exclui valores omissos em variáveis dependentes individuais,`' listwise'` exclui uma linha de todas as análises se uma das suas entradas for omissa"
+                "`'perAnalysis'` ou `' listwise'`, como lidar com valores omissos; `'perAnalysis'` exclui valores omissos em variáveis dependentes individuais, `' listwise'` exclui uma linha de todas as análises se uma das suas entradas for omissa"
             ],
             "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing.": [
-                "`'perAnalysis'` ou`' listwise'`, como lidar com valores omissos; `'perAnalysis'` exclui valores omissos em variáveis dependentes individuais,`' listwise'` exclui uma linha de todas as análises se uma das suas entradas for omissa."
+                "`'perAnalysis'` ou `' listwise'`, como lidar com valores omissos; `'perAnalysis'` exclui valores omissos em variáveis dependentes individuais, `' listwise'` exclui uma linha de todas as análises se uma das suas entradas for omissa."
             ],
             "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
                 "`'refLevel'` (padrão) ou`' grandMean'`, codificação do intercepto. Ambos criam um contraste para que a intercepto represente o nível de referência ou a média geral"
@@ -161,7 +161,7 @@
                 "`'rows'` ou`' columns'` (padrão), exibe as variáveis nas linhas ou nas colunas (padrão)"
             ],
             "`'Thurstone'` (default), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, or `'Harman'` use respectively 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', or 'Harman' method for estimating factor scores": [
-                "`'Thurstone'` (default), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, or `'Harman'` usam respetivamente os métodos de 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', ou 'Harman' para estimação das pontuações fatoriais"
+                "`'Thurstone'` (padrão), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, ou `'Harman'` usam respetivamente os métodos de 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', ou 'Harman' para estimação das pontuações fatoriais"
             ],
             "`ANCOVA - ${dep}`": [
                 "`ANCOVA - ${dep}`"
@@ -176,16 +176,16 @@
                 "`Coeficientes do Modelo - ${ dep }`"
             ],
             "`Model Coefficients - ${dep}`": [
-                "`Coeficientes do modelo - $ {dep}`"
+                "`Coeficientes do modelo - ${dep}`"
             ],
             "`Proportions - ${var}`": [
                 "`Proporções - $ {var}`"
             ],
             "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
-                ""
+                "`TRUE` (padrão) ou `FALSE`, adiciona etiquetas com o número da linha aos valores outliers no diagrama de extremos e quartis"
             ],
             "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
-                "`TRUE` (padrão) ou` FALSE`, executa os testes t de Student"
+                "`TRUE` (padrão) ou` FALSE`, executa testes t de Student"
             ],
             "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
                 "`TRUE` (padrão) ou` FALSE`, executa a ANOVA unifatorial de Welch que não assume variâncias iguais"
@@ -263,7 +263,7 @@
                 "`TRUE` ou` FALSE` (padrão), adiciona contagens aos gráficos de barras"
             ],
             "`TRUE` or `FALSE` (default), add mean to box plot": [
-                "`TRUE` ou` FALSE` (padrão), adiciona a média ao gráfico de extremos-e-quartis"
+                "`TRUE` ou` FALSE` (padrão), adiciona a média ao gráfico de extremos-e-quartis (boxplot)"
             ],
             "`TRUE` or `FALSE` (default), flag significant correlations": [
                 "`TRUE` ou` FALSE` (padrão), sinaliza correlações significativas"
@@ -458,7 +458,7 @@
                 "`TRUE` ou` FALSE` (padrão), fornece tabelas de frequência (apenas para variáveis nominais ou ordinais)"
             ],
             "`TRUE` or `FALSE` (default), provide gamma": [
-                "TRUE` ou `FALSE` (padrão), fornece gama"
+                "`TRUE` ou `FALSE` (padrão), fornece gama"
             ],
             "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
                 "`TRUE` ou` FALSE` (padrão), fornece histogramas (apenas variáveis contínuas)"
@@ -489,6 +489,9 @@
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 "`TRUE` ou` FALSE` (padrão), fornece índices de modificação para os parâmetros não incluídos no modelo"
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` ou`FALSE` (default), providencia os N os valores mais extremos (menores ou maiores)"
             ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 "`TRUE` ou` FALSE` (padrão), fornece percentis"
@@ -823,6 +826,9 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "um número (padrão: 3), realça os valores nas tabelas `'modIndices'` acima deste valor"
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "um número entre 0.5 e 2 (padrão 0.707), o prior da amplitude a ser usado no cálculo dos fatores de Bayes"
             ],
@@ -884,19 +890,19 @@
                 "um código (padrão: 'Dependente') descrevendo o rótulo usado para a variável dependente ao longo da análise"
             ],
             "a string naming a variable in `data` containing counts, or NULL if each row represents a single observation": [
-                "um código que nomeia uma variável em `dados` contendo contagens, ou NULL se cada linha representar uma única observação"
+                "um código que nomeia uma variável em `data` contendo contagens, ou NULL se cada linha representar uma única observação"
             ],
             "a string naming the dependent variable from `data`, variable must be a factor": [
-                "um código nomeando a variável dependente de `dados`, a variável deve ser um fator"
+                "um código nomeando a variável dependente de `data`, a variável deve ser um fator"
             ],
             "a string naming the dependent variable from `data`, variable must be numeric": [
-                "um código nomeando a variável dependente de `dados`, a variável deve ser numérica"
+                "um código nomeando a variável dependente de `data`, a variável deve ser numérica"
             ],
             "a string naming the dependent variable in `data`": [
-                "um código nomeando a variável dependente em `dados`"
+                "um código nomeando a variável dependente em `data`"
             ],
             "a string naming the dependent variables in `data`": [
-                "uma codificação nomeando a variável dependente em `dados`"
+                "uma codificação nomeando a variável dependente em `data`"
             ],
             "a string naming the grouping or independent variable in `data`": [
                 "uma codificação que nomeia o agrupamento ou variável independente em `data`"
@@ -1108,6 +1114,9 @@
             "an array of descriptive plots": [
                 "uma série de gráficos descritivos"
             ],
+            "an array of extreme values tables": [
+                "uma matriz de tabelas de valores extremos"
+            ],
             "an array of frequency tables": [
                 "uma série de tabelas de frequência"
             ],
@@ -1149,6 +1158,9 @@
             ],
             "an integer (default: 4) specifying the number of equal groups": [
                 "um inteiro (padrão: 4) especifica o número de grupos iguais"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "um número inteiro (padrão: 5) especificando o número de valores extremos"
             ],
             "An uninspiring ANOVA data set": [
                 "Uma base de dados, pouco inspirada, para ANOVA"
@@ -1283,10 +1295,10 @@
                 "Bonferroni"
             ],
             "Box plot": [
-                "Diagrama de Extremos e Quartis"
+                "Box plot"
             ],
             "Box Plots": [
-                "Diagrama de Extremos e Quartis"
+                "Box plots"
             ],
             "Box-Tidwell test": [
                 "Teste de Box-Tidwell"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "Coluna"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "A coluna '{name}' contém níveis não usados (possivelmente quando as linhas só com valores omissos foram excluídas)"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "A variável em coluna '{var}' tem menos de 2 níveis"
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 "Redução de Dados"
             ],
+            "Data set is currently unweighted": [
+                ""
+            ],
             "Data Summary": [
                 "Sumário de Dados"
             ],
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "Variável dependente"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "A variável dependente '{dep}' contém valores infinitos"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "A variável dependente '{dep}' não contém dados (depois de remover as fileiras com valores ausentes)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "Variáveis dependentes '{dep}' contém somente um único valor (depois de remover as fileiras com valores ausentes)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "As variáveis dependentes '{dep}' devem ser contínuas"
+            ],
             "Dependent Variable Label": [
                 "Etiqueta da variável dependente"
             ],
-            "Dependent variable must be numeric": [
-                "A variável dependente tem de ser numérica"
-            ],
             "Dependent Variables": [
                 "Variáveis dependentes"
+            ],
+            "Dependent variables are very highly correlated": [
+                "As variáveis dependentes são altamente correlacionadas"
             ],
             "deprecated": [
                 "obsoleto"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "Tabela Descritivas"
-            ],
-            "dev": [
-                "dev"
             ],
             "Deviance": [
                 "Desviância"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "Valores próprios superiores a"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Células vazias no cruzamento entre sujeitos: pelo menos uma combinação entre sujeitos tem 0 observações"
+            ],
             "Equal cell weights": [
                 "Células com pesos iguais"
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "Extração"
             ],
+            "Extreme values": [
+                "Valores extremos"
+            ],
+            "Extreme Values": [
+                "Valores extremos"
+            ],
+            "Extreme values of $key": [
+                "Valores extremos de $key"
+            ],
             "F": [
                 "F"
             ],
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "Fator"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Fator '{factor}' tem menos de dois níveis. Fatores devem ter pelo menos dois níveis"
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "O Fator '{factorName}' tem de ter pelo menos dois níveis"
             ],
-            "Factor '{factorName}' contains no data": [
-                "O Fator '{factorName}' não tem dados"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Fator '{factorName}' não tem dados (depois da remoção dos valores omissos)"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "O Fator '{factorName}' só tem um nivel"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Fator '{factorName}' tem apenas um unico nível (após remoção dos valores omissos)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Fator '{factorName}' tem níveis não usados (após remoção dos valores omissos)"
             ],
             "Factor {0}": [
                 "Fator {0}"
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 "Helmert"
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 "Suprimir pesos inferiores a"
             ],
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "Hipóteses"
             ],
-            "if item dropped": [
-                "se o item for eliminado"
+            "If item dropped": [
+                "Se o item for eliminado"
             ],
             "in development": [
                 "em desenvolvimento"
@@ -2102,7 +2144,7 @@
                 "Intercepto"
             ],
             "Interval": [
-                "Nível de Confiança"
+                "Intervalo"
             ],
             "IQR": [
                 "AIQ"
@@ -2133,9 +2175,6 @@
             ],
             "Item-rest correlation": [
                 "Correlação item-total"
-            ],
-            "item-rest correlation": [
-                "correlação item-total"
             ],
             "Items": [
                 "Items"
@@ -2171,7 +2210,7 @@
                 "Curtose"
             ],
             "Label outliers": [
-                ""
+                "Etiqueta outliers"
             ],
             "Layers": [
                 "Níveis"
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "Nível 2"
-            ],
-            "Levels": [
-                "Níveis"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "O teste de Levene é significativo (p < 0.05), sugerindo a violação do pressuposto da homogeneidade de variâncias"
@@ -2210,10 +2246,10 @@
                 "A regressão linear é utilizada para explorar a relação entre uma variável dependente contínua, e uma ou mais variáveis explicativas contínuas e/ou categóricas. Outros métodos estatísticos, como ANOVA e ANCOVA, são, na realidade, apenas formas de regressão linear."
             ],
             "Log odds ratio": [
-                "Log do Rácio das Chances"
+                "Ln do Rácio das Chances"
             ],
             "Log odds ratio exact": [
-                "Log do Rácio das Chances exato"
+                "Ln do Rácio das Chances exato"
             ],
             "Log-Linear Regression": [
                 "Regressão Log-linear"
@@ -2284,9 +2320,6 @@
             "Mean": [
                 "Média"
             ],
-            "mean": [
-                "média"
-            ],
             "Mean ({ciWidth}% CI)": [
                 "Média ({ciWidth}% IC)"
             ],
@@ -2354,7 +2387,7 @@
                 "Omisso"
             ],
             "Missing Values": [
-                "Valores omissos"
+                "Valores Ausentes"
             ],
             "Missing values": [
                 "Valores omissos"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "Índices de Modificação"
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
                 "Existe mais de uma moda, apenas a primeira é apresentada"
+            ],
+            "Most extreme": [
+                "Mais extremo"
             ],
             "MSA": [
                 "MAA"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Teste à Normalidade (Shapiro-Wilk)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Não disponível devido ao elevado número de casos (> 5000)."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Os graus de liberdade não são suficientes para estimar todos os efeitos"
+            ],
             "Number of Components": [
                 "Número de Componentes"
             ],
             "Number of components": [
                 "Número de componentes"
             ],
+            "Number of extreme values": [
+                "Número de valores extremos"
+            ],
             "Number of Factors": [
                 "Número de fatores"
             ],
             "Number of factors": [
                 "Número de fatores"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Número de valores extremos pedido é superior ao número de linhas nos dados."
             ],
             "Oblimin": [
                 "Oblimin"
@@ -2501,7 +2555,7 @@
                 "Valores observados"
             ],
             "octic": [
-                "octico"
+                "ótico"
             ],
             "Odds Ratio": [
                 "Rácio das Chances"
@@ -2543,7 +2597,7 @@
                 "Uma ou ambas as variáveis não têm observações"
             ],
             "One or both variables do not contain enough observations": [
-                "Uma ou ambas as variáveis não têm observações suficicentes"
+                "Uma ou ambas as variáveis não têm observações suficientes"
             ],
             "One or more coefficients in model '{modelNo}' could not be estimated due to perfect collinearity.": [
                 "Um ou mais coeficientes do modelo '{modelNo}' não podem ser estimados devido a colinearidade perfeita."
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 "Categorias ordinais"
             ],
+            "Outliers": [
+                "Outliers"
+            ],
             "Output": [
                 "Output"
             ],
@@ -2618,7 +2675,7 @@
                 "p"
             ],
             "p-value": [
-                "p-valor"
+                "p-value"
             ],
             "p<sub>bonferroni</sub>": [
                 "p<sub>bonferroni</sub>"
@@ -2680,6 +2737,9 @@
             "Pearson": [
                 "Pearson"
             ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "A correlação de Pearson não pode ser calculada para valores não numéricos"
+            ],
             "Pearson's r": [
                 "R de Pearson"
             ],
@@ -2717,7 +2777,7 @@
                 "execute um teste ao modelo geral."
             ],
             "perform Fisher's (or what might be call 'normal') ANOVAs.": [
-                "perform Fisher's (or what might be call 'normal') ANOVAs."
+                "Faz a ANOVA de Fisher (dita ANOVA normal)."
             ],
             "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
                 "realizar testes de Shapiro-Wilk à normalidade. Um p-value pequeno sugere que os dados não provêm de uma distribuição normal."
@@ -2873,7 +2933,7 @@
                 "forneça um r de Pearson para cada combinação de variáveis."
             ],
             "provide a Q-Q plot of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
-                "forneçe gráficos Q-Q de resíduos - um gráfico dos resíduos observados contra os resíduos esperados se os dados fossem *perfeitamente* normais. Desvios grandes da linha diagonal sugerem que os dados não provêm de uma distribuição normal."
+                "fornece gráficos Q-Q de resíduos - um gráfico dos resíduos observados contra os resíduos esperados se os dados fossem *perfeitamente* normais. Desvios grandes da linha diagonal sugerem que os dados não provêm de uma distribuição normal."
             ],
             "provide a Spearman's rho for each combination of variables.": [
                 "fornecer um rho de Spearman para cada combinação de variáveis."
@@ -2957,10 +3017,10 @@
                 "fornecer testes post-hoc."
             ],
             "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
-                "forneçe gráficos Q-Q de resíduos - um gráfico dos resíduos observados contra os resíduos esperados se os dados fossem *perfeitamente* normais. Desvios grandes da linha diagonal sugerem que os dados não provêm de uma distribuição normal."
+                "fornece gráficos Q-Q de resíduos - um gráfico dos resíduos observados contra os resíduos esperados se os dados fossem *perfeitamente* normais. Desvios grandes da linha diagonal sugerem que os dados não provêm de uma distribuição normal."
             ],
             "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
-                "forneçe gráficos Q-Q de resíduos - um gráfico dos resíduos observados contra os resíduos esperados se os dados fossem *perfeitamente* normais. Desvios grandes da linha diagonal sugerem que os dados não provêm de uma distribuição normal."
+                "fornece gráficos Q-Q de resíduos - um gráfico dos resíduos observados contra os resíduos esperados se os dados fossem *perfeitamente* normais. Desvios grandes da linha diagonal sugerem que os dados não provêm de uma distribuição normal."
             ],
             "provide significance levels for the post-hoc tests.": [
                 "fornecer níveis de significância para os testes post-hoc."
@@ -3030,6 +3090,9 @@
             ],
             "R²<sub>N</sub>": [
                 "R²<sub>CS</sub>"
+            ],
+            "R²<sub>T</sub>": [
+                ""
             ],
             "Range": [
                 "Amplitude"
@@ -3115,8 +3178,8 @@
             "Residual plots": [
                 "Gráficos de Resíduos"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "A Soma de Quadrados dos Resíduos e/ou os graus de liberdade são 0, indicado um ajustamento perfeito"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "A soma de quadrados dos erros e/ou os graus de liberdade são zero, indicando um ajustamento perfeito ;-)"
             ],
             "Residuals": [
                 "Resíduos"
@@ -3171,6 +3234,9 @@
             ],
             "Row": [
                 "Linha"
+            ],
+            "Row number": [
+                "Número de linha"
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "A variável em linha '{var}' tem menos de 2 níveis"
@@ -3234,9 +3300,6 @@
             ],
             "SD": [
                 "Desvio-padrão"
-            ],
-            "sd": [
-                "sd"
             ],
             "SE": [
                 "Erro-padrão"
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 "as variáveis explicativas categoriais (ou independentes)."
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "O IC da média assume que a distribuição amostral da média segue uma distribuição t com N-1 graus de liberdade"
+            ],
             "the confidence interval width for the effect-sizes.": [
                 "a amplitude do intervalo de confiança para as dimensões do efeito."
             ],
@@ -3524,13 +3590,19 @@
                 "as covariáveis (especificá-las produz a ANCOVA)"
             ],
             "the covariates from `data`": [
-                "as covariáveis dos `dados`"
+                "as covariáveis dos `data`"
             ],
             "The cut-off value is set to {}": [
                 "O valor de corte é {}"
             ],
             "the data as a data frame": [
                 "os dados como um quadro de dados"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "a base de dados tem 0 linhas (depois de remover as linhas com valores omissos)"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "a base de dados tem 0 linhas (ou todas as linhas contêm valores omissos)"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "A variável dependente '{dep}' tem mais de dois níveis; a regressão logística binomial apenas pode ser feita quando a variável dependente tem dois níveis."
@@ -3542,10 +3614,10 @@
                 "A variável dependente '{dep}' tem apenas dois níveis, considere fazer uma regressão logística binomial."
             ],
             "the dependent variable from `data`, variable must be numeric": [
-                "a variável dependente dos `dados`, a variável deve ser numérica"
+                "a variável dependente dos `data`, a variável deve ser numérica"
             ],
             "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
-                "a variável dependente dos `dados`, a variável deve ser numérica (não é necessário ao fornecer uma fórmula, veja os exemplos)"
+                "a variável dependente dos `data`, a variável deve ser numérica (não é necessário ao fornecer uma fórmula, veja os exemplos)"
             ],
             "the dependent variable. For ANCOVA, these will be continuous.": [
                 "a variável dependente. Para ANCOVA, estas serão contínuas."
@@ -3596,10 +3668,10 @@
                 "a sintaxe do lavaan usada para ajustar o modelo"
             ],
             "the missing value exclusion method. `Analysis by analysis` excludes missing values from each analysis. `Listwise` excludes a row from all analyses if one of its values is missing.": [
-                "o método de exclusão de valores omissos. `Análise por análise` exclui valores omissos de cada análise. `Listwise` exclui uma linha de todas as análises se um dos seus valores for omisso."
+                "o método de exclusão de valores omissos. `Analysis by analysis` exclui valores omissos de cada análise. `Listwise` exclui uma linha de todas as análises se um dos seus valores for omisso."
             ],
             "the missing value exclusion method. `Analysis by analysis` excludes missing values from each variable. `Listwise` excludes a row from all analyses if one of its values is missing.": [
-                "o método de exclusão de valores omissos. `Análise por análise` exclui valores omissos de cada análise. `Listwise` exclui uma linha de todas as análises se um dos seus valores for omisso."
+                "o método de exclusão de valores omissos. `Analysis by analysis` exclui valores omissos de cada análise. `Listwise` exclui uma linha de todas as análises se um dos seus valores for omisso."
             ],
             "the model terms which make up the model.": [
                 "os termos do modelo que constituem o modelo."
@@ -3612,6 +3684,9 @@
             ],
             "the post-hoc multiple comparisons corrections to use.": [
                 "as correções das comparações múltiplas post-hoc a usar."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "a amplitude dos priores para os fatores de Bayes do teste t de Student. Requer um valor entre 0.5 e 2.0, padrão 0.707."
@@ -3727,6 +3802,9 @@
             "Thurstone": [
                 "Thurstone"
             ],
+            "Tjur's R²": [
+                ""
+            ],
             "TLI": [
                 "TLI"
             ],
@@ -3797,7 +3875,7 @@
                 "Testes univariados"
             ],
             "Upper": [
-                "Lim. Superior"
+                "Superior"
             ],
             "upper bound": [
                 "limite superior"
@@ -3807,6 +3885,9 @@
             ],
             "value": [
                 "valor"
+            ],
+            "values": [
+                "Valores"
             ],
             "Values are counts": [
                 "Os valores são contagens"
@@ -3865,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "ponder cada célula igualmente. (As células são ponderadas de acordo com a frequência da célula por padrão.)"
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 "Ponderado por '{varName}'"
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
                 "Pesos (opcional)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
             ],
             "Welch's": [
                 "Welch"

@@ -98,7 +98,7 @@ null hypothesis; that the two groups of measurements follow the same
 distribution).
 }
 \examples{
-\dontrun{
+\donttest{
 data('bugs', package = 'jmv')
 
 ttestPS(bugs, pairs = list(

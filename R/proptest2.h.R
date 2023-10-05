@@ -253,7 +253,8 @@ propTest2Base <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 revision = revision,
                 pause = NULL,
                 completeWhenFilled = TRUE,
-                requiresMissings = FALSE)
+                requiresMissings = FALSE,
+                weightsSupport = 'auto')
         }))
 
 #' Proportion Test (2 Outcomes)
@@ -265,7 +266,7 @@ propTest2Base <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' 
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' dat <- data.frame(x=c(8, 15))
 #'
 #' propTest2(dat, vars = x, areCounts = TRUE)

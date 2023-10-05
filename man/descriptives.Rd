@@ -13,7 +13,8 @@ descriptives(data, vars, splitBy = NULL, freq = FALSE,
   variance = FALSE, range = FALSE, min = TRUE, max = TRUE,
   se = FALSE, ci = FALSE, ciWidth = 95, iqr = FALSE,
   skew = FALSE, kurt = FALSE, sw = FALSE, pcEqGr = FALSE,
-  pcNEqGr = 4, pc = FALSE, pcValues = "25,50,75", formula)
+  pcNEqGr = 4, pc = FALSE, pcValues = "25,50,75", extreme = FALSE,
+  extremeN = 5, formula)
 }
 \arguments{
 \item{data}{the data as a data frame}
@@ -113,6 +114,12 @@ groups}
 \item{pcValues}{a comma-sepated list (default: 25,50,75) specifying the
 percentiles}
 
+\item{extreme}{\code{TRUE} or \code{FALSE} (default), provide N most
+extreme (highest and lowest) values}
+
+\item{extremeN}{an integer (default: 5) specifying the number of extreme
+values}
+
 \item{formula}{(optional) the formula to use, see the examples}
 }
 \value{
@@ -121,6 +128,7 @@ A results object containing:
   \code{results$descriptives} \tab \tab \tab \tab \tab a table of the descriptive statistics \cr
   \code{results$descriptivesT} \tab \tab \tab \tab \tab a table of the descriptive statistics \cr
   \code{results$frequencies} \tab \tab \tab \tab \tab an array of frequency tables \cr
+  \code{results$extremeValues} \tab \tab \tab \tab \tab an array of extreme values tables \cr
   \code{results$plots} \tab \tab \tab \tab \tab an array of descriptive plots \cr
 }
 
@@ -137,7 +145,7 @@ is good practice to explore your data with descriptives before proceeding
 to more formal tests.
 }
 \examples{
-\dontrun{
+\donttest{
 data('mtcars')
 dat <- mtcars
 

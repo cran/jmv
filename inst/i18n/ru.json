@@ -80,7 +80,7 @@
                 "{varType} модели линейной регрессии{modelNo}"
             ],
             "* p < .05, ** p < .01, *** p < .001, one-tailed": [
-                "* p < 0,05, ** p < 0,01, *** p < 0,001, односторонний"
+                "* p < .05, ** p < .01, *** p < .001, односторонний"
             ],
             "%": [
                 "%"
@@ -155,7 +155,7 @@
                 "`'perAnalysis'` или `'listwise'`, как обрабатывать пропущенные значения; `'perAnalysis'` исключает пропущенные значения для отдельных зависимых переменных, `'listwise'` исключает строку из всех анализов, если одна из ее ячеек отсутствует."
             ],
             "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
-                "`'refLevel'` (по умолчанию) или `'grandMean'`, кодирование перехвата. Либо создает контраст, так что точка пересечения представляет собой контрольный уровень или общее среднее значение"
+                "`'refLevel'` (по умолчанию) или `'grandMean'`, кодирование константы. Либо создает контраст, так что точка пересечения представляет собой контрольный уровень или общее среднее значение"
             ],
             "`'rows'` or `'columns'` (default), display the variables across the rows or across the columns (default)": [
                 "`'rows'` или `'columns'` (по умолчанию), отображать переменные по строкам или по столбцам (по умолчанию)"
@@ -197,7 +197,7 @@
                 "`TRUE` (по умолчанию) или `FALSE`, представляет критерий хи-квадрат для точного соответствия, который сравнивает модель с моделью идеального соответствия"
             ],
             "`TRUE` (default) or `FALSE`, provide a confidence interval for the estimated marginal means": [
-                "`TRUE` (по умолчанию) или `FALSE`, представляет доверительный интервал для предполагаемых предельных средних значений"
+                "`TRUE` (по умолчанию) или `FALSE`, представляет доверительный интервал для взвешенных предельных средних значений"
             ],
             "`TRUE` (default) or `FALSE`, provide Aikaike's Information Criterion (AIC) for the models": [
                 "`TRUE` (по умолчанию) или `FALSE`, представляет информационный критерий Айкаике (AIC) для моделей"
@@ -206,7 +206,7 @@
                 "`TRUE` (по умолчанию) или `FALSE`, представляет α Кронбаха"
             ],
             "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
-                "`TRUE` (по умолчанию) или `FALSE`, представляет расчетные графики предельных средних"
+                "`TRUE` (по умолчанию) или `FALSE`, представляет графики взвешенных предельных средних"
             ],
             "`TRUE` (default) or `FALSE`, provide estimates for the factor (co)variances": [
                 "`TRUE` (по умолчанию) или `FALSE`, представляет оценки факторной (ко)дисперсии"
@@ -443,13 +443,13 @@
                 "`TRUE` или `FALSE` (по умолчанию), представляет размер эффекта"
             ],
             "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
-                "`TRUE` или `FALSE` (по умолчанию), предоставьте оценочные таблицы предельных средних значений"
+                "`TRUE` или `FALSE` (по умолчанию), предоставляет таблицы взвешенных предельных средних значений"
             ],
             "`TRUE` or `FALSE` (default), provide estimates for the factor intercepts": [
                 "`TRUE` или `FALSE` (по умолчанию), предоставляют оценки для перехватов факторов"
             ],
             "`TRUE` or `FALSE` (default), provide estimates for the residual intercepts": [
-                "`TRUE` или `FALSE` (по умолчанию), предоставляют оценки для остаточных перехватов"
+                "`TRUE` или `FALSE` (по умолчанию), предоставляют оценки для констант остатков"
             ],
             "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
                 "`TRUE` или `FALSE` (по умолчанию), представляет точный критерий Фишера"
@@ -489,6 +489,9 @@
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 "`TRUE` или `FALSE` (по умолчанию), представляет индексы модификации для параметров, не включенных в модель"
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` или `FALSE` (по умолчанию), предоставляют N самых экстремальных (наибольшее и наименьшее) значений"
             ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 "`TRUE` или `FALSE` (по умолчанию), представляет процентили"
@@ -590,7 +593,7 @@
                 "`TRUE` или `FALSE` (по умолчанию), представляет отношение шансов (доступно только для таблиц 2x2)"
             ],
             "`TRUE` or `FALSE` (default), provide the omnibus ANOVA test for the predictors": [
-                "`TRUE` или `FALSE` (по умолчанию), предоставьте комплексный тест ANOVA для предикторов"
+                "`TRUE` или `FALSE` (по умолчанию), предоставьте комплексный дисперсионный анализ для предикторов"
             ],
             "`TRUE` or `FALSE` (default), provide the omnibus likelihood ratio tests for the predictors": [
                 "`TRUE` или `FALSE` (по умолчанию), представляет комплексные тесты отношения правдоподобия для предикторов"
@@ -737,13 +740,13 @@
                 "график корреляционной матрицы"
             ],
             "a descriptives plot": [
-                "таблица корреляционной матрицы"
+                "описательная таблица"
             ],
             "a formula containing the terms to estimate marginal means for (see the examples)": [
                 "формула, содержащая термы для оценки предельных средних для (см. примеры)"
             ],
             "a formula containing the terms to estimate marginal means for, supports up to three variables per term": [
-                "формула, содержащая термы для оценки предельных средних, поддерживает до трех переменных на терм"
+                "формула, содержащая термы для взвешивания предельных средних, поддерживает до трех переменных на терм"
             ],
             "a formula containing the terms to perform post-hoc tests on (see the examples)": [
                 "формула, содержащая термы для выполнения апостериорных тестов (см. примеры)"
@@ -776,10 +779,10 @@
                 "список списков, определяющих пары измерений в `data`"
             ],
             "a list of lists specifying the residual covariances that need to be estimated": [
-                "писок списков, определяющих остаточные ковариации, которые необходимо оценить"
+                "список списков, определяющих остаточные ковариации, которые необходимо оценить"
             ],
             "a list of lists specifying the variables for which the estimated marginal means need to be calculate. Supports up to three variables per term.": [
-                "список списков, определяющих переменные, для которых необходимо рассчитать оценочные предельные средние значения. Поддерживает до трех переменных на терм."
+                "список списков, определяющих переменные, для которых необходимо рассчитать взвешенные предельные средние значения. Поддерживает до трех переменных на терм."
             ],
             "a list of lists, where each list decribes a repeated measure (as a string) from `data` defined as `measure` and the particular combination of levels from `rm` that it belongs to (as a vector of strings) defined as `cell`": [
                 "список списков, где каждый список описывает повторяющуюся меру (в виде строки) из `data`, определенных как `measure`, и конкретную комбинацию уровней из `rm`, к которой она принадлежит (в виде вектора строк), определяемую как `cell`"
@@ -803,7 +806,7 @@
                 "число (по умолчанию: 0,3), скрыть факторные нагрузки ниже этого значения"
             ],
             "a number (default: 0.3), hide loadings below this value": [
-                "число (по умолчанию: 0,3), скрыть загрузки ниже этого значения"
+                "число (по умолчанию: 0,3), скрыть нагрузки ниже этого значения"
             ],
             "a number (default: 0.5), the value for the null hypothesis": [
                 "число (по умолчанию: 0,5), значение для нулевой гипотезы"
@@ -823,6 +826,9 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "число (по умолчанию: 3), выделить значения в таблицах `'modIndices'` над этим значением"
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "число от 0,01 до 2 (по умолчанию 0,707), априорная ширина для использования при вычислении коэффициентов Байеса"
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "число от 0,5 до 2 (по умолчанию 0,707), предыдущая ширина, используемая при расчете факторов Байеса"
             ],
@@ -833,7 +839,7 @@
                 "число от 50 до 99,9 (по умолчанию: 95), указывающее ширину доверительного интервала"
             ],
             "a number between 50 and 99.9 (default: 95) specifying the confidence interval width for the estimated marginal means": [
-                "число от 50 до 99,9 (по умолчанию: 95), указывающее ширину доверительного интервала для предполагаемых предельных средних"
+                "число от 50 до 99,9 (по умолчанию: 95), указывающее ширину доверительного интервала для взвешенных предельных средних"
             ],
             "a number between 50 and 99.9 (default: 95) specifying the confidence interval width that is used as `'ci'`": [
                 "число от 50 до 99,9 (по умолчанию: 95), указывающее ширину доверительного интервала, который используется как `'ci'`"
@@ -878,7 +884,7 @@
                 "график q-q"
             ],
             "A repeated measures ANOVA data set": [
-                "Набор данных повторных измерений ANOVA"
+                "Набор данных ДА повторных измерений"
             ],
             "a string (default: 'Dependent') describing the label used for the dependent variable throughout the analysis": [
                 "строка (по умолчанию: `Зависимая`), описывающая метку, используемую для зависимой переменной на протяжении всего анализа"
@@ -905,13 +911,13 @@
                 "сводка по группам"
             ],
             "a table containing estimated marginal means": [
-                "таблица, содержащая оценочные предельные средние значения"
+                "таблица, содержащая взвешенные предельные средние значения"
             ],
             "a table containing factor covariances estimates": [
                 "таблица, содержащая оценки факторных ковариаций"
             ],
             "a table containing factor intercept estimates": [
-                "таблица, содержащая оценки пересечения факторов"
+                "таблица, содержащая оценки константы фактора"
             ],
             "a table containing fit measures": [
                 "таблица, содержащая меры соответствия"
@@ -926,7 +932,7 @@
                 "таблица, содержащая оценки остаточных ковариаций"
             ],
             "a table containing residual intercept estimates": [
-                "таблица, содержащая остаточные оценки перехвата"
+                "таблица, содержащая оценки константы остатка"
             ],
             "a table containing residuals for the observed correlation matrix": [
                 "таблица, содержащая остатки для наблюдаемой корреляционной матрицы"
@@ -962,10 +968,10 @@
                 "таблица, содержащая результаты t-теста"
             ],
             "a table of ANCOVA results": [
-                "таблица результатов ANCOVA"
+                "таблица результатов ковариационного анализа"
             ],
             "a table of ANOVA results": [
-                "таблица результатов ANOVA"
+                "таблица результатов ДА"
             ],
             "a table of comparative measures": [
                 "таблица сравнительных мер"
@@ -1108,6 +1114,9 @@
             "an array of descriptive plots": [
                 "массив описательных графиков"
             ],
+            "an array of extreme values tables": [
+                "массив таблиц экстремальных значений"
+            ],
             "an array of frequency tables": [
                 "массив частотных таблиц"
             ],
@@ -1130,7 +1139,7 @@
                 "массив описательных графиков"
             ],
             "an array of the estimated marginal means plots + tables": [
-                "массив оценочных предельных средних графики + таблицы"
+                "массив взвешенных предельных средних графики + таблицы"
             ],
             "an array of the posterior plots": [
                 "массив постериорных графиков"
@@ -1150,14 +1159,17 @@
             "an integer (default: 4) specifying the number of equal groups": [
                 "целое число (по умолчанию: 4), определяющее количество равных групп"
             ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "целое число (по умолчанию: 5), определяющее количество экстремальных значений"
+            ],
             "An uninspiring ANOVA data set": [
-                "Скучный набор данных ANOVA"
+                "Скучный набор данных для дисперсионного анализа"
             ],
             "Analyses bundled with jamovi": [
                 "Анализы в комплекте с jamovi"
             ],
             "ANCOVA": [
-                "ANCOVA"
+                "Ковариационный анализ"
             ],
             "Anderson & Rubin": [
                 "Андерсон и Рубин"
@@ -1166,10 +1178,10 @@
                 "Данные по ирисам Андерсона"
             ],
             "ANOVA": [
-                "ANOVA"
+                "ДА"
             ],
             "ANOVA test": [
-                "Дисперсионный анализ"
+                "ДА тест"
             ],
             "As there are no between subjects factors specified this assumption is always met.": [
                 "Поскольку между субъектами не указаны факторы, это допущение всегда выполняется."
@@ -1304,7 +1316,7 @@
                 "М-критерий Бокса для однородности ковариационных матриц"
             ],
             "Bugs (Ryan, Wilde & Crist, 2013)": [
-                "Жуки (Райан, Уайлд и Крист, 2013)"
+                "Баги (Райан, Уайлд и Крист, 2013)"
             ],
             "Cells": [
                 "Ячейки"
@@ -1319,10 +1331,10 @@
                 "Квантили Хи-квадрат"
             ],
             "CI Lower": [
-                "ДИ Нижний"
+                "нижняя граница ДИ"
             ],
             "CI Upper": [
-                "ДИ Верхний"
+                "верхняя граница ДИ"
             ],
             "Classification Table": [
                 "Классификационная таблица"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "Столбец"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "Столбец '{name}' содержит неиспользуемые уровни (возможно только при исключении строк с отсутствующими значениями)"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "Переменная столбца '{var}' содержит менее 2 уровней"
@@ -1373,7 +1382,7 @@
                 "Сравнение"
             ],
             "Comparisons are based on estimated marginal means": [
-                "Сравнения основаны на оценочных предельных средних"
+                "Сравнения основаны на взвешенных предельных средних"
             ],
             "Component": [
                 "Компонент"
@@ -1508,7 +1517,7 @@
                 "Счетчики"
             ],
             "Counts (optional)": [
-                "Счетчики (необязательно)"
+                "Счетчик (необязательно)"
             ],
             "Counts may not be infinite": [
                 "Счетчик не может быть неопределенным"
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 "Сжатие данных"
             ],
+            "Data set is currently unweighted": [
+                "Набор данных в настоящее время не взвешен"
+            ],
             "Data Summary": [
                 "Сводка данных"
             ],
@@ -1589,10 +1601,10 @@
                 "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  МУЛЬТИНОМИАЛЬНАЯ ЛОГИСТИЧЕСКАЯ РЕГРЕССИЯ\n#\n#  Измерения соответствия модели\n#  ──────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  СПЕЦИФИЧЕСКИЕ РЕЗУЛЬТАТЫ МОДЕЛИ\n#\n#  МОДЕЛЬ 1\n#\n#  Коэффициенты модели\n#  ───────────────────────────────────────────────────────────────\n#    race     Predictor    Estimate    SE        Z         p\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    Intercept      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────\n#\n#"
             ],
             "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  REPEATED MEASURES ANOVA\n#\n#  Within Subjects Effects\n#  ───────────────────────────────────────────────────────────────────────\n#                  Sum of Squares    df    Mean Square    F       p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#\n#\n#\n#  Between Subjects Effects\n#  ─────────────────────────────────────────────────────────────────\n#                Sum of Squares    df    Mean Square    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#": [
-                "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  ANOVA ДЛЯ ПОВТОРНЫХ ИЗМЕРЕНИЙ\n#\n#  Внутрисубъектные эффекты\n#  ───────────────────────────────────────────────────────────────────────\n#                  Сумма квадратов    df    Средний квадрат    F    p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Примечание. Сумма квадратов тип 3\n#\n#\n#\n#  Межсубъектные эффекты\n#  ─────────────────────────────────────────────────────────────────\n#                Сумма квадратов    df    Средний квадрат    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Примечание. Сумма квадратов тип 3\n#"
+                "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  ДА ДЛЯ ПОВТОРНЫХ ИЗМЕРЕНИЙ\n#\n#  Внутрисубъектные эффекты\n#  ───────────────────────────────────────────────────────────────────────\n#                  Сумма квадратов    df    Средний квадрат    F    p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Примечание. Сумма квадратов тип 3\n#\n#\n#\n#  Межсубъектные эффекты\n#  ─────────────────────────────────────────────────────────────────\n#                Сумма квадратов    df    Средний квадрат    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Примечание. Сумма квадратов тип 3\n#"
             ],
             "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#": [
-                "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  ANOVA ДЛЯ ПОВТОРНЫХ ИЗМЕРЕНИЙ (НЕПАРАМЕТРИЧЕСКИЙ)\n#\n#  Фридман\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#"
+                "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  ДА ДЛЯ ПОВТОРНЫХ ИЗМЕРЕНИЙ (НЕПАРАМЕТРИЧЕСКИЙ)\n#\n#  Фридман\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#"
             ],
             "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  PAIRED SAMPLES T-TEST\n#\n#  Paired Samples T-Test\n#  ──────────────────────────────────────────────────────────────\n#                                   statistic    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#": [
                 "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  T-ТЕСТ ПАРНЫХ ВЫБОРОК\n#\n#  Т-тест парных выборок\n#  ──────────────────────────────────────────────────────────────\n#                                   statistic    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#"
@@ -1604,7 +1616,7 @@
                 "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  ТЕСТ ПРОПОРЦИЙ (N ИСХОДОВ)\n#\n#  Пропорции\n#  ────────────────────────────────\n#    Level    Count    Proportion\n#  ────────────────────────────────\n#    Brown      220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  χ² Критерий соответствия\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#"
             ],
             "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Note. 'oblimin' rotation was used\n#": [
-                "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  ИССЛЕДОВАТЕЛЬСКИЙ ФАКТОРНЫЙ АНАЛИЗ\n#\n#  Факторные нагрузки\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Примечание. Используется вращение 'облимин'\n#"
+                "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  РАЗВЕДОЧНЫЙ ФАКТОРНЫЙ АНАЛИЗ\n#\n#  Факторные нагрузки\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Примечание. Используется вращение 'облимин'\n#"
             ],
             "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA\n#\n#  Multivariate Tests\n#  ───────────────────────────────────────────────────────────────────────────\n#                                     value     F       df1    df2    p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  Univariate Tests\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                 Dependent Variable    Sum of Squares    df     Mean Square    F         p\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    Residuals    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#": [
                 "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA (КОВАРИАЦИОННЫЙ АНАЛИЗ)\n#\n#  Многомерные тесты\n#  ───────────────────────────────────────────────────────────────────────────\n#                                     value     F       df1    df2    p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  Одномерные тесты\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                 Dependent Variable    Sum of Squares    df     Mean Square    F         p\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    Residuals    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#"
@@ -1634,10 +1646,10 @@
                 "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA (КОВАРИАЦИОННЫЙ АНАЛИЗ)\n#\n#  ANCOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    Residuals              1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)"
             ],
             "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means": [
-                "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA (ДИСПЕРСИОННЫЙ АНАЛИЗ)\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means"
+                "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA (ДИСПЕРСИОННЫЙ АНАЛИЗ)\n#\n#  ДА\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means"
             ],
             "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ONE-WAY ANOVA (NON-PARAMETRIC)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#": [
-                "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ОДНОСТОРОННИЙ АНОВА (НЕПАРАМЕТРИЧЕСКИЙ)\n#\n#  Крускал-Уоллис\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#"
+                "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ОДНОФАКТОРНЫЙ ДИСПЕРСИОННЫЙ АНАЛИЗ (НЕПАРАМЕТРИЧЕСКИЙ)\n#\n#  Крускал-Уоллис\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#"
             ],
             "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  INDEPENDENT SAMPLES T-TEST\n#\n#  Independent Samples T-Test\n#  ────────────────────────────────────────────────────\n#                          statistic    df      p\n#  ────────────────────────────────────────────────────\n#    len    Student's t         1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#": [
                 "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  T-ТЕСТ НЕЗАВИСИМЫХ ВЫБОРОК\n#\n#  Т-тест независимых выборок\n#  ────────────────────────────────────────────────────\n#                          statistic    df      p\n#  ────────────────────────────────────────────────────\n#    len    Student's t         1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#"
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "Зависимая переменная"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "Зависимая переменная '{dep}' содержит неопределенное количество значений"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "Зависимая переменная '{dep}' не содержит данных (после удаления строк с отсутствующими значениями)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "Зависимая переменная '{dep}' содержит только одно уникальное значение (после удаления строк с отсутствующими значениями)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "Зависимая переменная '{dep}' должна быть непрерывной"
+            ],
             "Dependent Variable Label": [
                 "Метка зависимой переменной"
             ],
-            "Dependent variable must be numeric": [
-                "Зависимая переменная должна быть числовой"
-            ],
             "Dependent Variables": [
                 "Зависимые переменные"
+            ],
+            "Dependent variables are very highly correlated": [
+                "Зависимые переменные очень сильно коррелируют между собой"
             ],
             "deprecated": [
                 "устарел"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "Описательная таблица"
-            ],
-            "dev": [
-                "dev"
             ],
             "Deviance": [
                 "Девиантность"
@@ -1766,7 +1787,10 @@
                 "Собственные значения"
             ],
             "Eigenvalues greater than": [
-                "Собственные значения больше, чем"
+                "Собственные значения более"
+            ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Пустые клетки между предметом дизайна: по крайней мере одно сочетание между уровнями фактора предмета имеет 0 наблюдений"
             ],
             "Equal cell weights": [
                 "Равные веса ячеек"
@@ -1781,43 +1805,43 @@
                 "Планки погрешностей"
             ],
             "Estimate": [
-                "Оценить"
+                "Вес"
             ],
             "Estimate (Log Odds Ratio)": [
-                "Оценка (логарифмическое отношение шансов)"
+                "Вес (Логарифмическое отношение шансов)"
             ],
             "Estimate (Log Rate Ratio)": [
-                "Оценка (Логарифм ОР)"
+                "Вес (Логарифмическое отношение уровней частоты)"
             ],
             "Estimated Marginal Means": [
-                "Расчетные предельные средние"
+                "Взвешенные предельные средние"
             ],
             "Estimated Marginal Means - {term}": [
-                "Расчетные предельные средние - {term}"
+                "Взвешенные предельные средние - {term}"
             ],
             "Estimates": [
                 "Оценки"
             ],
             "Estimates represent the log odds of …": [
-                "Оценки представляют собой логарифмические шансы …"
+                "Веса представляют собой логарифмические шансы …"
             ],
             "Estimates represent the log odds of \"{dep} = {level1}\" vs. \"{dep} = {level2}\"": [
-                "Оценки представляют собой логарифмические шансы \"{dep} = {level1}\" по сравнению с \"{dep} = {level2}\""
+                "Веса представляют собой логарифмические шансы \"{dep} = {level1}\" по сравнению с \"{dep} = {level2}\""
             ],
             "Estimation method": [
-                "Метод оценки"
+                "Метод взвешивания"
             ],
             "Exclude cases analysis by analysis": [
-                "Исключить анализ случаев за анализом"
+                "Исключить попарно"
             ],
             "Exclude cases listwise": [
-                "Исключить случаи списком"
+                "Исключить наблюдения целиком"
             ],
             "Excluded": [
                 "Исключено"
             ],
             "Expected": [
-                "Ожидаемо"
+                "Ожидаемое"
             ],
             "Expected counts": [
                 "Ожидаемое количество"
@@ -1826,13 +1850,22 @@
                 "Ожидаемые пропорции"
             ],
             "Exploration": [
-                "Исследование"
+                "Разведочный"
             ],
             "Exploratory Factor Analysis": [
-                "Исследовательский факторный анализ"
+                "Разведочный факторный анализ"
             ],
             "Extraction": [
                 "Извлечение"
+            ],
+            "Extreme values": [
+                "Экстремальные значения"
+            ],
+            "Extreme Values": [
+                "Экстремальные значения"
+            ],
+            "Extreme values of $key": [
+                "Экстремальные значения $key"
             ],
             "F": [
                 "F"
@@ -1844,16 +1877,22 @@
                 "F-статистика не может быть рассчитана"
             ],
             "Factor": [
-                "Фактор"
+                "Факторный"
+            ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Фактор '{фактор}' имеет менее двух уровней. Факторы должны иметь не менее двух уровней"
             ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "Фактор '{factor}' должен иметь как минимум 2 уровня"
             ],
-            "Factor '{factorName}' contains no data": [
-                "Фактор '{factorName}' не содержит данных"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Фактор '{factorName}' не содержит данных (после удаления строк с отсутствующими значениями)"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "Фактор '{factorName}' содержит только один уровень"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Фактор '{factorName}' содержит только один уровень (после удаления строк с отсутствующими значениями)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Фактор '{factorName}' содержит неиспользованные уровни (после удаления строк с отсутствующими значениями)"
             ],
             "Factor {0}": [
                 "Фактор {0}"
@@ -1871,13 +1910,13 @@
                 "Факторные ковариации"
             ],
             "Factor Estimates": [
-                "Факторные оценки"
+                "Факторные веса"
             ],
             "Factor Intercepts": [
-                "Перехваты факторов"
+                "Константы фактора"
             ],
             "Factor intercepts": [
-                "Перехваты факторов"
+                "Константы фактора"
             ],
             "Factor Loadings": [
                 "Факторные нагрузки"
@@ -1940,7 +1979,7 @@
                 "отметьте значимые апостериорные сравнения."
             ],
             "Frequencies": [
-                "Частоты"
+                "Частотный"
             ],
             "Frequencies of $key": [
                 "Частоты $key"
@@ -2035,8 +2074,11 @@
             "Helmert": [
                 "Гельмерт"
             ],
+            "hidden": [
+                "скрытый"
+            ],
             "Hide loadings below": [
-                "Скрыть загрузки ниже"
+                "Скрыть нагрузки ниже"
             ],
             "Highlight values above": [
                 "Выделить значения выше"
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "Гипотеза"
             ],
-            "if item dropped": [
-                "если элемент выпал"
+            "If item dropped": [
+                "Если элемент выпал"
             ],
             "in development": [
                 "в разработке"
@@ -2099,7 +2141,7 @@
                 "Межфакторные корреляции"
             ],
             "Intercept": [
-                "Перехват"
+                "Константа"
             ],
             "Interval": [
                 "Интервал"
@@ -2133,9 +2175,6 @@
             ],
             "Item-rest correlation": [
                 "Корреляция элемент-остаток"
-            ],
-            "item-rest correlation": [
-                "корреляция элемента и остатка"
             ],
             "Items": [
                 "Элементы"
@@ -2185,9 +2224,6 @@
             "Level 2": [
                 "Уровень 2"
             ],
-            "Levels": [
-                "Уровни"
-            ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "Критерий Левена значим (p < 0,05), что свидетельствует о нарушении предположения о равных дисперсиях"
             ],
@@ -2207,7 +2243,7 @@
                 "Линейная регрессия"
             ],
             "Linear regression is used to explore the relationship between a continuous dependent variable, and one or more continuous and/or categorical explanatory variables. Other statistical methods, such as ANOVA and ANCOVA, are in reality just forms of linear regression.": [
-                "Линейная регрессия используется для изучения взаимосвязи между непрерывной зависимой переменной и одной или несколькими непрерывными и/или категориальными независимыми переменными. Другие статистические методы, такие как ANOVA и ANCOVA, на самом деле являются просто формами линейной регрессии."
+                "Линейная регрессия используется для изучения взаимосвязи между непрерывной зависимой переменной и одной или несколькими непрерывными и/или категориальными независимыми переменными. Другие статистические методы, такие как дисперсионный и ковариационный анализы, на самом деле являются просто формами линейной регрессии."
             ],
             "Log odds ratio": [
                 "Логарифмическое отношение шансов"
@@ -2228,7 +2264,7 @@
                 "нижняя граница"
             ],
             "MANCOVA": [
-                "MANCOVA"
+                "Многофакторный ковариационный анализ"
             ],
             "Mann-Whitney U": [
                 "Манн-Уитни U"
@@ -2283,9 +2319,6 @@
             ],
             "Mean": [
                 "Среднее"
-            ],
-            "mean": [
-                "среднее"
             ],
             "Mean ({ciWidth}% CI)": [
                 "Среднее ({ciWidth}% ДИ)"
@@ -2351,10 +2384,10 @@
                 "Минимальное значение"
             ],
             "Missing": [
-                "Пропущенный"
+                "Пропущено"
             ],
             "Missing Values": [
-                "Отсутствующие значения"
+                "Пропущенные значения"
             ],
             "Missing values": [
                 "Отсутствующие значения"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "Индексы модификации"
             ],
+            "Monte Carlo simulation": [
+                "Моделирование Монте-Карло"
+            ],
             "More than one mode exists, only the first is reported": [
                 "Существует более одной моды, сообщается только о первой"
+            ],
+            "Most extreme": [
+                "Самый экстремальный"
             ],
             "MSA": [
                 "MSA"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Тест на нормальность (Шапиро-Уилк)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                "Не все коэффициенты могут быть оценены (вероятно, из-за сингулярной подгонки)"
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Недоступно из-за слишком большого количества случаев (строк > 5000)."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Недостаточно степеней свободы для оценки всех эффектов модели"
+            ],
             "Number of Components": [
                 "Количество компонент"
             ],
             "Number of components": [
                 "Количество компонент"
             ],
+            "Number of extreme values": [
+                "Количество экстремальных значений"
+            ],
             "Number of Factors": [
                 "Количество факторов"
             ],
             "Number of factors": [
                 "Количество факторов"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Количество запрашиваемых экстремальных значений больше, чем количество строк в данных."
             ],
             "Oblimin": [
                 "Облимин"
@@ -2513,7 +2567,7 @@
                 "из всего"
             ],
             "Omnibus ANOVA Test": [
-                "Омнибусные тесты ANOVA"
+                "Омнибусный ДА тест"
             ],
             "Omnibus Likelihood Ratio Tests": [
                 "Омнибусные тесты отношения правдоподобия"
@@ -2549,7 +2603,723 @@
                 "Не удалось оценить один или несколько коэффициентов в модели {modelNo} из-за полной коллинеарности."
             ],
             "one or more of `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'`, or `'bic'`; use CFI, TLI, SRMR, RMSEA + 90% confidence interval, adjusted AIC, and BIC model fit measures, respectively": [
-                "один или несколько из `'cfi'`, `'tli'`, `'srmr'`, rmsea\"\n\n#: ancova/options/effectSize.description.R\n#: anova/options/effectSize.description.R\n#: anovaRM/options/effectSize.description.R\nmsgid ",
+                "один или несколько из `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'` или `'bic'`; используйте CFI, TLI, SRMR, RMSEA + 90% доверительный интервал, скорректированные показатели соответствия модели AIC и BIC соответственно"
+            ],
+            "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
+                "один или несколько из `'eta'`, `'partEta'`, или `'omega'`; использовать размеры эффекта η², частного η² и ω² соответственно"
+            ],
+            "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
+                "один или несколько из `'none'` (по умолчанию), `'GG'` или ``HF``; не использовать поправку на p-значение, поправку на p-значение Гринхауса-Гейссера и поправку на p-значение Huynh-Feldt для шеритичности соответственно"
+            ],
+            "one or more of `'none'`, `'tukey'` (default), `'scheffe'`, `'bonf'`, or `'holm'`; use no, Tukey, Scheffe, Bonferroni and Holm posthoc corrections, respectively": [
+                "один или несколько из `'none'`, `'tukey'` (по умолчанию), `'scheffe'`, `'bonf'` или `'holm'`; использовать апостериорные поправки Нет, Тьюки, Шеффе, Бонферрони и Холма соответственно"
+            ],
+            "one or more of `'none'`, `'tukey'`, `'scheffe'`, `'bonf'`, or `'holm'`; provide no, Tukey, Scheffe, Bonferroni, and Holm Post Hoc corrections respectively": [
+                "один или несколько из `'none'`, `'tukey'`, `'scheffe'`, `'bonf'` или `'holm'`; представляет апостериорные поправки Нет, Тьюки, Шеффе, Бонферрони и Холма постфактум соответственно"
+            ],
+            "one or more of `'pillai'`, `'wilks'`, `'hotel'`, or `'roy'`; use Pillai's Trace, Wilks' Lambda, Hotelling's Trace, and Roy's Largest Root multivariate statistics, respectively": [
+                "один или несколько из `'pillai'`, `'wilks'`, `'hotel'`, или `'roy'`; использует многомерную статистику След Пиллаи, лямбда Уилкса, след Хотеллинга и наибольший корень Роя, соответственно"
+            ],
+            "one or more of `'r2mf'`, `'r2cs'`, or `'r2n'`; use McFadden's, Cox & Snell, and Nagelkerke pseudo-R², respectively": [
+                "один или несколько из `'r2mf'`, `'r2cs'`, или `'r2n'`; использует псевдо-R² Макфадденс, Кокс и Снелл и Нагелькерке соответственно"
+            ],
+            "One Sample Proportion Tests": [
+                "Одновыборочные тесты пропорций"
+            ],
+            "One Sample T-Test": [
+                "Одновыборочный Т-тест"
+            ],
+            "One-Way ANOVA": [
+                "Однофакторный дисперсионный анализ"
+            ],
+            "One-Way ANOVA (Fisher's)": [
+                "Однофакторный дисперсионный анализ (Фишера)"
+            ],
+            "One-Way ANOVA (Non-parametric)": [
+                "Однофакторный дисперсионный анализ (Непараметрический)"
+            ],
+            "One-Way ANOVA (Welch's)": [
+                "Однофакторный дисперсионный анализ (Уэлча)"
+            ],
+            "Options": [
+                "Опции"
+            ],
+            "Ordinal": [
+                "Порядковый"
+            ],
+            "Ordinal Logistic Regression": [
+                "Порядковая логистическая регрессия"
+            ],
+            "Ordinal Outcomes": [
+                "Порядковые исходы"
+            ],
+            "Outliers": [
+                "Выбросы"
+            ],
+            "Output": [
+                "Вывод"
+            ],
+            "Overall": [
+                "Всеобъемлющий"
+            ],
+            "Overall model": [
+                "Всеобъемлющая модель"
+            ],
+            "Overall Model Test": [
+                "Тест всеобъемлющей модели"
+            ],
+            "Overall model test": [
+                "Тест всеобъемлющей модели"
+            ],
+            "p": [
+                "p"
+            ],
+            "p-value": [
+                "р-значение"
+            ],
+            "p<sub>bonferroni</sub>": [
+                "p<sub>Бонферрони</sub>"
+            ],
+            "p<sub>holm</sub>": [
+                "p<sub>Холм</sub>"
+            ],
+            "p<sub>scheffe</sub>": [
+                "p<sub>Шеффе</sub>"
+            ],
+            "p<sub>tukey</sub>": [
+                "p<sub>Тьюки</sub>"
+            ],
+            "Paired Samples": [
+                "Парные выборки"
+            ],
+            "Paired Samples Contingency Tables": [
+                "Таблицы сопряжения парных выборок"
+            ],
+            "Paired Samples T-Test": [
+                "Т-тест парных выборок"
+            ],
+            "Paired Variables": [
+                "Парные переменные"
+            ],
+            "Pairwise comparisons - $key": [
+                "Попарные сравнения - $key"
+            ],
+            "Pairwise Comparisons (Durbin-Conover)": [
+                "Попарные сравнения (Дурбин-Коновер)"
+            ],
+            "Pairwise comparisons (Durbin-Conover)": [
+                "Попарные сравнения (Дурбин-Коновер)"
+            ],
+            "Partial": [
+                "Частный"
+            ],
+            "Partial Correlation": [
+                "Частная корреляция"
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables": [
+                "Матрицы частичной корреляции - это способ изучения линейной связи\nмежду двумя или более непрерывными переменными при контроле за другими переменными"
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                "Матрицы частичной корреляции - это способ изучения линейной связи\nмежду двумя или более непрерывными переменными при контроле за другими переменными.\n\nДля каждой пары переменных значение r по Пирсону показывает силу\nи направление связи между этими двумя переменными. A\nположительное значение указывает на положительную связь (более высокие значения одной переменной предсказывают более высокие значения другой переменной).\nОтрицательное значение Pearson's r указывает на отрицательную связь (более высокие значения одной переменной предсказывают более низкие значения другой переменной). переменной предсказывают более низкие значения другой переменной, и наоборот).\nНулевое значение указывает на отсутствие взаимосвязи (высокие или низкие значения переменной ни о чем не говорят).\nили низкая, ничего не говорит нам о значении другой переменной).\n\nБолее формально, можно проверить нулевую гипотезу о том, что\nкорреляция равна нулю и вычислить p-значение. Если p-значение низкое, это говорит о том, что\nэто говорит о том, что коэффициент корреляции не равен нулю, и существует линейная (или более сложная) связь между двумя переменными."
+            ],
+            "Partial η²": [
+                "Частное η²"
+            ],
+            "partial η²": [
+                "частное η²"
+            ],
+            "Path Diagram": [
+                "Диаграмма пути"
+            ],
+            "Path diagram": [
+                "диаграмма пути"
+            ],
+            "Pearson": [
+                "Пирсон"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "Корреляция Пирсона не может быть рассчитана для нечисловых значений"
+            ],
+            "Pearson's r": [
+                "Пирсон r"
+            ],
+            "Pearson{}Correlation": [
+                "Корреляция{}Пирсона"
+            ],
+            "Percentages": [
+                "Процентаж"
+            ],
+            "Percentages of total": [
+                "Общий процентаж"
+            ],
+            "Percentages within {var}": [
+                "Процентаж в пределах {var}"
+            ],
+            "Percentile": [
+                "Процентиль"
+            ],
+            "Percentile Values": [
+                "Процентильные значения"
+            ],
+            "Percentile values": [
+                "Процентильные значения"
+            ],
+            "Percentiles": [
+                "Процентили"
+            ],
+            "perform a Mann-Whitney U test.": [
+                "выполнить U-критерий Манна-Уитни."
+            ],
+            "perform a Shapiro-Wilk test of normality. A low p-value suggests the data is not from a normal distribution.": [
+                "выполнить критерий нормальности Шапиро-Уилка. Низкое значение p предполагает, что данные не относятся к нормальному распределению."
+            ],
+            "perform an overall model test.": [
+                "провести общий тест модели."
+            ],
+            "perform Fisher's (or what might be call 'normal') ANOVAs.": [
+                "выполнить дисперсионный анализ Фишера (или то, что можно было бы назвать 'нормальным')."
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
+                "выполнить тесты нормальности Шапиро-Уилка. Низкое значение p предполагает, что данные не относятся к нормальному распределению."
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the residuals are not normally distributed.": [
+                "выполнить тесты нормальности Шапиро-Уилка. Низкое p-значение предполагает, что остатки не распределены нормально."
+            ],
+            "perform Student's independent samples t-tests.": [
+                "выполнить t-критерий Стьюдента для независимых выборок."
+            ],
+            "perform Student's one-sample t-tests.": [
+                "выполнить одновыборочные t-критерии Стьюдента."
+            ],
+            "perform Student's paired samples t-tests.": [
+                "выполнить t-критерии Стьюдента для парных выборок."
+            ],
+            "perform Welch's ANOVAs.": [
+                "выполнить дисперсионный анализ Уэлча."
+            ],
+            "perform Welch's tests.": [
+                "выполнить тесты Уэлча."
+            ],
+            "perform Wilcoxon signed rank tests.": [
+                "выполнить знаковые ранговые тесты Уилкоксона."
+            ],
+            "Phi and Cramer's V": [
+                "Фи и Крамер V"
+            ],
+            "Phi-coefficient": [
+                "Фи-коэффициент"
+            ],
+            "Pillai's Trace": [
+                "След Пиллаи"
+            ],
+            "Plot": [
+                "График"
+            ],
+            "plot densities along the diagonal of the correlation matrix plot.": [
+                "график плотности распределения вдоль диагонали графика корреляционной матрицы."
+            ],
+            "plot the data along with the marginal means.": [
+                "постройте данные вместе с маргинальными средними значениями."
+            ],
+            "Plot Type": [
+                "Тип графика"
+            ],
+            "Plots": [
+                "Графики"
+            ],
+            "Polynomial": [
+                "Полиномиальный"
+            ],
+            "Post Hoc Comparisons - {term}": [
+                "Апостериорные сравнения - {term}"
+            ],
+            "Post Hoc Tests": [
+                "Апостериорные тесты"
+            ],
+            "Post Hoc Tests – $key": [
+                "Апостериорные тесты – $key"
+            ],
+            "Post-Hoc Model Performance": [
+                "Производительность апостериорной модели"
+            ],
+            "Post-Hoc Test": [
+                "Апостериорный тест"
+            ],
+            "Post-Hoc Tests": [
+                "Апостериорные тесты"
+            ],
+            "Posterior": [
+                "Постериорный"
+            ],
+            "Posterior plot": [
+                "Постериорный график"
+            ],
+            "Posterior Plots": [
+                "Постериорные графики"
+            ],
+            "Predicted": [
+                "Предсказанный"
+            ],
+            "Predicted probability of … = … (vs … = …)": [
+                "Прогнозируемая вероятность … = … (vs … = …)"
+            ],
+            "Predicted probability of {dep} = {level1} (vs {dep} = {level2})": [
+                "Прогнозируемая вероятность {dep} = {level1} (по сравнению с {dep} = {level2})"
+            ],
+            "Predicted values": [
+                "Прогнозируемые значения"
+            ],
+            "Prediction": [
+                "Прогноз"
+            ],
+            "Predictive Measures": [
+                "Прогностические меры"
+            ],
+            "Predictor": [
+                "Предиктор"
+            ],
+            "Predictors": [
+                "Предикторы"
+            ],
+            "Principal axis": [
+                "Основная ось"
+            ],
+            "Principal axis factoring": [
+                "Факторизация главной оси"
+            ],
+            "Principal Component Analysis": [
+                "Анализ главных компонент"
+            ],
+            "Prior": [
+                "Предыдущий"
+            ],
+            "Prior width": [
+                "Предыдущая ширина"
+            ],
+            "Probability": [
+                "Вероятность"
+            ],
+            "Promax": [
+                "Промакс"
+            ],
+            "promax": [
+                "промакс"
+            ],
+            "Proportion": [
+                "Пропорция"
+            ],
+            "Proportion Test (2 Outcomes)": [
+                "Тест пропорций (2 исхода)"
+            ],
+            "Proportion Test (N Outcomes)": [
+                "Тест пропорций (N исходов)"
+            ],
+            "provide a Cohen's d measure of effect size for the post-hoc tests.": [
+                "предоставить показатель Коэна d размера эффекта для апостериорных тестов."
+            ],
+            "provide a confidence interval for the difference between the mean estimate and the test value.": [
+                "предоставить доверительный интервал для разницы между средней оценкой и тестовым значением."
+            ],
+            "provide a correlation matrix plot.": [
+                "предоставить график корреляционной матрицы."
+            ],
+            "provide a Kendall's tau-b for each combination of variables.": [
+                "предоставить тау-b Кендалла для каждой комбинации переменных."
+            ],
+            "provide a p-value for each correlation co-efficient.": [
+                "предоставить p-значение для каждого коэффициента корреляции."
+            ],
+            "provide a Pearson's r for each combination of variables.": [
+                "предоставить значение r Пирсона для каждой комбинации переменных."
+            ],
+            "provide a Q-Q plot of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                "предоставить график Q-Q остатков -- график фактических остатков по сравнению с тем, что можно было бы ожидать, если бы данные были *идеально* нормально распределены. Большие отклонения от диагональной линии предполагают, что данные не имеют нормального распределения."
+            ],
+            "provide a Spearman's rho for each combination of variables.": [
+                "предоставить ρ Спирмена для каждой комбинации переменных."
+            ],
+            "provide a table of descriptives for each variable.": [
+                "предоставить таблицу описательных характеристик для каждой переменной."
+            ],
+            "provide a table of the estimated marginal means.": [
+                "предоставить таблицу взвешенных предельных средних."
+            ],
+            "provide Bayes factors for the Student's independent samples t-tests.": [
+                "предоставить коэффициенты Байеса для t-тестов Стьюдента для независимых выборок."
+            ],
+            "provide Bayes factors for the Student's one-sample t-tests.": [
+                "предоставить коэффициенты Байеса для одновыборочных t-критериев Стьюдента."
+            ],
+            "provide Bayes factors for the Student's paired samples t-tests.": [
+                "предоставить коэффициенты Байеса для t-тестов Стьюдента для парных выборок."
+            ],
+            "provide confidence intervals for Pearson's r.": [
+                "предоставить доверительные интервалы для r Пирсона."
+            ],
+            "provide confidence intervals for the effect-sizes": [
+                "предоставить доверительные интервалы для размеров эффекта"
+            ],
+            "provide confidence intervals for the mean differences.": [
+                "предоставить доверительные интервалы для различий средних."
+            ],
+            "provide confidence intervals for the post-hoc effect sizes.": [
+                "представляет доверительные интервалы для размеров апостериорного эффекта."
+            ],
+            "provide correlation co-efficients in the correlation matrix plot.": [
+                "представляет коэффициенты корреляции на графике матрицы корреляции."
+            ],
+            "provide descriptive plots for each group.": [
+                "представляет описательные графики для каждой группы."
+            ],
+            "provide descriptive plots for each variable.": [
+                "представляет описательные графики для каждой переменной."
+            ],
+            "provide descriptives for each group of measurements.": [
+                "представляет описания для каждой группы измерений."
+            ],
+            "provide descriptives for each group.": [
+                "представляет описательные статистики для каждой группы."
+            ],
+            "provide descriptives plots.": [
+                "представляет описательные графики."
+            ],
+            "provide effect-sizes (Cohen's D).": [
+                "представляет размеры эффекта (D Коэна)."
+            ],
+            "provide effect-sizes (Cohen's d).": [
+                "представляет размеры эффекта (d Коэна)."
+            ],
+            "provide Levene's test for homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                "представляет критерий Левена на однородность дисперсий. Низкое значение p предполагает, что группы имеют неодинаковую дисперсию."
+            ],
+            "provide Levene's tests for the homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                "представляет тесты Левена на однородность дисперсий. Низкое значение p предполагает, что группы имеют неодинаковую дисперсию."
+            ],
+            "provide mean differences and standard errors of the mean differences.": [
+                "представляет средние различия и стандартные ошибки средних различий."
+            ],
+            "provide mean differences with the post-hoc tests.": [
+                "представляет средние различия с апостериорными тестами."
+            ],
+            "provide mean differences, and standard errors of the mean differences, between the mean estimate, and the test value.": [
+                "представляет средние различия и стандартные ошибки средних различий между средней оценкой и тестовым значением."
+            ],
+            "provide measures of effect size; η², partial η², or ω².": [
+                "представляет меры размера эффекта; η², частный η² или ω²."
+            ],
+            "provide p-value corrections for sphericity.": [
+                "представляет поправки p-значения для сферичности."
+            ],
+            "provide plots of the estimated marginal means.": [
+                "представляет графики взвешенных предельных средних."
+            ],
+            "provide post-hoc tests.": [
+                "представляет апостериорные тесты."
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                "предоставить Q-Q графики остатков - график фактических остатков по сравнению с тем, что можно было бы ожидать, если бы данные были *идеально* нормально распределены. Большие отклонения от диагональной линии предполагают, что данные не имеют нормального распределения."
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
+                "предоставить Q-Q графики остатков - график фактических остатков по сравнению с тем, что можно было бы ожидать, если бы данные были *идеально* нормально распределены. Большие отклонения от диагональной линии предполагают, что остатки не распределены нормально."
+            ],
+            "provide significance levels for the post-hoc tests.": [
+                "представляет уровни значимости для апостериорных тестов."
+            ],
+            "provide sphericity tests.": [
+                "представляет тесты на сферичность."
+            ],
+            "provide test results (t-value and degrees of freedom) for post-hoc tests.": [
+                "представляет результаты испытаний (t-значение и степени свободы) для апостериорных испытаний."
+            ],
+            "provide the number of cases.": [
+                "представляет количество случаев."
+            ],
+            "Pseudo R²": [
+                "Псевдо R²"
+            ],
+            "Q-Q": [
+                "Q-Q"
+            ],
+            "Q-Q Plot": [
+                "Q-Q График"
+            ],
+            "Q-Q plot": [
+                "Q-Q График"
+            ],
+            "Q-Q Plot Assessing Multivariate Normality": [
+                "График Q-Q, оценивающий многомерную нормальность"
+            ],
+            "Q-Q plot of multivariate normality": [
+                "График QQ многомерной нормальности"
+            ],
+            "Q-Q plot of residuals": [
+                "Q-Q график остатков"
+            ],
+            "Q-Q Plots": [
+                "Q-Q Графики"
+            ],
+            "Q-Q plots": [
+                "Q-Q Графики"
+            ],
+            "quadratic": [
+                "квадратичный"
+            ],
+            "quartic": [
+                "биквадратный"
+            ],
+            "Quartimax": [
+                "Квартимакс"
+            ],
+            "quartimax": [
+                "квартимакс"
+            ],
+            "quintic": [
+                "пятой степени"
+            ],
+            "R": [
+                "R"
+            ],
+            "R²": [
+                "R²"
+            ],
+            "R²<sub>CS</sub>": [
+                "R²<sub>CS</sub>"
+            ],
+            "R²<sub>McF</sub>": [
+                "R²<sub>McF</sub>"
+            ],
+            "R²<sub>N</sub>": [
+                "R²<sub>N</sub>"
+            ],
+            "R²<sub>T</sub>": [
+                "R²<sub>T</sub>"
+            ],
+            "Range": [
+                "Диапазон"
+            ],
+            "Rank biserial correlation": [
+                "Ранговая бисериальная корреляция"
+            ],
+            "Rate Ratio": [
+                "Отношение рисков (ОР)"
+            ],
+            "Rate ratio": [
+                "Отношение рисков (ОР)"
+            ],
+            "Ratio": [
+                "Соотношение"
+            ],
+            "Reference Level": [
+                "Опорный уровень"
+            ],
+            "Reference level (dummy coding)": [
+                "Опорный уровень (фиктивное кодирование)"
+            ],
+            "Reference Levels": [
+                "Опорные уровни"
+            ],
+            "Regression": [
+                "Регрессионный"
+            ],
+            "Relative risk": [
+                "Относительный риск"
+            ],
+            "Reliability Analysis": [
+                "Анализ надежности"
+            ],
+            "Repeated": [
+                "Повторный"
+            ],
+            "Repeated Measures ANOVA": [
+                "Дисперсионный анализ повторных измерений"
+            ],
+            "Repeated Measures ANOVA (Non-parametric)": [
+                "Анализ повторных измерений ANOVA (Непараметрический)"
+            ],
+            "Repeated Measures Cells": [
+                "Ячейки повторных измерений"
+            ],
+            "Repeated Measures Components": [
+                "Компоненты повторных измерений"
+            ],
+            "Repeated Measures Factors": [
+                "Факторы повторных измерений"
+            ],
+            "Report significance": [
+                "Представлять значимость"
+            ],
+            "Represents grand mean": [
+                "Представляет объединенное среднее"
+            ],
+            "Represents reference level": [
+                "Представляет опорный уровень"
+            ],
+            "Residual": [
+                "Остаток"
+            ],
+            "Residual Covariances": [
+                "Остаточные ковариации"
+            ],
+            "Residual covariances": [
+                "Остаточные ковариации"
+            ],
+            "Residual Covariances – Modification Indices": [
+                "Остаточные ковариации – индексы модификации"
+            ],
+            "Residual Estimates": [
+                "Остаточные веса"
+            ],
+            "Residual Intercepts": [
+                "Константы остатка"
+            ],
+            "Residual intercepts": [
+                "Константы остатка"
+            ],
+            "Residual plots": [
+                "Графики остатков"
+            ],
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "Сумма квадратов остатков и/или степени свободы равны нулю, что указывает на идеальное соответствие"
+            ],
+            "Residuals": [
+                "Остатки"
+            ],
+            "Residuals for Observed Correlation Matrix": [
+                "Матрица наблюдаемой корреляции остатков"
+            ],
+            "Residuals from ANOVA": [
+                "Остатки от ANOVA"
+            ],
+            "Residuals observed correlation matrix": [
+                "Матрица наблюдаемой корреляции остатков"
+            ],
+            "Residuals Plots": [
+                "Графики остатков"
+            ],
+            "Results": [
+                "Результаты"
+            ],
+            "reverse scaled item": [
+                "Обратно масштабированный элемент"
+            ],
+            "Reverse Scaled Items": [
+                "Обратно масштабированные элементы"
+            ],
+            "RM Factor {0}": [
+                "RM-фактор {0}"
+            ],
+            "RM Factor 1": [
+                "RM Фактор 1"
+            ],
+            "RMSE": [
+                "СКО"
+            ],
+            "RMSEA": [
+                "СКОА"
+            ],
+            "RMSEA 90% CI": [
+                "СКОА 90% ДИ"
+            ],
+            "ROC": [
+                "ROC"
+            ],
+            "ROC Curve": [
+                "ROC кривая"
+            ],
+            "ROC curve": [
+                "ROC кривая"
+            ],
+            "Rotation": [
+                "Вращение"
+            ],
+            "Row": [
+                "Строка"
+            ],
+            "Row number": [
+                "Номер строки"
+            ],
+            "Row variable '{var}' contains fewer than 2 levels": [
+                "Переменная строки '{var}' содержит менее 2 уровней"
+            ],
+            "Rows": [
+                "Строки"
+            ],
+            "rows": [
+                "строки"
+            ],
+            "rows (default), or columns in bar plot X axis": [
+                "строки (по умолчанию) или столбцы на гистограмме по оси X"
+            ],
+            "Rows compared": [
+                "Сравнение строк"
+            ],
+            "Roy's Largest Root": [
+                "Самый большой корень Роя"
+            ],
+            "Sample Size": [
+                "Размер выборки"
+            ],
+            "Save": [
+                "Сохранить"
+            ],
+            "scale": [
+                "шкала"
+            ],
+            "Scale Analysis": [
+                "Масштабный анализ"
+            ],
+            "Scale factor = scale first indicator": [
+                "Масштабный коэффициент = первый индикатор масштаба"
+            ],
+            "Scale Reliability Statistics": [
+                "Статистики надежности весов"
+            ],
+            "Scale Statistics": [
+                "Статистики масштаба"
+            ],
+            "Scheffe": [
+                "Шеффе"
+            ],
+            "Score Component": [
+                "Компонент оценки"
+            ],
+            "Score Factor": [
+                "Фактор оценки"
+            ],
+            "Score for component": [
+                "Оценка для компонента"
+            ],
+            "Score for factor {i}. Estimated using the '{fsMethod}' method.": [
+                "Оценка фактора {i}. Оценено с использованием метода {fsMethod}."
+            ],
+            "Scree Plot": [
+                "График каменистой осыпи"
+            ],
+            "Scree plot": [
+                "График каменистой осыпи"
+            ],
+            "SD": [
+                "SD"
+            ],
+            "SE": [
+                "SE"
+            ],
+            "SE difference": [
+                "Разница стандартных ошибок (SE)"
+            ],
+            "Semipartial": [
+                "Получастный"
+            ],
+            "Semipartial Correlation": [
+                "Получастная корреляция"
+            ],
+            "Sensitivity": [
+                "Чувствительность"
+            ],
+            "septic": [
+                "седьмой степени"
+            ],
+            "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
                 "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ПОРЯДКОВАЯ ЛОГИСТИЧЕСКАЯ РЕГРЕССИЯ\n#\n#  Меры соответствия модели\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  СПЕЦИФИЧЕСКИЕ РЕЗУЛЬТАТЫ МОДЕЛИ\n#\n#  МОДЕЛЬ 1\n#\n#  Коэффициенты модели\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#"
             ],
             "sextic": [
@@ -2775,10 +3545,10 @@
                 "Дисперсионный анализ (ANOVA) используется для изучения взаимосвязи\nмежду непрерывной зависимой переменной и одной или несколькими категориальными\nобъясняющими переменными.\n\nANOVA предполагает, что остатки распределены нормально, и что\nвариации всех групп равны. Если вы не хотите считать, что\nвариации равны, то вместо этого можно использовать тест Уэлча.\n(Однако тест Уэлча не поддерживает более одного объясняющего фактора).\nфакторов). В качестве альтернативы, если нет желания предполагать, что данные\nнормально распределены, можно использовать непараметрический подход (например, Kruskal-Wallis)."
             ],
             "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.": [
-                "Дисперсионный анализ (ANOVA) используется для изучения взаимосвязи\nмежду непрерывной зависимой переменной и одной или несколькими категориальными\nобъясняющими переменными. Этот 'односторонний ANOVA' является упрощенной версией\nнормального ANOVA, допускающего только один объясняющий фактор, однако\nтакже обеспечивает Welch's ANOVA. Преимущество ANOVA Уэлча состоит в том, что\nне нужно предполагать, что дисперсии всех групп равны."
+                "Дисперсионный анализ (ANOVA) используется для изучения взаимосвязи\nмежду непрерывной зависимой переменной и одной или несколькими категориальными\nобъясняющими переменными. Этот 'однофакторный ANOVA' является упрощенной версией\nнормального ANOVA, допускающего только один объясняющий фактор, однако\nтакже обеспечивает Welch's ANOVA. Преимущество ANOVA Уэлча состоит в том, что\nне нужно предполагать, что дисперсии всех групп равны."
             ],
             "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.\n\nFor convenience, this method allows specifying multiple dependent\nvariables, resulting in multiple independent tests.\n\nNote that the Welch's ANOVA is the same procedure as the Welch's\nindependent samples t-test.": [
-                "Дисперсионный анализ (ANOVA) используется для изучения взаимосвязи\nмежду непрерывной зависимой переменной и одной или несколькими категориальными\nобъясняющими переменными. Этот 'односторонний ANOVA' является упрощенной версией\nнормального ANOVA, допускающего только один объясняющий фактор, однако\nтакже обеспечивает Welch's ANOVA. Преимущество ANOVA Уэлча состоит в том, что\nне нужно предполагать, что дисперсии всех групп равны.\n\nДля удобства этот метод позволяет указать несколько зависимых\nпеременных, что приводит к нескольким независимым тестам.\n\nОбратите внимание, что ANOVA Уэлча является такой же процедурой, что и\nt-тест для независимых выборок ."
+                "Дисперсионный анализ (ANOVA) используется для изучения взаимосвязи\nмежду непрерывной зависимой переменной и одной или несколькими категориальными\nобъясняющими переменными. Этот 'однофакторный ANOVA' является упрощенной версией\nнормального ANOVA, допускающего только один объясняющий фактор, однако\nтакже обеспечивает Welch's ANOVA. Преимущество ANOVA Уэлча состоит в том, что\nне нужно предполагать, что дисперсии всех групп равны.\n\nДля удобства этот метод позволяет указать несколько зависимых\nпеременных, что приводит к нескольким независимым тестам.\n\nОбратите внимание, что ANOVA Уэлча является такой же процедурой, что и\nt-тест для независимых выборок ."
             ],
             "the between subjects factors (optional).": [
                 "факторы между субъектами (необязательно)."
@@ -2791,6 +3561,9 @@
             ],
             "the categorical explanatory (or independent) variables.": [
                 "категориальные объясняющие (или независимые) переменные."
+            ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "Доверительный интервал среднего предполагает, что выборочные средние следуют t-распределению с N–1 степенями свободы"
             ],
             "the confidence interval width for the effect-sizes.": [
                 "ширина доверительного интервала для размеров эффекта."
@@ -2824,6 +3597,12 @@
             ],
             "the data as a data frame": [
                 "данные в формате фрейма"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "Набор данных содержит 0 строк (после удаления строк с отсутствующими значениями)"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "Набор данных содержит 0 строк (или все строки содержат отсутствующие значения)"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "Зависимая переменная '{}' имеет более двух уровней; биномиальная логистическая регрессия может быть выполнена только для зависимых переменных с двумя уровнями."
@@ -2868,7 +3647,7 @@
                 "объясняющая или независимая переменная. Для ANOVA будет категориальной."
             ],
             "the explanatory or independent variables. For ANOVA these will be categorical.": [
-                "\"объясняющие или независимые переменные. Для ANOVA они будут категориальными."
+                "объясняющие или независимые переменные. Для ANOVA они будут категориальными."
             ],
             "the fixed factors from `data`": [
                 "фиксированные факторы из `data`"
@@ -2905,6 +3684,9 @@
             ],
             "the post-hoc multiple comparisons corrections to use.": [
                 "апостериорные поправки множественных сравнений для использования."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                "априорная ширина для байесовских факторов t-критерия Стьюдента. Требуется значение от 0,5 до 2,0, по умолчанию 0,707."
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "априорная ширина для байесовских факторов t-критерия Стьюдента. Требуется значение от 0,5 до 2,0, по умолчанию 0,707."
@@ -2949,7 +3731,7 @@
                 "Парный выборочный t-тест Стьюдента (иногда называемый\nt-тест зависимых выборок) используется для проверки нулевой гипотезы о том, что\nразница между парами измерений равна нулю. Низкое значение p-value\nговорит о том, что нулевая гипотеза не верна, и что\nразница между парами измерений не равна нулю.\n\nВ t-тесте Стьюдента для парных выборок предполагается, что различия между парами измерений имеют нормальное распределение - в случае, если вы не желаете этого допускать\nвместо него можно использовать непараметрический критерий Wilcoxon signed-rank.\n(Однако, обратите внимание, что у метода Wilcoxon signed-rank немного другая\nнулевая гипотеза; что две группы измерений имеют одинаковое\nраспределению)."
             ],
             "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
-                "термы для предоставления предполагаемых предельных средств. Здесь вы можете указать несколько термов."
+                "термы для предоставления взвешенных предельных средних. Здесь вы можете указать несколько термов."
             ],
             "the test value to test against (typically zero).": [
                 "тестовое значение для проверки (обычно ноль)."
@@ -3019,6 +3801,9 @@
             ],
             "Thurstone": [
                 "Терстон"
+            ],
+            "Tjur's R²": [
+                "R² Тьюра"
             ],
             "TLI": [
                 "TLI"
@@ -3101,6 +3886,9 @@
             "value": [
                 "значение"
             ],
+            "values": [
+                "значения"
+            ],
             "Values are counts": [
                 "Значения и счетчики"
             ],
@@ -3158,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "взвешивать каждую ячейку одинаково. (Ячейки взвешиваются в соответствии с частотой ячеек по умолчанию.)"
             ],
+            "Weight Variable": [
+                "Переменная веса"
+            ],
             "Weighted by '{varName}'": [
                 "Взвешено по '{varName}'"
             ],
+            "Weights": [
+                "Веса"
+            ],
             "Weights (optional)": [
                 "Веса (необязательно)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                "Веса содержат отрицательные значения. Отрицательные значения весов не допускаются."
             ],
             "Welch's": [
                 "Уэлч"
@@ -3177,7 +3974,7 @@
                 "Уилкоксон ранговый тест знаков"
             ],
             "Wilcoxon W": [
-                "Вилкоксон W"
+                "Уилкоксон W"
             ],
             "Wilks' Lambda": [
                 "Лямбда Уилкса"
@@ -3261,7 +4058,7 @@
                 "ω²"
             ],
             "specific factor\u0004Factor": [
-                "Фактор"
+                "Факторный"
             ]
         }
     },

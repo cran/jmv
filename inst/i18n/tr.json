@@ -14,19 +14,19 @@
                 "‘{col}’ sonsuz değerler içeriyor"
             ],
             "'{col}' contains missing values": [
-                "‘{col}’ eksik veri içeriyor"
+                "‘{col}’ eksik veri içermekte"
             ],
             "'{col}' contains only missing values": [
                 "‘{col}’ sadece eksik verilerden oluşuyor"
             ],
             "'{col}' contains only one unique value": [
-                "‘{col}’ bir tek değerden oluşuyor"
+                "‘{col}’ sadece bir tek değerden oluşuyor"
             ],
             "'{method}' extraction method was used in combination with a '{rotation}' rotation": [
-                "‘{method}’ extraction method was used in combination with a ‘{rotation}’ rotation"
+                "‘{method}’ çıkarma yöntemi ‘{rotation}’ rotasyonu ile birlikte kullanıldı"
             ],
             "'{rotation}' rotation was used": [
-                "‘{rotation}’ rotation was used"
+                "‘{rotation}’ rotasyonu kullanıldı"
             ],
             "'{var}' contains negative values. Negative weights are not permitted.": [
                 "'{var}' negatif değerler içermektedir. Negatif ağırlık kullanılamıyor."
@@ -65,13 +65,19 @@
                 "{list}, ve {lastItem}"
             ],
             "{n} pair(s) of values were tied": [
-                "{n} değer çifti bağlandı"
+                "{n} değer çifti birbirine eşit"
             ],
             "{type} score based on the variables {vars}": [
                 "{vars} değişkenlerine göre {type} skoru"
             ],
             "{varName} (reversed)": [
-                "{varName} (reversed)"
+                "{varName} (ters çevrildi)"
+            ],
+            "{varType} of binomial logistic regression model{modelNo}": [
+                "Binom lojistik regresyon modelinin {varType} değeri {modelNo}"
+            ],
+            "{varType} of linear regression model{modelNo}": [
+                "Doğrusal(lineer) regresyon modelinin {varType} değeri {modelNo}"
             ],
             "* p < .05, ** p < .01, *** p < .001, one-tailed": [
                 "* p < .05, ** p < .01, *** p < .001, tek yönlü"
@@ -104,22 +110,22 @@
                 "`'2'` or `'3'`(varsayılan), kullanılacak karelerin toplamı"
             ],
             "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; group 1 different to group 2, group 1 greater than group 2, and group 2 greater than group 1 respectively": [
-                ""
+                "`'different'` (varsayılan), `'oneGreater'` veya `'twoGreater'` , alternatif hipotez; sırasıyla grup 1 grup 2'den farklı, grup 1 grup 2'den büyük ve grup 2 grup 1'den büyük"
             ],
             "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; measure 1 different to measure 2, measure 1 greater than measure 2, and measure 2 greater than measure 1 respectively": [
-                ""
+                "`'different'` (varsayılan), `'oneGreater'` ya da `'twoGreater'`, alternatif hipotez; sırasıyla: ölçüm 1 ölçüm 2'den farklıdır, ölçüm 1 ölçüm 2'den büyüktür, ve ölçüm 2 ölçüm 1'den büyüktür"
             ],
             "`'dt'` (default), `'gt'` or `'lt'`, the alternative hypothesis; different to `testValue`, greater than `testValue`, and less than `testValue` respectively": [
-                ""
+                "`'dt'` (varsayılan), `'gt'` ya da `'lt'`, alternatif hipotez; sırasıyla: `testValue` değerinden farklıdır, `testValue` değerinden büyüktür, ve `testValue` değerinden küçüktür"
             ],
             "`'facVar'` or `'facInd'`, how to contrain the model; `'facVar'` fixes the factor variances to one, `'facInd'` fixes each factor to the scale of its first indicator.": [
-                ""
+                "`'facVar'` ya da `'facInd'`, modelin nasıl tanımlandığıdır; `'facVar'` faktör varyanslarını 1'e sabitler, `'facInd'` her bir faktörü ona yük veren ilk maddenin ölçeğine sabitler."
             ],
             "`'listwise'` or `'fiml'`, how to handle missing values; `'listwise'` excludes a row from all analyses if one of its entries is missing, `'fiml'` uses a full information maximum likelihood method to estimate the model.": [
-                ""
+                "`'listwise'` ya da `'fiml'`, eksik verilere ne yapılacağıdır; `'listwise'` eğer bir satır eksik veri barındırıyorsa o satırdaki veriler hiçbir analize dahil edilmez , `'fiml'`model tahminlemesi için tam bilgi (full information) en çok olabilirlik yöntemini kullanır."
             ],
             "`'means'` (default) or `'medians'`, the error bars to use in the plot": [
-                ""
+                "\"Ortalamalar\" (varsayılan) veya \"ortancalar\", grafikte kullanılacak hata çubukları"
             ],
             "`'minres'` (default), `'ml'`, or `'pa'` use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal axis' as the factor extraction method": [
                 ""
@@ -128,52 +134,52 @@
                 ""
             ],
             "`'none'`, `'gamesHowell'` or `'tukey'`, which post-hoc tests to provide; `'none'` shows no post-hoc tests, `'gamesHowell'` shows Games-Howell post-hoc tests where no equivalence of variances is assumed, and `'tukey'` shows Tukey post-hoc tests where equivalence of variances is assumed": [
-                ""
+                "`'none'`, `'gamesHowell'` or `'tukey'`, which post-hoc tests to provide; `'none'` post-hoc testleri göstermez, `'gamesHowell'` varyansların denk olmadığını varsayan Games-Howell post-hoc testlerini gösterir, `'tukey'` varyansların denk olduğunu varsayan Tukey post-hoc testlerini gösterir"
             ],
             "`'none'`, `'varimax'` (default), `'quartimax'`, `'promax'`, `'oblimin'`, or `'simplimax'`, the rotation to use in estimation": [
-                ""
+                "`'none'`, `'varimax'` (varsayılan), `'quartimax'`, `'promax'`, `'oblimin'`, ya da `'simplimax'`, tahminde kullanılacak rotasyon"
             ],
             "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (default), or `'simplimax'`, the rotation to use in estimation": [
-                ""
+                "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (varsayılan), ya da `'simplimax'`, tahminde kullanılacak rotasyon"
             ],
             "`'notequal'` (default), `'greater'` or `'less'`, the alternative hypothesis": [
-                ""
+                "`'notequal'` (varsayılan), `'greater'` ya da `'less'`, alternatif hipotez"
             ],
             "`'parallel'` (default), `'eigen'` or `'fixed'`, the way to determine the number of factors": [
-                ""
+                "`'parallel'` (varsayılan), `'eigen'` ya da `'fixed'`, faktörlerin sayısını belirleme yöntemi"
             ],
             "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing": [
-                ""
+                "`'perAnalysis'` ya da `'listwise'`, eksik veriler nasıl yönetilsin?; `'perAnalysis'` eksik veri sadece analiz edilen değişkende hariç tutulur, `'listwise'` eksik veri olan satır tüm analizlerden hariç tutulur"
             ],
             "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing.": [
-                ""
+                "`'perAnalysis'` ya da `'listwise'`, eksik veriler nasıl yönetilsin?; `'perAnalysis'` eksik veri sadece analiz edilen değişkende hariç tutulur, `'listwise'` eksik veri olan satır tüm analizlerden hariç tutulur."
             ],
             "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
                 ""
             ],
             "`'rows'` or `'columns'` (default), display the variables across the rows or across the columns (default)": [
-                ""
+                "`'rows'` veya `'columns'`(varsayılan), değişkenleri satırlarda veya sütunlarda (varsayılan) görüntüleyin"
             ],
             "`'Thurstone'` (default), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, or `'Harman'` use respectively 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', or 'Harman' method for estimating factor scores": [
                 ""
             ],
             "`ANCOVA - ${dep}`": [
-                ""
+                "`ANCOVA - ${dep}`"
             ],
             "`ANOVA - ${dep}`": [
-                ""
+                "`ANOVA - ${dep}`"
             ],
             "`columns` or `rows` (default), compare columns/rows in difference of proportions or relative risks (2x2 tables)": [
-                ""
+                "'sütunlar' veya 'satırlar' (varsayılan), sütunları/satırları oran veya göreli risk farkı bakımından karşılaştırın (2x2 tablolar)"
             ],
             "`Model Coefficients - ${ dep }`": [
-                ""
+                "`Model Katsayıları - ${ dep }`"
             ],
             "`Model Coefficients - ${dep}`": [
-                ""
+                "'Model Katsayıları - ${dep}'"
             ],
             "`Proportions - ${var}`": [
-                ""
+                "'Oranlar - ${var}'"
             ],
             "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
                 ""
@@ -251,13 +257,13 @@
                 ""
             ],
             "`TRUE` (default) or `FALSE`, weigh each cell equally or weigh them according to the cell frequency": [
-                ""
+                "`TRUE ` (varsayılan) or `FALSE `, her bir hücreyi eşit ya da hücre frekansına göre ağırlıklandır"
             ],
             "`TRUE` or `FALSE` (default), add counts to the  bar plots": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), add mean to box plot": [
-                ""
+                "`TRUE ` ya da `FALSE ` (varsayılan), kutu grafiğine ortalama ekle"
             ],
             "`TRUE` or `FALSE` (default), flag significant correlations": [
                 ""
@@ -482,6 +488,9 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
@@ -817,6 +826,9 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 ""
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 ""
             ],
@@ -1085,7 +1097,7 @@
                 ""
             ],
             "Adjusted R²": [
-                ""
+                "Düzeltilmiş R²"
             ],
             "AIC": [
                 ""
@@ -1094,12 +1106,15 @@
                 ""
             ],
             "Alternative hypothesis": [
-                ""
+                "Alternatif hipotez"
             ],
             "an array of contrasts tables": [
                 ""
             ],
             "an array of descriptive plots": [
+                ""
+            ],
+            "an array of extreme values tables": [
                 ""
             ],
             "an array of frequency tables": [
@@ -1142,6 +1157,9 @@
                 ""
             ],
             "an integer (default: 4) specifying the number of equal groups": [
+                ""
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
                 ""
             ],
             "An uninspiring ANOVA data set": [
@@ -1256,7 +1274,7 @@
                 ""
             ],
             "Binomial Logistic Regression": [
-                ""
+                "Binomial Lojistik Regresyon"
             ],
             "Binomial Test": [
                 ""
@@ -1313,10 +1331,10 @@
                 ""
             ],
             "CI Lower": [
-                ""
+                "CI Alt"
             ],
             "CI Upper": [
-                ""
+                "CI Üst"
             ],
             "Classification Table": [
                 ""
@@ -1328,7 +1346,7 @@
                 ""
             ],
             "Cohen's d": [
-                ""
+                "Cohen d"
             ],
             "Collinearity Statistics": [
                 ""
@@ -1337,9 +1355,6 @@
                 ""
             ],
             "Column": [
-                ""
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
                 ""
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
@@ -1361,64 +1376,64 @@
                 ""
             ],
             "Compare": [
-                ""
+                "Karşılaştır"
             ],
             "Comparison": [
-                ""
+                "Karşılaştırma"
             ],
             "Comparisons are based on estimated marginal means": [
-                ""
+                "Karşılaştırmalar hesaplanan marjinal ortalamalara dayanmaktadır"
             ],
             "Component": [
-                ""
+                "Bileşen"
             ],
             "Component correlations": [
-                ""
+                "Bileşen korelasyonları"
             ],
             "Component Loadings": [
-                ""
+                "Bileşen Yükleri"
             ],
             "Component scores": [
-                ""
+                "Bileşen skorları"
             ],
             "Component Statistics": [
-                ""
+                "Bileşen İstatistikleri"
             ],
             "Component summary": [
-                ""
+                "Bileşen özeti"
             ],
             "component(s)": [
-                ""
+                "Bileşenler"
             ],
             "Components": [
-                ""
+                "Bileşenler"
             ],
             "components": [
-                ""
+                "bileşenler"
             ],
             "Confidence Interval": [
-                ""
+                "Güven Aralıkları"
             ],
             "Confidence interval": [
-                ""
+                "Güven aralıkları"
             ],
             "Confidence interval for Mean": [
-                ""
+                "Ortalama için güven aralığı"
             ],
             "Confidence interval width": [
-                ""
+                "Güven aralığı genişliği"
             ],
             "Confidence Intervals": [
-                ""
+                "Güven Aralıkları"
             ],
             "Confidence intervals": [
-                ""
+                "Güven aralıkları"
             ],
             "Confidence level": [
-                ""
+                "Güven düzeyi"
             ],
             "Confirmatory Factor Analysis": [
-                ""
+                "Doğrulayıcı Faktör Analizi"
             ],
             "Constraints": [
                 ""
@@ -1436,13 +1451,13 @@
                 ""
             ],
             "Control Variables": [
-                ""
+                "Kontrol Değişkenleri"
             ],
             "Control variables": [
-                ""
+                "Kontrol değişkenleri"
             ],
             "controlling for {items}": [
-                ""
+                "{items} için kontrol edildi"
             ],
             "Cook's Distance": [
                 ""
@@ -1454,7 +1469,7 @@
                 ""
             ],
             "Corrections": [
-                ""
+                "Düzeltmeler"
             ],
             "Correlated": [
                 ""
@@ -1484,10 +1499,10 @@
                 ""
             ],
             "Correlation Matrix": [
-                ""
+                "Korelasyon Matrisi"
             ],
             "Correlation matrix": [
-                ""
+                "Korelasyon matrisi"
             ],
             "Correlation Type": [
                 ""
@@ -1499,10 +1514,10 @@
                 ""
             ],
             "Counts": [
-                ""
+                "Sayı"
             ],
             "Counts (optional)": [
-                ""
+                "Sayı (isteğe bağlı)"
             ],
             "Counts may not be infinite": [
                 ""
@@ -1529,7 +1544,7 @@
                 ""
             ],
             "Cronbach's α": [
-                ""
+                "Cronbach α"
             ],
             "Cronbach's α (if item is dropped)": [
                 ""
@@ -1571,6 +1586,9 @@
                 ""
             ],
             "Data Reduction": [
+                ""
+            ],
+            "Data set is currently unweighted": [
                 ""
             ],
             "Data Summary": [
@@ -1649,28 +1667,40 @@
                 ""
             ],
             "Dependent": [
-                ""
+                "Bağımlı"
             ],
             "Dependent Variable": [
+                "Bağımlı değişken"
+            ],
+            "Dependent variable '{dep}' contains infinite values": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' must be continuous": [
                 ""
             ],
             "Dependent Variable Label": [
-                ""
-            ],
-            "Dependent variable must be numeric": [
-                ""
+                "Bağımlı Değişken Etiketi"
             ],
             "Dependent Variables": [
+                "Bağımlı Değişkenler"
+            ],
+            "Dependent variables are very highly correlated": [
                 ""
             ],
             "deprecated": [
                 ""
             ],
             "Descriptive Plot": [
-                ""
+                "Betimleyici Grafik"
             ],
             "Descriptive plot": [
-                ""
+                "Betimleyici grafik"
             ],
             "Descriptives": [
                 ""
@@ -1691,9 +1721,6 @@
                 ""
             ],
             "Descriptives table": [
-                ""
-            ],
-            "dev": [
                 ""
             ],
             "Deviance": [
@@ -1762,6 +1789,9 @@
             "Eigenvalues greater than": [
                 ""
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                ""
+            ],
             "Equal cell weights": [
                 ""
             ],
@@ -1820,12 +1850,21 @@
                 ""
             ],
             "Exploration": [
-                ""
+                "Keşfet"
             ],
             "Exploratory Factor Analysis": [
                 ""
             ],
             "Extraction": [
+                "Çıkarma"
+            ],
+            "Extreme values": [
+                ""
+            ],
+            "Extreme Values": [
+                ""
+            ],
+            "Extreme values of $key": [
                 ""
             ],
             "F": [
@@ -1838,15 +1877,21 @@
                 ""
             ],
             "Factor": [
+                "Faktör"
+            ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
                 ""
             ],
             "Factor '{factor}' needs to have at least 2 levels": [
+                "Faktör '{factor}' en az iki düzeye sahip olmalı"
+            ],
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
                 ""
             ],
-            "Factor '{factorName}' contains no data": [
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
                 ""
             ],
-            "Factor '{factorName}' contains only a single level": [
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
                 ""
             ],
             "Factor {0}": [
@@ -1880,7 +1925,7 @@
                 ""
             ],
             "Factor scores": [
-                ""
+                "Faktör skorları"
             ],
             "Factor Statistics": [
                 ""
@@ -1973,7 +2018,7 @@
                 ""
             ],
             "Group": [
-                ""
+                "Grup"
             ],
             "Group 1": [
                 ""
@@ -2029,6 +2074,9 @@
             "Helmert": [
                 ""
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 ""
             ],
@@ -2062,7 +2110,7 @@
             "Hypothesis": [
                 ""
             ],
-            "if item dropped": [
+            "If item dropped": [
                 ""
             ],
             "in development": [
@@ -2096,7 +2144,7 @@
                 ""
             ],
             "Interval": [
-                ""
+                "Aralık"
             ],
             "IQR": [
                 ""
@@ -2128,9 +2176,6 @@
             "Item-rest correlation": [
                 ""
             ],
-            "item-rest correlation": [
-                ""
-            ],
             "Items": [
                 ""
             ],
@@ -2141,7 +2186,7 @@
                 ""
             ],
             "Kendall's Tau B": [
-                ""
+                "Kendall Tau B"
             ],
             "Kendall's Tau-B": [
                 ""
@@ -2177,9 +2222,6 @@
                 ""
             ],
             "Level 2": [
-                ""
-            ],
-            "Levels": [
                 ""
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
@@ -2278,9 +2320,6 @@
             "Mean": [
                 ""
             ],
-            "mean": [
-                ""
-            ],
             "Mean ({ciWidth}% CI)": [
                 ""
             ],
@@ -2348,22 +2387,22 @@
                 ""
             ],
             "Missing Values": [
-                ""
+                "Kayıp değerler"
             ],
             "Missing values": [
-                ""
+                "Eksik değer"
             ],
             "Missing values exclusion method": [
                 ""
             ],
             "Missing Values Method": [
-                ""
+                "Kayıp Değerler Yöntemi"
             ],
             "Mode": [
-                ""
+                "Mod"
             ],
             "Model": [
-                ""
+                "Model"
             ],
             "Model Builder": [
                 ""
@@ -2396,7 +2435,7 @@
                 ""
             ],
             "Model thresholds": [
-                ""
+                "Model eşikleri"
             ],
             "Modification Indices": [
                 ""
@@ -2404,7 +2443,13 @@
             "Modification indices": [
                 ""
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
+                "Birden çok mod bulunmaktadır, sadece ilki gösterilmiştir"
+            ],
+            "Most extreme": [
                 ""
             ],
             "MSA": [
@@ -2438,19 +2483,19 @@
                 ""
             ],
             "No correction": [
-                ""
+                "Düzeltme yok"
             ],
             "No factors defined. Box's M test is only relevant when model contains factors.": [
                 ""
             ],
             "Nominal": [
-                ""
+                "Nominal (adlandıma)"
             ],
             "Non-Parametric": [
                 ""
             ],
             "None": [
-                ""
+                "Hiçbiri"
             ],
             "none": [
                 ""
@@ -2467,16 +2512,31 @@
             "Normality Test (Shapiro-Wilk)": [
                 ""
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                ""
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                ""
+            ],
             "Number of Components": [
                 ""
             ],
             "Number of components": [
                 ""
             ],
+            "Number of extreme values": [
+                ""
+            ],
             "Number of Factors": [
                 ""
             ],
             "Number of factors": [
+                ""
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
                 ""
             ],
             "Oblimin": [
@@ -2585,7 +2645,7 @@
                 ""
             ],
             "Ordinal": [
-                ""
+                "Sıralı"
             ],
             "Ordinal Logistic Regression": [
                 ""
@@ -2593,8 +2653,11 @@
             "Ordinal Outcomes": [
                 ""
             ],
-            "Output": [
+            "Outliers": [
                 ""
+            ],
+            "Output": [
+                "Çıktı"
             ],
             "Overall": [
                 ""
@@ -2672,6 +2735,9 @@
                 ""
             ],
             "Pearson": [
+                ""
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
                 ""
             ],
             "Pearson's r": [
@@ -2759,7 +2825,7 @@
                 ""
             ],
             "Plots": [
-                ""
+                "Şekiller"
             ],
             "Polynomial": [
                 ""
@@ -3025,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 ""
             ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
             "Range": [
                 ""
             ],
@@ -3109,7 +3178,7 @@
             "Residual plots": [
                 ""
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
                 ""
             ],
             "Residuals": [
@@ -3128,7 +3197,7 @@
                 ""
             ],
             "Results": [
-                ""
+                "Sonuçlar"
             ],
             "reverse scaled item": [
                 ""
@@ -3166,11 +3235,14 @@
             "Row": [
                 ""
             ],
+            "Row number": [
+                ""
+            ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 ""
             ],
             "Rows": [
-                ""
+                "Satırlar"
             ],
             "rows": [
                 ""
@@ -3188,7 +3260,7 @@
                 ""
             ],
             "Save": [
-                ""
+                "Kaydet"
             ],
             "scale": [
                 ""
@@ -3227,9 +3299,6 @@
                 ""
             ],
             "SD": [
-                ""
-            ],
-            "sd": [
                 ""
             ],
             "SE": [
@@ -3347,7 +3416,7 @@
                 ""
             ],
             "Standard error": [
-                ""
+                "Standart hata"
             ],
             "Standardized Estimate": [
                 ""
@@ -3493,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 ""
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                ""
+            ],
             "the confidence interval width for the effect-sizes.": [
                 ""
             ],
@@ -3524,6 +3596,12 @@
                 ""
             ],
             "the data as a data frame": [
+                "veri çerçevesi (data frame) olarak veri"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                ""
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
                 ""
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
@@ -3605,6 +3683,9 @@
                 ""
             ],
             "the post-hoc multiple comparisons corrections to use.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
                 ""
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
@@ -3721,6 +3802,9 @@
             "Thurstone": [
                 ""
             ],
+            "Tjur's R²": [
+                ""
+            ],
             "TLI": [
                 ""
             ],
@@ -3791,7 +3875,7 @@
                 ""
             ],
             "Upper": [
-                ""
+                "Üst"
             ],
             "upper bound": [
                 ""
@@ -3800,6 +3884,9 @@
                 ""
             ],
             "value": [
+                ""
+            ],
+            "values": [
                 ""
             ],
             "Values are counts": [
@@ -3821,7 +3908,7 @@
                 ""
             ],
             "Variables": [
-                ""
+                "Değişkenler"
             ],
             "Variables across columns": [
                 ""
@@ -3859,10 +3946,19 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 ""
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 ""
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
+                ""
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
                 ""
             ],
             "Welch's": [
@@ -3892,14 +3988,14 @@
             "Within Subjects Effects": [
                 ""
             ],
-            "X-Axis": [
-                ""
-            ],
             "X-axis": [
                 ""
             ],
+            "X-Axis": [
+                "X-Ekseni"
+            ],
             "Y-Axis": [
-                ""
+                "Y ekseni"
             ],
             "Y-axis": [
                 ""
@@ -3959,7 +4055,7 @@
                 ""
             ],
             "ω²": [
-                ""
+                "ω²"
             ],
             "specific factor\u0004Factor": [
                 ""

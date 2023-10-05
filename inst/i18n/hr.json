@@ -11,124 +11,124 @@
                 "lang": "hr"
             },
             "'{col}' contains infinite values": [
-                ""
+                "'{col}' sadrži beskonačne vrijednosti"
             ],
             "'{col}' contains missing values": [
-                ""
+                "'{col}' sadrži vrijednosti koje nedostaju"
             ],
             "'{col}' contains only missing values": [
-                ""
+                "'{col}' sadrži samo vrijednosti koje nedostaju"
             ],
             "'{col}' contains only one unique value": [
-                ""
+                "'{col}' sadrži samo jednu jedinstvenu vrijednost"
             ],
             "'{method}' extraction method was used in combination with a '{rotation}' rotation": [
-                ""
+                "'{method}' ekstrakcijska metoda korištena je u kombinaciji s '{rotation}' rotacijom"
             ],
             "'{rotation}' rotation was used": [
-                ""
+                "'{rotation}' rotacija je korištena"
             ],
             "'{var}' contains negative values. Negative weights are not permitted.": [
-                ""
+                "'{var} sadrži negativne vrijednosti. Negativni ponderi nisu dopušteni."
             ],
             "{} - Kendall's Tau B": [
-                ""
+                "{} - Kendallov Tau B"
             ],
             "{} - Pearson's r": [
-                ""
+                "{} - Pearsonov r"
             ],
             "{} - Spearman's rho": [
-                ""
+                "{} - Spearmanov ro"
             ],
             "{ciWidth}% CI Lower": [
-                ""
+                "{ciWidth}% CI niži"
             ],
             "{ciWidth}% CI mean {title}": [
-                ""
+                "{ciWidth}% CI srednji {title}"
             ],
             "{ciWidth}% CI Upper": [
-                ""
+                "{ciWidth}% CI gornji"
             ],
             "{ciWidth}% Confidence Interval": [
-                ""
+                "{ciWidth}% interval pouzdanosti"
             ],
             "{ciWidth}% Confidence Intervals": [
-                ""
+                "{ciWidth}% intervali pouzdanosti"
             ],
             "{item1} and {item2}": [
-                ""
+                "{item1} i {item2}"
             ],
             "{list}, {nextItem}": [
-                ""
+                "{list}, {nextItem}"
             ],
             "{list}, and {lastItem}": [
-                ""
+                "{list}, i {lastItem}"
             ],
             "{n} pair(s) of values were tied": [
-                ""
+                "{n} par(ovi) vrijednosti su povezani"
             ],
             "{type} score based on the variables {vars}": [
-                ""
+                "{type} rezultat na temelju varijabli {vars}"
             ],
             "{varName} (reversed)": [
-                ""
+                "{varName} (obrnuto)"
             ],
             "{varType} of binomial logistic regression model{modelNo}": [
-                ""
+                "{varType} modela binomijalne logističke regresije{modelNo}"
             ],
             "{varType} of linear regression model{modelNo}": [
-                ""
+                "{varType} modela linearne regresije{modelNo}"
             ],
             "* p < .05, ** p < .01, *** p < .001, one-tailed": [
-                ""
+                "* p < .05, ** p < .01, *** p < .001, jednostrani"
             ],
             "%": [
-                ""
+                "%"
             ],
             "% Correct": [
-                ""
+                "% točno"
             ],
             "% of Total": [
-                ""
+                "% od ukupnog"
             ],
             "% of total": [
-                ""
+                "% od ukupnog"
             ],
             "% of Variance": [
-                ""
+                "% varijance"
             ],
             "% within column": [
-                ""
+                "% unutar stupca"
             ],
             "% within row": [
-                ""
+                "% unutar reda"
             ],
             "`'1'`, `'2'` or `'3'` (default), the sum of squares to use": [
-                ""
+                "`'1'`, `'2'` or `'3'` (default), zbroj kvadrata za korištenje"
             ],
             "`'2'` or `'3'` (default), the sum of squares to use": [
-                ""
+                "`'2'` or `'3'` (default), zbroj kvadrata za korištenje"
             ],
             "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; group 1 different to group 2, group 1 greater than group 2, and group 2 greater than group 1 respectively": [
-                ""
+                "`'different'` (default), `'oneGreater'` or `'twoGreater'`, alternativna hipoteza; grupa 1 različita od grupe 2, grupa 1 veća od grupe 2 ili grupa 2 veća od grupe 1"
             ],
             "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; measure 1 different to measure 2, measure 1 greater than measure 2, and measure 2 greater than measure 1 respectively": [
-                ""
+                "`'different'` (default), `'oneGreater'` or `'twoGreater'`, alternativna hipoteza; mjera 2 različita od mjere 2, mjera 1 veća od mjere 2 ili mjera 2 veća od mjere 1"
             ],
             "`'dt'` (default), `'gt'` or `'lt'`, the alternative hypothesis; different to `testValue`, greater than `testValue`, and less than `testValue` respectively": [
-                ""
+                "`'dt'` (default), `'gt'` or `'lt'`, alternativna hipoteza; različita od `testValue`, veća od `testValue`ili manja od `testValue`"
             ],
             "`'facVar'` or `'facInd'`, how to contrain the model; `'facVar'` fixes the factor variances to one, `'facInd'` fixes each factor to the scale of its first indicator.": [
-                ""
+                "`'facVar'` or `'facInd'`, kako ograničiti model, `'facVar'` fiksira varijance faktora na jedan, `'facInd'` fiksira svaki faktor na skalu njegovog prvog indikatora."
             ],
             "`'listwise'` or `'fiml'`, how to handle missing values; `'listwise'` excludes a row from all analyses if one of its entries is missing, `'fiml'` uses a full information maximum likelihood method to estimate the model.": [
-                ""
+                "`'listwise'` or `'fiml'`, kako rukovati vrijednostima koje nedostaju, `'listwise'` isključuje red iz svih analiza ako mu nedostaje jedan od unosa, `'fiml'` koristi punu informacijsku metodu najveće vjerodostojnosti da procijeni model."
             ],
             "`'means'` (default) or `'medians'`, the error bars to use in the plot": [
-                ""
+                "`'means'` (default) or `'medians'`, stupci pogreške za korištenje na grafu"
             ],
             "`'minres'` (default), `'ml'`, or `'pa'` use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal axis' as the factor extraction method": [
-                ""
+                "`'minres'` (default), `'ml'` ili `'pa'` svaki koriste \"najmanju razliku\", \"najveću vjerodostojnost\" ili \"glavnu os\" kao metodu ekstrakcije faktora"
             ],
             "`'none'`, `'ci'` (default), or `'se'`. Use no error bars, use confidence intervals, or use standard errors on the marginal mean plots, respectively": [
                 ""
@@ -490,6 +490,9 @@
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 ""
             ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                ""
+            ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 ""
             ],
@@ -823,6 +826,9 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 ""
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 ""
             ],
@@ -1108,6 +1114,9 @@
             "an array of descriptive plots": [
                 ""
             ],
+            "an array of extreme values tables": [
+                ""
+            ],
             "an array of frequency tables": [
                 ""
             ],
@@ -1150,6 +1159,9 @@
             "an integer (default: 4) specifying the number of equal groups": [
                 ""
             ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                ""
+            ],
             "An uninspiring ANOVA data set": [
                 ""
             ],
@@ -1160,7 +1172,7 @@
                 ""
             ],
             "Anderson & Rubin": [
-                ""
+                "Anderson & Rubin"
             ],
             "Anderson's Iris Data": [
                 ""
@@ -1205,247 +1217,244 @@
                 ""
             ],
             "Bar plot": [
-                ""
+                "Stupčani grafikon"
             ],
             "Bar Plots": [
-                ""
+                "Stupčani grafikoni"
             ],
             "Bar Type": [
-                ""
+                "Vrsta stupca"
             ],
             "Bartlett": [
-                ""
+                "Barlett"
             ],
             "Bartlett's Test of Sphericity": [
-                ""
+                "Barlettov test sferičnosti"
             ],
             "Bartlett's test of sphericity": [
-                ""
+                "Barlettov test sferičnosti"
             ],
             "Based on eigenvalue": [
-                ""
+                "Zasnovano na svojstvenoj vrijednosti"
             ],
             "Based on parallel analysis": [
-                ""
+                "Zasnovano na paralelnoj analizi"
             ],
             "Bayes factor": [
-                ""
+                "Bayesov faktor"
             ],
             "Bayes factor₁₀": [
-                ""
+                "Bayesov faktor₁₀"
             ],
             "Bayesian Statistics": [
-                ""
+                "Bayesova statistika"
             ],
             "beta 'a' parameter": [
-                ""
+                "beta 'a' parametar"
             ],
             "beta 'b' parameter": [
-                ""
+                "beta 'b' parametar"
             ],
             "Between Subject Factors": [
                 ""
             ],
             "Between Subjects Components": [
-                ""
+                "Između komponenata subjekata"
             ],
             "Between Subjects Effects": [
-                ""
+                "Između učinaka subjekata"
             ],
             "BIC": [
-                ""
+                "BIC"
             ],
             "Big 5 (Dolan, Oort, Stoel & Wicherts, 2009)": [
-                ""
+                "Velikih 5 (Dolan, Oort, Stoel & Wicherts, 2009)"
             ],
             "Binomial": [
-                ""
+                "Binomna"
             ],
             "Binomial Logistic Regression": [
-                ""
+                "Binomna logistička regresija"
             ],
             "Binomial Test": [
-                ""
+                "Binomni test"
             ],
             "Binomial test": [
-                ""
+                "Binomni test"
             ],
             "Block {0}": [
-                ""
+                "Blok (0)"
             ],
             "Block 1": [
-                ""
+                "Blok 1"
             ],
             "Blocks": [
-                ""
+                "Blokovi"
             ],
             "Bonferroni": [
-                ""
+                "Bonferroni"
             ],
             "Box plot": [
-                ""
+                "Grafikon okvira s ručicama"
             ],
             "Box Plots": [
-                ""
+                "Grafikoni okvira s ručicama"
             ],
             "Box-Tidwell test": [
-                ""
+                "Box-Tidwell test"
             ],
             "Box-Tidwell Test for Linearity of the Logit": [
                 ""
             ],
             "Box's Homogeneity of Covariance Matrices Test": [
-                ""
+                "Boxov test homogenosti kovarijance matrica"
             ],
             "Box's M test": [
-                ""
+                "Boxov M test"
             ],
             "Box's M test for homogeneity of covariance matrices": [
-                ""
+                "Boxov M test homogenosti kovarijance matrica"
             ],
             "Bugs (Ryan, Wilde & Crist, 2013)": [
-                ""
+                "Greške (Ryan, Wilde & Crist, 2013)"
             ],
             "Cells": [
-                ""
+                "Čelije"
             ],
             "Central Tendency": [
-                ""
+                "Središnja tendencija"
             ],
             "CFI": [
-                ""
+                "CFI"
             ],
             "Chi-Square Quantiles": [
-                ""
+                "Hi-kvadrat kvantili"
             ],
             "CI Lower": [
-                ""
+                "CI niži"
             ],
             "CI Upper": [
-                ""
+                "CI viši"
             ],
             "Classification Table": [
-                ""
+                "Tablica klasifikacija"
             ],
             "Classification table": [
-                ""
+                "Tablica klasifikacija"
             ],
             "Classification Table – {dep}": [
-                ""
+                "Tablica klasifikacija - (dep)"
             ],
             "Cohen's d": [
-                ""
+                "Cohenov d"
             ],
             "Collinearity Statistics": [
-                ""
+                "Statistika kolinearnosti"
             ],
             "Collinearity statistics": [
-                ""
+                "Statistika kolinearnosti"
             ],
             "Column": [
-                ""
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                ""
+                "Stupac"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
-                ""
+                "Stupav varijable '{var}' sadrži manje od 2 razine"
             ],
             "Columns": [
-                ""
+                "Stupci"
             ],
             "columns": [
-                ""
+                "Stupci"
             ],
             "Columns compared": [
-                ""
+                "Stupci uspoređeni"
             ],
             "Comparative Measures": [
-                ""
+                "Usporedive mjere"
             ],
             "Comparative Measures (2x2 only)": [
-                ""
+                "Usporedive mjere (samo 2x2)"
             ],
             "Compare": [
-                ""
+                "Usporedi"
             ],
             "Comparison": [
-                ""
+                "Usporedba"
             ],
             "Comparisons are based on estimated marginal means": [
-                ""
+                "Usporedbe su zasnovane na procjenama marginalnih aritmetičkih sredina"
             ],
             "Component": [
-                ""
+                "Značajka"
             ],
             "Component correlations": [
-                ""
+                "Korelacija značajki"
             ],
             "Component Loadings": [
                 ""
             ],
             "Component scores": [
-                ""
+                "Rezultat značajke"
             ],
             "Component Statistics": [
-                ""
+                "Statistika značajki"
             ],
             "Component summary": [
-                ""
+                "Suma značajki"
             ],
             "component(s)": [
-                ""
+                "značajke"
             ],
             "Components": [
-                ""
+                "Značajke"
             ],
             "components": [
-                ""
+                "značajke"
             ],
             "Confidence Interval": [
-                ""
+                "Raspon pouzdanosti"
             ],
             "Confidence interval": [
-                ""
+                "Raspon pouzdanosti"
             ],
             "Confidence interval for Mean": [
-                ""
+                "Raspon pouzdanosti za aritmetičku sredinu"
             ],
             "Confidence interval width": [
-                ""
+                "Širina raspona pouzdanosti"
             ],
             "Confidence Intervals": [
-                ""
+                "Rasponi pouzdanosti"
             ],
             "Confidence intervals": [
-                ""
+                "Rasponi pouzdanosti"
             ],
             "Confidence level": [
-                ""
+                "Razina pouzdanosti"
             ],
             "Confirmatory Factor Analysis": [
-                ""
+                "Potvrdna faktorska analiza"
             ],
             "Constraints": [
-                ""
+                "Ograničenja"
             ],
             "Contingency coefficient": [
-                ""
+                "Koeficijent slučajnosti"
             ],
             "Contingency Tables": [
-                ""
+                "Tablice slučajnosti"
             ],
             "Contrasts": [
-                ""
+                "Kontrasti"
             ],
             "Contrasts - $key": [
-                ""
+                "Kontrasti - $key"
             ],
             "Control Variables": [
-                ""
+                "Kontrolirane varijable"
             ],
             "Control variables": [
-                ""
+                "Kontrolirane varijable"
             ],
             "controlling for {items}": [
                 ""
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 ""
             ],
+            "Data set is currently unweighted": [
+                ""
+            ],
             "Data Summary": [
                 ""
             ],
@@ -1660,13 +1672,25 @@
             "Dependent Variable": [
                 ""
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                ""
+            ],
             "Dependent Variable Label": [
                 ""
             ],
-            "Dependent variable must be numeric": [
+            "Dependent Variables": [
                 ""
             ],
-            "Dependent Variables": [
+            "Dependent variables are very highly correlated": [
                 ""
             ],
             "deprecated": [
@@ -1697,9 +1721,6 @@
                 ""
             ],
             "Descriptives table": [
-                ""
-            ],
-            "dev": [
                 ""
             ],
             "Deviance": [
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 ""
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                ""
+            ],
             "Equal cell weights": [
                 ""
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 ""
             ],
+            "Extreme values": [
+                ""
+            ],
+            "Extreme Values": [
+                ""
+            ],
+            "Extreme values of $key": [
+                ""
+            ],
             "F": [
                 ""
             ],
@@ -1846,13 +1879,19 @@
             "Factor": [
                 ""
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                ""
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 ""
             ],
-            "Factor '{factorName}' contains no data": [
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
                 ""
             ],
-            "Factor '{factorName}' contains only a single level": [
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                ""
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
                 ""
             ],
             "Factor {0}": [
@@ -1979,7 +2018,7 @@
                 ""
             ],
             "Group": [
-                ""
+                "Grupa"
             ],
             "Group 1": [
                 ""
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 ""
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 ""
             ],
@@ -2068,7 +2110,7 @@
             "Hypothesis": [
                 ""
             ],
-            "if item dropped": [
+            "If item dropped": [
                 ""
             ],
             "in development": [
@@ -2102,7 +2144,7 @@
                 ""
             ],
             "Interval": [
-                ""
+                "interval"
             ],
             "IQR": [
                 ""
@@ -2132,9 +2174,6 @@
                 ""
             ],
             "Item-rest correlation": [
-                ""
-            ],
-            "item-rest correlation": [
                 ""
             ],
             "Items": [
@@ -2183,9 +2222,6 @@
                 ""
             ],
             "Level 2": [
-                ""
-            ],
-            "Levels": [
                 ""
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
@@ -2284,9 +2320,6 @@
             "Mean": [
                 ""
             ],
-            "mean": [
-                ""
-            ],
             "Mean ({ciWidth}% CI)": [
                 ""
             ],
@@ -2354,10 +2387,10 @@
                 ""
             ],
             "Missing Values": [
-                ""
+                "Nedostajuće vrijednosti"
             ],
             "Missing values": [
-                ""
+                "Nedostaju vrijednosti"
             ],
             "Missing values exclusion method": [
                 ""
@@ -2410,7 +2443,13 @@
             "Modification indices": [
                 ""
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
+                ""
+            ],
+            "Most extreme": [
                 ""
             ],
             "MSA": [
@@ -2450,13 +2489,13 @@
                 ""
             ],
             "Nominal": [
-                ""
+                "Nominalna"
             ],
             "Non-Parametric": [
                 ""
             ],
             "None": [
-                ""
+                "Nijedan"
             ],
             "none": [
                 ""
@@ -2473,16 +2512,31 @@
             "Normality Test (Shapiro-Wilk)": [
                 ""
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                ""
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                ""
+            ],
             "Number of Components": [
                 ""
             ],
             "Number of components": [
                 ""
             ],
+            "Number of extreme values": [
+                ""
+            ],
             "Number of Factors": [
                 ""
             ],
             "Number of factors": [
+                ""
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
                 ""
             ],
             "Oblimin": [
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 ""
             ],
+            "Outliers": [
+                ""
+            ],
             "Output": [
                 "Rezultati"
             ],
@@ -2678,6 +2735,9 @@
                 ""
             ],
             "Pearson": [
+                ""
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
                 ""
             ],
             "Pearson's r": [
@@ -2765,7 +2825,7 @@
                 ""
             ],
             "Plots": [
-                ""
+                "Grafički podatci"
             ],
             "Polynomial": [
                 ""
@@ -3005,49 +3065,52 @@
                 ""
             ],
             "quartic": [
-                ""
+                "kvartična"
             ],
             "Quartimax": [
-                ""
+                "Quartimax"
             ],
             "quartimax": [
-                ""
+                "quartimax"
             ],
             "quintic": [
-                ""
+                "kvintični"
             ],
             "R": [
-                ""
+                "R"
             ],
             "R²": [
-                ""
+                "R²"
             ],
             "R²<sub>CS</sub>": [
-                ""
+                "R²<sub>CS</sub>"
             ],
             "R²<sub>McF</sub>": [
-                ""
+                "R²<sub>McF</sub>"
             ],
             "R²<sub>N</sub>": [
+                "R²<sub>N</sub>"
+            ],
+            "R²<sub>T</sub>": [
                 ""
             ],
             "Range": [
-                ""
+                "Raspon"
             ],
             "Rank biserial correlation": [
-                ""
+                "Rang biserijalna korelacija"
             ],
             "Rate Ratio": [
-                ""
+                "Omjer stopa"
             ],
             "Rate ratio": [
-                ""
+                "Omjer stopa"
             ],
             "Ratio": [
-                ""
+                "Omjer"
             ],
             "Reference Level": [
-                ""
+                "Ishodišna razina"
             ],
             "Reference level (dummy coding)": [
                 ""
@@ -3115,7 +3178,7 @@
             "Residual plots": [
                 ""
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
                 ""
             ],
             "Residuals": [
@@ -3134,7 +3197,7 @@
                 ""
             ],
             "Results": [
-                ""
+                "Rezultati"
             ],
             "reverse scaled item": [
                 ""
@@ -3155,154 +3218,154 @@
                 ""
             ],
             "RMSEA 90% CI": [
-                ""
+                "RMSEA 90% raspon pouzdanosti"
             ],
             "ROC": [
-                ""
+                "ROC"
             ],
             "ROC Curve": [
-                ""
+                "ROC Krivulja"
             ],
             "ROC curve": [
-                ""
+                "ROC krivulja"
             ],
             "Rotation": [
-                ""
+                "Rotacija"
             ],
             "Row": [
+                "Red"
+            ],
+            "Row number": [
                 ""
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
-                ""
+                "Varijabla '{var}' ima manje od dvije razine"
             ],
             "Rows": [
-                ""
+                "Redovi"
             ],
             "rows": [
-                ""
+                "redovi"
             ],
             "rows (default), or columns in bar plot X axis": [
-                ""
+                "redovi (zadano), ili stupci u stupčastom grafu na apscisi"
             ],
             "Rows compared": [
-                ""
+                "Usporedba redova"
             ],
             "Roy's Largest Root": [
-                ""
+                "Royev najveći korijen"
             ],
             "Sample Size": [
-                ""
+                "Veličina uzorka"
             ],
             "Save": [
-                ""
+                "Spremi"
             ],
             "scale": [
-                ""
+                "skala"
             ],
             "Scale Analysis": [
-                ""
+                "Analiza skale"
             ],
             "Scale factor = scale first indicator": [
-                ""
+                "Faktor skale=prvi indikator skale"
             ],
             "Scale Reliability Statistics": [
-                ""
+                "Pokazatelj pouzdanosti skale"
             ],
             "Scale Statistics": [
-                ""
+                "Parametar skale"
             ],
             "Scheffe": [
-                ""
+                "Scheffe"
             ],
             "Score Component": [
-                ""
+                "Komponenta rezultata"
             ],
             "Score Factor": [
-                ""
+                "Rezultat faktor"
             ],
             "Score for component": [
-                ""
+                "Rezultat za komponentu"
             ],
             "Score for factor {i}. Estimated using the '{fsMethod}' method.": [
-                ""
+                "Rezultat za faktor {i}. Procijenjeno korištenjem '{fsMethod}' method."
             ],
             "Scree Plot": [
-                ""
+                "Grafikon osipa"
             ],
             "Scree plot": [
-                ""
+                "Grafikon osipa"
             ],
             "SD": [
-                ""
-            ],
-            "sd": [
-                ""
+                "SD"
             ],
             "SE": [
-                ""
+                "SE"
             ],
             "SE difference": [
-                ""
+                "Razlika SE"
             ],
             "Semipartial": [
-                ""
+                "Poluparcijalna"
             ],
             "Semipartial Correlation": [
-                ""
+                "Poluparcijalna korelacija"
             ],
             "Sensitivity": [
-                ""
+                "Osjetljivost"
             ],
             "septic": [
-                ""
+                "septički"
             ],
             "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
                 ""
             ],
             "sextic": [
-                ""
+                "sekstični"
             ],
             "Shapiro-Wilk": [
-                ""
+                "Shapiro-Wilk"
             ],
             "Shapiro-Wilk Multivariate Normality Test": [
-                ""
+                "Shapiro-Wilk test multivarijatnog normaliteta"
             ],
             "Shapiro-Wilk p": [
-                ""
+                "Shapiro-Wilk p"
             ],
             "Shapiro-Wilk test": [
-                ""
+                "Shapiro-Wilk test"
             ],
             "Shapiro-Wilk test for multivariate normality": [
-                ""
+                "Shapiro-Wilk test za multivarijatni normalitet"
             ],
             "Shapiro-Wilk W": [
-                ""
+                "Shapiro-Wilk W"
             ],
             "Side by side": [
-                ""
+                "Rame uz rame"
             ],
             "Simple": [
-                ""
+                "Jednostavno"
             ],
             "Simplimax": [
-                ""
+                "Simplimax"
             ],
             "simplimax": [
-                ""
+                "simplimax"
             ],
             "Simulations": [
-                ""
+                "Simulacije"
             ],
             "Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables.": [
-                ""
+                "Singularni model, jedna ili više prediktorskih varijabli su linearna kombinacija drugih prediktorskih varijabli."
             ],
             "Singularity error. Sphericity tests are not available": [
-                ""
+                "Pogreška singularnosti. Testovi sfericiteta nisu dostupni"
             ],
             "Skewness": [
-                ""
+                "Iskrivljenost"
             ],
             "Sort loadings by size": [
                 ""
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 ""
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                ""
+            ],
             "the confidence interval width for the effect-sizes.": [
                 ""
             ],
@@ -3530,40 +3596,46 @@
                 ""
             ],
             "the data as a data frame": [
+                "podatci kao skup podataka"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                ""
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
                 ""
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
-                ""
+                "Zavisna varijabla '{}' ima više od dvije razine, binomna logistička regresija se može napraviti samo sa zavisnim varijablama s dvije razine."
             ],
             "The dependent variable '{dep}' has the following order: {orderedLevels}": [
-                ""
+                "Zavisna varijabla '{dep}' ima sljedeći redoslijed: {orderedLevels}"
             ],
             "The dependent variable \"{dep}\" has only two levels, consider doing a binomial logistic regression.": [
-                ""
+                "Zavisna varijabla \"{dep}\" ima samo dvije razine, razmislite o korištenju logističke regresije."
             ],
             "the dependent variable from `data`, variable must be numeric": [
-                ""
+                "zavisna varijabla iz `data`, varijabla mora biti numerička"
             ],
             "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
-                ""
+                "zavisna varijabla iz `data`, varijabla mora biti numerička (ne nužno ako se doda i formula, pogledajte primjere)"
             ],
             "the dependent variable. For ANCOVA, these will be continuous.": [
-                ""
+                "zavisna varijabla. Za ANCOVA-u, ova će biti kontinuirana."
             ],
             "the dependent variable. For ANOVA, these will be continuous.": [
-                ""
+                "zavisna varijabla. Za ANOVA-u, ova će biti kontinuirana."
             ],
             "the dependent variables -- a separate t-test is performed for each dependent variable specified.": [
-                ""
+                "zavisne varijable--poseban t-test se provodi za svaku pojedinu zavisnu varijablu."
             ],
             "the dependent variables (not necessary when using a formula, see the examples)": [
-                ""
+                "zavisne varijable (nije nužno kada se koristi formula, pogledajte primjere)"
             ],
             "the dependent variables. For ANOVA, these will be continuous.": [
-                ""
+                "zavisne varijable. za ANOVA-u, ove će biti kontinuirane."
             ],
             "the error bars to plot on the marginal means.": [
-                ""
+                "grafički prikazati linije standardne pogreške na graničnim aritmetičkim sredinama."
             ],
             "the explanatory covariates (not necessary when providing a formula, see examples)": [
                 ""
@@ -3613,6 +3685,9 @@
             "the post-hoc multiple comparisons corrections to use.": [
                 ""
             ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
+            ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 ""
             ],
@@ -3620,25 +3695,25 @@
                 ""
             ],
             "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.\n\nThis analysis requires that the data be in 'wide format', where each\nrow represents a subject (as opposed to long format, where each\nmeasurement of the dependent variable is represented as a row).\n\nA non-parametric equivalent of the repeated measures ANOVA also exists;\nthe Friedman test. However, it has the limitation of only being able to\ntest a single factor.": [
-                ""
+                "Analiza varijance za ponovljena mjerenja se koristi za istraživanje povezanosti \nizmeđu kontiunirane zavisne varijable i jedne ili više kategorijskih \nopisnih varijabli, gdje je jedna ili više opisnih varijabli\n\"između ispitanika\" (kada su ponovljena mjerenja dobivena na istim\nispitanicima. Dodatno, ova analiza omogućuje uključenje\nkovarijata, dopuštajući i ANCOVA-u za ponovljena mjerenja.\n\nOva analiza zahtijeva da podatci budu u \"širokom formatu\", gdje svaki\nred predstavlja ispitanika (nasuprot dugom formatu gdje je svako\nmjerenje zavisne varijable prikazano kao redak).\n\nNeparametrijski ekvivalent ANOVA-e za ponovljena mjerenja također postoji;\nFriedman test. Međutim, ograničenje je što taj test može testirati \nsamo jedan faktor."
             ],
             "the repeated measures design.": [
-                ""
+                "nacrt za ponovljena mjerenja."
             ],
             "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels": [
-                ""
+                "Ponovljena mjerenja imaju samo dvije razine. Pretpostavka sfericiteta (podjednakih varijanci) je uvijek zadovoljena kada postoje samo dva ponovljena mjerenja"
             ],
             "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels.": [
-                ""
+                "Ponovljena mjerenja imaju samo dvije razine. Pretpostavka sfericiteta (podjednakih varijanci) je uvijek zadovoljena kada postoje samo dva ponovljena mjerenja."
             ],
             "the repeated measures measurements.": [
-                ""
+                "mjere za ponovljena mjerenja."
             ],
             "the repeated measures terms of the model.": [
-                ""
+                "uvjeti modela ponovljenih mjerenja."
             ],
             "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.": [
-                ""
+                "Studentov t-test za nezavisna mjerenja (nekad nazivan i t-testom\nza dva uzorka) koristi se za testiranje ništične hipoteze da obje skupine imaju \njednaku aritmetičku sredinu. NIska p-vrijednost sugerira da ništična hipoteza nije točna\ni da su aritmetičke sredine grupa različite."
             ],
             "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.\n\nThe Student's independent t-test assumes that the data from each group\nare from a normal distribution, and that the variances of these groups\nare equal. If unwilling to assume the groups have equal variances, the\nWelch's t-test can be used in it's place. If one is additionally\nunwilling to assume the data from each group are from a normal\ndistribution, the non-parametric Mann-Whitney U test can be used instead\n(However, note that the Mann-Whitney U test has a slightly different\nnull hypothesis; that the distributions of each group is equal).": [
                 ""
@@ -3727,6 +3802,9 @@
             "Thurstone": [
                 ""
             ],
+            "Tjur's R²": [
+                ""
+            ],
             "TLI": [
                 ""
             ],
@@ -3797,7 +3875,7 @@
                 ""
             ],
             "Upper": [
-                ""
+                "Gornji"
             ],
             "upper bound": [
                 ""
@@ -3806,6 +3884,9 @@
                 ""
             ],
             "value": [
+                ""
+            ],
+            "values": [
                 ""
             ],
             "Values are counts": [
@@ -3827,7 +3908,7 @@
                 ""
             ],
             "Variables": [
-                ""
+                "Varijable"
             ],
             "Variables across columns": [
                 ""
@@ -3865,107 +3946,116 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 ""
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
+                ""
+            ],
+            "Weights": [
                 ""
             ],
             "Weights (optional)": [
                 ""
             ],
-            "Welch's": [
+            "Weights contains negative values. Negative weights are not permitted.": [
                 ""
+            ],
+            "Welch's": [
+                "Welchov"
             ],
             "Welch's t": [
-                ""
+                "Welchov t"
             ],
             "Wilcoxon rank": [
-                ""
+                "Wilcoxonov rang"
             ],
             "Wilcoxon signed rank test": [
-                ""
+                "Wilcoxonov test vezanih rangova"
             ],
             "Wilcoxon W": [
-                ""
+                "Wilcoxonov W"
             ],
             "Wilks' Lambda": [
-                ""
+                "Wilkov Lambda"
             ],
             "within column": [
-                ""
+                "unutar stupca"
             ],
             "within rows": [
-                ""
+                "unutar redaka"
             ],
             "Within Subjects Effects": [
-                ""
+                "Efekti unutar sudionika"
             ],
             "X-Axis": [
-                ""
+                "X-os"
             ],
             "X-axis": [
-                ""
+                "X-os"
             ],
             "Y-Axis": [
-                ""
+                "Y-Os"
             ],
             "Y-axis": [
-                ""
+                "Y-os"
             ],
             "ycounts (default) or ypc. Use respectively `counts` or `percentages` for the bar plot y-axis": [
-                ""
+                "ybrojevi (zadano) or ypostotci. Koristite `brojevi` or `postotci` za y-os stupčastog grafa"
             ],
             "Z": [
-                ""
+                "Z"
             ],
             "z test difference in 2 proportions": [
-                ""
+                "z test razlike za dvije proporcije"
             ],
             "z test for difference in 2 proportions": [
-                ""
+                "z test razlike između dvije proporcije"
             ],
             "z test only available for 2x2 tables": [
-                ""
+                "z test je dostupan samo za 2x2 tablice"
             ],
             "ΔR²": [
-                ""
+                "ΔR²"
             ],
             "ε²": [
-                ""
+                "ε²"
             ],
             "η²": [
-                ""
+                "η²"
             ],
             "η²<sub>G</sub>": [
-                ""
+                "η²<sub>G</sub>"
             ],
             "η²<sub>p</sub>": [
-                ""
+                "η²<sub>p</sub>"
             ],
             "η²p": [
-                ""
+                "η²p"
             ],
             "χ²": [
-                ""
+                "χ²"
             ],
             "χ² continuity correction": [
-                ""
+                "χ² korekcija za kontinuitet"
             ],
             "χ² Goodness of Fit": [
-                ""
+                "χ² preciznost pristajanja"
             ],
             "χ² Goodness of fit": [
-                ""
+                "χ² preciznost pristajanja"
             ],
             "χ² test": [
-                ""
+                "χ² test"
             ],
             "χ² test of association": [
-                ""
+                "χ² test povezanosti"
             ],
             "χ² Tests": [
-                ""
+                "χ² Testovi"
             ],
             "ω²": [
-                ""
+                "ω²"
             ],
             "specific factor\u0004Factor": [
                 ""

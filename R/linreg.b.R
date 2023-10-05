@@ -194,17 +194,23 @@ linRegClass <- R6::R6Class(
             return(models)
         },
         .computeWeights = function() {
-            var <- self$options$weights
-            if (is.null(var)) {
-                weights <- NULL
+            legacy_weights <- self$options$weights
+            global_weights <- attr(self$data, "jmv-weights")
+
+            if (is.null(legacy_weights) && is.null(global_weights))
+                return()
+
+            if (! is.null(legacy_weights)) {
+                weights <- self$dataProcessed[[jmvcore::toB64(legacy_weights)]]
             } else {
-                weights <- self$dataProcessed[[jmvcore::toB64(var)]]
-                if (any(weights < 0)) {
-                    jmvcore::reject(
-                        .("'{var}' contains negative values. Negative weights are not permitted."),
-                        var=var
-                    )
-                }
+                weights <- self$dataProcessed[[".WEIGHTS"]]
+            }
+
+            if (any(weights < 0)) {
+                jmvcore::reject(
+                    .("'{var}' contains negative values. Negative weights are not permitted."),
+                    var=legacy_weights
+                )
             }
 
             return(weights)
@@ -351,9 +357,15 @@ linRegClass <- R6::R6Class(
                             emmeans::emm_options(sep=",", parens="a^", cov.keep=1)
 
                             mm <- try(
-                                emmeans::emmeans(model, formula, cov.reduce=FUN,
-                                                 options=list(level=self$options$ciWidthEmm / 100),
-                                                 weights=weights, data=self$dataProcessed),
+                                emmeans::emmeans(
+                                    model,
+                                    formula,
+                                    cov.reduce = FUN,
+                                    options = list(level=self$options$ciWidthEmm / 100),
+                                    weights = weights,
+                                    data = self$dataProcessed,
+                                    non.nuis = all.vars(formula),
+                                ),
                                 silent = TRUE
                             )
 
@@ -438,8 +450,8 @@ linRegClass <- R6::R6Class(
 
                 table$addRow(rowKey="`(Intercept)`", values=list(term = .("Intercept")))
 
-
                 if (! is.null(weights)) {
+                    private$.weightsName <- weights
                     table$setNote(
                         "weights",
                         jmvcore::format(.("Weighted by '{varName}'"), varName=weights)
@@ -1041,6 +1053,9 @@ linRegClass <- R6::R6Class(
             return(p)
         },
         .prepareEmmPlots = function() {
+            if (! self$options$emmPlots)
+                return()
+
             covs <- self$options$covs
             dep <- self$options$dep
 
@@ -1074,14 +1089,18 @@ linRegClass <- R6::R6Class(
                                         levels(d[[ termB64[k] ]]) <- c('-1SD', 'Mean', '+1SD')
                                     }
                                 } else {
-                                    d[[ termB64[k] ]] <- factor(jmvcore::fromB64(d[[ termB64[k] ]]),
-                                                                jmvcore::fromB64(levels(d[[ termB64[k] ]])))
+                                    d[[ termB64[k] ]] <- factor(
+                                        jmvcore::fromB64(d[[ termB64[k] ]]),
+                                        jmvcore::fromB64(levels(d[[ termB64[k] ]]))
+                                    )
                                 }
                             }
                         }
 
-                        names <- list('x'=termB64[1], 'y'='emmean', 'lines'=termB64[2],
-                                      'plots'=termB64[3], 'lower'='lower.CL', 'upper'='upper.CL')
+                        names <- list(
+                            'x'=termB64[1], 'y'='emmean', 'lines'=termB64[2], 'plots'=termB64[3],
+                            'lower'='lower.CL', 'upper'='upper.CL'
+                        )
                         names <- lapply(names, function(x) if (is.na(x)) NULL else x)
 
                         labels <- list('x'=term[1], 'y'=dep, 'lines'=term[2], 'plots'=term[3])
@@ -1327,12 +1346,16 @@ linRegClass <- R6::R6Class(
             for (cov in c(dep, covs, weights))
                 data[[jmvcore::toB64(cov)]] <- jmvcore::toNumeric(dataRaw[[cov]])
 
+            global_weights <- attr(dataRaw, "jmv-weights")
+            if (is.null(weights) && ! is.null(global_weights))
+                data[[".WEIGHTS"]] = jmvcore::toNumeric(global_weights)
+
             attr(data, 'row.names') <- rownames(self$data)
             attr(data, 'class') <- 'data.frame'
 
             if (naOmit) {
                 data <- tibble::rownames_to_column(data)
-                data <- tidyr::drop_na(data, -naSkip)
+                data <- tidyr::drop_na(data, -tidyselect::all_of(naSkip))
                 data <- tibble::column_to_rownames(data)
             }
 

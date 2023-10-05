@@ -25,7 +25,7 @@ t-tests}
 
 \item{bf}{\code{TRUE} or \code{FALSE} (default), provide Bayes factors}
 
-\item{bfPrior}{a number between 0.5 and 2 (default 0.707), the prior width
+\item{bfPrior}{a number between 0.01 and 2 (default 0.707), the prior width
 to use in calculating Bayes factors}
 
 \item{welchs}{\code{TRUE} or \code{FALSE} (default), perform Welch's

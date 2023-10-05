@@ -64,7 +64,7 @@ suggests that the Null hypothesis is false, and that the true proportion
 must be some other value.
 }
 \examples{
-\dontrun{
+\donttest{
 dat <- data.frame(x=c(8, 15))
 
 propTest2(dat, vars = x, areCounts = TRUE)

@@ -11,7 +11,6 @@ logLinearClass <- R6::R6Class(
 
         #### Init + run functions ----
         .init = function() {
-
             private$.modelTerms()
 
             private$.initModelFitTable()
@@ -21,27 +20,22 @@ logLinearClass <- R6::R6Class(
             private$.initCoefTables()
             private$.initEmm()
             private$.initEmmTable()
-
         },
         .run = function() {
-
-            ready <- TRUE
             if (length(self$options$blocks) < 1 || length(self$options$blocks[[1]]) == 0)
-                ready <- FALSE
+                return()
 
-            if (ready) {
+            data <- private$.cleanData()
+            private$.checkData(data)
 
-                data <- private$.cleanData()
+            results <- private$.compute(data)
 
-                results <- private$.compute(data)
-
-                private$.populateModelFitTable(results)
-                private$.populateModelCompTable(results)
-                private$.populateLrtTables(results)
-                private$.populateCoefTables(results)
-                private$.prepareEmmPlots(results$models, data=data)
-                private$.populateEmmTables()
-            }
+            private$.populateModelFitTable(results)
+            private$.populateModelCompTable(results)
+            private$.populateLrtTables(results)
+            private$.populateCoefTables(results)
+            private$.prepareEmmPlots(results$models, data=data)
+            private$.populateEmmTables()
         },
 
         #### Compute results ----
@@ -606,6 +600,25 @@ logLinearClass <- R6::R6Class(
 
             return(formulas)
         },
+        .checkData = function(data) {
+            if (nrow(data) == 0) {
+                jmvcore::reject(
+                    .("The dataset contains 0 rows (or all rows contain missing values)"),
+                    code=exceptions$dataError
+                )
+            }
+
+            for (factor in self$options$factors) {
+                nLevels = length(levels(data[[jmvcore::toB64(factor)]]))
+                if (nLevels <= 1) {
+                    jmvcore::reject(
+                        .("Factor '{factor}' has less than two levels. Factors must have at least two levels"),
+                        code=exceptions$dataError,
+                        factor=factor
+                    )
+                }
+            }
+        },
         .cleanData = function() {
             counts <- self$options$counts
             factors <- self$options$factors
@@ -624,8 +637,10 @@ logLinearClass <- R6::R6Class(
                     ordered = FALSE,
                     levels = levels(dataRaw[[factor]])
                 )
-                levels(column) <- jmvcore::toB64(levels(column))
-                column <- relevel(column, ref = jmvcore::toB64(ref))
+                if (length(levels(column)) > 0) {
+                    levels(column) <- jmvcore::toB64(levels(column))
+                    column <- relevel(column, ref = jmvcore::toB64(ref))
+                }
 
                 data[[jmvcore::toB64(factor)]] <- column
             }

@@ -23,10 +23,10 @@
                 "Stolpec »{col}« vsebuje le eno enoznačno vrednost"
             ],
             "'{method}' extraction method was used in combination with a '{rotation}' rotation": [
-                "Uporabljena je bila metoda ekstrakcije »{method}« v kombinaciji z rotacijo »{rotation}«."
+                "Uporabljena je bila metoda ekstrakcije »{method}« v kombinaciji z rotacijo »{rotation}«"
             ],
             "'{rotation}' rotation was used": [
-                "Uporabljena je bila rotacija »{rotation}«."
+                "Uporabljena je bila rotacija »{rotation}«"
             ],
             "'{var}' contains negative values. Negative weights are not permitted.": [
                 "Vrednost »{var}« vsebuje negativne vrednosti. Negativne uteži niso dovoljene."
@@ -170,7 +170,7 @@
                 "`ANOVA – ${dep}`"
             ],
             "`columns` or `rows` (default), compare columns/rows in difference of proportions or relative risks (2x2 tables)": [
-                ""
+                "`columns` oziroma `rows` (privzeto), primerja po stolpcih ali vrsticah razliko deležev oziroma relativno tveganje 8 (matrike 2x2)"
             ],
             "`Model Coefficients - ${ dep }`": [
                 "`Koeficienti modela – ${ dep }`"
@@ -179,31 +179,31 @@
                 "`Koeficienti modela – ${dep}`"
             ],
             "`Proportions - ${var}`": [
-                ""
+                "`Deleži – ${var}`"
             ],
             "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, poda oznake s številko vrstice za izstopajoče vrednosti v vretenastem diagramu"
             ],
             "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna statistiko T-Testa"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna statistiko T-Testa"
             ],
             "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna Welchovo enosmerno analizo ANOVA, ki ne predvideva enakih varianc"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna Welchovo enosmerno analizo ANOVA, ki ne predvideva enakih varianc"
             ],
             "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna vrednosti 'Z' in 'p' za napoved modela"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna vrednosti 'Z' in 'p' za napoved modela"
             ],
             "`TRUE` (default) or `FALSE`, provide a chi-square test for exact fit that compares the model with the perfect fitting model": [
                 "`TRUE` (privzeto) ali `FALSE`, izračuna hi-kvadrat natančega prileganja, ki primerja podan model s popolno prilegajočim se modelom"
             ],
             "`TRUE` (default) or `FALSE`, provide a confidence interval for the estimated marginal means": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, izračuna interval zaupanja za ocenjena mejna povprečja"
             ],
             "`TRUE` (default) or `FALSE`, provide Aikaike's Information Criterion (AIC) for the models": [
                 "`TRUE` (privzeto) ali `FALSE`, izračuna Aikaikejev informacijski kriterij (AIC) za modele"
             ],
             "`TRUE` (default) or `FALSE`, provide Cronbach's α": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna Cronbachov koeficient α"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna Cronbachov koeficient α"
             ],
             "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
                 "`TRUE` (privzeto) ali `FALSE`, izriše diagrame ocenjenih mejnih povprečij"
@@ -218,10 +218,10 @@
                 "`TRUE` (privzeto) ali `FALSE`, izračuna razlike povprečij za preizkuse post hoc"
             ],
             "`TRUE` (default) or `FALSE`, provide Pearson's R": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna Pearsonov koeficient R"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna Pearsonov koeficient R"
             ],
             "`TRUE` (default) or `FALSE`, provide significance levels": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna ravni statistične značilnosti"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna ravni statistične značilnosti"
             ],
             "`TRUE` (default) or `FALSE`, provide significance levels for post-hoc tests": [
                 "`TRUE` (privzeto) ali `FALSE`, izračuna ravni statistične značilnosti za preizkuse post-hoc"
@@ -230,40 +230,40 @@
                 ""
             ],
             "`TRUE` (default) or `FALSE`, provide the mean": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna povprečno vrednost"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna povprečno vrednost"
             ],
             "`TRUE` (default) or `FALSE`, provide the median": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna mediano"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna mediano"
             ],
             "`TRUE` (default) or `FALSE`, provide the model comparison between the models and the NULL model": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, poda modelsko primerjavo med uporabljenimi modeli in preizkusnim modelom"
             ],
             "`TRUE` (default) or `FALSE`, provide the number of missing values": [
-                "`PRAV` (privzeto) ali `NAPAK`, poda število manjkajočih vrednosti"
+                "`TRUE` (privzeto) ali `FALSE`, poda število manjkajočih vrednosti"
             ],
             "`TRUE` (default) or `FALSE`, provide the sample size": [
-                "`PRAV` (privzeto) ali `NAPAK`, poda podatek velikosti vzorca"
+                "`TRUE` (privzeto) ali `FALSE`, poda podatek velikosti vzorca"
             ],
             "`TRUE` (default) or `FALSE`, provide the standard deviation": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, poda standardni odklon"
             ],
             "`TRUE` (default) or `FALSE`, provide the statistical measure `R-squared` for the models": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, poda statistično lestvico `R-squared` modela"
             ],
             "`TRUE` (default) or `FALSE`, provide the statistical measure `R` for the models": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, poda statistično lestvico `R` modela"
             ],
             "`TRUE` (default) or `FALSE`, provide χ²": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna vrednost χ²"
+                "`TRUE` (privzeto) ali `NAPAK`, izračuna vrednost χ²"
             ],
             "`TRUE` (default) or `FALSE`, weigh each cell equally or weigh them according to the cell frequency": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, uteži vsako celico enako ali pa poda uteženo vrednost glede na frekvenco celice"
             ],
             "`TRUE` or `FALSE` (default), add counts to the  bar plots": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, doda števce na vretenaste diagrame"
             ],
             "`TRUE` or `FALSE` (default), add mean to box plot": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, doda povprečno vrednost na vretenasti diagram"
             ],
             "`TRUE` or `FALSE` (default), flag significant correlations": [
                 "`TRUE` or `FALSE` (privzeto), označi statistično značilne korelacije"
@@ -272,52 +272,52 @@
                 "`TRUE` or `FALSE` (privzeto), označi statistično značilne primerjave post-hoc"
             ],
             "`TRUE` or `FALSE` (default), perform a Shapiro-Wilk test on the residuals": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Shapiro-Wilkov preizkus na ostankih"
             ],
             "`TRUE` or `FALSE` (default), perform Fisher's one-way ANOVA which assumes equal variances": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna vrednosti Fisherjeve enosmerne analize ANOVA s predvidevanjem enakih varianc"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna vrednosti Fisherjeve enosmerne analize ANOVA s predvidevanjem enakih varianc"
             ],
             "`TRUE` or `FALSE` (default), perform homogeneity tests": [
-                "`PRAV` ali `NAPAK` (privzeto), izvede preizkuse homogenosti"
+                "`TRUE` ali `FALSE` (privzeto), izvede preizkuse homogenosti"
             ],
             "`TRUE` or `FALSE` (default), perform Levene's test for homogeneity of variances": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Levenove preizkuse homogenosti varianc"
             ],
             "`TRUE` or `FALSE` (default), perform Levene's tests for homogeneity of variances": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Levenov preizkus homogenosti varianc"
             ],
             "`TRUE` or `FALSE` (default), perform Mann-Whitney U tests": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izračuna Man-Whitneyev U"
             ],
             "`TRUE` or `FALSE` (default), perform pairwise comparisons": [
-                ""
+                "`TRUE` or `FALSE` (privzeto), izvede parne primerjave"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-wilk normality tests": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Shapiro-Wilkove preizkuse normalnosti"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-Wilk test of normality": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Shapiro-Wilkov preizkus normalnosti"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-Wilk tests of normality": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Shapiro-Wilkove preizkuse normalnosti"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-wilk tests of normality": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Shapiro-Wilkove preizkuse normalnosti"
             ],
             "`TRUE` or `FALSE` (default), perform sphericity tests": [
-                "`PRAV` ali `NAPAK` (privzeto), izvede preizkus sferičnosti"
+                "`TRUE` ali `FALSE` (privzeto), izvede preizkus sferičnosti"
             ],
             "`TRUE` or `FALSE` (default), perform Welch's t-tests": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost Welchovih T-Testov"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost Welchovih T-Testov"
             ],
             "`TRUE` or `FALSE` (default), perform Wilcoxon signed rank tests": [
-                "`PRAV` ali `NAPAK` (privzeto), izvede Wilcoxonov preizkus predznačenih rangov"
+                "`TRUE` ali `FALSE` (privzeto), izvede Wilcoxonov preizkus predznačenih rangov"
             ],
             "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
-                ""
+                "`TRUE` or `FALSE` (privzeto), izriše podatke na robna povprečja"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), določi interval zaupanja za napovedane koeficientov modela"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient odds ratio estimates": [
                 ""
@@ -335,16 +335,16 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide a correlation matrix plot": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagram korelacijske matrike"
             ],
             "`TRUE` or `FALSE` (default), provide a correlation plot": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagram korelacije"
             ],
             "`TRUE` or `FALSE` (default), provide a cut-off plot": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide a descriptive plot": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagram opisne statistike"
             ],
             "`TRUE` or `FALSE` (default), provide a path diagram of the model": [
                 ""
@@ -356,10 +356,10 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide a Q-Q plot of residuals": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagrame Q-Q ostankov"
             ],
             "`TRUE` or `FALSE` (default), provide a ROC curve plot": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše krivuljni diagram"
             ],
             "`TRUE` or `FALSE` (default), provide a standardized estimate for the model coefficients": [
                 ""
@@ -368,10 +368,10 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide a z test for differences between two proportions": [
-                ""
+                "`TRUE` or `FALSE` (privzeto), izračuna preizkus z sorazmernih razlik med dvema deležema"
             ],
             "`TRUE` or `FALSE` (default), provide Aikaike's Information Criterion (AIC) for the models": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izračuna Aikaikejev informacijski kriterij (AIC) za modele"
             ],
             "`TRUE` or `FALSE` (default), provide an exact log odds ratio (requires exact2x2 to be installed)": [
                 ""
@@ -380,7 +380,7 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide Bayes factors": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna Bayesove faktorje"
+                "`TRUE` ali `FALSE` (privzeto), izračuna Bayesove faktorje"
             ],
             "`TRUE` or `FALSE` (default), provide Bayesian credible intervals": [
                 ""
@@ -398,28 +398,28 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide Cohen's d effect sizes": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna Cohenove d učinke velikosti"
+                "`TRUE` ali `FALSE` (privzeto), izračuna Cohenove d učinke velikosti"
             ],
             "`TRUE` or `FALSE` (default), provide column percentages": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), poda ostotke stolpca"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna interval zaupanja"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the comparative measures": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna interval zaupanja primerjalnih lestvic"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the effect-sizes": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna interval zaupanja učinka velikosti"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the mean": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna interval zaupanja povprečne vrednosti"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the mean difference": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna interval zaupanja razlike povprečja"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the post-hoc effect sizes": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna interval zaupanja učinka velikosti preizkusa post-hoc"
             ],
             "`TRUE` or `FALSE` (default), provide densities in the correlation matrix plot": [
                 ""
@@ -428,19 +428,19 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide descriptive plots": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagrame opisne statistike"
             ],
             "`TRUE` or `FALSE` (default), provide descriptive statistics": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), poda izračune opisne statistike"
             ],
             "`TRUE` or `FALSE` (default), provide dot plots (continuous variables only)": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide effect sizes": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izračuna učinke velikosti"
             ],
             "`TRUE` or `FALSE` (default), provide effect-sizes": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izračuna učinke velikosti"
             ],
             "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
                 ""
@@ -452,19 +452,19 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost Fišerjevega natančnega preizkusa"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost Fišerjevega natančnega preizkusa"
             ],
             "`TRUE` or `FALSE` (default), provide frequency tables (nominal, ordinal variables only)": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide gamma": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost gama"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost gama"
             ],
             "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
-                "`PRAV` ali `NAPAK` (privzeto), izriše histograme (le za zvezne spremenljivke)"
+                "`TRUE` ali `FALSE` (privzeto), izriše histograme (le za zvezne spremenljivke)"
             ],
             "`TRUE` or `FALSE` (default), provide item means": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna povprečne vrednosti predmetov"
             ],
             "`TRUE` or `FALSE` (default), provide item standard deviations": [
                 ""
@@ -473,25 +473,28 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide Kendall's tau-b": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost Kendallovega Tau-B"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost Kendallovega Tau-B"
             ],
             "`TRUE` or `FALSE` (default), provide Mantel-Haenszel test for trend": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost Mantel-Haenszelovega trendnega preizkusa"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost Mantel-Haenszelovega trendnega preizkusa"
             ],
             "`TRUE` or `FALSE` (default), provide McDonald's ω": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost McDonaldove ω"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost McDonaldove ω"
             ],
             "`TRUE` or `FALSE` (default), provide means and standard deviations": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna povprečne vrednosti in standardne odklone"
+                "`TRUE` ali `FALSE` (privzeto), izračuna povprečne vrednosti in standardne odklone"
             ],
             "`TRUE` or `FALSE` (default), provide means and standard errors": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna povprečne vrednosti in standardne napake"
+                "`TRUE` ali `FALSE` (privzeto), izračuna povprečne vrednosti in standardne napake"
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 ""
             ],
-            "`TRUE` or `FALSE` (default), provide percentiles": [
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
                 ""
+            ],
+            "`TRUE` or `FALSE` (default), provide percentiles": [
+                "`TRUE` or `FALSE` (privzeto), določi percentile"
             ],
             "`TRUE` or `FALSE` (default), provide Phi and Cramer's V": [
                 ""
@@ -500,49 +503,49 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide Q-Q plots (continuous variables only)": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagrame Q-Q (le za zvezne spremenljivke)"
             ],
             "`TRUE` or `FALSE` (default), provide Q-Q plots of residuals": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše diagrame Q-Q ostankov"
             ],
             "`TRUE` or `FALSE` (default), provide quantiles": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna kvantile"
+                "`TRUE` ali `FALSE` (privzeto), izračuna kvantile"
             ],
             "`TRUE` or `FALSE` (default), provide residual plots where the dependent variable and each covariate is plotted against the standardized residuals.": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide results of the Durbin- Watson test for autocorrelation": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednosti Durbin-Watsovega testa samokorelacije"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednosti Durbin-Watsovega testa samokorelacije"
             ],
             "`TRUE` or `FALSE` (default), provide RMSE for the models": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide row percentages": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna odstotne vrednosti"
+                "`TRUE` ali `FALSE` (privzeto), izračuna odstotne vrednosti"
             ],
             "`TRUE` or `FALSE` (default), provide Shapiro-Wilk p-value": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izračuna Shapiro-Wilkovo p-vrednost"
             ],
             "`TRUE` or `FALSE` (default), provide Shapiro-Wilk test": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izvede Shapiro-Wilkov preizkus"
             ],
             "`TRUE` or `FALSE` (default), provide Spearman's rho": [
-                ""
+                "`PRAV` ali `NAPAK` (privzeto), izračuna Spearmanov koeficient ro"
             ],
             "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna statistiko korelacij v izrisu korelacijske matrike"
+                "`TRUE` ali `FALSE` (privzeto), izračuna statistiko korelacij v izrisu korelacijske matrike"
             ],
             "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide test results (t-value and degrees of freedom) for post-hoc tests": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna statistike (t-vrednost in prostostne stopnje) za post-hoc teste"
+                "`TRUE` ali `FALSE` (privzeto), izračuna statistike (t-vrednost in prostostne stopnje) za post-hoc teste"
             ],
             "`TRUE` or `FALSE` (default), provide the contingency coefficient": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), poda koeficient kontingenčnosti"
             ],
             "`TRUE` or `FALSE` (default), provide the differences in proportions (only available for 2x2 tables)": [
-                ""
+                "`TRUE` or `FALSE` (privzeto), izračuna razliko med deleži (na voljo le za matrike 2x2)"
             ],
             "`TRUE` or `FALSE` (default), provide the expected counts": [
                 ""
@@ -554,37 +557,37 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide the interquartile range": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna interkvartilne range"
+                "`TRUE` ali `FALSE` (privzeto), izračuna interkvartilne range"
             ],
             "`TRUE` or `FALSE` (default), provide the kurtosis": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna sploščenost porazdelitve"
+                "`TRUE` ali `FALSE` (privzeto), izračuna sploščenost porazdelitve"
             ],
             "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna razmerje verjetij"
+                "`TRUE` ali `FALSE` (privzeto), izračuna razmerje verjetij"
             ],
             "`TRUE` or `FALSE` (default), provide the log odds ratio (only available for 2x2 tables)": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide the maximum": [
-                "`PRAV` ali `NAPAK` (privzeto), poda največjo vrednost"
+                "`TRUE` ali `FALSE` (privzeto), poda največjo vrednost"
             ],
             "`TRUE` or `FALSE` (default), provide the mean": [
-                ""
+                "`TRUE` (privzeto) ali `FALSE`, izračuna povprečno vrednost podatkov"
             ],
             "`TRUE` or `FALSE` (default), provide the minimum": [
-                "`PRAV` ali `NAPAK` (privzeto), poda najmanjšo vrednost"
+                "`TRUE` ali `FALSE` (privzeto), poda najmanjšo vrednost"
             ],
             "`TRUE` or `FALSE` (default), provide the mode": [
-                "`PRAV` ali `NAPAK` (privzeto), poda modus podatkov"
+                "`TRUE` ali `FALSE` (privzeto), poda modus podatkov"
             ],
             "`TRUE` or `FALSE` (default), provide the model comparison between the models and the NULL model": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), poda modelsko primerjavo med uporabljenimi modeli in preizkusnim modelom"
             ],
             "`TRUE` or `FALSE` (default), provide the number of cases": [
-                "`PRAV` ali `NAPAK` (privzeto), poda število primerov"
+                "`TRUE` ali `FALSE` (privzeto), poda število primerov"
             ],
             "`TRUE` or `FALSE` (default), provide the observed counts": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izpiše števce opazovanj"
             ],
             "`TRUE` or `FALSE` (default), provide the odds ratio (only available for 2x2 tables)": [
                 ""
@@ -605,7 +608,7 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide the range": [
-                "`PRAV` ali `NAPAK` (privzeto), poda obseg vrednosti podatkov"
+                "`TRUE` ali `FALSE` (privzeto), poda obseg vrednosti podatkov"
             ],
             "`TRUE` or `FALSE` (default), provide the rea under the ROC curve (AUC)": [
                 ""
@@ -617,43 +620,43 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide the skewness": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna asimetričnost porazdelitve"
+                "`TRUE` ali `FALSE` (privzeto), izračuna asimetričnost porazdelitve"
             ],
             "`TRUE` or `FALSE` (default), provide the standard deviation": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna standardni odklon"
+                "`TRUE` ali `FALSE` (privzeto), izračuna standardni odklon"
             ],
             "`TRUE` or `FALSE` (default), provide the standard error": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna standardno napako"
+                "`TRUE` ali `FALSE` (privzeto), izračuna standardno napako"
             ],
             "`TRUE` or `FALSE` (default), provide the statistical measure `adjusted R-squared` for the models": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide the sum": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vsoto podatkov spremenljivke"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vsoto podatkov spremenljivke"
             ],
             "`TRUE` or `FALSE` (default), provide the thresholds that are used as cut-off scores for the levels of the dependent variable": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide the variance": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna varianco podatkov spremenljivke"
+                "`TRUE` ali `FALSE` (privzeto), izračuna varianco podatkov spremenljivke"
             ],
             "`TRUE` or `FALSE` (default), provide total percentages": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), poda skupne odstotne vrednosti"
             ],
             "`TRUE` or `FALSE` (default), provide VIF and tolerence collinearity statistics": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), provide violin plots (continuous variables only)": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), izriše violinske diagrame (le za zvezne spremenljivke)"
             ],
             "`TRUE` or `FALSE` (default), provide what the Cronbach's α would be if the item was dropped": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost Cronbachove α, če je predmet izpuščen"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost Cronbachove α, če je predmet izpuščen"
             ],
             "`TRUE` or `FALSE` (default), provide what the McDonald's ω would be if the item was dropped": [
-                "`PRAV` ali `NAPAK` (privzeto), izračuna vrednost McDonaldove ω, če je predmet izpuščen"
+                "`TRUE` ali `FALSE` (privzeto), izračuna vrednost McDonaldove ω, če je predmet izpuščen"
             ],
             "`TRUE` or `FALSE` (default), provide χ² with continuity correction": [
-                "`PRAV` (privzeto) ali `NAPAK`, izračuna vrednost χ² s popravkom zveznosti"
+                "`TRUE` (privzeto) ali `FALSE`, izračuna vrednost χ² s popravkom zveznosti"
             ],
             "`TRUE` or `FALSE` (default), report a summary of the different groups": [
                 ""
@@ -671,10 +674,10 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), show factor summary": [
-                "`PRAV` ali `NAPAK` (privzeto), pokaže povzetek faktorjev"
+                "`TRUE` ali `FALSE` (privzeto), pokaže povzetek faktorjev"
             ],
             "`TRUE` or `FALSE` (default), show inter-factor correlations": [
-                "`PRAV` ali `NAPAK` (privzeto), pokaže med-faktorske korelacije"
+                "`TRUE` ali `FALSE` (privzeto), pokaže med-faktorske korelacije"
             ],
             "`TRUE` or `FALSE` (default), show Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results": [
                 ""
@@ -683,19 +686,19 @@
                 ""
             ],
             "`TRUE` or `FALSE` (default), show scree plot": [
-                "`PRAV` ali `NAPAK` (privzeto), pokaže diagram komponent"
+                "`TRUE` ali `FALSE` (privzeto), pokaže diagram komponent"
             ],
             "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
                 ""
             ],
             "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
-                "`PRAV` ali `NAPAK` (privzeto), izvede preizkus homogenosti varianc (npr. Levenov preizkus)"
+                "`TRUE` ali `FALSE` (privzeto), izvede preizkus homogenosti varianc (npr. Levenov preizkus)"
             ],
             "`TRUE` or `FALSE` (default), the variables are counts": [
-                ""
+                "`TRUE` ali `FALSE` (privzeto), spremenljivke so števci"
             ],
             "`TRUE` or `FALSE` (default), whether expected counts should be displayed": [
-                "`PRAV` ali `NAPAK` (privzeto), določa, ali naj bodo prikazani tudi pričakovani števci"
+                "`TRUE` ali `FALSE` (privzeto), določa, ali naj bodo prikazani tudi pričakovani števci"
             ],
             "`TRUE` or `FALSE` (default); perform an overall model test": [
                 ""
@@ -755,16 +758,16 @@
                 ""
             ],
             "a list containing vectors of strings that name the predictors that are added to the model. The elements are added to the model according to their order in the list": [
-                "seznam, ki vsebuje vektorje nizov z imeni vzročnih spremenljivk, ki so dodane modelu. Te so dodane modelu glede na vrstni red na seznamu."
+                "seznam, ki vsebuje vektorje nizov z imeni vzročnih spremenljivk, ki so dodane modelu. Te so dodane modelu glede na vrstni red na seznamu"
             ],
             "a list of character vectors describing the between subjects terms to go into the model": [
                 "seznam vektorjev znakov, ki opisujejo pogoje med predmeti v modelu"
             ],
             "a list of character vectors describing the post-hoc tests that need to be computed": [
-                "seznam znakovnih vektorjev, ki opisujejo preizkuse post-hoc za izračun."
+                "seznam znakovnih vektorjev, ki opisujejo preizkuse post-hoc za izračun"
             ],
             "a list of character vectors describing the repeated measures terms to go into the model": [
-                "seznam znakovnih vektorjev, ki opisujejo pogoje ponavljajočih se meritev, ki se vključijo v model."
+                "seznam znakovnih vektorjev, ki opisujejo pogoje ponavljajočih se meritev, ki se vključijo v model"
             ],
             "a list of lists specifying reference levels of the dependent variable and all the factors": [
                 "seznam seznamov, ki določajo sklicne ravni odvisne spremenljivke in vseh faktorjev"
@@ -822,6 +825,9 @@
             ],
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "število (privzeto: 3), ki določa spodnjo mejo za poudarjanje vrednosti"
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
             ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "število med 0,5 in 2 (privzeto 0,707), ki določa predhodno širino za izračunavanje Bayesovih faktorjev"
@@ -1097,7 +1103,7 @@
                 "Kriterij AIC"
             ],
             "All observations are tied": [
-                "Vsa opažanja so povezana."
+                "Vsa opažanja so povezana"
             ],
             "Alternative hypothesis": [
                 "Alternativna hipoteza"
@@ -1107,6 +1113,9 @@
             ],
             "an array of descriptive plots": [
                 "izris diagramov opisne statistike"
+            ],
+            "an array of extreme values tables": [
+                ""
             ],
             "an array of frequency tables": [
                 "izris frekvenčnih razpredelnic"
@@ -1149,6 +1158,9 @@
             ],
             "an integer (default: 4) specifying the number of equal groups": [
                 "število (privzeto: 4), ki določa število enakih skupin"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                ""
             ],
             "An uninspiring ANOVA data set": [
                 "Pretežno nezanimiv nabor podatkov za analizo ANOVA"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "Stolpec"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "V stolpcu »{name}« so neuporabljene ravni (napaka se pojavi, če so izločene vrstice z manjkajočimi vrednostmi)"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "Stolpec spremenljivke »{var}« vsebuje manj kot 2 ravni"
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 "Zmanjšanje podatkov"
             ],
+            "Data set is currently unweighted": [
+                ""
+            ],
             "Data Summary": [
                 "Povzetek podatkov"
             ],
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "Odvisna spremenljivka"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                ""
+            ],
             "Dependent Variable Label": [
                 "Oznaka odvisne spremenljivke"
             ],
-            "Dependent variable must be numeric": [
-                "Odvisna spremenljivka mora biti številska"
-            ],
             "Dependent Variables": [
                 "Odvisne spremenljivke"
+            ],
+            "Dependent variables are very highly correlated": [
+                ""
             ],
             "deprecated": [
                 "opuščeno"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "Razpredelnica opisne statistike"
-            ],
-            "dev": [
-                ""
             ],
             "Deviance": [
                 "Odklonskost"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "Lastne vrednosti večje od"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                ""
+            ],
             "Equal cell weights": [
                 "Enako utežene celice"
             ],
@@ -1784,10 +1808,10 @@
                 "Ocena"
             ],
             "Estimate (Log Odds Ratio)": [
-                ""
+                "Napoved (logaritemsko razmerje obetov)"
             ],
             "Estimate (Log Rate Ratio)": [
-                ""
+                "Napoved (logaritemsko razmerje stopenj)"
             ],
             "Estimated Marginal Means": [
                 "Ocenjena robna povprečja"
@@ -1799,7 +1823,7 @@
                 "Ocene"
             ],
             "Estimates represent the log odds of …": [
-                ""
+                "Napoved predstavlja log razmerje obetov …"
             ],
             "Estimates represent the log odds of \"{dep} = {level1}\" vs. \"{dep} = {level2}\"": [
                 "Napoved predstavlja log razmerje obetov »{dep} = {level1}« napram »{dep} = {level2}«"
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "Ekstrakcija"
             ],
+            "Extreme values": [
+                ""
+            ],
+            "Extreme Values": [
+                ""
+            ],
+            "Extreme values of $key": [
+                ""
+            ],
             "F": [
                 "F"
             ],
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "Faktor"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                ""
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "Faktor »{factor}« zahteva vsaj 2 ravni"
             ],
-            "Factor '{factorName}' contains no data": [
-                "Faktor »{factorName}« ne vsebuje podatkov"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                ""
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "Faktor »{factorName}« vsebuje le eno raven"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                ""
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                ""
             ],
             "Factor {0}": [
                 "Faktor {0}"
@@ -1871,7 +1910,7 @@
                 "Faktorske kovariance"
             ],
             "Factor Estimates": [
-                ""
+                "Napovedi faktorja"
             ],
             "Factor Intercepts": [
                 ""
@@ -1970,7 +2009,7 @@
                 "Posplošeni η²"
             ],
             "Grand mean (simple coding)": [
-                ""
+                "Združeno povprečje (enostavno kodiranje)"
             ],
             "Greenhouse-Geisser": [
                 "Greenhouse-Geisser"
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 "Helmertov model‧"
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 "Skrij uteži pod"
             ],
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "Hipoteza"
             ],
-            "if item dropped": [
-                "če je predmet izpuščen"
+            "If item dropped": [
+                ""
             ],
             "in development": [
                 "v razvoju"
@@ -2134,9 +2176,6 @@
             "Item-rest correlation": [
                 ""
             ],
-            "item-rest correlation": [
-                ""
-            ],
             "Items": [
                 "Predmeti"
             ],
@@ -2185,11 +2224,8 @@
             "Level 2": [
                 "Raven 2"
             ],
-            "Levels": [
-                "Ravni"
-            ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
-                "Levenov test je statistično značilen (p < 0.05), kar kaže na kršitev predpostavke enakih varianc."
+                "Levenov test je statistično značilen (p < 0.05), kar kaže na kršitev predpostavke enakih varianc"
             ],
             "Likelihood": [
                 "Razmerje verjetij"
@@ -2201,7 +2237,7 @@
                 "Preizkus razmerij verjetij"
             ],
             "linear": [
-                ""
+                "linearno‧"
             ],
             "Linear Regression": [
                 "Linearna regresija"
@@ -2284,9 +2320,6 @@
             "Mean": [
                 "Povprečna vrednost"
             ],
-            "mean": [
-                "povprečna vrednost"
-            ],
             "Mean ({ciWidth}% CI)": [
                 "Povprečje ({ciWidth}% CI)"
             ],
@@ -2354,7 +2387,7 @@
                 "Manjkajoče"
             ],
             "Missing Values": [
-                "Manjkajoče vrednosti"
+                "Manjkajoče Vrednosti"
             ],
             "Missing values": [
                 "Manjkajoče vrednosti"
@@ -2372,7 +2405,7 @@
                 "Model"
             ],
             "Model Builder": [
-                ""
+                "Modelski izgrajevalnik"
             ],
             "Model Coefficients": [
                 "Koeficienti modela"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 ""
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
                 "Obstaja več kot en modus, podana je le prva vrednost"
+            ],
+            "Most extreme": [
+                ""
             ],
             "MSA": [
                 "Analiza MSA"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Normalnost (Shapiro-Wilksov preizkus)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                ""
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                ""
+            ],
             "Number of Components": [
                 "Število komponent"
             ],
             "Number of components": [
                 "Število komponent"
             ],
+            "Number of extreme values": [
+                ""
+            ],
             "Number of Factors": [
                 "Število faktorjev"
             ],
             "Number of factors": [
                 "Število faktorjev"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                ""
             ],
             "Oblimin": [
                 "Oblimin"
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 ""
             ],
+            "Outliers": [
+                ""
+            ],
             "Output": [
                 "Odvod"
             ],
@@ -2660,7 +2717,7 @@
                 "Delna korelacija"
             ],
             "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables": [
-                "Delne korelacijske matrike so način preučevanja linearnih povezav med\ndvema ali več zveznimi spremenljivkami ob spremljanju drugih spremenljivk."
+                "Delne korelacijske matrike so način preučevanja linearnih povezav\nmed dvema ali več zveznimi spremenljivkami ob spremljanju drugih\nspremenljivk"
             ],
             "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
                 "Matrike delnih korelacij omogočajo preučevanja linearnih povezav med dvema ali več zveznimi spremenljivkami ob hkratnem pregledu drugih spremenljivk.\n\nVrednost Pearsonovega r kaže moč in smer povezave za vsak par spremenljivk. Pozitivna vrednost pomeni pozitivno razmerje (višje vrednosti ene spremenljivke napovedujejo višje vrednosti druge), negativna nasprotno (višje vrednosti ene spremenljivke napovedujejo nižje vrednosti druge spremenljivke in obratno). Vrednost nič pomeni, da ni povezave (visoka ali nizka vrednost spremenljivke ne pove ničesar o vrednosti druge).\n\nNičelno hipotezo je mogoče preveriti z izračunom p-vrednosti, če je korelacija enaka nič. Če je p-vrednost nizka, pomeni, da korelacijski koeficient ni enak nič in da med spremenljivkama obstaja linearna (ali bolj kompleksna) povezava."
@@ -2679,6 +2736,9 @@
             ],
             "Pearson": [
                 "Pearsonova korelacija"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                ""
             ],
             "Pearson's r": [
                 "Pearsonov R"
@@ -2849,10 +2909,10 @@
                 ""
             ],
             "Proportion Test (2 Outcomes)": [
-                ""
+                "Preizkus sorazmernosti (2 izida)"
             ],
             "Proportion Test (N Outcomes)": [
-                ""
+                "Preizkus sorazmernosti (N izidov)"
             ],
             "provide a Cohen's d measure of effect size for the post-hoc tests.": [
                 "izračuna Cohenove d velikosti učinka post-hoc preizkusov."
@@ -2867,7 +2927,7 @@
                 "izračuna Kendallov tau-b za vsako kombinacijo spremenljivk."
             ],
             "provide a p-value for each correlation co-efficient.": [
-                "izračuna p-vrednost za vsak koeficient korelacije"
+                "izračuna p-vrednost za vsak koeficient korelacije."
             ],
             "provide a Pearson's r for each combination of variables.": [
                 "izračuna Pearsonov r za vsako kombinacijo spremenljivk."
@@ -2897,7 +2957,7 @@
                 "izračuna interval zaupanja za Pearsonov r."
             ],
             "provide confidence intervals for the effect-sizes": [
-                "določi intervale zaupanja za velikosti učinka."
+                "določi intervale zaupanja za velikosti učinka"
             ],
             "provide confidence intervals for the mean differences.": [
                 "določi intervale zaupanja za razlike povprečij."
@@ -2924,10 +2984,10 @@
                 "izriše diagrame opisnih statistik."
             ],
             "provide effect-sizes (Cohen's D).": [
-                "izračuna vrednost velikosti učinka (Cohenov D)"
+                "izračuna vrednost velikosti učinka (Cohenov D)."
             ],
             "provide effect-sizes (Cohen's d).": [
-                "izračuna vrednost velikosti učinka (Cohenov d)"
+                "izračuna vrednost velikosti učinka (Cohenov d)."
             ],
             "provide Levene's test for homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
                 "izračuna Levenov test homogenosti varianc. Nizka p-vrednost kaže, da skupini nimata enakih varianc."
@@ -2993,7 +3053,7 @@
                 ""
             ],
             "Q-Q plot of residuals": [
-                ""
+                "Diagram Q-Q ostankov"
             ],
             "Q-Q Plots": [
                 "Diagrami Q-Q"
@@ -3031,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 "R²<sub>N</sub>"
             ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
             "Range": [
                 "Obseg"
             ],
@@ -3038,10 +3101,10 @@
                 "Biserialna korelacija rangov"
             ],
             "Rate Ratio": [
-                ""
+                "Razmerje Stopenj"
             ],
             "Rate ratio": [
-                ""
+                "Razmerje stopenj"
             ],
             "Ratio": [
                 "Razmerje"
@@ -3059,7 +3122,7 @@
                 "Regresije"
             ],
             "Relative risk": [
-                ""
+                "Relativno tveganje"
             ],
             "Reliability Analysis": [
                 "Analiza zanesljivosti"
@@ -3074,10 +3137,10 @@
                 "ANOVA ponavljajočih meritev (neparametrično)"
             ],
             "Repeated Measures Cells": [
-                ""
+                "Cellice ponavljajočih meritev"
             ],
             "Repeated Measures Components": [
-                "ANOVA ponavljajočih meritev"
+                "Komponente ponavljajočih meritev"
             ],
             "Repeated Measures Factors": [
                 "Faktorji ponavljajočih meritev"
@@ -3086,7 +3149,7 @@
                 "Izpiši statistično značilnost"
             ],
             "Represents grand mean": [
-                ""
+                "Predstavlja združeno povprečje"
             ],
             "Represents reference level": [
                 "Pomeni sklicno raven"
@@ -3095,16 +3158,16 @@
                 "Ostanek"
             ],
             "Residual Covariances": [
-                ""
+                "Kovariance ostankov"
             ],
             "Residual covariances": [
-                ""
+                "Kovariance ostankov"
             ],
             "Residual Covariances – Modification Indices": [
                 ""
             ],
             "Residual Estimates": [
-                ""
+                "Napovedi ostankov"
             ],
             "Residual Intercepts": [
                 ""
@@ -3113,9 +3176,9 @@
                 ""
             ],
             "Residual plots": [
-                ""
+                "Diagrami ostankov"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
                 ""
             ],
             "Residuals": [
@@ -3172,6 +3235,9 @@
             "Row": [
                 "Vrstica"
             ],
+            "Row number": [
+                ""
+            ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "Vrstica spremenljivke »{var}« vsebuje manj kot 2 ravni"
             ],
@@ -3197,7 +3263,7 @@
                 "Shrani"
             ],
             "scale": [
-                ""
+                "lestvica"
             ],
             "Scale Analysis": [
                 "Analiza lestvice"
@@ -3209,7 +3275,7 @@
                 "Statistika zanesljivosti lestvice"
             ],
             "Scale Statistics": [
-                ""
+                "Statistika lestvice"
             ],
             "Scheffe": [
                 "Scheffejev test"
@@ -3234,9 +3300,6 @@
             ],
             "SD": [
                 "SD"
-            ],
-            "sd": [
-                "sd"
             ],
             "SE": [
                 "SN"
@@ -3299,13 +3362,13 @@
                 "Zaznano je singularno prileganje; ena ali več vzročnih spremenljivk so linearne kombinacije drugih napovednih spremenljivk."
             ],
             "Singularity error. Sphericity tests are not available": [
-                "Napaka singularnosti. Preizkusi sferičnosti niso na voljo."
+                "Napaka singularnosti. Preizkusi sferičnosti niso na voljo"
             ],
             "Skewness": [
                 "Asimetrija"
             ],
             "Sort loadings by size": [
-                ""
+                "Razvrsti uteži po velikosti"
             ],
             "Spearman": [
                 "Spearman"
@@ -3368,7 +3431,7 @@
                 "Statistika"
             ],
             "statistic": [
-                ""
+                "statistika"
             ],
             "Statistics": [
                 "Statistike"
@@ -3470,7 +3533,7 @@
                 "alternativna hipoteza."
             ],
             "the alternative hypothesis. Allows for one-tailed tests.": [
-                ""
+                "alternativna hipoteza. Možnost določa enosmerne preizkuse."
             ],
             "The Analysis of Covariance (ANCOVA) is used to explore the relationship\nbetween a continuous dependent variable, one or more categorical\nexplanatory variables, and one or more continuous explanatory variables\n(or covariates). It is essentially the same analysis as ANOVA, but\nwith the addition of covariates.": [
                 "Analiza kovariance (ANCOVA) se uporablja za raziskovanje razmerja med\nzvezno odvisno spremenljivko, eno ali več kategoričnih pojasnjevalnih\nspremenljivk in ene ali več zveznih pojasnjevalnih spremenljivk (ali kovariant).\nV zasnovi je analiza enaka analizi ANOVA, vendar z dodatkom kovariant."
@@ -3499,11 +3562,14 @@
             "the categorical explanatory (or independent) variables.": [
                 "kategorične pojasnjevalne (ali neodvisne) spremenljivke."
             ],
-            "the confidence interval width for the effect-sizes.": [
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
                 ""
             ],
+            "the confidence interval width for the effect-sizes.": [
+                "širina intervala zaupanja za velikosti učinka."
+            ],
             "the confidence interval width for the post-hoc effect sizes.": [
-                ""
+                "širina intervala zaupanja za velikosti učinka preizkusov post-hoc."
             ],
             "the confidence interval width.": [
                 "širina intervala zaupanja."
@@ -3512,7 +3578,7 @@
                 "zvezne pojasnjevalne (ali neodvisne) spremenljivke, imenovane tudi kovariati."
             ],
             "the contrasts to use.": [
-                ""
+                "kontrasti za uporabo."
             ],
             "the control variables of interest.": [
                 ""
@@ -3524,13 +3590,19 @@
                 ""
             ],
             "the covariates from `data`": [
-                ""
+                "kovariati za podatkovno zbirko `data`"
             ],
             "The cut-off value is set to {}": [
                 "Vrednost točke prereza je nastavljena na {}"
             ],
             "the data as a data frame": [
                 "podatki podatkovne zbirke"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                ""
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                ""
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "Odvisna spremenljivka »{}« ima več kot dve ravni; binomska logistična regresija je omogoča le za binarne odvisne spremenljivke."
@@ -3572,25 +3644,25 @@
                 ""
             ],
             "the explanatory or independent variable. For ANOVA this will be categorical.": [
-                ""
+                "pojasnjevalna ali neodvisna spremenljivka. Za analizo ANOVA je ta kategorična."
             ],
             "the explanatory or independent variables. For ANOVA these will be categorical.": [
-                ""
+                "pojasnjevalne ali neodvisne spremenljivke. Za analizo ANOVA so te kategorične."
             ],
             "the fixed factors from `data`": [
-                ""
+                "stalni faktorji med podatki `data`"
             ],
             "The Friedman test is used to explore the relationship between a continuous dependent variable and a categorical explanatory variable, where the explanatory variable is 'within subjects' (where multiple measurements are from the same subject). It is analagous to Repeated Measures ANOVA, but with the advantage of being non-parametric, and not requiring the assumptions of normality or homogeneity of variances. However, it has the limitation that it can only test a single explanatory variable at a time.": [
                 "Friedmanov preizkus se uporablja za raziskovanje razmerja med zvezno odvisno spremenljivko in kategorično pojasnjevalno spremenljivko, kjer je pojasnjevalna »znotraj primerov« (več meritev za isti primer). Preizkus je analogen analizi ponavljajočih meritev ANOVA, a s prednostjo, da je ta neparametričen in ne zahteva predpostavke normalnosti ali homogenosti variance. Omejitev je, da je sočasno mogoče preverjati le eno spremenljivko."
             ],
             "the grouping variable with two levels (not necessary when using a formula, see the examples)": [
-                ""
+                "združevalna spremenljivka z dvema ravnema (ni obvezna pri uporabi formule, več med primeri)"
             ],
             "The Kruskal-Wallis test is used to explore the relationship between a continuous dependent variable, and a categorical explanatory variable. It is analagous to ANOVA, but with the advantage of being non-parametric and having fewer assumptions. However, it has the limitation that it can only test a single explanatory variable at a time.": [
                 "Kruskal-Wallisov preizkus se uporablja za raziskovanje razmerja med zvezno odvisno spremenljivko in kategorično pojasnjevalno spremenljivko. Preizkus je analogen analizi ANOVA, vendar s prednostjo, da je neparametričen in zahteva manj predpostavk. Omejitev je, da je sočasno mogoče preverjati le eno spremenljivko."
             ],
             "the label to use for the dependent variable.": [
-                ""
+                "oznaka, uporabljena za odvisno spremenljivko."
             ],
             "the lavaan syntax used to fit the model": [
                 ""
@@ -3602,15 +3674,18 @@
                 ""
             ],
             "the model terms which make up the model.": [
-                ""
+                "pogoji modela, ki oblikujejo model."
             ],
             "the model terms which make up the model. By default a full factorial model is created, but here the exact terms making up the model can be adjusted.": [
-                ""
+                "pogoji modela, ki oblikujejo model. Privzeto je ustvarjen polni faktorski model, vendar je mogoče natančne pogoje, ki določajo model, prilagoditi."
             ],
             "the pairs of measurements -- a separate t-test is performed for each pair of measurements.": [
                 ""
             ],
             "the post-hoc multiple comparisons corrections to use.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
                 ""
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
@@ -3626,7 +3701,7 @@
                 ""
             ],
             "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels": [
-                "Ponavljajoče meritve imajo le dve ravni. Predpostavka sferičnosti je izpolnjena vedno, ko ima ponavljajoča meritev le dve ravni."
+                "Ponavljajoče meritve imajo le dve ravni. Predpostavka sferičnosti je izpolnjena vedno, ko ima ponavljajoča meritev le dve ravni"
             ],
             "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels.": [
                 "Ponavljajoče meritve imajo le dve ravni. Predpostavka sferičnosti je izpolnjena vedno, ko ima ponavljajoča meritev le dve ravni."
@@ -3635,7 +3710,7 @@
                 ""
             ],
             "the repeated measures terms of the model.": [
-                ""
+                "pogoji ponovljenih meritev modela."
             ],
             "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.": [
                 "T-Test neodvisnih vzorcev (tudi t-test dveh vzorcev) se uporablja za preverjanje\nničelne hipoteze, da imata dve skupini enako povprečno vrednost. Nizka\np-vrednost pomeni, da ničelna hipoteza ne drži, in sta povprečji skupin različni."
@@ -3656,13 +3731,13 @@
                 "T-Test za parnih vzorcev (tudi t-test odvisnih vzorcev) se uporablja\nza preverjanje ničelne hipoteze, da ni razlike med pari meritev.\nNizka p-vrednost kaže, da ničelna hipoteza ne drži in da razlika\nmed pari meritev obstaja in ni enaka nič.\n\nPri T-Testu parnih vzorcev je predpostavljeno, da sledijo razlike\nmed pari normalni porazdelitvi. Če ta domneva ni mogoča, je\nmogoče uporabiti neparametrični Wilcoxonov preizkus\npredznačenih rangov (ta ima nekoliko drugačno ničelno\nhipotezo – obe skupini meritev imata enaki porazdelitvi)."
             ],
             "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
-                ""
+                "pogoji za izračun ocene robnih povprečij. Določiti je mogoče več pogojev."
             ],
             "the test value to test against (typically zero).": [
-                ""
+                "vrednost, ki pomeni preizkusno raven (običajno je nič)."
             ],
             "the type of correlation to calculate": [
-                ""
+                "vrsta korelacije za izračun"
             ],
             "the type of sums of squares to use; Type 1, 2, or 3.": [
                 "vrsta vsote kvadratov za uporabo; vrsta 1, 2 ali 3."
@@ -3671,7 +3746,7 @@
                 "vrsta vsote kvadratov za uporabo; vrsta 2 ali 3."
             ],
             "The underlying `aov` object": [
-                ""
+                "Osnovni predmet `aov`"
             ],
             "The variable {var} cannot be treated as numeric. Plots that expect numeric data will not be created for this variable.": [
                 "Vrednosti spremenljivke {var} ni mogoče obravnavati kot številke. Izrisi diagramov, ki zahtevajo številske vrednosti, bodo izpuščeni."
@@ -3680,16 +3755,16 @@
                 ""
             ],
             "the variable specifying the groups; must have 2 levels.": [
-                ""
+                "spremenljivka, ki določa dve skupini; vsebovati mora 2 ravni."
             ],
             "the variable to use as the columns in the contingency table (not necessary when providing a formula, see the examples)": [
-                ""
+                "spremenljivka, ki naj določa stolpce v kontingenčni razpredelnici (pri formuli ni zahtevana, več med primeri)"
             ],
             "the variable to use as the counts in the contingency table (not necessary when providing a formula, see the examples)": [
-                ""
+                "spremenljivka, ki naj določa števce v kontingenčni razpredelnici (pri formuli ni zahtevana, več med primeri)"
             ],
             "the variable to use as the rows in the contingency table (not necessary when providing a formula, see the examples)": [
-                ""
+                "spremenljivka, ki naj določa vrstice v kontingenčni razpredelnici (pri formuli ni zahtevana, več med primeri)"
             ],
             "The variables {vars} cannot be treated as numeric. Plots that expect numeric data will not be created for these variables.": [
                 "Vrednosti spremenljivk {var} ni mogoče obravnavati kot številke. Izrisi diagramov, ki zahtevajo številske vrednosti, bodo izpuščeni."
@@ -3726,6 +3801,9 @@
             ],
             "Thurstone": [
                 "Thurstonenova lestvica"
+            ],
+            "Tjur's R²": [
+                ""
             ],
             "TLI": [
                 "Tucker-Lewisov indeks (TLI)"
@@ -3808,6 +3886,9 @@
             "value": [
                 "vrednost"
             ],
+            "values": [
+                ""
+            ],
             "Values are counts": [
                 "Vrednosti so števci"
             ],
@@ -3845,7 +3926,7 @@
                 "Variance"
             ],
             "variation from the control variables is only removed from the variables in the columns": [
-                ""
+                "variacija nadzornih spremenljivk se odstrani le iz spremenljivk v stolpcih"
             ],
             "Varimax": [
                 "Varimax (variance uteži)"
@@ -3865,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "enaka uteženost celic (privzeto so celice utežene glede na frekvenco.)"
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 "Uteženo po spremenljivki »{varName}«"
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
                 "Uteži (izbirno)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
             ],
             "Welch's": [
                 "Welchev t"

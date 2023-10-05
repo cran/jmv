@@ -122,7 +122,7 @@ anovaRMClass <- R6::R6Class(
 
             if (length(bsTerms) > 0) {
                 for (term in bsTerms) {
-                    if (term == 'Residual') {
+                    if (length(term) == 1 && term == 'Residual') {
                         name <- .('Residual')
                     } else {
                         name <- stringifyTerm(term)
@@ -890,7 +890,7 @@ anovaRMClass <- R6::R6Class(
 
             rm <- sapply(self$options$rmCells, function(x) return(x$measure))
             bs <- unlist(self$options$bs)
-            cov <- unlist(self$opions$cov)
+            cov <- unlist(self$options$cov)
 
             varsNumeric <- c(rm, cov)
 
@@ -910,12 +910,21 @@ anovaRMClass <- R6::R6Class(
             }
 
             # Check factor values
-            singleLevelItems <- sapply(dataFactors, function(x) length(levels(x)) == 1)
-            if (any(singleLevelItems)) {
-                oneLevelOnlyMessage <- .("Item '{item}' consists of one level only")
-                jmvcore::reject(oneLevelOnlyMessage, code='error', item=bs[singleLevelItems])
-            }
+            if (length(dataFactors) > 0) {
+                singleLevelItems <- sapply(dataFactors, function(x) length(levels(x)) == 1)
+                if (any(singleLevelItems)) {
+                    oneLevelOnlyMessage <- .("Item '{item}' consists of one level only")
+                    jmvcore::reject(oneLevelOnlyMessage, code='error', item=bs[singleLevelItems])
+                }
 
+                factorLevelCounts = table(dataFactors)
+                if (any(factorLevelCounts == 0)) {
+                    jmvcore::reject(
+                        .("Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations"),
+                        code=exceptions$dataError
+                    )
+                }
+            }
 
             # Check numeric values
             factorItems <- sapply(dataNumeric, function(x) class(jmvcore::toNumeric(x)) == "factor")

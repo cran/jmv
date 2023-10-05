@@ -182,7 +182,7 @@
                 "`Proporzioni - ${var}`"
             ],
             "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
-                ""
+                "`TRUE` (predefinito) o `FALSE`, aggiunge etichette con il numero di riga ai valori anomali (outlier) nel box plot"
             ],
             "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
                 "`TRUE` (predefinito) o `FALSE`, esegue t-test di Student"
@@ -490,6 +490,9 @@
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 "`TRUE` o `FALSE` (predefinito), restituisce indici di modifica per i parametri non inclusi nel modello"
             ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` o `FALSE` (predefinito), fornisce gli N valori più estremi (il più alto e il più basso)"
+            ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 "`TRUE` o `FALSE` (predefinito), restituisce i percentili"
             ],
@@ -686,7 +689,7 @@
                 "`TRUE` o `FALSE` (predefinito), mostra il grafico dei sedimenti (Scree plot)"
             ],
             "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
-                "`TRUE` o `FALSE` (predefinito), ordina i caricamenti dei fattori per dimensione"
+                "`TRUE` o `FALSE` (predefinito), ordina le saturazioni fattoriali per dimensione"
             ],
             "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
                 "`TRUE` o `FALSE` (predefinito), test per l'omogeneità delle varianze (cioè il test di Levene)"
@@ -822,6 +825,9 @@
             ],
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "un numero (predefinito: 3), evidenzia i valori nelle tabelle `'modIndices'` sopra questo valore"
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
             ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "un numero tra 0.5 e 2 (predefinito 0.707), l'ampiezza del priore da usare nel calcolo dei fattori di Bayes"
@@ -1091,7 +1097,7 @@
                 "Statistiche Aggiuntive"
             ],
             "Adjusted R²": [
-                "R² Corretto"
+                "R² aggiustato"
             ],
             "AIC": [
                 "AIC"
@@ -1107,6 +1113,9 @@
             ],
             "an array of descriptive plots": [
                 "una serie di grafici descrittivi"
+            ],
+            "an array of extreme values tables": [
+                "un vettore di tabelle di valori estremi"
             ],
             "an array of frequency tables": [
                 "una matrice di tabelle di frequenza"
@@ -1149,6 +1158,9 @@
             ],
             "an integer (default: 4) specifying the number of equal groups": [
                 "un intero (predefinito: 4) che specifica il numero di gruppi uguali"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "un numero intero (predefinito: 5) che specifica il numero di valori estremi"
             ],
             "An uninspiring ANOVA data set": [
                 "Alcuni dati per ANOVA"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "Colonna"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "La colonna '{name}' contiene livelli non utilizzati (possibile solo quando sono escluse le righe con valori mancanti)"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "La variabile di colonna '{var}' contiene meno di 2 livelli"
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 "Riduzione dei dati"
             ],
+            "Data set is currently unweighted": [
+                ""
+            ],
             "Data Summary": [
                 "Riepilogo Dati"
             ],
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "Variabile Dipendente"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "La variabile dipendente '{dep}' contiene valori infiniti"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "La variabile dipendente \"{dep}\" non contiene dati (dopo aver rimosso le righe con valori mancanti)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "La variabile dipendente \"{dep}\" contiene un solo valore univoco (dopo aver rimosso le righe con valori mancanti)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "La variabile dipendente \"{dep}\" deve essere continua"
+            ],
             "Dependent Variable Label": [
                 "Etichetta Variabile Dipendente"
             ],
-            "Dependent variable must be numeric": [
-                "La variabile dipendente deve essere numerica"
-            ],
             "Dependent Variables": [
                 "Variabili Dipendenti"
+            ],
+            "Dependent variables are very highly correlated": [
+                "Le variabili dipendenti sono altamente correlate"
             ],
             "deprecated": [
                 "deprecato"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "Tabella descrittive"
-            ],
-            "dev": [
-                "dev"
             ],
             "Deviance": [
                 "Devianza"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "Autovalori maggiori di"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Celle vuote nel disegno tra soggetti: almeno una combinazione di livelli di fattori tra soggetti ha 0 osservazioni"
+            ],
             "Equal cell weights": [
                 "Pesi delle celle uguali"
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "Estrazione"
             ],
+            "Extreme values": [
+                "Valori estremi"
+            ],
+            "Extreme Values": [
+                "Valori Estremi"
+            ],
+            "Extreme values of $key": [
+                "Valori estremi di $key"
+            ],
             "F": [
                 "F"
             ],
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "Fattore"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Il fattore '{factor}' ha meno di due livelli. I fattori devono avere almeno due livelli"
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "Il fattore \"{factor}\" deve avere almeno 2 livelli"
             ],
-            "Factor '{factorName}' contains no data": [
-                "Il fattore '{factorName}' non contiene dati"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Il fattore '{factorName}' non contiene dati (dopo aver rimosso le righe con valori mancanti)"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "Il fattore '{factorName}' contiene un solo livello"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Il fattore '{factorName}' contiene un solo livello (dopo aver rimosso le righe con valori mancanti)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Il fattore '{factorName}' contiene livelli inutilizzati (dopo aver rimosso le righe con valori mancanti)"
             ],
             "Factor {0}": [
                 "Fattore {0}"
@@ -1874,16 +1913,16 @@
                 "Stime Fattoriali"
             ],
             "Factor Intercepts": [
-                "Fattori Intercettati"
+                "Intercette dei Fattori"
             ],
             "Factor intercepts": [
-                "Fattori intercettati"
+                "Intercette dei fattori"
             ],
             "Factor Loadings": [
-                "Caricamenti del Fattore"
+                "Saturazioni fattoriali"
             ],
             "Factor Loadings – Modification Indices": [
-                "Caricamenti del Fattore - Indici di Modifica"
+                "Saturazioni Fattoriali - Indici di Modifica"
             ],
             "Factor scores": [
                 "Punteggi fattoriali"
@@ -2035,8 +2074,11 @@
             "Helmert": [
                 "Helmert"
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
-                "Nascondi i caricamenti sotto a"
+                "Nascondi le saturazioni sotto a"
             ],
             "Highlight values above": [
                 "Evidenzia i valori sopra"
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "Ipotesi"
             ],
-            "if item dropped": [
-                "se l'elemento viene eliminato"
+            "If item dropped": [
+                "Se l'elemento viene scartato"
             ],
             "in development": [
                 "in sviluppo"
@@ -2134,9 +2176,6 @@
             "Item-rest correlation": [
                 "Correlazione dell'elemento con gli altri"
             ],
-            "item-rest correlation": [
-                "correlazione elemento-residuo"
-            ],
             "Items": [
                 "Elementi"
             ],
@@ -2171,7 +2210,7 @@
                 "Curtosi"
             ],
             "Label outliers": [
-                ""
+                "Etichettare gli outlier"
             ],
             "Layers": [
                 "Strati"
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "Livello 2"
-            ],
-            "Levels": [
-                "Livelli"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "Il test di Levene è significativo (p < .05), suggerendo una violazione dell'assunzione di varianze uguali"
@@ -2222,7 +2258,7 @@
                 "Regressione Logistica"
             ],
             "Lower": [
-                "Minore"
+                "Inferiore"
             ],
             "lower bound": [
                 "limite inferiore"
@@ -2283,9 +2319,6 @@
             ],
             "Mean": [
                 "Media"
-            ],
-            "mean": [
-                "media"
             ],
             "Mean ({ciWidth}% CI)": [
                 "Media ({ciWidth}% CI)"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "Indici di modifica"
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
                 "Esiste più di una modalità, viene segnalata solo la prima"
+            ],
+            "Most extreme": [
+                "Il più estremo"
             ],
             "MSA": [
                 "MSA"
@@ -2456,7 +2495,7 @@
                 "Non parametrico"
             ],
             "None": [
-                "Nessuno"
+                "Nessuna"
             ],
             "none": [
                 "niente"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Test di Normalità (Shapiro-Wilk)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Non disponibile a causa di un numero troppo elevato di casi (> 5000)."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Gradi di libertà insufficienti per stimare tutti gli effetti del modello"
+            ],
             "Number of Components": [
                 "Numero delle Componenti"
             ],
             "Number of components": [
                 "Numero delle componenti"
             ],
+            "Number of extreme values": [
+                "Numero di valori estremi"
+            ],
             "Number of Factors": [
                 "Numero dei Fattori"
             ],
             "Number of factors": [
                 "Numero dei fattori"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Il numero di valori estremi richiesti è maggiore del numero di righe nei dati."
             ],
             "Oblimin": [
                 "Oblimin"
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 "Risultati Ordinali"
             ],
+            "Outliers": [
+                "Valori anomali"
+            ],
             "Output": [
                 "Uscita"
             ],
@@ -2679,6 +2736,9 @@
             ],
             "Pearson": [
                 "Pearson"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "La correlazione di Pearson non può essere calcolata per valori non numerici"
             ],
             "Pearson's r": [
                 "r di Pearson"
@@ -3031,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 "R²<sub>N</sub>"
             ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
             "Range": [
                 "Intervallo"
             ],
@@ -3115,8 +3178,8 @@
             "Residual plots": [
                 "Grafico dei residui"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "La somma residua di quadrati e/o gradi di libertà è zero, indicando un adattamento perfetto"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "La somma dei quadrati residui e/o i gradi di libertà sono pari a zero, il che indica un adattamento perfetto"
             ],
             "Residuals": [
                 "Residui"
@@ -3171,6 +3234,9 @@
             ],
             "Row": [
                 "Riga"
+            ],
+            "Row number": [
+                "Numero di riga"
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "La variabile di riga '{var}' contiene meno di 2 livelli"
@@ -3234,9 +3300,6 @@
             ],
             "SD": [
                 "SD"
-            ],
-            "sd": [
-                "ds"
             ],
             "SE": [
                 "SE"
@@ -3374,7 +3437,7 @@
                 "Statistiche"
             ],
             "Std. deviation": [
-                "Deviazione std."
+                "Dev. Standard"
             ],
             "Std. error kurtosis": [
                 "Err. Std. di Curtosi"
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 "le variabili categoriali esplicative (o indipendenti)."
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "Il CI della media assume che le medie campionarie seguano una distribuzione t con N - 1 gradi di libertà"
+            ],
             "the confidence interval width for the effect-sizes.": [
                 "l'ampiezza dell'intervallo di fiducia per le dimensioni dell'effetto."
             ],
@@ -3531,6 +3597,12 @@
             ],
             "the data as a data frame": [
                 "i dati sotto forma di frame di dati"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "Il set di dati contiene 0 righe (dopo aver rimosso le righe con valori mancanti)"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "Il set di dati contiene 0 righe (o tutte le righe contengono valori mancanti)"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "La variabile dipendente '{}' ha più di due livelli; la regressione logistica binomiale può essere eseguita solo su variabili dipendenti con due livelli."
@@ -3612,6 +3684,9 @@
             ],
             "the post-hoc multiple comparisons corrections to use.": [
                 "le correzioni dei confronti multipli post-hoc da utilizzare."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "l'ampiezza precedente per i fattori Bayes del t-test di Student. Richiede un valore compreso tra 0.5 e 2.0, valore predefinito 0.707."
@@ -3727,6 +3802,9 @@
             "Thurstone": [
                 "Thurstone"
             ],
+            "Tjur's R²": [
+                ""
+            ],
             "TLI": [
                 "TLI"
             ],
@@ -3808,6 +3886,9 @@
             "value": [
                 "valore"
             ],
+            "values": [
+                "valori"
+            ],
             "Values are counts": [
                 "I valori sono frequenze"
             ],
@@ -3865,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "pesare ogni cella allo stesso modo. (Le celle vengono pesate in base alla frequenza della cella per impostazione predefinita.)"
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 "Ponderato da '{varName}'"
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
                 "Pesi (opzionale)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
             ],
             "Welch's": [
                 "Welch"

@@ -75,7 +75,7 @@ suggests the correlation co-efficient is not zero, and there is a linear
 (or more complex) relationship between the two variables.
 }
 \examples{
-\dontrun{
+\donttest{
 data('mtcars')
 
 corrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))

@@ -122,7 +122,7 @@
                 "`“facVar”或“facInd”表示如何在模型中设置约束参数；`”facVar'`为将因子方差固定为1，`facInd'为将每个因子的第一个水平设为参照。"
             ],
             "`'listwise'` or `'fiml'`, how to handle missing values; `'listwise'` excludes a row from all analyses if one of its entries is missing, `'fiml'` uses a full information maximum likelihood method to estimate the model.": [
-                "“listwise”或“fiml”表示如何处理缺失值；`'listwise'`为如果某行有数据缺失，则在所有分析中删除该行；`fiml为`使用完全信息最大似然法来估计模型。"
+                "“listwise”或“fiml”表示如何处理缺失值；`'listwise'`为如果某行有数据缺失，则在所有分析中删除该行；`fiml`为使用完全信息最大似然法来估计模型。"
             ],
             "`'means'` (default) or `'medians'`, the error bars to use in the plot": [
                 "`'means'` (默认) 或`'medians'`表示绘图的误差线"
@@ -170,7 +170,7 @@
                 "`方差分析- ${dep}`"
             ],
             "`columns` or `rows` (default), compare columns/rows in difference of proportions or relative risks (2x2 tables)": [
-                "`正确` 或 `错误`(默认) ,比较行/列的比例差异或相对危险度（2x2四格表）"
+                "`TRUE` 或 `FALSE`(默认) ,比较行/列的比例差异或相对危险度（2x2四格表）"
             ],
             "`Model Coefficients - ${ dep }`": [
                 "`模型系数 - ${ dep }`"
@@ -185,520 +185,523 @@
                 "`TRUE'（默认）或`FALSE'，在箱形图中为离群值添加带有行号的标签"
             ],
             "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
-                "`正确` (默认) 或 `错误`, 执行Student's t检验"
+                "`TRUE` (默认) 或 `FALSE`, 执行Student's t检验"
             ],
             "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
-                "`正确` (默认) 或 `错误`, 执行Welch's单因素方差分析，该方法不要求方差齐"
+                "`TRUE` (默认) 或 `FALSE`, 执行Welch's单因素方差分析，该方法不要求方差齐"
             ],
             "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
-                "`正确` (默认) 或 `错误`, 提供模型估计的'Z'值和'p'值"
+                "`TRUE` (默认) 或 `FALSE`, 提供模型估计的'Z'值和'p'值"
             ],
             "`TRUE` (default) or `FALSE`, provide a chi-square test for exact fit that compares the model with the perfect fitting model": [
-                "`正确` (默认) 或 `错误`, 提供精确拟合的卡方检验，并将拟合模型与完美拟合模型进行比较"
+                "`TRUE` (默认) 或 `FALSE`, 提供精确拟合的卡方检验，并将拟合模型与完美拟合模型进行比较"
             ],
             "`TRUE` (default) or `FALSE`, provide a confidence interval for the estimated marginal means": [
-                "`正确` (默认) 或 `错误`, 提供边际估计均值的置信区间"
+                "`TRUE` (默认) 或 `FALSE`, 提供边际估计均值的置信区间"
             ],
             "`TRUE` (default) or `FALSE`, provide Aikaike's Information Criterion (AIC) for the models": [
-                "`正确` (默认) 或 `错误`, 提供模型的AIC"
+                "`TRUE` (默认) 或 `FALSE`, 提供模型的AIC"
             ],
             "`TRUE` (default) or `FALSE`, provide Cronbach's α": [
-                "`正确` (默认) 或 `错误`, 提供Cronbach's α系数"
+                "`TRUE` (默认) 或 `FALSE`, 提供Cronbach's α系数"
             ],
             "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
-                "`正确` (默认) 或 `错误`, 提供边际估计均值图"
+                "`TRUE` (默认) 或 `FALSE`, 提供边际估计均值图"
             ],
             "`TRUE` (default) or `FALSE`, provide estimates for the factor (co)variances": [
-                "`正确` (默认) 或 `错误`, 提供因子（协）方差的估计值"
+                "`TRUE` (默认) 或 `FALSE`, 提供因子（协）方差的估计值"
             ],
             "`TRUE` (default) or `FALSE`, provide estimates for the residual (co)variances": [
-                "`正确` (默认) 或 `错误`, 提供剩余（协）方差的估计值"
+                "`TRUE` (默认) 或 `FALSE`, 提供剩余（协）方差的估计值"
             ],
             "`TRUE` (default) or `FALSE`, provide mean differences for post-hoc tests": [
-                "`正确` (默认) 或 `错误`, 提供事后检验的均值差"
+                "`TRUE` (默认) 或 `FALSE`, 提供事后检验的均值差"
             ],
             "`TRUE` (default) or `FALSE`, provide Pearson's R": [
-                "`正确` (默认) 或 `错误`, 提供Pearson's相关系数r"
+                "`TRUE` (默认) 或 `FALSE`, 提供Pearson's相关系数r"
             ],
             "`TRUE` (default) or `FALSE`, provide significance levels": [
-                "`正确` (默认) 或 `错误`, 提供显著性水平"
+                "`TRUE` (默认) 或 `FALSE`, 提供显著性水平"
             ],
             "`TRUE` (default) or `FALSE`, provide significance levels for post-hoc tests": [
-                "`正确` (默认) 或 `错误`, 提供事后检验的显著性水平"
+                "`TRUE` (默认) 或 `FALSE`, 提供事后检验的显著性水平"
             ],
             "`TRUE` (default) or `FALSE`, provide the deviance (or -2LogLikelihood) for the models": [
-                "`正确` (默认) 或 `错误`, 提供模型的偏差（或-2对数似然值）"
+                "`TRUE` (默认) 或 `FALSE`, 提供模型的偏差（或-2对数似然值）"
             ],
             "`TRUE` (default) or `FALSE`, provide the mean": [
-                "`正确` (默认) 或 `错误`, 提供均值"
+                "`TRUE` (默认) 或 `FALSE`, 提供均值"
             ],
             "`TRUE` (default) or `FALSE`, provide the median": [
-                "`正确` (默认) 或 `错误`, 提供中位数"
+                "`TRUE` (默认) 或 `FALSE`, 提供中位数"
             ],
             "`TRUE` (default) or `FALSE`, provide the model comparison between the models and the NULL model": [
-                "`正确` (默认) 或 `错误`, 提供模型与空模型的比较结果"
+                "`TRUE` (默认) 或 `FALSE`, 提供模型与空模型的比较结果"
             ],
             "`TRUE` (default) or `FALSE`, provide the number of missing values": [
-                "`正确` (默认) 或 `错误`, 提供缺失值的数量"
+                "`TRUE` (默认) 或 `FALSE`, 提供缺失值的数量"
             ],
             "`TRUE` (default) or `FALSE`, provide the sample size": [
-                "`正确` (默认) 或 `错误`, 提供样本量"
+                "`TRUE` (默认) 或 `FALSE`, 提供样本量"
             ],
             "`TRUE` (default) or `FALSE`, provide the standard deviation": [
-                "`正确` (默认) 或 `错误`, 提供标准差"
+                "`TRUE` (默认) 或 `FALSE`, 提供标准差"
             ],
             "`TRUE` (default) or `FALSE`, provide the statistical measure `R-squared` for the models": [
-                "`正确` (默认) 或 `错误`, 提供模型的统计评价指标“R²”"
+                "`TRUE` (默认) 或 `FALSE`, 提供模型的统计评价指标“R²”"
             ],
             "`TRUE` (default) or `FALSE`, provide the statistical measure `R` for the models": [
-                "`正确` (默认) 或 `错误`, 提供模型的统计评价指标“R”"
+                "`TRUE` (默认) 或 `FALSE`, 提供模型的统计评价指标“R”"
             ],
             "`TRUE` (default) or `FALSE`, provide χ²": [
-                "`正确` (默认) 或 `错误`, 提供χ²值"
+                "`TRUE` (默认) 或 `FALSE`, 提供χ²值"
             ],
             "`TRUE` (default) or `FALSE`, weigh each cell equally or weigh them according to the cell frequency": [
-                "`正确` (默认) 或 `错误`, 对每个单元格进行平均加权或根据单元格频率进行加权"
+                "`TRUE` (默认) 或 `FALSE`, 对每个单元格进行平均加权或根据单元格频率进行加权"
             ],
             "`TRUE` or `FALSE` (default), add counts to the  bar plots": [
-                "`正确` 或 `错误`(默认) , 在条形图中添加计数"
+                "`TRUE` 或 `FALSE`(默认) , 在条形图中添加计数"
             ],
             "`TRUE` or `FALSE` (default), add mean to box plot": [
-                "`正确` 或 `错误`(默认) , 在条形图中添加均值"
+                "`TRUE` 或 `FALSE`(默认) , 在条形图中添加均值"
             ],
             "`TRUE` or `FALSE` (default), flag significant correlations": [
-                "`正确` 或 `错误`(默认) , 标记有统计学意义的相关"
+                "`TRUE` 或 `FALSE`(默认) , 标记有统计学意义的相关"
             ],
             "`TRUE` or `FALSE` (default), flag significant post-hoc comparisons": [
-                "`正确` 或 `错误`(默认) , 标记有统计学意义的事后检验"
+                "`TRUE` 或 `FALSE`(默认) , 标记有统计学意义的事后检验"
             ],
             "`TRUE` or `FALSE` (default), perform a Shapiro-Wilk test on the residuals": [
-                "`正确` 或 `错误`(默认) , 对残差进行Shapiro-Wilk正态性检验"
+                "`TRUE` 或 `FALSE`(默认) , 对残差进行Shapiro-Wilk正态性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Fisher's one-way ANOVA which assumes equal variances": [
-                "`正确` 或 `错误`(默认) , 执行 Fisher's 单因素方差分析，该方法需要满足方差齐性的条件"
+                "`TRUE` 或 `FALSE`(默认) , 执行 Fisher's 单因素方差分析，该方法需要满足方差齐性的条件"
             ],
             "`TRUE` or `FALSE` (default), perform homogeneity tests": [
-                "`正确` 或 `错误`(默认) , 执行方差齐性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行方差齐性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Levene's test for homogeneity of variances": [
-                "`正确` 或 `错误`(默认) , 执行Levene's 方差齐性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Levene's 方差齐性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Levene's tests for homogeneity of variances": [
-                "`正确` 或 `错误`(默认) , 执行Levene's 方差齐性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Levene's 方差齐性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Mann-Whitney U tests": [
-                "`正确` 或 `错误`(默认) , 执行Mann-Whitney U检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Mann-Whitney U检验"
             ],
             "`TRUE` or `FALSE` (default), perform pairwise comparisons": [
-                "`正确` 或 `错误`(默认) , 进行两两比较"
+                "`TRUE` 或 `FALSE`(默认) , 进行两两比较"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-wilk normality tests": [
-                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Shapiro-Wilk正态性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-Wilk test of normality": [
-                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Shapiro-Wilk正态性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-Wilk tests of normality": [
-                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Shapiro-Wilk正态性检验"
             ],
             "`TRUE` or `FALSE` (default), perform Shapiro-wilk tests of normality": [
-                "`正确` 或 `错误`(默认) , 执行Shapiro-Wilk正态性检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Shapiro-Wilk正态性检验"
             ],
             "`TRUE` or `FALSE` (default), perform sphericity tests": [
-                "`正确` 或 `错误`(默认) , 执行球形度检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行球形度检验"
             ],
             "`TRUE` or `FALSE` (default), perform Welch's t-tests": [
-                "`正确` 或 `错误`(默认) , 执行Welch's t检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Welch's t检验"
             ],
             "`TRUE` or `FALSE` (default), perform Wilcoxon signed rank tests": [
-                "`正确` 或 `错误`(默认) , 执行Wilcoxon符号秩检验"
+                "`TRUE` 或 `FALSE`(默认) , 执行Wilcoxon符号秩检验"
             ],
             "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
-                "`正确` 或 `错误`(默认) , 将数据绘制在边际均值上方"
+                "`TRUE` 或 `FALSE`(默认) , 将数据绘制在边际均值上方"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
-                "`正确` 或 `错误`(默认) , 提供模型系数的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型系数的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient odds ratio estimates": [
-                "`正确` 或 `错误`(默认) , 提供模型系数OR值的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型系数OR值的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient rate ratio estimates": [
-                "`正确` 或 `错误`(默认) , 提供模型系数rr值的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型系数rr值的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient standardized estimates": [
-                "`正确` 或 `错误`(默认) , 提供模型标准化系数的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型标准化系数的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficients": [
-                "`正确` 或 `错误`(默认) , 提供模型系数的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型系数的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model estimates": [
-                "`正确` 或 `错误`(默认) , 提供模型系数的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型系数的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide a correlation matrix plot": [
-                "`正确` 或 `错误`(默认) , 提供相关矩阵图"
+                "`TRUE` 或 `FALSE`(默认) , 提供相关矩阵图"
             ],
             "`TRUE` or `FALSE` (default), provide a correlation plot": [
-                "`正确` 或 `错误`(默认) , 提供相关图"
+                "`TRUE` 或 `FALSE`(默认) , 提供相关图"
             ],
             "`TRUE` or `FALSE` (default), provide a cut-off plot": [
-                "`正确` 或 `错误`(默认) , 提供截断值图"
+                "`TRUE` 或 `FALSE`(默认) , 提供截断值图"
             ],
             "`TRUE` or `FALSE` (default), provide a descriptive plot": [
-                "`正确` 或 `错误`(默认) , 提供描述图"
+                "`TRUE` 或 `FALSE`(默认) , 提供描述图"
             ],
             "`TRUE` or `FALSE` (default), provide a path diagram of the model": [
-                "`正确` 或 `错误`(默认) , 提供模型的路径图"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型的路径图"
             ],
             "`TRUE` or `FALSE` (default), provide a predicted classification table (or confusion matrix)": [
-                "`正确` 或 `错误`(默认) , 提供预测分类表（或混合矩阵）"
+                "`TRUE` 或 `FALSE`(默认) , 提供预测分类表（或混合矩阵）"
             ],
             "`TRUE` or `FALSE` (default), provide a Q-Q plot of multivariate normality": [
-                "`正确` 或 `错误`(默认) , 提供多元正态Q-Q图"
+                "`TRUE` 或 `FALSE`(默认) , 提供多元正态Q-Q图"
             ],
             "`TRUE` or `FALSE` (default), provide a Q-Q plot of residuals": [
-                "`正确` 或 `错误`(默认) , 提供残差Q-Q图"
+                "`TRUE` 或 `FALSE`(默认) , 提供残差Q-Q图"
             ],
             "`TRUE` or `FALSE` (default), provide a ROC curve plot": [
-                "`正确` 或 `错误`(默认) , 提供ROC曲线图"
+                "`TRUE` 或 `FALSE`(默认) , 提供ROC曲线图"
             ],
             "`TRUE` or `FALSE` (default), provide a standardized estimate for the model coefficients": [
-                "`正确` 或 `错误`(默认) , 提供模型标准化系数"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型标准化系数"
             ],
             "`TRUE` or `FALSE` (default), provide a standardized estimate for the model estimates": [
-                "`正确` 或 `错误`(默认) , 提供模型标准化系数"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型标准化系数"
             ],
             "`TRUE` or `FALSE` (default), provide a z test for differences between two proportions": [
-                "`正确` 或 `错误`(默认) , 提供两比例差异比较的Z检验"
+                "`TRUE` 或 `FALSE`(默认) , 提供两比例差异比较的Z检验"
             ],
             "`TRUE` or `FALSE` (default), provide Aikaike's Information Criterion (AIC) for the models": [
-                "`正确` 或 `错误`(默认) , 提供模型的AIC"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型的AIC"
             ],
             "`TRUE` or `FALSE` (default), provide an exact log odds ratio (requires exact2x2 to be installed)": [
-                "`正确` 或 `错误`(默认) , 提供精确的对数OR（需要安装2x2精确法模块）"
+                "`TRUE` 或 `FALSE`(默认) , 提供精确的对数OR（需要安装2x2精确法模块）"
             ],
             "`TRUE` or `FALSE` (default), provide bar plots (nominal, ordinal variables only)": [
-                "`正确` 或 `错误`(默认) , 提供条形图（仅限无序多分类和有序多分类变量）"
+                "`TRUE` 或 `FALSE`(默认) , 提供条形图（仅限无序多分类和有序多分类变量）"
             ],
             "`TRUE` or `FALSE` (default), provide Bayes factors": [
-                "`正确` 或 `错误`(默认) , 提供贝叶斯因子"
+                "`TRUE` 或 `FALSE`(默认) , 提供贝叶斯因子"
             ],
             "`TRUE` or `FALSE` (default), provide Bayesian credible intervals": [
-                "`正确` 或 `错误`(默认) , 提供贝叶斯可信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供贝叶斯可信区间"
             ],
             "`TRUE` or `FALSE` (default), provide Bayesian Information Criterion (BIC) for the models": [
-                "`正确` 或 `错误`(默认) , 提供模型的BIC"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型的BIC"
             ],
             "`TRUE` or `FALSE` (default), provide box plots (continuous variables only)": [
-                "`正确` 或 `错误`(默认) , 提供箱线图（仅限连续性变量）"
+                "`TRUE` 或 `FALSE`(默认) , 提供箱线图（仅限连续性变量）"
             ],
             "`TRUE` or `FALSE` (default), provide Box-Tidwell test for linearity of the logit": [
-                "`正确` 或 `错误`(默认) , 为Logistic回归的线性部分提供 Box-Tidwell检验"
+                "`TRUE` 或 `FALSE`(默认) , 为Logistic回归的线性部分提供 Box-Tidwell检验"
             ],
             "`TRUE` or `FALSE` (default), provide Box's M test": [
-                "`正确` 或 `错误`(默认) , 提供Box's M检验"
+                "`TRUE` 或 `FALSE`(默认) , 提供Box's M检验"
             ],
             "`TRUE` or `FALSE` (default), provide Cohen's d effect sizes": [
-                "`正确` 或 `错误`(默认) , 提供Cohen's d效应量"
+                "`TRUE` 或 `FALSE`(默认) , 提供Cohen's d效应量"
             ],
             "`TRUE` or `FALSE` (default), provide column percentages": [
-                "`正确` 或 `错误`(默认) , 提供列百分比"
+                "`TRUE` 或 `FALSE`(默认) , 提供列百分比"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals": [
-                "`正确` 或 `错误`(默认) , 提供置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the comparative measures": [
-                "`正确` 或 `错误`(默认) , 提供比较指标的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供比较指标的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the effect-sizes": [
-                "`正确` 或 `错误`(默认) , 提供效应量的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供效应量的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the mean": [
-                "`正确` 或 `错误`(默认) , 提供均值的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供均值的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the mean difference": [
-                "`正确` 或 `错误`(默认) , 提供均值差的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供均值差的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the post-hoc effect sizes": [
-                "`正确` 或 `错误`(默认) , 提供事后检验效应量的置信区间"
+                "`TRUE` 或 `FALSE`(默认) , 提供事后检验效应量的置信区间"
             ],
             "`TRUE` or `FALSE` (default), provide densities in the correlation matrix plot": [
-                "`正确` 或 `错误`(默认) , 在相关矩阵图中提供概率密度"
+                "`TRUE` 或 `FALSE`(默认) , 在相关矩阵图中提供概率密度"
             ],
             "`TRUE` or `FALSE` (default), provide density plots (continuous variables only)": [
-                "`正确` 或 `错误`(默认) ,提供概率密度图（仅限连续性变量）"
+                "`TRUE` 或 `FALSE`(默认) ,提供概率密度图（仅限连续性变量）"
             ],
             "`TRUE` or `FALSE` (default), provide descriptive plots": [
-                "`正确` 或 `错误`(默认) ,提供描述图"
+                "`TRUE` 或 `FALSE`(默认) ,提供描述图"
             ],
             "`TRUE` or `FALSE` (default), provide descriptive statistics": [
-                "`正确` 或 `错误`(默认) ,提供描述性统计"
+                "`TRUE` 或 `FALSE`(默认) ,提供描述性统计"
             ],
             "`TRUE` or `FALSE` (default), provide dot plots (continuous variables only)": [
-                "`正确` 或 `错误`(默认），提供点图（仅限连续性变量）"
+                "`TRUE` 或 `FALSE`(默认），提供点图（仅限连续性变量）"
             ],
             "`TRUE` or `FALSE` (default), provide effect sizes": [
-                "`正确` 或 `错误`(默认) ,提供效应量"
+                "`TRUE` 或 `FALSE`(默认) ,提供效应量"
             ],
             "`TRUE` or `FALSE` (default), provide effect-sizes": [
-                "`正确` 或 `错误`(默认) ,提供效应量"
+                "`TRUE` 或 `FALSE`(默认) ,提供效应量"
             ],
             "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
-                "`正确` 或 `错误`(默认) ,提供边际估计均值表"
+                "`TRUE` 或 `FALSE`(默认) ,提供边际估计均值表"
             ],
             "`TRUE` or `FALSE` (default), provide estimates for the factor intercepts": [
-                "`正确` 或 `错误`(默认) ,提供因子截距的估计值"
+                "`TRUE` 或 `FALSE`(默认) ,提供因子截距的估计值"
             ],
             "`TRUE` or `FALSE` (default), provide estimates for the residual intercepts": [
-                "`正确` 或 `错误`(默认) ,提供残差截距的估计值"
+                "`TRUE` 或 `FALSE`(默认) ,提供残差截距的估计值"
             ],
             "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
-                "`正确` 或 `错误`(默认) , 提供 Fisher's 精确检验"
+                "`TRUE` 或 `FALSE`(默认) , 提供 Fisher's 精确检验"
             ],
             "`TRUE` or `FALSE` (default), provide frequency tables (nominal, ordinal variables only)": [
-                "`正确` 或 `错误`(默认) ,提供频率表（仅限无序多分类和有序多分类变量）"
+                "`TRUE` 或 `FALSE`(默认) ,提供频率表（仅限无序多分类和有序多分类变量）"
             ],
             "`TRUE` or `FALSE` (default), provide gamma": [
-                "`正确` 或 `错误`(默认) ,提供γ值"
+                "`TRUE` 或 `FALSE`(默认) ,提供γ值"
             ],
             "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
-                "`正确` 或 `错误`(默认) ,提供直方图（仅限连续性变量）"
+                "`TRUE` 或 `FALSE`(默认) ,提供直方图（仅限连续性变量）"
             ],
             "`TRUE` or `FALSE` (default), provide item means": [
-                "`正确` 或 `错误`(默认) ,提供条目均值"
+                "`TRUE` 或 `FALSE`(默认) ,提供条目均值"
             ],
             "`TRUE` or `FALSE` (default), provide item standard deviations": [
-                "`正确` 或 `错误`(默认) ,提供条目标准差"
+                "`TRUE` 或 `FALSE`(默认) ,提供条目标准差"
             ],
             "`TRUE` or `FALSE` (default), provide item-rest correlations": [
-                "`正确` 或 `错误`(默认) ,提供条目剩余相关性"
+                "`TRUE` 或 `FALSE`(默认) ,提供条目剩余相关性"
             ],
             "`TRUE` or `FALSE` (default), provide Kendall's tau-b": [
-                "`正确` 或 `错误`(默认) , 提供 Kendall's tau-b值"
+                "`TRUE` 或 `FALSE`(默认) , 提供 Kendall's tau-b值"
             ],
             "`TRUE` or `FALSE` (default), provide Mantel-Haenszel test for trend": [
-                "`正确` 或 `错误`(默认) , 提供 Mantel-Haenszel 趋势检验"
+                "`TRUE` 或 `FALSE`(默认) , 提供 Mantel-Haenszel 趋势检验"
             ],
             "`TRUE` or `FALSE` (default), provide McDonald's ω": [
-                "`正确` 或 `错误`(默认) , 提供 McDonald's ω值"
+                "`TRUE` 或 `FALSE`(默认) , 提供 McDonald's ω值"
             ],
             "`TRUE` or `FALSE` (default), provide means and standard deviations": [
-                "`正确` 或 `错误`(默认) ,提供均值和标准差"
+                "`TRUE` 或 `FALSE`(默认) ,提供均值和标准差"
             ],
             "`TRUE` or `FALSE` (default), provide means and standard errors": [
-                "`正确` 或 `错误`(默认) ,提供均值和标准误"
+                "`TRUE` 或 `FALSE`(默认) ,提供均值和标准误"
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
-                "`正确` 或 `错误`(默认) ,为模型中未包含的参数提供修正指数"
+                "`TRUE` 或 `FALSE`(默认) ,为模型中未包含的参数提供修正指数"
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` 或 `FALSE`（默认），提供 N 个最极端（最高和最低）的值"
             ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
-                "`正确` 或 `错误`(默认) ,提供百分位数"
+                "`TRUE` 或 `FALSE`(默认) ,提供百分位数"
             ],
             "`TRUE` or `FALSE` (default), provide Phi and Cramer's V": [
-                "`正确` 或 `错误`(默认) , 提供φ系数和Cramer’s V系数"
+                "`TRUE` 或 `FALSE`(默认) , 提供φ系数和Cramer’s V系数"
             ],
             "`TRUE` or `FALSE` (default), provide posterior plots": [
-                "`正确` 或 `错误`(默认) ,提供后验概率图"
+                "`TRUE` 或 `FALSE`(默认) ,提供后验概率图"
             ],
             "`TRUE` or `FALSE` (default), provide Q-Q plots (continuous variables only)": [
-                "`正确` 或 `错误`(默认) , 提供Q-Q图(仅限于连续性变量)"
+                "`TRUE` 或 `FALSE`(默认) , 提供Q-Q图(仅限于连续性变量)"
             ],
             "`TRUE` or `FALSE` (default), provide Q-Q plots of residuals": [
-                "`正确` 或 `错误`(默认) , 提供残差Q-Q图"
+                "`TRUE` 或 `FALSE`(默认) , 提供残差Q-Q图"
             ],
             "`TRUE` or `FALSE` (default), provide quantiles": [
-                "`正确` 或 `错误`(默认) ,提供分位数"
+                "`TRUE` 或 `FALSE`(默认) ,提供分位数"
             ],
             "`TRUE` or `FALSE` (default), provide residual plots where the dependent variable and each covariate is plotted against the standardized residuals.": [
-                "`正确` 或 `错误`(默认) ,根据标准残差绘制因变量和每个协变量的残差图."
+                "`TRUE` 或 `FALSE`(默认) ,根据标准残差绘制因变量和每个协变量的残差图."
             ],
             "`TRUE` or `FALSE` (default), provide results of the Durbin- Watson test for autocorrelation": [
-                "`正确` 或 `错误`(默认) ,提供Durbin- Watson自相关检验的结果"
+                "`TRUE` 或 `FALSE`(默认) ,提供Durbin- Watson自相关检验的结果"
             ],
             "`TRUE` or `FALSE` (default), provide RMSE for the models": [
-                "`正确` 或 `错误`(默认) , 提供模型的均方根误差（RMSE）"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型的均方根误差（RMSE）"
             ],
             "`TRUE` or `FALSE` (default), provide row percentages": [
-                "`正确` 或 `错误`(默认) ,提供行百分比"
+                "`TRUE` 或 `FALSE`(默认) ,提供行百分比"
             ],
             "`TRUE` or `FALSE` (default), provide Shapiro-Wilk p-value": [
-                "`正确` 或 `错误`(默认) , 提供Shapiro-Wilk正态性检验的P值"
+                "`TRUE` 或 `FALSE`(默认) , 提供Shapiro-Wilk正态性检验的P值"
             ],
             "`TRUE` or `FALSE` (default), provide Shapiro-Wilk test": [
-                "`正确` 或 `错误`(默认) , 提供Shapiro-Wilk正态性检验"
+                "`TRUE` 或 `FALSE`(默认) , 提供Shapiro-Wilk正态性检验"
             ],
             "`TRUE` or `FALSE` (default), provide Spearman's rho": [
-                "`正确` 或 `错误`(默认) , 提供Spearman's相关系数rho"
+                "`TRUE` 或 `FALSE`(默认) , 提供Spearman's相关系数rho"
             ],
             "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
-                "`正确` 或 `错误`(默认) ,在相关矩阵图中提供统计信息"
+                "`TRUE` 或 `FALSE`(默认) ,在相关矩阵图中提供统计信息"
             ],
             "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
-                "`正确` 或 `错误`(默认) ,提供Cook's距离的摘要信息"
+                "`TRUE` 或 `FALSE`(默认) ,提供Cook's距离的摘要信息"
             ],
             "`TRUE` or `FALSE` (default), provide test results (t-value and degrees of freedom) for post-hoc tests": [
-                "`正确` 或 `错误`(默认) ,提供事后检验的结果（t值和自由度）"
+                "`TRUE` 或 `FALSE`(默认) ,提供事后检验的结果（t值和自由度）"
             ],
             "`TRUE` or `FALSE` (default), provide the contingency coefficient": [
-                "`正确` 或 `错误`(默认) ,提供列联系数"
+                "`TRUE` 或 `FALSE`(默认) ,提供列联系数"
             ],
             "`TRUE` or `FALSE` (default), provide the differences in proportions (only available for 2x2 tables)": [
-                "`正确` 或 `错误`(默认) ,提供比例差异（仅限于2x2四格表）"
+                "`TRUE` 或 `FALSE`(默认) ,提供比例差异（仅限于2x2四格表）"
             ],
             "`TRUE` or `FALSE` (default), provide the expected counts": [
-                "`正确` 或 `错误`(默认) ,提供理论频数"
+                "`TRUE` 或 `FALSE`(默认) ,提供理论频数"
             ],
             "`TRUE` or `FALSE` (default), provide the exponential of the log-odds ratio estimate, or the odds ratio estimate": [
-                "`正确` 或 `错误`(默认) ,提供对数OR值指数或OR估计值"
+                "`TRUE` 或 `FALSE`(默认) ,提供对数OR值指数或OR估计值"
             ],
             "`TRUE` or `FALSE` (default), provide the exponential of the log-rate ratio estimate, or the rate ratio estimate": [
-                "`正确` 或 `错误`(默认) ,提供对数RR值指数或RR估计值"
+                "`TRUE` 或 `FALSE`(默认) ,提供对数RR值指数或RR估计值"
             ],
             "`TRUE` or `FALSE` (default), provide the interquartile range": [
-                "`正确` 或 `错误`(默认) ,提供四分位数间距"
+                "`TRUE` 或 `FALSE`(默认) ,提供四分位数间距"
             ],
             "`TRUE` or `FALSE` (default), provide the kurtosis": [
-                "`正确` 或 `错误`(默认) ,提供峰度"
+                "`TRUE` 或 `FALSE`(默认) ,提供峰度"
             ],
             "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
-                "`正确` 或 `错误`(默认) ,提供似然比"
+                "`TRUE` 或 `FALSE`(默认) ,提供似然比"
             ],
             "`TRUE` or `FALSE` (default), provide the log odds ratio (only available for 2x2 tables)": [
-                "`正确` 或 `错误`(默认) ,提供对数OR值（仅限于2x2四格表）"
+                "`TRUE` 或 `FALSE`(默认) ,提供对数OR值（仅限于2x2四格表）"
             ],
             "`TRUE` or `FALSE` (default), provide the maximum": [
-                "`正确` 或 `错误`(默认) ,提供最大值"
+                "`TRUE` 或 `FALSE`(默认) ,提供最大值"
             ],
             "`TRUE` or `FALSE` (default), provide the mean": [
-                "`正确` 或 `错误`(默认) ,提供均值"
+                "`TRUE` 或 `FALSE`(默认) ,提供均值"
             ],
             "`TRUE` or `FALSE` (default), provide the minimum": [
-                "`正确` 或 `错误`(默认) ,提供最小值"
+                "`TRUE` 或 `FALSE`(默认) ,提供最小值"
             ],
             "`TRUE` or `FALSE` (default), provide the mode": [
-                "`正确` 或 `错误`(默认) ,提供众数"
+                "`TRUE` 或 `FALSE`(默认) ,提供众数"
             ],
             "`TRUE` or `FALSE` (default), provide the model comparison between the models and the NULL model": [
-                "`正确` 或 `错误`(默认) ,提供模型与空模型比较的结果"
+                "`TRUE` 或 `FALSE`(默认) ,提供模型与空模型比较的结果"
             ],
             "`TRUE` or `FALSE` (default), provide the number of cases": [
-                "`正确` 或 `错误`(默认) ,提供个案数"
+                "`TRUE` 或 `FALSE`(默认) ,提供个案数"
             ],
             "`TRUE` or `FALSE` (default), provide the observed counts": [
-                "`正确` 或 `错误`(默认) ,提供实际频数"
+                "`TRUE` 或 `FALSE`(默认) ,提供实际频数"
             ],
             "`TRUE` or `FALSE` (default), provide the odds ratio (only available for 2x2 tables)": [
-                "`正确` 或 `错误`(默认) ,提供OR值（仅限于2x2四格表）"
+                "`TRUE` 或 `FALSE`(默认) ,提供OR值（仅限于2x2四格表）"
             ],
             "`TRUE` or `FALSE` (default), provide the omnibus ANOVA test for the predictors": [
-                "`正确` 或 `错误`(默认) ,提供预测因子的Omnibus方差分析检验结果"
+                "`TRUE` 或 `FALSE`(默认) ,提供预测因子的Omnibus方差分析检验结果"
             ],
             "`TRUE` or `FALSE` (default), provide the omnibus likelihood ratio tests for the predictors": [
-                "`正确` 或 `错误`(默认) ,提供预测因子的Omnibus似然比检验结果"
+                "`TRUE` 或 `FALSE`(默认) ,提供预测因子的Omnibus似然比检验结果"
             ],
             "`TRUE` or `FALSE` (default), provide the predicted accuracy of outcomes grouped by the cut-off value": [
-                "`正确` 或 `错误`(默认) ,提供截断值分组的预测准确性"
+                "`TRUE` 或 `FALSE`(默认) ,提供截断值分组的预测准确性"
             ],
             "`TRUE` or `FALSE` (default), provide the predicted sensitivity of outcomes grouped by the cut-off value": [
-                "`正确` 或 `错误`(默认) ,提供截断值分组的预测灵敏度"
+                "`TRUE` 或 `FALSE`(默认) ,提供截断值分组的预测灵敏度"
             ],
             "`TRUE` or `FALSE` (default), provide the predicted specificity of outcomes grouped by the cut-off value": [
-                "`正确` 或 `错误`(默认) ,提供截断值分组的预测特异度"
+                "`TRUE` 或 `FALSE`(默认) ,提供截断值分组的预测特异度"
             ],
             "`TRUE` or `FALSE` (default), provide the range": [
-                "`正确` 或 `错误`(默认) ,提供全距"
+                "`TRUE` 或 `FALSE`(默认) ,提供全距"
             ],
             "`TRUE` or `FALSE` (default), provide the rea under the ROC curve (AUC)": [
-                "`正确` 或 `错误`(默认) ,提供ROC曲线下面积（AUC）"
+                "`TRUE` 或 `FALSE`(默认) ,提供ROC曲线下面积（AUC）"
             ],
             "`TRUE` or `FALSE` (default), provide the relative risk (only available for 2x2 tables)": [
-                "`正确` 或 `错误`(默认) ,提供相对危险度RR（仅限于2x2四格表）"
+                "`TRUE` 或 `FALSE`(默认) ,提供相对危险度RR（仅限于2x2四格表）"
             ],
             "`TRUE` or `FALSE` (default), provide the residuals for the observed correlation matrix (i.e., the difference between the expected correlation matrix and the observed correlation matrix)": [
-                "`正确` 或 `错误`(默认) ,提供实际相关矩阵的残差（即理论相关矩阵和实际相关矩阵之间的差异）"
+                "`TRUE` 或 `FALSE`(默认) ,提供实际相关矩阵的残差（即理论相关矩阵和实际相关矩阵之间的差异）"
             ],
             "`TRUE` or `FALSE` (default), provide the skewness": [
-                "`正确` 或 `错误`(默认) ,提供偏度"
+                "`TRUE` 或 `FALSE`(默认) ,提供偏度"
             ],
             "`TRUE` or `FALSE` (default), provide the standard deviation": [
-                "`正确` 或 `错误`(默认) ,提供标准差"
+                "`TRUE` 或 `FALSE`(默认) ,提供标准差"
             ],
             "`TRUE` or `FALSE` (default), provide the standard error": [
-                "`正确` 或 `错误`(默认) ,提供标准吴"
+                "`TRUE` 或 `FALSE`(默认) ,提供标准吴"
             ],
             "`TRUE` or `FALSE` (default), provide the statistical measure `adjusted R-squared` for the models": [
-                "`正确` 或 `错误`(默认) , 提供模型评价指标“校正R²”"
+                "`TRUE` 或 `FALSE`(默认) , 提供模型评价指标“校正R²”"
             ],
             "`TRUE` or `FALSE` (default), provide the sum": [
-                "`正确` 或 `错误`(默认) ,提供和"
+                "`TRUE` 或 `FALSE`(默认) ,提供和"
             ],
             "`TRUE` or `FALSE` (default), provide the thresholds that are used as cut-off scores for the levels of the dependent variable": [
-                "`正确` 或 `错误`(默认) , 提供因变量分级的截断值"
+                "`TRUE` 或 `FALSE`(默认) , 提供因变量分级的截断值"
             ],
             "`TRUE` or `FALSE` (default), provide the variance": [
-                "`正确` 或 `错误`(默认) ,提供方差"
+                "`TRUE` 或 `FALSE`(默认) ,提供方差"
             ],
             "`TRUE` or `FALSE` (default), provide total percentages": [
-                "`正确` 或 `错误`(默认) ,提供合计百分比"
+                "`TRUE` 或 `FALSE`(默认) ,提供合计百分比"
             ],
             "`TRUE` or `FALSE` (default), provide VIF and tolerence collinearity statistics": [
-                "`正确` 或 `错误`(默认) , 提供方差膨胀因子（VIF ）和容忍度（1/VIF）"
+                "`TRUE` 或 `FALSE`(默认) , 提供方差膨胀因子（VIF ）和容忍度（1/VIF）"
             ],
             "`TRUE` or `FALSE` (default), provide violin plots (continuous variables only)": [
-                "`正确` 或 `错误`(默认) ,提供小提琴图（仅限连续性变量）"
+                "`TRUE` 或 `FALSE`(默认) ,提供小提琴图（仅限连续性变量）"
             ],
             "`TRUE` or `FALSE` (default), provide what the Cronbach's α would be if the item was dropped": [
-                "`正确` 或 `错误`(默认) ,提供该条目删除后的Cronbach's α系数"
+                "`TRUE` 或 `FALSE`(默认) ,提供该条目删除后的Cronbach's α系数"
             ],
             "`TRUE` or `FALSE` (default), provide what the McDonald's ω would be if the item was dropped": [
-                "`正确` 或 `错误`(默认) ,提供该条目删除后的McDonald's ω系数"
+                "`TRUE` 或 `FALSE`(默认) ,提供该条目删除后的McDonald's ω系数"
             ],
             "`TRUE` or `FALSE` (default), provide χ² with continuity correction": [
-                "`正确` 或 `错误`(默认) ,提供连续校正χ²值"
+                "`TRUE` 或 `FALSE`(默认) ,提供连续校正χ²值"
             ],
             "`TRUE` or `FALSE` (default), report a summary of the different groups": [
-                "`正确` 或 `错误`(默认) ,分组报告摘要"
+                "`TRUE` 或 `FALSE`(默认) ,分组报告摘要"
             ],
             "`TRUE` or `FALSE` (default), set a cut-off used for the predictions": [
-                "`正确` 或 `错误`(默认) ,设置预测变量的截断值"
+                "`TRUE` 或 `FALSE`(默认) ,设置预测变量的截断值"
             ],
             "`TRUE` or `FALSE` (default), show barplots": [
-                "`正确` 或 `错误`(默认) ,显示条形图"
+                "`TRUE` 或 `FALSE`(默认) ,显示条形图"
             ],
             "`TRUE` or `FALSE` (default), show Bartlett's test of sphericity results": [
-                "`正确` 或 `错误`(默认) ,报告Bartlett's球形度检验结果"
+                "`TRUE` 或 `FALSE`(默认) ,报告Bartlett's球形度检验结果"
             ],
             "`TRUE` or `FALSE` (default), show eigenvalue table": [
-                "`正确` 或 `错误`(默认) ,显示特征值表"
+                "`TRUE` 或 `FALSE`(默认) ,显示特征值表"
             ],
             "`TRUE` or `FALSE` (default), show factor summary": [
-                "`正确` 或 `错误`(默认) ,显示因子摘要"
+                "`TRUE` 或 `FALSE`(默认) ,显示因子摘要"
             ],
             "`TRUE` or `FALSE` (default), show inter-factor correlations": [
-                "`正确` 或 `错误`(默认) ,显示因子间相关性"
+                "`TRUE` 或 `FALSE`(默认) ,显示因子间相关性"
             ],
             "`TRUE` or `FALSE` (default), show Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results": [
-                "`正确` 或 `错误`(默认) ,报告KMO抽样适合性检验结果"
+                "`TRUE` 或 `FALSE`(默认) ,报告KMO抽样适合性检验结果"
             ],
             "`TRUE` or `FALSE` (default), show model fit measures and test": [
-                "`正确` 或 `错误`(默认) ,显示模型拟合评价和检验结果"
+                "`TRUE` 或 `FALSE`(默认) ,显示模型拟合评价和检验结果"
             ],
             "`TRUE` or `FALSE` (default), show scree plot": [
-                "`正确` 或 `错误`(默认) ,显示碎石图"
+                "`TRUE` 或 `FALSE`(默认) ,显示碎石图"
             ],
             "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
-                "`正确` 或 `错误`(默认) ,按因子载荷大小排序"
+                "`TRUE` 或 `FALSE`(默认) ,按因子载荷大小排序"
             ],
             "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
-                "`正确` 或 `错误`(默认) ,方差齐性检验（Levene's检验）"
+                "`TRUE` 或 `FALSE`(默认) ,方差齐性检验（Levene's检验）"
             ],
             "`TRUE` or `FALSE` (default), the variables are counts": [
-                "`正确` 或 `错误`(默认)，变量是计数变量"
+                "`TRUE` 或 `FALSE`(默认)，变量是计数变量"
             ],
             "`TRUE` or `FALSE` (default), whether expected counts should be displayed": [
-                "`正确` 或 `错误`(默认) ,是否应显示理论频数"
+                "`TRUE` 或 `FALSE`(默认) ,是否应显示理论频数"
             ],
             "`TRUE` or `FALSE` (default); perform an overall model test": [
-                "`正确` 或 `错误`(默认) ,执行整体模型检验"
+                "`TRUE` 或 `FALSE`(默认) ,执行整体模型检验"
             ],
             "±%": [
                 "±%"
@@ -707,7 +710,7 @@
                 "<检验值"
             ],
             "≠ Test value": [
-                "≠ 检测值"
+                "≠ 检验值"
             ],
             "> Test value": [
                 ">检验值"
@@ -782,10 +785,10 @@
                 "指定需要计算边际估计均值的变量的列表。每个项最多支持三个变量。"
             ],
             "a list of lists, where each list decribes a repeated measure (as a string) from `data` defined as `measure` and the particular combination of levels from `rm` that it belongs to (as a vector of strings) defined as `cell`": [
-                "描述重复测量`数据`中被定义为`测量`（作为字符串）以及`rm`中特定水平组合被定义为`单元`（作为字符串向量）的列表"
+                "描述重复测量`data`中被定义为`measure`（作为字符串）以及`rm`中特定水平组合被定义为`cell`（作为字符串向量）的列表"
             ],
             "a list of lists, where each list describes the `label` (as a string) and the `levels` (as vector of strings) of a particular repeated measures factor": [
-                "描述特定重复测量因子的“标签”（作为字符串）和“水平”（作为字符串向量）的列表"
+                "包含列表的列表。描述特定重复测量因子的`label`（作为字符串）和 `levels`（作为字符串向量）的列表"
             ],
             "A low p-value suggests a violation of the assumption of equal variances": [
                 "低p值提示方差不齐"
@@ -822,6 +825,9 @@
             ],
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "数字（默认为3），突出显示“modIndices”表中高于该指标的值"
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "0.01 到 2 之间的数字（默认 0.707），计算贝叶斯因子时使用的先验宽度"
             ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "介于0.5和2之间的数字（默认为0.707），用于计算Bayes因子的先验宽度"
@@ -884,22 +890,22 @@
                 "描述整个分析过程中因变量所用标签的字符（默认为“Dependent”）"
             ],
             "a string naming a variable in `data` containing counts, or NULL if each row represents a single observation": [
-                "在包含计数资料的 `数据`中命名变量的字符，如果每行代表一个的观察对象，则为零"
+                "在包含计数资料的 `data`中命名变量的字符，如果每行代表一个的观察对象，则为零"
             ],
             "a string naming the dependent variable from `data`, variable must be a factor": [
-                "'数据'中命名因变量的字符，变量必须是分类变量"
+                "`data`中命名因变量的字符，变量必须是分类变量"
             ],
             "a string naming the dependent variable from `data`, variable must be numeric": [
-                "'数据'中命名因变量的字符，变量必须是数值型变量"
+                "`data`中命名因变量的字符，变量必须是数值型变量"
             ],
             "a string naming the dependent variable in `data`": [
-                "命名`数据`中因变量的字符"
+                "命名`data`中因变量的字符"
             ],
             "a string naming the dependent variables in `data`": [
-                "命名`数据`中因变量的字符"
+                "命名`data`中因变量的字符"
             ],
             "a string naming the grouping or independent variable in `data`": [
-                "`数据`中命名分组变量或自变量的字符"
+                "`data`中命名分组变量或自变量的字符"
             ],
             "a summary of the groups": [
                 "分组汇总摘要"
@@ -1040,31 +1046,31 @@
                 "数字向量：理论比例"
             ],
             "a vector of strings naming the between subjects factors from `data`": [
-                "对`数据`中组间因子命名的字符串向量"
+                "对`data`中组间因子命名的字符串向量"
             ],
             "a vector of strings naming the control variables in `data`": [
-                "对`数据`中控制变量命名的字符串向量"
+                "对`data`中控制变量命名的字符串向量"
             ],
             "a vector of strings naming the covariates from `data`": [
-                "对`数据`中协变量命名的字符串向量"
+                "对`data`中协变量命名的字符串向量"
             ],
             "a vector of strings naming the covariates from `data`. Variables must be numeric": [
-                "对`数据`中协变量命名的字符串向量。变量必须是数值型"
+                "对`data`中协变量命名的字符串向量。变量必须是数值型"
             ],
             "a vector of strings naming the factors from `data`": [
-                "对`数据`中因子命名的字符串向量"
+                "对`data`中因子命名的字符串向量"
             ],
             "a vector of strings naming the fixed factors from `data`": [
-                "对`数据`中固定因子命名的字符串向量"
+                "对`data`中固定因子命名的字符串向量"
             ],
             "a vector of strings naming the repeated measures variables": [
-                "对`数据`中重复测量变量命名的字符串向量"
+                "对`data`中重复测量变量命名的字符串向量"
             ],
             "a vector of strings naming the variables of interest in `data`": [
-                "对`数据`中目标变量命名的字符串向量"
+                "对`data`中目标变量命名的字符串向量"
             ],
             "a vector of strings naming the variables to correlate in `data`": [
-                "对`数据`中关联变量命名的字符串向量"
+                "对`data`中关联变量命名的字符串向量"
             ],
             "a vector of strings naming the variables used to split `vars`": [
                 "命名拆分`变量`的字符串向量"
@@ -1108,6 +1114,9 @@
             "an array of descriptive plots": [
                 "一组描述图"
             ],
+            "an array of extreme values tables": [
+                "一个极值表构成的数组"
+            ],
             "an array of frequency tables": [
                 "一组频数表"
             ],
@@ -1149,6 +1158,9 @@
             ],
             "an integer (default: 4) specifying the number of equal groups": [
                 "整数（默认为4），表示相等组的个数"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "一个整数（默认值：5），用于指定极值的数量"
             ],
             "An uninspiring ANOVA data set": [
                 "一个不理想的方差分析数据集"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "列"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "列“{name}”包含未使用的水平(仅在删除有缺失值的行时才会出现)"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "列变量“{var}”少于2个水平"
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 "数据降维"
             ],
+            "Data set is currently unweighted": [
+                "当前的数据未加权"
+            ],
             "Data Summary": [
                 "数据摘要"
             ],
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "因变量"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "因变量“{dep}”包含无限值"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "因变量“{dep}”没有任何数据（在删除缺失值的行之后）"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "因变量“{dep}”仅包含一个唯一值（在删除缺少值的行后）"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "因变量“{dep}”必须是连续型变量"
+            ],
             "Dependent Variable Label": [
                 "因变量标签"
             ],
-            "Dependent variable must be numeric": [
-                "因变量必须是数值变量"
-            ],
             "Dependent Variables": [
                 "因变量"
+            ],
+            "Dependent variables are very highly correlated": [
+                "因变量相关度高"
             ],
             "deprecated": [
                 "不赞成"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "描述表"
-            ],
-            "dev": [
-                "偏差"
             ],
             "Deviance": [
                 "离差"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "特征值大于"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "主设计之间的空单元格：主因子水平之间的至少一种组合具有 0 个观察值"
+            ],
             "Equal cell weights": [
                 "相等的单元格权重"
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "提取"
             ],
+            "Extreme values": [
+                "极端值"
+            ],
+            "Extreme Values": [
+                "极端值"
+            ],
+            "Extreme values of $key": [
+                "$key 的极值"
+            ],
             "F": [
                 "F值"
             ],
@@ -1844,16 +1877,22 @@
                 "不能计算F统计量"
             ],
             "Factor": [
-                "因子"
+                "因子分析"
+            ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "因子“{factor}”的水平数少于两个。因子必须至少有两个水平"
             ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "因子“{factorName}”至少需要两个水平"
             ],
-            "Factor '{factorName}' contains no data": [
-                "因子“{factorName}”不包含任何数据"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "因子“{factorName}”不包含任何数据（在删除缺失值的行后）"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "因子“{factorName}”只有一个水平"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "因子“{factorName}”仅包含一个水平（在删除缺少值的行后）"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "因子“{factorName}”包含未使用的水平（删除缺失值的行之后）"
             ],
             "Factor {0}": [
                 "因子 {0}"
@@ -1940,7 +1979,7 @@
                 "标记有统计学意义的事后检验."
             ],
             "Frequencies": [
-                "频数"
+                "频率"
             ],
             "Frequencies of $key": [
                 "$key频数"
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 "Helmert"
             ],
+            "hidden": [
+                "隐藏"
+            ],
             "Hide loadings below": [
                 "隐藏低于此值的因子载荷"
             ],
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "假设检验"
             ],
-            "if item dropped": [
-                "如果剔除该条目"
+            "If item dropped": [
+                "如果去除此项"
             ],
             "in development": [
                 "进行中"
@@ -2134,9 +2176,6 @@
             "Item-rest correlation": [
                 "条目剩余相关性"
             ],
-            "item-rest correlation": [
-                "剩余条目相关性"
-            ],
             "Items": [
                 "条目"
             ],
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "水平2"
-            ],
-            "Levels": [
-                "水平"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "Levene's检验有统计学意义（p<0.05），表明方差不齐"
@@ -2284,9 +2320,6 @@
             "Mean": [
                 "均值"
             ],
-            "mean": [
-                "均值"
-            ],
             "Mean ({ciWidth}% CI)": [
                 "均值({ciWidth}% 置信区间)"
             ],
@@ -2312,16 +2345,16 @@
                 "估算值"
             ],
             "Measure 1 - Measure 2": [
-                "检测值1－检测值2"
+                "测量值1－测量值2"
             ],
             "Measure 1 < Measure 2": [
-                "检测值1＜检测值2"
+                "测量值1＜测量值2"
             ],
             "Measure 1 ≠ Measure 2": [
-                "检测值1≠检测值2"
+                "测量值1 ≠ 测量值2"
             ],
             "Measure 1 > Measure 2": [
-                "检测值1＞检测值2"
+                "测量值1 ＞ 测量值2"
             ],
             "Measures": [
                 "检验值"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "修正指数"
             ],
+            "Monte Carlo simulation": [
+                "蒙特卡洛模拟"
+            ],
             "More than one mode exists, only the first is reported": [
                 "当存在多个众数时，仅报告第一个"
+            ],
+            "Most extreme": [
+                "最极端"
             ],
             "MSA": [
                 "MSA系数"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "正态性检验 (Shapiro-Wilk)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                "不能所有系数都能被估计(似乎是由于畸形拟合)"
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "不可用，因为个案数量过多（> 5000）。"
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "没有足够的自由度来估计所有模型效应"
+            ],
             "Number of Components": [
                 "成分个数"
             ],
             "Number of components": [
                 "成分个数"
             ],
+            "Number of extreme values": [
+                "极值数量"
+            ],
             "Number of Factors": [
                 "因子个数"
             ],
             "Number of factors": [
                 "因子个数"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "请求的极值数高于数据中的行数。"
             ],
             "Oblimin": [
                 "斜交法"
@@ -2528,7 +2582,7 @@
                 "备择假设中的“'corr'”（默认）、“'pos'”、“'neg'”分别对应相关、正相关、负相关。"
             ],
             "one of `'part'` (default) or `'semi'` specifying the type of partial correlation to calculate; partial or semipartial correlation.": [
-                "相关类型“part”（默认）或“semi”分别对应偏相关或半偏相关."
+                "相关类型 `'part'`（默认）或 `'semi'`分别对应偏相关或半偏相关."
             ],
             "One or both groups do not contain enough observations": [
                 "某一组或两组内个案数太少"
@@ -2552,7 +2606,7 @@
                 "`'cfi'`、`'tli'`、 `'srmr'`、`'rmsea'`、`'aic'`或 `'bic'`分别对应CFI、TLI、SRMR、RMSEA的90%置信区间、校正AIC和BIC模型拟合指标"
             ],
             "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
-                "“eta”、“partEta”或“omega”分别用η²、偏η²和ω²效应量表示"
+                "`'eta'`, `'partEta'`, 或 `'omega'`分别用η²、偏η²和ω²效应量表示"
             ],
             "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
                 "`'none'` （默认）、“GG”或“HF”分别表示对球形度检验未进行P值校正、进行Greenhouse-Geisser P值校正和Huynh-Feldt P值校正"
@@ -2598,6 +2652,9 @@
             ],
             "Ordinal Outcomes": [
                 "有序分类结局"
+            ],
+            "Outliers": [
+                "离群值"
             ],
             "Output": [
                 "输出"
@@ -2679,6 +2736,9 @@
             ],
             "Pearson": [
                 "Pearson系数"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "对于非数字值不能计算 Pearson 相关性"
             ],
             "Pearson's r": [
                 "Pearson's相关系数r"
@@ -3031,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 "决定系数R²<sub>N</sub>"
             ],
+            "R²<sub>T</sub>": [
+                "R²<sub>T</sub>"
+            ],
             "Range": [
                 "全距"
             ],
@@ -3115,8 +3178,8 @@
             "Residual plots": [
                 "残差图"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "剩余平方和与/或自由度为零，表示拟合较好"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "残差平方和 与/或 自由度为零，表示完美拟合"
             ],
             "Residuals": [
                 "残差"
@@ -3171,6 +3234,9 @@
             ],
             "Row": [
                 "行"
+            ],
+            "Row number": [
+                "行数"
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "行变量“{var}”的水平数少于2个"
@@ -3233,9 +3299,6 @@
                 "碎石图"
             ],
             "SD": [
-                "标准差"
-            ],
-            "sd": [
                 "标准差"
             ],
             "SE": [
@@ -3416,7 +3479,7 @@
                 "t值"
             ],
             "T-Tests": [
-                "T检验"
+                "T 检验"
             ],
             "t-value": [
                 "t值"
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 "分类解释变量（或自变量）。"
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "均值的 CI 假设样本均值服从具有 N - 1 个自由度的 t 分布"
+            ],
             "the confidence interval width for the effect-sizes.": [
                 "效应量的置信区间宽度."
             ],
@@ -3518,19 +3584,25 @@
                 "需要控制的协变量."
             ],
             "the counts in `data`": [
-                "`数据`中的计数资料"
+                "`data`中的计数资料"
             ],
             "the covariates (specifying these makes this an ANCOVA)": [
                 "协变量（在协方差分析中指定这些变量）"
             ],
             "the covariates from `data`": [
-                "`数据`中的协变量"
+                "`data`中的协变量"
             ],
             "The cut-off value is set to {}": [
                 "截断值设置为{}"
             ],
             "the data as a data frame": [
                 "数据框格式"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "数据集包含 0 行（删除缺失值的行后）"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "数据集包含 0 行（或所有行都包含缺失值）"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "因变量“{}”的水平多于两个；二分类logistic回归只能对两水平的因变量进行分析。"
@@ -3542,10 +3614,10 @@
                 "因变量“{DEP}”只有两个水平，因此可考虑使用二分类Logistic回归。"
             ],
             "the dependent variable from `data`, variable must be numeric": [
-                "`数据`中的因变量，必须是数值型"
+                "`data`中的因变量，必须是数值型"
             ],
             "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
-                "`数据`中的因变量，必须是数值型（提供公式时不需要，见示例）。"
+                "`data`中的因变量，必须是数值型（提供公式时不需要，见示例）。"
             ],
             "the dependent variable. For ANCOVA, these will be continuous.": [
                 "因变量. 对于协方差分析，必须是连续性变量."
@@ -3569,7 +3641,7 @@
                 "协变量（提供公式时不需要，见示例）"
             ],
             "the explanatory factors in `data` (not necessary when providing a formula, see examples)": [
-                "`数据`中的解释性因子变量（提供公式时不需要，见示例）"
+                "`data`中的解释性因子变量（提供公式时不需要，见示例）"
             ],
             "the explanatory or independent variable. For ANOVA this will be categorical.": [
                 "解释性变量或自变量. 对方差分析必须是分类变量."
@@ -3578,7 +3650,7 @@
                 "解释性变量或自变量. 对方差分析必须是分类变量."
             ],
             "the fixed factors from `data`": [
-                "`数据`中的固定因子"
+                "`data`中的固定因子"
             ],
             "The Friedman test is used to explore the relationship between a continuous dependent variable and a categorical explanatory variable, where the explanatory variable is 'within subjects' (where multiple measurements are from the same subject). It is analagous to Repeated Measures ANOVA, but with the advantage of being non-parametric, and not requiring the assumptions of normality or homogeneity of variances. However, it has the limitation that it can only test a single explanatory variable at a time.": [
                 "Friedman检验用于探索连续性因变量和分类变量之间的关系，其特点为这些连续性因变量的数值都是来自相同个体。Friedman检验具有非参数检验的优点，相比重复测量方差分析，不需要数据满足正态性和方差齐性的条件。但是，该方法只能用于探索一个分类变量与因变量之间的关系。"
@@ -3612,6 +3684,9 @@
             ],
             "the post-hoc multiple comparisons corrections to use.": [
                 "要使用的事后多重比较方法."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                "学生 t 检验贝叶斯因子的先验宽度。 需要 0.01 到 2.0 之间的值，默认为 0.707。"
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "student's t检验贝叶斯因子的先验宽度。该值介于0.5和2.0之间，默认为0.707."
@@ -3677,7 +3752,7 @@
                 "变量{var}不是数值型。不能为此变量绘图。"
             ],
             "the variable of interest in `data` (not necessary when using a formula, see the examples)": [
-                "`数据`中的目标变量（提供公式时不需要，见示例）"
+                "`data`中的目标变量（提供公式时不需要，见示例）"
             ],
             "the variable specifying the groups; must have 2 levels.": [
                 "分组变量；必须有两个水平."
@@ -3727,6 +3802,9 @@
             "Thurstone": [
                 "Thurstone 法"
             ],
+            "Tjur's R²": [
+                "Tjur's R²"
+            ],
             "TLI": [
                 "TLI指数"
             ],
@@ -3761,7 +3839,7 @@
                 "合计"
             ],
             "total_pc (default), column_pc, or row_pc. Use respectively percentages `of total`, `within columns`, or `within rows` for the bar plot y-axis.": [
-                "合计_百分比（默认）、列_百分比或行_百分比。分别使用`合计`, `列内`或`行内`百分比作为条形图的y轴."
+                "合计_百分比（默认）、列_百分比或行_百分比。分别使用`of total`, `within columns`, 及`within rows` 百分比作为条形图的y轴."
             ],
             "Tukey": [
                 "Tukey法"
@@ -3806,6 +3884,9 @@
                 "值"
             ],
             "value": [
+                "值"
+            ],
+            "values": [
                 "值"
             ],
             "Values are counts": [
@@ -3865,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "每个单元格平均加权。(默认情况下为根据单元格频率进行加权)"
             ],
+            "Weight Variable": [
+                "加权变量"
+            ],
             "Weighted by '{varName}'": [
                 "已由 '{varName}' 加权"
             ],
+            "Weights": [
+                "权重"
+            ],
             "Weights (optional)": [
                 "权重（可选）"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                "权重包含负值。 不允许使用负权重。"
             ],
             "Welch's": [
                 "Welch's法"

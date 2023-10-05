@@ -1,0 +1,4066 @@
+{
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "1": [
+                ""
+            ],
+            "": {
+                "domain": "messages",
+                "plural_forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+                "lang": "cs"
+            },
+            "'{col}' contains infinite values": [
+                "'{col}' obsahuje nekonečné množství hodnot"
+            ],
+            "'{col}' contains missing values": [
+                "'{col}' obsahuje chybějící hodnoty"
+            ],
+            "'{col}' contains only missing values": [
+                "'{col}' obsahuje pouze chybějící hodnoty"
+            ],
+            "'{col}' contains only one unique value": [
+                "'{col}' obsahuje pouze jednu jedinečnou hodnotu"
+            ],
+            "'{method}' extraction method was used in combination with a '{rotation}' rotation": [
+                "Metoda extrakce '{method}' byla použita v kombinaci s rotací '{rotation}'"
+            ],
+            "'{rotation}' rotation was used": [
+                "Byla použita rotace '{rotation}'"
+            ],
+            "'{var}' contains negative values. Negative weights are not permitted.": [
+                "'{var}' obsahuje záporné hodnoty. Záporné váhy nejsou povoleny."
+            ],
+            "{} - Kendall's Tau B": [
+                "{} - Kendall's Tau B"
+            ],
+            "{} - Pearson's r": [
+                "{} - Pearsonův r"
+            ],
+            "{} - Spearman's rho": [
+                "{} - Spearmanův rho"
+            ],
+            "{ciWidth}% CI Lower": [
+                "{ciWidth} % CI Nižší"
+            ],
+            "{ciWidth}% CI mean {title}": [
+                "{ciŠířka} % CI střední hodnota {titul}"
+            ],
+            "{ciWidth}% CI Upper": [
+                "{ciŠířka} % CI horní"
+            ],
+            "{ciWidth}% Confidence Interval": [
+                "{ciŠířka}% interval spolehlivosti"
+            ],
+            "{ciWidth}% Confidence Intervals": [
+                "{ciŠířka}% intervaly spolehlivosti"
+            ],
+            "{item1} and {item2}": [
+                "{item1} a {item2}"
+            ],
+            "{list}, {nextItem}": [
+                "{Seznam}, {další položka}"
+            ],
+            "{list}, and {lastItem}": [
+                "{seznam}, a {poslední položka}"
+            ],
+            "{n} pair(s) of values were tied": [
+                "{n} párů hodnot bylo nerozhodných"
+            ],
+            "{type} score based on the variables {vars}": [
+                "skóre {typu} na základě proměnných {vars}"
+            ],
+            "{varName} (reversed)": [
+                "{varName} (obráceno)"
+            ],
+            "{varType} of binomial logistic regression model{modelNo}": [
+                "{varType} binomického logistického regresního modelu{modelNo}"
+            ],
+            "{varType} of linear regression model{modelNo}": [
+                "{varType} lineárního regresního modelu{modelNo}"
+            ],
+            "* p < .05, ** p < .01, *** p < .001, one-tailed": [
+                "* p < .05, ** p < .01, *** p < .001, jednostranné"
+            ],
+            "%": [
+                "%"
+            ],
+            "% Correct": [
+                "% Správně"
+            ],
+            "% of Total": [
+                "% z celkového počtu"
+            ],
+            "% of total": [
+                "% z celkového počtu"
+            ],
+            "% of Variance": [
+                "% odchylky"
+            ],
+            "% within column": [
+                "% ve sloupci"
+            ],
+            "% within row": [
+                "% v řádku"
+            ],
+            "`'1'`, `'2'` or `'3'` (default), the sum of squares to use": [
+                "`'1'`, `'2'` nebo `'3'` (výchozí), součet čtverců pro používání"
+            ],
+            "`'2'` or `'3'` (default), the sum of squares to use": [
+                "`'2'` nebo `'3'` (výchozí), součet čtverců pro použití"
+            ],
+            "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; group 1 different to group 2, group 1 greater than group 2, and group 2 greater than group 1 respectively": [
+                "\"odlišný\" (výchozí), \"ojediněle větší\" nebo \"o dvakrát větší\", alternativní hypotéza; skupina 1 se liší od skupiny 2, skupina 1 je větší než skupina 2 a skupina 2 je větší než skupina 1"
+            ],
+            "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; measure 1 different to measure 2, measure 1 greater than measure 2, and measure 2 greater than measure 1 respectively": [
+                "\"odlišný\"` (výchozí), \"ojediněle větší\"` nebo \"o dvakrát větší\"`, alternativní hypotéza; míra 1 se liší od míry 2, míra 1 je větší než míra 2 a míra 2 je větší než míra 1"
+            ],
+            "`'dt'` (default), `'gt'` or `'lt'`, the alternative hypothesis; different to `testValue`, greater than `testValue`, and less than `testValue` respectively": [
+                "`'dt'` (výchozí), `'gt'` nebo `'lt'`, alternativní hypotéza; odlišná od `testValue`, větší než `testValue` a menší než `testValue`"
+            ],
+            "`'facVar'` or `'facInd'`, how to contrain the model; `'facVar'` fixes the factor variances to one, `'facInd'` fixes each factor to the scale of its first indicator.": [
+                "`'facVar'` nebo `'facInd'`, jak omezit model; `'facVar'` fixuje faktorové rozptyly na hodnotu jedna, `'facInd'` fixuje každý faktor na stupnici jeho prvního ukazatele."
+            ],
+            "`'listwise'` or `'fiml'`, how to handle missing values; `'listwise'` excludes a row from all analyses if one of its entries is missing, `'fiml'` uses a full information maximum likelihood method to estimate the model.": [
+                "`'listwise'` nebo `'fiml'`, jak zacházet s chybějícími hodnotami; `'listwise'` vylučuje řádek ze všech analýz, pokud jedna z jeho položek chybí, `'fiml'` používá k odhadu modelu metodu maximální věrohodnosti s plnou informací."
+            ],
+            "`'means'` (default) or `'medians'`, the error bars to use in the plot": [
+                "\"prostředky\"` (výchozí) nebo \"mediány\"`, chybové úsečky, které se používají v grafu"
+            ],
+            "`'minres'` (default), `'ml'`, or `'pa'` use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal axis' as the factor extraction method": [
+                "`'minres'` (výchozí), `'ml'` nebo `'pa'` používají jako metodu extrakce faktoru \"'minimální reziduum', \"'maximální věrohodnost' nebo \"'hlavní osa'\""
+            ],
+            "`'none'`, `'ci'` (default), or `'se'`. Use no error bars, use confidence intervals, or use standard errors on the marginal mean plots, respectively": [
+                "`'none'`, `'ci'` (výchozí) nebo `'se'`. Na grafech marginálních průměrů nepoužívejte žádné chybové sloupce, používejte intervaly spolehlivosti nebo standardní chyby"
+            ],
+            "`'none'`, `'gamesHowell'` or `'tukey'`, which post-hoc tests to provide; `'none'` shows no post-hoc tests, `'gamesHowell'` shows Games-Howell post-hoc tests where no equivalence of variances is assumed, and `'tukey'` shows Tukey post-hoc tests where equivalence of variances is assumed": [
+                "`'none'`, `'gamesHowell'` nebo `'tukey'`, které post-hoc testy poskytují; `'none'` nezobrazuje žádné post-hoc testy, `'gamesHowell'` zobrazuje Games-Howell post-hoc testy, kde se nepředpokládá ekvivalence rozptylů, a `'tukey'` zobrazuje Tukey post-hoc testy, kde se předpokládá ekvivalence rozptylů"
+            ],
+            "`'none'`, `'varimax'` (default), `'quartimax'`, `'promax'`, `'oblimin'`, or `'simplimax'`, the rotation to use in estimation": [
+                "`'none'`, `'varimax'` (výchozí), `'quartimax'`, `'promax'`, `'oblimin'` nebo `'simplimax'`, rotace, která se použije při odhadu"
+            ],
+            "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (default), or `'simplimax'`, the rotation to use in estimation": [
+                "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (výchozí) nebo `'simplimax'`, rotace, která se použije při odhadu"
+            ],
+            "`'notequal'` (default), `'greater'` or `'less'`, the alternative hypothesis": [
+                "`'notequal'` (výchozí), `'greater'` nebo `'less'`, alternativní hypotéza"
+            ],
+            "`'parallel'` (default), `'eigen'` or `'fixed'`, the way to determine the number of factors": [
+                "`'parallel'` (výchozí), `'eigen'` nebo `'fixed'`, způsob určení počtu faktorů"
+            ],
+            "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing": [
+                "`'perAnalysis'` nebo `'listwise'`, jak zacházet s chybějícími hodnotami; `'perAnalysis'` vyloučí chybějící hodnoty pro jednotlivé závislé proměnné, `'listwise'` vyloučí řádek ze všech analýz, pokud jedna z jeho položek chybí"
+            ],
+            "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing.": [
+                "`'perAnalysis'` nebo `'listwise'`, jak zpracovat chybějící hodnoty; `'perAnalysis'` vyloučí chybějící hodnoty pro jednotlivé závislé proměnné, `'listwise'` vyloučí řádek ze všech analýz, pokud jedna z jeho položek chybí."
+            ],
+            "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
+                "`'refLevel'` (výchozí) nebo `'grandMean'`, kódování interceptu. Obě možnosti vytvářejí kontrast, takže intercept představuje referenční úroveň nebo velký průměr"
+            ],
+            "`'rows'` or `'columns'` (default), display the variables across the rows or across the columns (default)": [
+                "`'řádky'` nebo `'sloupce'` (výchozí), zobrazují proměnné napříč řádky nebo napříč sloupci (výchozí)"
+            ],
+            "`'Thurstone'` (default), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, or `'Harman'` use respectively 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', or 'Harman' method for estimating factor scores": [
+                "`'Thurstone'` (výchozí), `'Bartlett'`, `'tenBerge'`, `'Anderson'` nebo `'Harman'` používají pro odhad faktorového skóre metodu 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin' nebo 'Harman'"
+            ],
+            "`ANCOVA - ${dep}`": [
+                "`ANCOVA - ${dep}`"
+            ],
+            "`ANOVA - ${dep}`": [
+                "`ANOVA - ${dep}`"
+            ],
+            "`columns` or `rows` (default), compare columns/rows in difference of proportions or relative risks (2x2 tables)": [
+                "`sloupce` nebo `řádky` (výchozí), porovnávají sloupce/řádky v rozdílu podílů nebo relativních rizik (2x2 tabulky)"
+            ],
+            "`Model Coefficients - ${ dep }`": [
+                "`Modelové koeficienty - ${ dep }`"
+            ],
+            "`Model Coefficients - ${dep}`": [
+                "`Modelové koeficienty - ${dep}`"
+            ],
+            "`Proportions - ${var}`": [
+                "`Proporce - ${var}`"
+            ],
+            "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
+                "`PRÁVY` (výchozí) nebo `NEPRÁVY`, přidá k odlehlým hodnotám v krabicovém grafu popisky s číslem řádku"
+            ],
+            "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
+                "`PRAVÝ` (výchozí) nebo `NEPRAVÝ`, provést Studentův t-test"
+            ],
+            "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
+                "`PRAVÝ` (výchozí) nebo `NEPRAVÝ`, provést Welchovu jednosměrnou ANOVA, která nepředpokládá stejné rozptyly"
+            ],
+            "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
+                "`PRAVÝ` (výchozí) nebo `NEPRAVÝ`, uvést hodnoty 'Z' a 'p' pro modelové odhady"
+            ],
+            "`TRUE` (default) or `FALSE`, provide a chi-square test for exact fit that compares the model with the perfect fitting model": [
+                "`PRAVÝ` (výchozí) nebo `NEPRAVÝ`, provést chí-kvadrát test přesné shody, který porovná model s dokonale vyhovujícím modelem"
+            ],
+            "`TRUE` (default) or `FALSE`, provide a confidence interval for the estimated marginal means": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", poskytnout interval spolehlivosti pro odhadované mezní průměry"
+            ],
+            "`TRUE` (default) or `FALSE`, provide Aikaike's Information Criterion (AIC) for the models": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", poskytnout Akaikeho informační kritérium (AIC) pro modely"
+            ],
+            "`TRUE` (default) or `FALSE`, provide Cronbach's α": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", poskytout Cronbachovo α"
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", poskytnout grafy odhadovaných mezních průměrů"
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimates for the factor (co)variances": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", poskytnout odhady faktorových (ko)variancí"
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimates for the residual (co)variances": [
+                "`TRUE` (výchozí) nebo `FALSE`, poskytnout odhady zbytkových (spolu)rozptylů"
+            ],
+            "`TRUE` (default) or `FALSE`, provide mean differences for post-hoc tests": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, poskytnout průměrné rozdíly pro post-hoc testy"
+            ],
+            "`TRUE` (default) or `FALSE`, provide Pearson's R": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", zadat Pearsonův R"
+            ],
+            "`TRUE` (default) or `FALSE`, provide significance levels": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést hladiny významnosti"
+            ],
+            "`TRUE` (default) or `FALSE`, provide significance levels for post-hoc tests": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést hladiny významnosti pro post-hoc testy"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the deviance (or -2LogLikelihood) for the models": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést odchylku (nebo -2LogLikelihood) pro modely"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the mean": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, zadat průměrnou hodnotu"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the median": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést medián"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the model comparison between the models and the NULL model": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, poskytnout porovnání modelů s modelem NULL"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the number of missing values": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést počet chybějících hodnot"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the sample size": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést velikost vzorku"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the standard deviation": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uveďte směrodatnou odchylku"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the statistical measure `R-squared` for the models": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", uvést statistickou míru `R-squared` pro modely"
+            ],
+            "`TRUE` (default) or `FALSE`, provide the statistical measure `R` for the models": [
+                "`PRAVDA` (výchozí) nebo `NEPRAVDA`, uvést statistickou míru `R` pro modely"
+            ],
+            "`TRUE` (default) or `FALSE`, provide χ²": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", uvést χ²"
+            ],
+            "`TRUE` (default) or `FALSE`, weigh each cell equally or weigh them according to the cell frequency": [
+                "\"PRAVDA\" (výchozí) nebo \"NEPRAVDA\", zvážit každou buňku stejně nebo zvážit podle četnosti buněk"
+            ],
+            "`TRUE` or `FALSE` (default), add counts to the  bar plots": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), přidání hodnot do sloupcových grafů"
+            ],
+            "`TRUE` or `FALSE` (default), add mean to box plot": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), přidat průměr do krabicového grafu"
+            ],
+            "`TRUE` or `FALSE` (default), flag significant correlations": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), označit významné korelace"
+            ],
+            "`TRUE` or `FALSE` (default), flag significant post-hoc comparisons": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), označit významná post-hoc porovnání"
+            ],
+            "`TRUE` or `FALSE` (default), perform a Shapiro-Wilk test on the residuals": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (\"výchozí\"), provést Shapirův-Wilkův test na zbytcích"
+            ],
+            "`TRUE` or `FALSE` (default), perform Fisher's one-way ANOVA which assumes equal variances": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (\"výchozí\"), provést Fisherovu jednosměrnou ANOVA, která předpokládá stejné rozptyly"
+            ],
+            "`TRUE` or `FALSE` (default), perform homogeneity tests": [
+                "`PRAVDA` nebo `NEPRAVDA` (\"výchozí\"), provést testy homogenity"
+            ],
+            "`TRUE` or `FALSE` (default), perform Levene's test for homogeneity of variances": [
+                "`PRAVDA` nebo `NEPRAVDA` (\"výchozí\"), provést Leveneův test homogenity rozptylů"
+            ],
+            "`TRUE` or `FALSE` (default), perform Levene's tests for homogeneity of variances": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (\"výchozí\"), provést Leveneho testy homogenity rozptylů"
+            ],
+            "`TRUE` or `FALSE` (default), perform Mann-Whitney U tests": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést Mann-Whitneyho U test"
+            ],
+            "`TRUE` or `FALSE` (default), perform pairwise comparisons": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést párové porovnání"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-wilk normality tests": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést Shapiro-wilkovy testy normality"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-Wilk test of normality": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést Shapirův-Wilkův test normality"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-Wilk tests of normality": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést Shapiro-Wilkovy testy normality"
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-wilk tests of normality": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést Shapiro-wilkovy testy normality"
+            ],
+            "`TRUE` or `FALSE` (default), perform sphericity tests": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést testy sféricity"
+            ],
+            "`TRUE` or `FALSE` (default), perform Welch's t-tests": [
+                "`PRAVDA` nebo `NEPRAVDA` (\"výchozí\"), provést Welchovy t-testy"
+            ],
+            "`TRUE` or `FALSE` (default), perform Wilcoxon signed rank tests": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), provést Wilcoxonovy signifikantní rankové testy"
+            ],
+            "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (\"výchozí\"), vykreslit data nad okrajovými průměry"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), uvést interval spolehlivosti pro odhady modelových koeficientů"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient odds ratio estimates": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), uvést interval spolehlivosti pro odhady poměru šancí koeficientů modelu"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient rate ratio estimates": [
+                "`PRÁVDA` nebo `NEPRAVDA` (\"výchozí\"), uvést interval spolehlivosti pro odhady poměru modelových koeficientů"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient standardized estimates": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), uvést interval spolehlivosti pro standardizované odhady koeficientů modelu"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficients": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), poskytne interval spolehlivosti pro koeficienty modelu"
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model estimates": [
+                "`TRUE` or `FALSE` (default), provide a confidence interval for the model estimates"
+            ],
+            "`TRUE` or `FALSE` (default), provide a correlation matrix plot": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), poskytuje graf korelační matice"
+            ],
+            "`TRUE` or `FALSE` (default), provide a correlation plot": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), poskytuje korelační graf"
+            ],
+            "`TRUE` or `FALSE` (default), provide a cut-off plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a descriptive plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a path diagram of the model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a predicted classification table (or confusion matrix)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a Q-Q plot of multivariate normality": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a Q-Q plot of residuals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a ROC curve plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a standardized estimate for the model coefficients": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a standardized estimate for the model estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a z test for differences between two proportions": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Aikaike's Information Criterion (AIC) for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide an exact log odds ratio (requires exact2x2 to be installed)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide bar plots (nominal, ordinal variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayes factors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayesian credible intervals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayesian Information Criterion (BIC) for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide box plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Box-Tidwell test for linearity of the logit": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Box's M test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Cohen's d effect sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide column percentages": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the comparative measures": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the effect-sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the mean": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the mean difference": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the post-hoc effect sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide densities in the correlation matrix plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide density plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide descriptive plots": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide descriptive statistics": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide dot plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide effect sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide effect-sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide estimates for the factor intercepts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide estimates for the residual intercepts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide frequency tables (nominal, ordinal variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide gamma": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide item means": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide item standard deviations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide item-rest correlations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Kendall's tau-b": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Mantel-Haenszel test for trend": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide McDonald's ω": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide means and standard deviations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide means and standard errors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide percentiles": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Phi and Cramer's V": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide posterior plots": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Q-Q plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Q-Q plots of residuals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide quantiles": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide residual plots where the dependent variable and each covariate is plotted against the standardized residuals.": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide results of the Durbin- Watson test for autocorrelation": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide RMSE for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide row percentages": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Shapiro-Wilk p-value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Shapiro-Wilk test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Spearman's rho": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide test results (t-value and degrees of freedom) for post-hoc tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the contingency coefficient": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the differences in proportions (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the expected counts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the exponential of the log-odds ratio estimate, or the odds ratio estimate": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the exponential of the log-rate ratio estimate, or the rate ratio estimate": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the interquartile range": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the kurtosis": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the log odds ratio (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the maximum": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the mean": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the minimum": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the mode": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the model comparison between the models and the NULL model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the number of cases": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the observed counts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the odds ratio (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the omnibus ANOVA test for the predictors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the omnibus likelihood ratio tests for the predictors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted accuracy of outcomes grouped by the cut-off value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted sensitivity of outcomes grouped by the cut-off value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted specificity of outcomes grouped by the cut-off value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the range": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the rea under the ROC curve (AUC)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the relative risk (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the residuals for the observed correlation matrix (i.e., the difference between the expected correlation matrix and the observed correlation matrix)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the skewness": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the standard deviation": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the standard error": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the statistical measure `adjusted R-squared` for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the sum": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the thresholds that are used as cut-off scores for the levels of the dependent variable": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the variance": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide total percentages": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide VIF and tolerence collinearity statistics": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), uvést statistiku VIF a toleranční kolinearity"
+            ],
+            "`TRUE` or `FALSE` (default), provide violin plots (continuous variables only)": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), poskytnout houslové grafy (pouze spojité proměnné)"
+            ],
+            "`TRUE` or `FALSE` (default), provide what the Cronbach's α would be if the item was dropped": [
+                "`PRÁVDA` nebo ` NEPRAVDA` (\"výchozí\"), uvést, jaká by byla hodnota Cronbachova α, kdyby byla položka vynechána"
+            ],
+            "`TRUE` or `FALSE` (default), provide what the McDonald's ω would be if the item was dropped": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), uvést, jaká by byla hodnota ω McDonald's, kdyby byla položka vynechána"
+            ],
+            "`TRUE` or `FALSE` (default), provide χ² with continuity correction": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), uvést χ² s korekcí spojitosti"
+            ],
+            "`TRUE` or `FALSE` (default), report a summary of the different groups": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (\"výchozí\"), nahlásit celkový přehled různých skupin"
+            ],
+            "`TRUE` or `FALSE` (default), set a cut-off used for the predictions": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), nastavit mezní hodnotu pro predikci"
+            ],
+            "`TRUE` or `FALSE` (default), show barplots": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), zobrazit sloupcové grafy"
+            ],
+            "`TRUE` or `FALSE` (default), show Bartlett's test of sphericity results": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), zobrazit výsledky Bartlettova testu sféricity"
+            ],
+            "`TRUE` or `FALSE` (default), show eigenvalue table": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), zobrazit tabulku vlastních čísel"
+            ],
+            "`TRUE` or `FALSE` (default), show factor summary": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), zobrazit přehled faktorů"
+            ],
+            "`TRUE` or `FALSE` (default), show inter-factor correlations": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), zobrazit mezifaktorové korelace"
+            ],
+            "`TRUE` or `FALSE` (default), show Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), zobrazit výsledky Kaiser-Meyer-Olkinovy (KMO) míry výběrové přiměřenosti (MSA)"
+            ],
+            "`TRUE` or `FALSE` (default), show model fit measures and test": [
+                "\"PRAVDA\" nebo \"NEPRAVDA\" (výchozí), zobrazit míry shody modelu a testovat"
+            ],
+            "`TRUE` or `FALSE` (default), show scree plot": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), zobrazit graf rozptylu"
+            ],
+            "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
+                "`PRAVDA` nebo `NEPRAVDA` (výchozí), seřadit faktorové zátěže podle velikosti"
+            ],
+            "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), the variables are counts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), whether expected counts should be displayed": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default); perform an overall model test": [
+                ""
+            ],
+            "±%": [
+                ""
+            ],
+            "< Test value": [
+                ""
+            ],
+            "≠ Test value": [
+                ""
+            ],
+            "> Test value": [
+                ""
+            ],
+            "⁻ mean - 1SD, <sup>μ</sup> mean, ⁺ mean + 1SD": [
+                ""
+            ],
+            "1 - Specificity": [
+                ""
+            ],
+            "2 Outcomes": [
+                ""
+            ],
+            "25,50,75": [
+                ""
+            ],
+            "a (semi)partial correlation matrix table": [
+                ""
+            ],
+            "a comma-sepated list (default: 25,50,75) specifying the percentiles": [
+                ""
+            ],
+            "a correlation matrix plot": [
+                "graf korelační matice"
+            ],
+            "a correlation matrix table": [
+                "tabulka korelační matice"
+            ],
+            "a descriptives plot": [
+                "popisný graf"
+            ],
+            "a formula containing the terms to estimate marginal means for (see the examples)": [
+                "vzorec obsahující výrazy pro odhad mezních průměrů (viz příklady)"
+            ],
+            "a formula containing the terms to estimate marginal means for, supports up to three variables per term": [
+                "vzorec obsahující údaje pro odhad mezních středních hodnot, podporuje až tři proměnné na člen"
+            ],
+            "a formula containing the terms to perform post-hoc tests on (see the examples)": [
+                "vzorec obsahující údaje, s použitím kterých lze provést post-hoc testy (viz příklady)"
+            ],
+            "a formula describing the terms to go into the model (not necessary when providing a formula, see examples)": [
+                "vzorec popisující výrazy, které lze do modelu zařadit (při zadávání vzorce není nutné, viz příklady)"
+            ],
+            "a list containing named lists that define the `label` of the factor and the `vars` that belong to that factor": [
+                "seznam obsahující pojmenované seznamy, které definují `název` faktoru a `variabilní prvky`, které patří k tomuto faktoru"
+            ],
+            "a list containing vectors of strings that name the predictors that are added to the model. The elements are added to the model according to their order in the list": [
+                "seznam obsahující vektory řetězců, které udávají názvy prediktorů přidaných do modelu. Prvky jsou do modelu přidávány podle pořadí v seznamu"
+            ],
+            "a list of character vectors describing the between subjects terms to go into the model": [
+                "seznam znakových vektorů popisujících mezipředmětové vztahy, které budou zahrnuty do modelu"
+            ],
+            "a list of character vectors describing the post-hoc tests that need to be computed": [
+                "seznam znakových vektorů popisujících post-hoc testy, které je nutné vypočítat"
+            ],
+            "a list of character vectors describing the repeated measures terms to go into the model": [
+                "seznam znakových vektorů popisujících termíny opakovaných měření, které se použijí v modelu"
+            ],
+            "a list of lists specifying reference levels of the dependent variable and all the factors": [
+                "seznam seznamů určujících referenční úrovně závislé proměnné a všech faktorů"
+            ],
+            "a list of lists specifying the factor and type of contrast to use, one of `'deviation'`, `'simple'`, `'difference'`, `'helmert'`, `'repeated'` or `'polynomial'`": [
+                "seznam seznamů určující faktor a typ kontrastu, které lze použít, jeden z `'odchylka'`, `'jednoduchý'`, `'rozdíl'`, `'helmert'`, `'opakovaný'` nebo `'polynom'`"
+            ],
+            "a list of lists specifying the pairs of measurement in `data`": [
+                "seznam seznamů určující dvojice měření v `data`"
+            ],
+            "a list of lists specifying the residual covariances that need to be estimated": [
+                "seznam seznamů určující reziduální kovariance, které je nutné odhadnout"
+            ],
+            "a list of lists specifying the variables for which the estimated marginal means need to be calculate. Supports up to three variables per term.": [
+                "seznam seznamů určující proměnné, které vyžadují výpočet odhadovaných mezních průměrů. Podporuje až tři proměnné na jeden termín."
+            ],
+            "a list of lists, where each list decribes a repeated measure (as a string) from `data` defined as `measure` and the particular combination of levels from `rm` that it belongs to (as a vector of strings) defined as `cell`": [
+                "seznam seznamů, kde každý seznam popisuje opakovanou míru (jako řetězec) z `data` definovanou jako `míra` a konkrétní kombinaci úrovní z `rm`, ke které patří (jako vektor řetězců) definovanou jako `buňka`"
+            ],
+            "a list of lists, where each list describes the `label` (as a string) and the `levels` (as vector of strings) of a particular repeated measures factor": [
+                "seznam seznamů, kde každý seznam popisuje `značku` (jako řetězec) a `úrovně` (jako vektor řetězců) určitého faktoru opakovaných měření"
+            ],
+            "A low p-value suggests a violation of the assumption of equal variances": [
+                "Nízká p-hodnota naznačuje porušení předpokladu rovnosti rozptylů"
+            ],
+            "A low p-value suggests a violation of the assumption of normality": [
+                "Nízká p-hodnota naznačuje porušení předpokladu normality"
+            ],
+            "A nice correlation data set": [
+                "Přehledný soubor korelačních dat"
+            ],
+            "a number (default: 0.1), highlight values in the `'corRes'` table above this value": [
+                "číslo (výchozí: 0.1), zvýrazní hodnoty v tabulce `'corRes'` nad touto hodnotou"
+            ],
+            "a number (default: 0.3), hide factor loadings below this value": [
+                "číslo (výchozí: 0,3), skrýt faktorové zátěže pod touto hodnotou"
+            ],
+            "a number (default: 0.3), hide loadings below this value": [
+                "číslo (výchozí: 0,3), skrýt zatížení pod touto hodnotou"
+            ],
+            "a number (default: 0.5), the value for the null hypothesis": [
+                "číslo (výchozí: 0,5), hodnota nulové hypotézy"
+            ],
+            "a number (default: 0), the minimal eigenvalue for a factor to be included in the model": [
+                "číslo (výchozí: 0), minimální vlastní číslo pro faktor, který má být zahrnut do modelu"
+            ],
+            "a number (default: 1), the beta prior 'a' parameter": [
+                "číslo (výchozí: 1), parametr beta prior 'a'"
+            ],
+            "a number (default: 1), the beta prior 'b' parameter": [
+                "číslo (výchozí: 1), parametr beta priority 'b'"
+            ],
+            "a number (default: 1), the minimal eigenvalue for a component to be included in the model": [
+                "číslo (výchozí: 1), minimální vlastní číslo komponenty, která má být zahrnuta do modelu"
+            ],
+            "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
+                "číslo (výchozí: 3), zvýraznit hodnoty v tabulkách `'modIndices'` nad touto hodnotou"
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
+            "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "číslo mezi 0,5 a 2 (výchozí 0,707), šířka priority, která se má při výpočtu Bayesových faktorů použít"
+            ],
+            "a number between 0.5 and 2.0 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "číslo mezi 0,5 a 2,0 (výchozí 0,707), šířka priority, která se má při výpočtu Bayesových faktorů použít"
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width": [
+                "číslo mezi 50 a 99,9 (výchozí: 95) určující šířku intervalu spolehlivosti"
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width for the estimated marginal means": [
+                "číslo vrozmezí 50 až 99,9 (výchozí: 95) určující šířku intervalu spolehlivosti pro odhadované mezní průměry"
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width that is used as `'ci'`": [
+                "číslo mezi 50 a 99,9 (výchozí: 95) určující šířku intervalu spolehlivosti, který se použije jako `'ci'`"
+            ],
+            "a number between 50 and 99.9 (default: 95), the confidence interval width": [
+                "číslo mezi 50 a 99,9 (výchozí: 95), šířka intervalu spolehlivosti"
+            ],
+            "a number between 50 and 99.9 (default: 95), the credible interval width": [
+                "číslo mezi 50 a 99,9 (výchozí: 95), šířka věrohodného intervalu"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals": [
+                "číslo mezi 50 a 99,9 (výchozí: 95), šířka intervalu spolehlivosti"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the effect sizes": [
+                "číslo mezi 50 a 99,9 (výchozí: 95), šířka intervalů spolehlivosti pro velikosti účinků"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the post-hoc effect sizes": [
+                "číslo mezi 50 a 99,9 (výchozí: 95), šířka intervalů spolehlivosti pro velikosti post-hoc efektů"
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals to provide": [
+                "číslo v rozmezí od 50 do 99,9 (výchozí hodnota: 95), šířka intervalu spolehlivosti, který lze zajistit"
+            ],
+            "a number between 50 and 99.9 (default: 95), width of the confidence intervals to provide": [
+                "číslo v rozmezí 50 až 99,9 (výchozí: 95), šířka intervalu spolehlivosti, který je třeba zajistit"
+            ],
+            "a number specifying the value of the null hypothesis": [
+                "číslo udávající hodnotu nulové hypotézy"
+            ],
+            "a parameter": [
+                "parametr"
+            ],
+            "a possible value of `'d'`; provide cohen's d measure of effect size for the post-hoc tests": [
+                "možná hodnota `'d'`; uvést Cohenovu d míru velikosti účinku pro post-hoc testy"
+            ],
+            "a post-hoc table": [
+                "post-hoc tabulka"
+            ],
+            "a proportions table": [
+                "tabulka poměrů"
+            ],
+            "a q-q plot": [
+                "q-q graf"
+            ],
+            "A repeated measures ANOVA data set": [
+                "Datový soubor ANOVA s opakovanými měřeními"
+            ],
+            "a string (default: 'Dependent') describing the label used for the dependent variable throughout the analysis": [
+                "řetězec (výchozí: \"Dependent\") popisující označení použité pro závislou proměnnou v celé analýze"
+            ],
+            "a string naming a variable in `data` containing counts, or NULL if each row represents a single observation": [
+                "řetězec pojmenovávající proměnnou v `data` obsahující počty, nebo NULL, pokud každý řádek představuje jedno pozorování"
+            ],
+            "a string naming the dependent variable from `data`, variable must be a factor": [
+                "řetězec pojmenovávající závislou proměnnou z `data`, proměnná musí být faktorem"
+            ],
+            "a string naming the dependent variable from `data`, variable must be numeric": [
+                "řetězec pojmenovávající závislou proměnnou z `data`, proměnná musí být číselná"
+            ],
+            "a string naming the dependent variable in `data`": [
+                "řetězec pojmenovávající závislou proměnnou v `data`"
+            ],
+            "a string naming the dependent variables in `data`": [
+                "řetězec pojmenovávající závislé proměnné v `data`"
+            ],
+            "a string naming the grouping or independent variable in `data`": [
+                "řetězec pojmenovávající seskupení nebo nezávislou proměnnou v `data`"
+            ],
+            "a summary of the groups": [
+                "přehled skupin"
+            ],
+            "a table containing estimated marginal means": [
+                "tabulka obsahující odhadované mezní hodnoty"
+            ],
+            "a table containing factor covariances estimates": [
+                "tabulka obsahující odhady kovariancí faktorů"
+            ],
+            "a table containing factor intercept estimates": [
+                "tabulka obsahující odhady interceptu faktorů"
+            ],
+            "a table containing fit measures": [
+                "tabulka obsahující míry vhodnosti"
+            ],
+            "a table containing modification indices for the factor loadings not included in the model": [
+                "tabulka obsahující modifikační indexy pro faktorové zátěže, které nejsou zahrnuty do modelu"
+            ],
+            "a table containing modification indices for the residual covariances not included in the model": [
+                "tabulka obsahující modifikační indexy pro reziduální kovariance, které nejsou zahrnuty v modelu"
+            ],
+            "a table containing residual covariances estimates": [
+                "tabulka obsahující odhady reziduálních kovariancí"
+            ],
+            "a table containing residual intercept estimates": [
+                "tabulka obsahující odhady reziduálních interceptů"
+            ],
+            "a table containing residuals for the observed correlation matrix": [
+                "tabulka obsahující rezidua pro pozorovanou korelační matici"
+            ],
+            "a table containing the chi-square test for exact fit": [
+                "tabulka obsahující chí-kvadrát test přesné shody"
+            ],
+            "a table containing the collinearity statistics": [
+                "tabulka obsahující statistiky kolinearity"
+            ],
+            "a table containing the descriptives": [
+                "tabulka obsahující popisné údaje"
+            ],
+            "a table containing the factor loadings": [
+                "tabulka obsahující faktorové zátěže"
+            ],
+            "a table containing the group descriptives": [
+                "tabulka obsahující popisné údaje skupiny"
+            ],
+            "a table containing the homogeneity of variances tests": [
+                "tabulka obsahující testy homogenity rozptylů"
+            ],
+            "a table containing the normality test results": [
+                "tabulka obsahující výsledky testu normality"
+            ],
+            "a table containing the normality tests": [
+                "tabulka obsahující testy normality"
+            ],
+            "a table containing the results from the Box-Tidwell test": [
+                "tabulku obsahující výsledky Box-Tidwellova testu"
+            ],
+            "a table containing the t-test results": [
+                "tabulka obsahující výsledky t-testu"
+            ],
+            "a table of ANCOVA results": [
+                "tabulka výsledků ANCOVA"
+            ],
+            "a table of ANOVA results": [
+                "tabulka výsledků ANOVA"
+            ],
+            "a table of comparative measures": [
+                "tabulka srovnávacích opatření"
+            ],
+            "a table of homogeneity of variances tests": [
+                "tabulka testů homogenity rozptylů"
+            ],
+            "a table of homogeneity tests": [
+                "tabulka testů homogenity"
+            ],
+            "a table of likelihood ratio tests": [
+                "tabulka testů poměru pravděpodobnosti"
+            ],
+            "a table of model coefficient thresholds": [
+                "tabulka prahových hodnot koeficientů modelu"
+            ],
+            "a table of model coefficients": [
+                "tabulka koeficientů modelu"
+            ],
+            "a table of normality tests": [
+                "tabulka testů normality"
+            ],
+            "a table of predicted classifications": [
+                "tabulka předpokládaných klasifikací"
+            ],
+            "a table of predictive measures": [
+                "tabulka prediktivních měr"
+            ],
+            "a table of proportions": [
+                "tabulka poměrů"
+            ],
+            "a table of test results": [
+                "tabulka výsledků testů"
+            ],
+            "a table of the 'nominal' test results": [
+                "tabulka \"nominálních\" výsledků testů"
+            ],
+            "a table of the descriptive statistics": [
+                "tabulka popisných statistik"
+            ],
+            "a table of the Friedman test results": [
+                "tabulka výsledků Friedmanova testu"
+            ],
+            "a table of the gamma test results": [
+                "tabulka výsledků testu gama"
+            ],
+            "a table of the Kendall's tau-b test results": [
+                "tabulka výsledků Kendallova tau-b testu"
+            ],
+            "a table of the Mantel-Haenszel test for trend": [
+                "tabulka Mantelova-Haenszelova testu pro trend"
+            ],
+            "a table of the pairwise comparisons": [
+                "tabulka párových porovnání"
+            ],
+            "a table of the proportions": [
+                "tabulka poměrů"
+            ],
+            "a table of the proportions and test results": [
+                "tabulka poměrů a výsledků testů"
+            ],
+            "a table of the test results": [
+                "tabulku výsledků testů"
+            ],
+            "a table of χ² test results": [
+                "tabulka výsledků χ² testu"
+            ],
+            "a vector containing strings naming the varibales that are reverse scaled": [
+                "vektor obsahující řetězce pojmenovávající proměnné, které jsou reverzně škálovány"
+            ],
+            "a vector of numbers: the expected proportions": [
+                "vektor čísel: očekávané podíly"
+            ],
+            "a vector of strings naming the between subjects factors from `data`": [
+                "vektor řetězců pojmenovávajících faktory mezi subjekty z `data`"
+            ],
+            "a vector of strings naming the control variables in `data`": [
+                "vektor řetězců pojmenovávajících řídicí proměnné v `data`"
+            ],
+            "a vector of strings naming the covariates from `data`": [
+                "vektor řetězců pojmenovávajících kovariáty z `data`"
+            ],
+            "a vector of strings naming the covariates from `data`. Variables must be numeric": [
+                "vektor řetězců pojmenovávajících kovariáty z `data`. Proměnné musí být číselné"
+            ],
+            "a vector of strings naming the factors from `data`": [
+                "vektor řetězců pojmenovávajících faktory z `data`"
+            ],
+            "a vector of strings naming the fixed factors from `data`": [
+                "vektor řetězců pojmenovávajících pevné faktory z `data`"
+            ],
+            "a vector of strings naming the repeated measures variables": [
+                "vektor řetězců pojmenovávajících proměnné opakovaných měření"
+            ],
+            "a vector of strings naming the variables of interest in `data`": [
+                "vektor řetězců pojmenovávajících proměnné zájmu v `data`"
+            ],
+            "a vector of strings naming the variables to correlate in `data`": [
+                "vektor řetězců pojmenovávajících proměnné, které se mají korelovat v `data`"
+            ],
+            "a vector of strings naming the variables used to split `vars`": [
+                "vektor řetězců pojmenovávajících proměnné použité k rozdělení `vars`"
+            ],
+            "Accuracy": [
+                "Přesnost"
+            ],
+            "Add New Block": [
+                "Přidat nový blok"
+            ],
+            "Add New Factor": [
+                "Přidat nový faktor"
+            ],
+            "Add New Term": [
+                "Přidat nový výraz"
+            ],
+            "Additional Options": [
+                "Další možnosti"
+            ],
+            "Additional Output": [
+                "Další výstupy"
+            ],
+            "Additional Statistics": [
+                "Další statistiky"
+            ],
+            "Adjusted R²": [
+                "Upravená hodnota R²"
+            ],
+            "AIC": [
+                "AIC"
+            ],
+            "All observations are tied": [
+                "Všechna pozorování jsou vázána"
+            ],
+            "Alternative hypothesis": [
+                "Alternativní hypotéza"
+            ],
+            "an array of contrasts tables": [
+                "řada tabulek kontrastů"
+            ],
+            "an array of descriptive plots": [
+                "řada popisných grafů"
+            ],
+            "an array of extreme values tables": [
+                "pole tabulek extrémních hodnot"
+            ],
+            "an array of frequency tables": [
+                "řada tabulek četností"
+            ],
+            "an array of groups of plots": [
+                "řada skupin dílů"
+            ],
+            "an array of model specific results": [
+                "řada výsledků specifických pro daný model"
+            ],
+            "an array of pairwise comparison tables": [
+                "soubor tabulek párového porovnávání"
+            ],
+            "an array of post-hoc tables": [
+                "řada tabulek post-hoc"
+            ],
+            "an array of Q-Q plots": [
+                "soustava Q-Q grafů"
+            ],
+            "an array of the descriptive plots": [
+                "tabulka popisných grafů"
+            ],
+            "an array of the estimated marginal means plots + tables": [
+                "soustava grafů odhadovaných mezních průměrů + tabulky"
+            ],
+            "an array of the posterior plots": [
+                "tabulka posteriorních grafů"
+            ],
+            "an image containing the model path diagram": [
+                "obrázek obsahující diagram cesty modelu"
+            ],
+            "an image of the descriptive plots": [
+                "zobrazení popisných ploch"
+            ],
+            "an integer (default: 1), the number of components in the model": [
+                "celé číslo (výchozí: 1), počet komponent v modelu"
+            ],
+            "an integer (default: 1), the number of factors in the model": [
+                "celé číslo (výchozí: 1), počet faktorů v modelu"
+            ],
+            "an integer (default: 4) specifying the number of equal groups": [
+                "celé číslo (výchozí: 4) určující počet stejných skupin"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "celé číslo (výchozí: 5) určující počet extrémních hodnot"
+            ],
+            "An uninspiring ANOVA data set": [
+                "Neinspirativní soubor dat ANOVA"
+            ],
+            "Analyses bundled with jamovi": [
+                "Analýzy svázané s jamovi"
+            ],
+            "ANCOVA": [
+                "ANCOVA"
+            ],
+            "Anderson & Rubin": [
+                "Anderson & Rubin"
+            ],
+            "Anderson's Iris Data": [
+                "Údaje o Andersonově duhovce"
+            ],
+            "ANOVA": [
+                "ANOVA"
+            ],
+            "ANOVA test": [
+                "Test ANOVA"
+            ],
+            "As there are no between subjects factors specified this assumption is always met.": [
+                "Protože nejsou specifikovány žádné mezipředmětové faktory, je tento předpoklad vždy splněn."
+            ],
+            "Assume equal (Fisher's)": [
+                "Předpokládejme rovnost (Fisherova)"
+            ],
+            "Assumption Checks": [
+                "Kontrola předpokladů"
+            ],
+            "Assumptions": [
+                "Předpoklady"
+            ],
+            "At least one variable must have two levels": [
+                "Alespoň jedna proměnná musí mít dvě úrovně"
+            ],
+            "AUC": [
+                "Plocha pod křivkou"
+            ],
+            "Autocorrelation": [
+                "Autokorelace"
+            ],
+            "Autocorrelation test": [
+                "Test autokorelace"
+            ],
+            "Available for 2x2 tables only": [
+                "K dispozici pouze pro tabulky 2x2"
+            ],
+            "b parameter": [
+                "b parametr"
+            ],
+            "Bar Plot": [
+                "Pruhový graf"
+            ],
+            "Bar plot": [
+                "Sloupcový graf"
+            ],
+            "Bar Plots": [
+                "Dělicí čáry"
+            ],
+            "Bar Type": [
+                "Typ sloupce"
+            ],
+            "Bartlett": [
+                "Bartlett"
+            ],
+            "Bartlett's Test of Sphericity": [
+                "Bartlettův test sféricity"
+            ],
+            "Bartlett's test of sphericity": [
+                "Bartlettův test sféricity"
+            ],
+            "Based on eigenvalue": [
+                "Na základě vlastních čísel"
+            ],
+            "Based on parallel analysis": [
+                "Na základě paralelní analýzy"
+            ],
+            "Bayes factor": [
+                "Bayesův koeficient"
+            ],
+            "Bayes factor₁₀": [
+                "Bayesův koeficient₁₀"
+            ],
+            "Bayesian Statistics": [
+                "Bayesovská statistika"
+            ],
+            "beta 'a' parameter": [
+                "parametr beta 'a'"
+            ],
+            "beta 'b' parameter": [
+                "parametr beta 'b'"
+            ],
+            "Between Subject Factors": [
+                "Mezioborové faktory"
+            ],
+            "Between Subjects Components": [
+                "Složky mezi subjekty"
+            ],
+            "Between Subjects Effects": [
+                "Účinky mezi subjekty"
+            ],
+            "BIC": [
+                "BIC"
+            ],
+            "Big 5 (Dolan, Oort, Stoel & Wicherts, 2009)": [
+                "Velká pětka (Dolan, Oort, Stoel & Wicherts, 2009)"
+            ],
+            "Binomial": [
+                "Binomiální"
+            ],
+            "Binomial Logistic Regression": [
+                "Binomická logistická regrese"
+            ],
+            "Binomial Test": [
+                "Binomický test"
+            ],
+            "Binomial test": [
+                "Binomický test"
+            ],
+            "Block {0}": [
+                "Blok {0}"
+            ],
+            "Block 1": [
+                "Blok 1"
+            ],
+            "Blocks": [
+                "Bloky"
+            ],
+            "Bonferroni": [
+                "Bonferroni"
+            ],
+            "Box plot": [
+                "Krabicový graf"
+            ],
+            "Box Plots": [
+                "Krabicové plochy"
+            ],
+            "Box-Tidwell test": [
+                "Box-Tidwellův test"
+            ],
+            "Box-Tidwell Test for Linearity of the Logit": [
+                "Box-Tidwellův test pro linearitu logitu"
+            ],
+            "Box's Homogeneity of Covariance Matrices Test": [
+                "Boxův test homogenity kovariančních matic"
+            ],
+            "Box's M test": [
+                "Boxův M test"
+            ],
+            "Box's M test for homogeneity of covariance matrices": [
+                "Boxův M test homogenity kovariančních matic"
+            ],
+            "Bugs (Ryan, Wilde & Crist, 2013)": [
+                "Brouci (Ryan, Wilde & Crist, 2013)"
+            ],
+            "Cells": [
+                "Buňky"
+            ],
+            "Central Tendency": [
+                "Střední tendence"
+            ],
+            "CFI": [
+                ""
+            ],
+            "Chi-Square Quantiles": [
+                "Kvantily chí-kvadrátu"
+            ],
+            "CI Lower": [
+                ""
+            ],
+            "CI Upper": [
+                ""
+            ],
+            "Classification Table": [
+                "Klasifikační tabulka"
+            ],
+            "Classification table": [
+                "Klasifikační tabulka"
+            ],
+            "Classification Table – {dep}": [
+                "Klasifikační tabulka - {dep}"
+            ],
+            "Cohen's d": [
+                "Cohenova d"
+            ],
+            "Collinearity Statistics": [
+                ""
+            ],
+            "Collinearity statistics": [
+                ""
+            ],
+            "Column": [
+                ""
+            ],
+            "Column variable '{var}' contains fewer than 2 levels": [
+                ""
+            ],
+            "Columns": [
+                ""
+            ],
+            "columns": [
+                ""
+            ],
+            "Columns compared": [
+                "Porovnávané sloupce"
+            ],
+            "Comparative Measures": [
+                "Srovnávací měřítka"
+            ],
+            "Comparative Measures (2x2 only)": [
+                "Srovnávací měřítka (pouze 2x2)"
+            ],
+            "Compare": [
+                "Porovnat"
+            ],
+            "Comparison": [
+                "Porovnání"
+            ],
+            "Comparisons are based on estimated marginal means": [
+                "Srovnání jsou založena na odhadovaných mezních průměrech"
+            ],
+            "Component": [
+                ""
+            ],
+            "Component correlations": [
+                ""
+            ],
+            "Component Loadings": [
+                ""
+            ],
+            "Component scores": [
+                ""
+            ],
+            "Component Statistics": [
+                ""
+            ],
+            "Component summary": [
+                ""
+            ],
+            "component(s)": [
+                "komponent(y)"
+            ],
+            "Components": [
+                ""
+            ],
+            "components": [
+                ""
+            ],
+            "Confidence Interval": [
+                ""
+            ],
+            "Confidence interval": [
+                ""
+            ],
+            "Confidence interval for Mean": [
+                ""
+            ],
+            "Confidence interval width": [
+                ""
+            ],
+            "Confidence Intervals": [
+                ""
+            ],
+            "Confidence intervals": [
+                ""
+            ],
+            "Confidence level": [
+                ""
+            ],
+            "Confirmatory Factor Analysis": [
+                ""
+            ],
+            "Constraints": [
+                ""
+            ],
+            "Contingency coefficient": [
+                ""
+            ],
+            "Contingency Tables": [
+                ""
+            ],
+            "Contrasts": [
+                ""
+            ],
+            "Contrasts - $key": [
+                ""
+            ],
+            "Control Variables": [
+                ""
+            ],
+            "Control variables": [
+                ""
+            ],
+            "controlling for {items}": [
+                ""
+            ],
+            "Cook's Distance": [
+                ""
+            ],
+            "Cook's distance": [
+                ""
+            ],
+            "Correction": [
+                ""
+            ],
+            "Corrections": [
+                ""
+            ],
+            "Correlated": [
+                ""
+            ],
+            "Correlated negatively": [
+                ""
+            ],
+            "Correlated positively": [
+                ""
+            ],
+            "Correlation": [
+                ""
+            ],
+            "Correlation Coefficients": [
+                ""
+            ],
+            "Correlation Heatmap": [
+                ""
+            ],
+            "Correlation heatmap": [
+                ""
+            ],
+            "Correlation matrices are a way to examine linear relationships between\ntwo or more continuous variables.": [
+                "Korelační matice představují způsob, jak zkoumat lineární vztahy mezi dvou nebo více kontinuálních proměnných."
+            ],
+            "Correlation matrices are a way to examine linear relationships between\ntwo or more continuous variables.\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                ""
+            ],
+            "Correlation Matrix": [
+                "Korelační matice"
+            ],
+            "Correlation matrix": [
+                "Korelační matice"
+            ],
+            "Correlation Type": [
+                "Typ korelace"
+            ],
+            "Correlation type": [
+                "Typ korelace"
+            ],
+            "Count": [
+                ""
+            ],
+            "Counts": [
+                "Počítání"
+            ],
+            "Counts (optional)": [
+                "Počty (volitelné)"
+            ],
+            "Counts may not be infinite": [
+                "Počty nemusí být nekonečné"
+            ],
+            "Counts may not be negative": [
+                "Počty nesmí být záporné"
+            ],
+            "Counts must be non-negative and finite": [
+                "Počty musí být nezáporné a konečné"
+            ],
+            "Covariates": [
+                "Kovariáty"
+            ],
+            "Cox & Snell's R²": [
+                "Coxovo a Snellovo R²"
+            ],
+            "Cramer's V": [
+                "Cramerovo V"
+            ],
+            "Credible Interval": [
+                ""
+            ],
+            "Credible intervals": [
+                ""
+            ],
+            "Cronbach's α": [
+                "Cronbachovo α"
+            ],
+            "Cronbach's α (if item is dropped)": [
+                "Cronbachovo α (pokud je položka vypuštěna)"
+            ],
+            "cubic": [
+                "kubické"
+            ],
+            "Cumulative %": [
+                "Kumulativní %"
+            ],
+            "Cut point values": [
+                ""
+            ],
+            "Cut points for": [
+                ""
+            ],
+            "Cut-Off": [
+                ""
+            ],
+            "Cut-Off Plot": [
+                ""
+            ],
+            "Cut-off plot": [
+                ""
+            ],
+            "Cut-off value": [
+                ""
+            ],
+            "dat <- data.frame(\n    `1st survey` = c('Approve', 'Approve', 'Disapprove', 'Disapprove'),\n    `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),\n    `Counts` = c(794, 150, 86, 570),\n    check.names=FALSE)\n\ncontTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)\n\n#\n#  PAIRED SAMPLES CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ────────────────────────────────────────────────\n#    1st survey    Approve    Disapprove    Total\n#  ────────────────────────────────────────────────\n#    Approve           794           150      944\n#    Disapprove         86           570      656\n#    Total             880           720     1600\n#  ────────────────────────────────────────────────\n#\n#\n#  McNemar Test\n#  ─────────────────────────────────────────────────────\n#                                Value    df    p\n#  ─────────────────────────────────────────────────────\n#    χ²                           17.4     1    < .001\n#    χ² continuity correction     16.8     1    < .001\n#  ─────────────────────────────────────────────────────\n#\n\n\n# Alternatively, omit the left of the formula (`Counts`) from the\n# formula if each row represents a single observation:\n\ncontTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)": [
+                ""
+            ],
+            "dat <- data.frame(x=c(8, 15))\n\npropTest2(dat, vars = x, areCounts = TRUE)\n\n#\n#  PROPORTION TEST (2 OUTCOMES)\n#\n#  Binomial Test\n#  ───────────────────────────────────────────────────────\n#         Level    Count    Total    Proportion    p\n#  ───────────────────────────────────────────────────────\n#    x    1            8       23         0.348    0.210\n#         2           15       23         0.652    0.210\n#  ───────────────────────────────────────────────────────\n#    Note. Hₐ is proportion ≠ 0.5\n#": [
+                ""
+            ],
+            "Data": [
+                "Data"
+            ],
+            "data <- lavaan::HolzingerSwineford1939\n\njmv::cfa(\n    data = data,\n    factors = list(\n        list(label=\"Visual\", vars=c(\"x1\", \"x2\", \"x3\")),\n        list(label=\"Textual\", vars=c(\"x4\", \"x5\", \"x6\")),\n        list(label=\"Speed\", vars=c(\"x7\", \"x8\", \"x9\"))),\n    resCov = NULL)\n\n#\n#  CONFIRMATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ─────────────────────────────────────────────────────────────────\n#    Factor     Indicator    Estimate    SE        Z        p\n#  ─────────────────────────────────────────────────────────────────\n#    Visual     x1              0.900    0.0832    10.81    < .001\n#               x2              0.498    0.0808     6.16    < .001\n#               x3              0.656    0.0776     8.46    < .001\n#    Textual    x4              0.990    0.0567    17.46    < .001\n#               x5              1.102    0.0626    17.60    < .001\n#               x6              0.917    0.0538    17.05    < .001\n#    Speed      x7              0.619    0.0743     8.34    < .001\n#               x8              0.731    0.0755     9.68    < .001\n#               x9              0.670    0.0775     8.64    < .001\n#  ─────────────────────────────────────────────────────────────────\n#\n#\n#  FACTOR ESTIMATES\n#\n#  Factor Covariances\n#  ──────────────────────────────────────────────────────────────\n#                          Estimate    SE        Z       p\n#  ──────────────────────────────────────────────────────────────\n#    Visual     Visual      1.000 ᵃ\n#               Textual     0.459      0.0635    7.22    < .001\n#               Speed       0.471      0.0862    5.46    < .001\n#    Textual    Textual     1.000 ᵃ\n#               Speed       0.283      0.0715    3.96    < .001\n#    Speed      Speed       1.000 ᵃ\n#  ──────────────────────────────────────────────────────────────\n#    ᵃ fixed parameter\n#\n#\n#  MODEL FIT\n#\n#  Test for Exact Fit\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    85.3    24    < .001\n#  ────────────────────────\n#\n#\n#  Fit Measures\n#  ───────────────────────────────────────────────\n#    CFI      TLI      RMSEA     Lower     Upper\n#  ───────────────────────────────────────────────\n#    0.931    0.896    0.0921    0.0714    0.114\n#  ───────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "Data Reduction": [
+                "Redukce dat"
+            ],
+            "Data set is currently unweighted": [
+                ""
+            ],
+            "Data Summary": [
+                "Souhrn dat"
+            ],
+            "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1     4.97e-7    6.00     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────────\n#    Predictor    Estimate      SE          Z           p\n#  ────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2      0.0136    0.989\n#    age            -0.00653       482.7    -1.35e-5    1.000\n#    bwt            -1.18532        87.0     -0.0136    0.989\n#  ────────────────────────────────────────────────────────────\n#    Note. Estimates represent the log odds of \"low = 1\"\n#    vs. \"low = 0\"\n#\n#": [
+                ""
+            ],
+            "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ──────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ───────────────────────────────────────────────────────────────\n#    race     Predictor    Estimate    SE        Z         p\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    Intercept      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────\n#\n#": [
+                ""
+            ],
+            "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  REPEATED MEASURES ANOVA\n#\n#  Within Subjects Effects\n#  ───────────────────────────────────────────────────────────────────────\n#                  Sum of Squares    df    Mean Square    F       p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#\n#\n#\n#  Between Subjects Effects\n#  ─────────────────────────────────────────────────────────────────\n#                Sum of Squares    df    Mean Square    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#": [
+                ""
+            ],
+            "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#": [
+                ""
+            ],
+            "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  PAIRED SAMPLES T-TEST\n#\n#  Paired Samples T-Test\n#  ──────────────────────────────────────────────────────────────\n#                                   statistic    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ─────────────────────────────────────────────────────\n#    Hair     Brown    Blue    Hazel    Green    Total\n#  ─────────────────────────────────────────────────────\n#    Black       68      20       15        5      108\n#    Brown      119      84       54       29      286\n#    Red         26      17       14       14       71\n#    Blond        7      94       10       16      127\n#    Total      220     215       93       64      592\n#  ─────────────────────────────────────────────────────\n#\n#\n#  χ² Tests\n#  ───────────────────────────────\n#          Value    df    p\n#  ───────────────────────────────\n#    χ²      138     9    < .001\n#    N       592\n#  ───────────────────────────────\n#\n\n# Alternatively, omit the left of the formula (`Freq`) if each row\n# represents a single observation:\n\ncontTables(formula = ~ Hair:Eye, dat)": [
+                ""
+            ],
+            "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  PROPORTION TEST (N OUTCOMES)\n#\n#  Proportions\n#  ────────────────────────────────\n#    Level    Count    Proportion\n#  ────────────────────────────────\n#    Brown      220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  χ² Goodness of Fit\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#": [
+                ""
+            ],
+            "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Note. 'oblimin' rotation was used\n#": [
+                ""
+            ],
+            "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA\n#\n#  Multivariate Tests\n#  ───────────────────────────────────────────────────────────────────────────\n#                                     value     F       df1    df2    p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  Univariate Tests\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                 Dependent Variable    Sum of Squares    df     Mean Square    F         p\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    Residuals    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('iris')\n\npca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  PRINCIPAL COMPONENT ANALYSIS\n#\n#  Component Loadings\n#  ────────────────────────────────────────\n#                    1         Uniqueness\n#  ────────────────────────────────────────\n#    Sepal.Length     0.890        0.2076\n#    Sepal.Width     -0.460        0.7883\n#    Petal.Length     0.992        0.0168\n#    Petal.Width      0.965        0.0688\n#  ────────────────────────────────────────\n#    Note. 'varimax' rotation was used\n#": [
+                ""
+            ],
+            "data('iris')\n\nreliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),\n            omegaScale = TRUE)\n\n#\n#  RELIABILITY ANALYSIS\n#\n#  Scale Reliability Statistics\n#  ─────────────────────────────────────────\n#             Cronbach's α    McDonald's ω\n#  ─────────────────────────────────────────\n#    scale           0.708           0.848\n#  ─────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  CORRELATION MATRIX\n#\n#  Correlation Matrix\n#  ──────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ──────────────────────────────────────────────────────────────\n#    mpg     Pearson's r        —    -0.852    -0.848    -0.776\n#            p-value            —    < .001    < .001    < .001\n#\n#    cyl     Pearson's r                  —     0.902     0.832\n#            p-value                      —    < .001    < .001\n#\n#    disp    Pearson's r                            —     0.791\n#            p-value                                —    < .001\n#\n#    hp      Pearson's r                                      —\n#            p-value                                          —\n#  ──────────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIAL CORRELATION\n#\n#  Partial Correlation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-value             —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-value        < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-value        < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Note. controlling for 'hp'\n#": [
+                ""
+            ],
+            "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1    4.12e-10    41.4     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ──────────────────────────────────────────────────────────────────\n#    Predictor          Estimate     SE          Z            p\n#  ──────────────────────────────────────────────────────────────────\n#    Intercept          -4.71e-16        1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079        1.06        1.961    0.050\n#    5 – 3                  0.693        1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693        1.22        0.566    0.571\n#    8 – 4                  2.485        1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386        1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386        1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867    42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485        1.44       -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────\n#\n#": [
+                ""
+            ],
+            "data('mtcars')\ndat <- mtcars\n\n# frequency tables can be provided for factors\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESCRIPTIVES\n#\n#  Descriptives\n#  ───────────────────────────────────────────\n#               mpg     cyl     disp    gear\n#  ───────────────────────────────────────────\n#    N            32      32      32      32\n#    Missing       0       0       0       0\n#    Mean       20.1    6.19     231    3.69\n#    Median     19.2    6.00     196    4.00\n#    Minimum    10.4    4.00    71.1       3\n#    Maximum    33.9    8.00     472       5\n#  ───────────────────────────────────────────\n#\n#\n#  FREQUENCIES\n#\n#  Frequencies of gear\n#  ────────────────────\n#    Levels    Counts\n#  ────────────────────\n#    3             15\n#    4             12\n#    5              5\n#  ────────────────────\n#\n\n# spliting by a variable\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# providing histograms\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# splitting by multiple variables\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)": [
+                ""
+            ],
+            "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────\n#    Model    R        R²\n#  ───────────────────────────\n#        1    0.802    0.643\n#  ───────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────\n#    Predictor    Estimate    SE         t         p\n#  ────────────────────────────────────────────────────────\n#    Intercept      -253.8    1086.16    -0.234     0.816\n#    women           -50.9       8.56    -5.948    < .001\n#    prestige        141.4      29.91     4.729    < .001\n#    education       177.2     187.63     0.944     0.347\n#  ────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    Residuals              1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ONE-WAY ANOVA (NON-PARAMETRIC)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  INDEPENDENT SAMPLES T-TEST\n#\n#  Independent Samples T-Test\n#  ────────────────────────────────────────────────────\n#                          statistic    df      p\n#  ────────────────────────────────────────────────────\n#    len    Student's t         1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nttestOneS(ToothGrowth, vars = vars(len, dose))\n\n#\n#  ONE SAMPLE T-TEST\n#\n#  One Sample T-Test\n#  ──────────────────────────────────────────────────────\n#                           statistic    df      p\n#  ──────────────────────────────────────────────────────\n#    len     Student's t         19.1    59.0    < .001\n#    dose    Student's t         14.4    59.0    < .001\n#  ──────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\ndat <- ToothGrowth\ndat$dose <- factor(dat$dose)\n\nanovaOneW(formula = len ~ dose, data = dat)\n\n#\n#  ONE-WAY ANOVA\n#\n#  One-Way ANOVA (Welch's)\n#  ────────────────────────────────────────\n#           F       df1    df2     p\n#  ────────────────────────────────────────\n#    len    68.4      2    37.7    < .001\n#  ────────────────────────────────────────\n#": [
+                ""
+            ],
+            "Densities for variables": [
+                "Hustoty proměnných"
+            ],
+            "Density": [
+                "Hustota"
+            ],
+            "Dependent": [
+                "Závislý"
+            ],
+            "Dependent Variable": [
+                "Závislá proměnná"
+            ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "Závislá proměnná '{dep}' obsahuje nekonečné hodnoty"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "Závislá proměnná \"{dep}\" neobsahuje žádné údaje (po odstranění řádků s chybějícími hodnotami)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "Závislá proměnná \"{dep}\" obsahuje pouze jednu jedinečnou hodnotu (po odstranění řádků s chybějícími hodnotami)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "Závislá proměnná \"{dep}\" musí být kontinuální"
+            ],
+            "Dependent Variable Label": [
+                "Označení závislé proměnné"
+            ],
+            "Dependent Variables": [
+                "Závislé proměnné"
+            ],
+            "Dependent variables are very highly correlated": [
+                "Závislé proměnné jsou velmi vysoce korelované"
+            ],
+            "deprecated": [
+                "zastaralý"
+            ],
+            "Descriptive Plot": [
+                ""
+            ],
+            "Descriptive plot": [
+                ""
+            ],
+            "Descriptives": [
+                "Popisy"
+            ],
+            "Descriptives are an assortment of summarising statistics, and visualizations which allow exploring the shape and distribution of data. It is good practice to explore your data with descriptives before proceeding to more formal tests.": [
+                "Deskriptivy jsou souborem shrnujících statistik a vizualizací, které umožňují zkoumat tvar a rozložení dat. Je dobrým zvykem prozkoumat data pomocí deskriptivních ukazatelů dříve, než přistoupíte k formálnějším testům."
+            ],
+            "descriptives plot": [
+                ""
+            ],
+            "Descriptives Plots": [
+                ""
+            ],
+            "Descriptives plots": [
+                ""
+            ],
+            "Descriptives Table": [
+                ""
+            ],
+            "Descriptives table": [
+                ""
+            ],
+            "Deviance": [
+                "Odchylka"
+            ],
+            "Deviation": [
+                "Odchýlení"
+            ],
+            "df": [
+                "df"
+            ],
+            "df1": [
+                "df1"
+            ],
+            "df2": [
+                "df2"
+            ],
+            "Difference": [
+                "Rozdíl"
+            ],
+            "Difference in 2 proportions": [
+                "Rozdíl ve 2 poměrech"
+            ],
+            "Difference in proportions": [
+                "Rozdíl v poměrech"
+            ],
+            "Dispersion": [
+                "Variabilita"
+            ],
+            "Distribution": [
+                ""
+            ],
+            "Don't assume equal (Welch's)": [
+                "Nepředpokládejte rovnost (Welch's)"
+            ],
+            "drag variable here": [
+                "přetáhněte proměnnou sem"
+            ],
+            "drag variables here": [
+                "přetáhněte proměnné sem"
+            ],
+            "DSCF pairwise comparisons": [
+                "DSCF párové porovnání"
+            ],
+            "Durbin–Watson Test for Autocorrelation": [
+                "Durbin-Watsonův test autokorelace"
+            ],
+            "DW Statistic": [
+                "DW statistika"
+            ],
+            "Dwass-Steel-Critchlow-Fligner pairwise comparisons": [
+                "Párová srovnání Dwass-Steel-Critchlow-Fligner"
+            ],
+            "Effect Size": [
+                ""
+            ],
+            "Effect size": [
+                ""
+            ],
+            "Eigenvalue": [
+                "Vlastní číslo"
+            ],
+            "Eigenvalues": [
+                "Vlastní čísla"
+            ],
+            "Eigenvalues greater than": [
+                "Vlastní čísla větší než"
+            ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Prázdné buňky v mezipředmětovém uspořádání: alespoň jedna kombinace úrovní mezipředmětových faktorů má 0 pozorování"
+            ],
+            "Equal cell weights": [
+                "Stejné váhy buněk"
+            ],
+            "equal groups": [
+                "rovnocenné skupiny"
+            ],
+            "error %": [
+                "chyba %"
+            ],
+            "Error bars": [
+                "Chybové sloupce"
+            ],
+            "Estimate": [
+                "Odhad"
+            ],
+            "Estimate (Log Odds Ratio)": [
+                "Odhad (logaritmický poměr šancí)"
+            ],
+            "Estimate (Log Rate Ratio)": [
+                "Odhad (logaritmický poměr)"
+            ],
+            "Estimated Marginal Means": [
+                "Odhadované mezní průměry"
+            ],
+            "Estimated Marginal Means - {term}": [
+                "Odhadované mezní průměry - {term}"
+            ],
+            "Estimates": [
+                "Odhady"
+            ],
+            "Estimates represent the log odds of …": [
+                "Odhady představují logaritmické pravděpodobnosti …"
+            ],
+            "Estimates represent the log odds of \"{dep} = {level1}\" vs. \"{dep} = {level2}\"": [
+                "Odhady představují logaritmické pravděpodobnosti \"{dep} = {level1}\" vs. \"{dep} = {level2}\""
+            ],
+            "Estimation method": [
+                "Metoda odhadu"
+            ],
+            "Exclude cases analysis by analysis": [
+                "Vyloučit případy analýzy podle analýzy"
+            ],
+            "Exclude cases listwise": [
+                "Vyloučení případů podle seznamu"
+            ],
+            "Excluded": [
+                "Vyloučeno"
+            ],
+            "Expected": [
+                "Očekávaný"
+            ],
+            "Expected counts": [
+                "Předpokládané počty"
+            ],
+            "Expected Proportions": [
+                "Předpokládané podíly"
+            ],
+            "Exploration": [
+                "Průzkum"
+            ],
+            "Exploratory Factor Analysis": [
+                "Průzkumná faktorová analýza"
+            ],
+            "Extraction": [
+                "Extrakce"
+            ],
+            "Extreme values": [
+                "Extrémní hodnoty"
+            ],
+            "Extreme Values": [
+                "Extrémní hodnoty"
+            ],
+            "Extreme values of $key": [
+                "Extrémní hodnoty $key"
+            ],
+            "F": [
+                "F"
+            ],
+            "F test": [
+                "F test"
+            ],
+            "F-statistic could not be calculated": [
+                "F-statistiku nebylo možné vypočítat"
+            ],
+            "Factor": [
+                "Faktor"
+            ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Faktor \"{faktor}\" má méně než dvě úrovně. Faktory musí mít alespoň dvě úrovně"
+            ],
+            "Factor '{factor}' needs to have at least 2 levels": [
+                "Faktor \"{factor}\" musí mít alespoň 2 úrovně"
+            ],
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Faktor '{factorName}' neobsahuje žádná data (po odstranění řádků s chybějícími hodnotami)"
+            ],
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Faktor \"{factorName}\" obsahuje pouze jednu úroveň (po odstranění řádků s chybějícími hodnotami)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Faktor \"{factorName}\" obsahuje nepoužité úrovně (po odstranění řádků s chybějícími hodnotami)"
+            ],
+            "Factor {0}": [
+                "Faktor {0}"
+            ],
+            "Factor 1": [
+                "Faktor 1"
+            ],
+            "Factor correlations": [
+                "Korelace faktorů"
+            ],
+            "Factor Covariances": [
+                "Kovariance faktorů"
+            ],
+            "Factor covariances": [
+                "Kovariance faktorů"
+            ],
+            "Factor Estimates": [
+                "Odhady faktorů"
+            ],
+            "Factor Intercepts": [
+                "Faktorové intercepty"
+            ],
+            "Factor intercepts": [
+                "Faktorové intercepty"
+            ],
+            "Factor Loadings": [
+                "Zatížení faktorů"
+            ],
+            "Factor Loadings – Modification Indices": [
+                ""
+            ],
+            "Factor scores": [
+                ""
+            ],
+            "Factor Statistics": [
+                ""
+            ],
+            "Factor summary": [
+                ""
+            ],
+            "Factor variances = 1": [
+                ""
+            ],
+            "factor(s)": [
+                "faktor(y)"
+            ],
+            "Factors": [
+                "Faktory"
+            ],
+            "factors": [
+                "faktory"
+            ],
+            "Fisher's": [
+                "Fisherův"
+            ],
+            "Fisher's exact test": [
+                "Fisherův exaktní test"
+            ],
+            "Fit Measures": [
+                ""
+            ],
+            "Fitted": [
+                ""
+            ],
+            "Fixed Factors": [
+                ""
+            ],
+            "Fixed number": [
+                ""
+            ],
+            "fixed parameter": [
+                "fixní parametr"
+            ],
+            "Flag significant comparisons": [
+                "Označení významných srovnání"
+            ],
+            "Flag significant correlations": [
+                "Označení významných korelací"
+            ],
+            "flag significant correlations (p < .05) with symbols.": [
+                ""
+            ],
+            "flag significant post-hoc comparisons.": [
+                "označit významné post-hoc srovnání."
+            ],
+            "Frequencies": [
+                "Frekvence"
+            ],
+            "Frequencies of $key": [
+                "Frekvence $key"
+            ],
+            "Frequency tables": [
+                "Tabulky četností"
+            ],
+            "Friedman": [
+                "Friedman"
+            ],
+            "Full information maximum likelihood": [
+                ""
+            ],
+            "Games-Howell (unequal variances)": [
+                ""
+            ],
+            "Games-Howell Post-Hoc Test – {dep}": [
+                "Games-Howellův post-Hoc test - {dep}"
+            ],
+            "Gamma": [
+                "Gamma"
+            ],
+            "General Options": [
+                "Obecné možnosti"
+            ],
+            "Generalised η²": [
+                "Zobecněné η²"
+            ],
+            "Grand mean (simple coding)": [
+                ""
+            ],
+            "Greenhouse-Geisser": [
+                "Greenhouse-Geisser"
+            ],
+            "Greenhouse-Geisser ε": [
+                "Greenhouse-Geisser ε"
+            ],
+            "Group": [
+                "Skupina"
+            ],
+            "Group 1": [
+                "Skupina 1"
+            ],
+            "Group 1 < Group 2": [
+                "Skupina 1 < Skupina 2"
+            ],
+            "Group 1 ≠ Group 2": [
+                "Skupina 1 ≠ Skupina 2"
+            ],
+            "Group 1 > Group 2": [
+                "Skupina 1 > Skupina 2"
+            ],
+            "Group 2": [
+                "Skupina 2"
+            ],
+            "Group Descriptives": [
+                ""
+            ],
+            "Group Summary": [
+                ""
+            ],
+            "Group summary": [
+                "Souhrn skupiny"
+            ],
+            "Grouping Variable": [
+                "Seskupení proměnných"
+            ],
+            "Grouping variable '{a}' has less than 2 levels after missing values are excluded": [
+                "Seskupení proměnných \"{a}\" má po vyloučení chybějících hodnot méně než 2 úrovně"
+            ],
+            "Grouping variable '{a}' must have exactly 2 levels": [
+                ""
+            ],
+            "Grouping variable '{a}' must not also be a dependent variable": [
+                ""
+            ],
+            "Hₐ is negative correlation": [
+                "Hₐ je záporná korelace"
+            ],
+            "Hₐ is positive correlation": [
+                "Hₐ je kladná korelace"
+            ],
+            "Hₐ is proportion {direction} {testValue}": [
+                "Hₐ je poměr {směr} {hodnota testu}"
+            ],
+            "Haldane-Anscombe correction applied": [
+                ""
+            ],
+            "Harman": [
+                "Harman"
+            ],
+            "Helmert": [
+                "Helmert"
+            ],
+            "hidden": [
+                ""
+            ],
+            "Hide loadings below": [
+                ""
+            ],
+            "Highlight values above": [
+                "Zvýrazněte výše uvedené hodnoty"
+            ],
+            "Histogram": [
+                "Histogram"
+            ],
+            "Histograms": [
+                "Histogramy"
+            ],
+            "Holm": [
+                "Holm"
+            ],
+            "Homogeneity of Variances Test (Levene's)": [
+                "Test homogenity rozptylů (Leveneův)"
+            ],
+            "Homogeneity test": [
+                "Test homogenity"
+            ],
+            "Hotelling's Trace": [
+                ""
+            ],
+            "Huynh-Feldt": [
+                "Huynh-Feldt"
+            ],
+            "Huynh-Feldt ε": [
+                "Huynh-Feldtová ε"
+            ],
+            "Hypothesis": [
+                "Hypotéza"
+            ],
+            "If item dropped": [
+                "Pokud položka spadne"
+            ],
+            "in development": [
+                "ve vývoji"
+            ],
+            "include a summary of the groups": [
+                "zahrnout přehled skupin"
+            ],
+            "Independent Samples": [
+                "Nezávislé výběry"
+            ],
+            "Independent Samples T-Test": [
+                "T-test pro nezávislé výběry"
+            ],
+            "Indicator": [
+                "Indikátor"
+            ],
+            "Initial Eigenvalues": [
+                "Počáteční vlastní čísla"
+            ],
+            "Initial eigenvalues": [
+                "Počáteční vlastní čísla"
+            ],
+            "Inter-Component Correlations": [
+                "Korelace mezi složkami"
+            ],
+            "Inter-Factor Correlations": [
+                "Korelace mezi faktory"
+            ],
+            "Intercept": [
+                ""
+            ],
+            "Interval": [
+                "Interval"
+            ],
+            "IQR": [
+                ""
+            ],
+            "Item '{item}' consists of one level only": [
+                "Položka '{item}' se skládá pouze z jedné úrovně"
+            ],
+            "Item '{item}' contains infinite values": [
+                "Položka '{item}' obsahuje nekonečně mnoho hodnot"
+            ],
+            "Item '{item}' contains only missing values": [
+                "Položka '{item}' obsahuje pouze chybějící hodnoty"
+            ],
+            "Item '{item}' has no variance": [
+                "Položka '{item}' nemá žádnou odchylku"
+            ],
+            "Item '{item}' needs to be numeric": [
+                "Položka '{item}' musí být číselná"
+            ],
+            "item {item} correlates negatively with the total scale and probably should be reversed": [
+                "položka {item} negativně koreluje s celkovou škálou a pravděpodobně by měla být obrácena"
+            ],
+            "Item Reliability Statistics": [
+                "Statistiky spolehlivosti položek"
+            ],
+            "Item Statistics": [
+                "Statistiky položek"
+            ],
+            "Item-rest correlation": [
+                ""
+            ],
+            "Items": [
+                "Položky"
+            ],
+            "items {items} correlate negatively with the total scale and probably should be reversed": [
+                "položky {items} negativně korelují s celkovou škálou a pravděpodobně by měly být obráceny"
+            ],
+            "Jittered": [
+                ""
+            ],
+            "Kendall's Tau B": [
+                "Kendallovo Tau B"
+            ],
+            "Kendall's Tau-B": [
+                "Kendallovo Tau-B"
+            ],
+            "Kendall's Tau-b": [
+                "Kendallovo Tau-b"
+            ],
+            "Kendall's tau-b": [
+                "Kendallovo tau-b"
+            ],
+            "KMO Measure of Sampling Adequacy": [
+                ""
+            ],
+            "KMO measure of sampling adequacy": [
+                ""
+            ],
+            "Kruskal-Wallis": [
+                "Kruskal-Wallis"
+            ],
+            "Kurtosis": [
+                "Kurtóza"
+            ],
+            "Label outliers": [
+                "Označení odlehlých hodnot"
+            ],
+            "Layers": [
+                ""
+            ],
+            "Level": [
+                ""
+            ],
+            "Level 1": [
+                ""
+            ],
+            "Level 2": [
+                ""
+            ],
+            "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
+                "Leveneho test je významný (p < .05), což naznačuje porušení předpokladu rovnosti rozptylů"
+            ],
+            "Likelihood": [
+                "Pravděpodobnost"
+            ],
+            "Likelihood ratio": [
+                "Pravděpodobnostní poměr"
+            ],
+            "Likelihood ratio tests": [
+                "Test poměru pravděpodobnosti"
+            ],
+            "linear": [
+                "lineární"
+            ],
+            "Linear Regression": [
+                "Lineární regrese"
+            ],
+            "Linear regression is used to explore the relationship between a continuous dependent variable, and one or more continuous and/or categorical explanatory variables. Other statistical methods, such as ANOVA and ANCOVA, are in reality just forms of linear regression.": [
+                "Lineární regrese se používá ke zkoumání vztahu mezi spojitou závislou proměnnou a jednou nebo více spojitými a/nebo kategorickými vysvětlujícími proměnnými. Ostatní statistické metody, jako je ANOVA a ANCOVA, jsou ve skutečnosti jen formami lineární regrese."
+            ],
+            "Log odds ratio": [
+                "Logaritmický poměr pravděpodobnosti"
+            ],
+            "Log odds ratio exact": [
+                ""
+            ],
+            "Log-Linear Regression": [
+                "Logaritmicko-lineární regrese"
+            ],
+            "Logistic Regression": [
+                "Logistická regrese"
+            ],
+            "Lower": [
+                "Dolní"
+            ],
+            "lower bound": [
+                "dolní mez"
+            ],
+            "MANCOVA": [
+                "MANCOVA"
+            ],
+            "Mann-Whitney U": [
+                "Mannovo-Whitneyho U"
+            ],
+            "Mantel-Haenszel": [
+                "Mantel-Haenszel"
+            ],
+            "Mantel-Haenszel Test for Trend": [
+                "Mantelův-Haenszelův test trendu"
+            ],
+            "Marginal Mean": [
+                "Mezní průměr"
+            ],
+            "Marginal Means": [
+                ""
+            ],
+            "Marginal means plots": [
+                ""
+            ],
+            "Marginal means tables": [
+                ""
+            ],
+            "Mauchly's W": [
+                "Mauchlyho W"
+            ],
+            "Max": [
+                "Max"
+            ],
+            "Maximum": [
+                "Maximum"
+            ],
+            "Maximum likelihood": [
+                "Maximální pravděpodobnost"
+            ],
+            "McDonald's ω": [
+                "McDonaldovo ω"
+            ],
+            "McDonald's ω (if item is dropped)": [
+                "McDonaldovo ω (pokud je položka vypuštěna)"
+            ],
+            "McFadden's R²": [
+                "McFaddenovo R²"
+            ],
+            "McNemar requires a 2x2 table": [
+                "McNemar vyžaduje tabulku 2x2"
+            ],
+            "McNemar Test": [
+                "McNemarův test"
+            ],
+            "McNemar test": [
+                "McNemarův test"
+            ],
+            "Mean": [
+                ""
+            ],
+            "Mean ({ciWidth}% CI)": [
+                "Průměr ({ciŠířka}% CI)"
+            ],
+            "Mean Difference": [
+                "Průměrný rozdíl"
+            ],
+            "Mean difference": [
+                "Průměrný rozdíl"
+            ],
+            "Mean Dispersion": [
+                "Průměrný rozptyl"
+            ],
+            "Mean score": [
+                ""
+            ],
+            "Mean Square": [
+                ""
+            ],
+            "Means": [
+                ""
+            ],
+            "Measure": [
+                ""
+            ],
+            "Measure 1 - Measure 2": [
+                "Měřítko 1 - Měřítko 2"
+            ],
+            "Measure 1 < Measure 2": [
+                "Měřítko 1 < Měřítko 2"
+            ],
+            "Measure 1 ≠ Measure 2": [
+                "Měřítko 1 ≠ Měřítko 2"
+            ],
+            "Measure 1 > Measure 2": [
+                "Měřítko 1 > Měřítko 2"
+            ],
+            "Measures": [
+                "Měřítka"
+            ],
+            "Median": [
+                "Medián"
+            ],
+            "Medians": [
+                "Mediány"
+            ],
+            "Method": [
+                "Metoda"
+            ],
+            "Min": [
+                "Min"
+            ],
+            "Minimum": [
+                "Minimum"
+            ],
+            "Minimum residual": [
+                "Minimální reziduum"
+            ],
+            "Minimum residuals": [
+                "Minimální rezidua"
+            ],
+            "Minimum value": [
+                "Minimální hodnota"
+            ],
+            "Missing": [
+                "Chybějící"
+            ],
+            "Missing Values": [
+                "Chybějící hodnoty"
+            ],
+            "Missing values": [
+                "Chybějící hodnoty"
+            ],
+            "Missing values exclusion method": [
+                "Metoda imputaci chybějících hodnot"
+            ],
+            "Missing Values Method": [
+                ""
+            ],
+            "Mode": [
+                ""
+            ],
+            "Model": [
+                ""
+            ],
+            "Model Builder": [
+                "Konstruktér modelů"
+            ],
+            "Model Coefficients": [
+                ""
+            ],
+            "Model Comparisons": [
+                "Srovnání modelů"
+            ],
+            "Model Fit": [
+                "Vhodnost modelu"
+            ],
+            "Model Fit Measures": [
+                "Měřítka vhodnosti modelu"
+            ],
+            "Model fit measures": [
+                "Měřítka vhodnosti modelu"
+            ],
+            "Model Specific Results": [
+                "Výsledky specifické pro daný model"
+            ],
+            "Model Terms": [
+                "Podmínky modelu"
+            ],
+            "Model Test": [
+                "Test modelu"
+            ],
+            "Model Thresholds": [
+                "Prahové hodnoty modelů"
+            ],
+            "Model thresholds": [
+                "Prahové hodnoty modelů"
+            ],
+            "Modification Indices": [
+                "Modifikační indexy"
+            ],
+            "Modification indices": [
+                "Modifikační indexy"
+            ],
+            "Monte Carlo simulation": [
+                ""
+            ],
+            "More than one mode exists, only the first is reported": [
+                "Existuje více způsobů, hlásí se pouze první"
+            ],
+            "Most extreme": [
+                "Největší extrém"
+            ],
+            "MSA": [
+                "MSA"
+            ],
+            "Multinomial": [
+                "Multinomiální"
+            ],
+            "Multinomial Logistic Regression": [
+                "Multinomiální logistická regrese"
+            ],
+            "Multivariate Analysis of (Co)Variance (MANCOVA) is used to explore the relationship between multiple dependent variables, and one or more categorical and/or continuous explanatory variables.": [
+                "Vícerozměrná analýza (ko)variance (MANCOVA) se používá ke zkoumání vztahu mezi více závislými proměnnými a jednou nebo více kategorickými a/nebo kontinuálními vysvětlujícími proměnnými."
+            ],
+            "Multivariate Statistics": [
+                "Vícerozměrná statistika"
+            ],
+            "Multivariate Tests": [
+                "Vícerozměrné testy"
+            ],
+            "N": [
+                "N"
+            ],
+            "N Outcomes": [
+                "N Výsledky"
+            ],
+            "Nagelkerke's R²": [
+                "Nagelkerkeho R²"
+            ],
+            "No components have an eigenvalue greater than {value}": [
+                "Žádná složka nemá vlastní číslo větší než {hodnota}"
+            ],
+            "No correction": [
+                "Bez opravy"
+            ],
+            "No factors defined. Box's M test is only relevant when model contains factors.": [
+                "Nejsou definovány žádné faktory. Boxův M test je relevantní pouze v případě, že model obsahuje faktory."
+            ],
+            "Nominal": [
+                "Nominální"
+            ],
+            "Non-Parametric": [
+                "Neparametrické"
+            ],
+            "None": [
+                "Žádný"
+            ],
+            "none": [
+                "žádné"
+            ],
+            "Normal Scaled Items": [
+                "Položky s normálním měřítkem"
+            ],
+            "Normality": [
+                ""
+            ],
+            "Normality test": [
+                "Test normality"
+            ],
+            "Normality Test (Shapiro-Wilk)": [
+                "Test normality (Shapiroův-Wilkův)"
+            ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Není k dispozici z důvodu příliš velkého počtu případů (> 5000)."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Nedostatek stupňů volnosti pro odhad všech výsledků modelu"
+            ],
+            "Number of Components": [
+                "Počet komponentů"
+            ],
+            "Number of components": [
+                "Počet komponentů"
+            ],
+            "Number of extreme values": [
+                "Počet extrémních hodnot"
+            ],
+            "Number of Factors": [
+                "Počet faktorů"
+            ],
+            "Number of factors": [
+                "Počet faktorů"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Počet požadovaných extrémních hodnot je vyšší než počet řádků v datech."
+            ],
+            "Oblimin": [
+                "Oblimin"
+            ],
+            "oblimin": [
+                "oblimin"
+            ],
+            "Observed": [
+                "Pozorované"
+            ],
+            "Observed counts": [
+                "Sledované počty"
+            ],
+            "Observed scores": [
+                "Sledované výsledky"
+            ],
+            "octic": [
+                ""
+            ],
+            "Odds Ratio": [
+                "Poměr pravděpodobnosti"
+            ],
+            "Odds ratio": [
+                "Poměr pravděpodobnosti"
+            ],
+            "of total": [
+                "z celkového počtu"
+            ],
+            "Omnibus ANOVA Test": [
+                ""
+            ],
+            "Omnibus Likelihood Ratio Tests": [
+                ""
+            ],
+            "Omnibus Test": [
+                ""
+            ],
+            "Omnibus Tests": [
+                ""
+            ],
+            "one of `'corr'` (default), `'pos'`, `'neg'` specifying the alernative hypothesis; correlated, correlated positively, correlated negatively respectively.": [
+                ""
+            ],
+            "one of `'part'` (default) or `'semi'` specifying the type of partial correlation to calculate; partial or semipartial correlation.": [
+                "jedna z možností `'part'` (výchozí) nebo `'semi'` určující typ parciální korelace, která se má vypočítat; parciální nebo semiparciální korelace."
+            ],
+            "One or both groups do not contain enough observations": [
+                "Jedna nebo obě skupiny neobsahují dostatečný počet pozorování"
+            ],
+            "One or both variables are not numeric": [
+                "Jedna nebo obě proměnné nejsou číselné"
+            ],
+            "One or both variables contain infinite values": [
+                "Jedna nebo obě proměnné obsahují nekonečné hodnoty"
+            ],
+            "One or both variables contain no observations": [
+                "Jedna nebo obě proměnné neobsahují žádná pozorování"
+            ],
+            "One or both variables do not contain enough observations": [
+                "Jedna nebo obě proměnné neobsahují dostatečný počet pozorování"
+            ],
+            "One or more coefficients in model '{modelNo}' could not be estimated due to perfect collinearity.": [
+                "Jeden nebo více koeficientů v modelu \"{modelNo}\" nebylo možné odhadnout z důvodu dokonalé kolinearity."
+            ],
+            "one or more of `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'`, or `'bic'`; use CFI, TLI, SRMR, RMSEA + 90% confidence interval, adjusted AIC, and BIC model fit measures, respectively": [
+                "jeden nebo více z `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'` nebo `'bic'`; použijte CFI, TLI, SRMR, RMSEA + 90% interval spolehlivosti, upravený AIC a BIC míry vhodnosti modelu"
+            ],
+            "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
+                "jedna nebo více velikostí účinku `'eta``, `'partEta`` nebo `'omega``; používají se velikosti účinnosti η², částečné η² a ω²"
+            ],
+            "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
+                "jedna nebo více z možností `'none`` (výchozí), `'GG`` nebo ``HF``; použije se žádná korekce p-hodnoty, Greenhouse-Geisserova korekce p-hodnoty a Huynh-Feldtova korekce p-hodnoty pro shericitu"
+            ],
+            "one or more of `'none'`, `'tukey'` (default), `'scheffe'`, `'bonf'`, or `'holm'`; use no, Tukey, Scheffe, Bonferroni and Holm posthoc corrections, respectively": [
+                "jedna nebo více z možností `'none'`, `'tukey'` (výchozí), `'scheffe'`, `'bonf'` nebo `'holm'`; použije se žádná, Tukeyho, Scheffeho, Bonferroniho a Holmova posthoc korekce"
+            ],
+            "one or more of `'none'`, `'tukey'`, `'scheffe'`, `'bonf'`, or `'holm'`; provide no, Tukey, Scheffe, Bonferroni, and Holm Post Hoc corrections respectively": [
+                "jednu nebo více z možností `'none'`, `'tukey'`, `'scheffe'`, `'bonf'` nebo `'holm'`; poskytují žádné, Tukeyho, Scheffeho, Bonferroniho a Holmovy post hoc korekce."
+            ],
+            "one or more of `'pillai'`, `'wilks'`, `'hotel'`, or `'roy'`; use Pillai's Trace, Wilks' Lambda, Hotelling's Trace, and Roy's Largest Root multivariate statistics, respectively": [
+                "jednu nebo více z `'pillai'`, `'wilks'`, `'hotel'` nebo `'roy'`; použijte Pillaiovu stopu, Wilksovu lambdu, Hotellingovu stopu a Royovu největší kořenovou vícerozměrnou statistiku"
+            ],
+            "one or more of `'r2mf'`, `'r2cs'`, or `'r2n'`; use McFadden's, Cox & Snell, and Nagelkerke pseudo-R², respectively": [
+                "jeden nebo více z `'r2mf'`, `'r2cs'` nebo `'r2n'`; použijte McFaddenovo, Coxovo a Snellovo, resp. Nagelkerkeho pseudo-R²"
+            ],
+            "One Sample Proportion Tests": [
+                "Testy poměru jednoho vzorku"
+            ],
+            "One Sample T-Test": [
+                "T-test jednoho vzorku"
+            ],
+            "One-Way ANOVA": [
+                "Jednosměrná ANOVA"
+            ],
+            "One-Way ANOVA (Fisher's)": [
+                "Jednosměrná ANOVA (Fisherova)"
+            ],
+            "One-Way ANOVA (Non-parametric)": [
+                "Jednosměrná ANOVA (neparametrická)"
+            ],
+            "One-Way ANOVA (Welch's)": [
+                "Jednosměrná ANOVA (Welchova)"
+            ],
+            "Options": [
+                "Možnosti"
+            ],
+            "Ordinal": [
+                "Řadový"
+            ],
+            "Ordinal Logistic Regression": [
+                "Řádová logistická regrese"
+            ],
+            "Ordinal Outcomes": [
+                "Řadové výsledky"
+            ],
+            "Outliers": [
+                ""
+            ],
+            "Output": [
+                "Výstup"
+            ],
+            "Overall": [
+                "Celkový"
+            ],
+            "Overall model": [
+                "Celkový model"
+            ],
+            "Overall Model Test": [
+                "Celkový test modelu"
+            ],
+            "Overall model test": [
+                "Celkový test modelu"
+            ],
+            "p": [
+                "p"
+            ],
+            "p-value": [
+                "p-hodnota"
+            ],
+            "p<sub>bonferroni</sub>": [
+                "p<sub>bonferroni</sub>"
+            ],
+            "p<sub>holm</sub>": [
+                "p<sub>holm</sub>"
+            ],
+            "p<sub>scheffe</sub>": [
+                "p<sub>scheffe</sub>"
+            ],
+            "p<sub>tukey</sub>": [
+                "p<sub>tukey</sub>"
+            ],
+            "Paired Samples": [
+                "Párové vzorky"
+            ],
+            "Paired Samples Contingency Tables": [
+                "Kontingenční tabulky párových vzorků"
+            ],
+            "Paired Samples T-Test": [
+                "T-test párových vzorků"
+            ],
+            "Paired Variables": [
+                "Párové proměnné"
+            ],
+            "Pairwise comparisons - $key": [
+                "Párová porovnání - $key"
+            ],
+            "Pairwise Comparisons (Durbin-Conover)": [
+                "Párová srovnání (Durbin-Conover)"
+            ],
+            "Pairwise comparisons (Durbin-Conover)": [
+                "Párová srovnání (Durbin-Conover)"
+            ],
+            "Partial": [
+                "Částečně"
+            ],
+            "Partial Correlation": [
+                "Částečná korelace"
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables": [
+                ""
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                ""
+            ],
+            "Partial η²": [
+                "Dílčí η²"
+            ],
+            "partial η²": [
+                "Dílčí η²"
+            ],
+            "Path Diagram": [
+                ""
+            ],
+            "Path diagram": [
+                ""
+            ],
+            "Pearson": [
+                "Pearsonův"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "Pearsonovu korelaci nelze vypočítat pro nečíselné hodnoty"
+            ],
+            "Pearson's r": [
+                "Pearsonovo r"
+            ],
+            "Pearson{}Correlation": [
+                "Pearsonova{}korelace"
+            ],
+            "Percentages": [
+                "Procenta"
+            ],
+            "Percentages of total": [
+                "Procenta z celku"
+            ],
+            "Percentages within {var}": [
+                "Procenta v rámci {var}"
+            ],
+            "Percentile": [
+                "Percentil"
+            ],
+            "Percentile Values": [
+                "Percentilové hodnoty"
+            ],
+            "Percentile values": [
+                "Percentilové hodnoty"
+            ],
+            "Percentiles": [
+                "Percentily"
+            ],
+            "perform a Mann-Whitney U test.": [
+                "provést Mannův-Whitneyho U test."
+            ],
+            "perform a Shapiro-Wilk test of normality. A low p-value suggests the data is not from a normal distribution.": [
+                "provést Shapirův-Wilkův test normality. Nízká p-hodnota naznačuje, že data nepocházejí z normálního rozdělení."
+            ],
+            "perform an overall model test.": [
+                "provést celkový test modelu."
+            ],
+            "perform Fisher's (or what might be call 'normal') ANOVAs.": [
+                "provést Fisherovu (nebo jak by se dalo říci \"normální\") ANOVA."
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
+                "provést Shapiro-Wilkovy testy normality. Nízká p-hodnota naznačuje, že data nepocházejí z normálního rozdělení."
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the residuals are not normally distributed.": [
+                "provést Shapiro-Wilkovy testy normality. Nízká p-hodnota naznačuje, že rezidua nejsou normálně rozdělena."
+            ],
+            "perform Student's independent samples t-tests.": [
+                "provést Studentův t-test nezávislých výběrů."
+            ],
+            "perform Student's one-sample t-tests.": [
+                "provést Studentův jednovýběrový t-test."
+            ],
+            "perform Student's paired samples t-tests.": [
+                "provést Studentovy párové t-testy."
+            ],
+            "perform Welch's ANOVAs.": [
+                "provést Welchovu ANOVA."
+            ],
+            "perform Welch's tests.": [
+                "provést Welchovy testy."
+            ],
+            "perform Wilcoxon signed rank tests.": [
+                "provést Wilcoxonovy signifikantní rankové testy."
+            ],
+            "Phi and Cramer's V": [
+                "Phi a Cramerovo V"
+            ],
+            "Phi-coefficient": [
+                "Koeficient Phi"
+            ],
+            "Pillai's Trace": [
+                "Pillaiova stopa"
+            ],
+            "Plot": [
+                ""
+            ],
+            "plot densities along the diagonal of the correlation matrix plot.": [
+                "vykreslit hustoty podél diagonály grafu korelační matice."
+            ],
+            "plot the data along with the marginal means.": [
+                "vykreslit data spolu s mezním průměrem."
+            ],
+            "Plot Type": [
+                ""
+            ],
+            "Plots": [
+                "Pozemky"
+            ],
+            "Polynomial": [
+                "Polynomiální"
+            ],
+            "Post Hoc Comparisons - {term}": [
+                "Post Hoc srovnání - {term}"
+            ],
+            "Post Hoc Tests": [
+                "Post Hoc testy"
+            ],
+            "Post Hoc Tests – $key": [
+                "Post Hoc testy - $key"
+            ],
+            "Post-Hoc Model Performance": [
+                "Výkonnost modelu post-Hoc"
+            ],
+            "Post-Hoc Test": [
+                "Post-Hoc test"
+            ],
+            "Post-Hoc Tests": [
+                "Post-Hoc testy"
+            ],
+            "Posterior": [
+                ""
+            ],
+            "Posterior plot": [
+                ""
+            ],
+            "Posterior Plots": [
+                ""
+            ],
+            "Predicted": [
+                "Předpokládané"
+            ],
+            "Predicted probability of … = … (vs … = …)": [
+                "Předpokládaná pravděpodobnost ... = ... (oproti ... = ...)"
+            ],
+            "Predicted probability of {dep} = {level1} (vs {dep} = {level2})": [
+                "Předpokládaná pravděpodobnost {hloubka} = {úroveň1} (oproti {hloubka} = {úroveň2})"
+            ],
+            "Predicted values": [
+                "Předpokládané hodnoty"
+            ],
+            "Prediction": [
+                "Předpověď"
+            ],
+            "Predictive Measures": [
+                "Prediktivní měřítka"
+            ],
+            "Predictor": [
+                "Prediktor"
+            ],
+            "Predictors": [
+                "Prediktory"
+            ],
+            "Principal axis": [
+                "Hlavní osa"
+            ],
+            "Principal axis factoring": [
+                "Faktoring hlavní osy"
+            ],
+            "Principal Component Analysis": [
+                "Analýza hlavních komponent"
+            ],
+            "Prior": [
+                "Předchozí"
+            ],
+            "Prior width": [
+                ""
+            ],
+            "Probability": [
+                "Pravděpodobnost"
+            ],
+            "Promax": [
+                ""
+            ],
+            "promax": [
+                ""
+            ],
+            "Proportion": [
+                "Poměr"
+            ],
+            "Proportion Test (2 Outcomes)": [
+                "Test poměru (2 výsledky)"
+            ],
+            "Proportion Test (N Outcomes)": [
+                "Poměrový test (výsledky N)"
+            ],
+            "provide a Cohen's d measure of effect size for the post-hoc tests.": [
+                ""
+            ],
+            "provide a confidence interval for the difference between the mean estimate and the test value.": [
+                ""
+            ],
+            "provide a correlation matrix plot.": [
+                "poskytnout graf korelační matice."
+            ],
+            "provide a Kendall's tau-b for each combination of variables.": [
+                "poskytnout Kendallův tau-b pro každou kombinaci proměnných."
+            ],
+            "provide a p-value for each correlation co-efficient.": [
+                "poskytnout p-hodnotu pro každý korelační koeficient."
+            ],
+            "provide a Pearson's r for each combination of variables.": [
+                "poskytnout Pearsonovo r pro každou kombinaci proměnných."
+            ],
+            "provide a Q-Q plot of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                ""
+            ],
+            "provide a Spearman's rho for each combination of variables.": [
+                ""
+            ],
+            "provide a table of descriptives for each variable.": [
+                ""
+            ],
+            "provide a table of the estimated marginal means.": [
+                ""
+            ],
+            "provide Bayes factors for the Student's independent samples t-tests.": [
+                ""
+            ],
+            "provide Bayes factors for the Student's one-sample t-tests.": [
+                ""
+            ],
+            "provide Bayes factors for the Student's paired samples t-tests.": [
+                ""
+            ],
+            "provide confidence intervals for Pearson's r.": [
+                ""
+            ],
+            "provide confidence intervals for the effect-sizes": [
+                ""
+            ],
+            "provide confidence intervals for the mean differences.": [
+                ""
+            ],
+            "provide confidence intervals for the post-hoc effect sizes.": [
+                ""
+            ],
+            "provide correlation co-efficients in the correlation matrix plot.": [
+                ""
+            ],
+            "provide descriptive plots for each group.": [
+                ""
+            ],
+            "provide descriptive plots for each variable.": [
+                ""
+            ],
+            "provide descriptives for each group of measurements.": [
+                ""
+            ],
+            "provide descriptives for each group.": [
+                ""
+            ],
+            "provide descriptives plots.": [
+                ""
+            ],
+            "provide effect-sizes (Cohen's D).": [
+                ""
+            ],
+            "provide effect-sizes (Cohen's d).": [
+                ""
+            ],
+            "provide Levene's test for homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                ""
+            ],
+            "provide Levene's tests for the homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                ""
+            ],
+            "provide mean differences and standard errors of the mean differences.": [
+                ""
+            ],
+            "provide mean differences with the post-hoc tests.": [
+                ""
+            ],
+            "provide mean differences, and standard errors of the mean differences, between the mean estimate, and the test value.": [
+                ""
+            ],
+            "provide measures of effect size; η², partial η², or ω².": [
+                ""
+            ],
+            "provide p-value corrections for sphericity.": [
+                ""
+            ],
+            "provide plots of the estimated marginal means.": [
+                ""
+            ],
+            "provide post-hoc tests.": [
+                ""
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                ""
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
+                ""
+            ],
+            "provide significance levels for the post-hoc tests.": [
+                ""
+            ],
+            "provide sphericity tests.": [
+                ""
+            ],
+            "provide test results (t-value and degrees of freedom) for post-hoc tests.": [
+                ""
+            ],
+            "provide the number of cases.": [
+                ""
+            ],
+            "Pseudo R²": [
+                ""
+            ],
+            "Q-Q": [
+                ""
+            ],
+            "Q-Q Plot": [
+                ""
+            ],
+            "Q-Q plot": [
+                ""
+            ],
+            "Q-Q Plot Assessing Multivariate Normality": [
+                ""
+            ],
+            "Q-Q plot of multivariate normality": [
+                ""
+            ],
+            "Q-Q plot of residuals": [
+                ""
+            ],
+            "Q-Q Plots": [
+                ""
+            ],
+            "Q-Q plots": [
+                ""
+            ],
+            "quadratic": [
+                ""
+            ],
+            "quartic": [
+                ""
+            ],
+            "Quartimax": [
+                ""
+            ],
+            "quartimax": [
+                ""
+            ],
+            "quintic": [
+                ""
+            ],
+            "R": [
+                ""
+            ],
+            "R²": [
+                ""
+            ],
+            "R²<sub>CS</sub>": [
+                ""
+            ],
+            "R²<sub>McF</sub>": [
+                ""
+            ],
+            "R²<sub>N</sub>": [
+                ""
+            ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
+            "Range": [
+                ""
+            ],
+            "Rank biserial correlation": [
+                ""
+            ],
+            "Rate Ratio": [
+                ""
+            ],
+            "Rate ratio": [
+                ""
+            ],
+            "Ratio": [
+                ""
+            ],
+            "Reference Level": [
+                ""
+            ],
+            "Reference level (dummy coding)": [
+                ""
+            ],
+            "Reference Levels": [
+                ""
+            ],
+            "Regression": [
+                ""
+            ],
+            "Relative risk": [
+                ""
+            ],
+            "Reliability Analysis": [
+                ""
+            ],
+            "Repeated": [
+                ""
+            ],
+            "Repeated Measures ANOVA": [
+                ""
+            ],
+            "Repeated Measures ANOVA (Non-parametric)": [
+                ""
+            ],
+            "Repeated Measures Cells": [
+                ""
+            ],
+            "Repeated Measures Components": [
+                ""
+            ],
+            "Repeated Measures Factors": [
+                ""
+            ],
+            "Report significance": [
+                ""
+            ],
+            "Represents grand mean": [
+                ""
+            ],
+            "Represents reference level": [
+                ""
+            ],
+            "Residual": [
+                ""
+            ],
+            "Residual Covariances": [
+                ""
+            ],
+            "Residual covariances": [
+                ""
+            ],
+            "Residual Covariances – Modification Indices": [
+                ""
+            ],
+            "Residual Estimates": [
+                ""
+            ],
+            "Residual Intercepts": [
+                ""
+            ],
+            "Residual intercepts": [
+                ""
+            ],
+            "Residual plots": [
+                ""
+            ],
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                ""
+            ],
+            "Residuals": [
+                ""
+            ],
+            "Residuals for Observed Correlation Matrix": [
+                ""
+            ],
+            "Residuals from ANOVA": [
+                ""
+            ],
+            "Residuals observed correlation matrix": [
+                ""
+            ],
+            "Residuals Plots": [
+                ""
+            ],
+            "Results": [
+                "Výsledek"
+            ],
+            "reverse scaled item": [
+                ""
+            ],
+            "Reverse Scaled Items": [
+                ""
+            ],
+            "RM Factor {0}": [
+                ""
+            ],
+            "RM Factor 1": [
+                ""
+            ],
+            "RMSE": [
+                ""
+            ],
+            "RMSEA": [
+                ""
+            ],
+            "RMSEA 90% CI": [
+                ""
+            ],
+            "ROC": [
+                ""
+            ],
+            "ROC Curve": [
+                ""
+            ],
+            "ROC curve": [
+                ""
+            ],
+            "Rotation": [
+                ""
+            ],
+            "Row": [
+                ""
+            ],
+            "Row number": [
+                ""
+            ],
+            "Row variable '{var}' contains fewer than 2 levels": [
+                ""
+            ],
+            "Rows": [
+                "Řádky/ů"
+            ],
+            "rows": [
+                ""
+            ],
+            "rows (default), or columns in bar plot X axis": [
+                ""
+            ],
+            "Rows compared": [
+                ""
+            ],
+            "Roy's Largest Root": [
+                ""
+            ],
+            "Sample Size": [
+                ""
+            ],
+            "Save": [
+                "Uložit"
+            ],
+            "scale": [
+                ""
+            ],
+            "Scale Analysis": [
+                ""
+            ],
+            "Scale factor = scale first indicator": [
+                ""
+            ],
+            "Scale Reliability Statistics": [
+                ""
+            ],
+            "Scale Statistics": [
+                ""
+            ],
+            "Scheffe": [
+                ""
+            ],
+            "Score Component": [
+                ""
+            ],
+            "Score Factor": [
+                ""
+            ],
+            "Score for component": [
+                ""
+            ],
+            "Score for factor {i}. Estimated using the '{fsMethod}' method.": [
+                ""
+            ],
+            "Scree Plot": [
+                ""
+            ],
+            "Scree plot": [
+                ""
+            ],
+            "SD": [
+                ""
+            ],
+            "SE": [
+                ""
+            ],
+            "SE difference": [
+                ""
+            ],
+            "Semipartial": [
+                ""
+            ],
+            "Semipartial Correlation": [
+                ""
+            ],
+            "Sensitivity": [
+                ""
+            ],
+            "septic": [
+                ""
+            ],
+            "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
+                ""
+            ],
+            "sextic": [
+                ""
+            ],
+            "Shapiro-Wilk": [
+                ""
+            ],
+            "Shapiro-Wilk Multivariate Normality Test": [
+                ""
+            ],
+            "Shapiro-Wilk p": [
+                ""
+            ],
+            "Shapiro-Wilk test": [
+                ""
+            ],
+            "Shapiro-Wilk test for multivariate normality": [
+                ""
+            ],
+            "Shapiro-Wilk W": [
+                ""
+            ],
+            "Side by side": [
+                ""
+            ],
+            "Simple": [
+                ""
+            ],
+            "Simplimax": [
+                ""
+            ],
+            "simplimax": [
+                ""
+            ],
+            "Simulations": [
+                ""
+            ],
+            "Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables.": [
+                ""
+            ],
+            "Singularity error. Sphericity tests are not available": [
+                ""
+            ],
+            "Skewness": [
+                ""
+            ],
+            "Sort loadings by size": [
+                ""
+            ],
+            "Spearman": [
+                ""
+            ],
+            "Spearman's rho": [
+                ""
+            ],
+            "Specificity": [
+                ""
+            ],
+            "Sphericity Correction": [
+                ""
+            ],
+            "Sphericity corrections": [
+                ""
+            ],
+            "Sphericity tests": [
+                ""
+            ],
+            "Split by": [
+                ""
+            ],
+            "Squared Mahalanobis Distance": [
+                ""
+            ],
+            "SRMR": [
+                ""
+            ],
+            "SS Loadings": [
+                ""
+            ],
+            "stack or side by side (default), barplot type": [
+                ""
+            ],
+            "Stacked": [
+                ""
+            ],
+            "Stand. Estimate": [
+                ""
+            ],
+            "Standard deviation": [
+                ""
+            ],
+            "Standard Error": [
+                ""
+            ],
+            "Standard error": [
+                "Směrodatná odchylka"
+            ],
+            "Standardized Estimate": [
+                ""
+            ],
+            "Standardized estimate": [
+                ""
+            ],
+            "Standardized Residuals": [
+                ""
+            ],
+            "Statistic": [
+                ""
+            ],
+            "statistic": [
+                ""
+            ],
+            "Statistics": [
+                ""
+            ],
+            "Std. deviation": [
+                ""
+            ],
+            "Std. error kurtosis": [
+                ""
+            ],
+            "Std. error mean": [
+                ""
+            ],
+            "Std. error of Mean": [
+                ""
+            ],
+            "Std. error skewness": [
+                ""
+            ],
+            "Student's": [
+                ""
+            ],
+            "Student's t": [
+                ""
+            ],
+            "Student's test": [
+                ""
+            ],
+            "Sum": [
+                ""
+            ],
+            "Sum of Squares": [
+                ""
+            ],
+            "Sum of squares": [
+                ""
+            ],
+            "Sum score": [
+                ""
+            ],
+            "Summary": [
+                ""
+            ],
+            "t": [
+                ""
+            ],
+            "T-Tests": [
+                ""
+            ],
+            "t-value": [
+                ""
+            ],
+            "ten Berge": [
+                ""
+            ],
+            "Term {0}": [
+                ""
+            ],
+            "Term 1": [
+                ""
+            ],
+            "Test for Exact Fit": [
+                ""
+            ],
+            "Test results (t and df)": [
+                ""
+            ],
+            "Test statistics": [
+                ""
+            ],
+            "Test Value": [
+                ""
+            ],
+            "Test value": [
+                ""
+            ],
+            "Tests": [
+                ""
+            ],
+            "Tests of Sphericity": [
+                ""
+            ],
+            "th percentile": [
+                ""
+            ],
+            "The 'iris' data set from R": [
+                ""
+            ],
+            "The 'split by' variable '{var}' contains no data.": [
+                ""
+            ],
+            "the (optional) weights from `data` to be used in the fitting process": [
+                ""
+            ],
+            "the alternative and null hypotheses;\n\n|              | Alternative (Hₐ)  | Null (H₀)          |\n|--------------|-------------------|--------------------|\n| ≠ Test value | Mean ≠ Test value | Mean = Test value  |\n| > Test value | Mean > Test value | Mean <= Test value |\n| < Test value | Mean < Test value | Mean >= Test value |": [
+                ""
+            ],
+            "the alternative hypothesis.": [
+                ""
+            ],
+            "the alternative hypothesis. Allows for one-tailed tests.": [
+                ""
+            ],
+            "The Analysis of Covariance (ANCOVA) is used to explore the relationship\nbetween a continuous dependent variable, one or more categorical\nexplanatory variables, and one or more continuous explanatory variables\n(or covariates). It is essentially the same analysis as ANOVA, but\nwith the addition of covariates.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.\n\nANOVA assumes that the residuals are normally distributed, and that the\nvariances of all groups are equal. If one is unwilling to assume that\nthe variances are equal, then a Welch's test can be used instead\n(However, the Welch's test does not support more than one explanatory\nfactor). Alternatively, if one is unwilling to assume that the data is\nnormally distributed, a non-parametric approach (such as Kruskal-Wallis)\ncan be used.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.\n\nFor convenience, this method allows specifying multiple dependent\nvariables, resulting in multiple independent tests.\n\nNote that the Welch's ANOVA is the same procedure as the Welch's\nindependent samples t-test.": [
+                ""
+            ],
+            "the between subjects factors (optional).": [
+                ""
+            ],
+            "the between subjects terms of the model.": [
+                ""
+            ],
+            "The Binomial test is used to test the Null hypothesis that the proportion of observations match some expected value. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportion must be some other value.": [
+                ""
+            ],
+            "the categorical explanatory (or independent) variables.": [
+                ""
+            ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                ""
+            ],
+            "the confidence interval width for the effect-sizes.": [
+                ""
+            ],
+            "the confidence interval width for the post-hoc effect sizes.": [
+                ""
+            ],
+            "the confidence interval width.": [
+                ""
+            ],
+            "the continuous explanatory (or independent) variables, also known as covariates.": [
+                ""
+            ],
+            "the contrasts to use.": [
+                ""
+            ],
+            "the control variables of interest.": [
+                ""
+            ],
+            "the counts in `data`": [
+                ""
+            ],
+            "the covariates (specifying these makes this an ANCOVA)": [
+                ""
+            ],
+            "the covariates from `data`": [
+                ""
+            ],
+            "The cut-off value is set to {}": [
+                ""
+            ],
+            "the data as a data frame": [
+                "data jako datový rámec"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                ""
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                ""
+            ],
+            "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
+                ""
+            ],
+            "The dependent variable '{dep}' has the following order: {orderedLevels}": [
+                ""
+            ],
+            "The dependent variable \"{dep}\" has only two levels, consider doing a binomial logistic regression.": [
+                ""
+            ],
+            "the dependent variable from `data`, variable must be numeric": [
+                ""
+            ],
+            "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "the dependent variable. For ANCOVA, these will be continuous.": [
+                ""
+            ],
+            "the dependent variable. For ANOVA, these will be continuous.": [
+                ""
+            ],
+            "the dependent variables -- a separate t-test is performed for each dependent variable specified.": [
+                ""
+            ],
+            "the dependent variables (not necessary when using a formula, see the examples)": [
+                ""
+            ],
+            "the dependent variables. For ANOVA, these will be continuous.": [
+                ""
+            ],
+            "the error bars to plot on the marginal means.": [
+                ""
+            ],
+            "the explanatory covariates (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "the explanatory factors in `data` (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "the explanatory or independent variable. For ANOVA this will be categorical.": [
+                ""
+            ],
+            "the explanatory or independent variables. For ANOVA these will be categorical.": [
+                ""
+            ],
+            "the fixed factors from `data`": [
+                ""
+            ],
+            "The Friedman test is used to explore the relationship between a continuous dependent variable and a categorical explanatory variable, where the explanatory variable is 'within subjects' (where multiple measurements are from the same subject). It is analagous to Repeated Measures ANOVA, but with the advantage of being non-parametric, and not requiring the assumptions of normality or homogeneity of variances. However, it has the limitation that it can only test a single explanatory variable at a time.": [
+                ""
+            ],
+            "the grouping variable with two levels (not necessary when using a formula, see the examples)": [
+                ""
+            ],
+            "The Kruskal-Wallis test is used to explore the relationship between a continuous dependent variable, and a categorical explanatory variable. It is analagous to ANOVA, but with the advantage of being non-parametric and having fewer assumptions. However, it has the limitation that it can only test a single explanatory variable at a time.": [
+                ""
+            ],
+            "the label to use for the dependent variable.": [
+                ""
+            ],
+            "the lavaan syntax used to fit the model": [
+                ""
+            ],
+            "the missing value exclusion method. `Analysis by analysis` excludes missing values from each analysis. `Listwise` excludes a row from all analyses if one of its values is missing.": [
+                ""
+            ],
+            "the missing value exclusion method. `Analysis by analysis` excludes missing values from each variable. `Listwise` excludes a row from all analyses if one of its values is missing.": [
+                ""
+            ],
+            "the model terms which make up the model.": [
+                ""
+            ],
+            "the model terms which make up the model. By default a full factorial model is created, but here the exact terms making up the model can be adjusted.": [
+                ""
+            ],
+            "the pairs of measurements -- a separate t-test is performed for each pair of measurements.": [
+                ""
+            ],
+            "the post-hoc multiple comparisons corrections to use.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
+                ""
+            ],
+            "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.": [
+                ""
+            ],
+            "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.\n\nThis analysis requires that the data be in 'wide format', where each\nrow represents a subject (as opposed to long format, where each\nmeasurement of the dependent variable is represented as a row).\n\nA non-parametric equivalent of the repeated measures ANOVA also exists;\nthe Friedman test. However, it has the limitation of only being able to\ntest a single factor.": [
+                ""
+            ],
+            "the repeated measures design.": [
+                ""
+            ],
+            "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels": [
+                ""
+            ],
+            "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels.": [
+                ""
+            ],
+            "the repeated measures measurements.": [
+                ""
+            ],
+            "the repeated measures terms of the model.": [
+                ""
+            ],
+            "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.": [
+                ""
+            ],
+            "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.\n\nThe Student's independent t-test assumes that the data from each group\nare from a normal distribution, and that the variances of these groups\nare equal. If unwilling to assume the groups have equal variances, the\nWelch's t-test can be used in it's place. If one is additionally\nunwilling to assume the data from each group are from a normal\ndistribution, the non-parametric Mann-Whitney U test can be used instead\n(However, note that the Mann-Whitney U test has a slightly different\nnull hypothesis; that the distributions of each group is equal).": [
+                ""
+            ],
+            "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.": [
+                ""
+            ],
+            "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.\n\nThe Student's One-sample t-test assumes that the data are from a normal\ndistribution -- in the case that one is unwilling to assume this, the\nnon-parametric Wilcoxon signed-rank can be used in it's place (However,\nnote that the Wilcoxon signed-rank has a slightly different null\nhypothesis; that the *median* is equal to the test value).": [
+                ""
+            ],
+            "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.": [
+                ""
+            ],
+            "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.\n\nThe Student's paired samples t-test assumes that pair differences follow\na normal distribution -- in the case that one is unwilling to assume\nthis, the non-parametric Wilcoxon signed-rank can be used in it's place\n(However, note that the Wilcoxon signed-rank has a slightly different\nnull hypothesis; that the two groups of measurements follow the same\ndistribution).": [
+                ""
+            ],
+            "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
+                ""
+            ],
+            "the test value to test against (typically zero).": [
+                ""
+            ],
+            "the type of correlation to calculate": [
+                ""
+            ],
+            "the type of sums of squares to use; Type 1, 2, or 3.": [
+                ""
+            ],
+            "the type of sums of squares to use; Type 2, or 3.": [
+                ""
+            ],
+            "The underlying `aov` object": [
+                ""
+            ],
+            "The variable {var} cannot be treated as numeric. Plots that expect numeric data will not be created for this variable.": [
+                ""
+            ],
+            "the variable of interest in `data` (not necessary when using a formula, see the examples)": [
+                ""
+            ],
+            "the variable specifying the groups; must have 2 levels.": [
+                ""
+            ],
+            "the variable to use as the columns in the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "the variable to use as the counts in the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "the variable to use as the rows in the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "The variables {vars} cannot be treated as numeric. Plots that expect numeric data will not be created for these variables.": [
+                ""
+            ],
+            "the variables of interest -- a separate t-test is performed for each variable specified.": [
+                ""
+            ],
+            "the variables of interest.": [
+                ""
+            ],
+            "the variables to use to split the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "the width for the Confidence intervals.": [
+                ""
+            ],
+            "The χ² Goodness of fit test (not to be confused with the χ² test of independence), tests the Null hypothesis that the proportions of observations match some expected proportions. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportions are different to those tested.": [
+                ""
+            ],
+            "The χ² test of association (not to be confused with the χ² goodness of fit) is used to test whether two categorical variables are independent or associated. If the p-value is low, it suggests the variables are not independent, and that there is a relationship between the two variables.": [
+                ""
+            ],
+            "Theoretical Quantiles": [
+                ""
+            ],
+            "This module represents the analyses included with jamovi. It contains many common analyses (such as t-tests, ANOVAs, regression, correlation matrices, proportion tests, contingency tables, factor analysis, etc).": [
+                ""
+            ],
+            "Threshold": [
+                ""
+            ],
+            "Thresholds": [
+                ""
+            ],
+            "Thurstone": [
+                ""
+            ],
+            "Tjur's R²": [
+                ""
+            ],
+            "TLI": [
+                ""
+            ],
+            "Tolerance": [
+                ""
+            ],
+            "Too few observations (N < 3) to compute statistic": [
+                ""
+            ],
+            "Too few observations to calculate statistic. Each (sub)group must have at least as many observations as there are dependent variables.": [
+                ""
+            ],
+            "Too few samples to compute statistic (N < {n})": [
+                ""
+            ],
+            "Too few samples to compute statistic (N < 3)": [
+                ""
+            ],
+            "Too many observations (N > 5000) to compute statistic": [
+                ""
+            ],
+            "Too many samples to compute statistic (N > {n})": [
+                ""
+            ],
+            "Too many samples to compute statistic (N > 5000)": [
+                ""
+            ],
+            "Tooth Growth": [
+                ""
+            ],
+            "Total": [
+                ""
+            ],
+            "total_pc (default), column_pc, or row_pc. Use respectively percentages `of total`, `within columns`, or `within rows` for the bar plot y-axis.": [
+                ""
+            ],
+            "Tukey": [
+                ""
+            ],
+            "Tukey (equal variances)": [
+                ""
+            ],
+            "Tukey Post-Hoc Test – {dep}": [
+                ""
+            ],
+            "Type {ssType} Sums of Squares": [
+                ""
+            ],
+            "Type 1": [
+                ""
+            ],
+            "Type 2": [
+                ""
+            ],
+            "Type 3": [
+                ""
+            ],
+            "Type 3 sum of squares": [
+                ""
+            ],
+            "Unable to split by a continuous variable": [
+                ""
+            ],
+            "Uniqueness": [
+                ""
+            ],
+            "Univariate Tests": [
+                ""
+            ],
+            "Upper": [
+                "Horní"
+            ],
+            "upper bound": [
+                ""
+            ],
+            "Value": [
+                ""
+            ],
+            "value": [
+                ""
+            ],
+            "values": [
+                ""
+            ],
+            "Values are counts": [
+                ""
+            ],
+            "Variable": [
+                ""
+            ],
+            "Variable '{var}' contains no data": [
+                ""
+            ],
+            "Variable contains infinite values": [
+                ""
+            ],
+            "Variable does not contain enough observations": [
+                ""
+            ],
+            "Variable is not numeric": [
+                ""
+            ],
+            "Variables": [
+                ""
+            ],
+            "Variables across columns": [
+                ""
+            ],
+            "Variables across rows": [
+                ""
+            ],
+            "Variables must have at least two levels": [
+                ""
+            ],
+            "Variance": [
+                ""
+            ],
+            "Variances": [
+                ""
+            ],
+            "variation from the control variables is only removed from the variables in the columns": [
+                ""
+            ],
+            "Varimax": [
+                ""
+            ],
+            "varimax": [
+                ""
+            ],
+            "VIF": [
+                ""
+            ],
+            "Violin": [
+                ""
+            ],
+            "W": [
+                ""
+            ],
+            "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
+                ""
+            ],
+            "Weight Variable": [
+                ""
+            ],
+            "Weighted by '{varName}'": [
+                ""
+            ],
+            "Weights": [
+                ""
+            ],
+            "Weights (optional)": [
+                ""
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
+            ],
+            "Welch's": [
+                ""
+            ],
+            "Welch's t": [
+                ""
+            ],
+            "Wilcoxon rank": [
+                ""
+            ],
+            "Wilcoxon signed rank test": [
+                ""
+            ],
+            "Wilcoxon W": [
+                ""
+            ],
+            "Wilks' Lambda": [
+                ""
+            ],
+            "within column": [
+                ""
+            ],
+            "within rows": [
+                ""
+            ],
+            "Within Subjects Effects": [
+                ""
+            ],
+            "X-Axis": [
+                "Osa X"
+            ],
+            "X-axis": [
+                ""
+            ],
+            "Y-Axis": [
+                "Osa Y"
+            ],
+            "Y-axis": [
+                ""
+            ],
+            "ycounts (default) or ypc. Use respectively `counts` or `percentages` for the bar plot y-axis": [
+                ""
+            ],
+            "Z": [
+                ""
+            ],
+            "z test difference in 2 proportions": [
+                ""
+            ],
+            "z test for difference in 2 proportions": [
+                ""
+            ],
+            "z test only available for 2x2 tables": [
+                ""
+            ],
+            "ΔR²": [
+                ""
+            ],
+            "ε²": [
+                ""
+            ],
+            "η²": [
+                ""
+            ],
+            "η²<sub>G</sub>": [
+                ""
+            ],
+            "η²<sub>p</sub>": [
+                ""
+            ],
+            "η²p": [
+                ""
+            ],
+            "χ²": [
+                ""
+            ],
+            "χ² continuity correction": [
+                ""
+            ],
+            "χ² Goodness of Fit": [
+                ""
+            ],
+            "χ² Goodness of fit": [
+                ""
+            ],
+            "χ² test": [
+                ""
+            ],
+            "χ² test of association": [
+                ""
+            ],
+            "χ² Tests": [
+                ""
+            ],
+            "ω²": [
+                ""
+            ],
+            "specific factor\u0004Factor": [
+                ""
+            ]
+        }
+    },
+    "code": "cs"
+}

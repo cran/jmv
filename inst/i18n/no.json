@@ -182,13 +182,13 @@
                 "`Proportsjoner - ${var}`"
             ],
             "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
-                "`TRUE` (standard) oder `FALSE`, vis radnummerne til ekstremverdiene i boksplotten"
+                "`TRUE` (standard) eller `FALSE`, vis radnummerne til ekstremverdiene i boksplotten"
             ],
             "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
-                "`TRUE` (standard) eller `FALSE`, utfør Student's t-tester"
+                "`TRUE` (standard) eller `FALSE`, gjennomfør Student's t-tester"
             ],
             "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
-                "`TRUE` (standard) eller `FALSE`, utfører Welchs ANOVA med én faktor som ikke antar like varianser"
+                "`TRUE` (standard) eller `FALSE`, gjennomfør Welchs ANOVA med én faktor som ikke antar like varianser"
             ],
             "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
                 "`TRUE` (standard) eller `FALSE`, oppgi «Z»- og «p»-verdier for modellestimatene"
@@ -206,13 +206,13 @@
                 "`TRUE` (standard) eller `FALSE`, gi ut Cronbachs α"
             ],
             "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
-                ""
+                "`TRUE` (standard) eller `FALSE`, gi ut estimert gjennomsnitt"
             ],
             "`TRUE` (default) or `FALSE`, provide estimates for the factor (co)variances": [
                 "`TRUE` (standard) eller `FALSE`, gi ut estimater for faktor(ko)variansene"
             ],
             "`TRUE` (default) or `FALSE`, provide estimates for the residual (co)variances": [
-                "`TRUE` (standard) eller `FALSE`, gi ut estimater for residuale (ko)varianser"
+                "`TRUE` (standard) eller `FALSE`, gi ut estimater for (ko)variansene av residuene"
             ],
             "`TRUE` (default) or `FALSE`, provide mean differences for post-hoc tests": [
                 "`TRUE` (standard) eller `FALSE`, gi ut gjennomsnittlige differanser for post-hoc-tester"
@@ -311,10 +311,10 @@
                 "`TRUE` eller `FALSE` (standard), gjennomfør Welchs t-tester"
             ],
             "`TRUE` or `FALSE` (default), perform Wilcoxon signed rank tests": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gjennomfør Wilcoxon-test av fortegnsfordeling"
             ],
             "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
-                ""
+                "`TRUE` eller `FALSE` (standard), vis rådata i diagram med estimert gjennomsnitt"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
                 "`TRUE` eller `FALSE` (standard), gi ut konfidensintervall for modellkoeffisientestimatene"
@@ -347,10 +347,10 @@
                 "`TRUE` eller `FALSE` (standard), gi ut et diagramm med deskriptivstatistiske verdier"
             ],
             "`TRUE` or `FALSE` (default), provide a path diagram of the model": [
-                "`TRUE` oder `FALSE` (standard), gi ut et stidiagram for modellen"
+                "`TRUE` eller `FALSE` (standard), gi ut et stidiagram for modellen"
             ],
             "`TRUE` or `FALSE` (default), provide a predicted classification table (or confusion matrix)": [
-                "`TRUE` oder `FALSE` (standard), gi ut en klassifiseringstabell med prediksjonene (også kallt konfusjonsmatriks)"
+                "`TRUE` eller `FALSE` (standard), gi ut en klassifiseringstabell med prediksjonene (også kalt konfusjonsmatriks)"
             ],
             "`TRUE` or `FALSE` (default), provide a Q-Q plot of multivariate normality": [
                 "`TRUE` eller `FALSE` (standard), gi ut en Q-Q-diagramm for å undersøke den multivariate normalfordelingen"
@@ -362,22 +362,22 @@
                 "`TRUE` eller `FALSE` (standard), gi ut et ROC-kurve-diagramm"
             ],
             "`TRUE` or `FALSE` (default), provide a standardized estimate for the model coefficients": [
-                "`TRUE` oder `FALSE` (standard), gi ut standardisert estimat for modellkoeffisientene"
+                "`TRUE` eller `FALSE` (standard), gi ut standardisert estimat for modellkoeffisientene"
             ],
             "`TRUE` or `FALSE` (default), provide a standardized estimate for the model estimates": [
-                "`TRUE` oder `FALSE` (standard), gi ut de standardiserte modellestimatene"
+                "`TRUE` eller `FALSE` (standard), gi ut de standardiserte modellestimatene"
             ],
             "`TRUE` or `FALSE` (default), provide a z test for differences between two proportions": [
-                "`TRUE` oder `FALSE` (standard), gjennomfør z-test for forskjellene mellom de to proporsjonene"
+                "`TRUE` eller `FALSE` (standard), gjennomfør z-test for forskjellene mellom de to proporsjonene"
             ],
             "`TRUE` or `FALSE` (default), provide Aikaike's Information Criterion (AIC) for the models": [
                 "`TRUE` eller `FALSE` (standard), gi ut Aikaikes informasjonskriterium (AIC) for modellene"
             ],
             "`TRUE` or `FALSE` (default), provide an exact log odds ratio (requires exact2x2 to be installed)": [
-                "`TRUE` oder `FALSE` (standard), gi ut nøyaktig log-odds-forhold (krever at «exact2x2» er installert)"
+                "`TRUE` eller `FALSE` (standard), gi ut nøyaktig log-odds-forhold (krever at «exact2x2» er installert)"
             ],
             "`TRUE` or `FALSE` (default), provide bar plots (nominal, ordinal variables only)": [
-                "`TRUE` oder `FALSE` (standard), gi ut stolpediagrammer (kun for nominelle eller ordinale variabler)"
+                "`TRUE` eller `FALSE` (standard), gi ut stolpediagrammer (kun for nominelle eller ordinale variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide Bayes factors": [
                 "`TRUE` eller `FALSE` (standard), gi ut Bayes-faktorer"
@@ -389,7 +389,7 @@
                 "`TRUE` eller `FALSE` (standard), gi ut Bayesianske informasjonskriterium (BIC) for modellene"
             ],
             "`TRUE` or `FALSE` (default), provide box plots (continuous variables only)": [
-                "`TRUE` oder `FALSE` (standard), gi ut boksplott (kun for kontinuerlige variabler)"
+                "`TRUE` eller `FALSE` (standard), gi ut boksplott (kun for kontinuerlige variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide Box-Tidwell test for linearity of the logit": [
                 "`TRUE` eller `FALSE` (standard), gi ut Box-Tidwell-test for lineariteten til logiten"
@@ -401,76 +401,76 @@
                 "`TRUE` eller `FALSE` (standard), gi ut effektstørrelser (Cohens d)"
             ],
             "`TRUE` or `FALSE` (default), provide column percentages": [
-                "`TRUE` oder `FALSE` (standard), gi ut kolonneprosenter"
+                "`TRUE` eller `FALSE` (standard), gi ut kolonneprosenter"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals": [
-                "`TRUE` oder `FALSE` (standard), gi ut konfidensintervaller"
+                "`TRUE` eller `FALSE` (standard), gi ut konfidensintervaller"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the comparative measures": [
-                "`TRUE` oder `FALSE` (standard), gi ut konfidensintervaller for de sammenlignende målingene"
+                "`TRUE` eller `FALSE` (standard), gi ut konfidensintervaller for de sammenlignende målingene"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the effect-sizes": [
-                "`TRUE` oder `FALSE` (standard), gi ut konfidensintervaller for effektstørrelsene"
+                "`TRUE` eller `FALSE` (standard), gi ut konfidensintervaller for effektstørrelsene"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the mean": [
-                "`TRUE` oder `FALSE` (standard), gi ut konfidensintervaller for gjennomsnittet"
+                "`TRUE` eller `FALSE` (standard), gi ut konfidensintervaller for gjennomsnittet"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the mean difference": [
-                "`TRUE` oder `FALSE` (standard), gi ut konfidensintervaller for den gjennomsnittlige differansen"
+                "`TRUE` eller `FALSE` (standard), gi ut konfidensintervaller for den gjennomsnittlige differansen"
             ],
             "`TRUE` or `FALSE` (default), provide confidence intervals for the post-hoc effect sizes": [
-                "`TRUE` oder `FALSE` (standard), gi ut konfidensintervaller for post-hoc-effektstørrelsene"
+                "`TRUE` eller `FALSE` (standard), gi ut konfidensintervaller for post-hoc-effektstørrelsene"
             ],
             "`TRUE` or `FALSE` (default), provide densities in the correlation matrix plot": [
-                "`TRUE` oder `FALSE` (standard), inkluder tetthetsdiagrammer i korrelasjonsdiagram"
+                "`TRUE` eller `FALSE` (standard), inkluder tetthetsdiagrammer i korrelasjonsdiagram"
             ],
             "`TRUE` or `FALSE` (default), provide density plots (continuous variables only)": [
-                "`TRUE` oder `FALSE` (standard), gi ut tetthetsdiagram (bare kontinuerlige variabler)"
+                "`TRUE` eller `FALSE` (standard), gi ut tetthetsdiagram (bare kontinuerlige variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide descriptive plots": [
                 "`TRUE` eller `FALSE` (standard), gi ut diagram med deskriptivstatistiske verdier"
             ],
             "`TRUE` or `FALSE` (default), provide descriptive statistics": [
-                "`TRUE` oder `FALSE` (standard), gi ut deskriptivstatistikk"
+                "`TRUE` eller `FALSE` (standard), gi ut deskriptivstatistikk"
             ],
             "`TRUE` or `FALSE` (default), provide dot plots (continuous variables only)": [
-                "`TRUE` oder `FALSE` (standard), gi ut spredningsdiagram (kun for kontinuerlige variabler)"
+                "`TRUE` eller `FALSE` (standard), gi ut spredningsdiagram (kun for kontinuerlige variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide effect sizes": [
-                "`TRUE` oder `FALSE` (standard), gi ut effektstørrelser"
+                "`TRUE` eller `FALSE` (standard), gi ut effektstørrelser"
             ],
             "`TRUE` or `FALSE` (default), provide effect-sizes": [
-                "`TRUE` oder `FALSE` (standard), gi ut effektstørrelser"
+                "`TRUE` eller `FALSE` (standard), gi ut effektstørrelser"
             ],
             "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut tabeller med de estimerte gjennomsnittene"
             ],
             "`TRUE` or `FALSE` (default), provide estimates for the factor intercepts": [
-                "`TRUE` oder `FALSE` (standard), gi ut estimater for skjæringspunkter til faktorene"
+                "`TRUE` eller `FALSE` (standard), gi ut estimater for skjæringspunkter til faktorene"
             ],
             "`TRUE` or `FALSE` (default), provide estimates for the residual intercepts": [
-                "`TRUE` oder `FALSE` (standard), gi ut estimater for skjæringspunkter til residuene"
+                "`TRUE` eller `FALSE` (standard), gi ut estimater for skjæringspunkter til residuene"
             ],
             "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
                 "`TRUE` eller `FALSE` (standard), gjennomfør Fishers eksakte test"
             ],
             "`TRUE` or `FALSE` (default), provide frequency tables (nominal, ordinal variables only)": [
-                "`TRUE` oder `FALSE` (standard), gi ut frekvenstabeller (kun for nominelle eller ordinale variabler)"
+                "`TRUE` eller `FALSE` (standard), gi ut frekvenstabeller (kun for nominelle eller ordinale variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide gamma": [
-                "`TRUE` oder `FALSE` (standard), gi ut gamma"
+                "`TRUE` eller `FALSE` (standard), gi ut gamma"
             ],
             "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
-                "`TRUE` oder `FALSE` (standard), gi ut histogrammer (kun for kontinuerlige variabler)"
+                "`TRUE` eller `FALSE` (standard), gi ut histogrammer (kun for kontinuerlige variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide item means": [
-                "`TRUE` oder `FALSE` (standard), gi ut gjennomsnittet for hver item"
+                "`TRUE` eller `FALSE` (standard), gi ut gjennomsnittet for hver item"
             ],
             "`TRUE` or `FALSE` (default), provide item standard deviations": [
-                "`TRUE` oder `FALSE` (standard), gi ut standardavviket for hver item"
+                "`TRUE` eller `FALSE` (standard), gi ut standardavviket for hver item"
             ],
             "`TRUE` or `FALSE` (default), provide item-rest correlations": [
-                "`TRUE` oder `FALSE` (standard), gi ut item-rest-korrelasjoner"
+                "`TRUE` eller `FALSE` (standard), gi ut item-rest-korrelasjoner"
             ],
             "`TRUE` or `FALSE` (default), provide Kendall's tau-b": [
                 "`TRUE` eller `FALSE` (standard), gi ut Kendalls tau-b"
@@ -482,22 +482,25 @@
                 "`TRUE` eller `FALSE` (standard), gi ut McDonald's ω"
             ],
             "`TRUE` or `FALSE` (default), provide means and standard deviations": [
-                "`TRUE` oder `FALSE` (standard), gi ut gjennomsnitt og standardavvik"
+                "`TRUE` eller `FALSE` (standard), gi ut gjennomsnitt og standardavvik"
             ],
             "`TRUE` or `FALSE` (default), provide means and standard errors": [
-                "`TRUE` oder `FALSE` (standard), gi ut gjennomsnittene og sine standardfeilene"
+                "`TRUE` eller `FALSE` (standard), gi ut gjennomsnittene og sine standardfeilene"
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
-                "`TRUE` oder `FALSE` (standard), gi ut modifikasjonsindeksene for parameterne som ikke er inkludert i modellen"
+                "`TRUE` eller `FALSE` (standard), gi ut modifikasjonsindeksene for parameterne som ikke er inkludert i modellen"
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` eller `FALSE` (standard), gi ut de N mest ekstreme (høyeste og laveste) verdiene"
             ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
-                "`TRUE` oder `FALSE` (standard), gi ut persentiler"
+                "`TRUE` eller `FALSE` (standard), gi ut persentiler"
             ],
             "`TRUE` or `FALSE` (default), provide Phi and Cramer's V": [
                 "`TRUE` eller `FALSE` (standard), gi ut Phi og Cramers V"
             ],
             "`TRUE` or `FALSE` (default), provide posterior plots": [
-                "`TRUE` oder `FALSE` (standard), gi ut posterior-diagrammer"
+                "`TRUE` eller `FALSE` (standard), gi ut posterior-diagrammer"
             ],
             "`TRUE` or `FALSE` (default), provide Q-Q plots (continuous variables only)": [
                 "`TRUE` eller `FALSE` (standard), vis Q-Q-diagrammer (kun for kontinuerlige variabler)"
@@ -506,19 +509,19 @@
                 "`TRUE` eller `FALSE` (standard), vis Q-Q-diagrammer for residuene"
             ],
             "`TRUE` or `FALSE` (default), provide quantiles": [
-                "`TRUE` oder `FALSE` (standard), gi ut kvalantiler"
+                "`TRUE` eller `FALSE` (standard), gi ut kvalantiler"
             ],
             "`TRUE` or `FALSE` (default), provide residual plots where the dependent variable and each covariate is plotted against the standardized residuals.": [
-                "`TRUE` oder `FALSE` (standard), gi ut diagrammer med residuer hvor den avhengige variabelen og hver kovariat vises i forhold til sine standardiserte residuene."
+                "`TRUE` eller `FALSE` (standard), gi ut diagrammer med residuer hvor den avhengige variabelen og hver kovariat vises i forhold til sine standardiserte residuene."
             ],
             "`TRUE` or `FALSE` (default), provide results of the Durbin- Watson test for autocorrelation": [
-                "`TRUE` oder `FALSE` (standard), gjennomfør Durbin-Watson-test for autokorrelasjon"
+                "`TRUE` eller `FALSE` (standard), gjennomfør Durbin-Watson-test for autokorrelasjon"
             ],
             "`TRUE` or `FALSE` (default), provide RMSE for the models": [
                 "`TRUE` eller `FALSE` (standard), gi ut RMSE for modellene"
             ],
             "`TRUE` or `FALSE` (default), provide row percentages": [
-                "`TRUE` oder `FALSE` (standard), gi ut radprosenter"
+                "`TRUE` eller `FALSE` (standard), gi ut radprosenter"
             ],
             "`TRUE` or `FALSE` (default), provide Shapiro-Wilk p-value": [
                 "`TRUE` eller `FALSE` (standard), gi ut Shapiro-Wilk p-verdi"
@@ -530,178 +533,178 @@
                 "`TRUE` eller `FALSE` (standard), gi ut Spearmans rho"
             ],
             "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
-                "`TRUE` oder `FALSE` (standard), gi ut statistikk i korrelasjonsdiagrammen"
+                "`TRUE` eller `FALSE` (standard), gi ut statistikk i korrelasjonsdiagrammen"
             ],
             "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
-                "`TRUE` oder `FALSE` (standard), gi ut sammendragsstatistikk over Cooks distansene"
+                "`TRUE` eller `FALSE` (standard), gi ut sammendragsstatistikk over Cooks distansene"
             ],
             "`TRUE` or `FALSE` (default), provide test results (t-value and degrees of freedom) for post-hoc tests": [
-                "`TRUE` oder `FALSE` (standard), gi ut testresultater (t-verdi og frihetsgrader) for post-hoc-tester"
+                "`TRUE` eller `FALSE` (standard), gi ut testresultater (t-verdi og frihetsgrader) for post-hoc-tester"
             ],
             "`TRUE` or `FALSE` (default), provide the contingency coefficient": [
-                "`TRUE` oder `FALSE` (standard), gi ut kontingenskoeffisienten"
+                "`TRUE` eller `FALSE` (standard), gi ut kontingenskoeffisienten"
             ],
             "`TRUE` or `FALSE` (default), provide the differences in proportions (only available for 2x2 tables)": [
-                "`TRUE` oder `FALSE` (standard), gi ut forskjellene i proporsjonene (kun for 2x2-tabeller)"
+                "`TRUE` eller `FALSE` (standard), gi ut forskjellene i proporsjonene (kun for 2x2-tabeller)"
             ],
             "`TRUE` or `FALSE` (default), provide the expected counts": [
-                "`TRUE` oder `FALSE` (standard), gi ut de forventede antallene"
+                "`TRUE` eller `FALSE` (standard), gi ut de forventede antallene"
             ],
             "`TRUE` or `FALSE` (default), provide the exponential of the log-odds ratio estimate, or the odds ratio estimate": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut eksponentialen til log-odds-forhold-estimatet (også kalt odds-ratio-estimat)"
             ],
             "`TRUE` or `FALSE` (default), provide the exponential of the log-rate ratio estimate, or the rate ratio estimate": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut eksponentialen til log-rate-forhold-estimatet (også kalt rate-ratio-estimat)"
             ],
             "`TRUE` or `FALSE` (default), provide the interquartile range": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut interkvartilavstand"
             ],
             "`TRUE` or `FALSE` (default), provide the kurtosis": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut kurtosis"
             ],
             "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut sannsynlighetsforholdet (likelihood ratio)"
             ],
             "`TRUE` or `FALSE` (default), provide the log odds ratio (only available for 2x2 tables)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut log-odds-forholdet (kun tilgjengelig for 2x2-tabeller)"
             ],
             "`TRUE` or `FALSE` (default), provide the maximum": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut maksimum"
             ],
             "`TRUE` or `FALSE` (default), provide the mean": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut gjennomsnittet"
             ],
             "`TRUE` or `FALSE` (default), provide the minimum": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut minimum"
             ],
             "`TRUE` or `FALSE` (default), provide the mode": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut typetall"
             ],
             "`TRUE` or `FALSE` (default), provide the model comparison between the models and the NULL model": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut modellsammenligningen mellom modellene og NULL-modellen"
             ],
             "`TRUE` or `FALSE` (default), provide the number of cases": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut antall av målinger"
             ],
             "`TRUE` or `FALSE` (default), provide the observed counts": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut observert antall"
             ],
             "`TRUE` or `FALSE` (default), provide the odds ratio (only available for 2x2 tables)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut odds-forholdet (kun tilgjengelig for 2x2-tabeller)"
             ],
             "`TRUE` or `FALSE` (default), provide the omnibus ANOVA test for the predictors": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gjennomfør omnibus-ANOVA-testen for prediktorene"
             ],
             "`TRUE` or `FALSE` (default), provide the omnibus likelihood ratio tests for the predictors": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gjennomfør omnibus-sannsynlighetsforholdstester (likelihood ratio) for prediktorene"
             ],
             "`TRUE` or `FALSE` (default), provide the predicted accuracy of outcomes grouped by the cut-off value": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut den forutsagte nøyaktigheten av utfall gruppert etter grenseverdien"
             ],
             "`TRUE` or `FALSE` (default), provide the predicted sensitivity of outcomes grouped by the cut-off value": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut den forutsagte sensitiviteten av utfall gruppert etter grenseverdien"
             ],
             "`TRUE` or `FALSE` (default), provide the predicted specificity of outcomes grouped by the cut-off value": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut den forutsagte spesifisiteten til utfall gruppert etter grenseverdien"
             ],
             "`TRUE` or `FALSE` (default), provide the range": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut variasjonsbredde"
             ],
             "`TRUE` or `FALSE` (default), provide the rea under the ROC curve (AUC)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut område under ROC-kurven (AUC)"
             ],
             "`TRUE` or `FALSE` (default), provide the relative risk (only available for 2x2 tables)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut den relative risikoen (kun tilgjengelig for 2x2-tabeller)"
             ],
             "`TRUE` or `FALSE` (default), provide the residuals for the observed correlation matrix (i.e., the difference between the expected correlation matrix and the observed correlation matrix)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut residuene for den observerte korrelasjonsmatrisen (dvs. forskjellen mellom den forventede korrelasjonsmatrisen og den observerte korrelasjonsmatrisen)"
             ],
             "`TRUE` or `FALSE` (default), provide the skewness": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut skjevheten"
             ],
             "`TRUE` or `FALSE` (default), provide the standard deviation": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut standardavviket"
             ],
             "`TRUE` or `FALSE` (default), provide the standard error": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut standardfeilen"
             ],
             "`TRUE` or `FALSE` (default), provide the statistical measure `adjusted R-squared` for the models": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut det statistiske målet adjustert R² for modellene"
             ],
             "`TRUE` or `FALSE` (default), provide the sum": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut summen"
             ],
             "`TRUE` or `FALSE` (default), provide the thresholds that are used as cut-off scores for the levels of the dependent variable": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut tersklene som brukes som grensepoeng (cut-offs) for nivåene i den avhengige variabelen"
             ],
             "`TRUE` or `FALSE` (default), provide the variance": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut variansen"
             ],
             "`TRUE` or `FALSE` (default), provide total percentages": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut de totale prosentandelene"
             ],
             "`TRUE` or `FALSE` (default), provide VIF and tolerence collinearity statistics": [
                 "`TRUE` eller `FALSE` (standard), gi ut kollinearittsstatistikkene VIF og tolerans"
             ],
             "`TRUE` or `FALSE` (default), provide violin plots (continuous variables only)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut fiolinplotter (kun kontinuerlige variabler)"
             ],
             "`TRUE` or `FALSE` (default), provide what the Cronbach's α would be if the item was dropped": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut hva Cronbachs α ville være hvis item ble droppet"
             ],
             "`TRUE` or `FALSE` (default), provide what the McDonald's ω would be if the item was dropped": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut hva McDonald's ω ville være hvis item ble droppet"
             ],
             "`TRUE` or `FALSE` (default), provide χ² with continuity correction": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut χ² med kontinuitetskorreksjon"
             ],
             "`TRUE` or `FALSE` (default), report a summary of the different groups": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut sammendraget av de ulike gruppene"
             ],
             "`TRUE` or `FALSE` (default), set a cut-off used for the predictions": [
-                ""
+                "`TRUE` eller `FALSE` (standard), sett en grenseverdi (cut off) å bruke for prediksjonene"
             ],
             "`TRUE` or `FALSE` (default), show barplots": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut søylediagrammer"
             ],
             "`TRUE` or `FALSE` (default), show Bartlett's test of sphericity results": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gjennomfør Bartletts test av sfærisitet"
             ],
             "`TRUE` or `FALSE` (default), show eigenvalue table": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut eigenverdi-tabell"
             ],
             "`TRUE` or `FALSE` (default), show factor summary": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut sammendrag for faktorene"
             ],
             "`TRUE` or `FALSE` (default), show inter-factor correlations": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut inter-faktor-korrelasjoner"
             ],
             "`TRUE` or `FALSE` (default), show Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut Kaiser-Meyer-Olkin-kriterium (KMO) for tilstrekkelighet av prøvetaking (MSA)"
             ],
             "`TRUE` or `FALSE` (default), show model fit measures and test": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut mål og tester for modelltilpassing"
             ],
             "`TRUE` or `FALSE` (default), show scree plot": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gi ut steinurplott (scree plot)"
             ],
             "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
-                ""
+                "`TRUE` eller `FALSE` (standard), sorter faktorladingene etter størrelse"
             ],
             "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gjennomfør test for homogenitet av varianser (dvs. Levenes test)"
             ],
             "`TRUE` or `FALSE` (default), the variables are counts": [
-                ""
+                "`TRUE` eller `FALSE` (standard), variablene inneholder antall"
             ],
             "`TRUE` or `FALSE` (default), whether expected counts should be displayed": [
-                ""
+                "`TRUE` eller `FALSE` (standard), om forventede antall skal vises"
             ],
             "`TRUE` or `FALSE` (default); perform an overall model test": [
-                ""
+                "`TRUE` eller `FALSE` (standard), gjennomfør modelltest for hele modellen"
             ],
             "±%": [
-                ""
+                "±%"
             ],
             "< Test value": [
                 "< Testverdi"
@@ -725,67 +728,67 @@
                 "25,50,75"
             ],
             "a (semi)partial correlation matrix table": [
-                ""
+                "en (semi)partiell korrelasjonsmatriks"
             ],
             "a comma-sepated list (default: 25,50,75) specifying the percentiles": [
-                ""
+                "en kommadelt liste (standard: 25,50,75) som spesifiserer persentilene"
             ],
             "a correlation matrix plot": [
-                ""
+                "et korrelasjonsdiagram"
             ],
             "a correlation matrix table": [
-                ""
+                "en korrelasjonstabell"
             ],
             "a descriptives plot": [
-                ""
+                "et diagram med deskriptivstatistiske verdier"
             ],
             "a formula containing the terms to estimate marginal means for (see the examples)": [
-                ""
+                "en formel med termer for å estimere gjennomsnittene (se eksempler)"
             ],
             "a formula containing the terms to estimate marginal means for, supports up to three variables per term": [
-                ""
+                "en formel med termer for å estimere gjennomsnittene (støtter opp til tre variabler per term)"
             ],
             "a formula containing the terms to perform post-hoc tests on (see the examples)": [
-                ""
+                "en formel som inneholder termene for å gjennomføre post-hoc-tester (se eksemplene)"
             ],
             "a formula describing the terms to go into the model (not necessary when providing a formula, see examples)": [
-                ""
+                "en formel som inneholder termene som går inn i modellen (ikke nødvendig når du oppgir en formel for hele modellen, se eksempler)"
             ],
             "a list containing named lists that define the `label` of the factor and the `vars` that belong to that factor": [
-                ""
+                "`list`-variablen som igjen inneholder en `named list`-variable med `label` for faktoren og `vars` (variabler) som tilhører denne faktoren"
             ],
             "a list containing vectors of strings that name the predictors that are added to the model. The elements are added to the model according to their order in the list": [
-                ""
+                "`list`-variabelen som inneholder vektorer av strenger med prediktorer som skal legge til modellen; elementene legges til modellen i henhold til rekkefølge i `list-variabelen"
             ],
             "a list of character vectors describing the between subjects terms to go into the model": [
-                ""
+                "`list`-variabelen som inneholder vektorer av strenger som beskriver mellomsubjekt-termene som skal gå inn i modellen"
             ],
             "a list of character vectors describing the post-hoc tests that need to be computed": [
-                ""
+                "`list`-variabelen som inneholder vektorer av strenger som beskriver hvilke post-hoc-tester skal beregnes"
             ],
             "a list of character vectors describing the repeated measures terms to go into the model": [
-                ""
+                "`list`-variabelen som inneholder vektorer av strenger som beskriver termene for gjentatte målinger skal gå inn i modellen"
             ],
             "a list of lists specifying reference levels of the dependent variable and all the factors": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler som angir referansenivåene for de avhengige variablene og alle faktorene"
             ],
             "a list of lists specifying the factor and type of contrast to use, one of `'deviation'`, `'simple'`, `'difference'`, `'helmert'`, `'repeated'` or `'polynomial'`": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler som spesifiserer faktorene og kontrastene som skal brukes for hver faktor (enten `'deviation'`, `'simple'`, `'difference'`, `'helmert'`, `'repeated'` eller `'polynomial'`)"
             ],
             "a list of lists specifying the pairs of measurement in `data`": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler som spesifiserer målingsparene i `data`"
             ],
             "a list of lists specifying the residual covariances that need to be estimated": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler som spesifiserer for hvilke residuer kovariansene skal estimeres"
             ],
             "a list of lists specifying the variables for which the estimated marginal means need to be calculate. Supports up to three variables per term.": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler som spesifiserer variablene som skal brukes for å estimere gjennomsnittene (støtter opp til tre variabler per term)."
             ],
             "a list of lists, where each list decribes a repeated measure (as a string) from `data` defined as `measure` and the particular combination of levels from `rm` that it belongs to (as a vector of strings) defined as `cell`": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler; hver av disse spesifiserer en gjentatt måling fra `data` (som strenger), definisjonen består av `measure` og en bestemt kombinasjon av faktortrinn fra `rm` den tilhører og som er definert som `cell` (og inneholder en vektor av strenger)"
             ],
             "a list of lists, where each list describes the `label` (as a string) and the `levels` (as vector of strings) of a particular repeated measures factor": [
-                ""
+                "`list`-variabelen som igjen inneholder `list`-variabler som beskriver `label` (som en streng) og `levels` (som vektor av strenger) for en bestemt faktor for gjentatte målinger"
             ],
             "A low p-value suggests a violation of the assumption of equal variances": [
                 "En lav p-verdi antyder et brudd på antakelsen om like varianser"
@@ -797,277 +800,280 @@
                 "Et fint korrelasjonsdatasett"
             ],
             "a number (default: 0.1), highlight values in the `'corRes'` table above this value": [
-                ""
+                "et tall (standard: 0.1), fremhev verdier i `'corRes'`-tabellen som overstiger denne verdien"
             ],
             "a number (default: 0.3), hide factor loadings below this value": [
-                ""
+                "et tall (standard: 0.3), skjul faktorladinger under denne verdien"
             ],
             "a number (default: 0.3), hide loadings below this value": [
-                ""
+                "et tall (standard: 0.3), skjul komponentladinger under denne verdien"
             ],
             "a number (default: 0.5), the value for the null hypothesis": [
-                ""
+                "et tall (standard: 0.5), med verdien for nullhypotesen"
             ],
             "a number (default: 0), the minimal eigenvalue for a factor to be included in the model": [
-                ""
+                "et tall (standard: 0), med den minimale egenverdien for en faktor som skal inkluderes i modellen"
             ],
             "a number (default: 1), the beta prior 'a' parameter": [
-                ""
+                "et tall (standard: 1), med beta-prior-parameter `a`"
             ],
             "a number (default: 1), the beta prior 'b' parameter": [
-                ""
+                "et tall (standard: 1), med beta-prior-parameter `b`"
             ],
             "a number (default: 1), the minimal eigenvalue for a component to be included in the model": [
-                ""
+                "et tall (standard: 1), den minimale eigenverdien for en komponent som skal inkluderes i modellen"
             ],
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
-                ""
+                "et tall (standard: 3), marker verdier i `'modIndices'`-tabellene som overstiger denne verdien"
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "et tall mellom 0.01 og 2 (standard: 0.707), bredden av prior som skal brukes til å beregne Bayes-faktor"
             ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
-                ""
+                "et tall mellom 0.5 og 2 (standard: 0.707), bredden av prior som skal brukes til å beregne Bayes-faktorer"
             ],
             "a number between 0.5 and 2.0 (default 0.707), the prior width to use in calculating Bayes factors": [
-                ""
+                "et tall mellom 0.5 og 2 (standard: 0.707), bredden av prior som skal brukes til å beregne Bayes-faktorer"
             ],
             "a number between 50 and 99.9 (default: 95) specifying the confidence interval width": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95) som spesifiserer bredden på konfidensintervallet"
             ],
             "a number between 50 and 99.9 (default: 95) specifying the confidence interval width for the estimated marginal means": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95) som spesifiserer bredden på konfidensintervaller for de estimerte gjennomsnittene"
             ],
             "a number between 50 and 99.9 (default: 95) specifying the confidence interval width that is used as `'ci'`": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95) som spesifiserer bredden på konfidensintervallet som brukes for `'ci'`"
             ],
             "a number between 50 and 99.9 (default: 95), the confidence interval width": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95), bredden på konfidensintervallet"
             ],
             "a number between 50 and 99.9 (default: 95), the credible interval width": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95), spesifiserer bredden på kredibilitätsintervallet"
             ],
             "a number between 50 and 99.9 (default: 95), the width of confidence intervals": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95), bredden på konfidensintervallene"
             ],
             "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the effect sizes": [
-                ""
+                "et tall mellom 50 og 99,9 (standard: 95), bredden på konfidensintervallene for effektstørrelsene"
             ],
             "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the post-hoc effect sizes": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95), bredden på konfidensintervallene for post-hoc-effektstørrelsene"
             ],
             "a number between 50 and 99.9 (default: 95), the width of confidence intervals to provide": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95), spesifiserer bredden på konfidensintervallene"
             ],
             "a number between 50 and 99.9 (default: 95), width of the confidence intervals to provide": [
-                ""
+                "et tall mellom 50 og 99.9 (standard: 95), spesifiserer bredden på konfidensintervallene"
             ],
             "a number specifying the value of the null hypothesis": [
-                ""
+                "et tall som spesifiserer verdien for nullhypotesen"
             ],
             "a parameter": [
-                ""
+                "en parameter"
             ],
             "a possible value of `'d'`; provide cohen's d measure of effect size for the post-hoc tests": [
-                ""
+                "en mulig verdi på `'d'`; gi ut effektstørrelse (Cohens d) for post-hoc-testene"
             ],
             "a post-hoc table": [
-                ""
+                "en post-hoc-tabell"
             ],
             "a proportions table": [
-                ""
+                "en proporsjonstabell"
             ],
             "a q-q plot": [
-                ""
+                "et Q-Q-diagram"
             ],
             "A repeated measures ANOVA data set": [
                 "Et datasett for ANOVA med gjentatte målinger"
             ],
             "a string (default: 'Dependent') describing the label used for the dependent variable throughout the analysis": [
-                ""
+                "en streng (standard: 'Dependent') som brukes som etikett for den avhengige variabelen gjennom de gjentatte målingene"
             ],
             "a string naming a variable in `data` containing counts, or NULL if each row represents a single observation": [
-                ""
+                "en streng som viser til en variabel i `data` som inneholder antall, eller NULL hvis hver rad representerer en enkelt observasjon"
             ],
             "a string naming the dependent variable from `data`, variable must be a factor": [
-                ""
+                "en streng som viser til den avhengige variabelen fra `data`; variabelen må være en faktor"
             ],
             "a string naming the dependent variable from `data`, variable must be numeric": [
-                ""
+                "en streng som viser til den avhengige variabelen fra `data`, variabelen må være numerisk"
             ],
             "a string naming the dependent variable in `data`": [
-                ""
+                "en streng som viser til den avhengige variabelen i `data`"
             ],
             "a string naming the dependent variables in `data`": [
-                ""
+                "en streng som viser til de avhengige variablene i `data`"
             ],
             "a string naming the grouping or independent variable in `data`": [
-                ""
+                "en streng som viser til den grupperings- / uavhengige variabelen i `data`"
             ],
             "a summary of the groups": [
-                ""
+                "en oppsummering av gruppene"
             ],
             "a table containing estimated marginal means": [
-                ""
+                "en tabell med de estimerte gjennomsnittene"
             ],
             "a table containing factor covariances estimates": [
-                ""
+                "en tabell med estimater for kovariansene av faktorene"
             ],
             "a table containing factor intercept estimates": [
-                ""
+                "en tabell med estimater for skjæringspunktene av faktorene"
             ],
             "a table containing fit measures": [
-                ""
+                "en tabelle med mål for modelltilpassing"
             ],
             "a table containing modification indices for the factor loadings not included in the model": [
-                ""
+                "en tabell med modifikasjonsindekser for faktorladingene som ikke er inkludert i modellen"
             ],
             "a table containing modification indices for the residual covariances not included in the model": [
-                ""
+                "en tabell med modifikasjonsindekser for de residuale kovariansene som ikke er inkludert i modellen"
             ],
             "a table containing residual covariances estimates": [
-                ""
+                "en tabell med estimater for kovariansene av residuene"
             ],
             "a table containing residual intercept estimates": [
-                ""
+                "en tabell med estimater for skjæringspunktene av residuene"
             ],
             "a table containing residuals for the observed correlation matrix": [
-                ""
+                "en tabell med residuene for den observerte korrelasjonsmatrisen"
             ],
             "a table containing the chi-square test for exact fit": [
-                ""
+                "en tabell med kjikvadrattesten for eksakt tilpassing"
             ],
             "a table containing the collinearity statistics": [
-                ""
+                "en tabell med kolinearitetsstatistikk"
             ],
             "a table containing the descriptives": [
-                ""
+                "en tabell med deskriptivstatistikk"
             ],
             "a table containing the factor loadings": [
-                ""
+                "en tabell med faktorladinger"
             ],
             "a table containing the group descriptives": [
-                ""
+                "en tabell med deskriptivstatistikk for gruppene"
             ],
             "a table containing the homogeneity of variances tests": [
-                ""
+                "en tabell med tester på varianshomogenitet"
             ],
             "a table containing the normality test results": [
-                ""
+                "en tabell med tester på normalfordeling"
             ],
             "a table containing the normality tests": [
-                ""
+                "en tabell med tester på normalfordeling"
             ],
             "a table containing the results from the Box-Tidwell test": [
-                ""
+                "en tabell med resultater fra Box-Tidwell-testen"
             ],
             "a table containing the t-test results": [
-                ""
+                "en tabell med resultater fra t-testene"
             ],
             "a table of ANCOVA results": [
-                ""
+                "en tabell med resultater fra ANCOVA"
             ],
             "a table of ANOVA results": [
-                ""
+                "en tabell med resultater fra ANOVA"
             ],
             "a table of comparative measures": [
-                ""
+                "en tabell med komparative mål"
             ],
             "a table of homogeneity of variances tests": [
-                ""
+                "en tabell med tester på varianshomogenitet"
             ],
             "a table of homogeneity tests": [
-                ""
+                "en tabell med tester på varianshomogenitet"
             ],
             "a table of likelihood ratio tests": [
-                ""
+                "en tabell med likelihood-ratio-tester"
             ],
             "a table of model coefficient thresholds": [
-                ""
+                "en tabell med terskler på modellkoeffisientene"
             ],
             "a table of model coefficients": [
-                ""
+                "en tabell med modellkoeffisienter"
             ],
             "a table of normality tests": [
-                ""
+                "en tabell med tester på normalfordeling"
             ],
             "a table of predicted classifications": [
-                ""
+                "en tabell med de predikerte klassifikasjonene"
             ],
             "a table of predictive measures": [
-                ""
+                "en tabell med prediktive mål"
             ],
             "a table of proportions": [
-                ""
+                "en tabell med proporsjoner"
             ],
             "a table of test results": [
-                ""
+                "en tabell med testresultater"
             ],
             "a table of the 'nominal' test results": [
-                ""
+                "en tabell med de «nominelle» testresultatene"
             ],
             "a table of the descriptive statistics": [
-                ""
+                "en tabell med deskriptivstatistikk"
             ],
             "a table of the Friedman test results": [
-                ""
+                "en tabell med resultater av Friedman-testen"
             ],
             "a table of the gamma test results": [
-                ""
+                "en tabell med resultater fra gamma-testen"
             ],
             "a table of the Kendall's tau-b test results": [
-                ""
+                "en tabell med resultater fra Kendalls tau-b-test"
             ],
             "a table of the Mantel-Haenszel test for trend": [
-                ""
+                "en tabell med Mantel-Haenszel-trendtesten"
             ],
             "a table of the pairwise comparisons": [
-                ""
+                "en tabell med parvise sammenligninger"
             ],
             "a table of the proportions": [
-                ""
+                "en tabell med proporsjoner"
             ],
             "a table of the proportions and test results": [
-                ""
+                "en tabell med proporsjoner og testresultater"
             ],
             "a table of the test results": [
-                ""
+                "en tabell med testresultatene"
             ],
             "a table of χ² test results": [
-                ""
+                "en tabell med χ²-testresultater"
             ],
             "a vector containing strings naming the varibales that are reverse scaled": [
-                ""
+                "en vektor med strenger som viser til variablene som skal inverteres"
             ],
             "a vector of numbers: the expected proportions": [
-                ""
+                "en tallvektor: de forventete proporsjonene"
             ],
             "a vector of strings naming the between subjects factors from `data`": [
-                ""
+                "en vektor av strenger som viser til mellomsubjekt-faktorene fra `data`"
             ],
             "a vector of strings naming the control variables in `data`": [
-                ""
+                "en vektor av strenger som viser til kontrollvariablene i `data`"
             ],
             "a vector of strings naming the covariates from `data`": [
-                ""
+                "en vektor av strenger som viser til kovariatene fra `data`"
             ],
             "a vector of strings naming the covariates from `data`. Variables must be numeric": [
-                ""
+                "en vektor av strenger som viser til kovariatene fra `data`; variablene må være numeriske"
             ],
             "a vector of strings naming the factors from `data`": [
-                ""
+                "en vektor av strenger som viser til faktorene fra `data`"
             ],
             "a vector of strings naming the fixed factors from `data`": [
-                ""
+                "en vektor av strenger som viser til de faste faktorene fra `data`"
             ],
             "a vector of strings naming the repeated measures variables": [
-                ""
+                "en vektor av strenger som viser til de variablene for gjentatte målingene"
             ],
             "a vector of strings naming the variables of interest in `data`": [
-                ""
+                "en vektor av strenger som viser til de interesserende variablene i `data`"
             ],
             "a vector of strings naming the variables to correlate in `data`": [
-                ""
+                "en vektor av strenger som viser til de variablene i `data` som skal korreleres"
             ],
             "a vector of strings naming the variables used to split `vars`": [
-                ""
+                "en vektor av strenger som viser til de variablene som skal brukes for å dele `vars`"
             ],
             "Accuracy": [
                 "Nøyaktighet"
@@ -1103,52 +1109,58 @@
                 "Alternativhypotese"
             ],
             "an array of contrasts tables": [
-                ""
+                "et array med tabeller av kontraster"
             ],
             "an array of descriptive plots": [
-                ""
+                "et array med deskriptivstatistiske diagrammer"
+            ],
+            "an array of extreme values tables": [
+                "en matrise av tabeller med ekstremverdier"
             ],
             "an array of frequency tables": [
-                ""
+                "et array med frekvenstabeller"
             ],
             "an array of groups of plots": [
-                ""
+                "et array med grupper av diagrammer"
             ],
             "an array of model specific results": [
-                ""
+                "et array av tabeller med modellspesifikke resultater"
             ],
             "an array of pairwise comparison tables": [
-                ""
+                "et array med tabeller av parvise sammenligninger"
             ],
             "an array of post-hoc tables": [
-                ""
+                "et array med post-hoc-tabeller"
             ],
             "an array of Q-Q plots": [
-                ""
+                "et array med Q-Q-diagrammer"
             ],
             "an array of the descriptive plots": [
-                ""
+                "et array med deskriptivstatistiske diagrammer"
             ],
             "an array of the estimated marginal means plots + tables": [
-                ""
+                "en array med diagrammer og tabeller som viser de estimerte gjennomsnittene"
             ],
             "an array of the posterior plots": [
-                ""
+                "et array med posterior-diagrammer"
             ],
             "an image containing the model path diagram": [
-                ""
+                "et bilde med stidiagrammet av modellen"
             ],
             "an image of the descriptive plots": [
-                ""
+                "et bilde med et deskriptivstatistisk diagram"
             ],
             "an integer (default: 1), the number of components in the model": [
-                ""
+                "et heltall (standard: 1), antall komponenter i modellen"
             ],
             "an integer (default: 1), the number of factors in the model": [
-                ""
+                "et heltall (standard: 1), antall faktorer i modellen"
             ],
             "an integer (default: 4) specifying the number of equal groups": [
-                ""
+                "et heltall (standard: 4) som spesifiserer antall grupper ved lik størrelse"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "et heltall (standard: 5) som spesifiserer antall av ekstremverdier"
             ],
             "An uninspiring ANOVA data set": [
                 "Et uinspirerende ANOVA-datasett"
@@ -1178,10 +1190,10 @@
                 "Anta å være lik (Fishers)"
             ],
             "Assumption Checks": [
-                "Sjekk av antakelser"
+                "Sjekk av forutsetninger"
             ],
             "Assumptions": [
-                "Antakelser"
+                "Forutsetninger"
             ],
             "At least one variable must have two levels": [
                 "Minst én variabel må ha to nivåer"
@@ -1199,7 +1211,7 @@
                 "Bare tilgjengelig for 2x2-tabeller"
             ],
             "b parameter": [
-                ""
+                "b-parameter"
             ],
             "Bar Plot": [
                 "Stolpediagramm"
@@ -1238,10 +1250,10 @@
                 "Bayesiansk statistikk"
             ],
             "beta 'a' parameter": [
-                ""
+                "beta-«a»-parameter"
             ],
             "beta 'b' parameter": [
-                ""
+                "beta-«b»-Parameter"
             ],
             "Between Subject Factors": [
                 "Mellomsubjektfaktorer"
@@ -1345,9 +1357,6 @@
             "Column": [
                 "Kolonne"
             ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "Kolonnen «{name}» inneholder ubrukte nivåer (kan skjer når rader med manglende verdier er ekskludert)"
-            ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "Kolonnevariabelen «{var}» inneholder færre enn 2 nivåer"
             ],
@@ -1355,7 +1364,7 @@
                 "Kolonner"
             ],
             "columns": [
-                ""
+                "kolonner"
             ],
             "Columns compared": [
                 "Sammenlignete kolonner"
@@ -1394,13 +1403,13 @@
                 "Oversikt over komponenter"
             ],
             "component(s)": [
-                ""
+                "Komponent(er)"
             ],
             "Components": [
                 "Komponenter"
             ],
             "components": [
-                ""
+                "Komponenter"
             ],
             "Confidence Interval": [
                 "Konfidensintervall"
@@ -1448,7 +1457,7 @@
                 "Variabler som blir kontrollert"
             ],
             "controlling for {items}": [
-                ""
+                "Kontrollerer for {items}"
             ],
             "Cook's Distance": [
                 "Cooks avstand"
@@ -1541,7 +1550,7 @@
                 "Cronbachs α (hvis spørsmål er fjernet)"
             ],
             "cubic": [
-                ""
+                "kubisk"
             ],
             "Cumulative %": [
                 "Kumulert %"
@@ -1565,88 +1574,91 @@
                 "Grenseverdi (cut-off)"
             ],
             "dat <- data.frame(\n    `1st survey` = c('Approve', 'Approve', 'Disapprove', 'Disapprove'),\n    `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),\n    `Counts` = c(794, 150, 86, 570),\n    check.names=FALSE)\n\ncontTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)\n\n#\n#  PAIRED SAMPLES CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ────────────────────────────────────────────────\n#    1st survey    Approve    Disapprove    Total\n#  ────────────────────────────────────────────────\n#    Approve           794           150      944\n#    Disapprove         86           570      656\n#    Total             880           720     1600\n#  ────────────────────────────────────────────────\n#\n#\n#  McNemar Test\n#  ─────────────────────────────────────────────────────\n#                                Value    df    p\n#  ─────────────────────────────────────────────────────\n#    χ²                           17.4     1    < .001\n#    χ² continuity correction     16.8     1    < .001\n#  ─────────────────────────────────────────────────────\n#\n\n\n# Alternatively, omit the left of the formula (`Counts`) from the\n# formula if each row represents a single observation:\n\ncontTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)": [
-                ""
+                "dat <- data.frame(\n    `1st survey` = c('Approve', 'Approve', 'Disapprove', 'Disapprove'),\n    `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),\n    `Counts` = c(794, 150, 86, 570),\n    check.names=FALSE)\n\ncontTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)\n\n#\n#  KRYSSTABELLER FOR PARETE UTVALG\n#\n#  Krysstabeller\n#  ────────────────────────────────────────────────\n#    1st survey    Approve    Disapprove    Total\n#  ────────────────────────────────────────────────\n#    Approve           794           150      944\n#    Disapprove         86           570      656\n#    Total             880           720     1600\n#  ────────────────────────────────────────────────\n#\n#\n#  McNemar-test\n#  ──────────────────────────────────────────────────────────\n#                                     Verdi    df    p\n#  ──────────────────────────────────────────────────────────\n#    χ²                                17.4     1    < .001\n#    χ² med kontinuitetskorreksjon     16.8     1    < .001\n#  ──────────────────────────────────────────────────────────\n#\n\n\n# Alternativt kan du utelate venstre side av formelen (`Counts`) fra\n# formel hvis hver rad representerer en enkelt observasjon:\n\ncontTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)"
             ],
             "dat <- data.frame(x=c(8, 15))\n\npropTest2(dat, vars = x, areCounts = TRUE)\n\n#\n#  PROPORTION TEST (2 OUTCOMES)\n#\n#  Binomial Test\n#  ───────────────────────────────────────────────────────\n#         Level    Count    Total    Proportion    p\n#  ───────────────────────────────────────────────────────\n#    x    1            8       23         0.348    0.210\n#         2           15       23         0.652    0.210\n#  ───────────────────────────────────────────────────────\n#    Note. Hₐ is proportion ≠ 0.5\n#": [
-                ""
+                "dat <- data.frame(x = c(8, 15))\n\npropTest2(dat, vars = x, areCounts = TRUE)\n\n#\n# PROPORSJONSTEST (2 RESULTATER)\n#\n# Binomialtest\n# ──────────────────────────────────────────────────\n#        Nivå    Antall    Total    Andel    p\n# ──────────────────────────────────────────────────\n#   x       1         8       23    0.348    0.210\n#           2        15       23    0.652    0.210\n# ──────────────────────────────────────────────────\n# Notat. Hₐ er at andelen er ≠ 0,5\n#"
             ],
             "Data": [
                 "Data"
             ],
             "data <- lavaan::HolzingerSwineford1939\n\njmv::cfa(\n    data = data,\n    factors = list(\n        list(label=\"Visual\", vars=c(\"x1\", \"x2\", \"x3\")),\n        list(label=\"Textual\", vars=c(\"x4\", \"x5\", \"x6\")),\n        list(label=\"Speed\", vars=c(\"x7\", \"x8\", \"x9\"))),\n    resCov = NULL)\n\n#\n#  CONFIRMATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ─────────────────────────────────────────────────────────────────\n#    Factor     Indicator    Estimate    SE        Z        p\n#  ─────────────────────────────────────────────────────────────────\n#    Visual     x1              0.900    0.0832    10.81    < .001\n#               x2              0.498    0.0808     6.16    < .001\n#               x3              0.656    0.0776     8.46    < .001\n#    Textual    x4              0.990    0.0567    17.46    < .001\n#               x5              1.102    0.0626    17.60    < .001\n#               x6              0.917    0.0538    17.05    < .001\n#    Speed      x7              0.619    0.0743     8.34    < .001\n#               x8              0.731    0.0755     9.68    < .001\n#               x9              0.670    0.0775     8.64    < .001\n#  ─────────────────────────────────────────────────────────────────\n#\n#\n#  FACTOR ESTIMATES\n#\n#  Factor Covariances\n#  ──────────────────────────────────────────────────────────────\n#                          Estimate    SE        Z       p\n#  ──────────────────────────────────────────────────────────────\n#    Visual     Visual      1.000 ᵃ\n#               Textual     0.459      0.0635    7.22    < .001\n#               Speed       0.471      0.0862    5.46    < .001\n#    Textual    Textual     1.000 ᵃ\n#               Speed       0.283      0.0715    3.96    < .001\n#    Speed      Speed       1.000 ᵃ\n#  ──────────────────────────────────────────────────────────────\n#    ᵃ fixed parameter\n#\n#\n#  MODEL FIT\n#\n#  Test for Exact Fit\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    85.3    24    < .001\n#  ────────────────────────\n#\n#\n#  Fit Measures\n#  ───────────────────────────────────────────────\n#    CFI      TLI      RMSEA     Lower     Upper\n#  ───────────────────────────────────────────────\n#    0.931    0.896    0.0921    0.0714    0.114\n#  ───────────────────────────────────────────────\n#": [
-                ""
+                "data <- lavaan::HolzingerSwineford1939\n\njmv::cfa(\n    data = data,\n    factors = list(\n        list(label=\"Visual\",  vars=c(\"x1\", \"x2\", \"x3\")),\n        list(label=\"Textual\", vars=c(\"x4\", \"x5\", \"x6\")),\n        list(label=\"Speed\",   vars=c(\"x7\", \"x8\", \"x9\"))),\n    resCov = NULL)\n\n#\n#  KONFIRMATORISK FAKTORANALYSE\n#\n#  Faktorladinger\n#  ───────────────────────────────────────────────────────────────────\n#    Faktor     Indikator    Estimat    Std.-feil        Z    p\n#  ───────────────────────────────────────────────────────────────────\n#    Visual     x1             0.900       0.0832    10.81    < .001\n#               x2             0.498       0.0808     6.16    < .001\n#               x3             0.656       0.0776     8.46    < .001\n#    Textual    x4             0.990       0.0567    17.46    < .001\n#               x5             1.102       0.0626    17.60    < .001\n#               x6             0.917       0.0538    17.05    < .001\n#    Speed      x7             0.619       0.0743     8.34    < .001\n#               x8             0.731       0.0755     9.68    < .001\n#               x9             0.670       0.0775     8.64    < .001\n#  ───────────────────────────────────────────────────────────────────\n#\n#\n#  ESTIMATER FOR FAKTORENE\n#\n#  Faktorkovarianser\n#  ────────────────────────────────────────────────────────────────\n#                          Estimat    Std.-feil    Z       p\n#  ────────────────────────────────────────────────────────────────\n#    Visual     Visual     1.000 ᵃ\n#               Textual    0.459         0.0635    7.22    < .001\n#               Speed      0.471         0.0862    5.46    < .001\n#    Textual    Textual    1.000 ᵃ\n#               Speed      0.283         0.0715    3.96    < .001\n#    Speed      Speed      1.000 ᵃ\n#  ────────────────────────────────────────────────────────────────\n#    ᵃ fixed parameter\n#\n#\n#  MODELLTILPASSING\n#\n#  Test for eksakt tilpassing\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    85.3    24    < .001\n#  ────────────────────────\n#\n#\n#  Mål for Modelltilpassing\n#  ───────────────────────────────────────────────\n#    CFI      TLI      RMSEA      Undre     Øvre\n#  ───────────────────────────────────────────────\n#    0.931    0.896    0.0921    0.0714    0.114\n#  ───────────────────────────────────────────────\n#"
             ],
             "Data Reduction": [
                 "Datareduksjon"
+            ],
+            "Data set is currently unweighted": [
+                "Datasettet er for øyeblikket uvektet"
             ],
             "Data Summary": [
                 "Sammendrag av data"
             ],
             "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1     4.97e-7    6.00     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────────\n#    Predictor    Estimate      SE          Z           p\n#  ────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2      0.0136    0.989\n#    age            -0.00653       482.7    -1.35e-5    1.000\n#    bwt            -1.18532        87.0     -0.0136    0.989\n#  ────────────────────────────────────────────────────────────\n#    Note. Estimates represent the log odds of \"low = 1\"\n#    vs. \"low = 0\"\n#\n#": [
-                ""
+                "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIAL LOGISTISK REGRESJON\n#\n#  Mål for Modelltilpassing\n#  ────────────────────────────────────────\n#    Modell      Avvik     AIC     R²-McF\n#  ────────────────────────────────────────\n#         1    4.97e-7    6.00      1.000\n#  ────────────────────────────────────────\n#\n#\n#  MODELLSPEZIFIKKE RESULTATER\n#\n#  MODELL 1\n#\n#  Modellkoeffisienter\n#  ───────────────────────────────────────────────────────────────\n#    Prediktor    Estimat       Std.-feil      Z           p\n#  ───────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2         0.0136    0.989\n#    age            -0.00653       482.7       -1.35e-5    1.000\n#    bwt            -1.18532        87.0        -0.0136    0.989\n#  ───────────────────────────────────────────────────────────────\n#    Notat. Estimater representerer log-odds-ratioer for «low = 1»\n#    vs. «low = 0»\n#\n#"
             ],
             "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ──────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ───────────────────────────────────────────────────────────────\n#    race     Predictor    Estimate    SE        Z         p\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    Intercept      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────\n#\n#": [
-                ""
+                "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIAL LOGISTISK REGRESJON\n#\n#  Mål for Modelltilpassing\n#  ────────────────────────────────────\n#    Modell    Avvik    AIC    R²-McF\n#  ────────────────────────────────────\n#         1      360    372    0.0333\n#  ────────────────────────────────────\n#\n#\n#  MODELLSPEZIFIKKE RESULTATER\n#\n#  MODELL 1\n#\n#  Modellkoeffisienter\n#  ────────────────────────────────────────────────────────────────────────\n#    race     Prediktor          Estimat     Std.-feil         Z    p\n#  ────────────────────────────────────────────────────────────────────────\n#    2 - 1    Skjæringspunkt      0.8155        1.1186     0.729    0.466\n#             age                -0.1038        0.0487    -2.131    0.033\n#             low:\n#             1 – 0               0.7527        0.4700     1.601    0.109\n#    3 - 1    Skjæringspunkt      1.0123        0.7798     1.298    0.194\n#             age                -0.0663        0.0324    -2.047    0.041\n#             low:\n#             1 – 0               0.5677        0.3522     1.612    0.107\n#  ────────────────────────────────────────────────────────────────────────\n#\n#"
             ],
             "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  REPEATED MEASURES ANOVA\n#\n#  Within Subjects Effects\n#  ───────────────────────────────────────────────────────────────────────\n#                  Sum of Squares    df    Mean Square    F       p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#\n#\n#\n#  Between Subjects Effects\n#  ─────────────────────────────────────────────────────────────────\n#                Sum of Squares    df    Mean Square    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#": [
-                ""
+                "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  ANOVA FOR GJENTATTE MÅLINGER\n#\n#  Mellomsubjekteffekter\n#  ───────────────────────────────────────────────────────────────\n#                  Kvadratsum    df    Varians    F       p\n#  ───────────────────────────────────────────────────────────────\n#    Frightening          126     1     126.11    44.2    < .001\n#    Residual             257    90       2.85\n#  ───────────────────────────────────────────────────────────────\n#    Notat. Type-3-kvadratsumme\n#\n#\n#\n#  Effekter innenfor deltakerne\n#  ───────────────────────────────────────────────────────────────\n#                Kvadratsum    df    Varians    F    p\n#  ───────────────────────────────────────────────────────────────\n#    Residuer           954    90       10.6\n#  ───────────────────────────────────────────────────────────────\n#    Notat. Type-3-kvadratsumme\n#"
             ],
             "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#": [
-                ""
+                "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  ANOVA FOR GJENTATTE MÅLINGER (IKKE-PARAMETRISK)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#"
             ],
             "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  PAIRED SAMPLES T-TEST\n#\n#  Paired Samples T-Test\n#  ──────────────────────────────────────────────────────────────\n#                                   statistic    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#": [
-                ""
+                "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  PARET T-TEST\n#\n#  Paret t-test\n#  ──────────────────────────────────────────────────────────────\n#                                   Statistikk    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t         -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#"
             ],
             "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ─────────────────────────────────────────────────────\n#    Hair     Brown    Blue    Hazel    Green    Total\n#  ─────────────────────────────────────────────────────\n#    Black       68      20       15        5      108\n#    Brown      119      84       54       29      286\n#    Red         26      17       14       14       71\n#    Blond        7      94       10       16      127\n#    Total      220     215       93       64      592\n#  ─────────────────────────────────────────────────────\n#\n#\n#  χ² Tests\n#  ───────────────────────────────\n#          Value    df    p\n#  ───────────────────────────────\n#    χ²      138     9    < .001\n#    N       592\n#  ───────────────────────────────\n#\n\n# Alternatively, omit the left of the formula (`Freq`) if each row\n# represents a single observation:\n\ncontTables(formula = ~ Hair:Eye, dat)": [
-                ""
+                "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  KRYSSTABELLER\n#\n#  Krysstabeller\n#  ─────────────────────────────────────────────────────────\n#    Hair         Brown    Blue    Hazel    Green    Total\n#  ─────────────────────────────────────────────────────────\n#    Black           68      20       15        5      108\n#    Brown          119      84       54       29      286\n#    Red             26      17       14       14       71\n#    Blond            7      94       10       16      127\n#    Insgesamt      220     215       93       64      592\n#  ─────────────────────────────────────────────────────────\n#\n#\n#  χ²-tester\n#  ───────────────────────────────\n#          Verdi    df    p\n#  ───────────────────────────────\n#    χ²      138     9    < .001\n#    N       592\n#  ───────────────────────────────\n#\n\n# Alternativt kan en utelate venstre side av formelen (`Freq`)\n# hvis hver rad representerer en enkelt observasjon:\n\ncontTables(formula = ~ Hair:Eye, dat)"
             ],
             "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  PROPORTION TEST (N OUTCOMES)\n#\n#  Proportions\n#  ────────────────────────────────\n#    Level    Count    Proportion\n#  ────────────────────────────────\n#    Brown      220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  χ² Goodness of Fit\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#": [
-                ""
+                "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1, 1, 1, 1))\n\n#\n#  PROPORSJONSTEST (N RESULTATER)\n#\n#  Proporsjoner\n#  ─────────────────────────────────\n#    Nivå     Antall    Proporsjon\n#  ─────────────────────────────────\n#    Brown       220         0.372\n#    Blue        215         0.363\n#    Hazel        93         0.157\n#    Green        64         0.108\n#  ─────────────────────────────────\n#\n#\n#  χ²-test for fordeling\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#"
             ],
             "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Note. 'oblimin' rotation was used\n#": [
-                ""
+                "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORISK FAKTORANALYSE\n#\n#  Faktorladinger\n#  ─────────────────────────────────────────────\n#                    1        2        Unikhet\n#  ─────────────────────────────────────────────\n#    Sepal.Length    0.993             0.10181\n#    Sepal.Width              0.725    0.42199\n#    Petal.Length    0.933             0.00483\n#    Petal.Width     0.897             0.07088\n#  ─────────────────────────────────────────────\n#    Notat. „Oblimin“-rotasjon ble brukt\n#"
             ],
             "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA\n#\n#  Multivariate Tests\n#  ───────────────────────────────────────────────────────────────────────────\n#                                     value     F       df1    df2    p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  Univariate Tests\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                 Dependent Variable    Sum of Squares    df     Mean Square    F         p\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    Residuals    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#": [
-                ""
+                "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA\n#\n#  Multivariate tester\n#  ───────────────────────────────────────────────────────────────────────────────\n#                                     Verdi    F       df1    df2    p\n#  ──────────────────────────────────────────────────────────────────────────\n#    Species    Pillais spor           1.19    53.5      8    290    < .001\n#               Wilks' lambda         0.0234    199      8    288    < .001\n#               Hotellings spor        32.5     581      8    286    < .001\n#               Roys største rot       32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────────\n#\n#\n#  Univariate tester\n#  ─────────────────────────────────────────────────────────────────────────────────────\n#                Avhengig variabel    Kvadratsum    df    Varians     F         p\n#  ─────────────────────────────────────────────────────────────────────────────────────\n#    Species     Sepal.Length              63.21      2    31.6061     119.3    < .001\n#                Sepal.Width               11.34      2     5.6725      49.2    < .001\n#                Petal.Length             437.10      2   218.5514    1180.2    < .001\n#                Petal.Width               80.41      2    40.2067     960.0    < .001\n#    Residuer    Sepal.Length              38.96    147     0.2650\n#                Sepal.Width               16.96    147     0.1154\n#                Petal.Length              27.22    147     0.1852\n#                Petal.Width                6.16    147     0.0419\n#  ─────────────────────────────────────────────────────────────────────────────────────\n#"
             ],
             "data('iris')\n\npca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  PRINCIPAL COMPONENT ANALYSIS\n#\n#  Component Loadings\n#  ────────────────────────────────────────\n#                    1         Uniqueness\n#  ────────────────────────────────────────\n#    Sepal.Length     0.890        0.2076\n#    Sepal.Width     -0.460        0.7883\n#    Petal.Length     0.992        0.0168\n#    Petal.Width      0.965        0.0688\n#  ────────────────────────────────────────\n#    Note. 'varimax' rotation was used\n#": [
-                ""
+                "data('iris')\n\npca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  HOVEDKOMPONENTANALYSE\n#\n#  Komponentladinger\n#  ─────────────────────────────────────\n#                    1         Unikhet\n#  ─────────────────────────────────────\n#    Sepal.Length     0.890     0.2076\n#    Sepal.Width     -0.460     0.7883\n#    Petal.Length     0.992     0.0168\n#    Petal.Width      0.965     0.0688\n#  ─────────────────────────────────────\n#    Notat. „Varimax“-rotasjon ble brukt\n#"
             ],
             "data('iris')\n\nreliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),\n            omegaScale = TRUE)\n\n#\n#  RELIABILITY ANALYSIS\n#\n#  Scale Reliability Statistics\n#  ─────────────────────────────────────────\n#             Cronbach's α    McDonald's ω\n#  ─────────────────────────────────────────\n#    scale           0.708           0.848\n#  ─────────────────────────────────────────\n#": [
-                ""
+                "data('iris')\n\nreliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),\n            omegaScale = TRUE)\n\n#\n#  RELIABILITETSANALYSE\n#\n#  Statistikk på skalareliabilitet\n#  ────────────────────────────────────────\n#             Cronbachs α    McDonald's ω\n#  ────────────────────────────────────────\n#    Skala          0.708           0.848\n#  ────────────────────────────────────────\n#"
             ],
             "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  CORRELATION MATRIX\n#\n#  Correlation Matrix\n#  ──────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ──────────────────────────────────────────────────────────────\n#    mpg     Pearson's r        —    -0.852    -0.848    -0.776\n#            p-value            —    < .001    < .001    < .001\n#\n#    cyl     Pearson's r                  —     0.902     0.832\n#            p-value                      —    < .001    < .001\n#\n#    disp    Pearson's r                            —     0.791\n#            p-value                                —    < .001\n#\n#    hp      Pearson's r                                      —\n#            p-value                                          —\n#  ──────────────────────────────────────────────────────────────\n#": [
-                ""
+                "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  KORRELASJONSMATRIKS\n#\n#  Korrelasjonsmatriks\n#  ────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ────────────────────────────────────────────────────────────\n#    mpg     Pearsons r       —    -0.852    -0.848    -0.776\n#            p-verdi          —    < .001    < .001    < .001\n#\n#    cyl     Pearsons r                 —     0.902     0.832\n#            p-verdi                    —    < .001    < .001\n#\n#    disp    Pearsons r                           —     0.791\n#            p-verdi                              —    < .001\n#\n#    hp      Pearsons r                                     —\n#            p-verdi                                        —\n#  ────────────────────────────────────────────────────────────\n#"
             ],
             "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIAL CORRELATION\n#\n#  Partial Correlation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-value             —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-value        < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-value        < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Note. controlling for 'hp'\n#": [
-                ""
+                "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIELL KORRELASJON\n#\n#  Partiell Korrelasjon\n#  ───────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ───────────────────────────────────────────────────\n#    mpg     Pearsons r         —\n#            p-Wert             —\n#\n#    cyl     Pearsons r    -0.590         —\n#            p-Wert        < .001         —\n#\n#    disp    Pearsons r    -0.606     0.719        —\n#            p-Wert        < .001    < .001        —\n#  ───────────────────────────────────────────────────\n#    Notat. Kontrollerer for hp\n#"
             ],
             "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1    4.12e-10    41.4     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ──────────────────────────────────────────────────────────────────\n#    Predictor          Estimate     SE          Z            p\n#  ──────────────────────────────────────────────────────────────────\n#    Intercept          -4.71e-16        1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079        1.06        1.961    0.050\n#    5 – 3                  0.693        1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693        1.22        0.566    0.571\n#    8 – 4                  2.485        1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386        1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386        1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867    42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485        1.44       -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────\n#\n#": [
-                ""
+                "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEÆR REGRESJON\n#\n#  Mål for modelltilpassing\n#  ────────────────────────────────────────\n#    Modell    Avvik       AIC     R²-McF\n#  ────────────────────────────────────────\n#         1    4.12e-10    41.4    1.000\n#  ────────────────────────────────────────\n#\n#\n#  MODELLSPEZIFIKKE RESULTATER\n#\n#  MODELL 1\n#\n#  Modellkoeffisienter\n#  ───────────────────────────────────────────────────────────────────\n#    Prediktor          Estimat      Std.-feil    Z            p\n#  ───────────────────────────────────────────────────────────────────\n#    Skæringspubkt      -4.71e-16         1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079         1.06        1.961    0.050\n#    5 – 3                  0.693         1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693         1.22        0.566    0.571\n#    8 – 4                  2.485         1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386         1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386         1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867     42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485         1.44       -1.722    0.085\n#  ───────────────────────────────────────────────────────────────────\n#\n#"
             ],
             "data('mtcars')\ndat <- mtcars\n\n# frequency tables can be provided for factors\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESCRIPTIVES\n#\n#  Descriptives\n#  ───────────────────────────────────────────\n#               mpg     cyl     disp    gear\n#  ───────────────────────────────────────────\n#    N            32      32      32      32\n#    Missing       0       0       0       0\n#    Mean       20.1    6.19     231    3.69\n#    Median     19.2    6.00     196    4.00\n#    Minimum    10.4    4.00    71.1       3\n#    Maximum    33.9    8.00     472       5\n#  ───────────────────────────────────────────\n#\n#\n#  FREQUENCIES\n#\n#  Frequencies of gear\n#  ────────────────────\n#    Levels    Counts\n#  ────────────────────\n#    3             15\n#    4             12\n#    5              5\n#  ────────────────────\n#\n\n# spliting by a variable\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# providing histograms\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# splitting by multiple variables\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)": [
-                ""
+                "data('mtcars')\ndat <- mtcars\n\n# frekvenstabeller kan gis for faktorer\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESKRIPTIVSTATISTIKK\n#\n#  Deskriptivstatistikk\n#  ────────────────────────────────────────────────\n#                     mpg    cyl     disp    gear\n#  ────────────────────────────────────────────────\n#    N                 32      32      32      32\n#    Mangler            0       0       0       0\n#    Gjennomsnitt    20.1    6.19     231    3.69\n#    Median          19.2    6.00     196    4.00\n#    Minimum         10.4    4.00    71.1       3\n#    Maksimum        33.9    8.00     472       5\n#  ────────────────────────────────────────────────\n#\n#\n#  FREKVENSER\n#\n#  Frekvenser av gear\n#  ──────────────────\n#    Nivå    Antall\n#  ──────────────────\n#    3           15\n#    4           12\n#    5            5\n#  ──────────────────\n#\n\n# gruppering etter en variabel\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median = F, min = F, max = F, n = F, missing = F)\n\n# vis histogrammer\ndescriptives(formula = mpg ~ cyl, dat, hist = T,\n    median = F, min = F, max = F, n = F, missing = F)\n\n# gruppering etter flere variabler\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median = F, min = F, max = F, missing = F)"
             ],
             "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────\n#    Model    R        R²\n#  ───────────────────────────\n#        1    0.802    0.643\n#  ───────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────\n#    Predictor    Estimate    SE         t         p\n#  ────────────────────────────────────────────────────────\n#    Intercept      -253.8    1086.16    -0.234     0.816\n#    women           -50.9       8.56    -5.948    < .001\n#    prestige        141.4      29.91     4.729    < .001\n#    education       177.2     187.63     0.944     0.347\n#  ────────────────────────────────────────────────────────\n#": [
-                ""
+                "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEÆR REGRESJON\n#\n#  Mål for Modelltilpassing\n#  ────────────────────────────\n#    Modell    R        R²\n#  ────────────────────────────\n#         1    0.802    0.643\n#  ────────────────────────────\n#\n#\n#  MODELLSPEZIFIKKE RESULTATER\n#\n#  MODELL 1\n#\n#\n#  Modellkoeffisienter\n#  ─────────────────────────────────────────────────────────────\n#    Prediktor        Estimat    Std.-feil         t         p\n#  ─────────────────────────────────────────────────────────────\n#    Skjæringspunkt    -253.8      1086.16    -0.234     0.816\n#    women              -50.9         8.56    -5.948    < .001\n#    prestige           141.4        29.91     4.729    < .001\n#    education          177.2       187.63     0.944     0.347\n#  ─────────────────────────────────────────────────────────────\n#"
             ],
             "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    Residuals              1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)": [
-                ""
+                "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ──────────────────────────────────────────────────────────────\n#                Kvadratsum    df    Varians    F        p\n#  ──────────────────────────────────────────────────────────────\n#    supp               205     1      205.4     11.4     0.001\n#    dose              2224     1     2224.3    124.0    < .001\n#    Residuer          1023    57       17.9\n#  ──────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)"
             ],
             "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means": [
-                ""
+                "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ──────────────────────────────────────────────────────────────\n#                Kvadratsum    df    Varians    F        p\n#  ──────────────────────────────────────────────────────────────\n#    dose              2426     2     1213.2    92.00    < .001\n#    supp               205     1      205.4    15.57    < .001\n#    dose:supp          108     2       54.2     4.11     0.022\n#    Residuen           712    54       13.2\n#  ──────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # beregn de estimerte gjennomsnittene for\n    emmPlots = TRUE,              # supp og dose:supp og gi ut diagrammer og\n    emmTables = TRUE)             # tabeller med disse"
             ],
             "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ONE-WAY ANOVA (NON-PARAMETRIC)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#": [
-                ""
+                "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ANOVA MED ÉN FAKTOR (IKKE-PARAMETRISK)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#"
             ],
             "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  INDEPENDENT SAMPLES T-TEST\n#\n#  Independent Samples T-Test\n#  ────────────────────────────────────────────────────\n#                          statistic    df      p\n#  ────────────────────────────────────────────────────\n#    len    Student's t         1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#": [
-                ""
+                "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  UAVHENGIG T-TEST\n#\n#  Uavhengig t-test\n#  ─────────────────────────────────────────────────────\n#                          Statistikk    df      p\n#  ─────────────────────────────────────────────────────\n#    len    Student's t          1.92    58.0    0.060\n#  ─────────────────────────────────────────────────────\n#"
             ],
             "data('ToothGrowth')\n\nttestOneS(ToothGrowth, vars = vars(len, dose))\n\n#\n#  ONE SAMPLE T-TEST\n#\n#  One Sample T-Test\n#  ──────────────────────────────────────────────────────\n#                           statistic    df      p\n#  ──────────────────────────────────────────────────────\n#    len     Student's t         19.1    59.0    < .001\n#    dose    Student's t         14.4    59.0    < .001\n#  ──────────────────────────────────────────────────────\n#": [
-                ""
+                "data('ToothGrowth')\n\nttestOneS(ToothGrowth, vars = vars(len, dose))\n\n#\n#  T-TEST FOR ETT UTVALG\n#\n#  t-test for ett utvalg\n#  ───────────────────────────────────────────────────────\n#                           Statistikk    df      p\n#  ───────────────────────────────────────────────────────\n#    len     Student's t          19.1    59.0    < .001\n#    dose    Student's t          14.4    59.0    < .001\n#  ───────────────────────────────────────────────────────\n#"
             ],
             "data('ToothGrowth')\ndat <- ToothGrowth\ndat$dose <- factor(dat$dose)\n\nanovaOneW(formula = len ~ dose, data = dat)\n\n#\n#  ONE-WAY ANOVA\n#\n#  One-Way ANOVA (Welch's)\n#  ────────────────────────────────────────\n#           F       df1    df2     p\n#  ────────────────────────────────────────\n#    len    68.4      2    37.7    < .001\n#  ────────────────────────────────────────\n#": [
-                ""
+                "data('ToothGrowth')\ndat <- ToothGrowth\ndat$dose <- factor(dat$dose)\n\nanovaOneW(formula = len ~ dose, data = dat)\n\n#\n#  ANOVA MED ÉN FAKTOR\n#\n#  ANOVA med én faktor (Welch)\n#  ────────────────────────────────────────\n#           F       df1    df2     p\n#  ────────────────────────────────────────\n#    len    68.4      2    37.7    < .001\n#  ────────────────────────────────────────\n#"
             ],
             "Densities for variables": [
                 "Tettheter for variabler"
@@ -1660,17 +1672,29 @@
             "Dependent Variable": [
                 "Avhengig variabel"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "Den avhengige variabelen '{dep}' inneholder uendelige verdier"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "Den avhengige variabelen '{dep}' inneholder ingen data (etter å ha fjernet rader med manglende verdier)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "Den avhengige variabelen '{dep}' inneholder bare én unik verdi (etter å ha fjernet rader med manglende verdier)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "Den avhengige variabelen '{dep}' må være kontinuerlig"
+            ],
             "Dependent Variable Label": [
                 "Label for avhengig variabel"
-            ],
-            "Dependent variable must be numeric": [
-                "Avhengig variabel må være numerisk"
             ],
             "Dependent Variables": [
                 "Avhengige variabler"
             ],
+            "Dependent variables are very highly correlated": [
+                "De avhengige variablene er svært høyt korrelert"
+            ],
             "deprecated": [
-                ""
+                "avviklet"
             ],
             "Descriptive Plot": [
                 "Deskriptiv diagram"
@@ -1682,10 +1706,10 @@
                 "Deskriptivstatistikk"
             ],
             "Descriptives are an assortment of summarising statistics, and visualizations which allow exploring the shape and distribution of data. It is good practice to explore your data with descriptives before proceeding to more formal tests.": [
-                "Deskriptivstatistikk er et utvalg av statistiske oppsummeringer og visualiseringer som gjør det mulig å utforske formen og fordelingen av data. Det er lurt å utforske dataene deskriptivstatistisk før å gå videre til inferensstatistiske tester."
+                "Deskriptivstatistikk er et utvalg av oppsummerende statistikker og visualiseringer som gjør det mulig å utforske formen og fordelingen av data. Det er lurt å utforske dataene deskriptivstatistisk før en går videre til inferensstatistiske tester."
             ],
             "descriptives plot": [
-                ""
+                "Deskriptivstatistisk diagram"
             ],
             "Descriptives Plots": [
                 "Deskriptive diagrammer"
@@ -1699,9 +1723,6 @@
             "Descriptives table": [
                 "Tabell med deskriptivstatistikk"
             ],
-            "dev": [
-                ""
-            ],
             "Deviance": [
                 "Avvik"
             ],
@@ -1709,13 +1730,13 @@
                 "Avvik"
             ],
             "df": [
-                ""
+                "df"
             ],
             "df1": [
-                ""
+                "df1"
             ],
             "df2": [
-                ""
+                "df2"
             ],
             "Difference": [
                 "Differanse"
@@ -1736,10 +1757,10 @@
                 "Ikke anta lik varians (Welch's)"
             ],
             "drag variable here": [
-                ""
+                "dra variabelen hit"
             ],
             "drag variables here": [
-                ""
+                "dra variablene hit"
             ],
             "DSCF pairwise comparisons": [
                 "Parvise sammenligninger etter DSCF"
@@ -1768,14 +1789,17 @@
             "Eigenvalues greater than": [
                 "Eigenverdier større enn"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Tomme celler i mellomsubjekt-design: minst én kombinasjon av nivåer på mellomsubjekt-faktorene har 0 observasjoner"
+            ],
             "Equal cell weights": [
                 "Celler er vektet likt"
             ],
             "equal groups": [
-                ""
+                "grupper med lik størrelse"
             ],
             "error %": [
-                ""
+                "% feil"
             ],
             "Error bars": [
                 "Usikkerhetsstolper"
@@ -1823,7 +1847,7 @@
                 "Forventede antall"
             ],
             "Expected Proportions": [
-                "Forventede proporsjoner"
+                "Forventete proporsjoner"
             ],
             "Exploration": [
                 "Eksplorasjon"
@@ -1833,6 +1857,15 @@
             ],
             "Extraction": [
                 "Ekstraksjon"
+            ],
+            "Extreme values": [
+                "Ekstremverdier"
+            ],
+            "Extreme Values": [
+                "Ekstremverdier"
+            ],
+            "Extreme values of $key": [
+                "Ekstremverdier for $key"
             ],
             "F": [
                 "F"
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "Faktor"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Faktor '{faktor}' har mindre enn to nivåer. Faktorer må ha minst to nivåer"
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "Faktor «{faktor}» må ha minst 2 nivåer"
             ],
-            "Factor '{factorName}' contains no data": [
-                "Faktor «{factorName}» inneholder ingen data"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Faktor '{factorName}' inneholder ingen data (etter å ha fjernet rader med manglende verdier)"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "Faktor «{factorName}» inneholder bare ett nivå"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Faktor '{factorName}' inneholder bare ett faktornivå (etter å ha fjernet rader med manglende verdier)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Faktor «{factorName}» inneholder faktornivåer som blir ikke brukt (etter å ha fjernet rader med manglende verdier)"
             ],
             "Factor {0}": [
                 "Faktor {0}"
@@ -1871,7 +1910,7 @@
                 "Faktorkovarianser"
             ],
             "Factor Estimates": [
-                "Estimater for faktor"
+                "Estimater for faktorene"
             ],
             "Factor Intercepts": [
                 "Skjæringspunkt for faktor"
@@ -1898,13 +1937,13 @@
                 "Faktorvarianser = 1"
             ],
             "factor(s)": [
-                ""
+                "Faktor(er)"
             ],
             "Factors": [
                 "Faktorer"
             ],
             "factors": [
-                ""
+                "Faktorer"
             ],
             "Fisher's": [
                 "Fisher's"
@@ -1913,7 +1952,7 @@
                 "Fisher's eksakt test"
             ],
             "Fit Measures": [
-                "Fit-målinger"
+                "Mål for modelltilpassing"
             ],
             "Fitted": [
                 "Tilpasset (fitted)"
@@ -1925,7 +1964,7 @@
                 "Fast antall"
             ],
             "fixed parameter": [
-                ""
+                "fast parameter"
             ],
             "Flag significant comparisons": [
                 "Marker signifikante sammenligninger"
@@ -1934,10 +1973,10 @@
                 "Marker signifikante korrelasjoner"
             ],
             "flag significant correlations (p < .05) with symbols.": [
-                ""
+                "marker signifikante korrelasjoner (p < .05) med symboler."
             ],
             "flag significant post-hoc comparisons.": [
-                ""
+                "marker signifikante post-hoc-sammenligninger."
             ],
             "Frequencies": [
                 "Frekvenser"
@@ -2024,7 +2063,7 @@
                 "Hₐ er en positiv korrelasjon"
             ],
             "Hₐ is proportion {direction} {testValue}": [
-                "Hₐ er en proporsjon {direction} {testValue}"
+                "Hₐ er at andelen er {direction} {testValue}"
             ],
             "Haldane-Anscombe correction applied": [
                 "Haldane-Anscombe-korreksjon anvendt"
@@ -2034,6 +2073,9 @@
             ],
             "Helmert": [
                 "Helmert"
+            ],
+            "hidden": [
+                "skjult"
             ],
             "Hide loadings below": [
                 "Skjul ladinger under"
@@ -2068,14 +2110,14 @@
             "Hypothesis": [
                 "Hypotese"
             ],
-            "if item dropped": [
-                ""
+            "If item dropped": [
+                "Hvis item (spørsmål) fjernes"
             ],
             "in development": [
-                ""
+                "under utvikling"
             ],
             "include a summary of the groups": [
-                ""
+                "legg til et sammendrag av gruppene"
             ],
             "Independent Samples": [
                 "Uavhengige prøver"
@@ -2123,7 +2165,7 @@
                 "Item «{item}» må være numerisk"
             ],
             "item {item} correlates negatively with the total scale and probably should be reversed": [
-                ""
+                "item {items} korrelerer negativt med hele skalaen og bør inverteres"
             ],
             "Item Reliability Statistics": [
                 "Statistikk på item-reliabilitet"
@@ -2134,14 +2176,11 @@
             "Item-rest correlation": [
                 "Item-rest-korrelasjon"
             ],
-            "item-rest correlation": [
-                ""
-            ],
             "Items": [
                 "Items"
             ],
             "items {items} correlate negatively with the total scale and probably should be reversed": [
-                ""
+                "item {items} korrelerer negativt med hele skalaen og bør inverteres"
             ],
             "Jittered": [
                 "Jittered"
@@ -2171,7 +2210,7 @@
                 "Kurtosis"
             ],
             "Label outliers": [
-                ""
+                "Marker uteliggere"
             ],
             "Layers": [
                 "Lag"
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "Nivå 2"
-            ],
-            "Levels": [
-                "Nivåer"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "Levenes test er signifikant (p < 0,05), noe som tyder på et brudd på antakelsen om like varianser"
@@ -2201,7 +2237,7 @@
                 "Tester av sannsynlighetsforhold"
             ],
             "linear": [
-                ""
+                "lineær"
             ],
             "Linear Regression": [
                 "Lineær regresjon"
@@ -2213,7 +2249,7 @@
                 "Logg odds ratio"
             ],
             "Log odds ratio exact": [
-                "Eksakt logg-odds-ratio"
+                "Eksakt log-odds-forhold"
             ],
             "Log-Linear Regression": [
                 "Log-lineær regresjon"
@@ -2225,7 +2261,7 @@
                 "Nedre"
             ],
             "lower bound": [
-                ""
+                "nedre grense"
             ],
             "MANCOVA": [
                 "MANCOVA"
@@ -2240,16 +2276,16 @@
                 "Mantel-Haenszel-trendtest"
             ],
             "Marginal Mean": [
-                ""
+                "Gjennomsnitt"
             ],
             "Marginal Means": [
-                ""
+                "Gjennomsnitter"
             ],
             "Marginal means plots": [
-                ""
+                "Diagram med gjennomsnitt"
             ],
             "Marginal means tables": [
-                ""
+                "Tabell med gjennomsnitt"
             ],
             "Mauchly's W": [
                 "Mauchly's W"
@@ -2283,9 +2319,6 @@
             ],
             "Mean": [
                 "Gjennomsnitt"
-            ],
-            "mean": [
-                ""
             ],
             "Mean ({ciWidth}% CI)": [
                 "Gjennomsnitt ({ciWidth}% KI)"
@@ -2381,13 +2414,13 @@
                 "Modellsammenlikninger"
             ],
             "Model Fit": [
-                "Modell-Fit"
+                "Modelltilpassing"
             ],
             "Model Fit Measures": [
-                "Mål for modelltilpasning"
+                "Mål for modelltilpassing"
             ],
             "Model fit measures": [
-                "Mål for modelltilpasning"
+                "Mål for modelltilpassing"
             ],
             "Model Specific Results": [
                 "Modellspesifikke resultater"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "Modifikasjonsindekser"
             ],
+            "Monte Carlo simulation": [
+                "Monte Carlo-simulasjon"
+            ],
             "More than one mode exists, only the first is reported": [
                 "Det finnes mer enn én modus, bare den første berettes"
+            ],
+            "Most extreme": [
+                "Mest ekstreme"
             ],
             "MSA": [
                 "MSA"
@@ -2459,7 +2498,7 @@
                 "Ingen"
             ],
             "none": [
-                ""
+                "ingen"
             ],
             "Normal Scaled Items": [
                 "Normalskalerte items"
@@ -2473,11 +2512,23 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Test på normalfordeling (Shapiro-Wilk)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                "Ikke alle koeffisienter kunne estimeres (sannsynligvis fordi resultatmatrisen er singulær)"
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Ikke tilgjengelig på grunn av for stort antall målinger (> 5000)."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Ikke nok frihetsgrader til å estimere alle modelleffektene"
+            ],
             "Number of Components": [
                 "Antall komponenter"
             ],
             "Number of components": [
                 "Antall komponenter"
+            ],
+            "Number of extreme values": [
+                "Antall ekstremverdier"
             ],
             "Number of Factors": [
                 "Antall faktorer"
@@ -2485,11 +2536,14 @@
             "Number of factors": [
                 "Antall faktorer"
             ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Antall forespurte ekstremverdier er høyere enn antall rader i dataene."
+            ],
             "Oblimin": [
                 "Oblimin"
             ],
             "oblimin": [
-                ""
+                "Oblimin"
             ],
             "Observed": [
                 "Observert"
@@ -2501,7 +2555,7 @@
                 "Observerte skårer"
             ],
             "octic": [
-                ""
+                "oktisk"
             ],
             "Odds Ratio": [
                 "Odds-forhold"
@@ -2510,7 +2564,7 @@
                 "Odds-forhold"
             ],
             "of total": [
-                ""
+                "av totalt"
             ],
             "Omnibus ANOVA Test": [
                 "Omnibus ANOVA-test"
@@ -2525,10 +2579,10 @@
                 "Omnibus-tester"
             ],
             "one of `'corr'` (default), `'pos'`, `'neg'` specifying the alernative hypothesis; correlated, correlated positively, correlated negatively respectively.": [
-                ""
+                "en av `'corr'` (standard), `'pos'`, `'neg'` som spesifiserer den alternative hypotesen; henholdsvis korrelert, positiv korrelert eller negativ korrelert."
             ],
             "one of `'part'` (default) or `'semi'` specifying the type of partial correlation to calculate; partial or semipartial correlation.": [
-                ""
+                "en av `'part'` (standard) eller `'semi'` som spesifiserer typen av korrelasjon som skal beregnes; partiell eller semipartiell korrelasjon."
             ],
             "One or both groups do not contain enough observations": [
                 "Én eller begge gruppene inneholder ikke nok observasjoner"
@@ -2549,31 +2603,31 @@
                 "Minst én koeffisient i modellen '{modelNo}' kunne ikke estimeres på grunn av perfekt kollinearitet."
             ],
             "one or more of `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'`, or `'bic'`; use CFI, TLI, SRMR, RMSEA + 90% confidence interval, adjusted AIC, and BIC model fit measures, respectively": [
-                ""
+                "en eller flere av `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'` eller `'bic'`; bruk CFI, TLI, SRMR, RMSEA + 90 % konfidensintervall eller justert AIC eller BIC som mål for modelltilpassing"
             ],
             "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
-                ""
+                "en eller flere av `'eta'`, `'partEta'` eller `'omega'`; bruk henholdsvis η², partiell η² eller ω² som effektstørrelse"
             ],
             "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
-                ""
+                "en eller flere av `'none'` (standard), `'GG'` eller `'HF'`; bruk enten ingen korreksjon av p-verdier for sferisitet, Greenhouse-Geisser-korreksjon eller Huynh-Feldt-korreksjon"
             ],
             "one or more of `'none'`, `'tukey'` (default), `'scheffe'`, `'bonf'`, or `'holm'`; use no, Tukey, Scheffe, Bonferroni and Holm posthoc corrections, respectively": [
-                ""
+                "en eller flere av `'ingen'`, `'tukey'` (standard), `'scheffe'`, `'bonf'` eller `'holm'`; bruk enten ingen, Tukey-, Scheffé-, Bonferroni- eller Holm-korreksjon for post-hoc-tester"
             ],
             "one or more of `'none'`, `'tukey'`, `'scheffe'`, `'bonf'`, or `'holm'`; provide no, Tukey, Scheffe, Bonferroni, and Holm Post Hoc corrections respectively": [
-                ""
+                "en eller flere av `'ingen'`, `'tukey'`, `'scheffe'`, `'bonf'` eller `'holm'`; bruk enten ingen, Tukey-, Scheffé-, Bonferroni- eller Holm-korreksjon for post-hoc-tester"
             ],
             "one or more of `'pillai'`, `'wilks'`, `'hotel'`, or `'roy'`; use Pillai's Trace, Wilks' Lambda, Hotelling's Trace, and Roy's Largest Root multivariate statistics, respectively": [
-                ""
+                "en eller flere av `'pillai'`, `'wilks'`, `'hotell'` eller `'roy'`; bruk enten Pillais spor, Wilks' lambda, Hotellings spor eller Roys største rot som multivariat statistikk"
             ],
             "one or more of `'r2mf'`, `'r2cs'`, or `'r2n'`; use McFadden's, Cox & Snell, and Nagelkerke pseudo-R², respectively": [
-                ""
+                "en eller flere av `'r2mf'`, `'r2cs'` eller `'r2n'`; bruk enten McFaddens, Cox & Snells eller Nagelkerkes pseudo-R²"
             ],
             "One Sample Proportion Tests": [
-                "Proporsjonstests med en utvalg"
+                "Proporsjonstests med ett utvalg"
             ],
             "One Sample T-Test": [
-                "t-Test for en utvalg"
+                "t-test for ett utvalg"
             ],
             "One-Way ANOVA": [
                 "ANOVA med én faktor"
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 "Ordinale resultater"
             ],
+            "Outliers": [
+                "Uteliggere"
+            ],
             "Output": [
                 "Utgave"
             ],
@@ -2615,28 +2672,28 @@
                 "Test av den hele modellen"
             ],
             "p": [
-                ""
+                "p"
             ],
             "p-value": [
-                ""
+                "p-verdi"
             ],
             "p<sub>bonferroni</sub>": [
-                ""
+                "p<sub>Bonferroni</sub>"
             ],
             "p<sub>holm</sub>": [
-                ""
+                "p<sub>Holm</sub>"
             ],
             "p<sub>scheffe</sub>": [
-                ""
+                "p<sub>Scheffé</sub>"
             ],
             "p<sub>tukey</sub>": [
-                ""
+                "p<sub>Tukey</sub>"
             ],
             "Paired Samples": [
-                "Parete stikkprøver"
+                "Parete utvalg"
             ],
             "Paired Samples Contingency Tables": [
-                "Krysstabeller for parete stikkprøver"
+                "Krysstabeller for parete utvalg"
             ],
             "Paired Samples T-Test": [
                 "Paret t-test"
@@ -2669,7 +2726,7 @@
                 "Partiell η²"
             ],
             "partial η²": [
-                ""
+                "partiell η²"
             ],
             "Path Diagram": [
                 "Stidiagram"
@@ -2679,6 +2736,9 @@
             ],
             "Pearson": [
                 "Pearson"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "Pearson-korrelasjon kan ikke beregnes for ikke-numeriske verdier"
             ],
             "Pearson's r": [
                 "Pearsons r"
@@ -2708,40 +2768,40 @@
                 "Persentiler"
             ],
             "perform a Mann-Whitney U test.": [
-                ""
+                "gjennomfør Mann-Whitney U-test."
             ],
             "perform a Shapiro-Wilk test of normality. A low p-value suggests the data is not from a normal distribution.": [
-                ""
+                "gjennomfør Shapiro-Wilk-test på normalfordeling. En lav p-verdi antyder at dataene ikke kommer fra en normalfordeling."
             ],
             "perform an overall model test.": [
-                ""
+                "gjennomfør en test for hele modellen."
             ],
             "perform Fisher's (or what might be call 'normal') ANOVAs.": [
-                ""
+                "gjennomfør Fishers (eller hva kan kalles «vanlige») ANOVAer."
             ],
             "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
-                ""
+                "gjennomfør Shapiro-Wilk-tester på normalfordeling. En lav p-verdi antyder at dataene ikke kommer fra en normalfordeling."
             ],
             "perform Shapiro-Wilk tests of normality. A low p-value suggests the residuals are not normally distributed.": [
-                ""
+                "gjennomfør Shapiro-Wilk-tester på normalfordeling. En lav p-verdi antyder at residuene ikke kommer fra en normalfordeling."
             ],
             "perform Student's independent samples t-tests.": [
-                ""
+                "gjennomfør Student's uavhengige t-tester."
             ],
             "perform Student's one-sample t-tests.": [
-                ""
+                "gjennomfør Student's t-test for ett utvalg."
             ],
             "perform Student's paired samples t-tests.": [
-                ""
+                "gjennomfør Student's parete t-tester."
             ],
             "perform Welch's ANOVAs.": [
-                ""
+                "gjennomfør ANOVAer etter Welch."
             ],
             "perform Welch's tests.": [
-                ""
+                "gjennomfør Welchs tester."
             ],
             "perform Wilcoxon signed rank tests.": [
-                ""
+                "gjennomfør Wilcoxon-test av fortegnsfordeling."
             ],
             "Phi and Cramer's V": [
                 "Phi og Cramers V"
@@ -2756,10 +2816,10 @@
                 "Diagram"
             ],
             "plot densities along the diagonal of the correlation matrix plot.": [
-                ""
+                "gi ut tetthetsdiagrammer langs hoveddiagonalen i korrelasjonsdiagrammet."
             ],
             "plot the data along with the marginal means.": [
-                ""
+                "vis rådataene sammen med de estimerte gjennomsnittene."
             ],
             "Plot Type": [
                 "Diagramtype"
@@ -2843,7 +2903,7 @@
                 "Promax"
             ],
             "promax": [
-                ""
+                "Promax"
             ],
             "Proportion": [
                 "Proporsjon"
@@ -2855,124 +2915,124 @@
                 "Proporsjonstest (N resultater)"
             ],
             "provide a Cohen's d measure of effect size for the post-hoc tests.": [
-                ""
+                "gi ut effektstørrelsene (Cohens d) for post-hoc tester."
             ],
             "provide a confidence interval for the difference between the mean estimate and the test value.": [
-                ""
+                "gi ut konfidensintervaller for forskjellen mellom de gjennomsnittsestimatene og testverdien."
             ],
             "provide a correlation matrix plot.": [
-                ""
+                "gi ut korrelasjonsdiagram."
             ],
             "provide a Kendall's tau-b for each combination of variables.": [
-                ""
+                "gi ut Kendalls tau-b for hver kombinasjon av variabler."
             ],
             "provide a p-value for each correlation co-efficient.": [
-                ""
+                "gi ut p-verdi for hver korrelasjonskoeffisient."
             ],
             "provide a Pearson's r for each combination of variables.": [
-                ""
+                "gi ut Pearsons r for hver kombinasjon av variabler."
             ],
             "provide a Q-Q plot of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
-                ""
+                "gi ut Q-Q-diagram for residuene – diagram viser de faktiske residuene mot hva kunne forventes hvis dataene var *perfekt* normalfordelt. Store avvik fra den diagonale linjen tyder på at dataene ikke kommer fra en normalfordeling."
             ],
             "provide a Spearman's rho for each combination of variables.": [
-                ""
+                "gi ut Spearmans rho for hver kombinasjon av variabler."
             ],
             "provide a table of descriptives for each variable.": [
-                ""
+                "gi ut en tabell med deskriptivstatistikk for hver variable."
             ],
             "provide a table of the estimated marginal means.": [
-                ""
+                "gi ut tabell med de estimerte gjennomsnittene."
             ],
             "provide Bayes factors for the Student's independent samples t-tests.": [
-                ""
+                "gi ut Bayes-faktorer for Student's uavhengige t-tester."
             ],
             "provide Bayes factors for the Student's one-sample t-tests.": [
-                ""
+                "gi ut Bayes-faktorer for Student's t-tester med ett utvalg."
             ],
             "provide Bayes factors for the Student's paired samples t-tests.": [
-                ""
+                "gi ut Bayes-faktorer for Student's parete t-tester."
             ],
             "provide confidence intervals for Pearson's r.": [
-                ""
+                "gi ut konfidensintervaller for Pearsons r."
             ],
             "provide confidence intervals for the effect-sizes": [
-                ""
+                "gi ut konfidensintervaller for effektstørrelsene"
             ],
             "provide confidence intervals for the mean differences.": [
-                ""
+                "gi ut konfidensintervaller for de gjennomsnittlige differansene."
             ],
             "provide confidence intervals for the post-hoc effect sizes.": [
-                ""
+                "gi ut konfidensintervaller for post-hoc-effektstørrelsene."
             ],
             "provide correlation co-efficients in the correlation matrix plot.": [
-                ""
+                "vis korrelasjonskoeffisienter i korrelasjonsdiagrammet."
             ],
             "provide descriptive plots for each group.": [
-                ""
+                "gi ut deskriptivstatistiske diagrammer for hver gruppe."
             ],
             "provide descriptive plots for each variable.": [
-                ""
+                "gi ut deskriptivstatistiske diagrammer for hver variable."
             ],
             "provide descriptives for each group of measurements.": [
-                ""
+                "gi ut deskriptivstatistikk for hver gruppe av målinger."
             ],
             "provide descriptives for each group.": [
-                ""
+                "gi ut deskriptivstatistikk for hver gruppe."
             ],
             "provide descriptives plots.": [
-                ""
+                "gi ut deskriptivstatistiske diagrammer."
             ],
             "provide effect-sizes (Cohen's D).": [
-                ""
+                "gi ut effektstørrelser (Cohens d)."
             ],
             "provide effect-sizes (Cohen's d).": [
-                ""
+                "gi ut effektstørrelser (Cohens d)."
             ],
             "provide Levene's test for homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
-                ""
+                "gjennomfør Levenes test for varianshomogenitet. En lav p-verdi antyder at gruppene har ulik varians."
             ],
             "provide Levene's tests for the homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
-                ""
+                "gjennomfør Levenes test for varianshomogenitet. En lav p-verdi antyder at gruppene har ulik varians."
             ],
             "provide mean differences and standard errors of the mean differences.": [
-                ""
+                "gi ut de gjennomsnittlige differansene og standardfeilen av disse."
             ],
             "provide mean differences with the post-hoc tests.": [
-                ""
+                "gi ut de gjennomsnittlige differansene med post-hoc-testene."
             ],
             "provide mean differences, and standard errors of the mean differences, between the mean estimate, and the test value.": [
-                ""
+                "gi ut de gjennomsnittlige differansene mellom gjennomsnittsestimatet og testverdien og i tillegg standardfeilen for denne differansen."
             ],
             "provide measures of effect size; η², partial η², or ω².": [
-                ""
+                "gi ut effektstørrelse; enten η², partiell η² eller ω²."
             ],
             "provide p-value corrections for sphericity.": [
-                ""
+                "gi ut sfærisitetskorreksjoner for p-verdiene."
             ],
             "provide plots of the estimated marginal means.": [
-                ""
+                "gi ut diagrammer av de estimerte gjennomsnittene."
             ],
             "provide post-hoc tests.": [
-                ""
+                "gi ut post-hoc-tester."
             ],
             "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
-                ""
+                "gi ut Q-Q-diagrammer for residuene – diagrammet viser de faktiske residuene mot hva kunne forventes hvis dataene hadde vært *perfekt* normalfordelt. Store avvik fra den diagonale linjen tyder på at dataene ikke kommer fra en normalfordeling."
             ],
             "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
-                ""
+                "gi ut Q-Q-diagrammer for residuene – diagrammet viser de faktiske residuene mot hva kan forventes hvis dataene hadde vært *perfekt* normalfordelt. Store avvik fra den diagonale linjen tyder på at dataene ikke kommer fra en normalfordeling."
             ],
             "provide significance levels for the post-hoc tests.": [
-                ""
+                "gi ut signifikansnivåer for de post-hoc-testene."
             ],
             "provide sphericity tests.": [
-                ""
+                "gi ut sfærisitetstester."
             ],
             "provide test results (t-value and degrees of freedom) for post-hoc tests.": [
-                ""
+                "gi ut testresultater (t-verdi og frihetsgrader) for de post-hoc-testene."
             ],
             "provide the number of cases.": [
-                ""
+                "gi ut antall av målinger."
             ],
             "Pseudo R²": [
                 "Pseudo-R²"
@@ -3002,19 +3062,19 @@
                 "Q-Q-diagrammer"
             ],
             "quadratic": [
-                ""
+                "kvadratisk"
             ],
             "quartic": [
-                ""
+                "kvartisk"
             ],
             "Quartimax": [
                 "Quartimax"
             ],
             "quartimax": [
-                ""
+                "Quartimax"
             ],
             "quintic": [
-                ""
+                "kvintisk"
             ],
             "R": [
                 "R"
@@ -3030,6 +3090,9 @@
             ],
             "R²<sub>N</sub>": [
                 "R²<sub>N</sub>"
+            ],
+            "R²<sub>T</sub>": [
+                "R²<sub>T</sub>"
             ],
             "Range": [
                 "Variasjonsbredde"
@@ -3104,7 +3167,7 @@
                 "Kovarians av residuene – Modifikasjonsindekser"
             ],
             "Residual Estimates": [
-                "Estimater på residuene"
+                "Estimater for residuene"
             ],
             "Residual Intercepts": [
                 "Skjæringspunkter for residuene"
@@ -3115,8 +3178,8 @@
             "Residual plots": [
                 "Diagrammer av residuene"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "Kvadratsummen på residuene og / eller frihetsgrader er null, noe som indikerer en perfekt tilpasning av modellen"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "Kvadratsummen på residuene og/eller frihetsgrader er null, som indikerer perfekt modelltilpassing"
             ],
             "Residuals": [
                 "Residuer"
@@ -3137,7 +3200,7 @@
                 "Resultater"
             ],
             "reverse scaled item": [
-                ""
+                "invertert item"
             ],
             "Reverse Scaled Items": [
                 "Inverterte items"
@@ -3172,6 +3235,9 @@
             "Row": [
                 "Rad"
             ],
+            "Row number": [
+                "Radnummer"
+            ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "Radvariabelen «{var}» omfatter færre enn 2 nivåer"
             ],
@@ -3179,16 +3245,16 @@
                 "Rader"
             ],
             "rows": [
-                ""
+                "Rader"
             ],
             "rows (default), or columns in bar plot X axis": [
-                ""
+                "bruk rader (standard) eller kolonner for X-aksen i stolpediagram"
             ],
             "Rows compared": [
                 "Sammenlignete rader"
             ],
             "Roy's Largest Root": [
-                "Største rot etter Roy"
+                "Roys største rot"
             ],
             "Sample Size": [
                 "Størrelse på utvalg"
@@ -3197,7 +3263,7 @@
                 "Lagre"
             ],
             "scale": [
-                ""
+                "Skala"
             ],
             "Scale Analysis": [
                 "Skalaanalyse"
@@ -3235,11 +3301,8 @@
             "SD": [
                 "Standardavvik"
             ],
-            "sd": [
-                ""
-            ],
             "SE": [
-                "Standardfeil"
+                "Std.-feil"
             ],
             "SE difference": [
                 "Standardfeil for differanse"
@@ -3254,13 +3317,13 @@
                 "Sensitivitet"
             ],
             "septic": [
-                ""
+                "septisk"
             ],
             "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
-                ""
+                "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTISK REGRESJON\n#\n#  Mål for modeltilpassing\n#  ─────────────────────────────────────\n#    Modell    Avvik    AIC    R²-McF\n#  ─────────────────────────────────────\n#         1      218    226    5.68e-4\n#  ─────────────────────────────────────\n#\n#\n#  MODELLSPEZIFIKKE RESULTATER\n#\n#  MODELL 1\n#\n#  Modellkoeffisienter\n#  ───────────────────────────────────────────────────────\n#    Prediktor    Estimat    Std.-feil    Z        p\n#  ───────────────────────────────────────────────────────\n#    x1            0.0579    0.193        0.300    0.764\n#    x2            0.0330    0.172        0.192    0.848\n#  ───────────────────────────────────────────────────────\n#\n#"
             ],
             "sextic": [
-                ""
+                "sextisk"
             ],
             "Shapiro-Wilk": [
                 "Shapiro-Wilk"
@@ -3290,7 +3353,7 @@
                 "Simplimax"
             ],
             "simplimax": [
-                ""
+                "Simplimax"
             ],
             "Simulations": [
                 "Simulasjoner"
@@ -3338,7 +3401,7 @@
                 "Kvadratsumme for ladinger"
             ],
             "stack or side by side (default), barplot type": [
-                ""
+                "type av stolpediagram, stablet eller side-ved-side (standard)"
             ],
             "Stacked": [
                 "Stablet"
@@ -3368,7 +3431,7 @@
                 "Statistikk"
             ],
             "statistic": [
-                ""
+                "Statistikk"
             ],
             "Statistics": [
                 "Statistikk"
@@ -3413,16 +3476,16 @@
                 "Sammendrag"
             ],
             "t": [
-                ""
+                "t"
             ],
             "T-Tests": [
                 "t-tester"
             ],
             "t-value": [
-                ""
+                "t-verdi"
             ],
             "ten Berge": [
-                ""
+                "ten Berge"
             ],
             "Term {0}": [
                 "Term {0}"
@@ -3452,7 +3515,7 @@
                 "Sfærisitetstester"
             ],
             "th percentile": [
-                ""
+                ". persentil"
             ],
             "The 'iris' data set from R": [
                 "«Iris»-datasettet fra R"
@@ -3461,16 +3524,16 @@
                 "«Delt etter»-variabelen «{var}» inneholder ingen data."
             ],
             "the (optional) weights from `data` to be used in the fitting process": [
-                ""
+                "bruk de (valgfrie) vektene fra `data` i tilpassingsprosessen"
             ],
             "the alternative and null hypotheses;\n\n|              | Alternative (Hₐ)  | Null (H₀)          |\n|--------------|-------------------|--------------------|\n| ≠ Test value | Mean ≠ Test value | Mean = Test value  |\n| > Test value | Mean > Test value | Mean <= Test value |\n| < Test value | Mean < Test value | Mean >= Test value |": [
-                ""
+                "Alternativ- og nullhypothesen;\n\n|             | Alternativhypotese (Hₐ)  | Nullhypotese (H₀)         |\n|-------------|--------------------------|---------------------------|\n| ≠ Testverdi | Gjennomsnitt ≠ Testverdi | Gjennomsnitt = Testverdi  |\n| > Testverdi | Gjennomsnitt > Testverdi | Gjennomsnitt <= Testverdi |\n| < Testverdi | Gjennomsnitt < Testverdi | Gjennomsnitt >= Testverdi |"
             ],
             "the alternative hypothesis.": [
-                ""
+                "alternativhypotesen."
             ],
             "the alternative hypothesis. Allows for one-tailed tests.": [
-                ""
+                "alternativhypotesen. Tillater ensidige tester."
             ],
             "The Analysis of Covariance (ANCOVA) is used to explore the relationship\nbetween a continuous dependent variable, one or more categorical\nexplanatory variables, and one or more continuous explanatory variables\n(or covariates). It is essentially the same analysis as ANOVA, but\nwith the addition of covariates.": [
                 "Kovariansanalyse (ANCOVA) brukes til å utforske sammenhengene\nmellom en kontinuerlig avhengig variabel, én eller flere kategoriske\nuavhengige variabler og én eller flere kontinuerlige uavhengige variabler\n(også kalt kovariater). Det er egentlig den samme analysen som ANOVA, men\nden tillater kovariater i tillegg."
@@ -3488,49 +3551,58 @@
                 "Variansanalysen (ANOVA) brukes til å undersøke relasjonen mellom en\nkontinuerlig avhengig variabel, og én eller flere kategoriske uavhengige\nvariabler. Denne «ANOVA med én faktor» er en foreklet versjon av den\n«vanlige» ANOVA, slik at tillater bare én faktor som uavhengig variabel.\nI tillegg eksisterer også en ANOVA etter Welch. Welchs ANOVA har som\nfordel at det ikke trenger å antas at variansene for alle gruppene er like.\n\nFor å gjøre ting enklere tillater denne ANOVA med én faktor å spesifisere\nflere avhengige variabler. Det resulterer i flere uavhengige tester.\n\nVær oppmerksom på at den samme prosedyren som underligger uavhengig\nt-test etter Welch også står bak Welchs ANOVA."
             ],
             "the between subjects factors (optional).": [
-                ""
+                "mellomsubjekt-faktorene (valgfritt)."
             ],
             "the between subjects terms of the model.": [
-                ""
+                "mellomsubjekt-termene for modellen."
             ],
             "The Binomial test is used to test the Null hypothesis that the proportion of observations match some expected value. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportion must be some other value.": [
                 "Binomialtesten brukes til å teste nullhypotesen at andelen av observasjoner samsvarer med en bestemt forventet verdi. Hvis p-verdien er lav, tyder dette på at nullhypotesen er usann, og at den observerte andelen avviker fra den forventete andelen."
             ],
             "the categorical explanatory (or independent) variables.": [
-                ""
+                "de kategoriske prediktor- (eller uavhengige) variablene."
+            ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "Konfidensintervall av gjennomsnittet antar at gjennomsnitt i stikkprøve følger en t-fordeling med N - 1 frihetsgrader"
             ],
             "the confidence interval width for the effect-sizes.": [
-                ""
+                "bredden på konfidensintervall for effektstørrelsene."
             ],
             "the confidence interval width for the post-hoc effect sizes.": [
-                ""
+                "bredden på konfidensintervall for post-hoc-effektstørrelsene."
             ],
             "the confidence interval width.": [
-                ""
+                "bredden på konfidensintervall."
             ],
             "the continuous explanatory (or independent) variables, also known as covariates.": [
-                ""
+                "de kontinuerlige prediktor- (eller uavhengige) variablene, også kalt kovariater."
             ],
             "the contrasts to use.": [
-                ""
+                "kontrastene som skal brukes."
             ],
             "the control variables of interest.": [
-                ""
+                "de Interesserende kontrollvariablene."
             ],
             "the counts in `data`": [
-                ""
+                "antall i `data`"
             ],
             "the covariates (specifying these makes this an ANCOVA)": [
-                ""
+                "kovariatene (hvis du spesifiserer disse, blir analysen en ANCOVA)"
             ],
             "the covariates from `data`": [
-                ""
+                "kovariatene fra `data`"
             ],
             "The cut-off value is set to {}": [
                 "Cut-off-verdien er satt til {}"
             ],
             "the data as a data frame": [
                 "dataene som `data frame`"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "Datasettet inneholder 0 rader (etter å ha fjernet rader med manglende verdier)"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "Datasettet inneholder 0 rader (eller alle rader inneholder manglende verdier)"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "Den avhengige variabelen «{}» har mer enn to nivåer; binomial logistisk regresjon kan bare gjennomføres med avhengige variabler med to nivåer."
@@ -3542,79 +3614,82 @@
                 "Den avhengige variabelen «{dep}» har bare to nivåer, vurder å gjennomføre en binomial logistisk regresjon."
             ],
             "the dependent variable from `data`, variable must be numeric": [
-                ""
+                "den avhengige variabelen fra `data`, variabelen må være numerisk"
             ],
             "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
-                ""
+                "den avhengige variabelen fra `data` (ikke nødvendig når det brukes en formel, se eksemplene), variabelen må være numerisk"
             ],
             "the dependent variable. For ANCOVA, these will be continuous.": [
-                ""
+                "den avhengige variabelen. For en ANCOVA må denne være kontinuerlig."
             ],
             "the dependent variable. For ANOVA, these will be continuous.": [
-                ""
+                "den avhengige variabelen. For en ANOVA må denne være kontinuerlig."
             ],
             "the dependent variables -- a separate t-test is performed for each dependent variable specified.": [
-                ""
+                "de avhengige variablene – for hver avhengig variabel som er angitt gjennomføres en separat t-test."
             ],
             "the dependent variables (not necessary when using a formula, see the examples)": [
-                ""
+                "de avhengige variablene (ikke nødvendig når det brukes en formel, se eksemplene)"
             ],
             "the dependent variables. For ANOVA, these will be continuous.": [
-                ""
+                "de avhengige variablene. For en ANOVA må disse være kontinuerlige."
             ],
             "the error bars to plot on the marginal means.": [
-                ""
+                "feilstolpene som vises med de estimerte gjennomsnittene."
             ],
             "the explanatory covariates (not necessary when providing a formula, see examples)": [
-                ""
+                "variablene fra `data` som skal brukes som kovariater (ikke nødvendig når det brukes en formel, se eksempler)"
             ],
             "the explanatory factors in `data` (not necessary when providing a formula, see examples)": [
-                ""
+                "variablene fra `data` som skal brukes som faktorer (ikke nødvendig når det brukes en formel, se eksempler)"
             ],
             "the explanatory or independent variable. For ANOVA this will be categorical.": [
-                ""
+                "den prediktor- eller uavhengige variabelen. For en ANOVA må denne være kategorisk."
             ],
             "the explanatory or independent variables. For ANOVA these will be categorical.": [
-                ""
+                "de prediktor- eller uavhengige variablene. For en ANOVA må disse være kategoriske."
             ],
             "the fixed factors from `data`": [
-                ""
+                "de faste faktorene fra `data`"
             ],
             "The Friedman test is used to explore the relationship between a continuous dependent variable and a categorical explanatory variable, where the explanatory variable is 'within subjects' (where multiple measurements are from the same subject). It is analagous to Repeated Measures ANOVA, but with the advantage of being non-parametric, and not requiring the assumptions of normality or homogeneity of variances. However, it has the limitation that it can only test a single explanatory variable at a time.": [
                 "Friedman-testen brukes til å undersøke forholdet mellom en kontinuerlig avhengig variabel og en kategorisk uavhengig variabel, der den uavhengige variabelen er innenfor deltakere (dvs. flere målinger er tatt fra samme deltakeren). Det er analog for til ANOVA for gjentatte målinger, men det er ikke-parametrisk, og derfor ikke krever at dataene er normalfordelt eller varianser må være homogent. Samtidig har testen begrensningen at den bare kan teste én enkelt faktor som uavhengig variabel om gangen."
             ],
             "the grouping variable with two levels (not necessary when using a formula, see the examples)": [
-                ""
+                "grupperingsvariabelen med to nivåer (ikke nødvendig når det brukes en formel, se eksemplene)"
             ],
             "The Kruskal-Wallis test is used to explore the relationship between a continuous dependent variable, and a categorical explanatory variable. It is analagous to ANOVA, but with the advantage of being non-parametric and having fewer assumptions. However, it has the limitation that it can only test a single explanatory variable at a time.": [
                 "Kruskal-Wallis-testen brukes til å undersøke sammenhengen mellom en kontinuerlig avhengig variabel, og en kategorisk uavhengig variabel. Det er analogt med ANOVA, men det er ikke-parametrisk og derfor ha færre forutsetninger. Samtidig har testen begrensningen at den bare kan teste en faktor som uavhengig variabel om gangen."
             ],
             "the label to use for the dependent variable.": [
-                ""
+                "betegnelsen som skal brukes for den avhengige variabelen."
             ],
             "the lavaan syntax used to fit the model": [
-                ""
+                "lavaan-syntaksen som ble brukt for å tilpasse modellen"
             ],
             "the missing value exclusion method. `Analysis by analysis` excludes missing values from each analysis. `Listwise` excludes a row from all analyses if one of its values is missing.": [
-                ""
+                "metoden for å ekskludere manglende verdier. `Analysis by analysis` ekskluderer manglende verdier per analyse. `Listwise` ekskluderer hele raden fra alle analyser hvis en av verdiene mangler."
             ],
             "the missing value exclusion method. `Analysis by analysis` excludes missing values from each variable. `Listwise` excludes a row from all analyses if one of its values is missing.": [
-                ""
+                "metoden for å ekskludere manglende verdier. `Analysis by analysis` ekskluderer manglende verdier per analyse. `Listwise` ekskluderer hele raden fra alle analyser hvis en av verdiene mangler."
             ],
             "the model terms which make up the model.": [
-                ""
+                "de modelltermene som inngår i modellen."
             ],
             "the model terms which make up the model. By default a full factorial model is created, but here the exact terms making up the model can be adjusted.": [
-                ""
+                "de modelltermene som inngår i modellen. Som standard settes opp en modell med alle faktorer men de modelltermene kan bli tilpasset."
             ],
             "the pairs of measurements -- a separate t-test is performed for each pair of measurements.": [
-                ""
+                "måleparene – en separat t-test gjenneomføres for hvert par målinger."
             ],
             "the post-hoc multiple comparisons corrections to use.": [
-                ""
+                "korreksjonene som skal brukes for de multiple sammenligningene i post-hoc-testene."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                "bredden på prior for Bayes-faktorer i Students t-test. Krever en verdi mellom 0.01 og 2.0 (standard: 0.707)."
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
-                ""
+                "bredden på prior for de Bayes-faktorene i Students t-testen. Krever en verdi mellom 0.5 og 2.0 (standard: 0.707)."
             ],
             "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.": [
                 "ANOVA for gjentatte målinger brukes til å undersøke forholdet mellom en\nkontinuerlig avhengig variabel og én eller flere kategoriske uavhengige\nvariabler, der én eller flere av de avhengig variablene er målt «innenfor\ndeltakerne» (dvs. det er flere målinger fra samme deltaker). I tillegg\ntillater denne analysen inkludering av kovariater, noe som også gir\nmulighet for kovariansanalyser (ANCOVA) for gjentatte målinger."
@@ -3623,7 +3698,7 @@
                 "ANOVA for gjentatte målinger brukes til å utforske forholdet\nmellom en kontinuerlig avhengig variabel og én eller flere kategoriske\nuavhengige variabler, der én eller flere av de uavhengige variablene\ner «innenfor deltaker» (der flere målinger er fra samme\ndeltaker / målesubjekt). I tillegg tillater denne analysen inkludering av\nkovariater, noe som også gir mulighet for ANCOVAer for gjentatte målinger.\n\nDenne analysen krever at dataene er i «bredt format», hvor hver linje\nrepresenterer en deltaker / målesubjekt (i motsetning til langt format, hvor\nhver måling av den avhengige variabelen representeres som en rad).\n\nDet finnes også en ikke-parametrisk ekvivalent til ANOVAen for gjentatte målinger\nsom heter Friedman-testen. Den har imidlertid begrensningen av bare å kunne\nteste en enkelt faktor."
             ],
             "the repeated measures design.": [
-                ""
+                "det designet for de gjentatte målingene."
             ],
             "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels": [
                 "Det er bare to gjentatte målinger. Antakelsen om sfæriskhet er alltid gitt når faktoren for gjentatte målinger har bare to nivåer"
@@ -3632,10 +3707,10 @@
                 "Det er bare to gjentatte målinger. Antakelsen om sfæriskhet er alltid gitt når faktoren for gjentatte målinger har bare to nivåer."
             ],
             "the repeated measures measurements.": [
-                ""
+                "de gjentatte målingene."
             ],
             "the repeated measures terms of the model.": [
-                ""
+                "de modelltermene for de gjentatte målingene."
             ],
             "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.": [
                 "Students uavhengig t-test (noen ganger kalt uparet t-test) brukes til å teste\nnullhypotesen om at to grupper har samme gjennomsnitt. En lav p-verdi\nantyder at nullhypotesen ikke er sann, og at gruppemidlene derfor er forskjellige."
@@ -3644,19 +3719,19 @@
                 "Students uavhengig t-test (noen ganger kalt uparet t-test) brukes til å teste\nnullhypotesen om at to grupper har samme gjennomsnitt. En lav p-verdi\nantyder at nullhypotesen ikke er sann, og at gruppemidlene derfor er forskjellige.\n\nStudents uavhengig t-test forutsetter at dataene fra hver gruppe er normalfordelt,\nog at variansene for disse gruppene er like. Hvis du ikke kan anta at gruppene har\nlike varianser, kan Welchs t-test brukes istedenfor. Hvis en i tillegg ikke kan anta at\ndataene i hver gruppe er normalfordelt, kan den ikke-parametriske Mann-Whitney\nU-testen brukes (men vær oppmerksom på at Mann-Whitney U-testen har en litt\nannen nullhypotese, nemlig at fordelingene / rangfølge for hver gruppe er like)."
             ],
             "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.": [
-                "Students t-test for én stikkprøve brukes til å teste nullhypotesen\ngjennomsnittet i populasjonen er lik en bestemt verdi (vanligvis null).\nEn lav p-verdi antyder at nullhypotesen ikke er sann, og at gjennomsnittet\ner forskjellig fra testverdien."
+                "Student's t-test for ett utvalg brukes til å teste nullhypotesen\ngjennomsnittet i populasjonen er lik en bestemt verdi (vanligvis null).\nEn lav p-verdi antyder at nullhypotesen ikke er sann, og at gjennomsnittet\ner forskjellig fra testverdien."
             ],
             "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.\n\nThe Student's One-sample t-test assumes that the data are from a normal\ndistribution -- in the case that one is unwilling to assume this, the\nnon-parametric Wilcoxon signed-rank can be used in it's place (However,\nnote that the Wilcoxon signed-rank has a slightly different null\nhypothesis; that the *median* is equal to the test value).": [
-                "Students t-test for én stikkprøve brukes til å teste nullhypotesen\ngjennomsnittet i populasjonen er lik en bestemt verdi (vanligvis null).\nEn lav p-verdi antyder at nullhypotesen ikke er sann, og at gjennomsnittet\ner forskjellig fra testverdien.\n\nStudents t-test for én stikkprøve forutsetter at dataene er normalfordelt.\nHvis en ikke kan anta dette, kan ikke-parametrisk Wilcoxon-test brukes\nistedenfor (men vær oppmerksom på at Wilcoxon-test har en litt annen\nnullhypotese, nemlig at *median* er lik testverdien)."
+                "Student's t-test for ett utvalg brukes til å teste nullhypotesen\ngjennomsnittet i populasjonen er lik en bestemt verdi (vanligvis null).\nEn lav p-verdi antyder at nullhypotesen ikke er sann, og at gjennomsnittet\ner forskjellig fra testverdien.\n\nStudent's t-test for ett utvalg forutsetter at dataene er normalfordelt.\nHvis en ikke kan anta dette, kan ikke-parametrisk Wilcoxon-test av\nfortegnsfordeling brukes istedenfor (men vær oppmerksom på at\nWilcoxon-test har en litt annen nullhypotese, nemlig at *median* er\nlik testverdien)."
             ],
             "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.": [
                 "Students paret t-test (noen ganger kalt en avhengig t-test) brukes til å\nteste nullhypotesen at forskjellen mellom par av gjentatte målinger er\nlik null. En lav p-verdi antyder at nullhypotesen ikke er sann, og at\nforskjellen mellom måleparene / gjentatte målingene er ikke null."
             ],
             "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.\n\nThe Student's paired samples t-test assumes that pair differences follow\na normal distribution -- in the case that one is unwilling to assume\nthis, the non-parametric Wilcoxon signed-rank can be used in it's place\n(However, note that the Wilcoxon signed-rank has a slightly different\nnull hypothesis; that the two groups of measurements follow the same\ndistribution).": [
-                "Students paret t-test (noen ganger kalt en avhengig t-test) brukes til å\nteste nullhypotesen at forskjellen mellom par av gjentatte målinger er\nlik null. En lav p-verdi antyder at nullhypotesen ikke er sann, og at\nforskjellen mellom måleparene / gjentatte målingene er ikke null.\n\nStudents paret t-test forutsetter at parforskjeller er normalfordelt. I tilfelle\nen kan ikke anta dette kan den ikke-parametriske Wilcoxon-test brukes\n(men vær oppmerksom på at Wilcoxon-test har en litt annen nullhypotese,\nnemlig at de to målingsparene har samme rangfølge / distribusjon)."
+                "Student's paret t-test (noen ganger kalt en avhengig t-test) brukes til å\nteste nullhypotesen at forskjellen mellom par av gjentatte målinger er\nlik null. En lav p-verdi antyder at nullhypotesen ikke er sann, og at\nforskjellen mellom måleparene / gjentatte målingene er ikke null.\n\nStudent's paret t-test forutsetter at parforskjeller er normalfordelt. I tilfelle\nen kan ikke anta dette kan den ikke-parametriske Wilcoxon-test av\nfortegnsfordeling brukes (men vær oppmerksom på at Wilcoxon-test har\nen litt annen nullhypotese, nemlig at de to målingsparene har samme\nrangfølge / distribusjon)."
             ],
             "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
-                ""
+                "termene for å beregne de estimerte gjennomsnittene (det kan angis flere termer)."
             ],
             "the test value to test against (typically zero).": [
                 "testverdien for å teste mot (vanligvis null)."
@@ -3665,10 +3740,10 @@
                 "hvilken korrelasjonstype som skal beregnes"
             ],
             "the type of sums of squares to use; Type 1, 2, or 3.": [
-                "typen av kvadratsumme som skal brukes; Type 1, 2 eller 3."
+                "type av kvadratsummen som skal brukes; type 1, 2 eller 3."
             ],
             "the type of sums of squares to use; Type 2, or 3.": [
-                "typen av kvadratsumme som skal brukes; type 2 eller 3."
+                "type av kvadratsummen som skal brukes; type 2 eller 3."
             ],
             "The underlying `aov` object": [
                 "Det underliggende `aov`-objektet"
@@ -3707,10 +3782,10 @@
                 "bredden på konfidensintervallene."
             ],
             "The χ² Goodness of fit test (not to be confused with the χ² test of independence), tests the Null hypothesis that the proportions of observations match some expected proportions. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportions are different to those tested.": [
-                ""
+                "χ²-testen for fordeling (goodness-of-fit; må ikke forveksles med χ²-testen for uavhengighet), tester nullhypotesen at proporsjonene av observasjoner samsvarer med forventete proporsjonene. Hvis p-verdien er lav, tyder det på at nullhypotesen er usann, og at de observerte proporsjonene er forskjellige fra de forventete."
             ],
             "The χ² test of association (not to be confused with the χ² goodness of fit) is used to test whether two categorical variables are independent or associated. If the p-value is low, it suggests the variables are not independent, and that there is a relationship between the two variables.": [
-                ""
+                "χ²-testen for uavhengighet (må ikke forveksles med χ²-testen for fordeling) brukes til å teste om to kategoriske variabler er uavhengige eller assosierte. Hvis p-verdien er lav, tyder det på at variablene ikke er uavhengige, og at det er en sammenheng mellom de to variablene."
             ],
             "Theoretical Quantiles": [
                 "Teoretiske kvantiler"
@@ -3726,6 +3801,9 @@
             ],
             "Thurstone": [
                 "Thurstone"
+            ],
+            "Tjur's R²": [
+                "Tjur's R²"
             ],
             "TLI": [
                 "TLI"
@@ -3761,7 +3839,7 @@
                 "Total"
             ],
             "total_pc (default), column_pc, or row_pc. Use respectively percentages `of total`, `within columns`, or `within rows` for the bar plot y-axis.": [
-                ""
+                "total_pc (standard), column_pc eller row_pc; bruk enten prosentandeler «av total», «innenfor kolonnene» eller «innenfor radene» for y-aksen i søylediagram."
             ],
             "Tukey": [
                 "Tukey"
@@ -3800,13 +3878,16 @@
                 "Øvre"
             ],
             "upper bound": [
-                ""
+                "øvre grense"
             ],
             "Value": [
                 "Verdi"
             ],
             "value": [
-                ""
+                "verdi"
+            ],
+            "values": [
+                "Verdier"
             ],
             "Values are counts": [
                 "Verdier er antall"
@@ -3845,13 +3926,13 @@
                 "Varianser"
             ],
             "variation from the control variables is only removed from the variables in the columns": [
-                ""
+                "variasjon fra kontrollvariablene fjernes kun fra variablene i kolonnene"
             ],
             "Varimax": [
                 "Varimax"
             ],
             "varimax": [
-                ""
+                "Varimax"
             ],
             "VIF": [
                 "VIF"
@@ -3863,13 +3944,22 @@
                 "W"
             ],
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
-                ""
+                "vei hver celle likt (som standard veies cellene i henhold til cellefrekvensen)."
+            ],
+            "Weight Variable": [
+                "Variabel for vekting"
             ],
             "Weighted by '{varName}'": [
                 "Vektet med «{varName}»"
             ],
+            "Weights": [
+                "Vekter"
+            ],
             "Weights (optional)": [
                 "Vekting (valgfritt)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                "Vektene inneholder negative verdier. Negative vekter er ikke tillatt."
             ],
             "Welch's": [
                 "Welch's"
@@ -3881,7 +3971,7 @@
                 "Wilcoxon-rang"
             ],
             "Wilcoxon signed rank test": [
-                "Wilcoxon rangtest med fortegn"
+                "Wilcoxon-test av fortegnsfordeling"
             ],
             "Wilcoxon W": [
                 "Wilcoxon W"
@@ -3890,10 +3980,10 @@
                 "Wilks' Lambda"
             ],
             "within column": [
-                ""
+                "innenfor kolonnene"
             ],
             "within rows": [
-                ""
+                "innenfor radene"
             ],
             "Within Subjects Effects": [
                 "Effekter innenfor deltakerne"
@@ -3911,64 +4001,64 @@
                 "Y-akse"
             ],
             "ycounts (default) or ypc. Use respectively `counts` or `percentages` for the bar plot y-axis": [
-                ""
+                "`ycounts` (standard) eller `ypc`. Bruk enten `counts` eller `percentages` for y-aksen i stolpediagrammene"
             ],
             "Z": [
                 "Z"
             ],
             "z test difference in 2 proportions": [
-                ""
+                "z-test for forskjell mellom 2 proporsjoner"
             ],
             "z test for difference in 2 proportions": [
-                ""
+                "z-test for forskjell mellom 2 proporsjoner"
             ],
             "z test only available for 2x2 tables": [
-                ""
+                "z-testen er kun tilgjengelig for 2x2-tabeller"
             ],
             "ΔR²": [
-                ""
+                "ΔR²"
             ],
             "ε²": [
-                ""
+                "ε²"
             ],
             "η²": [
-                ""
+                "η²"
             ],
             "η²<sub>G</sub>": [
-                ""
+                "η²<sub>G</sub>"
             ],
             "η²<sub>p</sub>": [
-                ""
+                "η²<sub>p</sub>"
             ],
             "η²p": [
-                ""
+                "η²p"
             ],
             "χ²": [
-                ""
+                "χ²"
             ],
             "χ² continuity correction": [
-                ""
+                "χ² med kontinuitetskorreksjon"
             ],
             "χ² Goodness of Fit": [
-                ""
+                "χ²-test for fordeling"
             ],
             "χ² Goodness of fit": [
-                ""
+                "χ²-test for fordeling"
             ],
             "χ² test": [
-                ""
+                "χ²-test"
             ],
             "χ² test of association": [
-                ""
+                "χ²-test for uavhengighet"
             ],
             "χ² Tests": [
-                ""
+                "χ²-tester"
             ],
             "ω²": [
-                ""
+                "ω²"
             ],
             "specific factor\u0004Factor": [
-                ""
+                "Faktor"
             ]
         }
     },

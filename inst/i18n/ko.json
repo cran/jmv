@@ -1,0 +1,4066 @@
+{
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "1": [
+                ""
+            ],
+            "": {
+                "domain": "messages",
+                "plural_forms": "nplurals=1; plural=0;",
+                "lang": "ko"
+            },
+            "'{col}' contains infinite values": [
+                ""
+            ],
+            "'{col}' contains missing values": [
+                "결측값을 포함하고 있다"
+            ],
+            "'{col}' contains only missing values": [
+                "결측 값들"
+            ],
+            "'{col}' contains only one unique value": [
+                ""
+            ],
+            "'{method}' extraction method was used in combination with a '{rotation}' rotation": [
+                ""
+            ],
+            "'{rotation}' rotation was used": [
+                ""
+            ],
+            "'{var}' contains negative values. Negative weights are not permitted.": [
+                ""
+            ],
+            "{} - Kendall's Tau B": [
+                ""
+            ],
+            "{} - Pearson's r": [
+                ""
+            ],
+            "{} - Spearman's rho": [
+                ""
+            ],
+            "{ciWidth}% CI Lower": [
+                ""
+            ],
+            "{ciWidth}% CI mean {title}": [
+                ""
+            ],
+            "{ciWidth}% CI Upper": [
+                "상한계"
+            ],
+            "{ciWidth}% Confidence Interval": [
+                "신뢰구간"
+            ],
+            "{ciWidth}% Confidence Intervals": [
+                "신뢰구간"
+            ],
+            "{item1} and {item2}": [
+                ""
+            ],
+            "{list}, {nextItem}": [
+                ""
+            ],
+            "{list}, and {lastItem}": [
+                ""
+            ],
+            "{n} pair(s) of values were tied": [
+                ""
+            ],
+            "{type} score based on the variables {vars}": [
+                ""
+            ],
+            "{varName} (reversed)": [
+                ""
+            ],
+            "{varType} of binomial logistic regression model{modelNo}": [
+                ""
+            ],
+            "{varType} of linear regression model{modelNo}": [
+                ""
+            ],
+            "* p < .05, ** p < .01, *** p < .001, one-tailed": [
+                ""
+            ],
+            "%": [
+                "%"
+            ],
+            "% Correct": [
+                "정확도 비율"
+            ],
+            "% of Total": [
+                "전체 비율"
+            ],
+            "% of total": [
+                "전체 비율"
+            ],
+            "% of Variance": [
+                "분산비율"
+            ],
+            "% within column": [
+                "열 비율"
+            ],
+            "% within row": [
+                "행 비율"
+            ],
+            "`'1'`, `'2'` or `'3'` (default), the sum of squares to use": [
+                ""
+            ],
+            "`'2'` or `'3'` (default), the sum of squares to use": [
+                ""
+            ],
+            "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; group 1 different to group 2, group 1 greater than group 2, and group 2 greater than group 1 respectively": [
+                ""
+            ],
+            "`'different'` (default), `'oneGreater'` or `'twoGreater'`, the alternative hypothesis; measure 1 different to measure 2, measure 1 greater than measure 2, and measure 2 greater than measure 1 respectively": [
+                ""
+            ],
+            "`'dt'` (default), `'gt'` or `'lt'`, the alternative hypothesis; different to `testValue`, greater than `testValue`, and less than `testValue` respectively": [
+                ""
+            ],
+            "`'facVar'` or `'facInd'`, how to contrain the model; `'facVar'` fixes the factor variances to one, `'facInd'` fixes each factor to the scale of its first indicator.": [
+                ""
+            ],
+            "`'listwise'` or `'fiml'`, how to handle missing values; `'listwise'` excludes a row from all analyses if one of its entries is missing, `'fiml'` uses a full information maximum likelihood method to estimate the model.": [
+                ""
+            ],
+            "`'means'` (default) or `'medians'`, the error bars to use in the plot": [
+                ""
+            ],
+            "`'minres'` (default), `'ml'`, or `'pa'` use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal axis' as the factor extraction method": [
+                ""
+            ],
+            "`'none'`, `'ci'` (default), or `'se'`. Use no error bars, use confidence intervals, or use standard errors on the marginal mean plots, respectively": [
+                ""
+            ],
+            "`'none'`, `'gamesHowell'` or `'tukey'`, which post-hoc tests to provide; `'none'` shows no post-hoc tests, `'gamesHowell'` shows Games-Howell post-hoc tests where no equivalence of variances is assumed, and `'tukey'` shows Tukey post-hoc tests where equivalence of variances is assumed": [
+                ""
+            ],
+            "`'none'`, `'varimax'` (default), `'quartimax'`, `'promax'`, `'oblimin'`, or `'simplimax'`, the rotation to use in estimation": [
+                ""
+            ],
+            "`'none'`, `'varimax'`, `'quartimax'`, `'promax'`, `'oblimin'` (default), or `'simplimax'`, the rotation to use in estimation": [
+                ""
+            ],
+            "`'notequal'` (default), `'greater'` or `'less'`, the alternative hypothesis": [
+                ""
+            ],
+            "`'parallel'` (default), `'eigen'` or `'fixed'`, the way to determine the number of factors": [
+                ""
+            ],
+            "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing": [
+                ""
+            ],
+            "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing.": [
+                ""
+            ],
+            "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
+                ""
+            ],
+            "`'rows'` or `'columns'` (default), display the variables across the rows or across the columns (default)": [
+                ""
+            ],
+            "`'Thurstone'` (default), `'Bartlett'`, `'tenBerge'`, `'Anderson'`, or `'Harman'` use respectively 'Thurstone', 'Bartlett', 'ten Berge', 'Anderson & Rubin', or 'Harman' method for estimating factor scores": [
+                ""
+            ],
+            "`ANCOVA - ${dep}`": [
+                "공분산분석- 종속변수"
+            ],
+            "`ANOVA - ${dep}`": [
+                "분산분석-종속변수"
+            ],
+            "`columns` or `rows` (default), compare columns/rows in difference of proportions or relative risks (2x2 tables)": [
+                ""
+            ],
+            "`Model Coefficients - ${ dep }`": [
+                "모형계수- 종속변수"
+            ],
+            "`Model Coefficients - ${dep}`": [
+                ""
+            ],
+            "`Proportions - ${var}`": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide a chi-square test for exact fit that compares the model with the perfect fitting model": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide a confidence interval for the estimated marginal means": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide Aikaike's Information Criterion (AIC) for the models": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide Cronbach's α": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimated marginal means plots": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimates for the factor (co)variances": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide estimates for the residual (co)variances": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide mean differences for post-hoc tests": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide Pearson's R": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide significance levels": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide significance levels for post-hoc tests": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the deviance (or -2LogLikelihood) for the models": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the mean": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the median": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the model comparison between the models and the NULL model": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the number of missing values": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the sample size": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the standard deviation": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the statistical measure `R-squared` for the models": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide the statistical measure `R` for the models": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, provide χ²": [
+                ""
+            ],
+            "`TRUE` (default) or `FALSE`, weigh each cell equally or weigh them according to the cell frequency": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), add counts to the  bar plots": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), add mean to box plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), flag significant correlations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), flag significant post-hoc comparisons": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform a Shapiro-Wilk test on the residuals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Fisher's one-way ANOVA which assumes equal variances": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform homogeneity tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Levene's test for homogeneity of variances": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Levene's tests for homogeneity of variances": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Mann-Whitney U tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform pairwise comparisons": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-wilk normality tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-Wilk test of normality": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-Wilk tests of normality": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Shapiro-wilk tests of normality": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform sphericity tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Welch's t-tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), perform Wilcoxon signed rank tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient odds ratio estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient rate ratio estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient standardized estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficients": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a confidence interval for the model estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a correlation matrix plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a correlation plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a cut-off plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a descriptive plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a path diagram of the model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a predicted classification table (or confusion matrix)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a Q-Q plot of multivariate normality": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a Q-Q plot of residuals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a ROC curve plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a standardized estimate for the model coefficients": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a standardized estimate for the model estimates": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide a z test for differences between two proportions": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Aikaike's Information Criterion (AIC) for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide an exact log odds ratio (requires exact2x2 to be installed)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide bar plots (nominal, ordinal variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayes factors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayesian credible intervals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Bayesian Information Criterion (BIC) for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide box plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Box-Tidwell test for linearity of the logit": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Box's M test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Cohen's d effect sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide column percentages": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the comparative measures": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the effect-sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the mean": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the mean difference": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide confidence intervals for the post-hoc effect sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide densities in the correlation matrix plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide density plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide descriptive plots": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide descriptive statistics": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide dot plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide effect sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide effect-sizes": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide estimated marginal means tables": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide estimates for the factor intercepts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide estimates for the residual intercepts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Fisher's exact test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide frequency tables (nominal, ordinal variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide gamma": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide histograms (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide item means": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide item standard deviations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide item-rest correlations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Kendall's tau-b": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Mantel-Haenszel test for trend": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide McDonald's ω": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide means and standard deviations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide means and standard errors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide percentiles": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Phi and Cramer's V": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide posterior plots": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Q-Q plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Q-Q plots of residuals": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide quantiles": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide residual plots where the dependent variable and each covariate is plotted against the standardized residuals.": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide results of the Durbin- Watson test for autocorrelation": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide RMSE for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide row percentages": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Shapiro-Wilk p-value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Shapiro-Wilk test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide Spearman's rho": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide test results (t-value and degrees of freedom) for post-hoc tests": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the contingency coefficient": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the differences in proportions (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the expected counts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the exponential of the log-odds ratio estimate, or the odds ratio estimate": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the exponential of the log-rate ratio estimate, or the rate ratio estimate": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the interquartile range": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the kurtosis": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the log odds ratio (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the maximum": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the mean": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the minimum": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the mode": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the model comparison between the models and the NULL model": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the number of cases": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the observed counts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the odds ratio (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the omnibus ANOVA test for the predictors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the omnibus likelihood ratio tests for the predictors": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted accuracy of outcomes grouped by the cut-off value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted sensitivity of outcomes grouped by the cut-off value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the predicted specificity of outcomes grouped by the cut-off value": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the range": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the rea under the ROC curve (AUC)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the relative risk (only available for 2x2 tables)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the residuals for the observed correlation matrix (i.e., the difference between the expected correlation matrix and the observed correlation matrix)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the skewness": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the standard deviation": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the standard error": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the statistical measure `adjusted R-squared` for the models": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the sum": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the thresholds that are used as cut-off scores for the levels of the dependent variable": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide the variance": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide total percentages": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide VIF and tolerence collinearity statistics": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide violin plots (continuous variables only)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide what the Cronbach's α would be if the item was dropped": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide what the McDonald's ω would be if the item was dropped": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), provide χ² with continuity correction": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), report a summary of the different groups": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), set a cut-off used for the predictions": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show barplots": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show Bartlett's test of sphericity results": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show eigenvalue table": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show factor summary": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show inter-factor correlations": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy (MSA) results": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show model fit measures and test": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), show scree plot": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), sort the factor loadings by size": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), test for homogeneity of variances (i.e., Levene's test)": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), the variables are counts": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default), whether expected counts should be displayed": [
+                ""
+            ],
+            "`TRUE` or `FALSE` (default); perform an overall model test": [
+                ""
+            ],
+            "±%": [
+                ""
+            ],
+            "< Test value": [
+                "< 테스트 값"
+            ],
+            "≠ Test value": [
+                "검증 값"
+            ],
+            "> Test value": [
+                "> 테스트 값"
+            ],
+            "⁻ mean - 1SD, <sup>μ</sup> mean, ⁺ mean + 1SD": [
+                ""
+            ],
+            "1 - Specificity": [
+                "1 - 특이성"
+            ],
+            "2 Outcomes": [
+                "2 결과"
+            ],
+            "25,50,75": [
+                ""
+            ],
+            "a (semi)partial correlation matrix table": [
+                ""
+            ],
+            "a comma-sepated list (default: 25,50,75) specifying the percentiles": [
+                ""
+            ],
+            "a correlation matrix plot": [
+                "상관행렬표"
+            ],
+            "a correlation matrix table": [
+                "상관행렬표"
+            ],
+            "a descriptives plot": [
+                "기술통계표"
+            ],
+            "a formula containing the terms to estimate marginal means for (see the examples)": [
+                ""
+            ],
+            "a formula containing the terms to estimate marginal means for, supports up to three variables per term": [
+                ""
+            ],
+            "a formula containing the terms to perform post-hoc tests on (see the examples)": [
+                ""
+            ],
+            "a formula describing the terms to go into the model (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "a list containing named lists that define the `label` of the factor and the `vars` that belong to that factor": [
+                ""
+            ],
+            "a list containing vectors of strings that name the predictors that are added to the model. The elements are added to the model according to their order in the list": [
+                ""
+            ],
+            "a list of character vectors describing the between subjects terms to go into the model": [
+                ""
+            ],
+            "a list of character vectors describing the post-hoc tests that need to be computed": [
+                ""
+            ],
+            "a list of character vectors describing the repeated measures terms to go into the model": [
+                ""
+            ],
+            "a list of lists specifying reference levels of the dependent variable and all the factors": [
+                ""
+            ],
+            "a list of lists specifying the factor and type of contrast to use, one of `'deviation'`, `'simple'`, `'difference'`, `'helmert'`, `'repeated'` or `'polynomial'`": [
+                ""
+            ],
+            "a list of lists specifying the pairs of measurement in `data`": [
+                ""
+            ],
+            "a list of lists specifying the residual covariances that need to be estimated": [
+                ""
+            ],
+            "a list of lists specifying the variables for which the estimated marginal means need to be calculate. Supports up to three variables per term.": [
+                ""
+            ],
+            "a list of lists, where each list decribes a repeated measure (as a string) from `data` defined as `measure` and the particular combination of levels from `rm` that it belongs to (as a vector of strings) defined as `cell`": [
+                ""
+            ],
+            "a list of lists, where each list describes the `label` (as a string) and the `levels` (as vector of strings) of a particular repeated measures factor": [
+                ""
+            ],
+            "A low p-value suggests a violation of the assumption of equal variances": [
+                "낮은 p값은 동분산 가정의 기각을 암시한다"
+            ],
+            "A low p-value suggests a violation of the assumption of normality": [
+                "낮은 p값은 정규분포 가정의 기각을 암시한다"
+            ],
+            "A nice correlation data set": [
+                "좋은 상관 관계 데이터 세트"
+            ],
+            "a number (default: 0.1), highlight values in the `'corRes'` table above this value": [
+                ""
+            ],
+            "a number (default: 0.3), hide factor loadings below this value": [
+                ""
+            ],
+            "a number (default: 0.3), hide loadings below this value": [
+                ""
+            ],
+            "a number (default: 0.5), the value for the null hypothesis": [
+                ""
+            ],
+            "a number (default: 0), the minimal eigenvalue for a factor to be included in the model": [
+                ""
+            ],
+            "a number (default: 1), the beta prior 'a' parameter": [
+                ""
+            ],
+            "a number (default: 1), the beta prior 'b' parameter": [
+                ""
+            ],
+            "a number (default: 1), the minimal eigenvalue for a component to be included in the model": [
+                ""
+            ],
+            "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
+                ""
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
+            "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
+            "a number between 0.5 and 2.0 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width for the estimated marginal means": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95) specifying the confidence interval width that is used as `'ci'`": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), the confidence interval width": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), the credible interval width": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the effect sizes": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals for the post-hoc effect sizes": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), the width of confidence intervals to provide": [
+                ""
+            ],
+            "a number between 50 and 99.9 (default: 95), width of the confidence intervals to provide": [
+                ""
+            ],
+            "a number specifying the value of the null hypothesis": [
+                ""
+            ],
+            "a parameter": [
+                "모수값"
+            ],
+            "a possible value of `'d'`; provide cohen's d measure of effect size for the post-hoc tests": [
+                ""
+            ],
+            "a post-hoc table": [
+                "사후 검증 표"
+            ],
+            "a proportions table": [
+                "비율표"
+            ],
+            "a q-q plot": [
+                "q-q 도표"
+            ],
+            "A repeated measures ANOVA data set": [
+                "반복측정 분산분석 자료"
+            ],
+            "a string (default: 'Dependent') describing the label used for the dependent variable throughout the analysis": [
+                ""
+            ],
+            "a string naming a variable in `data` containing counts, or NULL if each row represents a single observation": [
+                ""
+            ],
+            "a string naming the dependent variable from `data`, variable must be a factor": [
+                ""
+            ],
+            "a string naming the dependent variable from `data`, variable must be numeric": [
+                ""
+            ],
+            "a string naming the dependent variable in `data`": [
+                ""
+            ],
+            "a string naming the dependent variables in `data`": [
+                ""
+            ],
+            "a string naming the grouping or independent variable in `data`": [
+                ""
+            ],
+            "a summary of the groups": [
+                ""
+            ],
+            "a table containing estimated marginal means": [
+                ""
+            ],
+            "a table containing factor covariances estimates": [
+                ""
+            ],
+            "a table containing factor intercept estimates": [
+                ""
+            ],
+            "a table containing fit measures": [
+                ""
+            ],
+            "a table containing modification indices for the factor loadings not included in the model": [
+                ""
+            ],
+            "a table containing modification indices for the residual covariances not included in the model": [
+                ""
+            ],
+            "a table containing residual covariances estimates": [
+                ""
+            ],
+            "a table containing residual intercept estimates": [
+                ""
+            ],
+            "a table containing residuals for the observed correlation matrix": [
+                ""
+            ],
+            "a table containing the chi-square test for exact fit": [
+                ""
+            ],
+            "a table containing the collinearity statistics": [
+                ""
+            ],
+            "a table containing the descriptives": [
+                ""
+            ],
+            "a table containing the factor loadings": [
+                ""
+            ],
+            "a table containing the group descriptives": [
+                ""
+            ],
+            "a table containing the homogeneity of variances tests": [
+                ""
+            ],
+            "a table containing the normality test results": [
+                ""
+            ],
+            "a table containing the normality tests": [
+                ""
+            ],
+            "a table containing the results from the Box-Tidwell test": [
+                ""
+            ],
+            "a table containing the t-test results": [
+                ""
+            ],
+            "a table of ANCOVA results": [
+                ""
+            ],
+            "a table of ANOVA results": [
+                ""
+            ],
+            "a table of comparative measures": [
+                ""
+            ],
+            "a table of homogeneity of variances tests": [
+                ""
+            ],
+            "a table of homogeneity tests": [
+                ""
+            ],
+            "a table of likelihood ratio tests": [
+                ""
+            ],
+            "a table of model coefficient thresholds": [
+                ""
+            ],
+            "a table of model coefficients": [
+                ""
+            ],
+            "a table of normality tests": [
+                ""
+            ],
+            "a table of predicted classifications": [
+                ""
+            ],
+            "a table of predictive measures": [
+                ""
+            ],
+            "a table of proportions": [
+                ""
+            ],
+            "a table of test results": [
+                ""
+            ],
+            "a table of the 'nominal' test results": [
+                ""
+            ],
+            "a table of the descriptive statistics": [
+                ""
+            ],
+            "a table of the Friedman test results": [
+                ""
+            ],
+            "a table of the gamma test results": [
+                ""
+            ],
+            "a table of the Kendall's tau-b test results": [
+                ""
+            ],
+            "a table of the Mantel-Haenszel test for trend": [
+                ""
+            ],
+            "a table of the pairwise comparisons": [
+                ""
+            ],
+            "a table of the proportions": [
+                ""
+            ],
+            "a table of the proportions and test results": [
+                ""
+            ],
+            "a table of the test results": [
+                ""
+            ],
+            "a table of χ² test results": [
+                ""
+            ],
+            "a vector containing strings naming the varibales that are reverse scaled": [
+                ""
+            ],
+            "a vector of numbers: the expected proportions": [
+                ""
+            ],
+            "a vector of strings naming the between subjects factors from `data`": [
+                ""
+            ],
+            "a vector of strings naming the control variables in `data`": [
+                ""
+            ],
+            "a vector of strings naming the covariates from `data`": [
+                ""
+            ],
+            "a vector of strings naming the covariates from `data`. Variables must be numeric": [
+                ""
+            ],
+            "a vector of strings naming the factors from `data`": [
+                ""
+            ],
+            "a vector of strings naming the fixed factors from `data`": [
+                ""
+            ],
+            "a vector of strings naming the repeated measures variables": [
+                ""
+            ],
+            "a vector of strings naming the variables of interest in `data`": [
+                ""
+            ],
+            "a vector of strings naming the variables to correlate in `data`": [
+                ""
+            ],
+            "a vector of strings naming the variables used to split `vars`": [
+                ""
+            ],
+            "Accuracy": [
+                "정확도"
+            ],
+            "Add New Block": [
+                "새 블럭 추가"
+            ],
+            "Add New Factor": [
+                "새 요인 추가"
+            ],
+            "Add New Term": [
+                "새 항목 추가"
+            ],
+            "Additional Options": [
+                "추가 옵션"
+            ],
+            "Additional Output": [
+                "추가 결과"
+            ],
+            "Additional Statistics": [
+                "추가 통계"
+            ],
+            "Adjusted R²": [
+                "조정된 R²"
+            ],
+            "AIC": [
+                ""
+            ],
+            "All observations are tied": [
+                ""
+            ],
+            "Alternative hypothesis": [
+                "대안가설"
+            ],
+            "an array of contrasts tables": [
+                ""
+            ],
+            "an array of descriptive plots": [
+                ""
+            ],
+            "an array of extreme values tables": [
+                ""
+            ],
+            "an array of frequency tables": [
+                ""
+            ],
+            "an array of groups of plots": [
+                ""
+            ],
+            "an array of model specific results": [
+                ""
+            ],
+            "an array of pairwise comparison tables": [
+                ""
+            ],
+            "an array of post-hoc tables": [
+                ""
+            ],
+            "an array of Q-Q plots": [
+                ""
+            ],
+            "an array of the descriptive plots": [
+                ""
+            ],
+            "an array of the estimated marginal means plots + tables": [
+                ""
+            ],
+            "an array of the posterior plots": [
+                ""
+            ],
+            "an image containing the model path diagram": [
+                ""
+            ],
+            "an image of the descriptive plots": [
+                ""
+            ],
+            "an integer (default: 1), the number of components in the model": [
+                ""
+            ],
+            "an integer (default: 1), the number of factors in the model": [
+                ""
+            ],
+            "an integer (default: 4) specifying the number of equal groups": [
+                ""
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                ""
+            ],
+            "An uninspiring ANOVA data set": [
+                ""
+            ],
+            "Analyses bundled with jamovi": [
+                ""
+            ],
+            "ANCOVA": [
+                "공분산 분석"
+            ],
+            "Anderson & Rubin": [
+                ""
+            ],
+            "Anderson's Iris Data": [
+                ""
+            ],
+            "ANOVA": [
+                "ANOVA"
+            ],
+            "ANOVA test": [
+                "분산분석 검증"
+            ],
+            "As there are no between subjects factors specified this assumption is always met.": [
+                ""
+            ],
+            "Assume equal (Fisher's)": [
+                "동분산 가정(Fisher)"
+            ],
+            "Assumption Checks": [
+                "가정검증"
+            ],
+            "Assumptions": [
+                "가정"
+            ],
+            "At least one variable must have two levels": [
+                "적어도 한개의 변수는 2개의 수준을 가져야 한다"
+            ],
+            "AUC": [
+                ""
+            ],
+            "Autocorrelation": [
+                "자기상관"
+            ],
+            "Autocorrelation test": [
+                "자기상관 검증"
+            ],
+            "Available for 2x2 tables only": [
+                "2x2 테이블에만 사용 가능"
+            ],
+            "b parameter": [
+                ""
+            ],
+            "Bar Plot": [
+                "막대 도표"
+            ],
+            "Bar plot": [
+                "막대도표"
+            ],
+            "Bar Plots": [
+                "막대도표"
+            ],
+            "Bar Type": [
+                "막대유형"
+            ],
+            "Bartlett": [
+                ""
+            ],
+            "Bartlett's Test of Sphericity": [
+                "Bartlett의 구형성 검증"
+            ],
+            "Bartlett's test of sphericity": [
+                "Bartlett의 구형성 검증"
+            ],
+            "Based on eigenvalue": [
+                "고유값 기반"
+            ],
+            "Based on parallel analysis": [
+                ""
+            ],
+            "Bayes factor": [
+                "베이즈 계수"
+            ],
+            "Bayes factor₁₀": [
+                ""
+            ],
+            "Bayesian Statistics": [
+                "베이지안 통계"
+            ],
+            "beta 'a' parameter": [
+                ""
+            ],
+            "beta 'b' parameter": [
+                ""
+            ],
+            "Between Subject Factors": [
+                ""
+            ],
+            "Between Subjects Components": [
+                ""
+            ],
+            "Between Subjects Effects": [
+                ""
+            ],
+            "BIC": [
+                ""
+            ],
+            "Big 5 (Dolan, Oort, Stoel & Wicherts, 2009)": [
+                ""
+            ],
+            "Binomial": [
+                "이항"
+            ],
+            "Binomial Logistic Regression": [
+                "이항 로지스틱 회귀분석"
+            ],
+            "Binomial Test": [
+                "이항 검증"
+            ],
+            "Binomial test": [
+                "이항 검증"
+            ],
+            "Block {0}": [
+                ""
+            ],
+            "Block 1": [
+                ""
+            ],
+            "Blocks": [
+                ""
+            ],
+            "Bonferroni": [
+                ""
+            ],
+            "Box plot": [
+                "박스 도표"
+            ],
+            "Box Plots": [
+                "박스 도표"
+            ],
+            "Box-Tidwell test": [
+                ""
+            ],
+            "Box-Tidwell Test for Linearity of the Logit": [
+                ""
+            ],
+            "Box's Homogeneity of Covariance Matrices Test": [
+                ""
+            ],
+            "Box's M test": [
+                ""
+            ],
+            "Box's M test for homogeneity of covariance matrices": [
+                ""
+            ],
+            "Bugs (Ryan, Wilde & Crist, 2013)": [
+                ""
+            ],
+            "Cells": [
+                "칸"
+            ],
+            "Central Tendency": [
+                "집중 경향값"
+            ],
+            "CFI": [
+                ""
+            ],
+            "Chi-Square Quantiles": [
+                "카이-스퀘어 분위수"
+            ],
+            "CI Lower": [
+                "신뢰구간 하한계"
+            ],
+            "CI Upper": [
+                "신뢰구간 상한계"
+            ],
+            "Classification Table": [
+                "분류 테이블"
+            ],
+            "Classification table": [
+                "분류 테이블"
+            ],
+            "Classification Table – {dep}": [
+                ""
+            ],
+            "Cohen's d": [
+                ""
+            ],
+            "Collinearity Statistics": [
+                "공선성 통계값"
+            ],
+            "Collinearity statistics": [
+                "공선성 통계값"
+            ],
+            "Column": [
+                "열"
+            ],
+            "Column variable '{var}' contains fewer than 2 levels": [
+                ""
+            ],
+            "Columns": [
+                "열"
+            ],
+            "columns": [
+                "열"
+            ],
+            "Columns compared": [
+                "열 비교"
+            ],
+            "Comparative Measures": [
+                "비교 적합도 지수"
+            ],
+            "Comparative Measures (2x2 only)": [
+                ""
+            ],
+            "Compare": [
+                ""
+            ],
+            "Comparison": [
+                "비교"
+            ],
+            "Comparisons are based on estimated marginal means": [
+                ""
+            ],
+            "Component": [
+                "주성분"
+            ],
+            "Component correlations": [
+                "주성분 상관계수"
+            ],
+            "Component Loadings": [
+                "주성분 부하량"
+            ],
+            "Component scores": [
+                "주성분 점수"
+            ],
+            "Component Statistics": [
+                "주성분 통계값"
+            ],
+            "Component summary": [
+                "주성분 요약"
+            ],
+            "component(s)": [
+                "성분"
+            ],
+            "Components": [
+                "주성분"
+            ],
+            "components": [
+                "성분"
+            ],
+            "Confidence Interval": [
+                "신뢰구간"
+            ],
+            "Confidence interval": [
+                "신뢰구간"
+            ],
+            "Confidence interval for Mean": [
+                "평균에 대한 신뢰구간"
+            ],
+            "Confidence interval width": [
+                ""
+            ],
+            "Confidence Intervals": [
+                "신뢰구간"
+            ],
+            "Confidence intervals": [
+                "신뢰구간"
+            ],
+            "Confidence level": [
+                "신뢰 수준"
+            ],
+            "Confirmatory Factor Analysis": [
+                "확인적 요인분석"
+            ],
+            "Constraints": [
+                "제약 조건"
+            ],
+            "Contingency coefficient": [
+                "분할계수"
+            ],
+            "Contingency Tables": [
+                "분할표"
+            ],
+            "Contrasts": [
+                "대비"
+            ],
+            "Contrasts - $key": [
+                ""
+            ],
+            "Control Variables": [
+                "통제 변수"
+            ],
+            "Control variables": [
+                "통제 변수"
+            ],
+            "controlling for {items}": [
+                "통제 {문항}"
+            ],
+            "Cook's Distance": [
+                ""
+            ],
+            "Cook's distance": [
+                ""
+            ],
+            "Correction": [
+                "교정"
+            ],
+            "Corrections": [
+                "교정"
+            ],
+            "Correlated": [
+                "상관"
+            ],
+            "Correlated negatively": [
+                "부적 상관"
+            ],
+            "Correlated positively": [
+                "정적 상관"
+            ],
+            "Correlation": [
+                "상관"
+            ],
+            "Correlation Coefficients": [
+                "상관계수"
+            ],
+            "Correlation Heatmap": [
+                "상관관계 히트맵"
+            ],
+            "Correlation heatmap": [
+                "상관관계 히트맵"
+            ],
+            "Correlation matrices are a way to examine linear relationships between\ntwo or more continuous variables.": [
+                ""
+            ],
+            "Correlation matrices are a way to examine linear relationships between\ntwo or more continuous variables.\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                ""
+            ],
+            "Correlation Matrix": [
+                "상관 행렬"
+            ],
+            "Correlation matrix": [
+                "상관 행렬"
+            ],
+            "Correlation Type": [
+                "상관 유형"
+            ],
+            "Correlation type": [
+                "상관 유형"
+            ],
+            "Count": [
+                "빈도"
+            ],
+            "Counts": [
+                "빈도"
+            ],
+            "Counts (optional)": [
+                "빈도 (선택사항)"
+            ],
+            "Counts may not be infinite": [
+                ""
+            ],
+            "Counts may not be negative": [
+                ""
+            ],
+            "Counts must be non-negative and finite": [
+                ""
+            ],
+            "Covariates": [
+                "독립변수"
+            ],
+            "Cox & Snell's R²": [
+                ""
+            ],
+            "Cramer's V": [
+                ""
+            ],
+            "Credible Interval": [
+                ""
+            ],
+            "Credible intervals": [
+                ""
+            ],
+            "Cronbach's α": [
+                "크론바흐 α"
+            ],
+            "Cronbach's α (if item is dropped)": [
+                "문항 삭제후 크론바흐 α"
+            ],
+            "cubic": [
+                ""
+            ],
+            "Cumulative %": [
+                "누적비율"
+            ],
+            "Cut point values": [
+                "절단값"
+            ],
+            "Cut points for": [
+                "절단값"
+            ],
+            "Cut-Off": [
+                "절단값"
+            ],
+            "Cut-Off Plot": [
+                "절단값 도표"
+            ],
+            "Cut-off plot": [
+                "절단값 도표"
+            ],
+            "Cut-off value": [
+                "절단값"
+            ],
+            "dat <- data.frame(\n    `1st survey` = c('Approve', 'Approve', 'Disapprove', 'Disapprove'),\n    `2nd survey` = c('Approve', 'Disapprove', 'Approve', 'Disapprove'),\n    `Counts` = c(794, 150, 86, 570),\n    check.names=FALSE)\n\ncontTablesPaired(formula = Counts ~ `1st survey`:`2nd survey`, data = dat)\n\n#\n#  PAIRED SAMPLES CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ────────────────────────────────────────────────\n#    1st survey    Approve    Disapprove    Total\n#  ────────────────────────────────────────────────\n#    Approve           794           150      944\n#    Disapprove         86           570      656\n#    Total             880           720     1600\n#  ────────────────────────────────────────────────\n#\n#\n#  McNemar Test\n#  ─────────────────────────────────────────────────────\n#                                Value    df    p\n#  ─────────────────────────────────────────────────────\n#    χ²                           17.4     1    < .001\n#    χ² continuity correction     16.8     1    < .001\n#  ─────────────────────────────────────────────────────\n#\n\n\n# Alternatively, omit the left of the formula (`Counts`) from the\n# formula if each row represents a single observation:\n\ncontTablesPaired(formula = ~ `1st survey`:`2nd survey`, data = dat)": [
+                ""
+            ],
+            "dat <- data.frame(x=c(8, 15))\n\npropTest2(dat, vars = x, areCounts = TRUE)\n\n#\n#  PROPORTION TEST (2 OUTCOMES)\n#\n#  Binomial Test\n#  ───────────────────────────────────────────────────────\n#         Level    Count    Total    Proportion    p\n#  ───────────────────────────────────────────────────────\n#    x    1            8       23         0.348    0.210\n#         2           15       23         0.652    0.210\n#  ───────────────────────────────────────────────────────\n#    Note. Hₐ is proportion ≠ 0.5\n#": [
+                ""
+            ],
+            "Data": [
+                "데이터"
+            ],
+            "data <- lavaan::HolzingerSwineford1939\n\njmv::cfa(\n    data = data,\n    factors = list(\n        list(label=\"Visual\", vars=c(\"x1\", \"x2\", \"x3\")),\n        list(label=\"Textual\", vars=c(\"x4\", \"x5\", \"x6\")),\n        list(label=\"Speed\", vars=c(\"x7\", \"x8\", \"x9\"))),\n    resCov = NULL)\n\n#\n#  CONFIRMATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ─────────────────────────────────────────────────────────────────\n#    Factor     Indicator    Estimate    SE        Z        p\n#  ─────────────────────────────────────────────────────────────────\n#    Visual     x1              0.900    0.0832    10.81    < .001\n#               x2              0.498    0.0808     6.16    < .001\n#               x3              0.656    0.0776     8.46    < .001\n#    Textual    x4              0.990    0.0567    17.46    < .001\n#               x5              1.102    0.0626    17.60    < .001\n#               x6              0.917    0.0538    17.05    < .001\n#    Speed      x7              0.619    0.0743     8.34    < .001\n#               x8              0.731    0.0755     9.68    < .001\n#               x9              0.670    0.0775     8.64    < .001\n#  ─────────────────────────────────────────────────────────────────\n#\n#\n#  FACTOR ESTIMATES\n#\n#  Factor Covariances\n#  ──────────────────────────────────────────────────────────────\n#                          Estimate    SE        Z       p\n#  ──────────────────────────────────────────────────────────────\n#    Visual     Visual      1.000 ᵃ\n#               Textual     0.459      0.0635    7.22    < .001\n#               Speed       0.471      0.0862    5.46    < .001\n#    Textual    Textual     1.000 ᵃ\n#               Speed       0.283      0.0715    3.96    < .001\n#    Speed      Speed       1.000 ᵃ\n#  ──────────────────────────────────────────────────────────────\n#    ᵃ fixed parameter\n#\n#\n#  MODEL FIT\n#\n#  Test for Exact Fit\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    85.3    24    < .001\n#  ────────────────────────\n#\n#\n#  Fit Measures\n#  ───────────────────────────────────────────────\n#    CFI      TLI      RMSEA     Lower     Upper\n#  ───────────────────────────────────────────────\n#    0.931    0.896    0.0921    0.0714    0.114\n#  ───────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "Data Reduction": [
+                "데이터 축소"
+            ],
+            "Data set is currently unweighted": [
+                ""
+            ],
+            "Data Summary": [
+                "데이터 요약"
+            ],
+            "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1     4.97e-7    6.00     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────────\n#    Predictor    Estimate      SE          Z           p\n#  ────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2      0.0136    0.989\n#    age            -0.00653       482.7    -1.35e-5    1.000\n#    bwt            -1.18532        87.0     -0.0136    0.989\n#  ────────────────────────────────────────────────────────────\n#    Note. Estimates represent the log odds of \"low = 1\"\n#    vs. \"low = 0\"\n#\n#": [
+                ""
+            ],
+            "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ──────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ───────────────────────────────────────────────────────────────\n#    race     Predictor    Estimate    SE        Z         p\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    Intercept      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────\n#\n#": [
+                ""
+            ],
+            "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  REPEATED MEASURES ANOVA\n#\n#  Within Subjects Effects\n#  ───────────────────────────────────────────────────────────────────────\n#                  Sum of Squares    df    Mean Square    F       p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#\n#\n#\n#  Between Subjects Effects\n#  ─────────────────────────────────────────────────────────────────\n#                Sum of Squares    df    Mean Square    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#": [
+                ""
+            ],
+            "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#": [
+                ""
+            ],
+            "data('bugs', package = 'jmv')\n\nttestPS(bugs, pairs = list(\n        list(i1 = 'LDLF', i2 = 'LDHF')))\n\n#\n#  PAIRED SAMPLES T-TEST\n#\n#  Paired Samples T-Test\n#  ──────────────────────────────────────────────────────────────\n#                                   statistic    df      p\n#  ──────────────────────────────────────────────────────────────\n#    LDLF    LDHF    Student's t        -6.65    90.0    < .001\n#  ──────────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  CONTINGENCY TABLES\n#\n#  Contingency Tables\n#  ─────────────────────────────────────────────────────\n#    Hair     Brown    Blue    Hazel    Green    Total\n#  ─────────────────────────────────────────────────────\n#    Black       68      20       15        5      108\n#    Brown      119      84       54       29      286\n#    Red         26      17       14       14       71\n#    Blond        7      94       10       16      127\n#    Total      220     215       93       64      592\n#  ─────────────────────────────────────────────────────\n#\n#\n#  χ² Tests\n#  ───────────────────────────────\n#          Value    df    p\n#  ───────────────────────────────\n#    χ²      138     9    < .001\n#    N       592\n#  ───────────────────────────────\n#\n\n# Alternatively, omit the left of the formula (`Freq`) if each row\n# represents a single observation:\n\ncontTables(formula = ~ Hair:Eye, dat)": [
+                ""
+            ],
+            "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  PROPORTION TEST (N OUTCOMES)\n#\n#  Proportions\n#  ────────────────────────────────\n#    Level    Count    Proportion\n#  ────────────────────────────────\n#    Brown      220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  χ² Goodness of Fit\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#": [
+                ""
+            ],
+            "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Note. 'oblimin' rotation was used\n#": [
+                ""
+            ],
+            "data('iris')\n\nmancova(data = iris,\n    deps = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    factors = Species)\n\n#\n#  MANCOVA\n#\n#  Multivariate Tests\n#  ───────────────────────────────────────────────────────────────────────────\n#                                     value     F       df1    df2    p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Species    Pillai's Trace          1.19    53.5      8    290    < .001\n#               Wilks' Lambda         0.0234     199      8    288    < .001\n#               Hotelling's Trace       32.5     581      8    286    < .001\n#               Roy's Largest Root      32.2    1167      4    145    < .001\n#  ───────────────────────────────────────────────────────────────────────────\n#\n#\n#  Univariate Tests\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#                 Dependent Variable    Sum of Squares    df     Mean Square    F         p\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#    Species      Sepal.Length                   63.21      2        31.6061     119.3    < .001\n#                 Sepal.Width                    11.34      2         5.6725      49.2    < .001\n#                 Petal.Length                  437.10      2       218.5514    1180.2    < .001\n#                 Petal.Width                    80.41      2        40.2067     960.0    < .001\n#    Residuals    Sepal.Length                   38.96    147         0.2650\n#                 Sepal.Width                    16.96    147         0.1154\n#                 Petal.Length                   27.22    147         0.1852\n#                 Petal.Width                     6.16    147         0.0419\n#  ───────────────────────────────────────────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('iris')\n\npca(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  PRINCIPAL COMPONENT ANALYSIS\n#\n#  Component Loadings\n#  ────────────────────────────────────────\n#                    1         Uniqueness\n#  ────────────────────────────────────────\n#    Sepal.Length     0.890        0.2076\n#    Sepal.Width     -0.460        0.7883\n#    Petal.Length     0.992        0.0168\n#    Petal.Width      0.965        0.0688\n#  ────────────────────────────────────────\n#    Note. 'varimax' rotation was used\n#": [
+                ""
+            ],
+            "data('iris')\n\nreliability(iris, vars = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'),\n            omegaScale = TRUE)\n\n#\n#  RELIABILITY ANALYSIS\n#\n#  Scale Reliability Statistics\n#  ─────────────────────────────────────────\n#             Cronbach's α    McDonald's ω\n#  ─────────────────────────────────────────\n#    scale           0.708           0.848\n#  ─────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  CORRELATION MATRIX\n#\n#  Correlation Matrix\n#  ──────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ──────────────────────────────────────────────────────────────\n#    mpg     Pearson's r        —    -0.852    -0.848    -0.776\n#            p-value            —    < .001    < .001    < .001\n#\n#    cyl     Pearson's r                  —     0.902     0.832\n#            p-value                      —    < .001    < .001\n#\n#    disp    Pearson's r                            —     0.791\n#            p-value                                —    < .001\n#\n#    hp      Pearson's r                                      —\n#            p-value                                          —\n#  ──────────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIAL CORRELATION\n#\n#  Partial Correlation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-value             —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-value        < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-value        < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Note. controlling for 'hp'\n#": [
+                ""
+            ],
+            "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1    4.12e-10    41.4     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ──────────────────────────────────────────────────────────────────\n#    Predictor          Estimate     SE          Z            p\n#  ──────────────────────────────────────────────────────────────────\n#    Intercept          -4.71e-16        1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079        1.06        1.961    0.050\n#    5 – 3                  0.693        1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693        1.22        0.566    0.571\n#    8 – 4                  2.485        1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386        1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386        1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867    42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485        1.44       -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────\n#\n#": [
+                ""
+            ],
+            "data('mtcars')\ndat <- mtcars\n\n# frequency tables can be provided for factors\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESCRIPTIVES\n#\n#  Descriptives\n#  ───────────────────────────────────────────\n#               mpg     cyl     disp    gear\n#  ───────────────────────────────────────────\n#    N            32      32      32      32\n#    Missing       0       0       0       0\n#    Mean       20.1    6.19     231    3.69\n#    Median     19.2    6.00     196    4.00\n#    Minimum    10.4    4.00    71.1       3\n#    Maximum    33.9    8.00     472       5\n#  ───────────────────────────────────────────\n#\n#\n#  FREQUENCIES\n#\n#  Frequencies of gear\n#  ────────────────────\n#    Levels    Counts\n#  ────────────────────\n#    3             15\n#    4             12\n#    5              5\n#  ────────────────────\n#\n\n# spliting by a variable\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# providing histograms\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# splitting by multiple variables\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)": [
+                ""
+            ],
+            "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────\n#    Model    R        R²\n#  ───────────────────────────\n#        1    0.802    0.643\n#  ───────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────\n#    Predictor    Estimate    SE         t         p\n#  ────────────────────────────────────────────────────────\n#    Intercept      -253.8    1086.16    -0.234     0.816\n#    women           -50.9       8.56    -5.948    < .001\n#    prestige        141.4      29.91     4.729    < .001\n#    education       177.2     187.63     0.944     0.347\n#  ────────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    Residuals              1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ONE-WAY ANOVA (NON-PARAMETRIC)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nttestIS(formula = len ~ supp, data = ToothGrowth)\n\n#\n#  INDEPENDENT SAMPLES T-TEST\n#\n#  Independent Samples T-Test\n#  ────────────────────────────────────────────────────\n#                          statistic    df      p\n#  ────────────────────────────────────────────────────\n#    len    Student's t         1.92    58.0    0.060\n#  ────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\n\nttestOneS(ToothGrowth, vars = vars(len, dose))\n\n#\n#  ONE SAMPLE T-TEST\n#\n#  One Sample T-Test\n#  ──────────────────────────────────────────────────────\n#                           statistic    df      p\n#  ──────────────────────────────────────────────────────\n#    len     Student's t         19.1    59.0    < .001\n#    dose    Student's t         14.4    59.0    < .001\n#  ──────────────────────────────────────────────────────\n#": [
+                ""
+            ],
+            "data('ToothGrowth')\ndat <- ToothGrowth\ndat$dose <- factor(dat$dose)\n\nanovaOneW(formula = len ~ dose, data = dat)\n\n#\n#  ONE-WAY ANOVA\n#\n#  One-Way ANOVA (Welch's)\n#  ────────────────────────────────────────\n#           F       df1    df2     p\n#  ────────────────────────────────────────\n#    len    68.4      2    37.7    < .001\n#  ────────────────────────────────────────\n#": [
+                ""
+            ],
+            "Densities for variables": [
+                ""
+            ],
+            "Density": [
+                "밀도"
+            ],
+            "Dependent": [
+                "종속변수"
+            ],
+            "Dependent Variable": [
+                "종속변수"
+            ],
+            "Dependent variable '{dep}' contains infinite values": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                ""
+            ],
+            "Dependent Variable Label": [
+                "종속변수 라벨"
+            ],
+            "Dependent Variables": [
+                "종속변수"
+            ],
+            "Dependent variables are very highly correlated": [
+                ""
+            ],
+            "deprecated": [
+                ""
+            ],
+            "Descriptive Plot": [
+                "기술통계 도표"
+            ],
+            "Descriptive plot": [
+                "기술통계 도표"
+            ],
+            "Descriptives": [
+                "기술통계"
+            ],
+            "Descriptives are an assortment of summarising statistics, and visualizations which allow exploring the shape and distribution of data. It is good practice to explore your data with descriptives before proceeding to more formal tests.": [
+                ""
+            ],
+            "descriptives plot": [
+                "기술통계 도표"
+            ],
+            "Descriptives Plots": [
+                "기술통계 도표"
+            ],
+            "Descriptives plots": [
+                "기술통계 도표"
+            ],
+            "Descriptives Table": [
+                "기술통계 표"
+            ],
+            "Descriptives table": [
+                "기술통계 표"
+            ],
+            "Deviance": [
+                "이탈도"
+            ],
+            "Deviation": [
+                "편차"
+            ],
+            "df": [
+                "자유도"
+            ],
+            "df1": [
+                "자유도1"
+            ],
+            "df2": [
+                "자유도2"
+            ],
+            "Difference": [
+                "차이"
+            ],
+            "Difference in 2 proportions": [
+                "2비율 차이"
+            ],
+            "Difference in proportions": [
+                "비율차이"
+            ],
+            "Dispersion": [
+                "분산"
+            ],
+            "Distribution": [
+                "분포"
+            ],
+            "Don't assume equal (Welch's)": [
+                "동분산을 가정하지 않음(Welch's)"
+            ],
+            "drag variable here": [
+                "이곳으로 변수를 이동하세요"
+            ],
+            "drag variables here": [
+                "이곳으로 변수를 이동하세요"
+            ],
+            "DSCF pairwise comparisons": [
+                ""
+            ],
+            "Durbin–Watson Test for Autocorrelation": [
+                "자기상관에 대한 Durbin–Watson 검증"
+            ],
+            "DW Statistic": [
+                ""
+            ],
+            "Dwass-Steel-Critchlow-Fligner pairwise comparisons": [
+                ""
+            ],
+            "Effect Size": [
+                "효과 크기"
+            ],
+            "Effect size": [
+                "효과 크기"
+            ],
+            "Eigenvalue": [
+                "고유값"
+            ],
+            "Eigenvalues": [
+                "고유값"
+            ],
+            "Eigenvalues greater than": [
+                ""
+            ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                ""
+            ],
+            "Equal cell weights": [
+                "동일 가중치"
+            ],
+            "equal groups": [
+                "동일 집단"
+            ],
+            "error %": [
+                ""
+            ],
+            "Error bars": [
+                ""
+            ],
+            "Estimate": [
+                "추정값"
+            ],
+            "Estimate (Log Odds Ratio)": [
+                "추정값(로그 승산비)"
+            ],
+            "Estimate (Log Rate Ratio)": [
+                ""
+            ],
+            "Estimated Marginal Means": [
+                ""
+            ],
+            "Estimated Marginal Means - {term}": [
+                ""
+            ],
+            "Estimates": [
+                "추정값"
+            ],
+            "Estimates represent the log odds of …": [
+                ""
+            ],
+            "Estimates represent the log odds of \"{dep} = {level1}\" vs. \"{dep} = {level2}\"": [
+                ""
+            ],
+            "Estimation method": [
+                "추정방법"
+            ],
+            "Exclude cases analysis by analysis": [
+                "대응별 결측값 제거(pairwise)"
+            ],
+            "Exclude cases listwise": [
+                "목록별 결측값 제거(listwise)"
+            ],
+            "Excluded": [
+                "제외"
+            ],
+            "Expected": [
+                "기대값"
+            ],
+            "Expected counts": [
+                "기대 빈도"
+            ],
+            "Expected Proportions": [
+                "기대비율"
+            ],
+            "Exploration": [
+                "탐구"
+            ],
+            "Exploratory Factor Analysis": [
+                "탐색적 요인분석"
+            ],
+            "Extraction": [
+                "추출"
+            ],
+            "Extreme values": [
+                ""
+            ],
+            "Extreme Values": [
+                ""
+            ],
+            "Extreme values of $key": [
+                ""
+            ],
+            "F": [
+                "F"
+            ],
+            "F test": [
+                "F 검증"
+            ],
+            "F-statistic could not be calculated": [
+                "F 통계값이 계산되지 않음"
+            ],
+            "Factor": [
+                "요인"
+            ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                ""
+            ],
+            "Factor '{factor}' needs to have at least 2 levels": [
+                ""
+            ],
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                ""
+            ],
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                ""
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                ""
+            ],
+            "Factor {0}": [
+                ""
+            ],
+            "Factor 1": [
+                "요인 1"
+            ],
+            "Factor correlations": [
+                "요인 상관"
+            ],
+            "Factor Covariances": [
+                "요인 공분산"
+            ],
+            "Factor covariances": [
+                "요인 공분산"
+            ],
+            "Factor Estimates": [
+                "요인 추정값"
+            ],
+            "Factor Intercepts": [
+                "요인 절편"
+            ],
+            "Factor intercepts": [
+                "요인 절편"
+            ],
+            "Factor Loadings": [
+                "요인 부하량"
+            ],
+            "Factor Loadings – Modification Indices": [
+                "요인 부하량- 수정지수"
+            ],
+            "Factor scores": [
+                "요인 점수"
+            ],
+            "Factor Statistics": [
+                "요인 통계값"
+            ],
+            "Factor summary": [
+                "요인 통계량"
+            ],
+            "Factor variances = 1": [
+                "요인분산 = 1"
+            ],
+            "factor(s)": [
+                "요인"
+            ],
+            "Factors": [
+                "요인"
+            ],
+            "factors": [
+                "요인"
+            ],
+            "Fisher's": [
+                ""
+            ],
+            "Fisher's exact test": [
+                ""
+            ],
+            "Fit Measures": [
+                "적합도"
+            ],
+            "Fitted": [
+                "적합된"
+            ],
+            "Fixed Factors": [
+                "고정요인"
+            ],
+            "Fixed number": [
+                "고정 숫자"
+            ],
+            "fixed parameter": [
+                "고정모수"
+            ],
+            "Flag significant comparisons": [
+                ""
+            ],
+            "Flag significant correlations": [
+                ""
+            ],
+            "flag significant correlations (p < .05) with symbols.": [
+                ""
+            ],
+            "flag significant post-hoc comparisons.": [
+                ""
+            ],
+            "Frequencies": [
+                "빈도"
+            ],
+            "Frequencies of $key": [
+                ""
+            ],
+            "Frequency tables": [
+                "빈도분포표"
+            ],
+            "Friedman": [
+                ""
+            ],
+            "Full information maximum likelihood": [
+                ""
+            ],
+            "Games-Howell (unequal variances)": [
+                ""
+            ],
+            "Games-Howell Post-Hoc Test – {dep}": [
+                ""
+            ],
+            "Gamma": [
+                ""
+            ],
+            "General Options": [
+                "일반 옵션"
+            ],
+            "Generalised η²": [
+                ""
+            ],
+            "Grand mean (simple coding)": [
+                ""
+            ],
+            "Greenhouse-Geisser": [
+                ""
+            ],
+            "Greenhouse-Geisser ε": [
+                ""
+            ],
+            "Group": [
+                "집단"
+            ],
+            "Group 1": [
+                "집단 1"
+            ],
+            "Group 1 < Group 2": [
+                "집단 1 < 집단 2"
+            ],
+            "Group 1 ≠ Group 2": [
+                "집단 1 ≠ 집단 2"
+            ],
+            "Group 1 > Group 2": [
+                "집단 1 > 집단 2"
+            ],
+            "Group 2": [
+                "집단 2"
+            ],
+            "Group Descriptives": [
+                "집단 기술통계"
+            ],
+            "Group Summary": [
+                "집단 통계량"
+            ],
+            "Group summary": [
+                "집단 통계량"
+            ],
+            "Grouping Variable": [
+                "집단 변수"
+            ],
+            "Grouping variable '{a}' has less than 2 levels after missing values are excluded": [
+                ""
+            ],
+            "Grouping variable '{a}' must have exactly 2 levels": [
+                ""
+            ],
+            "Grouping variable '{a}' must not also be a dependent variable": [
+                ""
+            ],
+            "Hₐ is negative correlation": [
+                ""
+            ],
+            "Hₐ is positive correlation": [
+                ""
+            ],
+            "Hₐ is proportion {direction} {testValue}": [
+                ""
+            ],
+            "Haldane-Anscombe correction applied": [
+                ""
+            ],
+            "Harman": [
+                ""
+            ],
+            "Helmert": [
+                ""
+            ],
+            "hidden": [
+                ""
+            ],
+            "Hide loadings below": [
+                ""
+            ],
+            "Highlight values above": [
+                ""
+            ],
+            "Histogram": [
+                "히스토 그램"
+            ],
+            "Histograms": [
+                "히스토 그램"
+            ],
+            "Holm": [
+                ""
+            ],
+            "Homogeneity of Variances Test (Levene's)": [
+                "Levene의 동분산 검증"
+            ],
+            "Homogeneity test": [
+                "동분산 검증"
+            ],
+            "Hotelling's Trace": [
+                ""
+            ],
+            "Huynh-Feldt": [
+                ""
+            ],
+            "Huynh-Feldt ε": [
+                ""
+            ],
+            "Hypothesis": [
+                "가설"
+            ],
+            "If item dropped": [
+                ""
+            ],
+            "in development": [
+                "개발중"
+            ],
+            "include a summary of the groups": [
+                ""
+            ],
+            "Independent Samples": [
+                "독립 표본"
+            ],
+            "Independent Samples T-Test": [
+                "독립표본 T 검증"
+            ],
+            "Indicator": [
+                ""
+            ],
+            "Initial Eigenvalues": [
+                "초기 고유값"
+            ],
+            "Initial eigenvalues": [
+                "초기 고유값"
+            ],
+            "Inter-Component Correlations": [
+                "주성분 상관계수"
+            ],
+            "Inter-Factor Correlations": [
+                "요인간 상관"
+            ],
+            "Intercept": [
+                "절편"
+            ],
+            "Interval": [
+                "동간척도"
+            ],
+            "IQR": [
+                "사분범위"
+            ],
+            "Item '{item}' consists of one level only": [
+                ""
+            ],
+            "Item '{item}' contains infinite values": [
+                ""
+            ],
+            "Item '{item}' contains only missing values": [
+                ""
+            ],
+            "Item '{item}' has no variance": [
+                ""
+            ],
+            "Item '{item}' needs to be numeric": [
+                ""
+            ],
+            "item {item} correlates negatively with the total scale and probably should be reversed": [
+                ""
+            ],
+            "Item Reliability Statistics": [
+                "문항 신뢰도 통계값"
+            ],
+            "Item Statistics": [
+                "문항 통계값"
+            ],
+            "Item-rest correlation": [
+                ""
+            ],
+            "Items": [
+                "문항"
+            ],
+            "items {items} correlate negatively with the total scale and probably should be reversed": [
+                ""
+            ],
+            "Jittered": [
+                ""
+            ],
+            "Kendall's Tau B": [
+                "Kendall's Tau B"
+            ],
+            "Kendall's Tau-B": [
+                ""
+            ],
+            "Kendall's Tau-b": [
+                ""
+            ],
+            "Kendall's tau-b": [
+                ""
+            ],
+            "KMO Measure of Sampling Adequacy": [
+                "KMO 구형성 검증"
+            ],
+            "KMO measure of sampling adequacy": [
+                "KMO 구형성 검증"
+            ],
+            "Kruskal-Wallis": [
+                ""
+            ],
+            "Kurtosis": [
+                "첨도"
+            ],
+            "Label outliers": [
+                ""
+            ],
+            "Layers": [
+                "층"
+            ],
+            "Level": [
+                "수준"
+            ],
+            "Level 1": [
+                "수준 1"
+            ],
+            "Level 2": [
+                "수준 2"
+            ],
+            "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
+                ""
+            ],
+            "Likelihood": [
+                "우도"
+            ],
+            "Likelihood ratio": [
+                "우도비"
+            ],
+            "Likelihood ratio tests": [
+                "우도비 검증"
+            ],
+            "linear": [
+                "선형"
+            ],
+            "Linear Regression": [
+                "선형 회귀분석"
+            ],
+            "Linear regression is used to explore the relationship between a continuous dependent variable, and one or more continuous and/or categorical explanatory variables. Other statistical methods, such as ANOVA and ANCOVA, are in reality just forms of linear regression.": [
+                ""
+            ],
+            "Log odds ratio": [
+                "Log 승산비"
+            ],
+            "Log odds ratio exact": [
+                ""
+            ],
+            "Log-Linear Regression": [
+                "Log 선형회귀 분석"
+            ],
+            "Logistic Regression": [
+                "로지스틱 회귀분석"
+            ],
+            "Lower": [
+                "하한계"
+            ],
+            "lower bound": [
+                "하한계"
+            ],
+            "MANCOVA": [
+                "다변량 공분산 분석"
+            ],
+            "Mann-Whitney U": [
+                ""
+            ],
+            "Mantel-Haenszel": [
+                ""
+            ],
+            "Mantel-Haenszel Test for Trend": [
+                ""
+            ],
+            "Marginal Mean": [
+                ""
+            ],
+            "Marginal Means": [
+                ""
+            ],
+            "Marginal means plots": [
+                ""
+            ],
+            "Marginal means tables": [
+                ""
+            ],
+            "Mauchly's W": [
+                ""
+            ],
+            "Max": [
+                "최대"
+            ],
+            "Maximum": [
+                "최대값"
+            ],
+            "Maximum likelihood": [
+                "최대우도"
+            ],
+            "McDonald's ω": [
+                ""
+            ],
+            "McDonald's ω (if item is dropped)": [
+                ""
+            ],
+            "McFadden's R²": [
+                ""
+            ],
+            "McNemar requires a 2x2 table": [
+                ""
+            ],
+            "McNemar Test": [
+                ""
+            ],
+            "McNemar test": [
+                ""
+            ],
+            "Mean": [
+                "평균"
+            ],
+            "Mean ({ciWidth}% CI)": [
+                ""
+            ],
+            "Mean Difference": [
+                "평균 차이"
+            ],
+            "Mean difference": [
+                "평균 차이"
+            ],
+            "Mean Dispersion": [
+                "평균 분산"
+            ],
+            "Mean score": [
+                "평균 점수"
+            ],
+            "Mean Square": [
+                "평균 제곱"
+            ],
+            "Means": [
+                "평균"
+            ],
+            "Measure": [
+                "측정값"
+            ],
+            "Measure 1 - Measure 2": [
+                "측정1 - 측정2"
+            ],
+            "Measure 1 < Measure 2": [
+                "측정 1 < 측정 2"
+            ],
+            "Measure 1 ≠ Measure 2": [
+                "측정 1 ≠ 측정 2"
+            ],
+            "Measure 1 > Measure 2": [
+                "측정 1 > 측정 2"
+            ],
+            "Measures": [
+                "측정값"
+            ],
+            "Median": [
+                "중앙값"
+            ],
+            "Medians": [
+                "중앙값"
+            ],
+            "Method": [
+                "방법"
+            ],
+            "Min": [
+                "최소값"
+            ],
+            "Minimum": [
+                "최소값"
+            ],
+            "Minimum residual": [
+                "최소 잔차 값"
+            ],
+            "Minimum residuals": [
+                "최소 잔차 값"
+            ],
+            "Minimum value": [
+                "최소값"
+            ],
+            "Missing": [
+                "결측 값"
+            ],
+            "Missing Values": [
+                "결측 값"
+            ],
+            "Missing values": [
+                "결측 값"
+            ],
+            "Missing values exclusion method": [
+                "결측값 제거법"
+            ],
+            "Missing Values Method": [
+                "결측 값 방법"
+            ],
+            "Mode": [
+                "최빈값"
+            ],
+            "Model": [
+                "모형"
+            ],
+            "Model Builder": [
+                "모형 분석 상자"
+            ],
+            "Model Coefficients": [
+                "모형 계수"
+            ],
+            "Model Comparisons": [
+                "모형 비교"
+            ],
+            "Model Fit": [
+                "모형 적합도"
+            ],
+            "Model Fit Measures": [
+                "모형 적합도 값"
+            ],
+            "Model fit measures": [
+                "모형 적합도 값"
+            ],
+            "Model Specific Results": [
+                ""
+            ],
+            "Model Terms": [
+                "모형 항"
+            ],
+            "Model Test": [
+                "모형 검증"
+            ],
+            "Model Thresholds": [
+                "모형 경계점"
+            ],
+            "Model thresholds": [
+                "모형 경계점"
+            ],
+            "Modification Indices": [
+                "수정 지수"
+            ],
+            "Modification indices": [
+                "수정 지수"
+            ],
+            "Monte Carlo simulation": [
+                ""
+            ],
+            "More than one mode exists, only the first is reported": [
+                "한개 이상의 최빈값이 존재함"
+            ],
+            "Most extreme": [
+                ""
+            ],
+            "MSA": [
+                ""
+            ],
+            "Multinomial": [
+                "다항"
+            ],
+            "Multinomial Logistic Regression": [
+                "다항 로지스틱 회귀분석"
+            ],
+            "Multivariate Analysis of (Co)Variance (MANCOVA) is used to explore the relationship between multiple dependent variables, and one or more categorical and/or continuous explanatory variables.": [
+                ""
+            ],
+            "Multivariate Statistics": [
+                "다변량 통계"
+            ],
+            "Multivariate Tests": [
+                "다변량 통계 검증"
+            ],
+            "N": [
+                "사례수"
+            ],
+            "N Outcomes": [
+                ""
+            ],
+            "Nagelkerke's R²": [
+                ""
+            ],
+            "No components have an eigenvalue greater than {value}": [
+                ""
+            ],
+            "No correction": [
+                ""
+            ],
+            "No factors defined. Box's M test is only relevant when model contains factors.": [
+                ""
+            ],
+            "Nominal": [
+                "명명척도"
+            ],
+            "Non-Parametric": [
+                "비모수"
+            ],
+            "None": [
+                "없음"
+            ],
+            "none": [
+                "없음"
+            ],
+            "Normal Scaled Items": [
+                ""
+            ],
+            "Normality": [
+                "정규분포성"
+            ],
+            "Normality test": [
+                "정규분포성 검증"
+            ],
+            "Normality Test (Shapiro-Wilk)": [
+                "정규분포성 검증(Shapiro-Wilk)"
+            ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                ""
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                ""
+            ],
+            "Number of Components": [
+                "주성분 갯수"
+            ],
+            "Number of components": [
+                "주성분 갯수"
+            ],
+            "Number of extreme values": [
+                ""
+            ],
+            "Number of Factors": [
+                "요인 갯수"
+            ],
+            "Number of factors": [
+                "요인 갯수"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                ""
+            ],
+            "Oblimin": [
+                ""
+            ],
+            "oblimin": [
+                ""
+            ],
+            "Observed": [
+                "관찰값"
+            ],
+            "Observed counts": [
+                "관찰 빈도"
+            ],
+            "Observed scores": [
+                "관찰점수"
+            ],
+            "octic": [
+                ""
+            ],
+            "Odds Ratio": [
+                "우도 비"
+            ],
+            "Odds ratio": [
+                "우도 비"
+            ],
+            "of total": [
+                ""
+            ],
+            "Omnibus ANOVA Test": [
+                "분산분석 검증"
+            ],
+            "Omnibus Likelihood Ratio Tests": [
+                "우도비 검증"
+            ],
+            "Omnibus Test": [
+                "모형 검증"
+            ],
+            "Omnibus Tests": [
+                "모형검증"
+            ],
+            "one of `'corr'` (default), `'pos'`, `'neg'` specifying the alernative hypothesis; correlated, correlated positively, correlated negatively respectively.": [
+                ""
+            ],
+            "one of `'part'` (default) or `'semi'` specifying the type of partial correlation to calculate; partial or semipartial correlation.": [
+                ""
+            ],
+            "One or both groups do not contain enough observations": [
+                ""
+            ],
+            "One or both variables are not numeric": [
+                ""
+            ],
+            "One or both variables contain infinite values": [
+                ""
+            ],
+            "One or both variables contain no observations": [
+                ""
+            ],
+            "One or both variables do not contain enough observations": [
+                ""
+            ],
+            "One or more coefficients in model '{modelNo}' could not be estimated due to perfect collinearity.": [
+                ""
+            ],
+            "one or more of `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'`, or `'bic'`; use CFI, TLI, SRMR, RMSEA + 90% confidence interval, adjusted AIC, and BIC model fit measures, respectively": [
+                ""
+            ],
+            "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
+                ""
+            ],
+            "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
+                ""
+            ],
+            "one or more of `'none'`, `'tukey'` (default), `'scheffe'`, `'bonf'`, or `'holm'`; use no, Tukey, Scheffe, Bonferroni and Holm posthoc corrections, respectively": [
+                ""
+            ],
+            "one or more of `'none'`, `'tukey'`, `'scheffe'`, `'bonf'`, or `'holm'`; provide no, Tukey, Scheffe, Bonferroni, and Holm Post Hoc corrections respectively": [
+                ""
+            ],
+            "one or more of `'pillai'`, `'wilks'`, `'hotel'`, or `'roy'`; use Pillai's Trace, Wilks' Lambda, Hotelling's Trace, and Roy's Largest Root multivariate statistics, respectively": [
+                ""
+            ],
+            "one or more of `'r2mf'`, `'r2cs'`, or `'r2n'`; use McFadden's, Cox & Snell, and Nagelkerke pseudo-R², respectively": [
+                ""
+            ],
+            "One Sample Proportion Tests": [
+                "단일표본 비율 검증"
+            ],
+            "One Sample T-Test": [
+                "단일표본 T 검증"
+            ],
+            "One-Way ANOVA": [
+                "일원 분산 분석"
+            ],
+            "One-Way ANOVA (Fisher's)": [
+                "일원 분산분석 (Fisher's)"
+            ],
+            "One-Way ANOVA (Non-parametric)": [
+                "일원 분산 분석(비 모수)"
+            ],
+            "One-Way ANOVA (Welch's)": [
+                "일원 분산 분석(Welch's)"
+            ],
+            "Options": [
+                "옵션"
+            ],
+            "Ordinal": [
+                "서열척도"
+            ],
+            "Ordinal Logistic Regression": [
+                "서열 로지스틱 회귀분석"
+            ],
+            "Ordinal Outcomes": [
+                ""
+            ],
+            "Outliers": [
+                ""
+            ],
+            "Output": [
+                "결과"
+            ],
+            "Overall": [
+                "전체"
+            ],
+            "Overall model": [
+                "전체 모형"
+            ],
+            "Overall Model Test": [
+                "전체 모형 검증"
+            ],
+            "Overall model test": [
+                "전체 모형 검증"
+            ],
+            "p": [
+                ""
+            ],
+            "p-value": [
+                "p 값"
+            ],
+            "p<sub>bonferroni</sub>": [
+                ""
+            ],
+            "p<sub>holm</sub>": [
+                ""
+            ],
+            "p<sub>scheffe</sub>": [
+                ""
+            ],
+            "p<sub>tukey</sub>": [
+                ""
+            ],
+            "Paired Samples": [
+                "대응 표본"
+            ],
+            "Paired Samples Contingency Tables": [
+                "대응표본 빈도 표"
+            ],
+            "Paired Samples T-Test": [
+                "대응표본 T 검증"
+            ],
+            "Paired Variables": [
+                "대응 변수"
+            ],
+            "Pairwise comparisons - $key": [
+                ""
+            ],
+            "Pairwise Comparisons (Durbin-Conover)": [
+                "짝 비교 (Durbin-Conover)"
+            ],
+            "Pairwise comparisons (Durbin-Conover)": [
+                "짝 비교 (Durbin-Conover)"
+            ],
+            "Partial": [
+                "편 상관"
+            ],
+            "Partial Correlation": [
+                "편 상관계수"
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables": [
+                ""
+            ],
+            "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
+                ""
+            ],
+            "Partial η²": [
+                ""
+            ],
+            "partial η²": [
+                ""
+            ],
+            "Path Diagram": [
+                "경로 모형"
+            ],
+            "Path diagram": [
+                "경로 모형"
+            ],
+            "Pearson": [
+                "피어슨"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                ""
+            ],
+            "Pearson's r": [
+                "피어슨 상관계수"
+            ],
+            "Pearson{}Correlation": [
+                ""
+            ],
+            "Percentages": [
+                "비율"
+            ],
+            "Percentages of total": [
+                "전체비율"
+            ],
+            "Percentages within {var}": [
+                ""
+            ],
+            "Percentile": [
+                "백분위수"
+            ],
+            "Percentile Values": [
+                "백분위 수"
+            ],
+            "Percentile values": [
+                "백분위 수"
+            ],
+            "Percentiles": [
+                "백분위"
+            ],
+            "perform a Mann-Whitney U test.": [
+                ""
+            ],
+            "perform a Shapiro-Wilk test of normality. A low p-value suggests the data is not from a normal distribution.": [
+                ""
+            ],
+            "perform an overall model test.": [
+                ""
+            ],
+            "perform Fisher's (or what might be call 'normal') ANOVAs.": [
+                ""
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
+                ""
+            ],
+            "perform Shapiro-Wilk tests of normality. A low p-value suggests the residuals are not normally distributed.": [
+                ""
+            ],
+            "perform Student's independent samples t-tests.": [
+                ""
+            ],
+            "perform Student's one-sample t-tests.": [
+                ""
+            ],
+            "perform Student's paired samples t-tests.": [
+                ""
+            ],
+            "perform Welch's ANOVAs.": [
+                ""
+            ],
+            "perform Welch's tests.": [
+                ""
+            ],
+            "perform Wilcoxon signed rank tests.": [
+                ""
+            ],
+            "Phi and Cramer's V": [
+                ""
+            ],
+            "Phi-coefficient": [
+                "Phi 상관계수"
+            ],
+            "Pillai's Trace": [
+                ""
+            ],
+            "Plot": [
+                "도표"
+            ],
+            "plot densities along the diagonal of the correlation matrix plot.": [
+                ""
+            ],
+            "plot the data along with the marginal means.": [
+                ""
+            ],
+            "Plot Type": [
+                "도표 유형"
+            ],
+            "Plots": [
+                "도표"
+            ],
+            "Polynomial": [
+                "다항"
+            ],
+            "Post Hoc Comparisons - {term}": [
+                ""
+            ],
+            "Post Hoc Tests": [
+                "사후 검증"
+            ],
+            "Post Hoc Tests – $key": [
+                ""
+            ],
+            "Post-Hoc Model Performance": [
+                ""
+            ],
+            "Post-Hoc Test": [
+                "사후 검증"
+            ],
+            "Post-Hoc Tests": [
+                "사후 검증"
+            ],
+            "Posterior": [
+                "사후"
+            ],
+            "Posterior plot": [
+                "사후도표"
+            ],
+            "Posterior Plots": [
+                "사후도표"
+            ],
+            "Predicted": [
+                "예측값"
+            ],
+            "Predicted probability of … = … (vs … = …)": [
+                ""
+            ],
+            "Predicted probability of {dep} = {level1} (vs {dep} = {level2})": [
+                ""
+            ],
+            "Predicted values": [
+                "예측값"
+            ],
+            "Prediction": [
+                "예측"
+            ],
+            "Predictive Measures": [
+                "예측값"
+            ],
+            "Predictor": [
+                "예측"
+            ],
+            "Predictors": [
+                "독립변수"
+            ],
+            "Principal axis": [
+                "주성분 축"
+            ],
+            "Principal axis factoring": [
+                "단일주축 분해"
+            ],
+            "Principal Component Analysis": [
+                "주성분 분석"
+            ],
+            "Prior": [
+                "사전"
+            ],
+            "Prior width": [
+                ""
+            ],
+            "Probability": [
+                "확률"
+            ],
+            "Promax": [
+                ""
+            ],
+            "promax": [
+                ""
+            ],
+            "Proportion": [
+                "비율"
+            ],
+            "Proportion Test (2 Outcomes)": [
+                ""
+            ],
+            "Proportion Test (N Outcomes)": [
+                ""
+            ],
+            "provide a Cohen's d measure of effect size for the post-hoc tests.": [
+                ""
+            ],
+            "provide a confidence interval for the difference between the mean estimate and the test value.": [
+                ""
+            ],
+            "provide a correlation matrix plot.": [
+                ""
+            ],
+            "provide a Kendall's tau-b for each combination of variables.": [
+                ""
+            ],
+            "provide a p-value for each correlation co-efficient.": [
+                ""
+            ],
+            "provide a Pearson's r for each combination of variables.": [
+                ""
+            ],
+            "provide a Q-Q plot of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                ""
+            ],
+            "provide a Spearman's rho for each combination of variables.": [
+                ""
+            ],
+            "provide a table of descriptives for each variable.": [
+                ""
+            ],
+            "provide a table of the estimated marginal means.": [
+                ""
+            ],
+            "provide Bayes factors for the Student's independent samples t-tests.": [
+                ""
+            ],
+            "provide Bayes factors for the Student's one-sample t-tests.": [
+                ""
+            ],
+            "provide Bayes factors for the Student's paired samples t-tests.": [
+                ""
+            ],
+            "provide confidence intervals for Pearson's r.": [
+                ""
+            ],
+            "provide confidence intervals for the effect-sizes": [
+                ""
+            ],
+            "provide confidence intervals for the mean differences.": [
+                ""
+            ],
+            "provide confidence intervals for the post-hoc effect sizes.": [
+                ""
+            ],
+            "provide correlation co-efficients in the correlation matrix plot.": [
+                ""
+            ],
+            "provide descriptive plots for each group.": [
+                ""
+            ],
+            "provide descriptive plots for each variable.": [
+                ""
+            ],
+            "provide descriptives for each group of measurements.": [
+                ""
+            ],
+            "provide descriptives for each group.": [
+                ""
+            ],
+            "provide descriptives plots.": [
+                ""
+            ],
+            "provide effect-sizes (Cohen's D).": [
+                ""
+            ],
+            "provide effect-sizes (Cohen's d).": [
+                ""
+            ],
+            "provide Levene's test for homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                ""
+            ],
+            "provide Levene's tests for the homogeneity of variances. A low p-value suggests the groups have unequal variances.": [
+                ""
+            ],
+            "provide mean differences and standard errors of the mean differences.": [
+                ""
+            ],
+            "provide mean differences with the post-hoc tests.": [
+                ""
+            ],
+            "provide mean differences, and standard errors of the mean differences, between the mean estimate, and the test value.": [
+                ""
+            ],
+            "provide measures of effect size; η², partial η², or ω².": [
+                ""
+            ],
+            "provide p-value corrections for sphericity.": [
+                ""
+            ],
+            "provide plots of the estimated marginal means.": [
+                ""
+            ],
+            "provide post-hoc tests.": [
+                ""
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the data is not from a normal distribution.": [
+                ""
+            ],
+            "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
+                ""
+            ],
+            "provide significance levels for the post-hoc tests.": [
+                ""
+            ],
+            "provide sphericity tests.": [
+                ""
+            ],
+            "provide test results (t-value and degrees of freedom) for post-hoc tests.": [
+                ""
+            ],
+            "provide the number of cases.": [
+                ""
+            ],
+            "Pseudo R²": [
+                ""
+            ],
+            "Q-Q": [
+                ""
+            ],
+            "Q-Q Plot": [
+                "Q-Q 도표"
+            ],
+            "Q-Q plot": [
+                "Q-Q 도표"
+            ],
+            "Q-Q Plot Assessing Multivariate Normality": [
+                ""
+            ],
+            "Q-Q plot of multivariate normality": [
+                "다변량 정규분포 Q-Q 도표"
+            ],
+            "Q-Q plot of residuals": [
+                "잔차 Q-Q 도표"
+            ],
+            "Q-Q Plots": [
+                "Q-Q 도표"
+            ],
+            "Q-Q plots": [
+                "Q-Q 도표"
+            ],
+            "quadratic": [
+                "이차"
+            ],
+            "quartic": [
+                "4차"
+            ],
+            "Quartimax": [
+                ""
+            ],
+            "quartimax": [
+                ""
+            ],
+            "quintic": [
+                "5차"
+            ],
+            "R": [
+                ""
+            ],
+            "R²": [
+                ""
+            ],
+            "R²<sub>CS</sub>": [
+                ""
+            ],
+            "R²<sub>McF</sub>": [
+                ""
+            ],
+            "R²<sub>N</sub>": [
+                ""
+            ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
+            "Range": [
+                "범위"
+            ],
+            "Rank biserial correlation": [
+                ""
+            ],
+            "Rate Ratio": [
+                ""
+            ],
+            "Rate ratio": [
+                ""
+            ],
+            "Ratio": [
+                "비율"
+            ],
+            "Reference Level": [
+                "준거 수준"
+            ],
+            "Reference level (dummy coding)": [
+                "준거수준(더미 코딩)"
+            ],
+            "Reference Levels": [
+                "준거 수준"
+            ],
+            "Regression": [
+                "회귀"
+            ],
+            "Relative risk": [
+                "상대위험"
+            ],
+            "Reliability Analysis": [
+                "신뢰도 분석"
+            ],
+            "Repeated": [
+                "반복"
+            ],
+            "Repeated Measures ANOVA": [
+                "반복측정 분산분석"
+            ],
+            "Repeated Measures ANOVA (Non-parametric)": [
+                "반복측정 분산분석(비모수)"
+            ],
+            "Repeated Measures Cells": [
+                ""
+            ],
+            "Repeated Measures Components": [
+                "반복 측정 구성 요소"
+            ],
+            "Repeated Measures Factors": [
+                "반복 측정 요인"
+            ],
+            "Report significance": [
+                "유의도 보고"
+            ],
+            "Represents grand mean": [
+                ""
+            ],
+            "Represents reference level": [
+                ""
+            ],
+            "Residual": [
+                "잔차"
+            ],
+            "Residual Covariances": [
+                "잔차 공분산"
+            ],
+            "Residual covariances": [
+                "잔차 공분산"
+            ],
+            "Residual Covariances – Modification Indices": [
+                "잔차 공분산–수정지수"
+            ],
+            "Residual Estimates": [
+                "잔차 추정값"
+            ],
+            "Residual Intercepts": [
+                "잔차 절편"
+            ],
+            "Residual intercepts": [
+                "잔차 절편"
+            ],
+            "Residual plots": [
+                "잔차 도표"
+            ],
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                ""
+            ],
+            "Residuals": [
+                "잔차"
+            ],
+            "Residuals for Observed Correlation Matrix": [
+                ""
+            ],
+            "Residuals from ANOVA": [
+                "ANOVA의 잔차"
+            ],
+            "Residuals observed correlation matrix": [
+                ""
+            ],
+            "Residuals Plots": [
+                "잔차 도표"
+            ],
+            "Results": [
+                "결과"
+            ],
+            "reverse scaled item": [
+                "역코딩 문항"
+            ],
+            "Reverse Scaled Items": [
+                "역코딩 문항"
+            ],
+            "RM Factor {0}": [
+                ""
+            ],
+            "RM Factor 1": [
+                ""
+            ],
+            "RMSE": [
+                ""
+            ],
+            "RMSEA": [
+                ""
+            ],
+            "RMSEA 90% CI": [
+                ""
+            ],
+            "ROC": [
+                ""
+            ],
+            "ROC Curve": [
+                ""
+            ],
+            "ROC curve": [
+                ""
+            ],
+            "Rotation": [
+                "회전"
+            ],
+            "Row": [
+                "행"
+            ],
+            "Row number": [
+                ""
+            ],
+            "Row variable '{var}' contains fewer than 2 levels": [
+                ""
+            ],
+            "Rows": [
+                "행"
+            ],
+            "rows": [
+                "행"
+            ],
+            "rows (default), or columns in bar plot X axis": [
+                ""
+            ],
+            "Rows compared": [
+                ""
+            ],
+            "Roy's Largest Root": [
+                ""
+            ],
+            "Sample Size": [
+                "표본크기"
+            ],
+            "Save": [
+                "저장"
+            ],
+            "scale": [
+                "척도"
+            ],
+            "Scale Analysis": [
+                "척도분석"
+            ],
+            "Scale factor = scale first indicator": [
+                ""
+            ],
+            "Scale Reliability Statistics": [
+                "척도 신뢰도"
+            ],
+            "Scale Statistics": [
+                "척도 통계"
+            ],
+            "Scheffe": [
+                ""
+            ],
+            "Score Component": [
+                ""
+            ],
+            "Score Factor": [
+                ""
+            ],
+            "Score for component": [
+                ""
+            ],
+            "Score for factor {i}. Estimated using the '{fsMethod}' method.": [
+                ""
+            ],
+            "Scree Plot": [
+                ""
+            ],
+            "Scree plot": [
+                ""
+            ],
+            "SD": [
+                "표준편차"
+            ],
+            "SE": [
+                "표준오차"
+            ],
+            "SE difference": [
+                "표준오차의 차이"
+            ],
+            "Semipartial": [
+                ""
+            ],
+            "Semipartial Correlation": [
+                "준부분 상관"
+            ],
+            "Sensitivity": [
+                "민감도"
+            ],
+            "septic": [
+                ""
+            ],
+            "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
+                ""
+            ],
+            "sextic": [
+                ""
+            ],
+            "Shapiro-Wilk": [
+                ""
+            ],
+            "Shapiro-Wilk Multivariate Normality Test": [
+                ""
+            ],
+            "Shapiro-Wilk p": [
+                ""
+            ],
+            "Shapiro-Wilk test": [
+                ""
+            ],
+            "Shapiro-Wilk test for multivariate normality": [
+                ""
+            ],
+            "Shapiro-Wilk W": [
+                ""
+            ],
+            "Side by side": [
+                ""
+            ],
+            "Simple": [
+                ""
+            ],
+            "Simplimax": [
+                ""
+            ],
+            "simplimax": [
+                ""
+            ],
+            "Simulations": [
+                "모의 실험"
+            ],
+            "Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables.": [
+                ""
+            ],
+            "Singularity error. Sphericity tests are not available": [
+                ""
+            ],
+            "Skewness": [
+                "왜도"
+            ],
+            "Sort loadings by size": [
+                "부하량 크기 정렬"
+            ],
+            "Spearman": [
+                ""
+            ],
+            "Spearman's rho": [
+                ""
+            ],
+            "Specificity": [
+                "특이도"
+            ],
+            "Sphericity Correction": [
+                ""
+            ],
+            "Sphericity corrections": [
+                ""
+            ],
+            "Sphericity tests": [
+                "구형성 검증"
+            ],
+            "Split by": [
+                ""
+            ],
+            "Squared Mahalanobis Distance": [
+                ""
+            ],
+            "SRMR": [
+                ""
+            ],
+            "SS Loadings": [
+                "제곱합 부하량"
+            ],
+            "stack or side by side (default), barplot type": [
+                ""
+            ],
+            "Stacked": [
+                ""
+            ],
+            "Stand. Estimate": [
+                "포준화 추정치"
+            ],
+            "Standard deviation": [
+                "표준편차"
+            ],
+            "Standard Error": [
+                "표준오차"
+            ],
+            "Standard error": [
+                "표준 오차"
+            ],
+            "Standardized Estimate": [
+                "표준화 추정값"
+            ],
+            "Standardized estimate": [
+                "표준화 추정값"
+            ],
+            "Standardized Residuals": [
+                "표준 잔차"
+            ],
+            "Statistic": [
+                "통계"
+            ],
+            "statistic": [
+                "통계 값"
+            ],
+            "Statistics": [
+                "통계"
+            ],
+            "Std. deviation": [
+                "표준편차"
+            ],
+            "Std. error kurtosis": [
+                "첨도 표준오차"
+            ],
+            "Std. error mean": [
+                "평균에 대한 표준오차"
+            ],
+            "Std. error of Mean": [
+                "평균에 대한 표준오차"
+            ],
+            "Std. error skewness": [
+                "왜도 표준오차"
+            ],
+            "Student's": [
+                ""
+            ],
+            "Student's t": [
+                ""
+            ],
+            "Student's test": [
+                ""
+            ],
+            "Sum": [
+                "합계"
+            ],
+            "Sum of Squares": [
+                "제곱합"
+            ],
+            "Sum of squares": [
+                "제곱합"
+            ],
+            "Sum score": [
+                "합산점수"
+            ],
+            "Summary": [
+                "요약"
+            ],
+            "t": [
+                ""
+            ],
+            "T-Tests": [
+                "T-테스트"
+            ],
+            "t-value": [
+                "t 값"
+            ],
+            "ten Berge": [
+                ""
+            ],
+            "Term {0}": [
+                ""
+            ],
+            "Term 1": [
+                ""
+            ],
+            "Test for Exact Fit": [
+                ""
+            ],
+            "Test results (t and df)": [
+                "검증 결과"
+            ],
+            "Test statistics": [
+                "검증 통계 값"
+            ],
+            "Test Value": [
+                "결과 값"
+            ],
+            "Test value": [
+                "검증 값"
+            ],
+            "Tests": [
+                "검증"
+            ],
+            "Tests of Sphericity": [
+                "구형성 검증"
+            ],
+            "th percentile": [
+                ""
+            ],
+            "The 'iris' data set from R": [
+                ""
+            ],
+            "The 'split by' variable '{var}' contains no data.": [
+                ""
+            ],
+            "the (optional) weights from `data` to be used in the fitting process": [
+                ""
+            ],
+            "the alternative and null hypotheses;\n\n|              | Alternative (Hₐ)  | Null (H₀)          |\n|--------------|-------------------|--------------------|\n| ≠ Test value | Mean ≠ Test value | Mean = Test value  |\n| > Test value | Mean > Test value | Mean <= Test value |\n| < Test value | Mean < Test value | Mean >= Test value |": [
+                ""
+            ],
+            "the alternative hypothesis.": [
+                "대안가설."
+            ],
+            "the alternative hypothesis. Allows for one-tailed tests.": [
+                ""
+            ],
+            "The Analysis of Covariance (ANCOVA) is used to explore the relationship\nbetween a continuous dependent variable, one or more categorical\nexplanatory variables, and one or more continuous explanatory variables\n(or covariates). It is essentially the same analysis as ANOVA, but\nwith the addition of covariates.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.\n\nANOVA assumes that the residuals are normally distributed, and that the\nvariances of all groups are equal. If one is unwilling to assume that\nthe variances are equal, then a Welch's test can be used instead\n(However, the Welch's test does not support more than one explanatory\nfactor). Alternatively, if one is unwilling to assume that the data is\nnormally distributed, a non-parametric approach (such as Kruskal-Wallis)\ncan be used.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.": [
+                ""
+            ],
+            "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables. This 'One-Way ANOVA' is a simplified version of\nthe 'normal' ANOVA, allowing only a single explanatory factor, however\nalso providing a Welch's ANOVA. The Welch's ANOVA has the advantage that\nit need not assume that the variances of all groups are equal.\n\nFor convenience, this method allows specifying multiple dependent\nvariables, resulting in multiple independent tests.\n\nNote that the Welch's ANOVA is the same procedure as the Welch's\nindependent samples t-test.": [
+                ""
+            ],
+            "the between subjects factors (optional).": [
+                ""
+            ],
+            "the between subjects terms of the model.": [
+                ""
+            ],
+            "The Binomial test is used to test the Null hypothesis that the proportion of observations match some expected value. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportion must be some other value.": [
+                ""
+            ],
+            "the categorical explanatory (or independent) variables.": [
+                ""
+            ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                ""
+            ],
+            "the confidence interval width for the effect-sizes.": [
+                ""
+            ],
+            "the confidence interval width for the post-hoc effect sizes.": [
+                ""
+            ],
+            "the confidence interval width.": [
+                ""
+            ],
+            "the continuous explanatory (or independent) variables, also known as covariates.": [
+                ""
+            ],
+            "the contrasts to use.": [
+                ""
+            ],
+            "the control variables of interest.": [
+                ""
+            ],
+            "the counts in `data`": [
+                ""
+            ],
+            "the covariates (specifying these makes this an ANCOVA)": [
+                ""
+            ],
+            "the covariates from `data`": [
+                ""
+            ],
+            "The cut-off value is set to {}": [
+                ""
+            ],
+            "the data as a data frame": [
+                "데이타 프레임 자료"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                ""
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                ""
+            ],
+            "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
+                ""
+            ],
+            "The dependent variable '{dep}' has the following order: {orderedLevels}": [
+                ""
+            ],
+            "The dependent variable \"{dep}\" has only two levels, consider doing a binomial logistic regression.": [
+                ""
+            ],
+            "the dependent variable from `data`, variable must be numeric": [
+                ""
+            ],
+            "the dependent variable from `data`, variable must be numeric (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "the dependent variable. For ANCOVA, these will be continuous.": [
+                ""
+            ],
+            "the dependent variable. For ANOVA, these will be continuous.": [
+                ""
+            ],
+            "the dependent variables -- a separate t-test is performed for each dependent variable specified.": [
+                ""
+            ],
+            "the dependent variables (not necessary when using a formula, see the examples)": [
+                ""
+            ],
+            "the dependent variables. For ANOVA, these will be continuous.": [
+                ""
+            ],
+            "the error bars to plot on the marginal means.": [
+                ""
+            ],
+            "the explanatory covariates (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "the explanatory factors in `data` (not necessary when providing a formula, see examples)": [
+                ""
+            ],
+            "the explanatory or independent variable. For ANOVA this will be categorical.": [
+                ""
+            ],
+            "the explanatory or independent variables. For ANOVA these will be categorical.": [
+                ""
+            ],
+            "the fixed factors from `data`": [
+                ""
+            ],
+            "The Friedman test is used to explore the relationship between a continuous dependent variable and a categorical explanatory variable, where the explanatory variable is 'within subjects' (where multiple measurements are from the same subject). It is analagous to Repeated Measures ANOVA, but with the advantage of being non-parametric, and not requiring the assumptions of normality or homogeneity of variances. However, it has the limitation that it can only test a single explanatory variable at a time.": [
+                ""
+            ],
+            "the grouping variable with two levels (not necessary when using a formula, see the examples)": [
+                ""
+            ],
+            "The Kruskal-Wallis test is used to explore the relationship between a continuous dependent variable, and a categorical explanatory variable. It is analagous to ANOVA, but with the advantage of being non-parametric and having fewer assumptions. However, it has the limitation that it can only test a single explanatory variable at a time.": [
+                ""
+            ],
+            "the label to use for the dependent variable.": [
+                ""
+            ],
+            "the lavaan syntax used to fit the model": [
+                ""
+            ],
+            "the missing value exclusion method. `Analysis by analysis` excludes missing values from each analysis. `Listwise` excludes a row from all analyses if one of its values is missing.": [
+                ""
+            ],
+            "the missing value exclusion method. `Analysis by analysis` excludes missing values from each variable. `Listwise` excludes a row from all analyses if one of its values is missing.": [
+                ""
+            ],
+            "the model terms which make up the model.": [
+                ""
+            ],
+            "the model terms which make up the model. By default a full factorial model is created, but here the exact terms making up the model can be adjusted.": [
+                ""
+            ],
+            "the pairs of measurements -- a separate t-test is performed for each pair of measurements.": [
+                ""
+            ],
+            "the post-hoc multiple comparisons corrections to use.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
+                ""
+            ],
+            "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.": [
+                ""
+            ],
+            "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.\n\nThis analysis requires that the data be in 'wide format', where each\nrow represents a subject (as opposed to long format, where each\nmeasurement of the dependent variable is represented as a row).\n\nA non-parametric equivalent of the repeated measures ANOVA also exists;\nthe Friedman test. However, it has the limitation of only being able to\ntest a single factor.": [
+                ""
+            ],
+            "the repeated measures design.": [
+                ""
+            ],
+            "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels": [
+                ""
+            ],
+            "The repeated measures has only two levels. The assumption of sphericity is always met when the repeated measures has only two levels.": [
+                ""
+            ],
+            "the repeated measures measurements.": [
+                ""
+            ],
+            "the repeated measures terms of the model.": [
+                ""
+            ],
+            "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.": [
+                ""
+            ],
+            "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.\n\nThe Student's independent t-test assumes that the data from each group\nare from a normal distribution, and that the variances of these groups\nare equal. If unwilling to assume the groups have equal variances, the\nWelch's t-test can be used in it's place. If one is additionally\nunwilling to assume the data from each group are from a normal\ndistribution, the non-parametric Mann-Whitney U test can be used instead\n(However, note that the Mann-Whitney U test has a slightly different\nnull hypothesis; that the distributions of each group is equal).": [
+                ""
+            ],
+            "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.": [
+                ""
+            ],
+            "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.\n\nThe Student's One-sample t-test assumes that the data are from a normal\ndistribution -- in the case that one is unwilling to assume this, the\nnon-parametric Wilcoxon signed-rank can be used in it's place (However,\nnote that the Wilcoxon signed-rank has a slightly different null\nhypothesis; that the *median* is equal to the test value).": [
+                ""
+            ],
+            "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.": [
+                ""
+            ],
+            "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.\n\nThe Student's paired samples t-test assumes that pair differences follow\na normal distribution -- in the case that one is unwilling to assume\nthis, the non-parametric Wilcoxon signed-rank can be used in it's place\n(However, note that the Wilcoxon signed-rank has a slightly different\nnull hypothesis; that the two groups of measurements follow the same\ndistribution).": [
+                ""
+            ],
+            "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
+                ""
+            ],
+            "the test value to test against (typically zero).": [
+                ""
+            ],
+            "the type of correlation to calculate": [
+                ""
+            ],
+            "the type of sums of squares to use; Type 1, 2, or 3.": [
+                ""
+            ],
+            "the type of sums of squares to use; Type 2, or 3.": [
+                ""
+            ],
+            "The underlying `aov` object": [
+                ""
+            ],
+            "The variable {var} cannot be treated as numeric. Plots that expect numeric data will not be created for this variable.": [
+                ""
+            ],
+            "the variable of interest in `data` (not necessary when using a formula, see the examples)": [
+                ""
+            ],
+            "the variable specifying the groups; must have 2 levels.": [
+                ""
+            ],
+            "the variable to use as the columns in the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "the variable to use as the counts in the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "the variable to use as the rows in the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "The variables {vars} cannot be treated as numeric. Plots that expect numeric data will not be created for these variables.": [
+                ""
+            ],
+            "the variables of interest -- a separate t-test is performed for each variable specified.": [
+                ""
+            ],
+            "the variables of interest.": [
+                ""
+            ],
+            "the variables to use to split the contingency table (not necessary when providing a formula, see the examples)": [
+                ""
+            ],
+            "the width for the Confidence intervals.": [
+                ""
+            ],
+            "The χ² Goodness of fit test (not to be confused with the χ² test of independence), tests the Null hypothesis that the proportions of observations match some expected proportions. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportions are different to those tested.": [
+                ""
+            ],
+            "The χ² test of association (not to be confused with the χ² goodness of fit) is used to test whether two categorical variables are independent or associated. If the p-value is low, it suggests the variables are not independent, and that there is a relationship between the two variables.": [
+                ""
+            ],
+            "Theoretical Quantiles": [
+                ""
+            ],
+            "This module represents the analyses included with jamovi. It contains many common analyses (such as t-tests, ANOVAs, regression, correlation matrices, proportion tests, contingency tables, factor analysis, etc).": [
+                ""
+            ],
+            "Threshold": [
+                "경계점"
+            ],
+            "Thresholds": [
+                "경계점"
+            ],
+            "Thurstone": [
+                ""
+            ],
+            "Tjur's R²": [
+                ""
+            ],
+            "TLI": [
+                ""
+            ],
+            "Tolerance": [
+                "공차"
+            ],
+            "Too few observations (N < 3) to compute statistic": [
+                ""
+            ],
+            "Too few observations to calculate statistic. Each (sub)group must have at least as many observations as there are dependent variables.": [
+                ""
+            ],
+            "Too few samples to compute statistic (N < {n})": [
+                ""
+            ],
+            "Too few samples to compute statistic (N < 3)": [
+                ""
+            ],
+            "Too many observations (N > 5000) to compute statistic": [
+                ""
+            ],
+            "Too many samples to compute statistic (N > {n})": [
+                ""
+            ],
+            "Too many samples to compute statistic (N > 5000)": [
+                ""
+            ],
+            "Tooth Growth": [
+                ""
+            ],
+            "Total": [
+                "전체"
+            ],
+            "total_pc (default), column_pc, or row_pc. Use respectively percentages `of total`, `within columns`, or `within rows` for the bar plot y-axis.": [
+                ""
+            ],
+            "Tukey": [
+                ""
+            ],
+            "Tukey (equal variances)": [
+                ""
+            ],
+            "Tukey Post-Hoc Test – {dep}": [
+                ""
+            ],
+            "Type {ssType} Sums of Squares": [
+                ""
+            ],
+            "Type 1": [
+                ""
+            ],
+            "Type 2": [
+                ""
+            ],
+            "Type 3": [
+                ""
+            ],
+            "Type 3 sum of squares": [
+                ""
+            ],
+            "Unable to split by a continuous variable": [
+                ""
+            ],
+            "Uniqueness": [
+                "고유분산"
+            ],
+            "Univariate Tests": [
+                "단변량 검증"
+            ],
+            "Upper": [
+                "상한계"
+            ],
+            "upper bound": [
+                "상한계"
+            ],
+            "Value": [
+                "값"
+            ],
+            "value": [
+                "값"
+            ],
+            "values": [
+                ""
+            ],
+            "Values are counts": [
+                ""
+            ],
+            "Variable": [
+                "변수"
+            ],
+            "Variable '{var}' contains no data": [
+                ""
+            ],
+            "Variable contains infinite values": [
+                ""
+            ],
+            "Variable does not contain enough observations": [
+                ""
+            ],
+            "Variable is not numeric": [
+                ""
+            ],
+            "Variables": [
+                "변수"
+            ],
+            "Variables across columns": [
+                ""
+            ],
+            "Variables across rows": [
+                ""
+            ],
+            "Variables must have at least two levels": [
+                ""
+            ],
+            "Variance": [
+                "분산"
+            ],
+            "Variances": [
+                "분산"
+            ],
+            "variation from the control variables is only removed from the variables in the columns": [
+                ""
+            ],
+            "Varimax": [
+                ""
+            ],
+            "varimax": [
+                ""
+            ],
+            "VIF": [
+                "분산 팽창 계수"
+            ],
+            "Violin": [
+                ""
+            ],
+            "W": [
+                ""
+            ],
+            "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
+                ""
+            ],
+            "Weight Variable": [
+                ""
+            ],
+            "Weighted by '{varName}'": [
+                ""
+            ],
+            "Weights": [
+                "가중치"
+            ],
+            "Weights (optional)": [
+                ""
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
+            ],
+            "Welch's": [
+                ""
+            ],
+            "Welch's t": [
+                ""
+            ],
+            "Wilcoxon rank": [
+                ""
+            ],
+            "Wilcoxon signed rank test": [
+                ""
+            ],
+            "Wilcoxon W": [
+                ""
+            ],
+            "Wilks' Lambda": [
+                ""
+            ],
+            "within column": [
+                ""
+            ],
+            "within rows": [
+                ""
+            ],
+            "Within Subjects Effects": [
+                ""
+            ],
+            "X-Axis": [
+                "X-축"
+            ],
+            "X-axis": [
+                "X-축"
+            ],
+            "Y-Axis": [
+                "Y-축"
+            ],
+            "Y-axis": [
+                "Y-축"
+            ],
+            "ycounts (default) or ypc. Use respectively `counts` or `percentages` for the bar plot y-axis": [
+                ""
+            ],
+            "Z": [
+                ""
+            ],
+            "z test difference in 2 proportions": [
+                ""
+            ],
+            "z test for difference in 2 proportions": [
+                ""
+            ],
+            "z test only available for 2x2 tables": [
+                ""
+            ],
+            "ΔR²": [
+                ""
+            ],
+            "ε²": [
+                ""
+            ],
+            "η²": [
+                ""
+            ],
+            "η²<sub>G</sub>": [
+                ""
+            ],
+            "η²<sub>p</sub>": [
+                ""
+            ],
+            "η²p": [
+                ""
+            ],
+            "χ²": [
+                ""
+            ],
+            "χ² continuity correction": [
+                ""
+            ],
+            "χ² Goodness of Fit": [
+                "χ² 적합도 검증"
+            ],
+            "χ² Goodness of fit": [
+                ""
+            ],
+            "χ² test": [
+                "χ² 검증"
+            ],
+            "χ² test of association": [
+                ""
+            ],
+            "χ² Tests": [
+                "χ² 검증"
+            ],
+            "ω²": [
+                ""
+            ],
+            "specific factor\u0004Factor": [
+                ""
+            ]
+        }
+    },
+    "code": "ko"
+}

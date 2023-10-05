@@ -11,10 +11,10 @@
                 "lang": "sv"
             },
             "'{col}' contains infinite values": [
-                ""
+                "'{col}' innehåller oändliga värden"
             ],
             "'{col}' contains missing values": [
-                ""
+                "{col}"
             ],
             "'{col}' contains only missing values": [
                 ""
@@ -490,6 +490,9 @@
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 ""
             ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                ""
+            ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 ""
             ],
@@ -823,6 +826,9 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 ""
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 ""
             ],
@@ -1108,6 +1114,9 @@
             "an array of descriptive plots": [
                 ""
             ],
+            "an array of extreme values tables": [
+                ""
+            ],
             "an array of frequency tables": [
                 ""
             ],
@@ -1148,6 +1157,9 @@
                 ""
             ],
             "an integer (default: 4) specifying the number of equal groups": [
+                ""
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
                 ""
             ],
             "An uninspiring ANOVA data set": [
@@ -1343,9 +1355,6 @@
                 ""
             ],
             "Column": [
-                ""
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
                 ""
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 ""
             ],
+            "Data set is currently unweighted": [
+                ""
+            ],
             "Data Summary": [
                 ""
             ],
@@ -1660,13 +1672,25 @@
             "Dependent Variable": [
                 ""
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                ""
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                ""
+            ],
             "Dependent Variable Label": [
                 ""
             ],
-            "Dependent variable must be numeric": [
+            "Dependent Variables": [
                 ""
             ],
-            "Dependent Variables": [
+            "Dependent variables are very highly correlated": [
                 ""
             ],
             "deprecated": [
@@ -1697,9 +1721,6 @@
                 ""
             ],
             "Descriptives table": [
-                ""
-            ],
-            "dev": [
                 ""
             ],
             "Deviance": [
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 ""
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                ""
+            ],
             "Equal cell weights": [
                 ""
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 ""
             ],
+            "Extreme values": [
+                ""
+            ],
+            "Extreme Values": [
+                ""
+            ],
+            "Extreme values of $key": [
+                ""
+            ],
             "F": [
                 ""
             ],
@@ -1846,13 +1879,19 @@
             "Factor": [
                 ""
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                ""
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 ""
             ],
-            "Factor '{factorName}' contains no data": [
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
                 ""
             ],
-            "Factor '{factorName}' contains only a single level": [
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                ""
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
                 ""
             ],
             "Factor {0}": [
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 ""
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 ""
             ],
@@ -2068,7 +2110,7 @@
             "Hypothesis": [
                 ""
             ],
-            "if item dropped": [
+            "If item dropped": [
                 ""
             ],
             "in development": [
@@ -2134,9 +2176,6 @@
             "Item-rest correlation": [
                 ""
             ],
-            "item-rest correlation": [
-                ""
-            ],
             "Items": [
                 ""
             ],
@@ -2183,9 +2222,6 @@
                 ""
             ],
             "Level 2": [
-                ""
-            ],
-            "Levels": [
                 ""
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
@@ -2282,9 +2318,6 @@
                 ""
             ],
             "Mean": [
-                ""
-            ],
-            "mean": [
                 ""
             ],
             "Mean ({ciWidth}% CI)": [
@@ -2410,7 +2443,13 @@
             "Modification indices": [
                 ""
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
+                ""
+            ],
+            "Most extreme": [
                 ""
             ],
             "MSA": [
@@ -2473,16 +2512,31 @@
             "Normality Test (Shapiro-Wilk)": [
                 ""
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                ""
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                ""
+            ],
             "Number of Components": [
                 ""
             ],
             "Number of components": [
                 ""
             ],
+            "Number of extreme values": [
+                ""
+            ],
             "Number of Factors": [
                 ""
             ],
             "Number of factors": [
+                ""
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
                 ""
             ],
             "Oblimin": [
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 ""
             ],
+            "Outliers": [
+                ""
+            ],
             "Output": [
                 ""
             ],
@@ -2678,6 +2735,9 @@
                 ""
             ],
             "Pearson": [
+                ""
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
                 ""
             ],
             "Pearson's r": [
@@ -3031,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 ""
             ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
             "Range": [
                 ""
             ],
@@ -3115,7 +3178,7 @@
             "Residual plots": [
                 ""
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
                 ""
             ],
             "Residuals": [
@@ -3170,6 +3233,9 @@
                 ""
             ],
             "Row": [
+                ""
+            ],
+            "Row number": [
                 ""
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
@@ -3233,9 +3299,6 @@
                 ""
             ],
             "SD": [
-                ""
-            ],
-            "sd": [
                 ""
             ],
             "SE": [
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 ""
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                ""
+            ],
             "the confidence interval width for the effect-sizes.": [
                 ""
             ],
@@ -3530,6 +3596,12 @@
                 ""
             ],
             "the data as a data frame": [
+                ""
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                ""
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
                 ""
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
@@ -3611,6 +3683,9 @@
                 ""
             ],
             "the post-hoc multiple comparisons corrections to use.": [
+                ""
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
                 ""
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
@@ -3727,6 +3802,9 @@
             "Thurstone": [
                 ""
             ],
+            "Tjur's R²": [
+                ""
+            ],
             "TLI": [
                 ""
             ],
@@ -3808,6 +3886,9 @@
             "value": [
                 ""
             ],
+            "values": [
+                ""
+            ],
             "Values are counts": [
                 ""
             ],
@@ -3865,10 +3946,19 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 ""
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 ""
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
+                ""
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
                 ""
             ],
             "Welch's": [

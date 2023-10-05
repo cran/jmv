@@ -134,7 +134,7 @@ the Friedman test. However, it has the limitation of only being able to
 test a single factor.
 }
 \examples{
-\dontrun{
+\donttest{
 
 data('bugs', package = 'jmv')
 

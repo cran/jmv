@@ -490,6 +490,9 @@
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 "モデルに含まれるパラメタの修正指標を算出するかどうかを`TRUE`または`FALSE`（初期値）で指定します"
             ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "もっとも極端なNの値（最大値と最小値）を用いるかどうかを`TRUE`または`FALSE`（初期値）で指定します"
+            ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 "パーセンタイル値を表示するかどうかを`TRUE`または`FALSE`（初期値）で指定します"
             ],
@@ -823,6 +826,9 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "`’modIndices’`の表で強調表示する値の基準値（初期値：3）を指定します"
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "ベイズ因子算出の際に使用される事前値です。0.5から2（初期値：0.707）で指定します"
             ],
@@ -1108,6 +1114,9 @@
             "an array of descriptive plots": [
                 "記述統計量グラフの配列です"
             ],
+            "an array of extreme values tables": [
+                "極値表の配列です"
+            ],
             "an array of frequency tables": [
                 "度数分布表の配列です"
             ],
@@ -1149,6 +1158,9 @@
             ],
             "an integer (default: 4) specifying the number of equal groups": [
                 "分割数を整数値（初期値：4）で指定します"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "極値の個数を整数値（初期値：5）で指定します"
             ],
             "An uninspiring ANOVA data set": [
                 "分散分析用のデータセット"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "列"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "「{name}」列に未使用の水準が含まれています（これは欠損値のある行が除外された場合に起こり得ます）"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "列変数「{var}」が1水準しかありません"
@@ -1579,6 +1588,9 @@
             "Data Reduction": [
                 "データ縮約"
             ],
+            "Data set is currently unweighted": [
+                ""
+            ],
             "Data Summary": [
                 "データ要約"
             ],
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "従属変数"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "従属変数「{dep}」に無限値が含まれています"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "（欠損値を含む行を除外後の）従属変数「{dep}」にデータがありません"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "（欠損値を含む行を除外後の）従属変数「{dep}」に値が1つしか含まれていません"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "従属変数「{dep}」は連続変数でなくてはなりません"
+            ],
             "Dependent Variable Label": [
                 "従属変数ラベル"
             ],
-            "Dependent variable must be numeric": [
-                "従属変数は数値型でなければなりません"
-            ],
             "Dependent Variables": [
                 "従属変数"
+            ],
+            "Dependent variables are very highly correlated": [
+                "従属変数間に強い相関があります"
             ],
             "deprecated": [
                 "廃止予定"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "記述統計量の表"
-            ],
-            "dev": [
-                "dev"
             ],
             "Deviance": [
                 "逸脱度"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "固有値の最小基準値"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "参加者間デザインに空のセルがあります。参加者間因子の少なくとも1組の水準にデータがありません"
+            ],
             "Equal cell weights": [
                 "均等重みづけ"
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "抽出法"
             ],
+            "Extreme values": [
+                "極値"
+            ],
+            "Extreme Values": [
+                "極値"
+            ],
+            "Extreme values of $key": [
+                "$key の極値"
+            ],
             "F": [
                 "F"
             ],
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "因子分析"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "「{factor}」因子の水準が1つしかありません。因子には少なくとも2つの水準が必要です"
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
-                "因子 {factor} の値は2水準以上でなければなりません"
+                "「 {factor}」因子は2水準以上でなければなりません"
             ],
-            "Factor '{factorName}' contains no data": [
-                "「{factorName}」要因にデータがありません"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "（欠損値を含む行を除外後の）「{factorName}」因子にデータがありません"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "「{factorName}」要因に1水準しか含まれていません"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "（欠損値を含む行を除外後の）「{factorName}」因子に1水準しかありません"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "（欠損値を含む行を除外後の）「{factorName}」因子に使用されていない水準があります"
             ],
             "Factor {0}": [
                 "因子 {0}"
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 "ヘルマート"
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 "これ未満の負荷量を隠す"
             ],
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "仮説"
             ],
-            "if item dropped": [
-                "項目除外時の値"
+            "If item dropped": [
+                "項目除外時"
             ],
             "in development": [
                 "開発中"
@@ -2134,9 +2176,6 @@
             "Item-rest correlation": [
                 "I-R相関"
             ],
-            "item-rest correlation": [
-                "I-R相関"
-            ],
             "Items": [
                 "項目"
             ],
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "水準 2"
-            ],
-            "Levels": [
-                "水準"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "ルビーン検定の結果が有意です（p < .05）。分散等質性の前提が満たされていない可能性があります"
@@ -2282,9 +2318,6 @@
                 "マクニマー検定"
             ],
             "Mean": [
-                "平均値"
-            ],
-            "mean": [
                 "平均値"
             ],
             "Mean ({ciWidth}% CI)": [
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "修正指数"
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
                 "最頻値が複数存在しますが、ここでは最初の値のみ報告されています"
+            ],
+            "Most extreme": [
+                "最極値"
             ],
             "MSA": [
                 "MSA"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "正規性検定（シャピロ=ウィルク）"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "ケース数が大きすぎる（> 5000）ために計算できません。"
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "自由度が足りないためすべてのモデル効果を推定できません"
+            ],
             "Number of Components": [
                 "主成分数"
             ],
             "Number of components": [
                 "主成分数"
             ],
+            "Number of extreme values": [
+                "極値の個数"
+            ],
             "Number of Factors": [
                 "因子数"
             ],
             "Number of factors": [
                 "因子数"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "指定された極値の個数がデータの行数を上回っています。"
             ],
             "Oblimin": [
                 "オブリミン"
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 "順序目的変数"
             ],
+            "Outliers": [
+                "外れ値"
+            ],
             "Output": [
                 "出力"
             ],
@@ -2679,6 +2736,9 @@
             ],
             "Pearson": [
                 "ピアソンの相関係数"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "数値でない値ではピアソンの相関係数は計算できません"
             ],
             "Pearson's r": [
                 "ピアソンの相関係数"
@@ -3031,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 "R²<sub>ナゲ</sub>"
             ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
             "Range": [
                 "範囲"
             ],
@@ -3115,8 +3178,8 @@
             "Residual plots": [
                 "残差プロット"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "残差2乗和と自由度のいずれかまたは両方が0です。これは完全な一致を意味します"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "残差2乗和と自由度のいずれか、または両方が0です。これは完全に適合していることを意味します"
             ],
             "Residuals": [
                 "残差"
@@ -3171,6 +3234,9 @@
             ],
             "Row": [
                 "行"
+            ],
+            "Row number": [
+                "行数"
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "行変数「{var}」が1水準しかありません"
@@ -3233,9 +3299,6 @@
                 "スクリープロット"
             ],
             "SD": [
-                "標準偏差"
-            ],
-            "sd": [
                 "標準偏差"
             ],
             "SE": [
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 "離散型の説明変数（独立変数）です。"
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "平均値の信頼区間は、標本の平均値が自由度N-1のt分布に従うことを仮定しています"
+            ],
             "the confidence interval width for the effect-sizes.": [
                 "効果量の信頼区間の幅です。"
             ],
@@ -3531,6 +3597,12 @@
             ],
             "the data as a data frame": [
                 "データフレームのデータ"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "（欠損値を含む行を除外後の）データセットにデータがありません"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "データセットにデータがありません（または、すべての行に欠損値が含まれています）"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "従属変数「{}」が2水準を超えています。2項ロジスティック回帰は従属変数が2水準の場合のみ実行可能です。"
@@ -3612,6 +3684,9 @@
             ],
             "the post-hoc multiple comparisons corrections to use.": [
                 "事後検定で使用する修正方法を指定します。"
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "スチューデントのt検定についてベイズ因子を算出する際の幅の事前値です（初期値：0.707）。数値は0.5から2.0の範囲である必要があります。"
@@ -3727,6 +3802,9 @@
             "Thurstone": [
                 "サーストン"
             ],
+            "Tjur's R²": [
+                ""
+            ],
             "TLI": [
                 "TLI"
             ],
@@ -3808,6 +3886,9 @@
             "value": [
                 "値"
             ],
+            "values": [
+                "値"
+            ],
             "Values are counts": [
                 "度数として処理"
             ],
@@ -3865,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "すべてのセルを均等に重みづけします（初期値では、各セルは度数で重みづけされます）。"
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 "‘{varName}’による重みづけあり"
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
                 "重みづけ（オプション）"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
             ],
             "Welch's": [
                 "ウェルチ法"

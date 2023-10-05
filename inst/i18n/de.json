@@ -490,6 +490,9 @@
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 "`TRUE` oder `FALSE` (Vorgabe), gibt die Änderungsindizes für Parameter aus, die nicht im Modell enthalten sind"
             ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` oder `FALSE` (Vorgabe), gibt die N extremsten Werte (größte und kleinste) aus"
+            ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 "`TRUE` oder `FALSE` (Vorgabe), gibt Perzentile aus"
             ],
@@ -530,7 +533,7 @@
                 "`TRUE` oder `FALSE` (Standard), gibt Spearman's Rho aus"
             ],
             "`TRUE` or `FALSE` (default), provide statistics in the correlation matrix plot": [
-                "„TRUE“ oder „FALSE“ (Vorgabe), gibt Statistiken im Korrelationsdiagramm aus"
+                "`TRUE` oder `FALSE` (Vorgabe), gibt Statistiken im Korrelationsdiagramm aus"
             ],
             "`TRUE` or `FALSE` (default), provide summary statistics for the Cook's distance": [
                 "`TRUE` oder `FALSE` (Vorgabe), gibt eine zusammenfassende Statistik zur Cook-Distanz aus"
@@ -823,11 +826,14 @@
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "eine Zahl (Vorgabe: 3), hebt Werte in den `'modIndices'`-Tabellen hervor, die diesen Wert übersteigen"
             ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                "eine Zahl zwischen 0.01 und 2 (Standard 0.707), welche die Breite des Priors zur Berechnung des Bayes-Faktors angibt"
+            ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
-                "eine Zahl zwischen 0.5 und 2 (Vorgabe: 0.707), die für die Berechnung der Bayes-Faktoren zu verwendende prior width"
+                "eine Zahl zwischen 0.5 und 2 (Vorgabe: 0.707), welche die Breite des Priors (a-priori-Wahrscheinlichkeit) für die Berechnung des Bayes-Faktors angibt"
             ],
             "a number between 0.5 and 2.0 (default 0.707), the prior width to use in calculating Bayes factors": [
-                "eine Zahl zwischen 0.5 und 2 (Vorgabe: 0.707), die für die Berechnung der Bayes-Faktoren zu verwendende prior width"
+                "eine Zahl zwischen 0.5 und 2 (Vorgabe: 0.707), welche die Breite des Priors (a-priori-Wahrscheinlichkeit) für die Berechnung des Bayes-Faktors angibt"
             ],
             "a number between 50 and 99.9 (default: 95) specifying the confidence interval width": [
                 "eine Zahl zwischen 50 und 99.9 (Vorgabe: 95), gibt die Breite des Konfidenzintervalls an"
@@ -1091,7 +1097,7 @@
                 "Zusätzliche Statistiken"
             ],
             "Adjusted R²": [
-                "adjustiertes R²"
+                "Adjustiertes R²"
             ],
             "AIC": [
                 "AIC"
@@ -1107,6 +1113,9 @@
             ],
             "an array of descriptive plots": [
                 "ein Array mit deskriptivstatistischen Diagrammen"
+            ],
+            "an array of extreme values tables": [
+                "ein Array mit Tabellen der Extremwerte"
             ],
             "an array of frequency tables": [
                 "ein Array mit Häufigkeitstabellen"
@@ -1149,6 +1158,9 @@
             ],
             "an integer (default: 4) specifying the number of equal groups": [
                 "eine ganze Zahl (Standard: 4), gibt die Anzahl der Gruppen mit gleicher Größe an"
+            ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "eine Ganzzahl (Vorgabe: 5), gibt die Anzahl der Extremwerte an"
             ],
             "An uninspiring ANOVA data set": [
                 "Datensatz, um die Berechnung einer Varianzanalyse (ANOVA) zu demonstrieren"
@@ -1345,9 +1357,6 @@
             "Column": [
                 "Spalte"
             ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "Spalte '{name}' enthält nicht verwendete Faktor- / Variablenstufen (Berechnung ist nur möglich, wenn Zeilen mit fehlenden Werten ausgeschlossen werden)"
-            ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "Die Spaltenvariable „{var}“ enthält weniger als 2 Variablenstufen"
             ],
@@ -1448,7 +1457,7 @@
                 "Variablen, für die kontrolliert wird"
             ],
             "controlling for {items}": [
-                "Kontrolliert für „{items}“"
+                "Kontrolliert für {items}"
             ],
             "Cook's Distance": [
                 "Cook-Abstand"
@@ -1579,17 +1588,20 @@
             "Data Reduction": [
                 "Datenreduktion"
             ],
+            "Data set is currently unweighted": [
+                "Datensatz ist zur Zeit ungewichtet"
+            ],
             "Data Summary": [
                 "Zusammenfassung der Daten"
             ],
             "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1     4.97e-7    6.00     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────────\n#    Predictor    Estimate      SE          Z           p\n#  ────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2      0.0136    0.989\n#    age            -0.00653       482.7    -1.35e-5    1.000\n#    bwt            -1.18532        87.0     -0.0136    0.989\n#  ────────────────────────────────────────────────────────────\n#    Note. Estimates represent the log odds of \"low = 1\"\n#    vs. \"low = 0\"\n#\n#": [
-                "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIALE LOGISTISCHE REGRESSION\n#\n#  Güte der Modellanpassung\n#  ──────────────────────────────────────────\n#    Modell    Abweichung    AIC     R²-McF\n#  ──────────────────────────────────────────\n#         1       4.97e-7    6.00     1.000\n#  ──────────────────────────────────────────\n#\n#\n#  MODELL-SPEZIFISCHE ERGEBNISSE\n#\n#  MODELL 1\n#\n#  Modellkoeffizienten\n#  ───────────────────────────────────────────────────────────────\n#    Prädiktor    Schätzung     Std.-fehler    Z           p\n#  ───────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2         0.0136    0.989\n#    age            -0.00653       482.7       -1.35e-5    1.000\n#    bwt            -1.18532        87.0        -0.0136    0.989\n#  ───────────────────────────────────────────────────────────────\n#    Anmerkung. Die Schätzungen stellen die logarithmischen Quoten\n#    von \"low = 1\" vs. \"low = 0\" dar\n#\n#"
+                "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            low = factor(birthwt$low),\n            age = birthwt$age,\n            bwt = birthwt$bwt)\n\nlogRegBin(data = dat, dep = low,\n          covs = vars(age, bwt),\n          blocks = list(list(\"age\", \"bwt\")),\n          refLevels = list(list(var=\"low\", ref=\"0\")))\n\n#\n#  BINOMIALE LOGISTISCHE REGRESSION\n#\n#  Güte der Modellanpassung\n#  ──────────────────────────────────────────\n#    Modell    Abweichung    AIC     R²-McF\n#  ──────────────────────────────────────────\n#         1       4.97e-7    6.00     1.000\n#  ──────────────────────────────────────────\n#\n#\n#  MODELL-SPEZIFISCHE ERGEBNISSE\n#\n#  MODELL 1\n#\n#  Modellkoeffizienten\n#  ───────────────────────────────────────────────────────────────\n#    Prädiktor    Schätzung     Std.-fehler    Z           p\n#  ───────────────────────────────────────────────────────────────\n#    Intercept    2974.73225    218237.2         0.0136    0.989\n#    age            -0.00653       482.7       -1.35e-5    1.000\n#    bwt            -1.18532        87.0        -0.0136    0.989\n#  ───────────────────────────────────────────────────────────────\n#    Anmerkung. Schätzungen sind die Log-Odds-Raten von „low = 1“\n#    gegenüber „low = 0“\n#\n#"
             ],
             "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ──────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ──────────────────────────────────────\n#        1         360    372    0.0333\n#  ──────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ───────────────────────────────────────────────────────────────\n#    race     Predictor    Estimate    SE        Z         p\n#  ───────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155    1.1186     0.729    0.466\n#             age           -0.1038    0.0487    -2.131    0.033\n#             low:\n#             1 – 0          0.7527    0.4700     1.601    0.109\n#    3 - 1    Intercept      1.0123    0.7798     1.298    0.194\n#             age           -0.0663    0.0324    -2.047    0.041\n#             low:\n#             1 – 0          0.5677    0.3522     1.612    0.107\n#  ───────────────────────────────────────────────────────────────\n#\n#": [
                 "data('birthwt', package='MASS')\n\ndat <- data.frame(\n            race = factor(birthwt$race),\n            age = birthwt$age,\n            low = factor(birthwt$low))\n\nlogRegMulti(data = dat, dep = race,\n            covs = age, factors = low,\n            blocks = list(list(\"age\", \"low\")),\n            refLevels = list(\n                list(var=\"race\", ref=\"1\"),\n                list(var=\"low\", ref=\"0\")))\n\n#\n#  MULTINOMIALE LOGISTISCHE REGRESSION\n#\n#  Güte der Modellanpassung\n#  ─────────────────────────────────────────\n#    Modell    Abweichung    AIC    R²-McF\n#  ─────────────────────────────────────────\n#         1           360    372    0.0333\n#  ─────────────────────────────────────────\n#\n#\n#  MODELL-SPEZIFISCHE ERGEBNISSE\n#\n#  MODELL 1\n#\n#  Modellkoeffizienten\n#  ───────────────────────────────────────────────────────────────────────\n#    race     Prädiktor     Schätzung     Std.-fehler    Z         p\n#  ───────────────────────────────────────────────────────────────────────\n#    2 - 1    Intercept      0.8155       1.1186          0.729    0.466\n#             age           -0.1038       0.0487         -2.131    0.033\n#             low:\n#             1 – 0          0.7527       0.4700          1.601    0.109\n#    3 - 1    Intercept      1.0123       0.7798          1.298    0.194\n#             age           -0.0663       0.0324         -2.047    0.041\n#             low:\n#             1 – 0          0.5677       0.3522          1.612    0.107\n#  ───────────────────────────────────────────────────────────────────────\n#\n#"
             ],
             "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  REPEATED MEASURES ANOVA\n#\n#  Within Subjects Effects\n#  ───────────────────────────────────────────────────────────────────────\n#                  Sum of Squares    df    Mean Square    F       p\n#  ───────────────────────────────────────────────────────────────────────\n#    Frightening              126     1         126.11    44.2    < .001\n#    Residual                 257    90           2.85\n#  ───────────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#\n#\n#\n#  Between Subjects Effects\n#  ─────────────────────────────────────────────────────────────────\n#                Sum of Squares    df    Mean Square    F    p\n#  ─────────────────────────────────────────────────────────────────\n#    Residual               954    90           10.6\n#  ─────────────────────────────────────────────────────────────────\n#    Note. Type 3 Sums of Squares\n#": [
-                "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  ANOVA MIT MESSWIEDERHOLUNG\n#\n#  Zwischensubjekteffekte\n#  ───────────────────────────────────────────────────────────────────────────\n#                  Quadratsumme    df    Mittl. quad. Abw.    F       p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Frightening            126     1               126.11    44.2    < .001\n#    Residual               257    90                 2.85\n#  ───────────────────────────────────────────────────────────────────────────\n#    Anmerkung. Quadratsumme vom Typ 3\n#\n#\n#\n#  Innersubjekteffekte\n#  ─────────────────────────────────────────────────────────────────────\n#                Quadratsumme    df    Mittl. quad. Abw.    F    p\n#  ─────────────────────────────────────────────────────────────────────\n#    Residuen             954    90                 10.6\n#  ─────────────────────────────────────────────────────────────────────\n#    Anmerkung. Quadratsumme vom Typ 3\n#"
+                "data('bugs', package = 'jmv')\n\nanovaRM(\n    data = bugs,\n    rm = list(\n        list(\n            label = 'Frightening',\n            levels = c('Low', 'High'))),\n    rmCells = list(\n        list(\n            measure = 'LDLF',\n            cell = 'Low'),\n        list(\n            measure = 'LDHF',\n            cell = 'High')),\n    rmTerms = list(\n        'Frightening'))\n\n#\n#  ANOVA MIT MESSWIEDERHOLUNG\n#\n#  Zwischensubjekteffekte\n#  ───────────────────────────────────────────────────────────────────────────\n#                  Quadratsumme    df    Mittl. quad. Abw.    F       p\n#  ───────────────────────────────────────────────────────────────────────────\n#    Frightening            126     1               126.11    44.2    < .001\n#    Residual               257    90                 2.85\n#  ───────────────────────────────────────────────────────────────────────────\n#    Anmerkung. Typ-3-Quadratsumme\n#\n#\n#\n#  Innersubjekteffekte\n#  ─────────────────────────────────────────────────────────────────────\n#                Quadratsumme    df    Mittl. quad. Abw.    F    p\n#  ─────────────────────────────────────────────────────────────────────\n#    Residuen             954    90                 10.6\n#  ─────────────────────────────────────────────────────────────────────\n#    Anmerkung. Typ-3-Quadratsumme\n#"
             ],
             "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  REPEATED MEASURES ANOVA (NON-PARAMETRIC)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#": [
                 "data('bugs', package = 'jmv')\n\nanovaRMNP(bugs, measures = vars(LDLF, LDHF, HDLF, HDHF))\n\n#\n#  ANOVA MIT MESSWIEDERHOLUNG (NICHT-PARAMETRISCH)\n#\n#  Friedman\n#  ────────────────────────\n#    χ²      df    p\n#  ────────────────────────\n#    55.8     3    < .001\n#  ────────────────────────\n#"
@@ -1601,7 +1613,7 @@
                 "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\ncontTables(formula = Freq ~ Hair:Eye, dat)\n\n#\n#  KREUZTABELLEN\n#\n#  Kreuztabellen\n#  ─────────────────────────────────────────────────────────────\n#    Hair         Brown    Blue    Hazel    Green    Insgesamt\n#  ─────────────────────────────────────────────────────────────\n#    Black           68      20       15        5          108\n#    Brown          119      84       54       29          286\n#    Red             26      17       14       14           71\n#    Blond            7      94       10       16          127\n#    Insgesamt      220     215       93       64          592\n#  ─────────────────────────────────────────────────────────────\n#\n#\n#  χ²-Tests\n#  ──────────────────────────────\n#          Wert    df    p\n#  ──────────────────────────────\n#    χ²     138     9    < .001\n#    N      592\n#  ──────────────────────────────\n#\n\n# Wenn jede Zeile eine einzelne Beobachtung darstellt, kann der\n# linke Teil der Formel (`Freq`) weggelassen werden.\n\ncontTables(formula = ~ Hair:Eye, dat)"
             ],
             "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1,1,1,1))\n\n#\n#  PROPORTION TEST (N OUTCOMES)\n#\n#  Proportions\n#  ────────────────────────────────\n#    Level    Count    Proportion\n#  ────────────────────────────────\n#    Brown      220         0.372\n#    Blue       215         0.363\n#    Hazel       93         0.157\n#    Green       64         0.108\n#  ────────────────────────────────\n#\n#\n#  χ² Goodness of Fit\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#": [
-                "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1, 1, 1, 1))\n\n#\n#  PROPORTIONSTEST (N ERGEBNISSE)\n#\n#  Anteile\n#  ─────────────────────────────\n#    Stufe    Anzahl    Anteil\n#  ─────────────────────────────\n#    Brown       220     0.372\n#    Blue        215     0.363\n#    Hazel        93     0.157\n#    Green        64     0.108\n#  ─────────────────────────────\n#\n#\n#  χ²-Goodness-of-Fit\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#"
+                "data('HairEyeColor')\ndat <- as.data.frame(HairEyeColor)\n\npropTestN(formula = Freq ~ Eye, data = dat, ratio = c(1, 1, 1, 1))\n\n#\n#  PROPORTIONSTEST (N ERGEBNISSE)\n#\n#  Anteile\n#  ─────────────────────────────\n#    Stufe    Anzahl    Anteil\n#  ─────────────────────────────\n#    Brown       220     0.372\n#    Blue        215     0.363\n#    Hazel        93     0.157\n#    Green        64     0.108\n#  ─────────────────────────────\n#\n#\n#  χ²-Anpassungstest\n#  ───────────────────────\n#    χ²     df    p\n#  ───────────────────────\n#    133     3    < .001\n#  ───────────────────────\n#"
             ],
             "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATORY FACTOR ANALYSIS\n#\n#  Factor Loadings\n#  ────────────────────────────────────────────────\n#                    1        2        Uniqueness\n#  ────────────────────────────────────────────────\n#    Sepal.Length    0.993                0.10181\n#    Sepal.Width              0.725       0.42199\n#    Petal.Length    0.933                0.00483\n#    Petal.Width     0.897                0.07088\n#  ────────────────────────────────────────────────\n#    Note. 'oblimin' rotation was used\n#": [
                 "data('iris')\n\nefa(iris, vars = vars(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width))\n\n#\n#  EXPLORATIVE FAKTORANALYSE\n#\n#  Faktorladungen\n#  ──────────────────────────────────────────────────────\n#                    1        2        1 - Kommunalität\n#  ──────────────────────────────────────────────────────\n#    Sepal.Length    0.993                      0.10181\n#    Sepal.Width              0.725             0.42199\n#    Petal.Length    0.933                      0.00483\n#    Petal.Width     0.897                      0.07088\n#  ──────────────────────────────────────────────────────\n#    Anmerkung. „oblimin“-Rotation wurde verwendet\n#"
@@ -1619,22 +1631,22 @@
                 "data('mtcars')\n\ncorrMatrix(mtcars, vars = vars(mpg, cyl, disp, hp))\n\n#\n#  KORRELATIONSMATRIX\n#\n#  Korrelationsmatrix\n#  ──────────────────────────────────────────────────────────────\n#                           mpg      cyl       disp      hp\n#  ──────────────────────────────────────────────────────────────\n#    mpg     Pearson's r        —    -0.852    -0.848    -0.776\n#            p-Wert             —    < .001    < .001    < .001\n#\n#    cyl     Pearson's r                  —     0.902     0.832\n#            p-Wert                       —    < .001    < .001\n#\n#    disp    Pearson's r                            —     0.791\n#            p-Wert                                 —    < .001\n#\n#    hp      Pearson's r                                      —\n#            p-Wert                                           —\n#  ──────────────────────────────────────────────────────────────\n#"
             ],
             "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIAL CORRELATION\n#\n#  Partial Correlation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-value             —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-value        < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-value        < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Note. controlling for 'hp'\n#": [
-                "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIELLE KORRELATION\n#\n#  Partielle Korrelation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-Wert              —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-Wert         < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-Wert         < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Anmerkung. Kontrolliert für „hp“\n#"
+                "data('mtcars')\n\ncorrPart(mtcars, vars = vars(mpg, cyl, disp), controls = vars(hp))\n\n#\n#  PARTIELLE KORRELATION\n#\n#  Partielle Korrelation\n#  ────────────────────────────────────────────────────\n#                           mpg       cyl       disp\n#  ────────────────────────────────────────────────────\n#    mpg     Pearson's r         —\n#            p-Wert              —\n#\n#    cyl     Pearson's r    -0.590         —\n#            p-Wert         < .001         —\n#\n#    disp    Pearson's r    -0.606     0.719        —\n#            p-Wert         < .001    < .001        —\n#  ────────────────────────────────────────────────────\n#    Anmerkung. Kontrolliert für hp\n#"
             ],
             "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC     R²-McF\n#  ───────────────────────────────────────\n#        1    4.12e-10    41.4     1.000\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ──────────────────────────────────────────────────────────────────\n#    Predictor          Estimate     SE          Z            p\n#  ──────────────────────────────────────────────────────────────────\n#    Intercept          -4.71e-16        1.00    -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079        1.06        1.961    0.050\n#    5 – 3                  0.693        1.22        0.566    0.571\n#    cyl:\n#    6 – 4                  0.693        1.22        0.566    0.571\n#    8 – 4                  2.485        1.04        2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386        1.37       -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386        1.73       -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867    42247.17    -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485        1.44       -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────\n#\n#": [
                 "data('mtcars')\n\ntab <- table('gear'=mtcars$gear, 'cyl'=mtcars$cyl)\ndat <- as.data.frame(tab)\n\nlogLinear(data = dat, factors = vars(gear, cyl),  counts = Freq,\n          blocks = list(list(\"gear\", \"cyl\", c(\"gear\", \"cyl\"))),\n          refLevels = list(\n              list(var=\"gear\", ref=\"3\"),\n              list(var=\"cyl\", ref=\"4\")))\n\n#\n#  LOG-LINEARE REGRESSION\n#\n#  Güte der Modellanpassung\n#  ──────────────────────────────────────────\n#    Modell    Abweichung    AIC     R²-McF\n#  ──────────────────────────────────────────\n#         1    4.12e-10      41.4     1.000\n#  ──────────────────────────────────────────\n#\n#\n#  MODELL-SPEZIFISCHE ERGEBNISSE\n#\n#  MODELL 1\n#\n#  Modellkoeffizienten\n#  ──────────────────────────────────────────────────────────────────────\n#    Prädiktor          Schätzung     Std.-fehler    Z            p\n#  ──────────────────────────────────────────────────────────────────────\n#    Intercept          -4.71e-16         1.00       -4.71e-16    1.000\n#    gear:\n#    4 – 3                  2.079         1.06           1.961    0.050\n#    5 – 3                  0.693         1.22           0.566    0.571\n#    cyl:\n#    6 – 4                  0.693         1.22           0.566    0.571\n#    8 – 4                  2.485         1.04           2.387    0.017\n#    gear:cyl:\n#    (4 – 3):(6 – 4)       -1.386         1.37          -1.012    0.311\n#    (5 – 3):(6 – 4)       -1.386         1.73          -0.800    0.423\n#    (4 – 3):(8 – 4)      -26.867     42247.17       -6.36e -4    0.999\n#    (5 – 3):(8 – 4)       -2.485         1.44          -1.722    0.085\n#  ──────────────────────────────────────────────────────────────────────\n#\n#"
             ],
             "data('mtcars')\ndat <- mtcars\n\n# frequency tables can be provided for factors\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESCRIPTIVES\n#\n#  Descriptives\n#  ───────────────────────────────────────────\n#               mpg     cyl     disp    gear\n#  ───────────────────────────────────────────\n#    N            32      32      32      32\n#    Missing       0       0       0       0\n#    Mean       20.1    6.19     231    3.69\n#    Median     19.2    6.00     196    4.00\n#    Minimum    10.4    4.00    71.1       3\n#    Maximum    33.9    8.00     472       5\n#  ───────────────────────────────────────────\n#\n#\n#  FREQUENCIES\n#\n#  Frequencies of gear\n#  ────────────────────\n#    Levels    Counts\n#  ────────────────────\n#    3             15\n#    4             12\n#    5              5\n#  ────────────────────\n#\n\n# spliting by a variable\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# providing histograms\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# splitting by multiple variables\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)": [
-                "data('mtcars')\ndat <- mtcars\n\n# frequency tables can be provided for factors\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESKRIPTIVSTATISTIK\n#\n#  Deskriptivstatistik\n#  ──────────────────────────────────────────────\n#                   mpg    cyl     disp    gear\n#  ──────────────────────────────────────────────\n#    N               32      32      32      32\n#    Fehlend          0       0       0       0\n#    Mittelwert    20.1    6.19     231    3.69\n#    Median        19.2    6.00     196    4.00\n#    Minimum       10.4    4.00    71.1       3\n#    Maximum       33.9    8.00     472       5\n#  ──────────────────────────────────────────────\n#\n#\n#  HÄUFIGKEITEN\n#\n#  Häufigkeit von gear\n#  ───────────────────\n#    Stufe    Anzahl\n#  ───────────────────\n#    3            15\n#    4            12\n#    5             5\n#  ───────────────────\n#\n\n# Gruppering nach einer Variablen\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# Histogramme anzeigen\ndescriptives(formula = mpg ~ cyl, dat, hist=T,\n    median=F, min=F, max=F, n=F, missing=F)\n\n# Gruppierung nach mehreren Variablen\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median=F, min=F, max=F, missing=F)"
+                "data('mtcars')\ndat <- mtcars\n\n# für Faktoren können Häufigkeitstabellen angezeigt werden\ndat$gear <- as.factor(dat$gear)\n\ndescriptives(dat, vars = vars(mpg, cyl, disp, gear), freq = TRUE)\n\n#\n#  DESKRIPTIVSTATISTIK\n#\n#  Deskriptivstatistik\n#  ──────────────────────────────────────────────\n#                   mpg    cyl     disp    gear\n#  ──────────────────────────────────────────────\n#    N               32      32      32      32\n#    Fehlend          0       0       0       0\n#    Mittelwert    20.1    6.19     231    3.69\n#    Median        19.2    6.00     196    4.00\n#    Minimum       10.4    4.00    71.1       3\n#    Maximum       33.9    8.00     472       5\n#  ──────────────────────────────────────────────\n#\n#\n#  HÄUFIGKEITEN\n#\n#  Häufigkeit von gear\n#  ───────────────────\n#    Stufe    Anzahl\n#  ───────────────────\n#    3            15\n#    4            12\n#    5             5\n#  ───────────────────\n#\n\n# Gruppierung nach einer Variablen\ndescriptives(formula = disp + mpg ~ cyl, dat,\n    median = F, min = F, max = F, n = F, missing = F)\n\n# Histogramme anzeigen\ndescriptives(formula = mpg ~ cyl, dat, hist = T,\n    median = F, min = F, max = F, n = F, missing = F)\n\n# Gruppierung nach mehreren Variablen\ndescriptives(formula = mpg ~ cyl:gear, dat,\n    median = F, min = F, max = F, missing = F)"
             ],
             "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEAR REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────\n#    Model    R        R²\n#  ───────────────────────────\n#        1    0.802    0.643\n#  ───────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────────\n#    Predictor    Estimate    SE         t         p\n#  ────────────────────────────────────────────────────────\n#    Intercept      -253.8    1086.16    -0.234     0.816\n#    women           -50.9       8.56    -5.948    < .001\n#    prestige        141.4      29.91     4.729    < .001\n#    education       177.2     187.63     0.944     0.347\n#  ────────────────────────────────────────────────────────\n#": [
                 "data('Prestige', package='carData')\n\nlinReg(data = Prestige, dep = income,\n       covs = vars(education, prestige, women),\n       blocks = list(list('education', 'prestige', 'women')))\n\n#\n#  LINEARE REGRESSION\n#\n#  Güte der Modellanpassung\n#  ────────────────────────────\n#    Modell    R        R²\n#  ────────────────────────────\n#         1    0.802    0.643\n#  ────────────────────────────\n#\n#\n#  MODELL-SPEZIFISCHE ERGEBNISSE\n#\n#  MODELL 1\n#\n#\n#  Modellkoeffizienten\n#  ─────────────────────────────────────────────────────────────\n#    Prädiktor    Schätzung    Std.-fehler         t         p\n#  ─────────────────────────────────────────────────────────────\n#    Interzept       -253.8        1086.16    -0.234     0.816\n#    women            -50.9           8.56    -5.948    < .001\n#    prestige         141.4          29.91     4.729    < .001\n#    education        177.2         187.63     0.944     0.347\n#  ─────────────────────────────────────────────────────────────\n#"
             ],
             "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    supp                    205     1          205.4     11.4     0.001\n#    dose                   2224     1         2224.3    124.0    < .001\n#    Residuals              1023    57           17.9\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)": [
-                "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  KOVARIANZANALYSE\n#\n#  KOVARIANZANALYSE\n#  ──────────────────────────────────────────────────────────────────────────\n#                Quadratsumme    df    Mittl. quad. Abw.    F        p\n#  ──────────────────────────────────────────────────────────────────────────\n#    supp                 205     1                205.4     11.4     0.001\n#    dose                2224     1               2224.3    124.0    < .001\n#    Residuen            1023    57                 17.9\n#  ──────────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)"
+                "data('ToothGrowth')\n\nancova(formula = len ~ supp + dose, data = ToothGrowth)\n\n#\n#  ANCOVA\n#\n#  ANCOVA\n#  ──────────────────────────────────────────────────────────────────────────\n#                Quadratsumme    df    Mittl. quad. Abw.    F        p\n#  ──────────────────────────────────────────────────────────────────────────\n#    supp                 205     1                205.4     11.4     0.001\n#    dose                2224     1               2224.3    124.0    < .001\n#    Residuen            1023    57                 17.9\n#  ──────────────────────────────────────────────────────────────────────────\n#\n\nancova(\n    formula = len ~ supp + dose,\n    data = ToothGrowth,\n    postHoc = ~ supp,\n    emMeans = ~ supp)"
             ],
             "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ───────────────────────────────────────────────────────────────────────\n#                 Sum of Squares    df    Mean Square    F        p\n#  ───────────────────────────────────────────────────────────────────────\n#    dose                   2426     2         1213.2    92.00    < .001\n#    supp                    205     1          205.4    15.57    < .001\n#    dose:supp               108     2           54.2     4.11     0.022\n#    Residuals               712    54           13.2\n#  ───────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # est. marginal means for supp and dose:supp\n    emmPlots = TRUE,              # produce plots of those marginal means\n    emmTables = TRUE)             # produce tables of those marginal means": [
-                "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  VARIANZANALYSE\n#\n#  VARIANZANALYSE\n#  ──────────────────────────────────────────────────────────────────────────\n#                Quadratsumme    df    Mittl. quad. Abw.    F        p\n#  ──────────────────────────────────────────────────────────────────────────\n#    dose                2426     2               1213.2    92.00    < .001\n#    supp                 205     1                205.4    15.57    < .001\n#    dose:supp            108     2                 54.2     4.11     0.022\n#    Residuen             712    54                 13.2\n#  ──────────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # berechne die geschätzten Randmittel für\n    emmPlots = TRUE,              # supp und dose:supp und gib Diagramme sowie\n    emmTables = TRUE)             # Tabellen mit diesen geschätzten Randmitteln\n                                  # aus"
+                "data('ToothGrowth')\n\nANOVA(formula = len ~ dose * supp, data = ToothGrowth)\n\n#\n#  ANOVA\n#\n#  ANOVA\n#  ──────────────────────────────────────────────────────────────────────────\n#                Quadratsumme    df    Mittl. quad. Abw.    F        p\n#  ──────────────────────────────────────────────────────────────────────────\n#    dose                2426     2               1213.2    92.00    < .001\n#    supp                 205     1                205.4    15.57    < .001\n#    dose:supp            108     2                 54.2     4.11     0.022\n#    Residuen             712    54                 13.2\n#  ──────────────────────────────────────────────────────────────────────────\n#\n\nANOVA(\n    formula = len ~ dose * supp,\n    data = ToothGrowth,\n    emMeans = ~ supp + dose:supp, # berechne die geschätzten Randmittel für\n    emmPlots = TRUE,              # supp und dose:supp und gib Diagramme sowie\n    emmTables = TRUE)             # Tabellen mit diesen geschätzten Randmitteln\n                                  # aus"
             ],
             "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  ONE-WAY ANOVA (NON-PARAMETRIC)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#": [
                 "data('ToothGrowth')\n\nanovaNP(formula = len ~ dose, data=ToothGrowth)\n\n#\n#  EINFAKTORIELLE ANOVA (NICHT-PARAMETRISCH)\n#\n#  Kruskal-Wallis\n#  ───────────────────────────────\n#           χ²      df    p\n#  ───────────────────────────────\n#    len    40.7     2    < .001\n#  ───────────────────────────────\n#"
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "Abhängige Variable"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "Die abhängige Variable '{dep}' enthält unendliche Werte"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "Die abhängige Variable '{dep}' enthält keine Daten (nachdem Zeilen mit fehlenden Werten entfernt wurden)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "Die abhängige Variable '{dep}' enthält nur einen einzigen Wert (nachdem Zeilen mit fehlenden Werten entfernt wurden)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "Die abhängige Variable '{dep}' muss kontinuierlich sein"
+            ],
             "Dependent Variable Label": [
                 "Label für die abhängige Variable"
             ],
-            "Dependent variable must be numeric": [
-                "Abhängige Variable muss numerisch sein"
-            ],
             "Dependent Variables": [
                 "Abhängige Variablen"
+            ],
+            "Dependent variables are very highly correlated": [
+                "Die abhängigen Variablen sind sehr hoch korreliert"
             ],
             "deprecated": [
                 "veraltet"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "Tabelle mit Deskriptivstatistik"
-            ],
-            "dev": [
-                "dev"
             ],
             "Deviance": [
                 "Abweichung"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "Eigenwerte größer als"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Leere Zellen im Intersubjekt-Design: mindestens eine Kombination von Intersubjekt-Faktorstufen hat 0 Beobachtungen"
+            ],
             "Equal cell weights": [
                 "Gleiche Zellgewichte"
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "Extraktion"
             ],
+            "Extreme values": [
+                "Extremwerte"
+            ],
+            "Extreme Values": [
+                "Extremwerte"
+            ],
+            "Extreme values of $key": [
+                "Extremwerte von $key"
+            ],
             "F": [
                 "F"
             ],
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "Faktor"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Faktor '{factor}' hat weniger als zwei Stufen. Faktoren müssen mindestens zwei Stufen haben"
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "Faktor „{Faktor}“ benötigt mindestens 2 Faktorstufen"
             ],
-            "Factor '{factorName}' contains no data": [
-                "Faktor „{factorName}“ enthält keine Daten"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Faktor '{factorName}' enthält keine Daten (nachdem Zeilen mit fehlenden Werten entfernt wurden)"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "Faktor „{factorName}“ enthält nur eine einzige Faktorstufe"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Faktor '{factorName}' enthält nur eine einzige Faktorstufe (nachdem Zeilen mit fehlenden Werten entfernt wurden)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Faktor „{factorName}“ enthält nicht verwendete Faktorstufen (nachdem Zeilen mit fehlenden Werten entfernt wurden)"
             ],
             "Factor {0}": [
                 "Faktor {0}"
@@ -1913,7 +1952,7 @@
                 "Fisher's exakter Test"
             ],
             "Fit Measures": [
-                "Fit-Maße"
+                "Maße der Modellgüte"
             ],
             "Fitted": [
                 "Angepasst (fitted)"
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 "Helmert"
             ],
+            "hidden": [
+                "versteckt"
+            ],
             "Hide loadings below": [
                 "Ausblenden von Ladungen unter"
             ],
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "Hypothese"
             ],
-            "if item dropped": [
-                "wenn das Item weggelassen wird"
+            "If item dropped": [
+                "Wenn das Item ausgeschlossen wird"
             ],
             "in development": [
                 "in Entwicklung"
@@ -2134,9 +2176,6 @@
             "Item-rest correlation": [
                 "Item-Rest-Korrelation"
             ],
-            "item-rest correlation": [
-                "Item-Rest-Korrelation"
-            ],
             "Items": [
                 "Item"
             ],
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "Stufe 2"
-            ],
-            "Levels": [
-                "Stufe"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "Der Levene-Test ist signifikant (p < 0,05), was auf eine Verletzung der Annahme gleicher Varianzen hindeutet"
@@ -2284,9 +2320,6 @@
             "Mean": [
                 "Mittelwert"
             ],
-            "mean": [
-                "mittlere"
-            ],
             "Mean ({ciWidth}% CI)": [
                 "Mittelwert ({ciWidth}% CI)"
             ],
@@ -2381,7 +2414,7 @@
                 "Modellvergleiche"
             ],
             "Model Fit": [
-                "Modell-Fit"
+                "Modellanpassung"
             ],
             "Model Fit Measures": [
                 "Güte der Modellanpassung"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "Modifikationsindizes"
             ],
+            "Monte Carlo simulation": [
+                "Monte-Carlo-Simulation"
+            ],
             "More than one mode exists, only the first is reported": [
                 "Es gibt mehr als einen Modalwert, nur der erste wird berichtet"
+            ],
+            "Most extreme": [
+                "Äußerste"
             ],
             "MSA": [
                 "MSA"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Test auf Normalverteilung (Shapiro-Wilk)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                "Nicht alle Koeffizienten konnten geschätzt werden (wahrscheinlich weil die Ergebnismatrix singulär ist)"
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Wegen zu großer Fallzahl (> 5000) nicht verfügbar."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Nicht genug Freiheitsgrade, um alle Modelleffekte zu schätzen"
+            ],
             "Number of Components": [
                 "Anzahl der Komponenten"
             ],
             "Number of components": [
                 "Anzahl der Komponenten"
             ],
+            "Number of extreme values": [
+                "Anzahl von Extremwerten"
+            ],
             "Number of Factors": [
                 "Anzahl der Faktoren"
             ],
             "Number of factors": [
                 "Anzahl der Faktoren"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Die gewünschte Anzahl von Extremwerten ist größer als die Anzahl der Datenzeilen."
             ],
             "Oblimin": [
                 "Oblimin"
@@ -2599,6 +2653,9 @@
             "Ordinal Outcomes": [
                 "Ordinale Ergebnisse"
             ],
+            "Outliers": [
+                "Ausreißer"
+            ],
             "Output": [
                 "Ausgabe"
             ],
@@ -2679,6 +2736,9 @@
             ],
             "Pearson": [
                 "Pearson"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "Die Pearson-Korrelation kann nur für numerische Werte berechnet werden"
             ],
             "Pearson's r": [
                 "Pearson's r"
@@ -3031,6 +3091,9 @@
             "R²<sub>N</sub>": [
                 "R²<sub>N</sub>"
             ],
+            "R²<sub>T</sub>": [
+                "R²<sub>T</sub>"
+            ],
             "Range": [
                 "Wertebereich"
             ],
@@ -3115,8 +3178,8 @@
             "Residual plots": [
                 "Diagramme der Residuen"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "Die Quadratsumme der Residuen und/oder die Freiheitsgrade sind Null, was auf eine perfekte Anpassung des Modells hinweist"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "Quadratsumme der Residuen und/oder die Freiheitsgrade sind Null, was auf eine perfekte Modellanpassung hinweist"
             ],
             "Residuals": [
                 "Residuen"
@@ -3171,6 +3234,9 @@
             ],
             "Row": [
                 "Zeile"
+            ],
+            "Row number": [
+                "Zeilennummer"
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "Zeilenvariable „{var}“ enthält weniger als 2 Faktorstufen"
@@ -3234,9 +3300,6 @@
             ],
             "SD": [
                 "Std.-abw."
-            ],
-            "sd": [
-                "SD"
             ],
             "SE": [
                 "Std.-fehler"
@@ -3499,6 +3562,9 @@
             "the categorical explanatory (or independent) variables.": [
                 "die kategorialen erklärenden (oder unabhängigen) Variablen."
             ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "Das Konfidenzintervall des Mittelwerts nimmt an, dass die Mittelwerte einer t-Verteilung mit N - 1 Freiheitsgraden folgen"
+            ],
             "the confidence interval width for the effect-sizes.": [
                 "die Breite des Konfidenzintervalls für die Effektstärken."
             ],
@@ -3531,6 +3597,12 @@
             ],
             "the data as a data frame": [
                 "die Daten als `data frame`"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "Der Datensatz enthält 0 Zeilen (nachdem Zeilen mit fehlenden Werten entfernt wurden)"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "Der Datensatz enthält 0 Zeilen (oder alle Zeilen enthalten fehlende Werte)"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "Die abhängige Variable „{}“ hat mehr als zwei Faktorstufen; die binomiale logistische Regression erlaubt jedoch nur abhängige Variablen mit zwei Faktorstufen."
@@ -3599,7 +3671,7 @@
                 "die Methode zum Ausschluss fehlender Werte. `Analysis by analysis` schließt fehlende Werte per Analyse aus. `Listwise` schließt eine Zeile aus allen Analysen aus, wenn einer ihrer Werte fehlt."
             ],
             "the missing value exclusion method. `Analysis by analysis` excludes missing values from each variable. `Listwise` excludes a row from all analyses if one of its values is missing.": [
-                "die Ausschlussmethode für fehlende Werte. `Analysis by analysis` schließt fehlende Werte aus jeder Variablen aus. `Listwise` schließt eine Zeile von allen Analysen aus, wenn einer ihrer Werte fehlt."
+                "die Methode zum Ausschluss fehlender Werte. `Analysis by analysis` schließt fehlende Werte aus jeder Variablen aus. `Listwise` schließt eine Zeile von allen Analysen aus, wenn einer ihrer Werte fehlt."
             ],
             "the model terms which make up the model.": [
                 "die Modellterme, aus denen sich das Modell zusammensetzt."
@@ -3612,6 +3684,9 @@
             ],
             "the post-hoc multiple comparisons corrections to use.": [
                 "die zu verwendenden Korrekturen für mulitple Paarvergleiche in den Post-hoc-Tests."
+            ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                "die Breite des Priors für den Bayes-Faktor im Student's t-test. Erfordert einen Wert zwischen 0.01 und 2.0, Vorgabe: 0.707."
             ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "die Breite des priors für die Bayes-Faktoren im Student's t-test. Erfordert einen Wert zwischen 0.5 und 2.0, Vorgabe: 0.707."
@@ -3707,7 +3782,7 @@
                 "die Breite der Konfidenzintervalle."
             ],
             "The χ² Goodness of fit test (not to be confused with the χ² test of independence), tests the Null hypothesis that the proportions of observations match some expected proportions. If the p-value is low, this suggests that the Null hypothesis is false, and that the true proportions are different to those tested.": [
-                "Der χ²-Anpassungstest (manchmal auch χ²-Verteilungstest; nicht zu verwechseln mit dem χ²-Unabhängigkeitstest) testet die Nullhypothese, dass die Anteile der Beobachtungen mit den erwarteten Anteilen übereinstimmen. Wenn der p-Wert niedrig ist, deutet dies darauf hin, dass die Nullhypothese falsch ist und dass die beobachten Anteile von den erwarteten Anteilen abweichen."
+                "Der χ²-Anpassungstest (manchmal auch χ²-Verteilungstest genannt; nicht zu verwechseln mit dem χ²-Unabhängigkeitstest) testet die Nullhypothese, dass die Anteile der Beobachtungen mit den erwarteten Anteilen übereinstimmen. Wenn der p-Wert niedrig ist, deutet dies darauf hin, dass die Nullhypothese falsch ist und dass die beobachten Anteile von den erwarteten Anteilen abweichen."
             ],
             "The χ² test of association (not to be confused with the χ² goodness of fit) is used to test whether two categorical variables are independent or associated. If the p-value is low, it suggests the variables are not independent, and that there is a relationship between the two variables.": [
                 "Der χ²-Unabhängigkeitstest (nicht zu verwechseln mit der χ²-Anpassungstest) wird verwendet, um zu testen, ob zwei kategoriale Variablen unabhängig voneinander oder miteinander assoziiert sind. Wenn der p-Wert niedrig ist, deutet dies darauf hin, dass die Variablen nicht unabhängig sind und dass eine Beziehung zwischen den beiden Variablen besteht."
@@ -3726,6 +3801,9 @@
             ],
             "Thurstone": [
                 "Thurstone"
+            ],
+            "Tjur's R²": [
+                "R² nach Tjur"
             ],
             "TLI": [
                 "TLI"
@@ -3761,7 +3839,7 @@
                 "Insgesamt"
             ],
             "total_pc (default), column_pc, or row_pc. Use respectively percentages `of total`, `within columns`, or `within rows` for the bar plot y-axis.": [
-                "total_pc (Vorgabe), column_pc, oder row_pc. Verwenden Sie für die y-Achse des Balkendiagramms jeweils den prozentualen Anteil „an der Gesamtzahl“, „innerhalb der Spalten“ oder „innerhalb der Zeilen“."
+                "total_pc (Vorgabe), column_pc, oder row_pc; verwendet entweder den prozentualen Anteil „an der Gesamtzahl“, „innerhalb der Spalten“ oder „innerhalb der Zeilen“ für die y-Achse des Balkendiagramms."
             ],
             "Tukey": [
                 "Tukey"
@@ -3807,6 +3885,9 @@
             ],
             "value": [
                 "Wert"
+            ],
+            "values": [
+                "Werte"
             ],
             "Values are counts": [
                 "Werte sind Anzahlen"
@@ -3863,13 +3944,22 @@
                 "W"
             ],
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
-                "jede Zelle gleich gewichten. (Standardmäßig werden die Zellen nach der Zellenfrequenz gewichtet)."
+                "jede Zelle gleich gewichten (standardmäßig werden die Zellen nach der Zellenfrequenz gewichtet)."
+            ],
+            "Weight Variable": [
+                "Gewichtungsvariable"
             ],
             "Weighted by '{varName}'": [
                 "Gewichtet mit „{varName}“"
             ],
+            "Weights": [
+                "Gewichte"
+            ],
             "Weights (optional)": [
                 "Gewichte (optional)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                "Die Gewichte enthalten negative Werte. Negative Gewichte sind nicht zulässig."
             ],
             "Welch's": [
                 "Welch's"

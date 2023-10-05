@@ -11,7 +11,7 @@
                 "lang": "uk"
             },
             "'{col}' contains infinite values": [
-                "'{col}' містить неопределенное кількість значень"
+                "'{col}' містить нескінченні значення"
             ],
             "'{col}' contains missing values": [
                 "'{col}' містить пропущенные значення"
@@ -41,7 +41,7 @@
                 "{} - ρ(rho) Спирмена"
             ],
             "{ciWidth}% CI Lower": [
-                "{ciWidth}% ДИКИЙ Низу"
+                "{ciWidth}% ДИКИЙ Низ"
             ],
             "{ciWidth}% CI mean {title}": [
                 "{ciWidth}% ДИКИЙ средина {title}"
@@ -80,7 +80,7 @@
                 "{varType} моделі линейной регрессии{modelNo}"
             ],
             "* p < .05, ** p < .01, *** p < .001, one-tailed": [
-                "* p < 0,05, ** p < 0,01, *** p < 0,001, односторонний"
+                "* p < .05, ** p < .01, *** p < .001, односторонній"
             ],
             "%": [
                 "%"
@@ -128,7 +128,7 @@
                 "`'means'` (по умолчанию) або `'medians'`, планки похибок для використання на графіку"
             ],
             "`'minres'` (default), `'ml'`, or `'pa'` use respectively 'minimum residual', 'maximum likelihood', or 'prinicipal axis' as the factor extraction method": [
-                "`'minres'` (по умолчанию), `'ml'` або `'pa'` використають відповідно 'мінімум решти', 'макимум правдоподобия' або 'головну ось' у якості методу витягу факторів"
+                "`'minres'` (по умолчанию), `'ml'` або `'pa'` використають відповідно 'мінімуму решти', 'макимум правдоподобия' або 'головну ось' у якості методу витягу факторів"
             ],
             "`'none'`, `'ci'` (default), or `'se'`. Use no error bars, use confidence intervals, or use standard errors on the marginal mean plots, respectively": [
                 "`'none'`, `'ci'` (по умолчанию) або `'se'`. Не використайте планки похибок, використайте доверительные интервалы або використайте стандартний помилки на графіках граничного середнього значення відповідно"
@@ -149,10 +149,10 @@
                 "`'parallel'` (по умолчанию), `'eigen'` або `'fixed'`, спосіб визначення кількості факторів"
             ],
             "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing": [
-                "`'perAnalysis'` або `'listwise'`, як обрабатывать пропущенные значення; `'perAnalysis'` виключає пропущенные значення для окремих залежати переменных, `'listwise'` виключає строку з всіх аналізів, якщо одна з її осередків отсутствует"
+                "`'perAnalysis'` або `'listwise'`, як обрабатывать пропущенные значення; `'perAnalysis'` виключає пропущенные значення для окремих залежати переменных, `'listwise'` виключає строку з всіх аналізів, якщо одна з їїосередків отсутствует"
             ],
             "`'perAnalysis'` or `'listwise'`, how to handle missing values; `'perAnalysis'` excludes missing values for individual dependent variables, `'listwise'` excludes a row from all analyses if one of its entries is missing.": [
-                "`'perAnalysis'` або `'listwise'`, як обрабатывать пропущенные значення; `'perAnalysis'` виключає пропущенные значення для окремих залежати переменных, `'listwise'` виключає строку з всіх аналізів, якщо одна з її осередків отсутствует."
+                "`'perAnalysis'` або `'listwise'`, як обрабатывать пропущенные значення; `'perAnalysis'` виключає пропущенные значення для окремих залежати переменных, `'listwise'` виключає строку з всіх аналізів, якщо одна з їїосередків отсутствует."
             ],
             "`'refLevel'` (default) or `'grandMean'`, coding of the intercept. Either creates contrast so that the intercept represents the reference level or the grand mean": [
                 "`'refLevel'` (по умолчанию) або `'grandMean'`, кодирование перехвата. Либо створює контраст, так що точка пересечения представляє собою контрольний рівень або спільнішийий середній значення"
@@ -182,13 +182,13 @@
                 "`Пропорції - ${var}`"
             ],
             "`TRUE` (default) or `FALSE`, add labels with the row number to the outliers in the box plot": [
-                ""
+                "`TRUE` (по умолчанию) або `FALSE`, добавляет позначки з номером строки к викидам на коробчатой диаграмме"
             ],
             "`TRUE` (default) or `FALSE`, perform Student's t-tests": [
                 "`TRUE` (по умолчанию) або `FALSE`, виконує t-критерій Стьюдента"
             ],
             "`TRUE` (default) or `FALSE`, perform Welch's one-way ANOVA which does not assume equal variances": [
-                "`TRUE` (по умолчанию) або `FALSE`, виконує однофакторный дисперсионный аналіз Уэлча, котрий не припускає рівних дисперсий"
+                "`TRUE` (по умолчанию) або `FALSE`, виконує однофакторный дисперсионный аналізу Уэлча, котрий не припускає рівних дисперсий"
             ],
             "`TRUE` (default) or `FALSE`, provide 'Z' and 'p' values for the model estimates": [
                 "`TRUE` (по умолчанию) або `FALSE`, представляє значення 'Z' і 'p' для оцінок моделі"
@@ -275,7 +275,7 @@
                 "`TRUE` або `FALSE` (по умолчанию), виконує тесту Шапиро-Уилка на рештах"
             ],
             "`TRUE` or `FALSE` (default), perform Fisher's one-way ANOVA which assumes equal variances": [
-                "`TRUE` або `FALSE` (по умолчанию), виконує однофакторный дисперсионный аналіз Фишера, котрий припускає рівні дисперсии"
+                "`TRUE` або `FALSE` (по умолчанию), виконує однофакторный дисперсионный аналізу Фишера, котрий припускає рівні дисперсии"
             ],
             "`TRUE` or `FALSE` (default), perform homogeneity tests": [
                 "`TRUE` або `FALSE` (по умолчанию), виконуєте тестів на однородность"
@@ -314,7 +314,7 @@
                 "`TRUE` або `FALSE` (по умолчанию), виконує ранговый тіст знаків Уилкоксона"
             ],
             "`TRUE` or `FALSE` (default), plot the data on top of the marginal means": [
-                "`TRUE` або `FALSE` (по умолчанию), завдає дані поверх граничних середніх значень"
+                "`TRUE` або `FALSE` (по умолчанию), завдає дані поверх граничних середній значень"
             ],
             "`TRUE` or `FALSE` (default), provide a confidence interval for the model coefficient estimates": [
                 "`TRUE` або `FALSE` (по умолчанию), представляє доверительный интервал для оцінок коефіцієнтів моделі"
@@ -467,7 +467,7 @@
                 "`TRUE` або `FALSE` (по умолчанию), представляє середні елемента"
             ],
             "`TRUE` or `FALSE` (default), provide item standard deviations": [
-                "`TRUE` або `FALSE` (по умолчанию), представляє стандартні відхилення елемента"
+                "`TRUE` або `FALSE` (по умолчанию), представляє стандартний відхилення елемента"
             ],
             "`TRUE` or `FALSE` (default), provide item-rest correlations": [
                 "`TRUE` або `FALSE` (по умолчанию), представляє корреляции між елементами і рештами"
@@ -489,6 +489,9 @@
             ],
             "`TRUE` or `FALSE` (default), provide modification indices for the parameters not included in the model": [
                 "`TRUE` або `FALSE` (по умолчанию), представляє індекси модифікації для параметрів, не включених у модель"
+            ],
+            "`TRUE` or `FALSE` (default), provide N most extreme (highest and lowest) values": [
+                "`TRUE` або `FALSE` (типово), вказують N найбільш екстремальних (найбільше та найменше) значень"
             ],
             "`TRUE` or `FALSE` (default), provide percentiles": [
                 "`TRUE` або `FALSE` (по умолчанию), представляє процентили"
@@ -557,7 +560,7 @@
                 "`TRUE` або `FALSE` (по умолчанию), представляє межквартильный діапазону"
             ],
             "`TRUE` or `FALSE` (default), provide the kurtosis": [
-                "`TRUE` або `FALSE` (по умолчанию), представляє ексцесу"
+                "`TRUE` або `FALSE` (по умолчанию), представляє ексцес"
             ],
             "`TRUE` or `FALSE` (default), provide the likelihood ratio": [
                 "`TRUE` або `FALSE` (по умолчанию), представляє ставлення правдоподобия"
@@ -794,7 +797,7 @@
                 "Малое значення p припускає порушення припущення о нормальности"
             ],
             "A nice correlation data set": [
-                "Хороший набір корреляционных даних"
+                "Хороший набору корреляционных даних"
             ],
             "a number (default: 0.1), highlight values in the `'corRes'` table above this value": [
                 "число (по умолчанию: 0,1), виділите значення у таблиці `'corRes'` над цим значенням"
@@ -822,6 +825,9 @@
             ],
             "a number (default: 3), highlight values in the `'modIndices'` tables above this value": [
                 "число (по умолчанию: 3), виділити значення у таблицях `'modIndices'` над цим значенням"
+            ],
+            "a number between 0.01 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
+                ""
             ],
             "a number between 0.5 and 2 (default 0.707), the prior width to use in calculating Bayes factors": [
                 "число від 0,5 до 2 (по умолчанию 0,707), предыдущая ширина, використовувати прі розрахунку факторів Байеса"
@@ -1076,7 +1082,7 @@
                 "Додати новий блок"
             ],
             "Add New Factor": [
-                "Додати новий фактор"
+                "Додати новий фактору"
             ],
             "Add New Term": [
                 "Додати новий терм"
@@ -1085,13 +1091,13 @@
                 "Додаткові опции"
             ],
             "Additional Output": [
-                "Додатковий вивід"
+                "Додатковий виводу"
             ],
             "Additional Statistics": [
                 "Додатковий статистики"
             ],
             "Adjusted R²": [
-                "Скорректированный R²"
+                "Скоригований R²"
             ],
             "AIC": [
                 "AIC"
@@ -1107,6 +1113,9 @@
             ],
             "an array of descriptive plots": [
                 "масив описательных графіків"
+            ],
+            "an array of extreme values tables": [
+                "масив таблиць екстремальних значень"
             ],
             "an array of frequency tables": [
                 "масив частотных таблиць"
@@ -1150,8 +1159,11 @@
             "an integer (default: 4) specifying the number of equal groups": [
                 "целое число (по умолчанию: 4), котрий визначати кількість рівний груп"
             ],
+            "an integer (default: 5) specifying the number of extreme values": [
+                "ціле число (типово: 5), що задає кількість екстремальних значень"
+            ],
             "An uninspiring ANOVA data set": [
-                "Скучный набір даних ANOVA"
+                "Скучный набору даних ANOVA"
             ],
             "Analyses bundled with jamovi": [
                 "Аналізи у комплекті з jamovi"
@@ -1169,7 +1181,7 @@
                 "ANOVA"
             ],
             "ANOVA test": [
-                "Дисперсионный аналіз"
+                "Дисперсионный аналізу"
             ],
             "As there are no between subjects factors specified this assumption is always met.": [
                 "Оскільки між суб'єктами не вказані фактори, це допущение завжди виконується."
@@ -1193,7 +1205,7 @@
                 "Автокорреляция"
             ],
             "Autocorrelation test": [
-                "Автокорреляционный тіст"
+                "Автокорреляционный тесту"
             ],
             "Available for 2x2 tables only": [
                 "Доступно тільки для таблиць 2x2"
@@ -1262,13 +1274,13 @@
                 "Биномиальный"
             ],
             "Binomial Logistic Regression": [
-                "Биномиальная логистическая регрессия"
+                "Біноміальна логістична регресія"
             ],
             "Binomial Test": [
-                "Биномиальный тіст"
+                "Биномиальный тесту"
             ],
             "Binomial test": [
-                "Биномиальный тіст"
+                "Биномиальный тесту"
             ],
             "Block {0}": [
                 "Блок {0}"
@@ -1319,10 +1331,10 @@
                 "Квантили Хи-квадрату"
             ],
             "CI Lower": [
-                "ДИКИЙ Нижний"
+                "CI Нижній"
             ],
             "CI Upper": [
-                "ДИКИЙ Верхний"
+                "CI Верхній"
             ],
             "Classification Table": [
                 "Классификационная таблиця"
@@ -1334,7 +1346,7 @@
                 "Классификационная таблиця – {dep}"
             ],
             "Cohen's d": [
-                "Коэн d"
+                "Коен d"
             ],
             "Collinearity Statistics": [
                 "Статистики коллинеарности"
@@ -1344,9 +1356,6 @@
             ],
             "Column": [
                 "Шпальта"
-            ],
-            "Column '{name}' contains unused levels (possible only when rows with missing values are excluded)": [
-                "Шпальта '{name}' містить неиспользуемые рівні (можливо тільки прі виключенні строк з відсутній значеннями)"
             ],
             "Column variable '{var}' contains fewer than 2 levels": [
                 "Переменная шпальти '{var}' містить менее 2 рівнів"
@@ -1535,7 +1544,7 @@
                 "Достовірний интервал"
             ],
             "Cronbach's α": [
-                "Кронбах α"
+                "α Кронбаха"
             ],
             "Cronbach's α (if item is dropped)": [
                 "Кронбаха α (якщо елемент выпал)"
@@ -1578,6 +1587,9 @@
             ],
             "Data Reduction": [
                 "Сжатие даних"
+            ],
+            "Data set is currently unweighted": [
+                ""
             ],
             "Data Summary": [
                 "Зведення даних"
@@ -1660,14 +1672,26 @@
             "Dependent Variable": [
                 "Залежати переменная"
             ],
+            "Dependent variable '{dep}' contains infinite values": [
+                "Залежна змінна '{dep}' містить нескінченні значення"
+            ],
+            "Dependent variable '{dep}' contains no data (after removing rows with missing values)": [
+                "Залежна змінна '{dep}' не містить даних (після видалення рядків з відсутніми значеннями)"
+            ],
+            "Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)": [
+                "Залежна змінна '{dep}' містить тільки одне неповторюване значення (після видалення рядків з відсутніми значеннями)"
+            ],
+            "Dependent variable '{dep}' must be continuous": [
+                "Залежна змінна '{dep}' повинна бути неперервною"
+            ],
             "Dependent Variable Label": [
                 "Позначка залежати переменной"
             ],
-            "Dependent variable must be numeric": [
-                "Залежати переменная повинна бути числовой"
-            ],
             "Dependent Variables": [
                 "Залежати переменные"
+            ],
+            "Dependent variables are very highly correlated": [
+                "Залежні змінні дуже сильно корелюють між собою"
             ],
             "deprecated": [
                 "застарів"
@@ -1698,9 +1722,6 @@
             ],
             "Descriptives table": [
                 "Описательная таблиця"
-            ],
-            "dev": [
-                "dev"
             ],
             "Deviance": [
                 "Девиантность"
@@ -1768,6 +1789,9 @@
             "Eigenvalues greater than": [
                 "Собственные значення більше, чим"
             ],
+            "Empty cells in between subject design: at least one combination of between subject factor levels has 0 observations": [
+                "Порожні клітинки між предметом дизайну: принаймні одне поєднання між рівнями фактора має 0 спостережень"
+            ],
             "Equal cell weights": [
                 "Рівні веса осередків"
             ],
@@ -1834,6 +1858,15 @@
             "Extraction": [
                 "Витяг"
             ],
+            "Extreme values": [
+                "Екстремальні значення"
+            ],
+            "Extreme Values": [
+                "Екстремальні значення"
+            ],
+            "Extreme values of $key": [
+                "Екстремальні значення $key"
+            ],
             "F": [
                 "F"
             ],
@@ -1846,14 +1879,20 @@
             "Factor": [
                 "Фактор"
             ],
+            "Factor '{factor}' has less than two levels. Factors must have at least two levels": [
+                "Фактор '{factor}' має менше двох рівнів. Фактори повинні мати не менше двох рівнів"
+            ],
             "Factor '{factor}' needs to have at least 2 levels": [
                 "Фактор '{factor}' повинен мати як мінімум 2 рівня"
             ],
-            "Factor '{factorName}' contains no data": [
-                "Фактор '{factorName}' не містить даних"
+            "Factor '{factorName}' contains no data (after removing rows with missing values)": [
+                "Фактор '{factorName}' не містить даних (після видалення рядків з відсутніми значеннями)"
             ],
-            "Factor '{factorName}' contains only a single level": [
-                "Фактор '{factorName}' містить тільки один рівень"
+            "Factor '{factorName}' contains only a single level (after removing rows with missing values)": [
+                "Фактор '{factorName}' містить тільки один рівень (після видалення рядків з відсутніми значеннями)"
+            ],
+            "Factor '{factorName}' contains unused levels (after removing rows with missing values)": [
+                "Фактор '{factorName}' містить невикористані рівні (після видалення рядків з відсутніми значеннями)"
             ],
             "Factor {0}": [
                 "Фактор {0}"
@@ -1910,7 +1949,7 @@
                 "Фишер"
             ],
             "Fisher's exact test": [
-                "Точный тіст Фишера"
+                "Точный тесту Фишера"
             ],
             "Fit Measures": [
                 "Міри відповідності"
@@ -1925,7 +1964,7 @@
                 "Фіксований номер"
             ],
             "fixed parameter": [
-                "фіксований параметр"
+                "фіксований параметру"
             ],
             "Flag significant comparisons": [
                 "Позначити значити порівняння"
@@ -1958,7 +1997,7 @@
                 "Геймс-Хауэлл (неравные дисперсии)"
             ],
             "Games-Howell Post-Hoc Test – {dep}": [
-                "Апостериорный тіст Геймс-Хауэлл – {dep}"
+                "Апостериорный тесту Геймс-Хауэлл – {dep}"
             ],
             "Gamma": [
                 "Гамма"
@@ -2035,6 +2074,9 @@
             "Helmert": [
                 "Гельмерт"
             ],
+            "hidden": [
+                ""
+            ],
             "Hide loadings below": [
                 "Скрыть завантаження нижче"
             ],
@@ -2068,8 +2110,8 @@
             "Hypothesis": [
                 "Гіпотеза"
             ],
-            "if item dropped": [
-                "якщо елемент выпал"
+            "If item dropped": [
+                "Якщо елемент впав"
             ],
             "in development": [
                 "у розробці"
@@ -2081,7 +2123,7 @@
                 "Незалежні вибірки"
             ],
             "Independent Samples T-Test": [
-                "Т-тест незалежний вибірок"
+                "Т-тесту незалежний вибірок"
             ],
             "Indicator": [
                 "Індикатор"
@@ -2102,7 +2144,7 @@
                 "Перехват"
             ],
             "Interval": [
-                "Интервал"
+                "Інтервал"
             ],
             "IQR": [
                 "Межквартильное відстань"
@@ -2132,10 +2174,7 @@
                 "Статистики елемента"
             ],
             "Item-rest correlation": [
-                "Корреляция елемент-решту"
-            ],
-            "item-rest correlation": [
-                "корреляция елемента і решти"
+                "Корреляция елементу-решту"
             ],
             "Items": [
                 "Елементи"
@@ -2147,7 +2186,7 @@
                 "Разброс"
             ],
             "Kendall's Tau B": [
-                "Кендалл Тау B"
+                "Тау Кендалла Б"
             ],
             "Kendall's Tau-B": [
                 "Кендалл Тау-B"
@@ -2171,7 +2210,7 @@
                 "Ексцес"
             ],
             "Label outliers": [
-                ""
+                "Позначити викиди"
             ],
             "Layers": [
                 "Шари"
@@ -2184,9 +2223,6 @@
             ],
             "Level 2": [
                 "Рівень 2"
-            ],
-            "Levels": [
-                "Рівні"
             ],
             "Levene's test is significant (p < .05), suggesting a violation of the assumption of equal variances": [
                 "Критерій Левена значимо (p < 0,05), що свідчить о порушенні припущення о рівних дисперсиях"
@@ -2284,9 +2320,6 @@
             "Mean": [
                 "Середнішій"
             ],
-            "mean": [
-                "середнішій"
-            ],
             "Mean ({ciWidth}% CI)": [
                 "Середнішій ({ciWidth}% ДИКИЙ)"
             ],
@@ -2354,7 +2387,7 @@
                 "Пропущенный"
             ],
             "Missing Values": [
-                "Відсутні значення"
+                "Пропущені значення"
             ],
             "Missing values": [
                 "Відсутні значення"
@@ -2410,8 +2443,14 @@
             "Modification indices": [
                 "Індекси модифікації"
             ],
+            "Monte Carlo simulation": [
+                ""
+            ],
             "More than one mode exists, only the first is reported": [
                 "Існує понад одної моди, повідомляє тільки о першій"
+            ],
+            "Most extreme": [
+                "Найекстремальніший"
             ],
             "MSA": [
                 "MSA"
@@ -2447,7 +2486,7 @@
                 "Без поправок"
             ],
             "No factors defined. Box's M test is only relevant when model contains factors.": [
-                "Фактори не визначені. М-тест Боксу актуален тільки тоді, коли модель містить фактори."
+                "Фактори не визначені. М-тесту Боксу актуален тільки тоді, коли модель містить фактори."
             ],
             "Nominal": [
                 "Номинальный"
@@ -2473,17 +2512,32 @@
             "Normality Test (Shapiro-Wilk)": [
                 "Тест на нормальность (Шапиро-Уилк)"
             ],
+            "Not all coefficients could be estimated (likely due to singular fit)": [
+                ""
+            ],
+            "Not available due to too large number of cases (> 5000).": [
+                "Не доступно через занадто велику кількість випадків (> 5000)."
+            ],
+            "Not enough degrees of freedom to estimate all the model effects": [
+                "Недостатньо ступенів свободи для оцінки всіх ефектів моделі"
+            ],
             "Number of Components": [
-                "Кількість компонент"
+                "Кількість компоненту"
             ],
             "Number of components": [
-                "Кількість компонент"
+                "Кількість компоненту"
+            ],
+            "Number of extreme values": [
+                "Кількість екстремальних значень"
             ],
             "Number of Factors": [
                 "Кількість факторів"
             ],
             "Number of factors": [
                 "Кількість факторів"
+            ],
+            "Number of requested extreme values is higher than the number of rows in the data.": [
+                "Кількість запитуваних екстремальних значень перевищує кількість рядків у даних."
             ],
             "Oblimin": [
                 "Облимин"
@@ -2519,7 +2573,7 @@
                 "Омнибусные тести ставлення правдоподобия"
             ],
             "Omnibus Test": [
-                "Омнибусный тіст"
+                "Омнибусный тесту"
             ],
             "Omnibus Tests": [
                 "Омнибусные тести"
@@ -2549,70 +2603,73 @@
                 "Не удалось оцінити один або кілька коефіцієнтів у моделі {modelNo} із-за полной коллинеарности."
             ],
             "one or more of `'cfi'`, `'tli'`, `'srmr'`, `'rmsea'`, `'aic'`, or `'bic'`; use CFI, TLI, SRMR, RMSEA + 90% confidence interval, adjusted AIC, and BIC model fit measures, respectively": [
-                "один або кілька з `'cfi'`, `'tli'`, `'srmr'`, rmsea\\\", `'aic'` або `'bic'`; використайте CFI, TLI, SRMR, RMSEA + 90% доверительный интервал, скорректированные показники відповідності моделі AIC і BIC відповідно\""
+                "один або кілька з `'cfi'`, `'tli'`, `'srmr'`, rmsea\"\n\n#: ancova/options/effectSize.description.R\n#: anova/options/effectSize.description.R\n#: anovaRM/options/effectSize.description.R\nmsgid "
             ],
             "one or more of `'eta'`, `'partEta'`, or `'omega'`; use η², partial η², and ω² effect sizes, respectively": [
-                "один або кілька з `'eta'`, `'partEta'`, або `'omega'`; використати розміри ефекту η², частки η² і ω² відповідно"
+                "один або більше \"eta\", \"partEta\" або \"omega\"; використовувати розміри ефекту η², часткові η² та ω² відповідно"
             ],
             "one or more of `'none'` (default), `'GG'`, or ``HF``; use no p-value correction, the Greenhouse-Geisser p-value correction, and the Huynh-Feldt p-value correction for shericity, respectively": [
-                "один або кілька з `'none'` (по умолчанию), `'GG'` або ``HF``; не використати поправку на p-значення, поправку на p-значення Гринхауса-Гейссера і поправку на p-значення Huynh-Feldt для шеритичности відповідно"
+                "одне або більше з \"none\" (типово), \"GG\" або \"HF\"; не використовувати поправку р-значення, поправку р-значення Ґрінгауза-Ґайссера та поправку р-значення Гюйня-Фельдта для шеритичності, відповідно"
             ],
             "one or more of `'none'`, `'tukey'` (default), `'scheffe'`, `'bonf'`, or `'holm'`; use no, Tukey, Scheffe, Bonferroni and Holm posthoc corrections, respectively": [
-                "один або кілька з `'none'`, `'tukey'` (по умолчанию), `'scheffe'`, `'bonf'` або `'holm'`; використати апостериорные поправки Нi, Тьюки, Шеффе, Бонферрони і Пагорба відповідно"
+                "один або декілька `` none'`, `'tukey' `(за замовчуванням), `'scheffe'`, `'bonf'` або `'holm'`; не використовуйте, виправлення Tukey, Scheffe, Bonferroni та Holm posthoc відповідно"
             ],
             "one or more of `'none'`, `'tukey'`, `'scheffe'`, `'bonf'`, or `'holm'`; provide no, Tukey, Scheffe, Bonferroni, and Holm Post Hoc corrections respectively": [
-                "один або кілька з `'none'`, `'tukey'`, `'scheffe'`, `'bonf'` або `'holm'`; представляє апостериорные поправки Нi, Тьюки, Шеффе, Бонферрони і Пагорба постфактум відповідно"
+                "один або декілька `` none '``, `'tukey'`, ``scheffe '`, `'bonf'` або `` 'holm'`; надати виправлення відповідно Tukey, Scheffe, Bonferroni та Holm Post Hoc"
             ],
             "one or more of `'pillai'`, `'wilks'`, `'hotel'`, or `'roy'`; use Pillai's Trace, Wilks' Lambda, Hotelling's Trace, and Roy's Largest Root multivariate statistics, respectively": [
-                "один або кілька з `'pillai'`, `'wilks'`, `'hotel'`, або `'roy'`; використає многомерную статистику Слід Пиллаи, лямбда Уилкса, слід Хотеллинга і наибольший корень Риючи, відповідно"
+                "один або кілька `'pillai'`, `'wilks'`, `'hotel'`, або `'roy'`; використовують Pillai's Trace , Wilks' Lambda, Hotelling's Trace, і Roy's Largest Root багатоваріантивної статистики, відповідно"
             ],
             "one or more of `'r2mf'`, `'r2cs'`, or `'r2n'`; use McFadden's, Cox & Snell, and Nagelkerke pseudo-R², respectively": [
-                "один або кілька з `'r2mf'`, `'r2cs'`, або `'r2n'`; використає псевдо-R² Макфадденс, Кокс і Снелл і Нагелькерке відповідно"
+                "один або кілька `` r2mf '`, 'r2cs'` або `'r2n' '; використовувати McFadden', Cox & Snell і Nagelkerke pseudo-R² відповідно"
             ],
             "One Sample Proportion Tests": [
-                "Одновыборочные тести пропорцій"
+                "Тести пропорцій одного зразка"
             ],
             "One Sample T-Test": [
-                "Одновыборочный Т-тіст"
+                "Один зразок T-Тесту"
             ],
             "One-Way ANOVA": [
-                "Односторонний дисперсионный аналіз"
+                "Односторонній ANOVA"
             ],
             "One-Way ANOVA (Fisher's)": [
-                "Однофакторный дисперсионный аналіз (Фишера)"
+                "Односторонній ANOVA (Рибалка)"
             ],
             "One-Way ANOVA (Non-parametric)": [
-                "Однофакторный дисперсионный аналіз (Непараметрический)"
+                "Односторонній ANOVA (не параметричний)"
             ],
             "One-Way ANOVA (Welch's)": [
-                "Однофакторный дисперсионный аналіз (Уэлча)"
+                "Односторонній ANOVA (Велч)"
             ],
             "Options": [
-                "Опции"
+                "Варіанти"
             ],
             "Ordinal": [
-                "Порядковый"
+                "Порядковий"
             ],
             "Ordinal Logistic Regression": [
-                "Порядковая логистическая регрессия"
+                "Звичайний логістичний регіон"
             ],
             "Ordinal Outcomes": [
-                "Порядковые исходы"
+                "Звичайні результати"
+            ],
+            "Outliers": [
+                "Викиди"
             ],
             "Output": [
                 "Вивід"
             ],
             "Overall": [
-                "Всеобъемлющий"
+                "Загалом"
             ],
             "Overall model": [
-                "Всеобъемлющая модель"
-            ],
-            "Overall Model Test": [
-                "Тест всеобъемлющей моделі"
+                "Загальна модель"
             ],
             "Overall model test": [
-                "Тест всеобъемлющей моделі"
+                "Загальний тест моделі"
+            ],
+            "Overall Model Test": [
+                "Загальний Модельний тест"
             ],
             "p": [
                 "p"
@@ -2621,145 +2678,148 @@
                 "р-значення"
             ],
             "p<sub>bonferroni</sub>": [
-                "p<sub>Бонферрони</sub>"
+                "p<sub>bonferroni</sub>"
             ],
             "p<sub>holm</sub>": [
-                "p<sub>Пагорб</sub>"
+                "p<sub>holm</sub>"
             ],
             "p<sub>scheffe</sub>": [
-                "p<sub>Шеффе</sub>"
+                "p<sub>scheffe</sub>"
             ],
             "p<sub>tukey</sub>": [
-                "p<sub>Тьюки</sub>"
+                "p<sub>tukey</sub>"
             ],
             "Paired Samples": [
-                "Парные вибірки"
+                "Парні зразки"
             ],
             "Paired Samples Contingency Tables": [
-                "Таблиці сопряжения парных вибірок"
+                "Парні зразки таблиць непередбачених ситуацій"
             ],
             "Paired Samples T-Test": [
-                "Т-тест парных вибірок"
+                "Парні зразки T-Тесту"
             ],
             "Paired Variables": [
-                "Парные переменные"
+                "Парні змінні"
             ],
             "Pairwise comparisons - $key": [
-                "Попарные порівняння - $key"
-            ],
-            "Pairwise Comparisons (Durbin-Conover)": [
-                "Попарные порівняння (Дурбин-Коновер)"
+                "Паралельні порівняння - $key"
             ],
             "Pairwise comparisons (Durbin-Conover)": [
-                "Попарные порівняння (Дурбин-Коновер)"
+                "Паралельні порівняння (Дурбін-Коновер)"
+            ],
+            "Pairwise Comparisons (Durbin-Conover)": [
+                "Паралельні порівняння (Дурбін-Коновер)"
             ],
             "Partial": [
-                "Приватний"
+                "Частковий"
             ],
             "Partial Correlation": [
-                "Приватна корреляция"
+                "Часткова кореляція"
             ],
             "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables": [
-                "Матрицы часткової корреляции - це спосіб вивчення линейной зв'язку\nміж двома або понад непрерывными переменными прі контролі за другими переменными"
+                "Матриці часткової кореляції - це спосіб вивчення лінійних зв’язків\nміж двома або більше безперервними змінними під час контролю за іншими\nзмінними"
             ],
             "Partial correlation matrices are a way to examine linear relationships\nbetween two or more continuous variables while controlling for other\nvariables\n\nFor each pair of variables, a Pearson's r value indicates the strength\nand direction of the relationship between those two variables. A\npositive value indicates a positive relationship (higher values of one\nvariable predict higher values of the other variable). A negative\nPearson's r indicates a negative relationship (higher values of one\nvariable predict lower values of the other variable, and vice-versa).\nA value of zero indicates no relationship (whether a variable is high\nor low, does not tell us anything about the value of the other\nvariable).\n\nMore formally, it is possible to test the null hypothesis that the\ncorrelation is zero and calculate a p-value. If the p-value is low, it\nsuggests the correlation co-efficient is not zero, and there is a linear\n(or more complex) relationship between the two variables.": [
-                "Матрицы часткової корреляции - це спосіб вивчення линейной зв'язку\nміж двома або понад непрерывными переменными прі контролі за другими переменными.\n\nДля кожноїпари переменных значення r по Пирсону показує силу\nі направлення зв'язку між цими двома переменными. A\nпозитивне значення вказує на позитивну зв'язок (понад високі значення одної переменной предсказывают понад високі значення другой переменной).\nОтрицательное значення Pearson's r вказує на отрицательную зв'язок (понад високий значення одної переменной предсказывают понад низкие значення другой переменной). переменной предсказывают понад низкие значення другой переменной, і навпаки).\nНульове значення вказує на відсутність взаимосвязи (високі або низкие значення переменной нічому не говорять).\nабо низкая, нічого не говорить нам о значенні другой переменной).\n\nПонад формально, можна перевірити нульову гіпотезу о тому, що\nкорреляция рівний нулю і вычислить p-значення. Якщо p-значення низкое, це говорить о тому, що\nце говорить о тому, що коефіцієнт корреляции не рівний нулю, і існує линейная (або понад складна) зв'язок між двома переменными."
-            ],
-            "Partial η²": [
-                "Частка η²"
+                "Матриці часткової кореляції - це спосіб вивчення лінійних зв’язків\nміж двома або більше безперервними змінними під час контролю за іншими\nзмінними\n\nДля кожної пари змінних значення r Пірсона вказує на міцність\nі напрямок взаємозв'язку між цими двома змінними. А\nпозитивне значення вказує на позитивний зв’язок (більші значення однієї\nзмінної прогнозує більш високі значення іншої змінної). Негативний\nr Пірсона вказує на негативний зв’язок (більші значення однієї\nзмінної прогнозує нижчі значення іншої змінної та навпаки).\nЗначення нуля вказує на відсутність співвідношення (чи є змінна високою\nабо низький, нічого не говорить нам про цінність іншої\nзмінної).\n\nБільш формально можна перевірити нульову гіпотезу про те, що\nкореляція дорівнює нулю і обчислює р-значення. Якщо значення p низьке, воно\nприпускає, що коефіцієнт кореляції не дорівнює нулю, і існує лінійний\n(або більш складне) співвідношення між двома змінними."
             ],
             "partial η²": [
-                "частку η²"
+                "частковий η²"
             ],
-            "Path Diagram": [
-                "Диаграмма путі"
+            "Partial η²": [
+                "Частковий η²"
             ],
             "Path diagram": [
-                "Диаграмма путі"
+                "Діаграма шляху"
+            ],
+            "Path Diagram": [
+                "Діаграма Шляху"
             ],
             "Pearson": [
-                "Пирсон"
+                "Пірсон"
+            ],
+            "Pearson correlation cannot be calculated for non-numeric values": [
+                "Кореляцію Пірсона неможливо обчислити для нечислових значень"
             ],
             "Pearson's r": [
-                "Пирсон r"
+                "r Пірсона"
             ],
             "Pearson{}Correlation": [
-                "Корреляция{}Пирсона"
+                "Пірсонова{}Кореляція"
             ],
             "Percentages": [
-                "Процентаж"
+                "Відсотки"
             ],
             "Percentages of total": [
-                "Спільний процентаж"
+                "Відсотки від загальної кількості"
             ],
             "Percentages within {var}": [
-                "Процентаж у межах {var}"
+                "Відсотки в межах {var}"
             ],
             "Percentile": [
-                "Процентиль"
-            ],
-            "Percentile Values": [
-                "Процентильные значення"
+                "Процетиль"
             ],
             "Percentile values": [
-                "Процентильные значення"
+                "Процентильні значення"
+            ],
+            "Percentile Values": [
+                "Процентильні цінності"
             ],
             "Percentiles": [
-                "Процентили"
+                "Процентилі"
             ],
             "perform a Mann-Whitney U test.": [
-                "виконати U-критерій Манна-Уитни."
+                "виконати тест Манна-Вітні Ю."
             ],
             "perform a Shapiro-Wilk test of normality. A low p-value suggests the data is not from a normal distribution.": [
-                "виконати критерій нормальности Шапиро-Уилка. Низкое значення p припускає, що дані не відносяться к нормальному розподілу."
+                "виконати тест на нормальність Шапіро-Вілка. Низьке p-значення говорить про те, що дані не з нормального розподілу."
             ],
             "perform an overall model test.": [
-                "провести спільний тест моделі."
+                "виконати загальний тест моделі."
             ],
             "perform Fisher's (or what might be call 'normal') ANOVAs.": [
-                "виконати дисперсионный аналіз Фишера (або то, що можна було би назвати 'нормальним') ANOVA."
+                "Виконати тест ANOVA Фішера (або те, що можна назвати \"нормальним\")."
             ],
             "perform Shapiro-Wilk tests of normality. A low p-value suggests the data is not from a normal distribution.": [
-                "виконати тести нормальности Шапиро-Уилка. Низкое значення p припускає, що дані не відносяться к нормальному розподілу."
+                "виконати тест Шапіро-Вілка на нормальність. Низьке значення p означає, що дані не належать до нормального розподілу."
             ],
             "perform Shapiro-Wilk tests of normality. A low p-value suggests the residuals are not normally distributed.": [
-                "виконати тести нормальности Шапиро-Уилка. Низкое p-значення припускає, що решти не розподілені нормально."
+                "виконати тест Шапіро-Вілка на нормальність. Низьке значення p означає, що залишки розподілені ненормально."
             ],
             "perform Student's independent samples t-tests.": [
-                "виконати t-критерій Стьюдента для незалежний вибірок."
+                "виконати t-критерії незалежних вибірок Стьюдента."
             ],
             "perform Student's one-sample t-tests.": [
-                "виконати одновыборочные t-критерії Стьюдента."
+                "виконати одновибіркові t-тести Стьюдента."
             ],
             "perform Student's paired samples t-tests.": [
-                "виконати t-критерії Стьюдента для парных вибірок."
+                "виконати t-критерії для парних вибірок Стьюдента."
             ],
             "perform Welch's ANOVAs.": [
-                "виконати ANOVA Уэлча."
+                "виконати дисперсійний аналіз Велча."
             ],
             "perform Welch's tests.": [
-                "виконати тести Уэлча."
+                "вони виконують тести Велча."
             ],
             "perform Wilcoxon signed rank tests.": [
-                "виконати знаковые ранговые тести Уилкоксона."
+                "виконувати знакові рангові тести Вілкоксона."
             ],
             "Phi and Cramer's V": [
-                "Фи і Крамер V"
+                "Фі та Крамер V"
             ],
             "Phi-coefficient": [
-                "Фи-коефіцієнт"
+                "Коефіцієнт Фі"
             ],
             "Pillai's Trace": [
-                "Слід Пиллаи"
+                "Слід Піллаї"
             ],
             "Plot": [
                 "Графік"
             ],
             "plot densities along the diagonal of the correlation matrix plot.": [
-                "графік плотности розподілу уздовж диагонали графіка корреляционной матрицы."
+                "щільності графіка вздовж діагоналі графіка кореляційної матриці."
             ],
             "plot the data along with the marginal means.": [
-                "збудуйте дані разом з маргінальними середній значеннями."
+                "побудувати графік даних разом із марґінальними середніми значеннями."
             ],
             "Plot Type": [
                 "Тип графіка"
@@ -2768,100 +2828,100 @@
                 "Графіки"
             ],
             "Polynomial": [
-                "Полиномиальный"
+                "Поліноміальний"
             ],
             "Post Hoc Comparisons - {term}": [
-                "Апостериорные порівняння - {term}"
+                "Порівняння Post Hoc - {term}"
             ],
             "Post Hoc Tests": [
-                "Апостериорные тести"
+                "Post Hoc тести"
             ],
             "Post Hoc Tests – $key": [
-                "Апостериорные тести – $key"
+                "Post Hoc тести – $key"
             ],
             "Post-Hoc Model Performance": [
-                "Производительность апостериорной моделі"
+                "Post-Hoc Модель Продуктивності"
             ],
             "Post-Hoc Test": [
-                "Апостериорный тіст"
+                "Post-Hoc Тест"
             ],
             "Post-Hoc Tests": [
-                "Апостериорные тести"
+                "Post-Hoc Тести"
             ],
             "Posterior": [
-                "Постериорный"
+                "Постеріорний"
             ],
             "Posterior plot": [
-                "Постериорный графік"
+                "Постеріорний графік"
             ],
             "Posterior Plots": [
-                "Постериорные графіки"
+                "Постеріорні графіки"
             ],
             "Predicted": [
-                "Предсказанный"
+                "Прогнозовано"
             ],
             "Predicted probability of … = … (vs … = …)": [
-                "Прогнозувати імовірність … = … (vs … = …)"
+                "Прогнозована ймовірність … = … (vs … = …)"
             ],
             "Predicted probability of {dep} = {level1} (vs {dep} = {level2})": [
-                "Прогнозувати імовірність {dep} = {level1} (по порівнянню з {dep} = {level2})"
+                "Прогнозована ймовірність {dep} = {level1} (vs {dep} = {level2})"
             ],
             "Predicted values": [
-                "Прогнозувати значення"
+                "Прогнозоване значення"
             ],
             "Prediction": [
-                "Прогноз"
+                "Прогнозування"
             ],
             "Predictive Measures": [
-                "Прогностические міри"
+                "Прогнозні заходи"
             ],
             "Predictor": [
                 "Предиктор"
             ],
             "Predictors": [
-                "Предикторы"
+                "Предиктори"
             ],
             "Principal axis": [
-                "Основная ось"
+                "Основна ось"
             ],
             "Principal axis factoring": [
-                "Факторизация головної оси"
+                "Факторинг головної осі"
             ],
             "Principal Component Analysis": [
-                "Аналіз головних компоненту"
+                "Аналіз головних складових"
             ],
             "Prior": [
-                "Предыдущий"
+                "Попередній"
             ],
             "Prior width": [
-                "Предыдущая ширина"
+                "Попередня ширина"
             ],
             "Probability": [
-                "Імовірність"
-            ],
-            "Promax": [
-                "Промакс"
+                "Ймовірність"
             ],
             "promax": [
                 "промакс"
+            ],
+            "Promax": [
+                "Промакс"
             ],
             "Proportion": [
                 "Пропорція"
             ],
             "Proportion Test (2 Outcomes)": [
-                "Тест пропорцій (2 исхода)"
+                "Тест пропорцій (2 результати)"
             ],
             "Proportion Test (N Outcomes)": [
-                "Тест пропорцій (N исходов)"
+                "Тест пропорцій (N результатів)"
             ],
             "provide a Cohen's d measure of effect size for the post-hoc tests.": [
-                "надати показник Коэна d розміру ефекту для апостериорных тестів."
+                "надайте міру розміру ефекту Коена's для post-hoc тестів."
             ],
             "provide a confidence interval for the difference between the mean estimate and the test value.": [
-                "надати доверительный интервал для різниці між середньою оцінкою і тестовим значенням."
+                "забезпечити довірчий інтервал для різниці між середньою оцінкою та тестовим значенням."
             ],
             "provide a correlation matrix plot.": [
-                "надати графік корреляционной матрицы."
+                "надати графік кореляційної матриці."
             ],
             "provide a Kendall's tau-b for each combination of variables.": [
                 "надати тау-b Кендалла для кожноїкомбінації переменных."
@@ -2885,7 +2945,7 @@
                 "надати таблицю расчетных граничних середніх."
             ],
             "provide Bayes factors for the Student's independent samples t-tests.": [
-                "надати коефіцієнти Байеса для t-тестів Стьюдента для незалежних вибірок."
+                "надати коефіцієнти Байеса для t-тестів Стьюдента для незалежний вибірок."
             ],
             "provide Bayes factors for the Student's one-sample t-tests.": [
                 "надати коефіцієнти Байеса для одновыборочных t-критеріїв Стьюдента."
@@ -2942,7 +3002,7 @@
                 "представляє середні различия з апостериорными тестами."
             ],
             "provide mean differences, and standard errors of the mean differences, between the mean estimate, and the test value.": [
-                "представляє середні различия і стандартний помилки середніх различий між середній оцінкою і тестовим значенням."
+                "представляє середні различия і стандартний помилки середніх различий між середньою оцінкою і тестовим значенням."
             ],
             "provide measures of effect size; η², partial η², or ω².": [
                 "представляє міри розміру ефекту; η², приватний η² або ω²."
@@ -2960,19 +3020,19 @@
                 "надати Q-Q графіки решт - графік фактичний решт по порівнянню з тем, що можна було би очікувати, якщо би дані були *ідеально* нормально розподілені. Великий відхилення від диагональной лінії припускають, що дані не мають нормального розподілу."
             ],
             "provide Q-Q plots of residuals -- a plot of the actual residuals against what would be expected if the data were *perfectly* normally distributed. Large deviations from the diagonal line suggest the residuals are not normally distributed.": [
-                "надати Q-Q графіки решт - графік фактичний решт по порівнянню з тем, що можна було би очікувати, якщо би дані були *ідеально* нормально розподілені. Великий відхилення від диагональной лінії припускають, що решти не розподілені нормально."
+                "Надати Q-Q графіки решт - графік фактичних решт по порівнянню з тем, що можна було би очікувати, якби дані були *ідеально* нормально розподілені. Великий відхилення від діагональної лінії припускають, що решти не розподілені нормально."
             ],
             "provide significance levels for the post-hoc tests.": [
-                "представляє рівні значущості для апостериорных тестів."
+                "Представляє рівні значущості для апостеріорних тестів."
             ],
             "provide sphericity tests.": [
-                "представляє тести на сферичность."
+                "Представляє тести на сферичність."
             ],
             "provide test results (t-value and degrees of freedom) for post-hoc tests.": [
-                "представляє результати іспитів (t-значення і ступені свободи) для апостериорных іспитів."
+                "Представляє результати іспитів (t-значення і ступені свободи) для апостеріорних іспитів."
             ],
             "provide the number of cases.": [
-                "представляє кількість нагод."
+                "Представляє кількість нагод."
             ],
             "Pseudo R²": [
                 "Псевдо R²"
@@ -3002,16 +3062,16 @@
                 "Q-Q Графіки"
             ],
             "quadratic": [
-                "квадратичный"
+                "квадратичній"
             ],
             "quartic": [
-                "биквадратный"
-            ],
-            "Quartimax": [
-                "Квартимакс"
+                "біквадратній"
             ],
             "quartimax": [
                 "квартимакс"
+            ],
+            "Quartimax": [
+                "Квартимакс"
             ],
             "quintic": [
                 "пятой ступеня"
@@ -3031,16 +3091,19 @@
             "R²<sub>N</sub>": [
                 "R²<sub>N</sub>"
             ],
+            "R²<sub>T</sub>": [
+                ""
+            ],
             "Range": [
                 "Діапазон"
             ],
             "Rank biserial correlation": [
                 "Ранговая бисериальная корреляция"
             ],
-            "Rate Ratio": [
+            "Rate ratio": [
                 "Ставлення ризиків (ОР)"
             ],
-            "Rate ratio": [
+            "Rate Ratio": [
                 "Ставлення ризиків (ОР)"
             ],
             "Ratio": [
@@ -3068,19 +3131,19 @@
                 "Повторний"
             ],
             "Repeated Measures ANOVA": [
-                "Аналіз повторний вимірів ANOVA"
+                "Аналіз повторних вимірів ANOVA"
             ],
             "Repeated Measures ANOVA (Non-parametric)": [
-                "Аналіз повторний вимірів ANOVA (Непараметрический)"
+                "Аналіз повторних вимірів ANOVA (Непараметричний)"
             ],
             "Repeated Measures Cells": [
-                "Осередки повторний вимірів"
+                "Осередки повторних вимірів"
             ],
             "Repeated Measures Components": [
-                "Компоненти повторний вимірів"
+                "Компоненти повторних вимірів"
             ],
             "Repeated Measures Factors": [
-                "Фактори повторний вимірів"
+                "Фактори повторних вимірів"
             ],
             "Report significance": [
                 "Представляти значущість"
@@ -3095,28 +3158,28 @@
                 "Решта"
             ],
             "Residual Covariances": [
-                "Остаточные ковариации"
+                "Остаточних коваріацій"
             ],
             "Residual covariances": [
-                "Остаточные ковариации"
+                "Остаточних коваріацій"
             ],
             "Residual Covariances – Modification Indices": [
-                "Остаточные ковариации – індекси модифікації"
+                "Остаточних коваріацій – індекси модифікації"
             ],
             "Residual Estimates": [
-                "Остаточные оцінки"
-            ],
-            "Residual Intercepts": [
-                "Остаточные перехваты"
+                "Остаточної оцінки"
             ],
             "Residual intercepts": [
+                "Остаточные перехваты"
+            ],
+            "Residual Intercepts": [
                 "Остаточные перехваты"
             ],
             "Residual plots": [
                 "Графіки решт"
             ],
-            "Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit": [
-                "Остаточная сума квадратів і/або ступенів свободи рівний нулю, що вказує на ідеальне відповідність"
+            "Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit": [
+                "Залишкова сума квадратів і/або ступенів свободи дорівнює нулю, що вказує на ідеальну відповідність"
             ],
             "Residuals": [
                 "Решти"
@@ -3143,10 +3206,10 @@
                 "Зворотне масштабированные елементи"
             ],
             "RM Factor {0}": [
-                "RM-фактору {0}"
+                "RM-фактор {0}"
             ],
             "RM Factor 1": [
-                "RM Фактору 1"
+                "RM Фактор 1"
             ],
             "RMSE": [
                 "СКО"
@@ -3160,17 +3223,20 @@
             "ROC": [
                 "ROC"
             ],
-            "ROC Curve": [
-                "ROC кривая"
-            ],
             "ROC curve": [
-                "ROC кривая"
+                "ROC крива"
+            ],
+            "ROC Curve": [
+                "ROC крива"
             ],
             "Rotation": [
                 "Обертання"
             ],
             "Row": [
                 "Строка"
+            ],
+            "Row number": [
+                "Номер рядка"
             ],
             "Row variable '{var}' contains fewer than 2 levels": [
                 "Переменная строки '{var}' містить менее 2 рівнів"
@@ -3200,10 +3266,10 @@
                 "шкала"
             ],
             "Scale Analysis": [
-                "Масштабний аналіз"
+                "Масштабний аналізу"
             ],
             "Scale factor = scale first indicator": [
-                "Масштабний коефіцієнт = першийіндикатор масштабу"
+                "Масштабний коефіцієнту = першийіндикатору масштабу"
             ],
             "Scale Reliability Statistics": [
                 "Статистики надійності ваговий"
@@ -3226,17 +3292,14 @@
             "Score for factor {i}. Estimated using the '{fsMethod}' method.": [
                 "Оцінка фактора {i}. Оцінене з використанням методу {fsMethod}."
             ],
-            "Scree Plot": [
+            "Scree plot": [
                 "Графік каменистой осыпи"
             ],
-            "Scree plot": [
+            "Scree Plot": [
                 "Графік каменистой осыпи"
             ],
             "SD": [
                 "SD"
-            ],
-            "sd": [
-                "sd"
             ],
             "SE": [
                 "SE"
@@ -3254,19 +3317,19 @@
                 "Чутливість"
             ],
             "septic": [
-                "сьомоїступеню"
+                "сьомоїступеня"
             ],
             "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ORDINAL LOGISTIC REGRESSION\n#\n#  Model Fit Measures\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  MODEL SPECIFIC RESULTS\n#\n#  MODEL 1\n#\n#  Model Coefficients\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#": [
                 "set.seed(1337)\n\ny <- factor(sample(1:3, 100, replace = TRUE))\nx1 <- rnorm(100)\nx2 <- rnorm(100)\n\ndf <- data.frame(y=y, x1=x1, x2=x2)\n\nlogRegOrd(data = df, dep = y,\n          covs = vars(x1, x2),\n          blocks = list(list(\"x1\", \"x2\")))\n\n#\n#  ПОРЯДКОВАЯ ЛОГИСТИЧЕСКАЯ РЕГРЕССИЯ\n#\n#  Міри відповідності моделі\n#  ───────────────────────────────────────\n#    Model    Deviance    AIC    R²-McF\n#  ───────────────────────────────────────\n#        1         218    226    5.68e-4\n#  ───────────────────────────────────────\n#\n#\n#  СПЕЦИФИЧЕСКИЕ РЕЗУЛЬТАТИ МОДЕЛІ\n#\n#  МОДЕЛЬ 1\n#\n#  Коефіцієнти моделі\n#  ────────────────────────────────────────────────────\n#    Predictor    Estimate    SE       Z        p\n#  ────────────────────────────────────────────────────\n#    x1             0.0579    0.193    0.300    0.764\n#    x2             0.0330    0.172    0.192    0.848\n#  ────────────────────────────────────────────────────\n#\n#"
             ],
             "sextic": [
-                "шостоїступеня"
+                "шостоїступеню"
             ],
             "Shapiro-Wilk": [
                 "Шапиро-Уилк"
             ],
             "Shapiro-Wilk Multivariate Normality Test": [
-                "Многомерный тіст нормальности Шапиро-Уилка"
+                "Многомерный тесту нормальности Шапиро-Уилка"
             ],
             "Shapiro-Wilk p": [
                 "Шапиро-Уилк p"
@@ -3473,7 +3536,7 @@
                 "альтернативна гіпотеза. Дозволяє проводити односторонние тести."
             ],
             "The Analysis of Covariance (ANCOVA) is used to explore the relationship\nbetween a continuous dependent variable, one or more categorical\nexplanatory variables, and one or more continuous explanatory variables\n(or covariates). It is essentially the same analysis as ANOVA, but\nwith the addition of covariates.": [
-                "Ковариационный аналізу (ANCOVA) використовує для вивчення взаимосвязи\nміж непрерывной залежати переменной, одної або кількома категориальными\nкотрий пояснювати переменными і одної або кількома непрерывными котрий пояснювати переменными\n(або ковариатами). По суті, це такий ж аналізу, як і ANOVA, але з добавлением ковариатов."
+                "Ковариационный аналіз (ANCOVA) використовує для вивчення взаимосвязи\nміж непрерывной залежати переменной, одної або кількома категориальными\nкотрий пояснювати переменными і одної або кількома непрерывными котрий пояснювати переменными\n(або ковариатами). По суті, це такий ж аналізу, як і ANOVA, але з добавлением ковариатов."
             ],
             "The Analysis of Variance (ANOVA) is used to explore the relationship\nbetween a continuous dependent variable, and one or more categorical\nexplanatory variables.": [
                 "Дисперсионный аналізу (ANOVA) використовує для вивчення взаимосвязи\nміж непрерывной залежати переменной і одної або кількома категориальными\nкотрий пояснювати переменными."
@@ -3498,6 +3561,9 @@
             ],
             "the categorical explanatory (or independent) variables.": [
                 "категориальные котрий пояснювати (або незалежні) переменные."
+            ],
+            "The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom": [
+                "СІ середнього припускає, що вибіркові засоби слідують t-розподілу з N - 1 ступенями свободи"
             ],
             "the confidence interval width for the effect-sizes.": [
                 "ширина доверительного интервала для розмірів ефекту."
@@ -3530,7 +3596,13 @@
                 "Значення отсечки установлено на {}"
             ],
             "the data as a data frame": [
-                "дані як фрейм"
+                "дані у форматі фрейма"
+            ],
+            "The dataset contains 0 rows (after removing rows with missing values)": [
+                "Набір даних містить 0 рядків (після видалення рядків з відсутніми значеннями)"
+            ],
+            "The dataset contains 0 rows (or all rows contain missing values)": [
+                "Набір даних містить 0 рядків (або всі рядки містять відсутні значення)"
             ],
             "The dependent variable '{}' has more than two levels; binomial logistic regression can only be performed on dependent variables with two levels.": [
                 "Залежати переменная '{}' має понад двох рівнів; биномиальная логистическая регрессия можучи бути виконана тільки для залежати переменных з двома рівнями."
@@ -3613,6 +3685,9 @@
             "the post-hoc multiple comparisons corrections to use.": [
                 "апостериорные поправки множественных порівнянь для використання."
             ],
+            "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.01 and 2.0, default 0.707.": [
+                ""
+            ],
             "the prior width for the Student's t-test's Bayes factors. Requires a value between 0.5 and 2.0, default 0.707.": [
                 "априорная ширина для байесовских факторів t-критерію Стьюдента. Вимагає значення від 0,5 до 2,0, по умолчанию 0,707."
             ],
@@ -3620,7 +3695,7 @@
                 "ANOVA з повторний вимірами використовує для вивчення взаимосвязи\nміж непрерывной залежати переменной і одної або кількома категориальными\nкотрий пояснювати переменных, де одна або кілька котрий пояснювати переменных\n'всередині суб'єктів' (коли кілька вимірів проводять у одного і того ж\nсуб'єкту). Окрім того, цейаналіз дозволяє включати у себе\nковариаты, що також дозволяє використати ANCOVA для повторний вимірів."
             ],
             "The Repeated Measures ANOVA is used to explore the relationship\nbetween a continuous dependent variable and one or more categorical\nexplanatory variables, where one or more of the explanatory variables\nare 'within subjects' (where multiple measurements are from the same\nsubject). Additionally, this analysis allows the inclusion of\ncovariates, allowing for repeated measures ANCOVAs as well.\n\nThis analysis requires that the data be in 'wide format', where each\nrow represents a subject (as opposed to long format, where each\nmeasurement of the dependent variable is represented as a row).\n\nA non-parametric equivalent of the repeated measures ANOVA also exists;\nthe Friedman test. However, it has the limitation of only being able to\ntest a single factor.": [
-                "ANOVA з повторний вимірами використовує для вивчення взаимосвязи\nміж непрерывной залежати переменной і одної або кількома категориальными\nкотрий пояснювати переменных, де одна або кілька котрий пояснювати переменных\n'всередині суб'єктів' (коли кілька вимірів отримані від одного і того ж\nсуб'єкту). Окрім того, цейаналіз дозволяє включати у себе\nковариаты, що також дозволяє використати ANCOVA для повторний вимірів.\n\nЦейаналіз вимагає, щоб дані були представлені у 'широкім форматі', де кожна\nстрока представляє суб'єкту (у відміну від довгого формату, де кожне вимір залежати переменной представлене у виду строки).\n\nІснує також непараметрический еквівалент ANOVA з повторний вимірами;\nтест Фридмана. Однак він має обмеження у том, що можучи тестировать тільки\nтестировать тільки один фактор."
+                "ANOVA з повторний вимірами використовує для вивчення взаимосвязи\nміж непрерывной залежати переменной і одної або кількома категориальными\nкотрий пояснювати переменных, де одна або кілька котрий пояснювати переменных\n'всередині суб'єктів' (коли кілька вимірів отримані від одного і того ж\nсуб'єкту). Окрім того, цейаналіз дозволяє включати у себе\nковариаты, що також дозволяє використати ANCOVA для повторний вимірів.\n\nЦейаналіз вимагає, щоб дані були представлені у 'широкім форматі', де кожна\nстрока представляє суб'єкту (у відміну від довгого формату, де кожневимір залежати переменной представлене у виду строки).\n\nІснує також непараметрический еквівалент ANOVA з повторний вимірами;\nтест Фридмана. Однак він має обмеження у том, що можучи тестировать тільки\nтестировать тільки один фактор."
             ],
             "the repeated measures design.": [
                 "дизайн повторний вимірів."
@@ -3641,19 +3716,19 @@
                 "Незалежний выборочный t-тест Стьюдента (іноді його називають двухвыборочным\nt-тестом) використовує для перевірки нульовий гіпотези о тому, що дві групи мають однакове середній значення. Низкое p-значення говорить о тому, що нульова гіпотеза не вірна,\nі, следовательно, групові середні различны."
             ],
             "The Student's Independent samples t-test (sometimes called a two-samples\nt-test) is used to test the null hypothesis that two groups have the\nsame mean. A low p-value suggests that the null hypothesis is not true,\nand therefore the group means are different.\n\nThe Student's independent t-test assumes that the data from each group\nare from a normal distribution, and that the variances of these groups\nare equal. If unwilling to assume the groups have equal variances, the\nWelch's t-test can be used in it's place. If one is additionally\nunwilling to assume the data from each group are from a normal\ndistribution, the non-parametric Mann-Whitney U test can be used instead\n(However, note that the Mann-Whitney U test has a slightly different\nnull hypothesis; that the distributions of each group is equal).": [
-                "Незалежний выборочный t-тест Стьюдента (іноді його називають двухвыборочным\nt-тест) використовує для перевірки нульовий гіпотези о тому, що дві групи мають однакове середній значення. Низкое p-значення говорить о тому, що нульова гіпотеза не вірна,\nі, следовательно, групові середні различны.\n\nНезалежний t-тест Стьюдента припускає, що дані кожноїгрупи\nмають нормальне розподіл, і що дисперсии цихгруп\nрівні. Якщо ви не хочете вважати, що групи мають рівні дисперсии, \nвместо його можна використати t-тест Уэлча.\nЯкщо небажане припускати, що дані кожноїгрупи мають нормальне розподіл, вместо його можна використати непараметрический U-тіст Манна-Уитни.\n(Однак обратите увагу, що U-тест Манна-Уитни має кілька іншу\nнульову гіпотезу о тому, що розподіли кожноїгрупи рівні)."
+                "Незалежний выборочный t-тест Стьюдента (іноді його називають двухвыборочным\nt-тест) використовує для перевірки нульовий гіпотези о тому, що дві групи мають однакове середній значення. Низкое p-значення говорить о тому, що нульова гіпотеза не вірна,\nі, следовательно, групові середні различны.\n\nНезалежний t-тест Стьюдента припускає, що дані кожноїгрупи\nмають нормальне розподіл, і що дисперсии цихгруп\nрівні. Якщо ви не хочете вважати, що групи мають рівні дисперсии, \nвместо його можна використати t-тест Уэлча.\nЯкщо небажане припускати, що дані кожноїгрупи мають нормальне розподіл, вместо його можна використати непараметрический U-тест Манна-Уитни.\n(Однак обратите увагу, що U-тест Манна-Уитни має кілька іншу\nнульову гіпотезу о тому, що розподіли кожноїгрупи рівні)."
             ],
             "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.": [
-                "Одновыборочный t-тест Стьюдента використовує для перевірки нульовий гіпотези о том, що\nистинное середнішій рівно визначеному значенню (зазвичай нулю). Низкое\np-значення припускає, що нульова гіпотеза не вірна, і поэтому\nистинное середнішій повинне відзначатися від тестового значення."
+                "Одновыборочный t-тест Стьюдента використовує для перевірки нульовий гіпотези о тому, що\nистинное середнішій рівно визначеному значенню (зазвичай нулю). Низкое\np-значення припускає, що нульова гіпотеза не вірна, і поэтому\nистинное середнішій повинне відзначатися від тестового значення."
             ],
             "The Student's One-sample t-test is used to test the null hypothesis that\nthe true mean is equal to a particular value (typically zero). A low\np-value suggests that the null hypothesis is not true, and therefore\nthe true mean must be different from the test value.\n\nThe Student's One-sample t-test assumes that the data are from a normal\ndistribution -- in the case that one is unwilling to assume this, the\nnon-parametric Wilcoxon signed-rank can be used in it's place (However,\nnote that the Wilcoxon signed-rank has a slightly different null\nhypothesis; that the *median* is equal to the test value).": [
-                "Одновыборочный t-тест Стьюдента використовує для перевірки нульовий гіпотези о том, що\nистинное середнішій рівно визначеному значенню (зазвичай нулю). Низкое\np-значення припускає, що нульова гіпотеза не вірна, і поэтому\nистинное середнішій повинне відзначатися від тестового значення.\n\nОдновыборочный t-тест Стьюдента припускає, що дані мають нормальне розподіл\n- у разі, якщо людина не бажає цього передбачити, можна використати\nнепараметрический критерій Wilcoxon signed-rank можучи бути використаний вместо його (однак,\nобратите увагу, що непараметрический метод Wilcoxon signed-rank має кілька іншу нульову\nгіпотезу о тому, що *медиана* рівна тестовому значенню)."
+                "Одновыборочный t-тест Стьюдента використовує для перевірки нульовий гіпотези о тому, що\nистинное середнішій рівно визначеному значенню (зазвичай нулю). Низкое\np-значення припускає, що нульова гіпотеза не вірна, і поэтому\nистинное середнішій повинне відзначатися від тестового значення.\n\nОдновыборочный t-тест Стьюдента припускає, що дані мають нормальне розподіл\n- у разі, якщо людина не бажає цього передбачити, можна використати\nнепараметрический критерій Wilcoxon signed-rank можучи бути використаний вместо його (однак,\nобратите увагу, що непараметрический метод Wilcoxon signed-rank має кілька іншу нульову\nгіпотезу о тому, що *медиана* рівна тестовому значенню)."
             ],
             "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.": [
                 "Парный выборочный t-тест Стьюдента (іноді називати\nt-тест залежати вибірок) використовує для перевірки нульовий гіпотези о тому, що\nрізниця між парами вимірів рівний нулю. Низкое значення p-value\nговорить о тому, що нульова гіпотеза не вірна, і що\nрізниця між парами вимірів не рівний нулю."
             ],
             "The Student's paired samples t-test (sometimes called a\ndependent-samples t-test) is used to test the null hypothesis that the\ndifference between pairs of measurements is equal to zero. A low p-value\nsuggests that the null hypothesis is not true, and that the\ndifference between the measurement pairs is not zero.\n\nThe Student's paired samples t-test assumes that pair differences follow\na normal distribution -- in the case that one is unwilling to assume\nthis, the non-parametric Wilcoxon signed-rank can be used in it's place\n(However, note that the Wilcoxon signed-rank has a slightly different\nnull hypothesis; that the two groups of measurements follow the same\ndistribution).": [
-                "Парный выборочный t-тест Стьюдента (іноді називати\nt-тест залежати вибірок) використовує для перевірки нульовий гіпотези о тому, що\nрізниця між парами вимірів рівний нулю. Низкое значення p-value\nговорить о тому, що нульова гіпотеза не вірна, і що\nрізниця між парами вимірів не рівний нулю.\n\nУ t-тесті Стьюдента для парных вибірок припускає, що различия між парами вимірів мають нормальне розподіл - у разі, якщо ви не бажаєте цього допускати\nвместо його можна використати непараметрический критерій Wilcoxon signed-rank.\n(Однак, обратите увагу, що у методу Wilcoxon signed-rank трохи другая\nнульова гіпотеза; що дві групи вимірів мають однакове\nрозподілу)."
+                "Парный выборочный t-тест Стьюдента (іноді називати\nt-тест залежати вибірок) використовує для перевірки нульовий гіпотези о тому, що\nрізниця між парами вимірів рівний нулю. Низкое значення p-value\nговорить о тому, що нульова гіпотеза не вірна, і що\nрізниця між парами вимірів не рівний нулю.\n\nУ t-тесті Стьюдента для парных вибірок припускає, що различия між парами вимірів\nмають нормальне розподіл - у разі, якщо ви не бажаєте цього допускати\nвместо його можна використати непараметрический критерій Wilcoxon signed-rank.\n(Однак, обратите увагу, що у методу Wilcoxon signed-rank трохи другая\nнульова гіпотеза; що дві групи вимірів мають однакове\nрозподілу)."
             ],
             "the terms to provide estimated marginal means for. Here you can specify multiple terms.": [
                 "термы для надання припускати граничний коштів. Здесь ви можете вказати кілька термов."
@@ -3710,7 +3785,7 @@
                 "Критерій відповідності χ² (не путать з критерієм незалежності χ²) перевіряє нульову гіпотезу о тому, що пропорції наглядів соответствуют некоторым очікувати пропорціям. Якщо p-значення низкое, це говорить о тому, що нульова гіпотеза ложна і що истинные пропорції відзначаються від перевіряти."
             ],
             "The χ² test of association (not to be confused with the χ² goodness of fit) is used to test whether two categorical variables are independent or associated. If the p-value is low, it suggests the variables are not independent, and that there is a relationship between the two variables.": [
-                "χ² тіст асоціації (не путать з χ² критерієм відповідності) використовує для перевірки того, являються лі дві категориальные переменные незалежними. Якщо p-значення низкое, це припускає, що переменные не являються незалежними і що між двома переменными існує взаимосвязь."
+                "χ² тіст асоціації (не путать з χ² критерієм відповідності) використовує для перевірки того, являються чи дві категориальные переменные незалежними. Якщо p-значення низкое, це припускає, що переменные не являються незалежними і що між двома переменными існує взаимосвязь."
             ],
             "Theoretical Quantiles": [
                 "Теоретичні квантили"
@@ -3726,6 +3801,9 @@
             ],
             "Thurstone": [
                 "Терстон"
+            ],
+            "Tjur's R²": [
+                ""
             ],
             "TLI": [
                 "TLI"
@@ -3797,7 +3875,7 @@
                 "Одномерные тести"
             ],
             "Upper": [
-                "Верхний"
+                "Верхній"
             ],
             "upper bound": [
                 "верхняя кордон"
@@ -3806,6 +3884,9 @@
                 "Значення"
             ],
             "value": [
+                "значення"
+            ],
+            "values": [
                 "значення"
             ],
             "Values are counts": [
@@ -3827,7 +3908,7 @@
                 "Переменная не числовая"
             ],
             "Variables": [
-                "Переменные"
+                "Змінні"
             ],
             "Variables across columns": [
                 "Переменные у шпальтах"
@@ -3865,11 +3946,20 @@
             "weigh each cell equally. (Cells are weighed according to the cell frequency by default.)": [
                 "взвешивать кожнуосередок однаково. (Осередки взвешиваются у відповідності з частотою осередків по умолчанию.)"
             ],
+            "Weight Variable": [
+                ""
+            ],
             "Weighted by '{varName}'": [
                 "Виважене по '{varName}'"
             ],
+            "Weights": [
+                ""
+            ],
             "Weights (optional)": [
                 "Веса (необязательно)"
+            ],
+            "Weights contains negative values. Negative weights are not permitted.": [
+                ""
             ],
             "Welch's": [
                 "Уэлч"
@@ -3881,7 +3971,7 @@
                 "Ранг Уилкоксона"
             ],
             "Wilcoxon signed rank test": [
-                "Уилкоксон ранговый тіст знаків"
+                "Уилкоксон ранговый тест знаків"
             ],
             "Wilcoxon W": [
                 "Вилкоксон W"

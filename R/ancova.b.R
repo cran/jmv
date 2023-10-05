@@ -35,7 +35,6 @@ ancovaClass <- R6::R6Class(
 
         },
         .run=function() {
-
             dep <- self$options$dep
             factors <- self$options$factors
             modelTerms <- private$.modelTerms()
@@ -43,22 +42,14 @@ ancovaClass <- R6::R6Class(
             if (is.null(dep) || length(factors) == 0 || length(modelTerms) == 0)
                 return()
 
+            private$.dataCheck()
+
             data <- self$finalData
-
-            errorMessage <- .("Column '{name}' contains unused levels (possible only when rows with missing values are excluded)")
-            for (name in colnames(data)) {
-                column <- data[[name]]
-                if (is.factor(column) && any(table(column) == 0))
-                    reject(errorMessage, name=name)
-            }
-
             dataB64 <- lapply(data, function(x) {
                 if (is.factor(x))
                     levels(x) <- toB64(levels(x))
                 return(x)
             })
-
-            private$.errorCheck(dataB64)
 
             results <- private$.compute(dataB64)
 
@@ -80,9 +71,12 @@ ancovaClass <- R6::R6Class(
             modelTerms <- private$.modelTerms()
 
             singularErrorMessage <- .("Singular fit encountered; one or more predictor variables are a linear combination of other predictor variables.")
-            perfectFitErrorMessage <- .("Residual sum of squares and/or degrees of freedom is zero, indicating a perfect fit")
+            perfectFitErrorMessage <- .("Residual sum of squares and/or degrees of freedom are zero, indicating a perfect fit")
 
             suppressWarnings({
+
+                old <- base::options()
+                on.exit(options(old))
 
                 base::options(contrasts = c("contr.sum","contr.poly"))
 
@@ -117,29 +111,29 @@ ancovaClass <- R6::R6Class(
                 } else {
 
                     results <- try({
-                        r <- car::Anova(private$.model, type=3, singular.ok=FALSE, silent=TRUE)
+                        r <- car::Anova(private$.model, type=3, singular.ok=FALSE)
                         r <- r[-1,]
-                    })
+                    }, silent=TRUE)
 
                     if (isError(results)) {
                         message <- extractErrorMessage(results)
                         if (message == 'there are aliased coefficients in the model')
                             singular <- singularErrorMessage
                         results <- try({
-                            r <- car::Anova(private$.model, type=3, singular.ok=TRUE, silent=TRUE)
+                            r <- car::Anova(private$.model, type=3, singular.ok=TRUE)
                             r <- r[-1,]
-                        })
+                        },  silent=TRUE)
                     }
                 }
 
                 if (isError(results)) {
                     message <- extractErrorMessage(results)
                     if (message == 'residual df = 0')
-                        reject(perfectFitErrorMessage)
+                        reject(perfectFitErrorMessage, code=exceptions$modelError)
                 }
 
                 if (results['Residuals', 'Sum Sq'] == 0 || results['Residuals', 'Df'] == 0)
-                    reject(perfectFitErrorMessage)
+                    reject(perfectFitErrorMessage, code=exceptions$modelError)
 
             }) # suppressWarnings
 
@@ -551,7 +545,7 @@ ancovaClass <- R6::R6Class(
 
                 for (i in seq_along(labels)) {
                     label <- labels[[i]]
-                    name <- paste0(var, i)
+                    name <- paste0(jmvcore::composeTerm(var), i)
                     table$setRow(rowNo=i, list(
                         contrast=label,
                         est=contrResults[name, "Estimate"],
@@ -649,7 +643,7 @@ ancovaClass <- R6::R6Class(
         #### Plot functions ----
         .qqPlot=function(image, ggtheme, theme, ...) {
             residuals <- rstandard(self$model)
-            if (is.null(residuals))
+            if (is.null(residuals) || all(is.na(residuals)))
                 return()
 
             df <- as.data.frame(qqnorm(residuals, plot.it=FALSE))
@@ -1003,20 +997,70 @@ ancovaClass <- R6::R6Class(
 
             return(c(width, height))
         },
-        .errorCheck = function(data) {
-
+        .dataCheck = function() {
             dep <- self$options$dep
             factors <- self$options$factors
 
-            if (is.factor(data[[dep]]))
-                reject(.('Dependent variable must be numeric'))
+            if (is.factor(self$finalData[[dep]])) {
+                jmvcore::reject(
+                    .("Dependent variable '{dep}' must be continuous"),
+                    code=exceptions$dataError,
+                    dep=dep
+                )
+            }
+
+            if (nrow(self$finalData) == 0) {
+                jmvcore::reject(
+                    .("The dataset contains 0 rows (after removing rows with missing values)"),
+                    code=exceptions$dataError
+                )
+            }
+
+            uniqueValues = length(unique(self$finalData[[dep]]))
+            if (uniqueValues == 0) {
+                jmvcore::reject(
+                    .("Dependent variable '{dep}' contains no data (after removing rows with missing values)"),
+                    code=exceptions$dataError,
+                    dep=dep
+                )
+            } else if (uniqueValues == 1) {
+                jmvcore::reject(
+                    .("Dependent variable '{dep}' contains only one unique value (after removing rows with missing values)"),
+                    code=exceptions$dataError,
+                    dep=dep
+                )
+            }
+
+            if (any((is.infinite(self$finalData[[dep]])))) {
+                jmvcore::reject(
+                    .("Dependent variable '{dep}' contains infinite values"),
+                    code=exceptions$dataError,
+                    dep=dep
+                )
+            }
 
             for (factorName in factors) {
-                lvls <- base::levels(data[[factorName]])
+                lvls <- base::levels(self$finalData[[factorName]])
                 if (length(lvls) == 1) {
-                    reject(.("Factor '{factorName}' contains only a single level"), factorName=factorName)
+                    jmvcore::reject(
+                        .("Factor '{factorName}' contains only a single level (after removing rows with missing values)"),
+                        code=exceptions$dataError,
+                        factorName=factorName
+                    )
                 } else if (length(lvls) == 0) {
-                    reject(.("Factor '{factorName}' contains no data"), factorName=factorName)
+                    jmvcore::reject(
+                        .("Factor '{factorName}' contains no data (after removing rows with missing values)"),
+                        code=exceptions$dataError,
+                        factorName=factorName
+                    )
+                }
+
+                if (any(table(self$finalData[[factorName]]) == 0)) {
+                    jmvcore::reject(
+                        .("Factor '{factorName}' contains unused levels (after removing rows with missing values)"),
+                        code=exceptions$dataError,
+                        name=name
+                    )
                 }
             }
         }),
@@ -1068,6 +1112,9 @@ ancovaClass <- R6::R6Class(
                 data <- self$finalData
 
                 suppressWarnings({
+
+                    old <- base::options()
+                    on.exit(options(old))
 
                     base::options(contrasts = c("contr.sum","contr.poly"))
 

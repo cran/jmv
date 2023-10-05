@@ -46,10 +46,16 @@ descriptivesClass <- R6::R6Class(
             )
 
             private$.addQuantiles()
+
+            private$.errorCheck()
+
             private$.initDescriptivesTable()
             private$.initDescriptivesTTable()
             private$.initFrequencyTables()
+            private$.initExtremeTables()
             private$.initPlots()
+
+            private$.errorCheck()
         },
         .clear = function(vChanges, ...) {
             private$.clearDescriptivesTable(vChanges)
@@ -62,6 +68,7 @@ descriptivesClass <- R6::R6Class(
                 private$.populateDescriptivesTable(results)
                 private$.populateDescriptivesTTable(results)
                 private$.populateFrequencyTables(results)
+                private$.populateExtremeTables(results)
                 private$.preparePlots()
             }
         },
@@ -74,16 +81,15 @@ descriptivesClass <- R6::R6Class(
 
             desc <- list()
             freq <- list()
+            extreme <- list()
             for (var in vars) {
                 column <- data[[var]]
-                if (private$.treatAsFactor(column)) {
-                    if (length(splitBy) > 0) {
-                        cols <- c(var, splitBy[-1], splitBy[1])
-                        freq[[var]] <- table(data[cols])
-                    } else {
-                        freq[[var]] <- table(column)
-                    }
-                }
+                if (is.factor(column))
+                    freq[[var]] <- table(jmvcore::select(self$data, c(var, splitBy)))
+
+                extreme[[var]] <- private$.computeExtreme(
+                    data.frame(rows=rownames(self$data), values=column)
+                )
 
                 column <- jmvcore::toNumeric(column)
                 if (length(splitBy) > 0) {
@@ -96,7 +102,7 @@ descriptivesClass <- R6::R6Class(
                 }
             }
 
-            return(list(desc=desc, freq=freq))
+            return(list(desc=desc, freq=freq, extreme=extreme))
         },
 
         #### Init tables/plots functions ----
@@ -114,6 +120,7 @@ descriptivesClass <- R6::R6Class(
 
             grid <- private$.getSplitByGrid()
             colArgs <- private$colArgs
+            ciOptionVisible <- FALSE
 
             for (i in seq_along(colArgs$name)) {
                 if (private$.skipOption(colArgs$visible[i]))
@@ -129,10 +136,11 @@ descriptivesClass <- R6::R6Class(
                     title <- jmvcore::format(
                         .("{ciWidth}% CI mean {title}"), ciWidth=self$options$ciWidth, title=title
                     )
+                    ciOptionVisible <- TRUE
                 }
 
                 if (length(splitBy) > 0) {
-                    for (j in 1:nrow(grid)) {
+                    for (j in seq_len(nrow(grid))) {
                         post <- paste0(
                             "[", name, paste0(grid[j,], collapse = ""), "]"
                         )
@@ -195,6 +203,13 @@ descriptivesClass <- R6::R6Class(
                         )
                     }
                 }
+
+                if (ciOptionVisible) {
+                    table$setNote(
+                        "ci",
+                        .("The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom")
+                    )
+                }
             }
         },
         .initDescriptivesTTable = function() {
@@ -220,16 +235,20 @@ descriptivesClass <- R6::R6Class(
                 )
             }
 
+            ciOptionVisible <- FALSE
+
             for (i in seq_along(colArgs$name)) {
                 if (private$.skipOption(colArgs$visible[i]))
                     next
 
-                if (colArgs$superTitle[i] == "ci")
+                if (colArgs$superTitle[i] == "ci") {
                     superTitle <- jmvcore::format(
                         .('{ciWidth}% Confidence Interval'), ciWidth=self$options$ciWidth
                     )
-                else
+                    ciOptionVisible <- TRUE
+                } else {
                     superTitle <- colArgs$superTitle[i]
+                }
 
                 table$addColumn(
                     name=colArgs$name[i],
@@ -241,13 +260,20 @@ descriptivesClass <- R6::R6Class(
                 )
             }
 
+            if (ciOptionVisible) {
+                table$setNote(
+                    "ci",
+                    .("The CI of the mean assumes sample means follow a t-distribution with N - 1 degrees of freedom")
+                )
+            }
+
             vars <- self$options$vars
             grid <- private$.getSplitByGrid()
 
             iter <- 1
             for (i in seq_along(vars)) {
                 if (length(splitBy) > 0) {
-                    for (j in 1:nrow(grid)) {
+                    for (j in seq_len(nrow(grid))) {
                         values <- list("vars"=vars[i])
                         for (k in seq_along(splitBy))
                             values[[splitBy[k]]] <- grid[j, k]
@@ -275,73 +301,57 @@ descriptivesClass <- R6::R6Class(
                 var <- vars[i]
                 column <- self$data[[var]]
 
-                if (private$.treatAsFactor(column)) {
-                    table <- tables$get(var)
-                    levels <- base::levels(column)
-                    if (is.null(levels)) {
-                        levels <- levels(factor(naOmit(column)))
-                        table$setVisible(TRUE)
-                    }
+                if (! is.factor(column))
+                    next()
 
-                    if (length(splitBy) == 0) {
-                        table$addColumn(
-                            name='levels', title=.('Levels'), type='text'
-                        )
-                        table$addColumn(
-                            name='counts', title=.('Counts'), type='integer'
-                        )
-                        table$addColumn(
-                            name='pc', title=.('% of Total'), type='number', format='pc'
-                        )
-                        table$addColumn(
-                            name='cumpc', title=.('Cumulative %'), type='number', format='pc'
-                        )
+                tableVars <- c(var, splitBy)
+                allLevels <- lapply(jmvcore::select(self$data, tableVars), levels)
+                grid <- rev(expand.grid(rev(allLevels)))
 
-                        for (k in seq_along(levels)) {
-                            table$addRow(
-                                levels[k], values = list(levels = levels[k])
-                            )
-                        }
-                    } else {
+                table <- tables$get(var)
 
-                        expandGrid <- function(...) expand.grid(..., stringsAsFactors = FALSE)
-                        grid <- rev(do.call(expandGrid, rev(c(list(levels), private$.getLevels()[-1]))))
-                        cols <- c(var, splitBy[-1])
+                for (var in tableVars)
+                    table$addColumn(name=var, title=var, type="text", combineBelow=TRUE)
+                table$addColumn(name='counts', title=.('Counts'), type='integer')
+                table$addColumn(name='pc', title=.('% of Total'), type='number', format='pc')
+                table$addColumn(name='cumpc', title=.('Cumulative %'), type='number', format='pc')
 
-                        for (col in cols) {
-                            table$addColumn(
-                                name=col,
-                                title=col,
-                                type='text',
-                                combineBelow=TRUE
-                            )
-                        }
+                for (row in seq_len(nrow(grid))) {
+                    rowValues <- list()
+                    for (col in tableVars)
+                        rowValues[[col]] <- as.character(grid[row, col])
+                    table$addRow(rowKey=row, values=rowValues)
+                }
+            }
+        },
+        .initExtremeTables = function() {
+            if ( ! self$options$extreme)
+                return()
 
-                        if (length(private$.getLevels()) >= 1) {
-                            for (lev in private$.getLevels()[[1]]) {
-                                table$addColumn(
-                                    name=paste0(lev),
-                                    title=lev,
-                                    type='integer',
-                                    superTitle=splitBy[1]
-                                )
-                            }
-                        }
+            extremeN <- self$options$extremeN
+            tables <- self$results$extremeValues
+            vars <- self$options$vars
 
-                        prev <- NULL
-                        for (j in seq_len(nrow(grid))) {
-                            row <- list()
-                            for (k in seq_along(cols))
-                                row[[cols[k]]] <- grid[j,k]
+            for (i in seq_along(vars)) {
+                var <- vars[i]
+                table <- tables[[i]]
 
-                            table$addRow(rowKey=j, values=row)
+                if (! jmvcore::canBeNumeric(self$data[[var]])) {
+                    table$setVisible(FALSE)
+                    next()
+                }
 
-                            if (length(splitBy) > 1 && (j == 1 || grid[j,1] != prev))
-                                table$addFormat(rowNo=j, col=1, Cell.BEGIN_GROUP)
+                table$addFormat(rowNo=extremeN+1, col=1, Cell.BEGIN_GROUP)
 
-                            prev <- grid[j,1]
-                        }
-                    }
+                iter <- 1
+                for (n in seq_len(extremeN)) {
+                    table$setRow(rowNo=iter, values=list(type="Highest", place=n))
+                    iter <- iter + 1
+                }
+
+                for (n in seq_len(extremeN)) {
+                    table$setRow(rowNo=iter, values=list(type="Lowest", place=n))
+                    iter <- iter + 1
                 }
             }
         },
@@ -363,10 +373,10 @@ descriptivesClass <- R6::R6Class(
             }
 
             if ( ! is.null(varsCannotBeNumeric)) {
-                html <- jmvcore::Html$new(
+                notice <- jmvcore::Notice$new(
                     options = self$options,
-                    name = 'warningMessage'
-                )
+                    name = 'warningMessage',
+                    type = jmvcore::NoticeType$WARNING)
 
                 if (length(varsCannotBeNumeric) == 1) {
                     warningMessage <- jmvcore::format(
@@ -380,15 +390,8 @@ descriptivesClass <- R6::R6Class(
                     )
                 }
 
-                content <- jmvcore::format(
-                    "<p class=\"warning\">
-                        {}
-                    </p>",
-                    warningMessage
-                )
-
-                html$setContent(content)
-                plots$setHeader(html)
+                notice$setContent(warningMessage)
+                plots$setHeader(notice)
             }
 
             for (var in vars) {
@@ -499,7 +502,7 @@ descriptivesClass <- R6::R6Class(
             iter <- 1
             for (i in seq_along(vars)) {
                 if (length(splitBy) > 0) {
-                    for (j in 1:nrow(grid)) {
+                    for (j in seq_len(nrow(grid))) {
                         for (k in seq_along(colNames)) {
                             name <- colNames[k]
                             post <- paste0("[", name, paste0(grid[j,], collapse = ""), "]")
@@ -543,7 +546,7 @@ descriptivesClass <- R6::R6Class(
 
                 r <- desc[[vars[i]]]
                 if (length(splitBy) > 0) {
-                    for (j in 1:nrow(grid)) {
+                    for (j in seq_len(nrow(grid))) {
                         indices <- grid[j,]
                         stats <- do.call("[", c(list(r), indices))[[1]]
 
@@ -606,7 +609,7 @@ descriptivesClass <- R6::R6Class(
             for (i in seq_along(vars)) {
                 r <- desc[[vars[i]]]
                 if (length(splitBy) > 0) {
-                    for (j in 1:nrow(grid)) {
+                    for (j in seq_len(nrow(grid))) {
                         stats <- do.call("[", c(list(r), grid[j,]))[[1]]
                         values <- list()
                         for (k in seq_along(colNames)) {
@@ -659,55 +662,70 @@ descriptivesClass <- R6::R6Class(
                 var <- vars[i]
                 column <- self$data[[var]]
 
-                if (private$.treatAsFactor(column)) {
-                    table <- tables$get(var)
+                if (! is.factor(column))
+                    next()
 
-                    if ( ! table$visible)
-                        next()
+                table <- tables$get(var)
+                freq <- freqs[[var]]
 
-                    levels <- base::levels(column)
-                    if (is.null(levels)) {
-                        levels <- levels(factor(naOmit(column)))
-                        table$setVisible(TRUE)
-                    }
-                    freq <- freqs[[var]]
+                tableVars <- c(var, splitBy)
+                allLevels <- lapply(jmvcore::select(self$data, tableVars), levels)
+                grid <- rev(expand.grid(rev(allLevels)))
 
-                    if (length(splitBy) == 0) {
-                        n <- sum(freq)
-                        cumsum <- 0
-                        for (k in seq_along(levels)) {
-                            counts <- as.numeric(freq[levels[k]])
-                            cumsum <- cumsum + counts
-                            pc <- counts / n
-                            cumpc <- cumsum / n
-                            if (is.na(pc)) pc <- 0
-                            if (is.na(cumpc)) cumpc <- 0
-                            table$setRow(
-                                rowNo=k,
-                                values=list(
-                                    counts=counts,
-                                    pc=pc,
-                                    cumpc=cumpc
-                                )
-                            )
-                        }
-                    } else {
-                        expandGrid <- function(...) expand.grid(..., stringsAsFactors = FALSE)
-                        grid <- rev(do.call(expandGrid, rev(c(list(levels), private$.getLevels()[-1]))))
-                        cols <- c(var, splitBy[-1])
+                n <- sum(freq)
+                cumsum <- 0
 
-                        for (j in seq_len(nrow(grid))) {
-                            row <- list()
-                            for (lev in private$.getLevels()[[1]]) {
-                                indices <- c(grid[j,], lev)
-                                counts <- do.call("[", c(list(freq), indices))[[1]]
-                                row[[lev]] <- as.numeric(counts)
-                            }
+                for (row in seq_len(nrow(grid))) {
+                    counts <- do.call("[", c(list(freq), grid[row, ]))
+                    cumsum <- cumsum + counts
+                    pc <- counts / n
+                    cumpc <- cumsum / n
+                    if (is.na(pc)) pc <- 0
+                    if (is.na(cumpc)) cumpc <- 0
 
-                            table$setRow(rowKey=j, values=row)
-                        }
-                    }
+                    table$setRow(rowNo=row, value=list(counts=counts, pc=pc, cumpc=cumpc))
                 }
+            }
+        },
+        .populateExtremeTables = function(results) {
+            if ( ! self$options$extreme)
+                return()
+
+            extremeN <- self$options$extremeN
+            tables <- self$results$extremeValues
+            vars <- self$options$vars
+
+            for (i in seq_along(vars)) {
+                r <- results$extreme[[ vars[i] ]]
+
+                if (is.null(r))
+                    next()
+
+                table <- tables[[i]]
+
+                for (n in 1:nrow(r$highest)) {
+                    table$setRow(
+                        rowNo=n,
+                        values=list(
+                            row=r$highest[n,"rows"],
+                            value=r$highest[n,"values"]
+                        )
+                    )
+                }
+
+                for (n in 1:nrow(r$lowest)) {
+                    table$setRow(
+                        rowNo=extremeN + n,
+                        values=list(
+                            row=r$lowest[n,"rows"],
+                            value=r$lowest[n,"values"]
+                        )
+                    )
+                }
+
+                note <- .('Number of requested extreme values is higher than the number of rows in the data.')
+                if (extremeN > nrow(r$highest))
+                    table$setNote("insufficientData", note)
             }
         },
 
@@ -846,7 +864,7 @@ descriptivesClass <- R6::R6Class(
                             }
 
                         } else {
-                            plotData <- data.frame(x=character())
+                            plotData <- data.frame(x=numeric())
                             names <- list("x"="x", "s1"=NULL, "s2"=NULL, "s3"=NULL)
                             labels <- list("x"=var, "s1"=NULL, "s2"=NULL, "s3"=NULL)
                         }
@@ -978,10 +996,18 @@ descriptivesClass <- R6::R6Class(
                                    axis.ticks.y=element_blank())
 
             } else {
-                data$s1rev <- factor(data$s1, rev(levels(data$s1)))
+                if (nSplits == 1)
+                    fill <- "s1"
+                else if (nSplits == 2)
+                    fill <- "s2"
+                else
+                    fill <- "s3"
 
-                plot <- ggplot(data=data, aes_string(x='x', y='s1rev', fill='s1')) +
-                    labs(x=labels$x, y=labels$s1) +
+                data$fillrev <- factor(data[[fill]], rev(levels(data[[fill]])))
+
+
+                plot <- ggplot(data=data, aes_string(x='x', y='fillrev', fill=fill)) +
+                    labs(x=labels$x, y=labels[[fill]]) +
                     scale_y_discrete(expand = c(0.05, 0)) +
                     scale_x_continuous(expand = c(0.01, 0))
 
@@ -992,9 +1018,9 @@ descriptivesClass <- R6::R6Class(
                     plot <- plot + ggridges::geom_density_ridges(scale=0.9, alpha=alpha)
 
                 if (nSplits == 2) {
-                    plot <- plot + facet_grid(cols=vars(s2))
+                    plot <- plot + facet_grid(cols=vars(s1))
                 } else if (nSplits > 2) {
-                    plot <- plot + facet_grid(cols=vars(s2), rows=vars(s3))
+                    plot <- plot + facet_grid(cols=vars(s1), rows=vars(s2))
                 }
 
                 themeSpec <- theme(legend.position = 'none')
@@ -1113,9 +1139,6 @@ descriptivesClass <- R6::R6Class(
 
             fill <- theme$fill[2]
             color <- theme$color[2]
-            if (length(splitBy) > 2)
-                formula <- as.formula(paste(". ~", names$s3))
-
             themeSpec <- NULL
 
             # hide outliers if plotting the data
@@ -1202,13 +1225,25 @@ descriptivesClass <- R6::R6Class(
                                        axis.ticks.x=element_blank(),
                                        axis.title.x=element_blank())
             } else {
+                if (length(splitBy) > 2) {
+                    x <- names$s2
+                    xLabel <- labels$s2
+                    split <- names$s3
+                    splitLabel <- labels$s3
+                } else {
+                    x <- names$s1
+                    xLabel <- labels$s1
+                    split <- names$s2
+                    splitLabel <- labels$s2
+                }
+
                 plot <-
                     ggplot(
                         data=data,
-                        aes_string(x=names$s2, y=names$x, fill=names$s1)
+                        aes_string(x=x, y=names$x, fill=split)
                     ) +
                     labs(
-                        x=labels$s2, y=labels$x, fill=labels$s1, color=labels$s1
+                        x=xLabel, y=labels$x, fill=splitLabel, color=splitLabel
                     )
 
                 if (self$options$violin) {
@@ -1225,7 +1260,7 @@ descriptivesClass <- R6::R6Class(
                         plot <-
                             plot +
                             ggplot2::geom_jitter(
-                                aes_string(color=names$s1),
+                                aes_string(color=split),
                                 alpha=0.7,
                                 position=position_jitterdodge(
                                     jitter.width=0.1, dodge.width = 0.9
@@ -1272,8 +1307,10 @@ descriptivesClass <- R6::R6Class(
                 }
             }
 
-            if (length(splitBy) > 2)
+            if (length(splitBy) > 2) {
+                formula <- as.formula(paste(". ~", names$s1))
                 plot <- plot + facet_grid(formula)
+            }
 
             plot <- plot + ggtheme + themeSpec
 
@@ -1289,20 +1326,16 @@ descriptivesClass <- R6::R6Class(
                 for (item in splitBy) {
                     if ( ! is.factor(data[[item]])) {
                         jmvcore::reject(
-                            .('Unable to split by a continuous variable')
+                            .('Unable to split by a continuous variable'),
+                            code=exceptions$valueError
+                        )
+                    } else if (length(levels(data[[item]])) == 0) {
+                        jmvcore::reject(
+                            .("The 'split by' variable '{var}' contains no data."),
+                            code=exceptions$valueError,
+                            var=item
                         )
                     }
-                }
-            }
-
-            for (var in splitBy) {
-                if (length(levels(data[[var]])) == 0) {
-                    jmvcore::reject(
-                        jmvcore::format(
-                            .("The 'split by' variable '{var}' contains no data."), var=var
-                        ),
-                        code=''
-                    )
                 }
             }
         },
@@ -1417,10 +1450,13 @@ descriptivesClass <- R6::R6Class(
                 stats[['min']] <- min(column)
                 stats[['max']] <- max(column)
                 stats[['se']] <- sqrt(var(column)/length(column))
-                zQuant <- 1 - ((1 - self$options$ciWidth/100) / 2)
-                ciDiff <- qnorm(zQuant) * stats[['se']]
+
+                # Calculate CI of the mean based on a t distribution
+                tCriticalValue <- 1 - ((1 - self$options$ciWidth/100) / 2)
+                ciDiff <- qt(tCriticalValue, df=stats[['n']] - 1) * stats[['se']]
                 stats[['ciLower']] <- stats[['mean']] - ciDiff
                 stats[['ciUpper']] <- stats[['mean']] + ciDiff
+
                 stats[['iqr']] <- diff(as.numeric(quantile(column, c(.25,.75))))
 
                 deviation <- column-mean(column)
@@ -1504,6 +1540,19 @@ descriptivesClass <- R6::R6Class(
             }
             return(stats)
         },
+        .computeExtreme = function(df) {
+            extremeN = self$options$extremeN
+
+            if (! jmvcore::canBeNumeric(df$values))
+                return(NULL)
+
+            df$values = jmvcore::toNumeric(df$values)
+
+            lowest = head(df[order(df$values),], extremeN)
+            highest <- head(df[order(-df$values),], extremeN)
+
+            return(list(highest=highest, lowest=lowest))
+        },
         .plotSize = function(levels, plot) {
             nLevels <- as.numeric(sapply(levels, length))
             nLevels <- ifelse(is.na(nLevels[1:4]), 1, nLevels[1:4])
@@ -1511,6 +1560,7 @@ descriptivesClass <- R6::R6Class(
             nCharLevels <- ifelse(is.na(nCharLevels[1:4]), 0, nCharLevels[1:4])
             nCharNames <- as.numeric(nchar(names(levels)))
             nCharNames <- ifelse(is.na(nCharNames[1:4]), 0, nCharNames[1:4])
+            nSplits <- length(self$options$splitBy)
 
             if (plot == "bar") {
                 xAxis <- 30 + 20
@@ -1526,9 +1576,11 @@ descriptivesClass <- R6::R6Class(
                 yAxis <- 30 + 20
                 width <- max(300, 70 * nLevels[1] * nLevels[2] * nLevels[3])
                 height <- 300
-                legend <- max(25 + 21 + 3.5 + 8.3 * nCharLevels[1] + 28, 25 + 10 * nCharNames[1] + 28)
 
-                width <- yAxis + width + ifelse(nLevels[1] > 1, legend, 0)
+                legendVar <- min(max(nSplits, 1), 3)
+                legend <- max(25 + 21 + 3.5 + 8.3 * nCharLevels[legendVar] + 28, 25 + 10 * nCharNames[legendVar] + 28)
+
+                width <- yAxis + width + ifelse(nLevels[legendVar] > 1, legend, 0)
                 height <- xAxis + height
             } else if (plot == "qq") {
                 xAxis <- 30 + 20
@@ -1552,9 +1604,22 @@ descriptivesClass <- R6::R6Class(
                 height <- xAxis + height
             } else {
                 xAxis <- 30 + 20
-                yAxis <- 45 + 11 + 8.3 * nCharLevels[1]
-                width <- 300 * nLevels[2]
-                height <- max(300, 50 * nLevels[1] * nLevels[3])
+                yAxis <- 45 + 11
+                width <- 300
+                height <- 300
+
+                if (nSplits == 1) {
+                    yAxis <- yAxis + 8.3 * nCharLevels[1]
+                    height <- max(height, 50 * nLevels[1])
+                } else if (nSplits == 2) {
+                    yAxis <- yAxis + 8.3 * nCharLevels[2]
+                    width <- width * nLevels[1]
+                    height <- max(height, 50 * nLevels[2])
+                } else if (nSplits > 2) {
+                    yAxis <- yAxis + 8.3 * nCharLevels[3]
+                    width <- width * nLevels[1]
+                    height <- max(height, 50 * nLevels[2] * nLevels[3])
+                }
 
                 width <- yAxis + width
                 height <- xAxis + height

@@ -11,6 +11,12 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
             return(private$.dataProcessed)
         },
+        weights = function() {
+            if (is.null(private$.weights))
+                private$.weights <- private$.computeWeights()
+
+            return(private$.weights)
+        },
         formulas = function() {
             if (is.null(private$.formulas))
                 private$.formulas <- private$.getFormulas()
@@ -136,6 +142,7 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
         #### Member variables ----
         .dataProcessed = NULL,
         .dataRowNums = NULL,
+        .weights = NULL,
         .formulas = NULL,
         .models = NULL,
         .nModels = NULL,
@@ -210,10 +217,29 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                 formulas <- formulas[modelNo]
 
             models <- list()
-            for (i in seq_along(formulas))
-                models[[i]] <- stats::glm(formulas[[i]],  data=data, family="binomial")
+            for (i in seq_along(formulas)) {
+                models[[i]] <- stats::glm(
+                    formulas[[i]],  data=data, family="binomial", weights=self$weights
+                )
+            }
 
             return(models)
+        },
+        .computeWeights = function() {
+            global_weights <- attr(self$data, "jmv-weights")
+
+            if (is.null(global_weights))
+                return()
+
+            weights <- self$dataProcessed[[".WEIGHTS"]]
+
+            if (any(weights < 0)) {
+                jmvcore::reject(
+                    .("Weights contains negative values. Negative weights are not permitted.")
+                )
+            }
+
+            return(weights)
         },
         .computeResiduals = function() {
             res <- list()
@@ -289,7 +315,12 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                 r2cs <- 1 - exp(-(nullDev - dev) / n)
                 r2n <- r2cs / (1 - exp(-nullDev / n))
 
-                pR2[[i]] <- list(r2mf=r2mf, r2cs=r2cs, r2n=r2n)
+                meanFittedProbs <- tapply(
+                    self$models[[i]]$fitted.values, self$models[[i]]$y, mean, na.rm=TRUE
+                )
+                r2t <- unname(diff(meanFittedProbs))
+
+                pR2[[i]] <- list(r2mf=r2mf, r2cs=r2cs, r2n=r2n, r2t=r2t)
             }
             return(pR2)
         },
@@ -397,9 +428,16 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                             emmeans::emm_options(sep=",", parens="a^", cov.keep=1)
 
                             mm <- try(
-                                emmeans::emmeans(model, formula, cov.reduce=FUN, type='response',
-                                                 options=list(level=self$options$ciWidthEmm / 100),
-                                                 weights=weights, data=self$dataProcessed),
+                                emmeans::emmeans(
+                                    model,
+                                    formula,
+                                    cov.reduce=FUN,
+                                    type='response',
+                                    options=list(level=self$options$ciWidthEmm / 100),
+                                    weights=weights,
+                                    data=self$dataProcessed,
+                                    non.nuis = all.vars(formula),
+                                ),
                                 silent = TRUE
                             )
 
@@ -748,6 +786,7 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                 row[["r2mf"]] <- self$pseudoR2[[i]]$r2mf
                 row[["r2cs"]] <- self$pseudoR2[[i]]$r2cs
                 row[["r2n"]] <- self$pseudoR2[[i]]$r2n
+                row[["r2t"]] <- self$pseudoR2[[i]]$r2t
                 row[["dev"]] <- self$deviance[[i]]
                 row[["aic"]] <- self$AIC[[i]]
                 row[["bic"]] <- self$BIC[[i]]
@@ -826,6 +865,14 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                     # check which rows have the same length + same terms
                     index <- which(length(term) == sapply(rowTerms, length) &
                                        sapply(rowTerms, function(x) all(term %in% x)))
+
+                    if (length(index) != 1) {
+                        table$setNote(
+                            "singular",
+                            .("Not all coefficients could be estimated (likely due to singular fit)")
+                        )
+                        next
+                    }
 
                     row <- list()
                     row[["est"]] <- coef[index, 'Estimate']
@@ -1019,6 +1066,9 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
 
         #### Plot functions ----
         .prepareEmmPlots = function() {
+            if (! self$options$emmPlots)
+                return()
+
             covs <- self$options$covs
             dep <- self$options$dep
 
@@ -1052,18 +1102,26 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
                                         levels(d[[ termB64[k] ]]) <- c('-1SD', 'Mean', '+1SD')
                                     }
                                 } else {
-                                    d[[ termB64[k] ]] <- factor(jmvcore::fromB64(d[[ termB64[k] ]]),
-                                                                jmvcore::fromB64(levels(d[[ termB64[k] ]])))
+                                    d[[ termB64[k] ]] <- factor(
+                                        jmvcore::fromB64(d[[ termB64[k] ]]),
+                                        jmvcore::fromB64(levels(d[[ termB64[k] ]]))
+                                    )
                                 }
                             }
                         }
 
-                        names <- list('x'=termB64[1], 'y'='prob', 'lines'=termB64[2],
-                                      'plots'=termB64[3], 'lower'='asymp.LCL', 'upper'='asymp.UCL')
+                        names <- list(
+                            'x'=termB64[1], 'y'='prob', 'lines'=termB64[2], 'plots'=termB64[3],
+                            'lower'='asymp.LCL', 'upper'='asymp.UCL'
+                        )
                         names <- lapply(names, function(x) if (is.na(x)) NULL else x)
 
-                        labels <- list('x'=term[1], 'y'=paste0('P(', dep, ' = ', private$.getLevelsDep()$other,')'),
-                                       'lines'=term[2], 'plots'=term[3])
+                        labels <- list(
+                            'x'=term[1],
+                            'y'=paste0('P(', dep, ' = ', private$.getLevelsDep()$other,')'),
+                            'lines'=term[2],
+                            'plots'=term[3]
+                        )
                         labels <- lapply(labels, function(x) if (is.na(x)) NULL else x)
 
                         image$setState(list(data=d, names=names, labels=labels, cont=cont))
@@ -1301,12 +1359,16 @@ logRegBinClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             for (cov in covs)
                 data[[jmvcore::toB64(cov)]] <- jmvcore::toNumeric(dataRaw[[cov]])
 
+            global_weights <- attr(dataRaw, "jmv-weights")
+            if (! is.null(global_weights))
+                data[[".WEIGHTS"]] = jmvcore::toNumeric(global_weights)
+
             attr(data, 'row.names') <- rownames(self$data)
             attr(data, 'class') <- 'data.frame'
 
             if (naOmit) {
                 data <- tibble::rownames_to_column(data)
-                data <- tidyr::drop_na(data, -naSkip)
+                data <- tidyr::drop_na(data, -tidyselect::all_of(naSkip))
                 data <- tibble::column_to_rownames(data)
             }
 
