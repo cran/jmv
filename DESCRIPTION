@@ -1,8 +1,8 @@
 Package: jmv
 Type: Package
 Title: The 'jamovi' Analyses
-Version: 2.4.9
-Date: 2023-10-04
+Version: 2.4.11
+Date: 2023-10-12
 Authors@R: c(person("Ravi", "Selker", role=c("aut", "cph")),
     person("Jonathon", "Love", role=c("aut", "cre", "cph"), email="jon@thon.cc"),
     person("Damian", "Dropmann", role=c("aut", "cph")),
@@ -27,11 +27,11 @@ Suggests: exact2x2, testthat (>= 3.1.5), semPlot, carData, knitr,
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2023-10-04 07:52:17 UTC; c3113592
+Packaged: 2023-10-11 23:07:25 UTC; c3113592
 Author: Ravi Selker [aut, cph],
   Jonathon Love [aut, cre, cph],
   Damian Dropmann [aut, cph],
   Victor Moreno [ctb, cph],
   Maurizio Agosti [ctb, cph]
 Repository: CRAN
-Date/Publication: 2023-10-05 08:20:02 UTC
+Date/Publication: 2023-10-12 13:20:02 UTC

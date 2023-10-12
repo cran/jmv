@@ -1,4 +1,4 @@
-c9f52fb2b3bac4787ffd4a0d92f4de99 *DESCRIPTION
+27538c19db685b4a10a8a6fddbfa6322 *DESCRIPTION
 461a5ac984efc83eafd4467fc1612221 *NAMESPACE
 837971992d059a1e93a397e5a3534f67 *R/00jmv.R
 45062955b25cd0cb9283f600f0f93d2a *R/00meta.R
@@ -153,4 +153,4 @@ b8541b384aeeab21b40c59253b8fd9c7 *tests/testthat/testmancova.R
 a0ce31e967ac455d9e636c8db819ba4d *tests/testthat/testproptestn.R
 b4bb9ab9f1c99d1224b9acff6e05b3a6 *tests/testthat/testreliability.R
 9fcb52f391f5104caf6330aed41c6fe7 *tests/testthat/testttestones.R
-03dc3710041b07171094ac39a5a1daa9 *tests/testthat/testttestps.R
+64f0fb0dba415dd327fb1976d0c51522 *tests/testthat/testttestps.R
